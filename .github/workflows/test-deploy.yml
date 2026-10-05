@@ -75,7 +75,7 @@ jobs:
           docker compose --env-file deployment/oracle/.env.example --file deployment/oracle/docker-compose.yml config --quiet
           docker run --rm --env APP_DOMAIN=guide.example.com --env ACME_EMAIL=owner@example.com \
             --mount type=bind,source="$PWD/deployment/oracle/Caddyfile",target=/etc/caddy/Caddyfile,readonly \
-            caddy:2.11.7-alpine caddy validate --config /etc/caddy/Caddyfile
+            caddy:2.11.6-alpine@sha256:d44355d3c2149dc580ce2cac735955d1c08d3d00882c30489c241aa51a5c10d9 caddy validate --config /etc/caddy/Caddyfile
       - name: Build the Linux production image
         run: |
           if [ "$EXPECTED_NODE_ARCH" = arm64 ]; then test "$(uname -m)" = aarch64; else test "$(uname -m)" = x86_64; fi

@@ -67,7 +67,7 @@ try {
   docker('run', '--detach', '--name', proxy, '--network', network, '--ip', '172.30.250.3',
     '--publish', '127.0.0.1:8443:443', '--mount', `type=bind,source=${configFile},target=/etc/caddy/Caddyfile,readonly`,
     '--mount', `source=${tlsVolume},target=/data`, '--env', 'APP_DOMAIN=localhost', '--env', 'ACME_EMAIL=owner@example.com',
-    'caddy:2.11.7-alpine'); owned.proxy = true;
+    'caddy:2.11.6-alpine@sha256:d44355d3c2149dc580ce2cac735955d1c08d3d00882c30489c241aa51a5c10d9'); owned.proxy = true;
   let ready = false;
   for (let attempt = 0; attempt < 45; attempt++) {
     try {
