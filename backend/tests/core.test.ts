@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import {
   parseDocument,
@@ -19,8 +20,11 @@ import {
 import { texturedFrame } from "./fixtures.js";
 import { extractJson } from "../src/llm/jsonExtract.js";
 
-const library = path.resolve("../guidance-library");
-const source = path.resolve("../../AI-Proctor/llmDescription");
+const library = fileURLToPath(new URL("../../guidance-library/", import.meta.url));
+const originalGuidance = JSON.parse(fs.readFileSync(path.join(library, "original-guidance-sha256.json"), "utf8")) as {
+  version: number;
+  files: Record<string, string>;
+};
 export const document =
   "Safety\nAlways check the work area.\nStep 1 — Prepare\nActions: Place the tool on the table.\nCriteria: Tool visibly on table.\nStep 2 — Finish\nActions: Put the tool away.\nCriteria: Tool visibly stored.";
 const makeObservation = (
@@ -56,6 +60,16 @@ afterEach(() => {
 });
 
 describe("document extraction", () => {
+  it("retains all seven original guidance files with their recorded bytes", () => {
+    expect(originalGuidance.version).toBe(1);
+    expect(Object.keys(originalGuidance.files)).toHaveLength(7);
+    for (const [filename, expectedHash] of Object.entries(originalGuidance.files)) {
+      expect(path.basename(filename)).toBe(filename);
+      expect(expectedHash).toMatch(/^[a-f0-9]{64}$/);
+      const raw = fs.readFileSync(path.join(library, filename));
+      expect(crypto.createHash("sha256").update(raw).digest("hex")).toBe(expectedHash);
+    }
+  });
   for (const filename of fs
     .readdirSync(library)
     .filter((f) => f.endsWith(".txt")))
@@ -77,10 +91,8 @@ describe("document extraction", () => {
           /^\s*(?:step|stage|phase|task)\s*\d+\s*[:.)—–-]?\s*.+$/i.test(l),
         ).length;
       if (count) expect(parsed.workflow.steps).toHaveLength(count);
-      if (fs.existsSync(path.join(source, filename)))
-        expect(fs.readFileSync(path.join(library, filename))).toEqual(
-          fs.readFileSync(path.join(source, filename)),
-        );
+      if (filename in originalGuidance.files)
+        expect(crypto.createHash("sha256").update(fs.readFileSync(path.join(library, filename))).digest("hex")).toBe(originalGuidance.files[filename]);
     });
   it("retains actions, tools, criteria and safety principles", () => {
     const p = parseDocument("demo.txt", document);

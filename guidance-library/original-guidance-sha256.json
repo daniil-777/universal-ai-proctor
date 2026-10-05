@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "files": {
+    "Bankart.txt": "4ee5fdbd712ffff9ca083aa49a7f683b793a575a5f45f647bcc23e9550fa896d",
+    "Bankart_simple.txt": "4ee5fdbd712ffff9ca083aa49a7f683b793a575a5f45f647bcc23e9550fa896d",
+    "Cholecystectomy.txt": "1e437e85f26625b6e0b0778c47f2f668149a1802e225c7468b8de31b20c46c46",
+    "bankart_completion_criteria_only.txt": "957ced6684a2695c17cdf08c418a0007d4bb1f74639fe73347a722df899fcc18",
+    "bankart_simplified_completion_criteria.txt": "e8cd4bb785479f213d556a529591023ee35921ee74a3c109f600b463b2db4ac1",
+    "dataParametersLogic.txt": "42c91105c498a5c0ecf11db1d6e505b7880cad3f809d839390ce307b6c3f030c",
+    "dataParametersLogicStructured.txt": "579afcb7d29e4c2c57939d48055ddadbf61164882c4897d827fd7c45e0ff9a69"
+  }
+}

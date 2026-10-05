@@ -1049,6 +1049,36 @@
           ]
         }
       ]
+    },
+    {
+      "name": "aa33fdd98395-legacy-simulator-s1-stage.mp4",
+      "sha256": "aa33fdd983952fd7c74e1f47e2c00867220f10041e917e331bdb079265f6328d",
+      "size": 77338873,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/aa33fdd98395-legacy-simulator-s1-stage.mp4",
+      "targets": [
+        {
+          "path": "evaluation/assets/legacy-simulator-s1-stage.mp4",
+          "groups": [
+            "runtime",
+            "evaluation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "a8394819b532-legacy-simulator-demo.mp4",
+      "sha256": "a8394819b5328b6c15d1a330b5320da6acf34ca347636ab66baefad7e6c4a4b5",
+      "size": 680934,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/a8394819b532-legacy-simulator-demo.mp4",
+      "targets": [
+        {
+          "path": "evaluation/assets/legacy-simulator-demo.mp4",
+          "groups": [
+            "runtime",
+            "evaluation"
+          ]
+        }
+      ]
     }
   ]
 }

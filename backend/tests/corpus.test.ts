@@ -5,6 +5,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
+import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import { createApp } from "../src/app.js";
 import { GuidanceEngine } from "../src/pipeline/guidance.js";
@@ -277,8 +278,8 @@ describe("diverse video decoding, geometry and real HTTP workflows", () => {
       }
     }, 15000);
   for (const file of [
-    "../../AI-Proctor/data/s1_stage.mp4",
-    "../../brag-output/composition/assets/video/sim.mp4",
+    fileURLToPath(new URL("../../evaluation/assets/legacy-simulator-s1-stage.mp4", import.meta.url)),
+    fileURLToPath(new URL("../../evaluation/assets/legacy-simulator-demo.mp4", import.meta.url)),
   ])
     it(`decodes the existing simulator footage ${path.basename(path.dirname(file))}/${path.basename(file)} with all preserved guidance documents`, async () => {
       const id = crypto.randomUUID();
