@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "recorded_at_utc": "2026-10-05T12:37:20.273451+00:00",
+  "repository": "https://github.com/daniil-777/universal-ai-proctor",
+  "ci_run_id": 37309851327,
+  "ci_url": "https://github.com/daniil-777/universal-ai-proctor/actions/runs/37309851327",
+  "source_commit": "0464fa6ef65f57f636cda1fd83b13574b3aac5cf",
+  "status": "completed",
+  "conclusion": "success",
+  "ci_log_sha256_utf8": "ec58b8cb61e68f4cd815373bc07ebedc39a750c94b87eb64c865dca65034d0e2",
+  "jobs": [
+    {
+      "name": "container-smoke",
+      "id": 111762304643,
+      "conclusion": "success",
+      "started_at": "2026-10-05T12:29:14Z",
+      "completed_at": "2026-10-05T12:34:46Z"
+    },
+    {
+      "name": "source-checks",
+      "id": 111762305012,
+      "conclusion": "success",
+      "started_at": "2026-10-05T12:29:13Z",
+      "completed_at": "2026-10-05T12:30:56Z"
+    }
+  ],
+  "source_checks": {
+    "backend_tests_passed": 305,
+    "backend_test_files_passed": 25,
+    "frontend_tests_passed": 152,
+    "frontend_test_files_passed": 20,
+    "downloader_local_http_tests_passed": 8,
+    "backend_typecheck": "passed",
+    "frontend_typecheck": "passed",
+    "frontend_lint": "passed_with_8_non_fatal_react_refresh_warnings",
+    "original_guidance_files_hash_verified": 7,
+    "both_original_legacy_simulator_video_tests": "passed_with_identical_media_relocated_inside_repository"
+  },
+  "linux_container_checks": {
+    "docker_build": "passed",
+    "node_major": 24,
+    "ffmpeg_version": "5.1.9-0+deb12u1",
+    "ffprobe_version": "5.1.9-0+deb12u1",
+    "app_uid": 1000,
+    "mock": true,
+    "paid_ai_calls": 0,
+    "runtime_assets_sha256_and_size_verified": 21,
+    "runtime_assets_downloaded_bytes": 1006517201,
+    "runtime_destinations_written": 32,
+    "all_six_bundled_videos_and_guides_loaded": true,
+    "sample_byte_range_playback": "206_with_exact_100_byte_payload",
+    "real_ffmpeg_decoding_and_mock_guidance": "passed",
+    "mock_question_answering_and_sse": "passed",
+    "pdf_html_zip_exports": "passed",
+    "video_upload_and_bookmark_report_evidence": "passed",
+    "account_registration_save_login_logout_deletion": "passed",
+    "saved_account_activity_and_pdf_after_container_restart": "passed",
+    "private_volume_mount": "/data",
+    "account_smoke": {
+      "base": "http://localhost:8101",
+      "passed": true,
+      "pdf_bytes": 40514,
+      "pdf_ms": 309,
+      "saved_pdf_bytes": 40511,
+      "unique_saved_runs": 1,
+      "unsupported_pdf_characters_rejected": true,
+      "unicode_html_preserved": true,
+      "provider_calls": 0,
+      "temporary_account_removed": true
+    }
+  },
+  "selected_actual_log_evidence": [
+    "container-smoke\tBuild the Linux production image\t2026-10-05T12:30:30.9387361Z #26 10.91 Verified media: 21 assets; 21 downloaded, 0 reused, 32 destinations written (1006517201 downloaded bytes).",
+    "container-smoke\tVerify runtime binaries and unprivileged server\t2026-10-05T12:31:16.0566782Z Node 24 / FFmpeg / unprivileged app process verified.",
+    "container-smoke\tExercise all samples, real decoding, mock guidance, reports and account save\t2026-10-05T12:31:20.9195670Z Six bundled videos/guides, FFmpeg range playback, mocked guidance/Q&A/SSE, PDF/HTML/ZIP and account save passed. Paid AI calls: zero.",
+    "container-smoke\tVerify uploads, report evidence and account lifecycle\t2026-10-05T12:34:40.1015570Z {\"base\":\"http://localhost:8101\",\"passed\":true,\"pdf_bytes\":40514,\"pdf_ms\":309,\"saved_pdf_bytes\":40511,\"unique_saved_runs\":1,\"unsupported_pdf_characters_rejected\":true,\"unicode_html_preserved\":true,\"provider_calls\":0,\"temporary_account_removed\":true}",
+    "container-smoke\tRestart and verify durable saved activity\t2026-10-05T12:34:43.4466628Z Account and saved PDF survive restart on the retained SQLite disk."
+  ],
+  "scope": "GitHub-hosted Ubuntu24.04 CI built and ran the Linux production container with mocked AI, real decoding, PDF rendering and persistent SQLite. Timing is from the CI runner. Host deployment and real-provider accuracy are separate verification scopes.",
+  "shared_source_file_sha256": {
+    "Dockerfile": "c276174a4218a5e5b4d43fba381fe1e8be58cbbae9cc039b686afba6d756819e",
+    ".dockerignore": "a6a357f0991509777c9c0b39236011743ea02e93df790896b9b42601fbd638e7",
+    "render.yaml": "2506441255f573bbb7e703dd3a3d9dc6cae54ce5df47b6df33d83223ce168296",
+    "fly.toml": "cc99ecb4b49a623ed20e2110217038b2369eac6bb1d21f4808a7bf5104d079b3",
+    ".github/workflows/test-deploy.yml": "e1bbb53b76f39bfc53e0d90d4a776239473253d496db5156108ed68bda835510",
+    "scripts/download-assets.mjs": "e7ab8ed125995d73ca8f233e10519b7e834d777b31cb7ece9647a17cf284a87d",
+    "scripts/download-assets.test.mjs": "f7a7384144e58033563eca857e223fde2de049dc84f275cb3f0d2a54773f10b1",
+    "backend/tests/core.test.ts": "39cc2a5bd1d4a1b34a578be3c21f8fed7507d6329476614ee0442bf780c830b4",
+    "backend/tests/corpus.test.ts": "7d0887877a440795ca3daa8f504c7a35d5bdde36b7689ef84336507ab104e6ae",
+    "guidance-library/original-guidance-sha256.json": "827633d8c3a9051c1a0956e596119aa920b39b03006eda426463deb38971b146",
+    "deployment/media-manifest.json": "562bc140eb3446739568e08ac87ea1ce18b9566ab2eaeb1fa9220e700d3cb74c"
+  }
+}

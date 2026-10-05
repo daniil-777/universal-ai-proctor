@@ -5,16 +5,31 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      runner:
+        description: Native Linux runner for the production container smoke checks
+        type: string
+        default: ubuntu-24.04
+      smoke_only:
+        description: Skip source checks already covered by the main x86 run
+        type: boolean
+        default: false
+      expected_node_arch:
+        description: Expected native Node architecture inside the image
+        type: string
+        default: x64
 
 permissions:
   contents: read
 
 concurrency:
-  group: container-test-${{ github.ref }}
+  group: container-test-${{ github.ref }}-${{ inputs.runner || 'ubuntu-24.04' }}
   cancel-in-progress: true
 
 jobs:
   source-checks:
+    if: ${{ !inputs.smoke_only }}
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
@@ -43,8 +58,10 @@ jobs:
           npm test
 
   container-smoke:
-    runs-on: ubuntu-24.04
+    runs-on: ${{ inputs.runner || 'ubuntu-24.04' }}
     timeout-minutes: 25
+    env:
+      EXPECTED_NODE_ARCH: ${{ inputs.expected_node_arch || 'x64' }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -53,8 +70,18 @@ jobs:
         with:
           node-version: "24"
           package-manager-cache: false
+      - name: Validate the Oracle Compose and HTTPS proxy configuration
+        run: |
+          docker compose --env-file deployment/oracle/.env.example --file deployment/oracle/docker-compose.yml config --quiet
+          docker run --rm --env APP_DOMAIN=guide.example.com --env ACME_EMAIL=owner@example.com \
+            --mount type=bind,source="$PWD/deployment/oracle/Caddyfile",target=/etc/caddy/Caddyfile,readonly \
+            caddy:2.11.7-alpine caddy validate --config /etc/caddy/Caddyfile
       - name: Build the Linux production image
-        run: docker build --pull --tag process-guide:ci .
+        run: |
+          if [ "$EXPECTED_NODE_ARCH" = arm64 ]; then test "$(uname -m)" = aarch64; else test "$(uname -m)" = x86_64; fi
+          docker build --pull --tag process-guide:ci .
+          if [ "$EXPECTED_NODE_ARCH" = arm64 ]; then expected_image_arch=arm64; else expected_image_arch=amd64; fi
+          test "$(docker image inspect process-guide:ci --format '{{.Architecture}}')" = "$expected_image_arch"
       - name: Start a mock-only server on a persistent volume
         run: |
           docker volume create process-guide-ci-data
@@ -72,10 +99,11 @@ jobs:
         run: |
           docker exec process-guide ffmpeg -version
           docker exec process-guide ffprobe -version
-          docker exec --interactive process-guide node --input-type=module - <<'JS'
+          docker exec --interactive --env EXPECTED_NODE_ARCH="$EXPECTED_NODE_ARCH" process-guide node --input-type=module - <<'JS'
           import assert from 'node:assert/strict';
           import fs from 'node:fs';
           assert.equal(Number(process.versions.node.split('.')[0]), 24);
+          assert.equal(process.arch, process.env.EXPECTED_NODE_ARCH);
           const servers = fs.readdirSync('/proc').filter(id => /^\d+$/.test(id)).filter(id => {
             try { const command = fs.readFileSync(`/proc/${id}/cmdline`, 'utf8').split('\0'); return /(?:^|\/)node$/.test(command[0]) && command.includes('dist/server.js'); }
             catch { return false; }
@@ -83,7 +111,7 @@ jobs:
           assert.equal(servers.length, 1);
           const status = fs.readFileSync(`/proc/${servers[0]}/status`, 'utf8');
           assert.equal(/^Uid:\s+(\d+)/m.exec(status)?.[1], '1000');
-          console.log('Node 24 / FFmpeg / unprivileged app process verified.');
+          console.log(`Native ${process.arch} / Node 24 / FFmpeg / unprivileged app process verified.`);
           JS
       - name: Exercise all samples, real decoding, mock guidance, reports and account save
         run: |
@@ -176,6 +204,8 @@ jobs:
           await call('/api/account/me',{password:state.password,confirmation:'DELETE'},'DELETE');
           console.log('Account and saved PDF survive restart on the retained SQLite disk.');
           JS
+      - name: Verify the private app through the Oracle HTTPS proxy
+        run: node deployment/oracle/smoke-proxy.mjs
       - name: Show container logs on failure
         if: failure()
         run: docker logs process-guide || true

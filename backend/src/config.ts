@@ -10,6 +10,7 @@ import path from "node:path";
 export const config = {
   port: Number(process.env.PORT || 8101),
   host: process.env.HOST || "127.0.0.1",
+  trustedProxyCidrs: process.env.TRUST_PROXY_CIDRS || "",
   mock: process.env.MOCK === "1",
   uploadRoot: path.resolve(process.env.UPLOAD_ROOT || ".data/uploads"),
   speech: {

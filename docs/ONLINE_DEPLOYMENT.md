@@ -1,6 +1,6 @@
 # Online deployment
 
-The app is implemented and used locally at `http://localhost:8101`. No hosting provider, domain or public deployment has been chosen. Creating an account saves it on the current app server; it does not publish that server. This document prepares a provider-neutral deployment of the existing code.
+The full app runs locally at `http://localhost:8101`. Its [source](https://github.com/daniil-777/universal-ai-proctor) and [GitHub Pages interface](https://daniil-777.github.io/universal-ai-proctor/) are public. Pages does not run the backend; accounts and saved reports remain on the server where they were created. A public full-feature backend has not yet been activated. This document prepares a provider-neutral deployment of the existing code. See [Oracle Always Free](ORACLE_FREE_DEPLOYMENT.md) for the free VM option and [production deployment](DEPLOYMENT.md) for the shared container and paid alternatives.
 
 ## Supported deployment shape
 
@@ -66,6 +66,7 @@ TTS_VOICE=nova
 | `PORT` | Use the host's assigned internal port or `8101`; the HTTPS proxy routes public traffic to that port. |
 | `ACCOUNT_PUBLIC_ORIGIN` | Exact external HTTPS origin, such as `https://guide.example.com`, without a path or trailing slash. A nonstandard port must be included. Account mutations check this origin. |
 | `ACCOUNT_COOKIE_SECURE` | Keep `true` online. Cookies are HttpOnly and SameSite=Strict. `false` is solely for deliberate local HTTP development; it is not an HTTPS deployment workaround. |
+| `TRUST_PROXY_CIDRS` | Optional exact IPv4 `/32` or IPv6 `/128` addresses of the immediate private reverse proxy, comma separated. Unset ignores forwarding headers. The Oracle setup pins Caddy to `172.30.250.3/32`; keep the backend port private and have the proxy replace client-supplied forwarding headers. Broad subnet trust and extra forwarded hops are rejected. |
 | `DATA_DIR` | Writable private persistent directory. Default `.data/accounts` resolves to `guidance-app/backend/.data/accounts`; the file is `accounts.sqlite`. Use an absolute mount path online. |
 | `UPLOAD_ROOT` | Private working storage for server video copies. Default `.data/uploads` resolves from the backend directory. Copies are removed on guidance-session eviction and normal shutdown; saved account results are separate. |
 | Provider key | Configure at least one supported visual provider. AI speech needs an OpenAI key; browser speech remains a fallback. Keep every key server-side and out of frontend build variables. |

@@ -12,6 +12,10 @@ The build context excludes `.env` files, local dependency backups, SQLite files,
 
 The entrypoint initializes ownership of the disk's account/upload directories, then runs Node and its children as the `node` user. Its brief initialization needs root on a newly root-owned volume. Hosts enforcing an entirely non-root container should pre-create `/data/accounts` and `/data/uploads` for UID/GID 1000 and start with that user. Production startup requires `ACCOUNT_PUBLIC_ORIGIN` to be configured.
 
+## Oracle Always Free
+
+[Oracle deployment instructions](ORACLE_FREE_DEPLOYMENT.md) provide a Docker Compose configuration with Caddy HTTPS and a private persistent application volume. This preserves the existing single-server architecture on an eligible ARM VM. Free server capacity depends on the account's home region; idle instances can be reclaimed. AI usage still incurs provider charges. The configuration does not create a cloud account or activate resources.
+
 ## Render configuration and cost
 
 Use a Docker web service in Frankfurt, one `1c-2g` instance and a 5 GB persistent disk at `/data`. The checked-in Blueprint deliberately disables automatic deployment; selecting or syncing it can still create paid resources. The owner should review the final service and disk charge in Render before activation. [Render Blueprint reference](https://render.com/docs/blueprint-spec)

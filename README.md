@@ -6,7 +6,7 @@ An independent general process guidance app, adapted from the original AI Procto
 
 **Local full app:** http://localhost:8101
 
-The Pages interface supports previews and walkthroughs. Live AI, server video processing, voice synthesis, accounts and saved reports require the full Node server. [Production deployment](docs/DEPLOYMENT.md) provides a Docker image and Render configuration with persistent storage. Hosting activation is separate from publishing source.
+The Pages interface supports previews and walkthroughs. Live AI, server video processing, voice synthesis, accounts and saved reports require the full Node server. [Production deployment](docs/DEPLOYMENT.md) provides a Docker image with persistent storage. [Oracle Always Free deployment](docs/ORACLE_FREE_DEPLOYMENT.md) is a free hosting option when eligible server capacity is available; Render is a paid alternative. AI API usage is billed separately. Hosting activation is separate from publishing source.
 
 ## Run
 

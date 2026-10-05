@@ -1,0 +1,13 @@
+{
+	email {$ACME_EMAIL}
+}
+
+{$APP_DOMAIN} {
+	# Compress frontend assets; leave API uploads, video ranges and SSE unchanged.
+	@frontend not path /api/*
+	encode @frontend zstd gzip
+
+	# Caddy forwards Host/Origin and flushes text/event-stream immediately.
+	# Do not buffer uploads/responses or introduce a guidance request timeout.
+	reverse_proxy app:8101
+}

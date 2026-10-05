@@ -1,0 +1,85 @@
+name: process-guide-oracle
+
+services:
+  app:
+    image: process-guide:oracle
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    # Node starts as UID 1000 after the image's volume-ownership bootstrap.
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: "8101"
+      MOCK: "0"
+      ACCOUNT_PUBLIC_ORIGIN: https://${APP_DOMAIN:?Set APP_DOMAIN to the public DNS hostname}
+      ACCOUNT_COOKIE_SECURE: "true"
+      # Trust exactly the immediate Caddy hop, not user-supplied proxy chains.
+      TRUST_PROXY_CIDRS: 172.30.250.3/32
+      DATA_DIR: /data/accounts
+      UPLOAD_ROOT: /data/uploads
+      FFMPEG_CONCURRENCY: "1"
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      HF_API_KEY: ${HF_API_KEY:-}
+    # Port 8101 is reachable only inside the Compose network.
+    expose:
+      - "8101"
+    volumes:
+      - app-data:/data
+    networks:
+      app-network:
+        ipv4_address: 172.30.250.2
+    mem_limit: 4g
+    stop_grace_period: 45s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+  caddy:
+    image: caddy:2.11.7-alpine
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      APP_DOMAIN: ${APP_DOMAIN:?Set APP_DOMAIN to the public DNS hostname}
+      ACME_EMAIL: ${ACME_EMAIL:?Set ACME_EMAIL for certificate notifications}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    networks:
+      app-network:
+        ipv4_address: 172.30.250.3
+    mem_limit: 512m
+    stop_grace_period: 30s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+volumes:
+  # One local application volume retains SQLite/WAL and uploaded videos.
+  app-data:
+    name: process-guide-oracle-data
+  # Keep certificates across updates to avoid repeated ACME issuance.
+  caddy-data:
+    name: process-guide-oracle-caddy-data
+  caddy-config:
+    name: process-guide-oracle-caddy-config
+
+networks:
+  app-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.250.0/24

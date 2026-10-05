@@ -15,6 +15,7 @@ import { fileURLToPath } from "node:url";
 import { pipeline } from "node:stream/promises";
 import Fastify from "fastify";
 import type { FastifyRequest, FastifyReply } from "fastify";
+import { proxyTrust } from "./proxyTrust.js";
 import cors from "@fastify/cors";
 import multipart from "@fastify/multipart";
 import fastifyStatic from "@fastify/static";
@@ -166,11 +167,13 @@ export async function createApp(
     logger?: boolean;
     reviewThumbnail?: typeof makeReviewThumbnail;
     accountStore?: AccountStore;
+    trustedProxyCidrs?: string;
   } = {},
 ) {
   const app = Fastify({
     logger: options.logger ?? false,
     bodyLimit: 12 * 1024 * 1024,
+    trustProxy: proxyTrust(options.trustedProxyCidrs ?? config.trustedProxyCidrs),
   });
   const engine = options.engine || new GuidanceEngine();
   const sessions = options.store || new SessionStore();

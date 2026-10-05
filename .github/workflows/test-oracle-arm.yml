@@ -1,0 +1,16 @@
+name: Verify Oracle ARM container
+
+# Run manually before selecting an Oracle ARM VM. No deployment or AI credentials.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  arm-container-smoke:
+    uses: ./.github/workflows/test-deploy.yml
+    with:
+      runner: ubuntu-24.04-arm
+      smoke_only: true
+      expected_node_arch: arm64
