@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-10-04T20:59:33.772Z",
+  "text": "The blue part is visible in the right bin. Check the reference before moving it.",
+  "notes": "Four real-provider calls, same text/voice. Latency varies by network/load; this is not a perceptual listening score.",
+  "results": [
+    {
+      "model": "tts-1",
+      "voice": "nova",
+      "round": 1,
+      "headersMs": 2474,
+      "elapsedMs": 2662,
+      "bytes": 78720,
+      "durationS": 4.92,
+      "file": "docs/voice-tts-1-1.mp3"
+    },
+    {
+      "model": "gpt-4o-mini-tts",
+      "voice": "nova",
+      "round": 1,
+      "headersMs": 1284,
+      "elapsedMs": 1710,
+      "bytes": 73728,
+      "durationS": 4.608,
+      "file": "docs/voice-gpt-4o-mini-tts-1.mp3"
+    },
+    {
+      "model": "tts-1",
+      "voice": "nova",
+      "round": 2,
+      "headersMs": 989,
+      "elapsedMs": 1122,
+      "bytes": 74112,
+      "durationS": 4.632,
+      "file": "docs/voice-tts-1-2.mp3"
+    },
+    {
+      "model": "gpt-4o-mini-tts",
+      "voice": "nova",
+      "round": 2,
+      "headersMs": 545,
+      "elapsedMs": 1056,
+      "bytes": 88320,
+      "durationS": 5.52,
+      "file": "docs/voice-gpt-4o-mini-tts-2.mp3"
+    }
+  ]
+}

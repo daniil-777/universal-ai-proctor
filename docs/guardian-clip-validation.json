@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-10-05T08:53:31.379Z",
+  "source_fixture": "evaluation/assets/parts-sorting.mp4",
+  "real_runtime": [
+    {
+      "name": "first-frame",
+      "start_s": 0,
+      "end_s": 3,
+      "encode_and_probe_ms": 186,
+      "bytes": 11225,
+      "duration_s": 3,
+      "fps": 30,
+      "width": 960,
+      "height": 640,
+      "first_frame_mean_absolute_channel_error": 0.26634837962962965,
+      "temporary_files_removed": true
+    },
+    {
+      "name": "fractional-start",
+      "start_s": 6.25,
+      "end_s": 15.25,
+      "encode_and_probe_ms": 462,
+      "bytes": 25050,
+      "duration_s": 9,
+      "fps": 30,
+      "width": 960,
+      "height": 640,
+      "first_frame_mean_absolute_channel_error": 0.2416087962962963,
+      "temporary_files_removed": true
+    },
+    {
+      "name": "last-frame",
+      "start_s": 10,
+      "end_s": 16,
+      "encode_and_probe_ms": 482,
+      "bytes": 14956,
+      "duration_s": 6,
+      "fps": 30,
+      "width": 960,
+      "height": 640,
+      "first_frame_mean_absolute_channel_error": 0.23668981481481483,
+      "temporary_files_removed": true
+    }
+  ],
+  "unit_cases": 12,
+  "scope": [
+    "Server-retained event ID/time only",
+    "Current source/reference/media generation guard",
+    "Non-demo current-frame AI/system watch or alert",
+    "Window6secondsbefore3secondsafter",
+    "Perapp8/global32 clips/10minuteTTL/16MiBcliplimit",
+    "Shared extraction cancellation and cleanup",
+    "NoAIcalls"
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "reviewed_at": "2026-10-05T10:20:32.685Z",
+  "file": "evaluation/open-video-scenarios/videos/real-04-dancing.mp4",
+  "review_scope": "Full clip:4.8s overview and1.0s fine-frame samples throughout, with labelled actual PTS; no paid visual model.",
+  "frame_evidence": [
+    "frames/04-dance-overview.jpg",
+    "frames/04-dance-fine-overview.jpg",
+    "evidence/04_dancing_fine-1.jpg",
+    "evidence/04_dancing_fine-2.jpg",
+    "evidence/04_dancing_fine-3.jpg",
+    "evidence/04_dancing_fine-4.jpg",
+    "evidence/04_dancing_fine-5.jpg",
+    "evidence/04_dancing_fine-6.jpg",
+    "evidence/04_dancing_fine-7.jpg"
+  ],
+  "sample_counts": {
+    "overview": 26,
+    "fine": 124
+  },
+  "approximate_edit_windows_s": [
+    [
+      13,
+      14
+    ],
+    [
+      26,
+      28
+    ],
+    [
+      42.5,
+      44
+    ],
+    [
+      58.5,
+      60
+    ],
+    [
+      82.5,
+      84
+    ],
+    [
+      89.5,
+      91
+    ],
+    [
+      100.5,
+      102
+    ],
+    [
+      107.5,
+      109
+    ]
+  ],
+  "observations": [
+    {
+      "start_s": 0,
+      "end_s": 13.4,
+      "label": "Opening side-on shoe contact, tilt/lift and return",
+      "evidence": "Bothshoes start at the floor; one shoe angles/lifts and returns. Head/torso cropped."
+    },
+    {
+      "start_s": 14,
+      "end_s": 26.9,
+      "label": "Oblique free-shoe lift and return",
+      "evidence": "Free shoe rises behind/beside the other leg; both shoes are later back at the floor."
+    },
+    {
+      "start_s": 28,
+      "end_s": 42.6,
+      "label": "Front/oblique forward motion and later raised shoe",
+      "evidence": "Working shoe moves forward, returns, and is later raised behind the support leg."
+    },
+    {
+      "start_s": 44,
+      "end_s": 58.4,
+      "label": "Orientation/contact variation",
+      "evidence": "Shoes turn, cross or extend close to the floor; angled heels/soles and returns visible."
+    },
+    {
+      "start_s": 60,
+      "end_s": 82.4,
+      "label": "Later working-shoe forward/across motions",
+      "evidence": "Raised and extended shoe positions alternate with returns near the other shoe."
+    },
+    {
+      "start_s": 84,
+      "end_s": 89.5,
+      "label": "Faster front-view stepping",
+      "evidence": "Relative shoe positions change rapidly; blur limits contact identification."
+    },
+    {
+      "start_s": 91,
+      "end_s": 100.5,
+      "label": "Lower-camera shoe motion",
+      "evidence": "Raised soles/feet and returns near the floor visible; no whole-body view."
+    },
+    {
+      "start_s": 102,
+      "end_s": 107.5,
+      "label": "Wider crop free-foot lift",
+      "evidence": "One shoe rises behind the supporting leg and returns in the wider crop; head remains outside frame."
+    },
+    {
+      "start_s": 109,
+      "end_s": 122.5,
+      "label": "Wider travelling/crossed-foot sequence",
+      "evidence": "Performer changesfloor position, crosses shoes/legs, and shows separated/grounded positions."
+    },
+    {
+      "start_s": 123,
+      "end_s": 123.415533,
+      "label": "Blank source ending",
+      "evidence": "White/blank image is a source edit; no visible performance evidence."
+    }
+  ],
+  "unseen_limits": [
+    "Whole-body/head posture",
+    "Measured ankle/knee angles",
+    "Foot pressure/weightdistribution",
+    "Exact tap-contact/repetitioncounts fromsampledframes",
+    "Musical timing or techniquegrade",
+    "Safety/comfort or instructorapproval"
+  ],
+  "audio_claim_handling": "NoASR; no narrated claim used as a measured fact or completioncriterion."
+}

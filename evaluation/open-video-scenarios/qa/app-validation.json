@@ -1,0 +1,26 @@
+{
+  "verified_at": "2026-10-05T10:31:50.291393+00:00",
+  "backend_tests_passed": 269,
+  "frontend_unit_tests_passed": 132,
+  "browser_pairs_tests": {
+    "desktop_1440": true,
+    "phone_320_touch": true,
+    "all_five_samples_loaded": true,
+    "correct_guidance": true,
+    "unknown_criteria_initially": true,
+    "source_attribution_reload": true,
+    "source_attribution_principles": true,
+    "original_default_preserved": true
+  },
+  "original_document_browser_test_passed": true,
+  "typecheck_lint_production_build": "passed",
+  "note": "Recognition and question accuracy are evaluated separately in live-recognition-results.json, when available.",
+  "new_checks": {
+    "variable_cadence_held_frame_proof": "passed",
+    "main_page_library_button": "passed at320/768/1440",
+    "removed_review_prompt_url": 404,
+    "same_protocol_stage_matches": "18/32",
+    "revised_protocol_stage_matches": "19/32",
+    "sparse_surgery_live_recheck": "2/2"
+  }
+}

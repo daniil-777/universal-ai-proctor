@@ -1,0 +1,171 @@
+{
+  "ok": true,
+  "errorCount": 0,
+  "warningCount": 16,
+  "infoCount": 0,
+  "findings": [
+    {
+      "code": "timeline_track_too_dense",
+      "severity": "warning",
+      "message": "Track 2 has 15 timed elements in this HTML file. Smaller sub-compositions keep timelines easier to read, iterate on, and diff.",
+      "fixHint": "Move coherent scene groups into separate .html files under compositions/ and mount them from the parent with data-composition-src so the timeline stays easier to inspect, revise, and validate.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html"
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-overview\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-overview",
+      "fixHint": "Move <div id=\"caption-overview\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 18,
+      "column": 237
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-source\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-source",
+      "fixHint": "Move <div id=\"caption-source\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 19,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-guide\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-guide",
+      "fixHint": "Move <div id=\"caption-guide\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 20,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-wishes\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-wishes",
+      "fixHint": "Move <div id=\"caption-wishes\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 21,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-resize\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-resize",
+      "fixHint": "Move <div id=\"caption-resize\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 22,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-steps\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-steps",
+      "fixHint": "Move <div id=\"caption-steps\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 23,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-manual\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-manual",
+      "fixHint": "Move <div id=\"caption-manual\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 24,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-chat\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-chat",
+      "fixHint": "Move <div id=\"caption-chat\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 25,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-guardian\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-guardian",
+      "fixHint": "Move <div id=\"caption-guardian\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 26,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-readiness\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-readiness",
+      "fixHint": "Move <div id=\"caption-readiness\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 27,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-review\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-review",
+      "fixHint": "Move <div id=\"caption-review\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 28,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-report\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-report",
+      "fixHint": "Move <div id=\"caption-report\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 29,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-export\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-export",
+      "fixHint": "Move <div id=\"caption-export\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 30,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-account\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-account",
+      "fixHint": "Move <div id=\"caption-account\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 31,
+      "column": 1
+    },
+    {
+      "code": "nested_structure_needs_subcomposition",
+      "severity": "warning",
+      "message": "<div id=\"caption-saved\"> is a timeline element that contains nested <p>. The timeline shows one row per top-level element, and the root composition is built only from sub-compositions.",
+      "elementId": "caption-saved",
+      "fixHint": "Move <div id=\"caption-saved\"> and its contents into a sub-composition file and mount it with data-composition-src.",
+      "file": "/Users/daniil.emtsev/Documents/Documents - Daniil’s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/videos/process-guide-walkthrough/index.html",
+      "line": 32,
+      "column": 1
+    }
+  ],
+  "filesScanned": 19,
+  "_meta": {
+    "version": "0.8.127",
+    "latestVersion": "0.8.123",
+    "updateAvailable": false
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "verified_at": "2026-10-05T10:20:32.681Z",
+  "retrieved_at": "2026-10-05T10:12:56.585396+00:00",
+  "scenario_id": "04",
+  "kind": "dancing",
+  "source_page": "https://commons.wikimedia.org/wiki/File:Tap_Dance_Technique.webm",
+  "source_api": "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url%7Csize%7Csha1%7Ctimestamp%7Cmetadata%7Cextmetadata&iimetadataversion=2&titles=File%3ATap+Dance+Technique.webm",
+  "direct_media_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Tap_Dance_Technique.webm",
+  "source_file": "evaluation/open-video-scenarios/sources/04_tap_original.webm",
+  "original_bytes": 6532126,
+  "original_sha1": "88d07143bbc1a2f9d711a8805c02427fe68a8fcd",
+  "original_sha256": "183d5e3818d5a8d6b1e8b3f5c6bf40b90aec28a04c9d81bfacbf2cb412451cf2",
+  "commons_raw_metadata_file": "evaluation/open-video-scenarios/sources/04_commons_imageinfo.json",
+  "author_html": "<a href=\"//commons.wikimedia.org/wiki/User:Dbuetow\" title=\"User:Dbuetow\">Dbuetow</a>",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "width": 428,
+  "height": 240,
+  "scope": "Full source, no trim, speed change, looping, generated footage, or upscaling.",
+  "delivery_file": "evaluation/open-video-scenarios/videos/real-04-dancing.mp4",
+  "delivery_duration_s": 123.415533,
+  "delivery_bytes": 5434324,
+  "delivery_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+  "source_and_delivery_tracks": [
+    {
+      "file": "evaluation/open-video-scenarios/sources/04_tap_original.webm",
+      "container_duration_s": 124.393,
+      "tracks": [
+        {
+          "type": "video",
+          "codec": "vp8",
+          "width": 428,
+          "height": 240,
+          "pixel_format": "yuv420p",
+          "packet_count": 3697,
+          "start_s": 0,
+          "end_s": 123.356
+        },
+        {
+          "type": "audio",
+          "codec": "vorbis",
+          "sample_rate": "44100",
+          "channels": 2,
+          "packet_count": 7308,
+          "start_s": 0,
+          "end_s": 123.41499999999999
+        }
+      ]
+    },
+    {
+      "file": "evaluation/open-video-scenarios/videos/real-04-dancing.mp4",
+      "container_duration_s": 123.415533,
+      "tracks": [
+        {
+          "type": "video",
+          "codec": "h264",
+          "width": 428,
+          "height": 240,
+          "pixel_format": "yuv420p",
+          "packet_count": 3697,
+          "start_s": 0,
+          "end_s": 123.356567
+        },
+        {
+          "type": "audio",
+          "codec": "aac",
+          "sample_rate": "44100",
+          "channels": 2,
+          "packet_count": 5317,
+          "start_s": -0.020227,
+          "end_s": 123.415533
+        }
+      ]
+    }
+  ],
+  "faststart": true,
+  "decode_check": "all output frames/audio decode with ffmpeg -xerror",
+  "timing_note": "Source WebM duration tag says124.393s; last actual video packet ends123.356s and audio123.415s. Full output is123.415533s. All3697 video frames are retained. No trim, loop, duration padding, upscale or playback speed change.",
+  "audio_note": "Original audio content retained and reencoded from Vorbis to AAC128k; no added audio, mute, mixing or normalization.",
+  "asr": {
+    "status": "not_run",
+    "reason": "No ready localASR model/runtime found. No model installed or paid provider called."
+  },
+  "license_for_delivery": "CC BY-SA4.0; disclose container/codec conversion; retain author/source/license attribution"
+}

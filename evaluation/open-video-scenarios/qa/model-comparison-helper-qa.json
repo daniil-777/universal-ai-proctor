@@ -1,0 +1,31 @@
+{
+  "validated_at": "2026-10-05T11:12:58.385Z",
+  "status": "passed",
+  "scope": "Synthetic fixture verifies layout only; no measured model results or paid calls.",
+  "results": [
+    {
+      "width": 320,
+      "overflow": false,
+      "models": 3,
+      "cases": 42,
+      "metric_scroll": true,
+      "summary_touch_height": 68
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "models": 3,
+      "cases": 42,
+      "metric_scroll": true,
+      "summary_touch_height": 44
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "models": 3,
+      "cases": 42,
+      "metric_scroll": false,
+      "summary_touch_height": 44
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "retrieved_at": "2026-10-05T10:23:03.687179+00:00",
+  "scenario_id": "05",
+  "kind": "sport",
+  "source_page": "https://commons.wikimedia.org/wiki/File:Video_of_EZ_Bar_Curl_and_Straight_Bar_Curl.webm",
+  "original_direct_media_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Video_of_EZ_Bar_Curl_and_Straight_Bar_Curl.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+  "direct_media_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ec/Video_of_EZ_Bar_Curl_and_Straight_Bar_Curl.webm/Video_of_EZ_Bar_Curl_and_Straight_Bar_Curl.webm.1080p.vp9.webm",
+  "source_file": "evaluation/open-video-scenarios/sources/05_curl_commons_1080p.webm",
+  "downloaded_bytes": 79581517,
+  "downloaded_sha256": "5e587be9802eeb8549d4f14695e4432ee16989d2010689452153a789b2d8fb25",
+  "commons_original_bytes": 55971119,
+  "commons_original_sha1": "b35f24cf12e359b751e6640fb973733330ed9a1d",
+  "downloaded_representation": "Official Commons 1080p VP9/Opus transcode; original endpoint returned HTTP429 after respecting Retry-After. Full clip, same native dimensions; no excerpt.",
+  "commons_raw_metadata_files": [
+    "evaluation/open-video-scenarios/sources/05_commons_imageinfo.json",
+    "evaluation/open-video-scenarios/sources/05_commons_videoinfo.json"
+  ],
+  "author": "Colossus Fitness",
+  "author_html": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.youtube.com/@ColossusFitness\">Colossus Fitness</a>",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0",
+  "width": 1920,
+  "height": 1080,
+  "scope": "Full official source transcode, no trim, speed change, looping, generated footage, or upscaling.",
+  "verified_at": "2026-10-05T10:25:40.612330+00:00",
+  "delivery_file": "evaluation/open-video-scenarios/videos/real-05-sport.mp4",
+  "delivery_duration_s": 173.221875,
+  "delivery_bytes": 113075870,
+  "delivery_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+  "source_and_delivery_tracks": [
+    {
+      "file": "evaluation/open-video-scenarios/sources/05_curl_commons_1080p.webm",
+      "container_duration_s": 173.228,
+      "tracks": [
+        {
+          "type": "video",
+          "codec": "vp9",
+          "width": 1920,
+          "height": 1080,
+          "pixel_format": "yuv420p",
+          "sample_rate": null,
+          "channels": null,
+          "packet_count": 5190,
+          "start_s": 0.0,
+          "end_s": 173.17299999999997
+        },
+        {
+          "type": "audio",
+          "codec": "opus",
+          "width": null,
+          "height": null,
+          "pixel_format": null,
+          "sample_rate": "48000",
+          "channels": 2,
+          "packet_count": 8662,
+          "start_s": -0.006,
+          "end_s": 173.234
+        }
+      ]
+    },
+    {
+      "file": "evaluation/open-video-scenarios/videos/real-05-sport.mp4",
+      "container_duration_s": 173.221875,
+      "tracks": [
+        {
+          "type": "video",
+          "codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "pixel_format": "yuv420p",
+          "sample_rate": null,
+          "channels": null,
+          "packet_count": 5190,
+          "start_s": 0.0,
+          "end_s": 173.173
+        },
+        {
+          "type": "audio",
+          "codec": "aac",
+          "width": null,
+          "height": null,
+          "pixel_format": null,
+          "sample_rate": "48000",
+          "channels": 2,
+          "packet_count": 8121,
+          "start_s": -0.020333,
+          "end_s": 173.221875
+        }
+      ]
+    }
+  ],
+  "faststart": true,
+  "decode_check": "All output frames/audio decode with ffmpeg -xerror; exit0.",
+  "timing_note": "Official WebM duration173.228s; output173.221875s. Full source video packet/frame count retained with no trim, loop, duration padding, upscale or playback speed change. Tiny difference follows codec/container timebases.",
+  "audio_note": "Original audio retained and reencoded Opus to AAC128k; no added audio, mute, mixing or normalization.",
+  "asr": {
+    "status": "not_run",
+    "reason": "No ready localASR model/runtime found. No model installed or paid provider called."
+  },
+  "license_for_delivery": "CC BY3.0; disclose container/codec conversion and official1080p derivative; retain author/source/license attribution."
+}

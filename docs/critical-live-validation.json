@@ -1,0 +1,194 @@
+{
+  "date": "2026-10-04T15:47:28.366Z",
+  "description": "Synthetic label recognition; unseen action must remain unknown. Software smoke check, not a process/clinical accuracy study.",
+  "observations": [
+    {
+      "elapsed_ms": 2773,
+      "cached": false,
+      "used_frames": 1,
+      "image_quality": "available",
+      "vision_detail": "high",
+      "observation": {
+        "summary": "The visible content shows a package labeled as 'BOX A'. The label is clearly readable, fulfilling part of the first step criteria.",
+        "guidance": "Proceed to seal the package with tape as the next step since the label has been read and is visible.",
+        "principle": "",
+        "current_step_id": "S1",
+        "status": "ok",
+        "concern": "",
+        "steps": [
+          {
+            "id": "S1",
+            "confidence": 0.9,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "status": "met",
+                "evidence": "The label 'BOX A' is clearly printed and readable on the package.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "status": "unknown",
+                "evidence": "No evidence of sealing the package with tape is visible.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": []
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "progress": 50,
+          "complete": false
+        },
+        {
+          "id": "S2",
+          "progress": 0,
+          "complete": false
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 7,
+      "cached": true,
+      "used_frames": 1,
+      "image_quality": "available",
+      "vision_detail": "high",
+      "observation": {
+        "summary": "The visible content shows a package labeled as 'BOX A'. The label is clearly readable, fulfilling part of the first step criteria.",
+        "guidance": "Proceed to seal the package with tape as the next step since the label has been read and is visible.",
+        "principle": "",
+        "current_step_id": "S1",
+        "status": "ok",
+        "concern": "",
+        "steps": [
+          {
+            "id": "S1",
+            "confidence": 0.9,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "status": "met",
+                "evidence": "The label 'BOX A' is clearly printed and readable on the package.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "status": "unknown",
+                "evidence": "No evidence of sealing the package with tape is visible.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": []
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "progress": 50,
+          "complete": false
+        },
+        {
+          "id": "S2",
+          "progress": 0,
+          "complete": false
+        }
+      ]
+    },
+    {
+      "elapsed_ms": 3083,
+      "cached": false,
+      "used_frames": 1,
+      "image_quality": "available",
+      "vision_detail": "high",
+      "observation": {
+        "summary": "The visible content shows a package with the label 'BOX A', which is partially readable, fulfilling part of the first step criteria. However, the sealing of the package is not visible at this moment.",
+        "guidance": "Continue to inspect the label to ensure it's fully readable, then proceed with sealing the package. Confirm the sealing criteria once the sealing action is conducted.",
+        "principle": "",
+        "current_step_id": "S1",
+        "status": "watch",
+        "concern": "The package is not yet visibly sealed, which is necessary to complete the second step of the process.",
+        "steps": [
+          {
+            "id": "S1",
+            "confidence": 0.7,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "status": "partial",
+                "evidence": "The label 'BOX A' is clearly visible on the package.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "status": "unknown",
+                "evidence": "Sealing action is not visible in the current image.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": []
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "progress": 50,
+          "complete": false
+        },
+        {
+          "id": "S2",
+          "progress": 0,
+          "complete": false
+        }
+      ]
+    }
+  ],
+  "blank": {
+    "elapsed_ms": 23,
+    "image_quality": "unusable",
+    "observation": {
+      "summary": "The latest frame has no discernible visual detail.",
+      "guidance": "Check the camera view, lighting or playback before continuing observation.",
+      "principle": "",
+      "current_step_id": null,
+      "status": "watch",
+      "concern": "The current view cannot be assessed. Check the camera, lighting or playback; progress is unchanged.",
+      "steps": [],
+      "discovered_steps": []
+    }
+  }
+}

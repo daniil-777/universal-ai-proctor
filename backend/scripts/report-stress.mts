@@ -1,0 +1,24 @@
+// Synthetic local stress benchmark. Run report-preview.mts first. No model/network calls.
+import fs from 'node:fs/promises';
+import { renderAnalysisPdf, renderAnalysisHtml } from '../src/media/analysisReport.js';
+await fs.mkdir(new URL('../../tmp/pdfs/',import.meta.url),{recursive:true});
+const base=JSON.parse(await fs.readFile(new URL('../../output/pdf/process-guide-analysis-sample.json',import.meta.url),'utf8'));
+const mode=process.argv[2]||'realistic';
+const fill=(text,length)=>(text+' ').repeat(Math.ceil(length/(text.length+1))).slice(0,length);
+const data=structuredClone(base); const template=data.progress[0];
+const max=mode==='maximum';
+data.progress=Array.from({length:100},(_,i)=>({...template,id:`S${i+1}`,name:`${i+1} / ${fill('Verify equipment and record process quality',max?300:80)}`,objective:fill('Inspect the process inputs against the approved work instruction.',max?5000:200),complete:i%3===0,confirmation:i%3===0?'manual':null,criteria:Array.from({length:30},(_,j)=>({...template.criteria[0],key:`S${i+1}C${j+1}`,label:`${i===99&&j===29?'FINAL_CRITERION_MARKER_9999 ':''}${i+1}.${j+1} ${fill('Inspect the visible component and record the measurement result against the approved reference.',max?445:120)}`,evidence:fill('Observed sample requires operator verification of the measured values before completion.',max?1000:180)}))}));
+data.reference.title='MAXIMUM WORKFLOW STRESS TEST - synthetic data';
+data.reference.principles=Array.from({length:40},(_,i)=>fill(`Principle ${i+1}: Review the work area and record the inspection result.`,2000));
+data.operator_checks=Array.from({length:80},(_,i)=>({id:`check${i}`,label:fill(`Preparation check ${i+1}`,max?2000:100),checked:i%2===0,kind:i<40?'principle':'tool'}));
+data.evidence=Array.from({length:150},(_,i)=>({...base.evidence[i%3],id:`event${i}`,video_time_s:i*3,summary:fill(`Evidence record ${i+1}: ${base.evidence[i%3].summary}`,max?1600:180),guidance:fill('Use this sampled evidence for review and obtain measurement data where necessary.',max?800:120),concern:fill('Requires operator review.',max?250:50),thumbnail_b64:i<24?base.evidence[i%3].thumbnail_b64:undefined}));
+data.exception_history=Array.from({length:max?80:20},(_,i)=>({...base.exception_history[i%2],id:`issue${i}`,title:fill(`Exception ${i+1}: Measurement data requires review`,max?300:80),description:fill('Review the work instruction and the instrument reading before confirming the process.',max?2000:160),history:Array.from({length:max?20:4},(_,j)=>({status:j===19?'resolved':'acknowledged',at:Date.now()+j,operator:'Synthetic operator',note:fill(`Decision ${j+1}: Waiting for instrument result.`,max?1000:180)}))}));
+data.open_exceptions=data.exception_history.filter(x=>x.status!=='resolved');
+data.unresolved_criteria=data.progress.flatMap(s=>s.criteria.map(c=>({step_id:s.id,step_name:s.name,key:c.key,label:c.label,status:'unknown'})));
+data.retention={...data.retention,retained_events:150,retained_thumbnails:24};
+const metadata=data.evidence.map(({thumbnail_b64,...e})=>e); console.log(JSON.stringify({mode,input_mb:JSON.stringify(data).length/1024/1024,event_metadata_kb:JSON.stringify(metadata).length/1024}));
+const before=process.memoryUsage(); const cpu=process.cpuUsage(); const started=performance.now(); let timerRan=false, timerDelay=0; setTimeout(()=>{timerRan=true;timerDelay=performance.now()-started},0);
+const html=renderAnalysisHtml(data); const htmlMs=performance.now()-started;
+const pdfStarted=performance.now(); const pending=renderAnalysisPdf(data); const synchronousReturnMs=performance.now()-pdfStarted; const pdf=await pending; const pdfMs=performance.now()-pdfStarted;
+const after=process.memoryUsage(); await fs.writeFile(new URL(`../../tmp/pdfs/report-stress-${mode}.pdf`,import.meta.url),pdf); await fs.writeFile(new URL(`../../tmp/pdfs/report-stress-${mode}.html`,import.meta.url),html);
+console.log(JSON.stringify({mode,html_ms:Math.round(htmlMs),pdf_ms:Math.round(pdfMs),html_mb:html.length/1024/1024,pdf_mb:pdf.length/1024/1024,heap_mb:after.heapUsed/1024/1024,heap_delta_mb:(after.heapUsed-before.heapUsed)/1024/1024,rss_mb:after.rss/1024/1024,max_rss_mb:process.resourceUsage().maxRSS/1024,timer_ran_during_render:timerRan,timer_delay_ms:Math.round(timerDelay),synchronous_return_ms:Math.round(synchronousReturnMs),cpu_ms:Object.values(process.cpuUsage(cpu)).reduce((a,b)=>a+b,0)/1000,pages:pdf.toString('latin1').match(/\/Type \/Page\b/g)?.length}));

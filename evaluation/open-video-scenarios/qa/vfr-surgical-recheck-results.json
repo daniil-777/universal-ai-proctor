@@ -1,0 +1,481 @@
+{
+  "tested_at": "2026-10-05T10:49:15.237Z",
+  "model": "gpt-4o",
+  "mock": false,
+  "bank": "qa/recognition-question-bank-v2.json",
+  "samples": 6,
+  "window_seconds": 5,
+  "guardian_only": true,
+  "protocol": "Chronological anchors in all5realvideos; actualframe budget/window recorded separately. Sessions run chronologically, with explicit start/reset. Baselinev1 bank with3frames/1second is the comparable isolatedprompt test; revisedv2 with6frames/5seconds changes anchors and sampling and is diagnostic. Guardian stage identity and separate visual Q&A through productionappAPI. Lexicalconceptrecall is a limited proxy, not semantic correctness or clinicalvalidation. Singleobservation per stage, not sustained completion benchmark.",
+  "case_count": 2,
+  "stage_case_count": 2,
+  "answered_questions": 0,
+  "errors": 0,
+  "raw_stage_matches": 2,
+  "ui_stage_matches": 2,
+  "lexical_concept_recall": null,
+  "results": [
+    {
+      "id": "real-surgery-stage-1",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "expected_step_id": "S1",
+      "timestamp_s": 11,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "Introductory cross-sectional grayscale imaging is shown before the endoscopic working view. It does not establish a diagnosis or operative action.",
+      "expected_concepts": [
+        [
+          "grayscale",
+          "gray",
+          "grey",
+          "cross-sectional",
+          "ct",
+          "imaging"
+        ],
+        [
+          "introduction",
+          "introductory",
+          "before",
+          "pre-procedure",
+          "presentation"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "guardian": {
+        "observation": {
+          "summary": "The latest images display grayscale cross-sectional images, notably CT scans, without visible endoscopic tools or colored operative views.",
+          "guidance": "Proceed once there's evidence of endoscopic views replacing cross-sectional images. Continue observing for the timeline change.",
+          "principle": "Visual evidence from the video is required to confirm specific workflow states; do not infer unseen changes.",
+          "current_step_id": "S1",
+          "status": "ok",
+          "concern": "Grayscale images without colored endoscopic views may indicate the process is at an early stage or a view outside the main surgical steps so far.",
+          "steps": [
+            {
+              "id": "S1",
+              "confidence": 0.9,
+              "criteria": [
+                {
+                  "key": "S1C2",
+                  "status": "met",
+                  "evidence": "Visible sequence of grayscale cross-sectional images in frames 0 to 5.",
+                  "frame_indices": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                  ]
+                }
+              ]
+            }
+          ],
+          "discovered_steps": []
+        },
+        "current_stage_id": "S1",
+        "used_frames": 6,
+        "frame_times_s": [
+          6,
+          8.04,
+          10.12,
+          10.16,
+          10.56,
+          10.96
+        ],
+        "ms": 2819,
+        "image_quality": "available",
+        "criteria": [
+          {
+            "id": "S1",
+            "complete": false,
+            "progress": 25,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "The opening title card is visible before the operative footage.",
+                "status": "unknown"
+              },
+              {
+                "key": "S1C2",
+                "label": "A sequence of grayscale cross-sectional images is visible before the first endoscopic scene.",
+                "status": "partial",
+                "evidence": "Visible sequence of grayscale cross-sectional images in frames 0 to 5.",
+                "confidence": 0.9
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "A colored endoscopic field replaces the introductory imaging.",
+                "status": "unknown"
+              },
+              {
+                "key": "S2C2",
+                "label": "Visible instrument tips move in the operative field during this section.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "A thread or loop is visible together with working instrument tips.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C2",
+                "label": "The thread position changes while a visible tip handles or approaches it.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C3",
+                "label": "Repeated instrument movements are visible in the close-up sequence.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S4",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S4C1",
+                "label": "A circular grayscale imaging view appears between operative scenes.",
+                "status": "unknown"
+              },
+              {
+                "key": "S4C2",
+                "label": "The displayed video returns to a colored endoscopic field after that view.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S5",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S5C1",
+                "label": "White woven material is visibly present in the operative field.",
+                "status": "unknown"
+              },
+              {
+                "key": "S5C2",
+                "label": "Its position or exposed portion changes during visible instrument handling.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S6",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S6C1",
+                "label": "A clear curved tube is visible in a later endoscopic scene.",
+                "status": "unknown"
+              },
+              {
+                "key": "S6C2",
+                "label": "Visible tube or instrument handling occurs after the woven-material sequence.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S7",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S7C1",
+                "label": "A final grayscale cross-sectional image is displayed after the later operative scenes.",
+                "status": "unknown"
+              },
+              {
+                "key": "S7C2",
+                "label": "The supplied clip ends after the final displayed image.",
+                "status": "unknown"
+              }
+            ]
+          }
+        ]
+      },
+      "raw_stage_match": true,
+      "ui_stage_match": true,
+      "latency_ms": 2824
+    },
+    {
+      "id": "real-surgery-stage-4",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "expected_step_id": "S4",
+      "timestamp_s": 117.6,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "A brief circular monochrome imaging view interrupts the operative sequence. This is a change of displayed view, not a diagnostic conclusion.",
+      "expected_concepts": [
+        [
+          "circular",
+          "round",
+          "monochrome",
+          "grayscale",
+          "gray",
+          "grey"
+        ],
+        [
+          "image",
+          "imaging",
+          "view"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "guardian": {
+        "observation": {
+          "summary": "The latest image shows a circular grayscale imaging view indicative of a contrast procedure, likely cholangiography, based on the labeled content. The earlier images show colored endoscopic scenes with visible instruments engaged in potential tissue manipulation, but do not display the woven material or tube described in later steps.",
+          "guidance": "Continue to observe for any return to a colored endoscopic view following the grayscale imaging. Ensure to note any identifiable changes in the imaging or instruments present, focusing on the appearance of a clear tube or woven material.",
+          "principle": "Do not assume continuity between cuts in the view; each sequence should be assessed individually for its specific visible content.",
+          "current_step_id": "S4",
+          "status": "ok",
+          "concern": "None of the expected woven material or tube is currently visible.",
+          "steps": [
+            {
+              "id": "S4",
+              "confidence": 0.9,
+              "criteria": [
+                {
+                  "key": "S4C1",
+                  "status": "met",
+                  "evidence": "A circular grayscale imaging view is visible in the latest image.",
+                  "frame_indices": [
+                    2,
+                    3,
+                    4,
+                    5
+                  ]
+                },
+                {
+                  "key": "S4C2",
+                  "status": "unknown",
+                  "evidence": "No colored endoscopic view is visible in the latest frames.",
+                  "frame_indices": [
+                    2,
+                    3,
+                    4,
+                    5
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "S3",
+              "confidence": 0.7,
+              "criteria": [
+                {
+                  "key": "S3C1",
+                  "status": "met",
+                  "evidence": "A thread or loop and instrument tips are visible in the endoscopic field.",
+                  "frame_indices": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "key": "S3C2",
+                  "status": "met",
+                  "evidence": "The thread changes position while being manipulated by instruments.",
+                  "frame_indices": [
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "key": "S3C3",
+                  "status": "unknown",
+                  "evidence": "Specific repeated instrument movements are not explicitly visible.",
+                  "frame_indices": [
+                    0,
+                    1
+                  ]
+                }
+              ]
+            }
+          ],
+          "discovered_steps": []
+        },
+        "current_stage_id": "S4",
+        "used_frames": 6,
+        "frame_times_s": [
+          112.6,
+          114.63999999999999,
+          116.72,
+          116.75999999999999,
+          117.16,
+          117.56
+        ],
+        "ms": 4720,
+        "image_quality": "available",
+        "criteria": [
+          {
+            "id": "S1",
+            "complete": false,
+            "progress": 25,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "The opening title card is visible before the operative footage.",
+                "status": "unknown"
+              },
+              {
+                "key": "S1C2",
+                "label": "A sequence of grayscale cross-sectional images is visible before the first endoscopic scene.",
+                "status": "partial",
+                "evidence": "Visible sequence of grayscale cross-sectional images in frames 0 to 5.",
+                "confidence": 0.9
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "A colored endoscopic field replaces the introductory imaging.",
+                "status": "unknown"
+              },
+              {
+                "key": "S2C2",
+                "label": "Visible instrument tips move in the operative field during this section.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "A thread or loop is visible together with working instrument tips.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C2",
+                "label": "The thread position changes while a visible tip handles or approaches it.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C3",
+                "label": "Repeated instrument movements are visible in the close-up sequence.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S4",
+            "complete": false,
+            "progress": 25,
+            "criteria": [
+              {
+                "key": "S4C1",
+                "label": "A circular grayscale imaging view appears between operative scenes.",
+                "status": "partial",
+                "evidence": "A circular grayscale imaging view is visible in the latest image.",
+                "confidence": 0.9
+              },
+              {
+                "key": "S4C2",
+                "label": "The displayed video returns to a colored endoscopic field after that view.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S5",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S5C1",
+                "label": "White woven material is visibly present in the operative field.",
+                "status": "unknown"
+              },
+              {
+                "key": "S5C2",
+                "label": "Its position or exposed portion changes during visible instrument handling.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S6",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S6C1",
+                "label": "A clear curved tube is visible in a later endoscopic scene.",
+                "status": "unknown"
+              },
+              {
+                "key": "S6C2",
+                "label": "Visible tube or instrument handling occurs after the woven-material sequence.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S7",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S7C1",
+                "label": "A final grayscale cross-sectional image is displayed after the later operative scenes.",
+                "status": "unknown"
+              },
+              {
+                "key": "S7C2",
+                "label": "The supplied clip ends after the final displayed image.",
+                "status": "unknown"
+              }
+            ]
+          }
+        ]
+      },
+      "raw_stage_match": true,
+      "ui_stage_match": true,
+      "latency_ms": 4726
+    }
+  ]
+}

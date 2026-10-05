@@ -1,0 +1,143 @@
+{
+  "title": "Process Guide: 90-second narrated tour",
+  "duration_s": 90,
+  "language": "en",
+  "captions_burned_in": true,
+  "chapters": [
+    {
+      "id": "start",
+      "title": "Start and choose a source",
+      "start_s": 0.0,
+      "end_s": 11.8,
+      "text": "Process Guide turns a video or live view into a guided workflow. Choose a video file, camera, or shared screen. Here, we use the parts sorting example."
+    },
+    {
+      "id": "setup",
+      "title": "Instructions and wishes",
+      "start_s": 11.8,
+      "end_s": 23.633333333333333,
+      "text": "Upload a text guide, or choose a sample. Without a document, inferred steps remain provisional. Set your guidance preferences and personal wishes, then open the workspace."
+    },
+    {
+      "id": "workflow",
+      "title": "Workspace, steps and confirmation",
+      "start_s": 23.633333333333333,
+      "end_s": 41.13333333333333,
+      "text": "Your source stays on the left. Drag the divider to give either side more room. Steps and principles explain the action and its purpose. Evidence shows what the system observed. Review each result. Manual confirmations remain clearly separate from AI observations."
+    },
+    {
+      "id": "guidance",
+      "title": "Questions and Guardian",
+      "start_s": 41.13333333333333,
+      "end_s": 53.333333333333336,
+      "text": "Ask a typed question, or use voice controls. Speech and microphone access require your action. Guardian adds ongoing observation. Pause guidance whenever you need to inspect the source."
+    },
+    {
+      "id": "readiness",
+      "title": "Readiness",
+      "start_s": 53.333333333333336,
+      "end_s": 59.5,
+      "text": "In Readiness, record the job context and complete your preparation checks before work."
+    },
+    {
+      "id": "review",
+      "title": "Evidence and exceptions",
+      "start_s": 59.5,
+      "end_s": 64.73333333333333,
+      "text": "Review lets you bookmark a frame and raise an exception when evidence needs attention."
+    },
+    {
+      "id": "report",
+      "title": "Reports, PDF and sharing",
+      "start_s": 64.73333333333333,
+      "end_s": 77.2,
+      "text": "Open the analysis report to review the workflow, observations, and unresolved issues. Prepare a PDF, export offline HTML, or share the file. Reports can include session details."
+    },
+    {
+      "id": "account",
+      "title": "Private account and saved results",
+      "start_s": 77.2,
+      "end_s": 90,
+      "text": "Create or sign in to a private local account, then save the current result. Saved results remain available for review on this deployment. The simulator connection is planned, and inactive."
+    }
+  ],
+  "transcript": [
+    {
+      "start_s": 0.12,
+      "end_s": 4.767458,
+      "text": "Process Guide turns a video or live view into a guided workflow."
+    },
+    {
+      "start_s": 5.172395600000001,
+      "end_s": 11.5011246,
+      "text": "Choose a video file, camera, or shared screen. Here, we use the parts sorting example."
+    },
+    {
+      "start_s": 11.9060622,
+      "end_s": 17.558041199999998,
+      "text": "Upload a text guide, or choose a sample. Without a document, inferred steps remain provisional."
+    },
+    {
+      "start_s": 17.962978800000002,
+      "end_s": 23.3280618,
+      "text": "Set your guidance preferences and personal wishes, then open the workspace."
+    },
+    {
+      "start_s": 23.732999400000004,
+      "end_s": 28.382499400000004,
+      "text": "Your source stays on the left. Drag the divider to give either side more room."
+    },
+    {
+      "start_s": 28.787437000000004,
+      "end_s": 34.81250000000001,
+      "text": "Steps and principles explain the action and its purpose. Evidence shows what the system observed."
+    },
+    {
+      "start_s": 35.217437600000004,
+      "end_s": 40.8346456,
+      "text": "Review each result. Manual confirmations remain clearly separate from AI observations."
+    },
+    {
+      "start_s": 41.239583200000006,
+      "end_s": 47.6535622,
+      "text": "Ask a typed question, or use voice controls. Speech and microphone access require your action."
+    },
+    {
+      "start_s": 48.05849980000001,
+      "end_s": 53.021728800000005,
+      "text": "Guardian adds ongoing observation. Pause guidance whenever you need to inspect the source."
+    },
+    {
+      "start_s": 53.42666640000001,
+      "end_s": 59.21027040000001,
+      "text": "In Readiness, record the job context and complete your preparation checks before work."
+    },
+    {
+      "start_s": 59.61520800000001,
+      "end_s": 64.43862500000002,
+      "text": "Review lets you bookmark a frame and raise an exception when evidence needs attention."
+    },
+    {
+      "start_s": 64.84356260000001,
+      "end_s": 70.25702060000002,
+      "text": "Open the analysis report to review the workflow, observations, and unresolved issues."
+    },
+    {
+      "start_s": 70.66195820000002,
+      "end_s": 76.89808320000002,
+      "text": "Prepare a PDF, export offline HTML, or share the file. Reports can include session details."
+    },
+    {
+      "start_s": 77.30302080000001,
+      "end_s": 81.71135380000001,
+      "text": "Create or sign in to a private local account, then save the current result."
+    },
+    {
+      "start_s": 82.11629140000001,
+      "end_s": 89.71506240000001,
+      "text": "Saved results remain available for review on this deployment. The simulator connection is planned, and inactive."
+    }
+  ],
+  "notes": "AI-generated narration. Screens are captured from the local app with deterministic document extraction; visual detection accuracy is not being benchmarked.",
+  "chapter_frame_rate": 30
+}

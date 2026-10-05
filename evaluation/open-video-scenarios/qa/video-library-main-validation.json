@@ -1,0 +1,37 @@
+{
+  "validated_at": "2026-10-05T10:47:10.197Z",
+  "status": "passed",
+  "results": [
+    {
+      "width": 320,
+      "box": {
+        "x": 16,
+        "y": 318.171875,
+        "width": 288,
+        "height": 88.25
+      },
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "box": {
+        "x": 24,
+        "y": 375.9375,
+        "width": 333.25,
+        "height": 68.75
+      },
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "box": {
+        "x": 140,
+        "y": 450.9375,
+        "width": 333.25,
+        "height": 68.75
+      },
+      "overflow": false
+    }
+  ],
+  "paid_provider_calls": 0
+}

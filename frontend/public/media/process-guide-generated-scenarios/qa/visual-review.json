@@ -1,0 +1,31 @@
+{
+  "reviewed_at": "2026-10-05T09:55:06.343Z",
+  "method": "Human review of eight frames per clip at 2 fps, supplemented by decoder and browser playback checks",
+  "notes": [
+    {
+      "scenario": "01",
+      "visible": "Supervisor raises a spirit level and holds it vertically against the accessible timber wall element beside a two-storey building.",
+      "limits": "Bubble reading, structural capacity, hidden connections and code compliance are not established. Plans, a separate access inspection and written checkpoint record are not shown."
+    },
+    {
+      "scenario": "02",
+      "visible": "Two gloved hands lower a cylindrical metal component onto the fixture and then release or pause around it.",
+      "limits": "Whether the intended fixture seat is correctly engaged is uncertain from this view. No tolerance reading, part identifier, calibration check, release decision or separate parking event is established."
+    },
+    {
+      "scenario": "03",
+      "visible": "Gloved hand moves a practice instrument toward coloured artificial targets in a tray or trainer-like setting; movement pauses near a target.",
+      "limits": "Instrument geometry is generated and must not be treated as a faithful model of a real laparoscopic tool. Contact is ambiguous, and a clear withdrawal is not shown. The requested approach-pause-withdrawal sequence is incomplete; withdrawal and final-after-withdrawal steps remain unobserved. Context and instrument suitability need instructor confirmation."
+    },
+    {
+      "scenario": "04",
+      "visible": "Foreground dancer takes a short lateral/diagonal step and changes facing direction, ending in a pause. A mirror reflection is visible behind the foreground performer.",
+      "limits": "Track the foreground dancer only. Do not count the reflection as another participant or repetition. A return to the initial spot is not clearly shown, and the exact coach cue and quarter-turn angle cannot be established."
+    },
+    {
+      "scenario": "05",
+      "visible": "Athlete begins upright, lowers, briefly occupies a lower position, and rises to upright; the body and feet remain visible.",
+      "limits": "Only one visible cycle is represented. Do not infer pain, loading symmetry, precise joint angles, readiness or ideal technique; the lowered position is not a prescribed depth target."
+    }
+  ]
+}

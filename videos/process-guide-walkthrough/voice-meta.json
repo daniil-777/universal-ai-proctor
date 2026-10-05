@@ -1,0 +1,97 @@
+{
+  "provider": "Process Guide local /api/tts: OpenAI gpt-4o-mini-tts, nova",
+  "generated_at": "2026-10-05T06:06:55.338Z",
+  "lines": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "text": "Process Guide turns a video or live view into a guided workflow.",
+      "duration": 5.112
+    },
+    {
+      "id": "source",
+      "title": "Choose a source",
+      "text": "Choose a video file, camera, or shared screen. Here, we use the parts sorting example.",
+      "duration": 6.96
+    },
+    {
+      "id": "guide",
+      "title": "Add instructions",
+      "text": "Upload a text guide, or choose a sample. Without a document, inferred steps remain provisional.",
+      "duration": 6.216
+    },
+    {
+      "id": "wishes",
+      "title": "Set your wishes",
+      "text": "Set your guidance preferences and personal wishes, then open the workspace.",
+      "duration": 5.904
+    },
+    {
+      "id": "resize",
+      "title": "Arrange the workspace",
+      "text": "Your source stays on the left. Drag the divider to give either side more room.",
+      "duration": 5.112
+    },
+    {
+      "id": "steps",
+      "title": "Follow steps and principles",
+      "text": "Steps and principles explain the action and its purpose. Evidence shows what the system observed.",
+      "duration": 6.648
+    },
+    {
+      "id": "manual",
+      "title": "Confirm carefully",
+      "text": "Review each result. Manual confirmations remain clearly separate from AI observations.",
+      "duration": 6.168
+    },
+    {
+      "id": "chat",
+      "title": "Ask for guidance",
+      "text": "Ask a typed question, or use voice controls. Speech and microphone access require your action.",
+      "duration": 7.056
+    },
+    {
+      "id": "guardian",
+      "title": "Guardian observation",
+      "text": "Guardian adds ongoing observation. Pause guidance whenever you need to inspect the source.",
+      "duration": 5.448
+    },
+    {
+      "id": "readiness",
+      "title": "Check readiness",
+      "text": "In Readiness, record the job context and complete your preparation checks before work.",
+      "duration": 6.36
+    },
+    {
+      "id": "review",
+      "title": "Review and exceptions",
+      "text": "Review lets you bookmark a frame and raise an exception when evidence needs attention.",
+      "duration": 5.304
+    },
+    {
+      "id": "report",
+      "title": "Analysis report",
+      "text": "Open the analysis report to review the workflow, observations, and unresolved issues.",
+      "duration": 5.952
+    },
+    {
+      "id": "export",
+      "title": "Export and share",
+      "text": "Prepare a PDF, export offline HTML, or share the file. Reports can include session details.",
+      "duration": 6.864
+    },
+    {
+      "id": "account",
+      "title": "Save a result",
+      "text": "Create or sign in to a private local account, then save the current result.",
+      "duration": 4.848
+    },
+    {
+      "id": "saved",
+      "title": "Return to saved results",
+      "text": "Saved results remain available for review on this deployment. The simulator connection is planned, and inactive.",
+      "duration": 8.352
+    }
+  ],
+  "total_duration": 92.304
+}

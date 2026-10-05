@@ -1,0 +1,16 @@
+SEEDANCE SCENE: Large-house construction control
+
+SHORT PREVIEW: 4 seconds, 16:9, 1080p output, silent
+
+Photorealistic premium enterprise commercial. Landscape 16:9, 1920 by 1080 output, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. A large beautiful contemporary two-storey house under construction stands behind an adult construction supervisor wearing a hard hat, high-visibility vest, safety glasses and work boots. Safe daylight work area, no moving crane or heavy machinery, no one working at height. Medium-wide eye-level framing shows the house structure, supervisor and full vertical timber wall post. During four seconds the supervisor calmly places a spirit level against the timber post, looks toward the level, then holds still to inspect it. The level and post remain clearly visible. Smooth subtle lateral camera move. No magical building transformation or instant construction.
+
+EXPANDED VERSION: 12 seconds, 16:9, 1080p
+
+Photorealistic premium enterprise commercial. Landscape 16:9, 1920 by 1080 output, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. Opening wide view of the same large modern house at the framing stage, then a smooth approach to an adult site supervisor in PPE. The supervisor reviews a plain plan sheet, places a level on a visible timber wall post, pauses to inspect the visible workmanship, and makes one note on a clipboard. Keep the house geometry stable and the actions sequential. Show a single construction checkpoint, not the whole build completed in seconds.
+
+MODEL OPTIONS
+Seedance 1.5 Pro: the affordable preview model quoted through Higgsfield.
+Seedance 2.5: newer premium option for the expanded version, subject to available credits.
+Do not generate an app interface or fake AI results inside the footage. Add actual app captures in a separate approved edit.
+
+Output dimensions will be measured from the MP4. This does not establish the provider's internal rendering or upscaling method.

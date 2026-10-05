@@ -1,0 +1,93 @@
+{
+  "prepared_at": "2026-10-05T10:39:47.943545+00:00",
+  "baseline_preserved": true,
+  "protected_sha256_before": {
+    "recognition-question-bank.json": "b249bf6fa988b2b8efdd6a7b61f38abc78e08876f5e26f8dda72896f8c9d0e4a",
+    "recognition-question-bank.txt": "445fa3f47eae853f323ae7a7ca16608ebd36c1303715cb34d902d0437b99ae55",
+    "live-recognition-results.json": "347a4f91807b0812ab6ccef5f7466c21519b29d5fa632dc9fd32fd05e92e3275"
+  },
+  "protected_sha256_after": {
+    "recognition-question-bank.json": "b249bf6fa988b2b8efdd6a7b61f38abc78e08876f5e26f8dda72896f8c9d0e4a",
+    "recognition-question-bank.txt": "445fa3f47eae853f323ae7a7ca16608ebd36c1303715cb34d902d0437b99ae55",
+    "live-recognition-results.json": "347a4f91807b0812ab6ccef5f7466c21519b29d5fa632dc9fd32fd05e92e3275"
+  },
+  "baseline_raw_exact_stage_agreement": {
+    "matches": 17,
+    "total": 32,
+    "description": "Original raw exact-ID reference agreement. Unchanged; not a validated general accuracy estimate."
+  },
+  "v2_case_count": 42,
+  "v2_stage_count": 32,
+  "v2_uncertainty_count": 10,
+  "corrected_anchor_count": 5,
+  "anchor_corrections": [
+    {
+      "case_id": "real-surgery-stage-5",
+      "expected_step_id": "S5",
+      "old_timestamp_s": 137,
+      "new_timestamp_s": 133,
+      "original_frame": "qa/review-v2/real-surgery-stage-5.jpg",
+      "reviewed_frame": "qa/review-v2/candidate-surgery-woven-133.jpg",
+      "reason": "The original 137s rolled pale cylinder resembles a tube. At 133s exposed woven mesh texture is clearer. A separate reddish/orange tube remains visible and must not be denied.",
+      "completion_claim": "Anchor supports visible phase evidence only; retained completion criteria are not automatically satisfied."
+    },
+    {
+      "case_id": "real-dancing-stage-2",
+      "expected_step_id": "S2",
+      "old_timestamp_s": 19,
+      "new_timestamp_s": 23,
+      "original_frame": "qa/review-v2/real-dancing-stage-2.jpg",
+      "reviewed_frame": "qa/review-v2/candidate-dancing-23.jpg",
+      "reason": "At 19s both shoes are grounded. At 23s the oblique close view clearly shows the free shoe raised behind the supporting leg.",
+      "completion_claim": "Anchor supports visible phase evidence only; retained completion criteria are not automatically satisfied."
+    },
+    {
+      "case_id": "real-dancing-stage-4",
+      "expected_step_id": "S4",
+      "old_timestamp_s": 50,
+      "new_timestamp_s": 53,
+      "original_frame": "qa/review-v2/real-dancing-stage-4.jpg",
+      "reviewed_frame": "qa/review-v2/candidate-dancing-53.jpg",
+      "reason": "At 50s both shoes are near the floor with a weak orientation cue. At 53s the working shoe has a more visible angled toe/raised-heel orientation in the front/oblique crop.",
+      "completion_claim": "Anchor supports visible phase evidence only; retained completion criteria are not automatically satisfied."
+    },
+    {
+      "case_id": "real-dancing-stage-7",
+      "expected_step_id": "S7",
+      "old_timestamp_s": 104,
+      "new_timestamp_s": 106,
+      "original_frame": "qa/review-v2/real-dancing-stage-7.jpg",
+      "reviewed_frame": "qa/review-v2/candidate-dancing-106.jpg",
+      "reason": "At 104s both shoes are grounded. At 106s the wider view clearly shows a free shoe raised behind the supporting leg while the supporting shoe stays at the floor.",
+      "completion_claim": "Anchor supports visible phase evidence only; retained completion criteria are not automatically satisfied."
+    },
+    {
+      "case_id": "real-sport-stage-1",
+      "expected_step_id": "S1",
+      "old_timestamp_s": 37,
+      "new_timestamp_s": 35,
+      "original_frame": "qa/review-v2/real-sport-stage-1.jpg",
+      "reviewed_frame": "qa/review-v2/candidate-sport-low-35.jpg",
+      "reason": "The original 37s frame has entered the raised-bar phase. At 35s an overhead view shows both hands contacting the angled EZ bar at the floor. This anchors starting pickup, not an already-complete upright low hold.",
+      "completion_claim": "Anchor supports visible phase evidence only; retained completion criteria are not automatically satisfied."
+    }
+  ],
+  "reference_wording_corrections": "All eight dance references now separate reviewed single-frame evidence from unobserved return/cycle/travel, and questions specify camera/direction cues. Sport pickup and surgery woven references are corrected to actual frames.",
+  "expected_stage_ids_policy": "All32 stage cases remain singleton original primary IDs. No alternate stage IDs added. Ten uncertainty cases use empty arrays.",
+  "protocol_limitations": [
+    "Six frames over five seconds is longer than the original three frames over one second. Any gains combine sampling/question-anchor changes; do not call this an isolated algorithm improvement.",
+    "A five-second interval can cross an edited shot boundary. The runner must preserve actual frame timestamps and disclose mixed phases.",
+    "Single reviewed stills do not prove action completion; retained guide criteria need temporal or other evidence.",
+    "Lexical concept matching is a screening proxy and is not semantic, clinical, equipment, or safety validation."
+  ],
+  "reviewed_frame_index": "qa/review-v2/frame-index.json",
+  "reviewed_contact_sheets": [
+    "qa/review-v2/construction-manufacturing-review.jpg",
+    "qa/review-v2/surgery-sport-review.jpg",
+    "qa/review-v2/dance-review.jpg",
+    "qa/review-v2/candidates-review.jpg",
+    "qa/review-v2/dance-candidates-review.jpg"
+  ],
+  "all_32_stage_anchors_reviewed": true,
+  "review_inventory_count": 60
+}

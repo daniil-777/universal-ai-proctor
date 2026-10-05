@@ -1,0 +1,1123 @@
+{
+  "schema_version": 1,
+  "prepared_at": "2026-10-05T11:05:59.692416+00:00",
+  "scope": "Read-only manual audit of all32 v2 anchor stills from actual delivered source clips. No model call, no baseline edits, no extra accepted stage IDs.",
+  "review_limits": [
+    "Reviewer evaluated extracted stills/contact sheets, not every frame of the full motion window. Direction, return and causal process completion remain sequence-level questions.",
+    "Labels exclusive/unambiguous mean visually discriminative among these guide phases at the reviewed anchor, not validated industrial/clinical correctness.",
+    "Some stills are low-resolution, blurred or cropped. Clinical identity/function is intentionally not inferred."
+  ],
+  "summary": {
+    "stage_count": 32,
+    "classification_counts": {
+      "exclusive_unambiguous": 19,
+      "ambiguous_overlapping": 12,
+      "bad_or_insufficient_anchor": 1
+    },
+    "bad_anchor_or_reference_flags": 3,
+    "bad_flag_case_ids": [
+      "real-surgery-stage-3",
+      "real-dancing-stage-1",
+      "real-sport-stage-2"
+    ],
+    "bank_expected_ids_preserved": true
+  },
+  "baseline_sha256_before": {
+    "recognition-question-bank.json": "b249bf6fa988b2b8efdd6a7b61f38abc78e08876f5e26f8dda72896f8c9d0e4a",
+    "recognition-question-bank-v2.json": "a910cf9087bff97e83434e35b3564164840979f9def5c98c2ce7f06c4ddd8a5a"
+  },
+  "baseline_sha256_after": {
+    "recognition-question-bank.json": "b249bf6fa988b2b8efdd6a7b61f38abc78e08876f5e26f8dda72896f8c9d0e4a",
+    "recognition-question-bank-v2.json": "a910cf9087bff97e83434e35b3564164840979f9def5c98c2ce7f06c4ddd8a5a"
+  },
+  "scoring_policy": {
+    "exact_id_metric": "Keep raw v1/v2 exact expected-ID agreement unchanged.",
+    "supplemental_attribute_metric": "Separately judge visible assertions true/false/unknown and unsupported affirmative claims, with manual evidence traceability. Do not substitute attribute agreement for stage-ID accuracy.",
+    "ambiguous_cases": "Publish raw-ID results and ambiguity-stratified results; an alternate plausible stage is explanatory evidence, not an automatic pass.",
+    "uncertainty": "Appropriate uncertainty about invisible motion, measurements, approvals and clinical outcomes is preferable to an invented completion."
+  },
+  "supplemental_clear_evidence_not_bank_changes": [
+    {
+      "case_id": "real-dancing-stage-1",
+      "proposal": "Review a short continuous side-on opening window rather than the7s cropped-supporting-shoe still; pick no new anchor until actual lift and floor return are observed."
+    },
+    {
+      "case_id": "real-surgery-stage-3",
+      "proposal": "Inspect neighboring full-resolution source frames for an independently identifiable thread/loop before scoring thread-specific claims. No substitute timestamp asserted by this audit."
+    },
+    {
+      "case_id": "real-sport-stage-2",
+      "existing_reviewed_frame": "qa/review-v2/candidate-sport-low-37.5.jpg",
+      "timestamp_s": 37.5,
+      "visible_fact": "Clearly raised angled EZ bar at upper torso.",
+      "limitation": "Outside S2guide39–43s anchor; supplemental equipment/raised-state evidence only, not a replacement S2 ground truth."
+    }
+  ],
+  "local_model_availability": {
+    "endpoint": "http://127.0.0.1:11434/api/tags",
+    "reachable": true,
+    "installed_models": [
+      {
+        "name": "z-uo/llava-med-v1.5-mistral-7b_q8_0:latest",
+        "parameter_size": "7.2B",
+        "quantization": "Q8_0",
+        "bytes": 8320294522,
+        "families": [
+          "llama",
+          "clip"
+        ]
+      }
+    ],
+    "inference_calls": 0,
+    "medical_name_does_not_establish_clinical_validation": true
+  },
+  "cases": [
+    {
+      "case_id": "real-house-construction-stage-1",
+      "scenario_id": "real-house-construction",
+      "expected_step_id_unchanged": "S1",
+      "original_v1_timestamp_s": 10,
+      "v2_timestamp_s": 10,
+      "reviewed_frame": "qa/review-v2/real-house-construction-stage-1.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Gloved hand presents numerous metallic screw-like fasteners.",
+        "On-screen label reads Galvanized hardware."
+      ],
+      "not_established": [
+        "Chemical coating or corrosion protection verified.",
+        "Panel-edge preparation or fastening performed in this frame."
+      ],
+      "classification_reason": "Hardware presentation is a distinctive shot in this guide.",
+      "visible_attributes": {
+        "fasteners_visible": true,
+        "gloved_hand_visible": true,
+        "galvanized_coating_verified": "unknown"
+      },
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-house-construction-stage-2",
+      "scenario_id": "real-house-construction",
+      "expected_step_id_unchanged": "S2",
+      "original_v1_timestamp_s": 40,
+      "v2_timestamp_s": 40,
+      "reviewed_frame": "qa/review-v2/real-house-construction-stage-2.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "A lower enclosure with upright wall panels/openings stands on a floor platform.",
+        "A near/front horizontal joist area is still exposed."
+      ],
+      "not_established": [
+        "Connections, stability or full wall installation accepted."
+      ],
+      "classification_reason": "Single-level wall enclosure differs from the later two-storey/roof views.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-house-construction-stage-3",
+      "scenario_id": "real-house-construction",
+      "expected_step_id_unchanged": "S3",
+      "original_v1_timestamp_s": 90,
+      "v2_timestamp_s": 90,
+      "reviewed_frame": "qa/review-v2/real-house-construction-stage-3.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Two wall levels with openings are visible.",
+        "Exposed horizontal framing projects at the upper-floor/front edge.",
+        "A finished pitched roof covering is not visible."
+      ],
+      "not_established": [
+        "Correct fasteners/bracing or structural adequacy."
+      ],
+      "classification_reason": "Upper-wall assembly is visually distinct from the later pitched roof outline.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-house-construction-stage-4",
+      "scenario_id": "real-house-construction",
+      "expected_step_id_unchanged": "S4",
+      "original_v1_timestamp_s": 115,
+      "v2_timestamp_s": 115,
+      "reviewed_frame": "qa/review-v2/real-house-construction-stage-4.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Two wall levels stand below a visible triangular/pitched roof-frame outline.",
+        "Timber members remain exposed."
+      ],
+      "not_established": [
+        "Roof completion, weatherproofing or correct bracing."
+      ],
+      "classification_reason": "Roof outline is present, distinguishing it from earlier wall-only views.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-house-construction-stage-5",
+      "scenario_id": "real-house-construction",
+      "expected_step_id_unchanged": "S5",
+      "original_v1_timestamp_s": 130,
+      "v2_timestamp_s": 130,
+      "reviewed_frame": "qa/review-v2/real-house-construction-stage-5.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Close view shows sloping timber ends meeting a horizontal support beam.",
+        "White/light material is visible along part of the joint.",
+        "Overlay states Supporting bar 100x150 mm."
+      ],
+      "not_established": [
+        "Overlay dimensions independently measured.",
+        "Joint capacity or fastening quality verified."
+      ],
+      "classification_reason": "Distinct roof-joint close-up, rather than wide assembly view.",
+      "visible_attributes": {
+        "overlay_is_measurement_proof": false
+      },
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-house-construction-stage-6",
+      "scenario_id": "real-house-construction",
+      "expected_step_id_unchanged": "S6",
+      "original_v1_timestamp_s": 170,
+      "v2_timestamp_s": 170,
+      "reviewed_frame": "qa/review-v2/real-house-construction-stage-6.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Worker is beside a sloped roof edge/covering.",
+        "Dark covering edge/rows and timber beneath the eave are visible."
+      ],
+      "not_established": [
+        "Covering installed in this single frame.",
+        "Weather-tightness or safe working practice verified."
+      ],
+      "classification_reason": "Worker/covering close view differs from uncovered roof-outline frames.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-manufacturing-stage-1",
+      "scenario_id": "real-manufacturing",
+      "expected_step_id_unchanged": "S1",
+      "original_v1_timestamp_s": 27,
+      "v2_timestamp_s": 27,
+      "reviewed_frame": "qa/review-v2/real-manufacturing-stage-1.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Operator stands at a machine-controller display and keys.",
+        "One hand visibly contacts/rests at the console."
+      ],
+      "not_established": [
+        "Program correctness, settings accepted or machine safety."
+      ],
+      "classification_reason": "Controller interaction is a distinctive presentation shot.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-manufacturing-stage-2",
+      "scenario_id": "real-manufacturing",
+      "expected_step_id_unchanged": "S2",
+      "original_v1_timestamp_s": 35,
+      "v2_timestamp_s": 35,
+      "reviewed_frame": "qa/review-v2/real-manufacturing-stage-2.jpg",
+      "classification": "ambiguous_overlapping",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Open machine work area contains a mounted metal fixture/workpiece arrangement.",
+        "No operator/controller occupies the foreground."
+      ],
+      "not_established": [
+        "Tool motion proved by a still.",
+        "A single continuous part tracked through later montage shots."
+      ],
+      "classification_reason": "Generic machine-tool scene also fits later tooling phases without timeline/history.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [
+        "S4",
+        "S6"
+      ],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-manufacturing-stage-3",
+      "scenario_id": "real-manufacturing",
+      "expected_step_id_unchanged": "S3",
+      "original_v1_timestamp_s": 60,
+      "v2_timestamp_s": 60,
+      "reviewed_frame": "qa/review-v2/real-manufacturing-stage-3.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Digital indicator has a downward probe above a metal block.",
+        "Display characters are visible."
+      ],
+      "not_established": [
+        "Units, calibration, measurement traceability or pass/fail acceptance.",
+        "Contact force or correct setup."
+      ],
+      "classification_reason": "Indicator close-up uniquely distinguishes this presentation from machining montage.",
+      "visible_attributes": {
+        "indicator_visible": true,
+        "calibration_verified": "unknown"
+      },
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-manufacturing-stage-4",
+      "scenario_id": "real-manufacturing",
+      "expected_step_id_unchanged": "S4",
+      "original_v1_timestamp_s": 90,
+      "v2_timestamp_s": 90,
+      "reviewed_frame": "qa/review-v2/real-manufacturing-stage-4.jpg",
+      "classification": "ambiguous_overlapping",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Spindle/tool housing is above mounted metal blocks and circular fixture bases."
+      ],
+      "not_established": [
+        "Motion, cutting operation or continuous same-part identity."
+      ],
+      "classification_reason": "Another machine-tool shot can overlap S2; camera placement/shot history is needed.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [
+        "S2"
+      ],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-manufacturing-stage-5",
+      "scenario_id": "real-manufacturing",
+      "expected_step_id_unchanged": "S5",
+      "original_v1_timestamp_s": 135,
+      "v2_timestamp_s": 135,
+      "reviewed_frame": "qa/review-v2/real-manufacturing-stage-5.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Several people face a technical drawing on a vertical board.",
+        "One person points at the drawing."
+      ],
+      "not_established": [
+        "Drawing approved or specifications accepted."
+      ],
+      "classification_reason": "Collaborative drawing review is visually distinctive.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-manufacturing-stage-6",
+      "scenario_id": "real-manufacturing",
+      "expected_step_id_unchanged": "S6",
+      "original_v1_timestamp_s": 160,
+      "v2_timestamp_s": 160,
+      "reviewed_frame": "qa/review-v2/real-manufacturing-stage-6.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Tall exposed mould/tooling assembly has numerous internal recesses/components.",
+        "No controller operator or drawing board is foreground."
+      ],
+      "not_established": [
+        "Finished-product acceptance, exact component identities or one continuous job."
+      ],
+      "classification_reason": "Large open mould detail is visually distinctive, although chronological finality comes from the edited film.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-surgery-stage-1",
+      "scenario_id": "real-surgery",
+      "expected_step_id_unchanged": "S1",
+      "original_v1_timestamp_s": 11,
+      "v2_timestamp_s": 11,
+      "reviewed_frame": "qa/review-v2/real-surgery-stage-1.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Grayscale cross-sectional image is displayed.",
+        "Source annotations include a circled region and a preoperative/day4 label."
+      ],
+      "not_established": [
+        "Diagnosis, clinical severity or operative action inferred independently."
+      ],
+      "classification_reason": "Annotated introductory image is distinct from the later final cross-sectional image. Labels are source annotations, not AI diagnostic evidence.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-surgery-stage-2",
+      "scenario_id": "real-surgery",
+      "expected_step_id_unchanged": "S2",
+      "original_v1_timestamp_s": 27,
+      "v2_timestamp_s": 27,
+      "reviewed_frame": "qa/review-v2/real-surgery-stage-2.jpg",
+      "classification": "ambiguous_overlapping",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Colored endoscopic field contains a large gray instrument tip and shiny tissue/fluid region."
+      ],
+      "not_established": [
+        "Precise action, hidden contact, clinical outcome or instrument identity confirmed."
+      ],
+      "classification_reason": "Generic operative instrument imagery overlaps subsequent operative scenes; no exclusive task cue in this still.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [
+        "S3",
+        "S6"
+      ],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-surgery-stage-3",
+      "scenario_id": "real-surgery",
+      "expected_step_id_unchanged": "S3",
+      "original_v1_timestamp_s": 82,
+      "v2_timestamp_s": 82,
+      "reviewed_frame": "qa/review-v2/real-surgery-stage-3.jpg",
+      "classification": "ambiguous_overlapping",
+      "bad_anchor": true,
+      "visible_assertions": [
+        "Colored endoscopic field contains two opposing instrument jaws near a light/orange tissue-like surface.",
+        "Fine line/thread-like detail may be present but cannot be confidently identified from the 480x272 still."
+      ],
+      "not_established": [
+        "Visible thread identity confirmed.",
+        "Secure knot, correct tension, successful repair or clinical result."
+      ],
+      "classification_reason": "Instrument scene does not uniquely prove the thread/loop phase without clearer neighboring frames or sequence.",
+      "visible_attributes": {
+        "instrument_jaws_visible": true,
+        "thread_confirmed": "unknown"
+      },
+      "visually_overlapping_phase_ids": [
+        "S2"
+      ],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-surgery-stage-4",
+      "scenario_id": "real-surgery",
+      "expected_step_id_unchanged": "S4",
+      "original_v1_timestamp_s": 117.6,
+      "v2_timestamp_s": 117.6,
+      "reviewed_frame": "qa/review-v2/real-surgery-stage-4.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Circular monochrome view with thin curved/linear structures is displayed.",
+        "Colored endoscopic tissue view is absent in this anchor."
+      ],
+      "not_established": [
+        "Device/anatomy identity or diagnostic conclusion."
+      ],
+      "classification_reason": "Distinct intervening imaging modality/view transition.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-surgery-stage-5",
+      "scenario_id": "real-surgery",
+      "expected_step_id_unchanged": "S5",
+      "original_v1_timestamp_s": 137,
+      "v2_timestamp_s": 133,
+      "reviewed_frame": "qa/review-v2/candidate-surgery-woven-133.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Exposed light/yellow woven mesh texture is clearly visible at the upper field.",
+        "Separate reddish/orange tube crosses the lower field.",
+        "Instrument metal is visible."
+      ],
+      "not_established": [
+        "All pale material is a tube.",
+        "Correct material placement or clinical efficacy."
+      ],
+      "classification_reason": "Dominant visibly woven texture supports S5; coexistence of a separate tube must be acknowledged.",
+      "visible_attributes": {
+        "woven_texture_visible": true,
+        "separate_tube_visible": true,
+        "clinical_placement_verified": "unknown"
+      },
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-surgery-stage-6",
+      "scenario_id": "real-surgery",
+      "expected_step_id_unchanged": "S6",
+      "original_v1_timestamp_s": 162,
+      "v2_timestamp_s": 162,
+      "reviewed_frame": "qa/review-v2/real-surgery-stage-6.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Clear curved tubular structure is visible beside instrument metal.",
+        "Gray vertical instrument/tube-like object enters from above."
+      ],
+      "not_established": [
+        "Correct placement, drainage effectiveness, anatomy or procedure success."
+      ],
+      "classification_reason": "Transparent curved tube is a distinctive cue; describe it without claiming function.",
+      "visible_attributes": {
+        "clear_curved_tube_visible": true,
+        "tube_function_verified": "unknown"
+      },
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-surgery-stage-7",
+      "scenario_id": "real-surgery",
+      "expected_step_id_unchanged": "S7",
+      "original_v1_timestamp_s": 178,
+      "v2_timestamp_s": 178,
+      "reviewed_frame": "qa/review-v2/real-surgery-stage-7.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Grayscale cross-sectional body image is displayed.",
+        "Source text reads Postoperative CT scan."
+      ],
+      "not_established": [
+        "Recovery, completion of the actual operation or clinical success."
+      ],
+      "classification_reason": "Distinct final annotated imaging shot; postoperative is a source label, not outcome proof.",
+      "visible_attributes": {},
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-dancing-stage-1",
+      "scenario_id": "real-dancing",
+      "expected_step_id_unchanged": "S1",
+      "original_v1_timestamp_s": 7,
+      "v2_timestamp_s": 7,
+      "reviewed_frame": "qa/review-v2/real-dancing-stage-1.jpg",
+      "classification": "bad_or_insufficient_anchor",
+      "bad_anchor": true,
+      "visible_assertions": [
+        "Only one grounded shoe is fully visible in a tight side-on lower-leg crop."
+      ],
+      "not_established": [
+        "A second shoe visible or raised in this exact frame.",
+        "Both shoes at starting stance.",
+        "Lift direction, return, whole-body balance."
+      ],
+      "classification_reason": "The anchor has insufficient lift evidence; side-on crop identifies the edit but not the requested action.",
+      "visible_attributes": {
+        "both_shoes_visible": false,
+        "one_shoe_at_floor": true,
+        "working_shoe_floor_contact": "unknown",
+        "working_shoe_raised": "unknown",
+        "camera_crop": "tight side-on lower-leg"
+      },
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-dancing-stage-2",
+      "scenario_id": "real-dancing",
+      "expected_step_id_unchanged": "S2",
+      "original_v1_timestamp_s": 19,
+      "v2_timestamp_s": 23,
+      "reviewed_frame": "qa/review-v2/candidate-dancing-23.jpg",
+      "classification": "ambiguous_overlapping",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Both shoes visible: one free shoe raised behind the supporting leg; supporting shoe at floor.",
+        "Camera is a close oblique/front lower-leg crop."
+      ],
+      "not_established": [
+        "A return to floor in the single frame.",
+        "Exact named phase distinct from a similar later rear shoe lift."
+      ],
+      "classification_reason": "A rear shoe lift also appears in S3; camera crop and single direction are insufficient to uniquely discriminate.",
+      "visible_attributes": {
+        "both_shoes_visible": true,
+        "supporting_shoe_at_floor": true,
+        "working_shoe_at_floor": false,
+        "working_shoe_raised": true,
+        "camera_crop": "close oblique/front",
+        "working_shoe_position": "behind supporting leg"
+      },
+      "visually_overlapping_phase_ids": [
+        "S3",
+        "S5"
+      ],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-dancing-stage-3",
+      "scenario_id": "real-dancing",
+      "expected_step_id_unchanged": "S3",
+      "original_v1_timestamp_s": 35,
+      "v2_timestamp_s": 35,
+      "reviewed_frame": "qa/review-v2/real-dancing-stage-3.jpg",
+      "classification": "ambiguous_overlapping",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Both shoes visible: free shoe raised beside/behind supporting leg; other shoe at floor.",
+        "Camera is a close oblique/front lower-leg crop."
+      ],
+      "not_established": [
+        "Forward/backward cycle from one still.",
+        "Later return or exclusive S3 identity."
+      ],
+      "classification_reason": "Anchor looks like the S2 rear shoe lift; a directional multi-frame sequence is essential.",
+      "visible_attributes": {
+        "both_shoes_visible": true,
+        "supporting_shoe_at_floor": true,
+        "working_shoe_at_floor": false,
+        "working_shoe_raised": true,
+        "camera_crop": "close oblique/front",
+        "forward_direction_proved_by_still": false
+      },
+      "visually_overlapping_phase_ids": [
+        "S2",
+        "S5"
+      ],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-dancing-stage-4",
+      "scenario_id": "real-dancing",
+      "expected_step_id_unchanged": "S4",
+      "original_v1_timestamp_s": 50,
+      "v2_timestamp_s": 53,
+      "reviewed_frame": "qa/review-v2/candidate-dancing-53.jpg",
+      "classification": "ambiguous_overlapping",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Both shoes visible with one angled working shoe/raised-heel or toe-up orientation near the floor.",
+        "Camera is close front/oblique."
+      ],
+      "not_established": [
+        "Actual orientation change or a complete return in this still.",
+        "Heel/toe contact at hidden underside precisely measured."
+      ],
+      "classification_reason": "Orientation cue is stronger at corrected53s, but lifted/angled shoe positions occur elsewhere.",
+      "visible_attributes": {
+        "both_shoes_visible": true,
+        "supporting_shoe_at_floor": true,
+        "working_shoe_floor_contact": "partial/uncertain from underside",
+        "camera_crop": "close front/oblique"
+      },
+      "visually_overlapping_phase_ids": [
+        "S3",
+        "S5"
+      ],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-dancing-stage-5",
+      "scenario_id": "real-dancing",
+      "expected_step_id_unchanged": "S5",
+      "original_v1_timestamp_s": 70,
+      "v2_timestamp_s": 70,
+      "reviewed_frame": "qa/review-v2/real-dancing-stage-5.jpg",
+      "classification": "ambiguous_overlapping",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Both shoes visible; working shoe is blurred and forward/across relative to the other.",
+        "Camera is close front/oblique."
+      ],
+      "not_established": [
+        "Exact motion direction or return from blur alone.",
+        "Unique later edit identity from generic shoe lift."
+      ],
+      "classification_reason": "Motion blur and repeated close-view shoe cues overlap S3/S4; longer directional context needed.",
+      "visible_attributes": {
+        "both_shoes_visible": true,
+        "supporting_shoe_at_floor": true,
+        "working_shoe_floor_contact": "unknown due motion blur",
+        "motion_blur_present": true,
+        "camera_crop": "close front/oblique"
+      },
+      "visually_overlapping_phase_ids": [
+        "S3",
+        "S4"
+      ],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-dancing-stage-6",
+      "scenario_id": "real-dancing",
+      "expected_step_id_unchanged": "S6",
+      "original_v1_timestamp_s": 96,
+      "v2_timestamp_s": 96,
+      "reviewed_frame": "qa/review-v2/real-dancing-stage-6.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Both shoes visible; working shoe raised toward camera with sole exposed.",
+        "Other shoe is at floor in a distinct low camera angle."
+      ],
+      "not_established": [
+        "Whole-body balance, preceding faster phase or subsequent return."
+      ],
+      "classification_reason": "Low-angle sole-facing-camera shot is distinct within this guide.",
+      "visible_attributes": {
+        "both_shoes_visible": true,
+        "supporting_shoe_at_floor": true,
+        "working_shoe_at_floor": false,
+        "sole_visible": true,
+        "camera_crop": "low close foot view"
+      },
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-dancing-stage-7",
+      "scenario_id": "real-dancing",
+      "expected_step_id_unchanged": "S7",
+      "original_v1_timestamp_s": 104,
+      "v2_timestamp_s": 106,
+      "reviewed_frame": "qa/review-v2/candidate-dancing-106.jpg",
+      "classification": "ambiguous_overlapping",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Wider body crop shows free shoe raised behind supporting leg.",
+        "Supporting shoe is visible at floor."
+      ],
+      "not_established": [
+        "Return to floor.",
+        "Travel across the floor or unique S7 identity from one rear lift."
+      ],
+      "classification_reason": "Same wider crop/rear-lift cue also occurs within S8; lateral movement in sequence is needed.",
+      "visible_attributes": {
+        "both_shoes_visible": true,
+        "supporting_shoe_at_floor": true,
+        "working_shoe_at_floor": false,
+        "working_shoe_raised": true,
+        "camera_crop": "wider body crop"
+      },
+      "visually_overlapping_phase_ids": [
+        "S8"
+      ],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-dancing-stage-8",
+      "scenario_id": "real-dancing",
+      "expected_step_id_unchanged": "S8",
+      "original_v1_timestamp_s": 115,
+      "v2_timestamp_s": 115,
+      "reviewed_frame": "qa/review-v2/real-dancing-stage-8.jpg",
+      "classification": "ambiguous_overlapping",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Wider crop shows a raised/crossed shoe relationship beside or behind the supporting leg."
+      ],
+      "not_established": [
+        "Lateral travel or separated later stance proved by one frame.",
+        "Unique S8 identity based solely on an isolated rear lift."
+      ],
+      "classification_reason": "Single-frame pose resembles S7; sequence-level lateral displacement distinguishes S8.",
+      "visible_attributes": {
+        "both_shoes_visible": true,
+        "supporting_shoe_at_floor": true,
+        "working_shoe_at_floor": false,
+        "camera_crop": "wider body crop",
+        "travel_proved_by_single_frame": false
+      },
+      "visually_overlapping_phase_ids": [
+        "S7"
+      ],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-sport-stage-1",
+      "scenario_id": "real-sport",
+      "expected_step_id_unchanged": "S1",
+      "original_v1_timestamp_s": 37,
+      "v2_timestamp_s": 35,
+      "reviewed_frame": "qa/review-v2/candidate-sport-low-35.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Overhead view shows both hands contacting angled EZ-bar shaft at floor while person bends down.",
+        "Plates and visibly angled shaft sections are present."
+      ],
+      "not_established": [
+        "Upright low hold, underhand grip, completed pickup or curl repetition in this anchor."
+      ],
+      "classification_reason": "Floor-level pickup differs from later upright curl views.",
+      "visible_attributes": {
+        "both_hands_contact_bar": true,
+        "shaft_angled": true,
+        "shaft_straight": false,
+        "bar_near_floor": true,
+        "performer_upright": false,
+        "feet_fully_visible": false
+      },
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-sport-stage-2",
+      "scenario_id": "real-sport",
+      "expected_step_id_unchanged": "S2",
+      "original_v1_timestamp_s": 41,
+      "v2_timestamp_s": 41,
+      "reviewed_frame": "qa/review-v2/real-sport-stage-2.jpg",
+      "classification": "ambiguous_overlapping",
+      "bad_anchor": true,
+      "visible_assertions": [
+        "Both hands hold an angled EZ bar below the torso in a close torso/waist crop.",
+        "Arms are relatively extended downward rather than showing the claimed raised-bar position at this exact frame."
+      ],
+      "not_established": [
+        "Raised bar at upper torso in this41s still.",
+        "Full repetition or exclusive close-view phase identity."
+      ],
+      "classification_reason": "The bank reference describes a raised state absent at41s; this low state is part of the S2 cycle but visually overlaps S1/S3. Keep expectedID and judge sequence separately.",
+      "visible_attributes": {
+        "both_hands_contact_bar": true,
+        "shaft_angled": true,
+        "shaft_straight": false,
+        "bar_position": "low below torso",
+        "raised_bar_at_upper_torso": false,
+        "feet_visible": false
+      },
+      "visually_overlapping_phase_ids": [
+        "S1",
+        "S3"
+      ],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-sport-stage-3",
+      "scenario_id": "real-sport",
+      "expected_step_id_unchanged": "S3",
+      "original_v1_timestamp_s": 50,
+      "v2_timestamp_s": 50,
+      "reviewed_frame": "qa/review-v2/real-sport-stage-3.jpg",
+      "classification": "ambiguous_overlapping",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Both hands hold an angled EZ bar low in front of waist/thighs.",
+        "Crop is torso/upper legs, not a full-body view."
+      ],
+      "not_established": [
+        "A raised state or lowering sequence at this still.",
+        "Wider-view exact phase uniquely distinguishable from S2.",
+        "Completed set."
+      ],
+      "classification_reason": "Generic low EZ-bar hold visually overlaps S2 and S1. Shot history or multi-frame scene boundaries are required.",
+      "visible_attributes": {
+        "both_hands_contact_bar": true,
+        "shaft_angled": true,
+        "shaft_straight": false,
+        "bar_position": "low below torso",
+        "feet_visible": false
+      },
+      "visually_overlapping_phase_ids": [
+        "S1",
+        "S2"
+      ],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-sport-stage-4",
+      "scenario_id": "real-sport",
+      "expected_step_id_unchanged": "S4",
+      "original_v1_timestamp_s": 93,
+      "v2_timestamp_s": 93,
+      "reviewed_frame": "qa/review-v2/real-sport-stage-4.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Second demonstrator stands with straight bar low at the lower frame edge.",
+        "One hand clearly contacts the shaft at the image right; the other hand/shaft contact is cropped or only partial at the lower edge.",
+        "Arms extend downward."
+      ],
+      "not_established": [
+        "Plate weight, clips, comfort or safe setup.",
+        "Both hands visibly contacting the shaft in the exact93s anchor; the lower crop omits/partially cuts the other contact."
+      ],
+      "classification_reason": "Different demonstrator, straight shaft and low hold distinguish this from raised straight-bar phase and earlier EZ-bar views.",
+      "visible_attributes": {
+        "both_hands_contact_bar": "unknown: lower-edge crop",
+        "shaft_angled": false,
+        "shaft_straight": true,
+        "bar_position": "low below torso",
+        "one_hand_contact_bar": true
+      },
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    },
+    {
+      "case_id": "real-sport-stage-5",
+      "scenario_id": "real-sport",
+      "expected_step_id_unchanged": "S5",
+      "original_v1_timestamp_s": 107,
+      "v2_timestamp_s": 107,
+      "reviewed_frame": "qa/review-v2/real-sport-stage-5.jpg",
+      "classification": "exclusive_unambiguous",
+      "bad_anchor": false,
+      "visible_assertions": [
+        "Second demonstrator holds straight bar close to upper torso.",
+        "Both hands contact shaft and elbows visibly bend."
+      ],
+      "not_established": [
+        "Later lowering or full repetition.",
+        "Exact joint angle, suitability, load or safe technique."
+      ],
+      "classification_reason": "Raised straight bar distinguishes this from low straight-bar starting position.",
+      "visible_attributes": {
+        "both_hands_contact_bar": true,
+        "shaft_angled": false,
+        "shaft_straight": true,
+        "bar_position": "raised near upper torso"
+      },
+      "visually_overlapping_phase_ids": [],
+      "overlap_ids_are_not_extra_accepted_answers": true,
+      "completion_not_established_from_single_frame": true,
+      "manual_judge_rules": [
+        "Evaluate factual visible-attribute assertions separately from exact-ID agreement.",
+        "Preserve original exact-ID scores; report ambiguity strata separately, without granting additional correct stage IDs.",
+        "Absence from crop is missing information, not proof the object/action does not exist.",
+        "A full motion cycle or completion requires temporally ordered visible evidence, not guide timestamp or currentStep alone."
+      ]
+    }
+  ]
+}

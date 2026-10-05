@@ -1,0 +1,38 @@
+{
+  "probe": {
+    "fps": 25,
+    "totalFrames": 3994,
+    "duration": 180,
+    "width": 480,
+    "height": 272,
+    "variableFrameRate": true
+  },
+  "checks": [
+    {
+      "at_s": 11,
+      "frames": 6,
+      "times_s": [
+        6,
+        8.04,
+        10.12,
+        10.16,
+        10.56,
+        10.96
+      ],
+      "fresh_frames": 4
+    },
+    {
+      "at_s": 117.6,
+      "frames": 6,
+      "times_s": [
+        112.6,
+        114.63999999999999,
+        116.72,
+        116.75999999999999,
+        117.16,
+        117.56
+      ],
+      "fresh_frames": 4
+    }
+  ]
+}

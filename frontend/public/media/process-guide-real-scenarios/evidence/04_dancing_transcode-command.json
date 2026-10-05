@@ -1,0 +1,51 @@
+{
+  "command": [
+    "ffmpeg",
+    "-v",
+    "error",
+    "-y",
+    "-i",
+    "evaluation/open-video-scenarios/sources/04_tap_original.webm",
+    "-map",
+    "0:v:0",
+    "-map",
+    "0:a:0?",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "fast",
+    "-crf",
+    "22",
+    "-pix_fmt",
+    "yuv420p",
+    "-fps_mode",
+    "passthrough",
+    "-c:a",
+    "aac",
+    "-b:a",
+    "128k",
+    "-movflags",
+    "+faststart",
+    "-map_metadata",
+    "-1",
+    "evaluation/open-video-scenarios/videos/real-04-dancing.mp4"
+  ],
+  "source": "evaluation/open-video-scenarios/sources/04_tap_original.webm",
+  "output": "evaluation/open-video-scenarios/videos/real-04-dancing.mp4",
+  "source_duration_s": 124.393,
+  "output_duration_s": 123.415533,
+  "output_bytes": 5434324,
+  "output_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+  "decode_check": "passed with -xerror",
+  "changes": [
+    "Container changed from WebM to MP4",
+    "VP8 picture reencoded to H264 CRF22/preset fast/yuv420p",
+    "Vorbis audio reencoded to AAC128kbps",
+    "Fast-start metadata enabled"
+  ],
+  "unchanged": [
+    "Full source timeline",
+    "Native428x240 resolution",
+    "No loop, crop, upscale, speed change or overlay"
+  ]
+}

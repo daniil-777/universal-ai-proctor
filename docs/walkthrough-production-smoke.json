@@ -1,0 +1,457 @@
+{
+  "date": "2026-10-05T06:30:38.436Z",
+  "app_url": "http://localhost:8101",
+  "completed": true,
+  "profiles": [
+    {
+      "name": "desktop",
+      "engine": "chrome",
+      "width": 1440,
+      "height": 1000,
+      "errors": [],
+      "prohibited_requests": [],
+      "external_requests": [],
+      "intro_ready_ms": 609,
+      "initial_walkthrough_requests": [],
+      "open_ready_ms": 117,
+      "open_mp4_requests": [],
+      "metadata": {
+        "title": "Process Guide: 90-second narrated tour",
+        "duration_s": 90,
+        "language": "en",
+        "captions_burned_in": true,
+        "chapters": 8,
+        "transcript_lines": 15
+      },
+      "open_layout": {
+        "page_overflow": false,
+        "dialog_overflow": false,
+        "close_visible": true,
+        "clipped_buttons": []
+      },
+      "first_media_status": 206,
+      "first_media_content_range": "bytes 0-18394917/18394918",
+      "play_ready_ms": 934,
+      "playback": {
+        "duration": 90,
+        "current_time": 12.311626,
+        "paused": false,
+        "muted": false,
+        "volume": 1,
+        "inline": true,
+        "controls": true,
+        "ready_state": 4,
+        "width": 1920,
+        "height": 1080,
+        "has_src": true
+      },
+      "decoded_frame": {
+        "minimum": 25.333333333333332,
+        "maximum": 255,
+        "mean": 133.96556712963013,
+        "decoded_frames": 125
+      },
+      "play_layout": {
+        "page_overflow": false,
+        "dialog_overflow": false,
+        "close_visible": true,
+        "clipped_buttons": []
+      },
+      "caption_default": {
+        "default": false,
+        "mode": "disabled"
+      },
+      "captions": {
+        "ready_state": 2,
+        "label": "English",
+        "language": "en",
+        "cues": 15,
+        "first_cue": "Process Guide turns a video or live view into a guided workflow."
+      },
+      "release_geometry": {
+        "video_top": -521.5,
+        "video_bottom": 25.25,
+        "body_top": 132.5,
+        "body_bottom": 987,
+        "scroll_top": 679,
+        "scroll_height": 1534,
+        "visible_height": 0
+      },
+      "offscreen_release": {
+        "duration": null,
+        "current_time": 0,
+        "paused": true,
+        "muted": false,
+        "volume": 1,
+        "inline": true,
+        "controls": false,
+        "ready_state": 0,
+        "width": 0,
+        "height": 0,
+        "has_src": false
+      },
+      "chapter_resume": {
+        "authored_start_s": 77.2,
+        "media": {
+          "duration": 90,
+          "current_time": 77.214779,
+          "paused": false,
+          "muted": false,
+          "volume": 1,
+          "inline": true,
+          "controls": true,
+          "ready_state": 4,
+          "width": 1920,
+          "height": 1080,
+          "has_src": true
+        },
+        "decoded": {
+          "minimum": 24.666666666666668,
+          "maximum": 255,
+          "mean": 132.82479745370313,
+          "decoded_frames": 5
+        },
+        "explicit_play_required": true
+      },
+      "chapter_layout": {
+        "page_overflow": false,
+        "dialog_overflow": false,
+        "close_visible": true,
+        "clipped_buttons": []
+      },
+      "close": {
+        "src_removed": true,
+        "paused": true,
+        "current_src": "http://localhost:8101/media/process-guide-walkthrough.mp4",
+        "ready_state": 0,
+        "network_state": 0,
+        "buffered_ranges": 0,
+        "connected": false,
+        "current_time": 0
+      },
+      "close_after_500ms": {
+        "current_time": 0,
+        "ready_state": 0,
+        "network_state": 0,
+        "paused": true
+      },
+      "launcher_focus_restored": true,
+      "walkthrough_mp4_requests": 4
+    },
+    {
+      "name": "phone",
+      "engine": "chrome",
+      "width": 390,
+      "height": 844,
+      "errors": [],
+      "prohibited_requests": [],
+      "external_requests": [],
+      "intro_ready_ms": 549,
+      "initial_walkthrough_requests": [],
+      "open_ready_ms": 102,
+      "open_mp4_requests": [],
+      "metadata": {
+        "title": "Process Guide: 90-second narrated tour",
+        "duration_s": 90,
+        "language": "en",
+        "captions_burned_in": true,
+        "chapters": 8,
+        "transcript_lines": 15
+      },
+      "open_layout": {
+        "page_overflow": false,
+        "dialog_overflow": false,
+        "close_visible": true,
+        "clipped_buttons": []
+      },
+      "first_media_status": 206,
+      "first_media_content_range": "bytes 0-18394917/18394918",
+      "play_ready_ms": 926,
+      "playback": {
+        "duration": 90,
+        "current_time": 12.236309,
+        "paused": false,
+        "muted": false,
+        "volume": 1,
+        "inline": true,
+        "controls": true,
+        "ready_state": 4,
+        "width": 1920,
+        "height": 1080,
+        "has_src": true
+      },
+      "decoded_frame": {
+        "minimum": 25.333333333333332,
+        "maximum": 255,
+        "mean": 133.9626736111116,
+        "decoded_frames": 123
+      },
+      "play_layout": {
+        "page_overflow": false,
+        "dialog_overflow": false,
+        "close_visible": true,
+        "clipped_buttons": []
+      },
+      "caption_default": {
+        "default": false,
+        "mode": "disabled"
+      },
+      "captions": {
+        "ready_state": 2,
+        "label": "English",
+        "language": "en",
+        "cues": 15,
+        "first_cue": "Process Guide turns a video or live view into a guided workflow."
+      },
+      "release_geometry": {
+        "video_top": -1000,
+        "video_bottom": -814.375,
+        "body_top": 152,
+        "body_bottom": 831,
+        "scroll_top": 1169,
+        "scroll_height": 1848,
+        "visible_height": 0
+      },
+      "offscreen_release": {
+        "duration": null,
+        "current_time": 0,
+        "paused": true,
+        "muted": false,
+        "volume": 1,
+        "inline": true,
+        "controls": false,
+        "ready_state": 0,
+        "width": 0,
+        "height": 0,
+        "has_src": false
+      },
+      "chapter_resume": {
+        "authored_start_s": 77.2,
+        "media": {
+          "duration": 90,
+          "current_time": 77.203001,
+          "paused": false,
+          "muted": false,
+          "volume": 1,
+          "inline": true,
+          "controls": true,
+          "ready_state": 4,
+          "width": 1920,
+          "height": 1080,
+          "has_src": true
+        },
+        "decoded": {
+          "minimum": 24.666666666666668,
+          "maximum": 255,
+          "mean": 132.82479745370313,
+          "decoded_frames": 5
+        },
+        "explicit_play_required": true
+      },
+      "chapter_layout": {
+        "page_overflow": false,
+        "dialog_overflow": false,
+        "close_visible": true,
+        "clipped_buttons": []
+      },
+      "close": {
+        "src_removed": true,
+        "paused": true,
+        "current_src": "http://localhost:8101/media/process-guide-walkthrough.mp4",
+        "ready_state": 0,
+        "network_state": 0,
+        "buffered_ranges": 0,
+        "connected": false,
+        "current_time": 0
+      },
+      "close_after_500ms": {
+        "current_time": 0,
+        "ready_state": 0,
+        "network_state": 0,
+        "paused": true
+      },
+      "launcher_focus_restored": true,
+      "settings_layout": {
+        "page_overflow": false,
+        "dialog_overflow": false,
+        "close_visible": true,
+        "clipped_buttons": []
+      },
+      "phone_settings_access": true,
+      "walkthrough_mp4_requests": 5
+    },
+    {
+      "name": "tablet",
+      "engine": "webkit",
+      "width": 820,
+      "height": 1180,
+      "errors": [],
+      "prohibited_requests": [],
+      "external_requests": [],
+      "intro_ready_ms": 602,
+      "initial_walkthrough_requests": [],
+      "open_ready_ms": 121,
+      "open_mp4_requests": [],
+      "metadata": {
+        "title": "Process Guide: 90-second narrated tour",
+        "duration_s": 90,
+        "language": "en",
+        "captions_burned_in": true,
+        "chapters": 8,
+        "transcript_lines": 15
+      },
+      "open_layout": {
+        "page_overflow": false,
+        "dialog_overflow": false,
+        "close_visible": true,
+        "clipped_buttons": []
+      },
+      "first_media_status": 206,
+      "first_media_content_range": "bytes 0-1/18394918",
+      "play_ready_ms": 519,
+      "playback": {
+        "duration": 90,
+        "current_time": 11.981827502121451,
+        "paused": false,
+        "muted": false,
+        "volume": 1,
+        "inline": true,
+        "controls": true,
+        "ready_state": 4,
+        "width": 1920,
+        "height": 1080,
+        "has_src": true
+      },
+      "decoded_frame": {
+        "minimum": 26.666666666666668,
+        "maximum": 255,
+        "mean": 136.06409143518633,
+        "decoded_frames": null
+      },
+      "play_layout": {
+        "page_overflow": false,
+        "dialog_overflow": false,
+        "close_visible": true,
+        "clipped_buttons": []
+      },
+      "caption_default": {
+        "default": false,
+        "mode": "disabled"
+      },
+      "captions": {
+        "ready_state": 2,
+        "label": "English",
+        "language": "en",
+        "cues": 15,
+        "first_cue": "Process Guide turns a video or live view into a guided workflow."
+      },
+      "release_geometry": {
+        "video_top": -210.5,
+        "video_bottom": 204.625,
+        "body_top": 132.5,
+        "body_bottom": 1167,
+        "scroll_top": 368,
+        "scroll_height": 1403,
+        "visible_height": 72.125
+      },
+      "release_viewport": {
+        "width": 820,
+        "height": 700
+      },
+      "release_geometry_after_resize": {
+        "visible_height": 0
+      },
+      "offscreen_release": {
+        "duration": null,
+        "current_time": 0,
+        "paused": true,
+        "muted": false,
+        "volume": 1,
+        "inline": true,
+        "controls": false,
+        "ready_state": 0,
+        "width": 0,
+        "height": 0,
+        "has_src": false
+      },
+      "chapter_resume": {
+        "authored_start_s": 77.2,
+        "media": {
+          "duration": 90,
+          "current_time": 77.23273215267109,
+          "paused": false,
+          "muted": false,
+          "volume": 1,
+          "inline": true,
+          "controls": true,
+          "ready_state": 4,
+          "width": 1920,
+          "height": 1080,
+          "has_src": true
+        },
+        "decoded": {
+          "minimum": 26.333333333333332,
+          "maximum": 255,
+          "mean": 135.4360532407403,
+          "decoded_frames": null
+        },
+        "explicit_play_required": true
+      },
+      "chapter_layout": {
+        "page_overflow": false,
+        "dialog_overflow": false,
+        "close_visible": true,
+        "clipped_buttons": []
+      },
+      "close": {
+        "src_removed": true,
+        "paused": true,
+        "current_src": "http://localhost:8101/media/process-guide-walkthrough.mp4",
+        "ready_state": 0,
+        "network_state": 0,
+        "buffered_ranges": 0,
+        "connected": false,
+        "current_time": 0
+      },
+      "close_after_500ms": {
+        "current_time": 0,
+        "ready_state": 0,
+        "network_state": 0,
+        "paused": true
+      },
+      "launcher_focus_restored": true,
+      "walkthrough_mp4_requests": 4
+    }
+  ],
+  "caveats": [
+    "Chrome and WebKit profiles emulate viewport and touch behavior; they do not replace physical-device, mobile-network, on-screen-keyboard or hardware-audio testing.",
+    "Timings are local-machine observations with fresh browser contexts, not cloud or cellular performance guarantees.",
+    "Unmuted playback, volume, audio codec and actual video decoding are checked; headless execution does not establish subjective narration quality or audible speaker output.",
+    "English VTT loading is checked by enabling its text track after recording the default-off state; the authored video already contains burned captions.",
+    "Scrolling the video completely offscreen releases its source. Chapter resume therefore requires a new explicit Play.",
+    "At 820×1180, maximum transcript scrolling can leave some video visible. The tablet offscreen-release check temporarily uses 820×700, then restores the original viewport for chapter and layout verification.",
+    "A detached video can retain its last currentSrc diagnostic URL. Close is verified through removed src, paused media, readyState 0/networkState 0, no buffered ranges, stable time and restored focus."
+  ],
+  "asset": {
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "pixel_format": "yuv420p",
+    "width": 1920,
+    "height": 1080,
+    "frame_rate": "30/1",
+    "duration_s": 90,
+    "bytes": 18394918
+  },
+  "requested_profiles": [
+    "desktop",
+    "phone",
+    "tablet"
+  ],
+  "range": {
+    "status": 206,
+    "content_range": "bytes 0-1023/18394918",
+    "content_type": "video/mp4",
+    "bytes": 1024
+  },
+  "actual_provider_calls": 0
+}

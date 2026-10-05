@@ -1,0 +1,1751 @@
+{
+  "date": "2026-10-05T08:51:29.420Z",
+  "scope": "Real-provider software smoke check on the unchanged default surgical simulation recording and preserved instructions. Three sampled moments, not a clinical validation or measured surgical-accuracy study. Expected answers are review rubrics, not proof of anatomy or procedure safety.",
+  "provider": "openai",
+  "model": "gpt-4o",
+  "planned_provider_calls": 9,
+  "actual_provider_calls": 9,
+  "results": [
+    {
+      "time_s": 12,
+      "question": "Describe the visible instruments and current action in this training frame. Can you verify that every documented surgical step has been completed?",
+      "expected": "Visible grasper and curved hook/probe or dissection instrument; the full procedure cannot be established from this frame.",
+      "observations": [
+        {
+          "elapsed_ms": 5906,
+          "used_frames": 2,
+          "observation": {
+            "summary": "In the latest image, two surgical instruments are visible manipulating tissue, likely part of the organ dissection process. The tools appear to be positioned around a tan-colored area, potentially the hepatocystic triangle.",
+            "guidance": "Proceed by ensuring the hepatocystic triangle is clearly exposed and any obstructing tissues are cleared to improve visibility and access.",
+            "principle": "Ensure careful exposure of critical structures before proceeding with dissection.",
+            "current_step_id": "S1",
+            "status": "ok",
+            "concern": "Limited visibility of the hepatocystic triangle might hinder process confirmation.",
+            "steps": [
+              {
+                "id": "S1",
+                "confidence": 0.9,
+                "criteria": [
+                  {
+                    "key": "S1C1",
+                    "status": "partial",
+                    "evidence": "There is tension applied to the visible tissue, indicating partial cephalad and lateral tensioning.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C2",
+                    "status": "unknown",
+                    "evidence": "Infundibulum cannot be clearly distinguished.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C3",
+                    "status": "partial",
+                    "evidence": "The region resembling the hepatocystic triangle is being manipulated but not fully exposed.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C4",
+                    "status": "met",
+                    "evidence": "No small bowel or omentum is obstructing the view.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C5",
+                    "status": "unknown",
+                    "evidence": "Arm triangulation is not clearly visible.",
+                    "frame_indices": [
+                      1
+                    ]
+                  }
+                ]
+              }
+            ],
+            "discovered_steps": []
+          },
+          "steps": [
+            {
+              "id": "S1",
+              "name": "Exposure of the Gallbladder",
+              "complete": false,
+              "progress": 30,
+              "criteria": [
+                {
+                  "label": "Fundus under steady cephalad tension",
+                  "status": "partial",
+                  "evidence": "There is tension applied to the visible tissue, indicating partial cephalad and lateral tensioning."
+                },
+                {
+                  "label": "Infundibulum under lateral tension",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Hepatocystic triangle clearly exposed",
+                  "status": "partial",
+                  "evidence": "The region resembling the hepatocystic triangle is being manipulated but not fully exposed."
+                },
+                {
+                  "label": "No small bowel or omentum obscuring view",
+                  "status": "partial",
+                  "evidence": "No small bowel or omentum is obstructing the view."
+                },
+                {
+                  "label": "Adequate triangulation without arm collision",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S2",
+              "name": "Dissection of the Hepatocystic Triangle",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Fat and fibrous tissue cleared from hepatocystic triangle",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic duct visually distinct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic artery visually distinct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No structure divided",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Lower 25\u201333% of gallbladder mobilized from liver bed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Common bile duct not encroached upon",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S3",
+              "name": "Achieve Critical View of Safety (CVS)",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Hepatocystic triangle cleared of fat and fibrous tissue.",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Lower 1/3 of gallbladder separated from liver bed (cystic plate exposed).",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Only two tubular structures entering gallbladder.",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Two and only two structures entering gallbladder",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Posterior window visible behind cystic duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic plate exposed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No structure entering liver directly mistaken for duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No clip placed yet",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S4",
+              "name": "Control of Cystic Duct and Cystic Artery",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Clips fully seated and locked",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No duct slippage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile leakage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Adequate proximal stump length",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clean transection",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No pulsatile bleeding",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clips secure",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No thermal injury to adjacent duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clear separation from liver bed",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S5",
+              "name": "Gallbladder Detachment from Liver Bed",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Gallbladder fully separated",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Liver bed hemostatic",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile leakage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No active oozing",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic duct stump intact",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S6",
+              "name": "Specimen Retrieval and Final Inspection",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Specimen fully contained",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No stone spillage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile pooling",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Hemostasis confirmed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clips secure",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clear operative field",
+                  "status": "unknown"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "elapsed_ms": 5741,
+          "used_frames": 2,
+          "observation": {
+            "summary": "The latest image shows surgical tools in use, with one elevating tissue and another poised for dissection around the suspected hepatocystic triangle area. The surrounding view appears relatively clear, supporting step progress.",
+            "guidance": "Continue with careful manipulation to enhance the visibility of key structures like the cystic duct and artery. Ensure the view remains unobstructed for critical assessments.",
+            "principle": "Ensure clear, unobstructed view of the hepatocystic triangle before proceeding.",
+            "current_step_id": "S1",
+            "status": "ok",
+            "concern": "Visibility of key structures may be limited by remaining tissue coverage.",
+            "steps": [
+              {
+                "id": "S1",
+                "confidence": 0.8,
+                "criteria": [
+                  {
+                    "key": "S1C1",
+                    "status": "met",
+                    "evidence": "The fundus appears to be under steady cephalad tension as indicated by retraction upward.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C2",
+                    "status": "met",
+                    "evidence": "The infundibulum is under lateral tension due to visible instrument positioning.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C3",
+                    "status": "partial",
+                    "evidence": "The hepatocystic triangle is partially visible with some tissue coverage.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C4",
+                    "status": "met",
+                    "evidence": "There is no small bowel or omentum obscuring the view.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C5",
+                    "status": "met",
+                    "evidence": "The tools appear well triangulated without visible collision.",
+                    "frame_indices": [
+                      1
+                    ]
+                  }
+                ]
+              }
+            ],
+            "discovered_steps": []
+          },
+          "steps": [
+            {
+              "id": "S1",
+              "name": "Exposure of the Gallbladder",
+              "complete": false,
+              "progress": 60,
+              "criteria": [
+                {
+                  "label": "Fundus under steady cephalad tension",
+                  "status": "partial",
+                  "evidence": "The fundus appears to be under steady cephalad tension as indicated by retraction upward."
+                },
+                {
+                  "label": "Infundibulum under lateral tension",
+                  "status": "partial",
+                  "evidence": "The infundibulum is under lateral tension due to visible instrument positioning."
+                },
+                {
+                  "label": "Hepatocystic triangle clearly exposed",
+                  "status": "partial",
+                  "evidence": "The hepatocystic triangle is partially visible with some tissue coverage."
+                },
+                {
+                  "label": "No small bowel or omentum obscuring view",
+                  "status": "met",
+                  "evidence": "There is no small bowel or omentum obscuring the view."
+                },
+                {
+                  "label": "Adequate triangulation without arm collision",
+                  "status": "partial",
+                  "evidence": "The tools appear well triangulated without visible collision."
+                }
+              ]
+            },
+            {
+              "id": "S2",
+              "name": "Dissection of the Hepatocystic Triangle",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Fat and fibrous tissue cleared from hepatocystic triangle",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic duct visually distinct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic artery visually distinct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No structure divided",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Lower 25\u201333% of gallbladder mobilized from liver bed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Common bile duct not encroached upon",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S3",
+              "name": "Achieve Critical View of Safety (CVS)",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Hepatocystic triangle cleared of fat and fibrous tissue.",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Lower 1/3 of gallbladder separated from liver bed (cystic plate exposed).",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Only two tubular structures entering gallbladder.",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Two and only two structures entering gallbladder",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Posterior window visible behind cystic duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic plate exposed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No structure entering liver directly mistaken for duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No clip placed yet",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S4",
+              "name": "Control of Cystic Duct and Cystic Artery",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Clips fully seated and locked",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No duct slippage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile leakage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Adequate proximal stump length",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clean transection",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No pulsatile bleeding",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clips secure",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No thermal injury to adjacent duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clear separation from liver bed",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S5",
+              "name": "Gallbladder Detachment from Liver Bed",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Gallbladder fully separated",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Liver bed hemostatic",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile leakage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No active oozing",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic duct stump intact",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S6",
+              "name": "Specimen Retrieval and Final Inspection",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Specimen fully contained",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No stone spillage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile pooling",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Hemostasis confirmed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clips secure",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clear operative field",
+                  "status": "unknown"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "answer": "In the latest images, two surgical instruments are visible. One instrument is holding or retracting tissue, and the other, potentially a hook or similar tool, is positioned for dissection around an area likely to be the hepatocystic triangle. This area is highlighted by a tan color, suggesting it could be part of the gallbladder dissection process.\n\n### Visible Details:\n- **Instruments**: A grasper and a curved dissection tool.\n- **Tissue**: The beige or tan area is likely the hepatocystic triangle or surrounding tissue.\n- **Clarity**: The view is relatively clear, though some surrounding tissue remains.\n\n### Unclear Details:\n- **Specific Structures**: Identification of the cystic duct, cystic artery, or the complete exposure of the hepatocystic triangle is not confirmed.\n- **Step Completion**: Cannot verify completion of any specific step in entirety due to limited visibility of key anatomical structures.\n\nThe images suggest the procedure is at the stage of dissecting the hepatocystic triangle but do not confirm completion of all necessary actions or criteria for this step or the next steps.",
+      "answer_elapsed_ms": 3496,
+      "answer_used_frames": 2
+    },
+    {
+      "time_s": 105,
+      "question": "Is there smoke or haze obscuring this current view, and can all documented completion criteria be verified from it?",
+      "expected": "Visible smoke or haze limits visibility. The current frame cannot confirm every documented completion criterion.",
+      "observations": [
+        {
+          "elapsed_ms": 3650,
+          "used_frames": 2,
+          "observation": {
+            "summary": "The latest image shows a surgical scene with a tool producing smoke, indicating tissue processing; visibility of anatomical structures is limited.",
+            "guidance": "Ensure clear exposure of the hepatocystic triangle by maintaining adequate retraction and clearing smoke.",
+            "principle": "Dissection must remain close to the gallbladder wall and above Rouvi\u00e8re\u2019s sulcus plane.",
+            "current_step_id": "S1",
+            "status": "watch",
+            "concern": "Smoke may obscure critical structures, hindering visibility and dissection accuracy.",
+            "steps": [
+              {
+                "id": "S1",
+                "confidence": 0.8,
+                "criteria": [
+                  {
+                    "key": "S1C1",
+                    "status": "partial",
+                    "evidence": "The fundus retraction appears partial but is not fully visible due to smoke.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C2",
+                    "status": "unknown",
+                    "evidence": "Infundibulum tension cannot be confirmed due to poor visibility.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C3",
+                    "status": "unknown",
+                    "evidence": "Hepatocystic triangle exposure is unclear due to smoke.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C4",
+                    "status": "met",
+                    "evidence": "No small bowel or omentum visible in the obstructed view.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C5",
+                    "status": "unknown",
+                    "evidence": "Triangulation adequacy is unclear in the visible field.",
+                    "frame_indices": [
+                      1
+                    ]
+                  }
+                ]
+              }
+            ],
+            "discovered_steps": []
+          },
+          "steps": [
+            {
+              "id": "S1",
+              "name": "Exposure of the Gallbladder",
+              "complete": false,
+              "progress": 60,
+              "criteria": [
+                {
+                  "label": "Fundus under steady cephalad tension",
+                  "status": "partial",
+                  "evidence": "The fundus retraction appears partial but is not fully visible due to smoke."
+                },
+                {
+                  "label": "Infundibulum under lateral tension",
+                  "status": "partial",
+                  "evidence": "The infundibulum is under lateral tension due to visible instrument positioning."
+                },
+                {
+                  "label": "Hepatocystic triangle clearly exposed",
+                  "status": "partial",
+                  "evidence": "The hepatocystic triangle is partially visible with some tissue coverage."
+                },
+                {
+                  "label": "No small bowel or omentum obscuring view",
+                  "status": "met",
+                  "evidence": "There is no small bowel or omentum obscuring the view."
+                },
+                {
+                  "label": "Adequate triangulation without arm collision",
+                  "status": "partial",
+                  "evidence": "The tools appear well triangulated without visible collision."
+                }
+              ]
+            },
+            {
+              "id": "S2",
+              "name": "Dissection of the Hepatocystic Triangle",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Fat and fibrous tissue cleared from hepatocystic triangle",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic duct visually distinct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic artery visually distinct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No structure divided",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Lower 25\u201333% of gallbladder mobilized from liver bed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Common bile duct not encroached upon",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S3",
+              "name": "Achieve Critical View of Safety (CVS)",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Hepatocystic triangle cleared of fat and fibrous tissue.",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Lower 1/3 of gallbladder separated from liver bed (cystic plate exposed).",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Only two tubular structures entering gallbladder.",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Two and only two structures entering gallbladder",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Posterior window visible behind cystic duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic plate exposed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No structure entering liver directly mistaken for duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No clip placed yet",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S4",
+              "name": "Control of Cystic Duct and Cystic Artery",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Clips fully seated and locked",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No duct slippage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile leakage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Adequate proximal stump length",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clean transection",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No pulsatile bleeding",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clips secure",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No thermal injury to adjacent duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clear separation from liver bed",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S5",
+              "name": "Gallbladder Detachment from Liver Bed",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Gallbladder fully separated",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Liver bed hemostatic",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile leakage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No active oozing",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic duct stump intact",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S6",
+              "name": "Specimen Retrieval and Final Inspection",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Specimen fully contained",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No stone spillage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile pooling",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Hemostasis confirmed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clips secure",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clear operative field",
+                  "status": "unknown"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "elapsed_ms": 3993,
+          "used_frames": 2,
+          "observation": {
+            "summary": "The latest images show a surgical tool emitting smoke, which is partially obscuring the field of view. Limited anatomical details are visible due to the smoke, which might affect clear dissection.",
+            "guidance": "Ensure adequate visibility by managing smoke and enhancing illumination to maintain precision in the dissection process. Verify exposure of the hepatocystic triangle to proceed safely.",
+            "principle": "Avoid entering liver parenchyma; if in doubt, do not proceed.",
+            "current_step_id": "S1",
+            "status": "watch",
+            "concern": "Smoke obscures structures, which may hinder accurate dissection and assessment.",
+            "steps": [
+              {
+                "id": "S1",
+                "confidence": 0.8,
+                "criteria": [
+                  {
+                    "key": "S1C1",
+                    "status": "partial",
+                    "evidence": "The tool is positioned for retraction, but smoke limits visibility of tension in the fundus.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C2",
+                    "status": "partial",
+                    "evidence": "Smoke and tool positions suggest partial lateral tension on the infundibulum.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C3",
+                    "status": "partial",
+                    "evidence": "Obscured view prevents clear determination of an exposed hepatocystic triangle.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C4",
+                    "status": "met",
+                    "evidence": "No small bowel or omentum is visible.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S1C5",
+                    "status": "partial",
+                    "evidence": "Tool positioning suggests attempt at triangulation; visibility is limited.",
+                    "frame_indices": [
+                      1
+                    ]
+                  }
+                ]
+              }
+            ],
+            "discovered_steps": []
+          },
+          "steps": [
+            {
+              "id": "S1",
+              "name": "Exposure of the Gallbladder",
+              "complete": false,
+              "progress": 60,
+              "criteria": [
+                {
+                  "label": "Fundus under steady cephalad tension",
+                  "status": "partial",
+                  "evidence": "The tool is positioned for retraction, but smoke limits visibility of tension in the fundus."
+                },
+                {
+                  "label": "Infundibulum under lateral tension",
+                  "status": "partial",
+                  "evidence": "Smoke and tool positions suggest partial lateral tension on the infundibulum."
+                },
+                {
+                  "label": "Hepatocystic triangle clearly exposed",
+                  "status": "partial",
+                  "evidence": "Obscured view prevents clear determination of an exposed hepatocystic triangle."
+                },
+                {
+                  "label": "No small bowel or omentum obscuring view",
+                  "status": "met",
+                  "evidence": "There is no small bowel or omentum obscuring the view."
+                },
+                {
+                  "label": "Adequate triangulation without arm collision",
+                  "status": "partial",
+                  "evidence": "Tool positioning suggests attempt at triangulation; visibility is limited."
+                }
+              ]
+            },
+            {
+              "id": "S2",
+              "name": "Dissection of the Hepatocystic Triangle",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Fat and fibrous tissue cleared from hepatocystic triangle",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic duct visually distinct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic artery visually distinct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No structure divided",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Lower 25\u201333% of gallbladder mobilized from liver bed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Common bile duct not encroached upon",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S3",
+              "name": "Achieve Critical View of Safety (CVS)",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Hepatocystic triangle cleared of fat and fibrous tissue.",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Lower 1/3 of gallbladder separated from liver bed (cystic plate exposed).",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Only two tubular structures entering gallbladder.",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Two and only two structures entering gallbladder",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Posterior window visible behind cystic duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic plate exposed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No structure entering liver directly mistaken for duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No clip placed yet",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S4",
+              "name": "Control of Cystic Duct and Cystic Artery",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Clips fully seated and locked",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No duct slippage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile leakage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Adequate proximal stump length",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clean transection",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No pulsatile bleeding",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clips secure",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No thermal injury to adjacent duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clear separation from liver bed",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S5",
+              "name": "Gallbladder Detachment from Liver Bed",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Gallbladder fully separated",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Liver bed hemostatic",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile leakage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No active oozing",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic duct stump intact",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S6",
+              "name": "Specimen Retrieval and Final Inspection",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Specimen fully contained",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No stone spillage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile pooling",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Hemostasis confirmed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clips secure",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clear operative field",
+                  "status": "unknown"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "answer": "The current view shows a surgical instrument emitting smoke that partially obscures the field of view. This smoke limits visibility and might hinder accurate dissection and assessment of anatomical structures. Due to this, it's challenging to verify the completion criteria for the procedure at this stage. Ensuring a clear view is essential for assessing the hepatocystic triangle or any other critical anatomical structures accurately.",
+      "answer_elapsed_ms": 2187,
+      "answer_used_frames": 2
+    },
+    {
+      "time_s": 216,
+      "question": "Are surgical clips visible? Does their presence by itself prove that all earlier Critical View of Safety criteria were met? What does the supplied guidance say to do if there is any doubt?",
+      "expected": "Clips are visible. Their presence alone does not establish the earlier CVS checks. The supplied guidance says not to proceed if any doubt remains.",
+      "observations": [
+        {
+          "elapsed_ms": 4975,
+          "used_frames": 2,
+          "observation": {
+            "summary": "The latest image shows a surgical environment with visible clips applied to a tubular structure, likely indicative of progress in a step involving the control of the cystic duct or artery. Surgical instruments are engaged with these structures, suggesting a division procedure.",
+            "guidance": "Ensure clips are securely applied and confirm there are no signs of leakage or duct slippage. Before proceeding, visually inspect for any abnormalities or unintended consequences in the instrumented area.",
+            "principle": "Confirm safe anatomy before division.",
+            "current_step_id": "S4",
+            "status": "ok",
+            "concern": "No immediate concern visible, but continuous assessment is required.",
+            "steps": [
+              {
+                "id": "S4",
+                "confidence": 0.9,
+                "criteria": [
+                  {
+                    "key": "S4C1",
+                    "status": "partial",
+                    "evidence": "Clips are visible on the tubular structure, indicating partial seating.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S4C2",
+                    "status": "unknown",
+                    "evidence": "Duct slippage cannot be evaluated from the image.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S4C3",
+                    "status": "unknown",
+                    "evidence": "Bile leakage is not visible.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S4C4",
+                    "status": "unknown",
+                    "evidence": "The proximal stump length cannot be evaluated.",
+                    "frame_indices": [
+                      1
+                    ]
+                  },
+                  {
+                    "key": "S4C5",
+                    "status": "unknown",
+                    "evidence": "Clean transection cannot be assessed from the image.",
+                    "frame_indices": [
+                      1
+                    ]
+                  }
+                ]
+              }
+            ],
+            "discovered_steps": []
+          },
+          "steps": [
+            {
+              "id": "S1",
+              "name": "Exposure of the Gallbladder",
+              "complete": false,
+              "progress": 60,
+              "criteria": [
+                {
+                  "label": "Fundus under steady cephalad tension",
+                  "status": "partial",
+                  "evidence": "The tool is positioned for retraction, but smoke limits visibility of tension in the fundus."
+                },
+                {
+                  "label": "Infundibulum under lateral tension",
+                  "status": "partial",
+                  "evidence": "Smoke and tool positions suggest partial lateral tension on the infundibulum."
+                },
+                {
+                  "label": "Hepatocystic triangle clearly exposed",
+                  "status": "partial",
+                  "evidence": "Obscured view prevents clear determination of an exposed hepatocystic triangle."
+                },
+                {
+                  "label": "No small bowel or omentum obscuring view",
+                  "status": "met",
+                  "evidence": "There is no small bowel or omentum obscuring the view."
+                },
+                {
+                  "label": "Adequate triangulation without arm collision",
+                  "status": "partial",
+                  "evidence": "Tool positioning suggests attempt at triangulation; visibility is limited."
+                }
+              ]
+            },
+            {
+              "id": "S2",
+              "name": "Dissection of the Hepatocystic Triangle",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Fat and fibrous tissue cleared from hepatocystic triangle",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic duct visually distinct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic artery visually distinct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No structure divided",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Lower 25\u201333% of gallbladder mobilized from liver bed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Common bile duct not encroached upon",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S3",
+              "name": "Achieve Critical View of Safety (CVS)",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Hepatocystic triangle cleared of fat and fibrous tissue.",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Lower 1/3 of gallbladder separated from liver bed (cystic plate exposed).",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Only two tubular structures entering gallbladder.",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Two and only two structures entering gallbladder",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Posterior window visible behind cystic duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic plate exposed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No structure entering liver directly mistaken for duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No clip placed yet",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S4",
+              "name": "Control of Cystic Duct and Cystic Artery",
+              "complete": false,
+              "progress": 6,
+              "criteria": [
+                {
+                  "label": "Clips fully seated and locked",
+                  "status": "partial",
+                  "evidence": "Clips are visible on the tubular structure, indicating partial seating."
+                },
+                {
+                  "label": "No duct slippage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile leakage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Adequate proximal stump length",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clean transection",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No pulsatile bleeding",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clips secure",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No thermal injury to adjacent duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clear separation from liver bed",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S5",
+              "name": "Gallbladder Detachment from Liver Bed",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Gallbladder fully separated",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Liver bed hemostatic",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile leakage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No active oozing",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic duct stump intact",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S6",
+              "name": "Specimen Retrieval and Final Inspection",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Specimen fully contained",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No stone spillage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile pooling",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Hemostasis confirmed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clips secure",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clear operative field",
+                  "status": "unknown"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "elapsed_ms": 3658,
+          "used_frames": 2,
+          "observation": {
+            "summary": "The images show surgical clips applied to a tubular structure, with instruments engaged, likely indicating activity related to managing the cystic duct or artery.",
+            "guidance": "Ensure all clips are securely applied and inspect for any leakage or complications. Proceed with caution to the next task based on confirmation of secure clip placement.",
+            "principle": "Ensure anatomical structures are correctly identified and secured before division.",
+            "current_step_id": "S4",
+            "status": "watch",
+            "concern": "Slight potential for clip misplacement or leakage; monitor closely.",
+            "steps": [
+              {
+                "id": "S4",
+                "confidence": 0.9,
+                "criteria": [
+                  {
+                    "key": "S4C1",
+                    "status": "met",
+                    "evidence": "Clips are visible on the tubular structure in both images.",
+                    "frame_indices": [
+                      0,
+                      1
+                    ]
+                  }
+                ]
+              }
+            ],
+            "discovered_steps": []
+          },
+          "steps": [
+            {
+              "id": "S1",
+              "name": "Exposure of the Gallbladder",
+              "complete": false,
+              "progress": 60,
+              "criteria": [
+                {
+                  "label": "Fundus under steady cephalad tension",
+                  "status": "partial",
+                  "evidence": "The tool is positioned for retraction, but smoke limits visibility of tension in the fundus."
+                },
+                {
+                  "label": "Infundibulum under lateral tension",
+                  "status": "partial",
+                  "evidence": "Smoke and tool positions suggest partial lateral tension on the infundibulum."
+                },
+                {
+                  "label": "Hepatocystic triangle clearly exposed",
+                  "status": "partial",
+                  "evidence": "Obscured view prevents clear determination of an exposed hepatocystic triangle."
+                },
+                {
+                  "label": "No small bowel or omentum obscuring view",
+                  "status": "met",
+                  "evidence": "There is no small bowel or omentum obscuring the view."
+                },
+                {
+                  "label": "Adequate triangulation without arm collision",
+                  "status": "partial",
+                  "evidence": "Tool positioning suggests attempt at triangulation; visibility is limited."
+                }
+              ]
+            },
+            {
+              "id": "S2",
+              "name": "Dissection of the Hepatocystic Triangle",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Fat and fibrous tissue cleared from hepatocystic triangle",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic duct visually distinct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic artery visually distinct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No structure divided",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Lower 25\u201333% of gallbladder mobilized from liver bed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Common bile duct not encroached upon",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S3",
+              "name": "Achieve Critical View of Safety (CVS)",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Hepatocystic triangle cleared of fat and fibrous tissue.",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Lower 1/3 of gallbladder separated from liver bed (cystic plate exposed).",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Only two tubular structures entering gallbladder.",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Two and only two structures entering gallbladder",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Posterior window visible behind cystic duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic plate exposed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No structure entering liver directly mistaken for duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No clip placed yet",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S4",
+              "name": "Control of Cystic Duct and Cystic Artery",
+              "complete": false,
+              "progress": 6,
+              "criteria": [
+                {
+                  "label": "Clips fully seated and locked",
+                  "status": "partial",
+                  "evidence": "Clips are visible on the tubular structure in both images."
+                },
+                {
+                  "label": "No duct slippage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile leakage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Adequate proximal stump length",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clean transection",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No pulsatile bleeding",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clips secure",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No thermal injury to adjacent duct",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clear separation from liver bed",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S5",
+              "name": "Gallbladder Detachment from Liver Bed",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Gallbladder fully separated",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Liver bed hemostatic",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile leakage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No active oozing",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Cystic duct stump intact",
+                  "status": "unknown"
+                }
+              ]
+            },
+            {
+              "id": "S6",
+              "name": "Specimen Retrieval and Final Inspection",
+              "complete": false,
+              "progress": 0,
+              "criteria": [
+                {
+                  "label": "Specimen fully contained",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No stone spillage",
+                  "status": "unknown"
+                },
+                {
+                  "label": "No bile pooling",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Hemostasis confirmed",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clips secure",
+                  "status": "unknown"
+                },
+                {
+                  "label": "Clear operative field",
+                  "status": "unknown"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "answer": "### Visible Evidence:\n- The images show surgical clips applied to a tubular structure, likely the cystic duct or artery.\n- Surgical instruments are engaged with these structures, suggesting involvement in a clipping or division procedure.\n\n### Unclear Details:\n- The images do not clearly show whether all anatomical structures, such as the cystic duct and artery, are fully distinct.\n- The visibility does not confirm that the Critical View of Safety (CVS), which requires specific anatomical clarity, was achieved prior to applying clips.\n\n### Principle:\n- The presence of clips alone does not prove that all earlier Critical View of Safety criteria were met. CVS criteria involve ensuring the hepatocystic triangle is cleared of fat and fibrous tissue, the lower third of the gallbladder is separated, and only the necessary tubular structures are involved.\n\n### Guidance:\n- The workflow explicitly indicates that if there is any doubt about achieving CVS, the procedure should not proceed. The decision to proceed should only be made once safe anatomical clarity is assured.",
+      "answer_elapsed_ms": 5508,
+      "answer_used_frames": 2
+    }
+  ],
+  "sessions": [
+    {
+      "sample_duration_s": 252.766667,
+      "sample_resolution": [
+        660,
+        540
+      ],
+      "step_count": 6,
+      "document_sha256": "1e437e85f26625b6e0b0778c47f2f668149a1802e225c7468b8de31b20c46c46",
+      "original_txt_identical": true,
+      "parser": [
+        {
+          "name": "Exposure of the Gallbladder",
+          "actions": 6,
+          "criteria": 5,
+          "tools": 5
+        },
+        {
+          "name": "Dissection of the Hepatocystic Triangle",
+          "actions": 17,
+          "criteria": 6,
+          "tools": 4
+        },
+        {
+          "name": "Achieve Critical View of Safety (CVS)",
+          "actions": 5,
+          "criteria": 8,
+          "tools": 5
+        },
+        {
+          "name": "Control of Cystic Duct and Cystic Artery",
+          "actions": 11,
+          "criteria": 9,
+          "tools": 7
+        },
+        {
+          "name": "Gallbladder Detachment from Liver Bed",
+          "actions": 9,
+          "criteria": 5,
+          "tools": 4
+        },
+        {
+          "name": "Specimen Retrieval and Final Inspection",
+          "actions": 8,
+          "criteria": 6,
+          "tools": 4
+        }
+      ],
+      "cached_elapsed_ms": 3,
+      "cached": true,
+      "no_completion_from_loading_or_time": true,
+      "rewind_snapshot_progress": [
+        {
+          "id": "S1",
+          "complete": false,
+          "progress": 0
+        },
+        {
+          "id": "S2",
+          "complete": false,
+          "progress": 0
+        },
+        {
+          "id": "S3",
+          "complete": false,
+          "progress": 0
+        },
+        {
+          "id": "S4",
+          "complete": false,
+          "progress": 0
+        },
+        {
+          "id": "S5",
+          "complete": false,
+          "progress": 0
+        },
+        {
+          "id": "S6",
+          "complete": false,
+          "progress": 0
+        }
+      ],
+      "retained_findings": [
+        {
+          "id": "9756e62c-8fbf-4d86-962f-0d3583807069",
+          "time_s": 104.966667,
+          "status": "watch",
+          "provenance": "ai",
+          "summary": "The latest image shows a surgical scene with a tool producing smoke, indicating tissue processing; visibility of anatomical structures is limited."
+        },
+        {
+          "id": "9b334883-fba9-4c49-a6be-ffedc67e0623",
+          "time_s": 105.466667,
+          "status": "watch",
+          "provenance": "ai",
+          "summary": "The latest images show a surgical tool emitting smoke, which is partially obscuring the field of view. Limited anatomical details are visible due to the smoke, which might affect clear dissection."
+        },
+        {
+          "id": "c0d196a7-30d9-49bf-8659-957260df6356",
+          "time_s": 216.466667,
+          "status": "watch",
+          "provenance": "ai",
+          "summary": "The images show surgical clips applied to a tubular structure, with instruments engaged, likely indicating activity related to managing the cystic duct or artery."
+        }
+      ],
+      "rewind_last_retained_observation_s": 0,
+      "rewind_requested_s": 5
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+SOURCE PROVENANCE
+Author: Dbuetow
+Source: https://commons.wikimedia.org/wiki/File:Tap_Dance_Technique.webm
+License: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+Changes: Full actual packet timeline converted to H.264/AAC; native 428×240 and all source frames retained. Source container tag says 124.393 seconds; playable source ends near 123.416 seconds. Adaptation retains CC BY-SA 4.0.
+
+DEMO: Reviewing real tap-footwork examples
+This edited demonstration shows shoes and lower legs. It is a sequence of examples and camera changes, not one uninterrupted choreography. Approximate timestamps refer to the supplied real-04-dancing.mp4.
+
+Principles:
+- Source: https://commons.wikimedia.org/wiki/File:Tap_Dance_Technique.webm
+- Author: Dbuetow. Video license: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+- Judge visible shoe movement and floor contact within the current shot.
+- The head and much of the upper body are cropped; whole-body posture and balance are unverified.
+- Blur and low native resolution can hide a brief contact. Leave unclear contacts unobserved.
+- Cuts and tiled wipes separate examples; never join movements across a transition to claim a continuous action.
+- Do not infer tap terminology, precise joint angles, pressure, skill grade, musical timing or exact repetition counts from these sample frames.
+- Spoken explanations, if any, remain explanations rather than measured evidence of a movement.
+- This is a footage-review demo, not a prescription or a certification that a technique is safe or correct.
+
+Step 1: Observe the opening shoe contact and lift
+Objective: Approximate anchor 00:00-00:13. Review the first side-on footwork example.
+Tools: Tap shoes; visible studio floor.
+Actions:
+- Locate both shoes in the opening grounded stance.
+- Follow the working shoe as it tilts or lifts near the floor and returns beside the other shoe.
+- Keep the supporting shoe in view during a complete motion within this shot.
+Criteria:
+- Both shoes are visibly on the floor in the opening stance.
+- A working shoe is visibly tilted or raised while the other shoe remains near its starting position.
+- The working shoe is visibly back beside the other shoe before the shot changes.
+Warnings: The upper body is outside the crop. An angled shoe alone does not establish which tap surface produced a sound.
+
+Step 2: Observe the lifted shoe in the oblique view
+Objective: Approximate anchor 00:14-00:26. Review the next camera view as a separate example.
+Tools: Tap shoes; visible studio floor.
+Actions:
+- Re-establish the two-shoe stance after the camera change.
+- Track the working foot as the lower leg bends and the shoe rises behind or beside the supporting leg.
+- Follow its visible return toward the floor.
+Criteria:
+- One shoe is visibly lifted clear of the floor during the example.
+- The other shoe is visible at the floor while the working shoe is raised.
+- Both shoes are visibly at the floor again within this shot.
+Warnings: Do not carry an action or a foot identity through the preceding cut without new visible evidence.
+
+Step 3: Observe the forward and backward shoe movement
+Objective: Approximate anchor 00:28-00:42. Review the front/oblique footwork example before the tiled wipe.
+Tools: Tap shoes; visible studio floor.
+Actions:
+- Follow the working shoe as it moves forward of the other shoe.
+- Observe its return and the subsequent raised-foot position.
+- Distinguish an airborne position from a clearly visible floor contact.
+Criteria:
+- A working shoe is visibly forward of the other shoe in this example.
+- The shoe subsequently returns close to the starting stance within the shot.
+- A later working-shoe position is visibly off the floor while the other shoe remains visible at the floor.
+Warnings: Motion blur can obscure the contact between sampled positions. Do not infer a tap or a repetition merely from two separated frames.
+
+Step 4: Observe changing shoe orientation near the floor
+Objective: Approximate anchor 00:44-00:58. Review the example after the tiled wipe.
+Tools: Tap shoes; visible studio floor.
+Actions:
+- Re-establish the stance after the transition.
+- Follow the working shoe as it turns, extends and returns near the other shoe.
+- Compare a visibly raised heel or angled sole with a grounded position in this shot.
+Criteria:
+- The working shoe visibly changes orientation relative to the other shoe.
+- An angled shoe or raised heel is visible during the example.
+- The shoes return close together at the floor before the next transition.
+Warnings: Shoe orientation does not measure weight transfer, force or a precise ankle angle.
+
+Step 5: Observe the later forward shoe lifts and returns
+Objective: Approximate anchor 01:00-01:22. Review the next front/oblique series independently of earlier examples.
+Tools: Tap shoes; visible studio floor.
+Actions:
+- Track the working shoe as it passes forward or across the other shoe.
+- Identify a raised position and the visible return toward the floor within one motion.
+- Treat each clear shot as its own evidence window.
+Criteria:
+- The working shoe is visibly forward of or across the other shoe during this series.
+- A raised working-shoe position is visible while the other shoe remains in view.
+- The working shoe is subsequently visible near the other shoe at the floor within the same example.
+Warnings: This series is edited and repeated. Its presence does not establish a prescribed tempo or a completed practice set.
+
+Step 6: Observe the faster and lower-camera footwork examples
+Objective: Approximate anchors 01:24-01:29 and 01:31-01:40. The tiled wipe near 01:30 separates the views.
+Tools: Tap shoes; visible studio floor.
+Actions:
+- Follow the changing positions of both shoes in the faster front view.
+- Re-establish shoe positions after the tiled wipe to the lower view.
+- In the lower view, identify a raised shoe or visible sole and its later return near the other shoe.
+Criteria:
+- The two shoes visibly change their relative positions in the front-view example.
+- A shoe is visibly raised or its sole is visible in the subsequent lower-view example.
+- Both shoes are visible near the floor again in that lower-view shot.
+Warnings: These are separate examples. Cropping and blur limit heel/toe contact analysis; do not label a jump, landing quality or exact repetition count without continuous clear evidence.
+
+Step 7: Observe the wider rear-foot lift
+Objective: Approximate anchor 01:42-01:47. Review the first wider view after the tiled transition.
+Tools: Tap shoes; visible studio floor and wall barre.
+Actions:
+- Locate both shoes and the visible lower legs in the wider shot.
+- Track the free shoe as the leg bends and the shoe rises behind the other leg.
+- Follow its visible return near the floor.
+Criteria:
+- A free shoe is visibly raised behind the supporting leg.
+- The supporting shoe remains visible at the floor during that raised position.
+- Both shoes are visible near the floor again before the following transition.
+Warnings: The head remains cropped and the barre is merely visible equipment; the video does not show that it was used for support.
+
+Step 8: Observe the final travelling and crossed-foot sequence
+Objective: Approximate anchor 01:49-02:02. Review the final wider sequence; the picture becomes blank near the end.
+Tools: Tap shoes; visible studio floor.
+Actions:
+- Follow the shoes as the performer moves across the visible floor area.
+- Identify a crossed-foot position and a subsequent separated or grounded position within this shot.
+- Stop making movement observations when the source picture becomes blank.
+Criteria:
+- A crossed-foot position is visible in the final sequence.
+- The shoes subsequently change to a separated or grounded position within the same shot.
+- The performer visibly changes position across the floor during the sequence.
+Warnings: This is an observed sequence, not a reconstructed choreography. A blank ending is a source edit, not proof of a completed training task.

@@ -1,0 +1,19 @@
+{
+  "retrieved_at": "2026-10-05T10:12:56.585396+00:00",
+  "scenario_id": "04",
+  "kind": "dancing",
+  "source_page": "https://commons.wikimedia.org/wiki/File:Tap_Dance_Technique.webm",
+  "source_api": "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url%7Csize%7Csha1%7Ctimestamp%7Cmetadata%7Cextmetadata&iimetadataversion=2&titles=File%3ATap+Dance+Technique.webm",
+  "direct_media_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Tap_Dance_Technique.webm",
+  "source_file": "evaluation/open-video-scenarios/sources/04_tap_original.webm",
+  "original_bytes": 6532126,
+  "original_sha1": "88d07143bbc1a2f9d711a8805c02427fe68a8fcd",
+  "original_sha256": "183d5e3818d5a8d6b1e8b3f5c6bf40b90aec28a04c9d81bfacbf2cb412451cf2",
+  "commons_raw_metadata_file": "evaluation/open-video-scenarios/sources/04_commons_imageinfo.json",
+  "author_html": "<a href=\"//commons.wikimedia.org/wiki/User:Dbuetow\" title=\"User:Dbuetow\">Dbuetow</a>",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+  "width": 428,
+  "height": 240,
+  "scope": "Full source, no trim, speed change, looping, generated footage, or upscaling."
+}

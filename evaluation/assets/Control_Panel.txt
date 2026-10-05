@@ -1,0 +1,13 @@
+Step 1: Inspect before connection
+Actions: Read the panel label and inspect the switch and socket.
+Criteria: PANEL B label visible. Switch visibly marked OFF. Cable plug visibly outside the socket.
+Step 2: Connect the cable
+Actions: Connect the cable plug to the lower panel socket.
+Criteria: Cable plug visibly seated in the panel socket.
+Step 3: Turn the switch on
+Actions: Turn the switch ON and observe the indicator.
+Criteria: Switch visibly marked ON. Indicator visibly green.
+Step 4: Read the meter
+Actions: Inspect the meter reading. Do not infer actual electrical safety from the display alone.
+Criteria: Meter visibly reads 42 V.
+Principles: A green indicator does not establish a secure connection or safe device operation. The visible meter is not a temperature sensor. Pause judgment when the camera is obstructed.

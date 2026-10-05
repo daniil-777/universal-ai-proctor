@@ -1,0 +1,523 @@
+{
+  "generated_at": "2026-10-04T21:15:21.351Z",
+  "notes": "Real running UI, live vision model and speech provider, real browser decoding/playback. Simulated recognized-transcript events; no microphone/room-echo or perceptual naturalness score. Overlap measures synthesis time hidden by answer generation, not a measured old-app comparison. Previous runs are retained, not replaced by best answers.",
+  "results": [
+    {
+      "video": "parts-sorting.mp4",
+      "document": "Parts_Sorting.txt",
+      "time": 9,
+      "question": "Hey, what is visible, and what should I check before moving the next part?",
+      "answer": "I can't see any discernible details in the current view, so I can't confirm what parts are visible. Before moving the next part, check if there are two red circles and one blue square visibly above the bins, as stated in Step 1 of the workflow.",
+      "current_view_quality": "unusable",
+      "recognized_to_first_token_ms": 969,
+      "recognized_to_answer_complete_ms": 1494,
+      "recognized_to_audio_ms": 2338,
+      "answer_complete_to_audio_ms": 844,
+      "first_sentence_synthesis_ms": 1157,
+      "synthesis_overlap_ms": 357,
+      "prepared_before_complete": true,
+      "sentence_gaps_ms": [
+        30
+      ],
+      "tts_requests": 2,
+      "speech_provider_success": true,
+      "guidance": "AI\nI can't see any discernible details in the current view, so I can't confirm what parts are visible.",
+      "js_errors": [],
+      "events": [
+        {
+          "kind": "listening",
+          "at": -5
+        },
+        {
+          "kind": "recognized",
+          "at": 0
+        },
+        {
+          "kind": "listening",
+          "at": 161
+        },
+        {
+          "kind": "firstToken",
+          "at": 969
+        },
+        {
+          "kind": "ttsStart",
+          "at": 1138,
+          "text": "I can't see any discernible details in the current view, so I can't confirm what parts are visible."
+        },
+        {
+          "kind": "done",
+          "at": 1494
+        },
+        {
+          "kind": "ttsStart",
+          "at": 1495,
+          "text": "Before moving the next part, check if there are two red circles and one blue square visibly above the bins, as stated in Step 1 of the workflow."
+        },
+        {
+          "kind": "ttsReady",
+          "at": 2294,
+          "text": "I can't see any discernible details in the current view, so I can't confirm what parts are visible.",
+          "ok": true
+        },
+        {
+          "kind": "playing",
+          "at": 2338
+        },
+        {
+          "kind": "ttsReady",
+          "at": 3461,
+          "text": "Before moving the next part, check if there are two red circles and one blue square visibly above the bins, as stated in Step 1 of the workflow.",
+          "ok": true
+        },
+        {
+          "kind": "ended",
+          "at": 8609
+        },
+        {
+          "kind": "playing",
+          "at": 8639
+        },
+        {
+          "kind": "ended",
+          "at": 17782
+        }
+      ]
+    },
+    {
+      "video": "packaging-portrait.mp4",
+      "document": "Packaging.txt",
+      "time": 4,
+      "question": "Hey, what can you see, and what is the next documented action?",
+      "answer": "I see a box labeled \"BOX A.\" It's unclear if the label is completely readable, so I can't confirm that detail. The next documented action is to place one blue block inside the open box.",
+      "current_view_quality": "available",
+      "recognized_to_first_token_ms": 549,
+      "recognized_to_answer_complete_ms": 1076,
+      "recognized_to_audio_ms": 1628,
+      "answer_complete_to_audio_ms": 552,
+      "first_sentence_synthesis_ms": 998,
+      "synthesis_overlap_ms": 478,
+      "prepared_before_complete": true,
+      "sentence_gaps_ms": [
+        30
+      ],
+      "tts_requests": 2,
+      "speech_provider_success": true,
+      "guidance": "AI\nI see a box labeled \"BOX A.\" It's unclear if the label is completely readable, so I can't confirm that detail.",
+      "js_errors": [],
+      "events": [
+        {
+          "kind": "listening",
+          "at": -5
+        },
+        {
+          "kind": "recognized",
+          "at": 0
+        },
+        {
+          "kind": "listening",
+          "at": 153
+        },
+        {
+          "kind": "firstToken",
+          "at": 549
+        },
+        {
+          "kind": "ttsStart",
+          "at": 597,
+          "text": "I see a box labeled \"BOX A.\""
+        },
+        {
+          "kind": "done",
+          "at": 1076
+        },
+        {
+          "kind": "ttsStart",
+          "at": 1076,
+          "text": "It's unclear if the label is completely readable, so I can't confirm that detail. The next documented action is to place one blue block inside the open box."
+        },
+        {
+          "kind": "ttsReady",
+          "at": 1595,
+          "text": "I see a box labeled \"BOX A.\"",
+          "ok": true
+        },
+        {
+          "kind": "playing",
+          "at": 1628
+        },
+        {
+          "kind": "ttsReady",
+          "at": 3445,
+          "text": "It's unclear if the label is completely readable, so I can't confirm that detail. The next documented action is to place one blue block inside the open box.",
+          "ok": true
+        },
+        {
+          "kind": "ended",
+          "at": 6814
+        },
+        {
+          "kind": "playing",
+          "at": 6843
+        },
+        {
+          "kind": "ended",
+          "at": 16222
+        }
+      ]
+    },
+    {
+      "video": "parts-sorting.mp4",
+      "time": 4,
+      "goals": "Guide me in simple language. Explain what is visible before suggesting a check.",
+      "question": "Hey, describe what is visible, then tell me what to check next.",
+      "answer": "The image shows two sections labeled \"RED ONLY\" and \"BLUE ONLY.\" The left section has two red circles and one blue square, while the right section is empty. \n\nNext, check if there’s a requirement for interaction with the shapes—like clicking, selecting, or moving them—to see if they need to match the labels.",
+      "current_view_quality": "available",
+      "recognized_to_first_token_ms": 597,
+      "recognized_to_answer_complete_ms": 1276,
+      "recognized_to_audio_ms": 2699,
+      "answer_complete_to_audio_ms": 1423,
+      "first_sentence_synthesis_ms": 1911,
+      "synthesis_overlap_ms": 527,
+      "prepared_before_complete": true,
+      "sentence_gaps_ms": [
+        44,
+        46
+      ],
+      "tts_requests": 3,
+      "speech_provider_success": true,
+      "guidance": "AI\nThe image shows two sections labeled \"RED ONLY\" and \"BLUE ONLY.\" The left section has two red circles and one blue square, while the right section is empty.",
+      "js_errors": [],
+      "events": [
+        {
+          "kind": "listening",
+          "at": -6
+        },
+        {
+          "kind": "recognized",
+          "at": 0
+        },
+        {
+          "kind": "listening",
+          "at": 158
+        },
+        {
+          "kind": "firstToken",
+          "at": 597
+        },
+        {
+          "kind": "ttsStart",
+          "at": 749,
+          "text": "The image shows two sections labeled \"RED ONLY\" and \"BLUE ONLY.\""
+        },
+        {
+          "kind": "done",
+          "at": 1276
+        },
+        {
+          "kind": "ttsStart",
+          "at": 1277,
+          "text": "The left section has two red circles and one blue square, while the right section is empty."
+        },
+        {
+          "kind": "ttsStart",
+          "at": 1278,
+          "text": "Next, check if there’s a requirement for interaction with the shapes—like clicking, selecting, or moving them—to see if they need to match the labels."
+        },
+        {
+          "kind": "ttsReady",
+          "at": 2661,
+          "text": "The image shows two sections labeled \"RED ONLY\" and \"BLUE ONLY.\"",
+          "ok": true
+        },
+        {
+          "kind": "playing",
+          "at": 2699
+        },
+        {
+          "kind": "ttsReady",
+          "at": 2731,
+          "text": "The left section has two red circles and one blue square, while the right section is empty.",
+          "ok": true
+        },
+        {
+          "kind": "ttsReady",
+          "at": 2933,
+          "text": "Next, check if there’s a requirement for interaction with the shapes—like clicking, selecting, or moving them—to see if they need to match the labels.",
+          "ok": true
+        },
+        {
+          "kind": "ended",
+          "at": 8373
+        },
+        {
+          "kind": "playing",
+          "at": 8417
+        },
+        {
+          "kind": "ended",
+          "at": 14453
+        },
+        {
+          "kind": "playing",
+          "at": 14499
+        },
+        {
+          "kind": "ended",
+          "at": 23588
+        }
+      ]
+    }
+  ],
+  "previous_runs": [
+    {
+      "generated_at": "2026-10-04T21:10:41.423Z",
+      "notes": "Real running UI, live vision model and speech provider, real browser decoding/playback. Simulated recognized-transcript events; no microphone/room-echo or perceptual naturalness score. Overlap measures synthesis time hidden by answer generation, not a measured old-app comparison.",
+      "results": [
+        {
+          "video": "parts-sorting.mp4",
+          "document": "Parts_Sorting.txt",
+          "time": 9,
+          "question": "Hey, what is visible, and what should I check before moving the next part?",
+          "answer": "The current image quality is unusable, so the process cannot be visually assessed. Before moving the next part, check if the red circles and blue square are visible above the bins to ensure they are correctly sorted according to the workflow.",
+          "recognized_to_first_token_ms": 1295,
+          "recognized_to_answer_complete_ms": 1952,
+          "recognized_to_audio_ms": 3872,
+          "answer_complete_to_audio_ms": 1921,
+          "first_sentence_synthesis_ms": 2390,
+          "synthesis_overlap_ms": 500,
+          "prepared_before_complete": true,
+          "sentence_gaps_ms": [
+            30
+          ],
+          "tts_requests": 2,
+          "speech_provider_success": true,
+          "guidance": "AI\nThe current image quality is unusable, so the process cannot be visually assessed.",
+          "js_errors": [],
+          "events": [
+            {
+              "kind": "listening",
+              "at": -4
+            },
+            {
+              "kind": "recognized",
+              "at": 0
+            },
+            {
+              "kind": "listening",
+              "at": 161
+            },
+            {
+              "kind": "firstToken",
+              "at": 1295
+            },
+            {
+              "kind": "ttsStart",
+              "at": 1452,
+              "text": "The current image quality is unusable, so the process cannot be visually assessed."
+            },
+            {
+              "kind": "done",
+              "at": 1952
+            },
+            {
+              "kind": "ttsStart",
+              "at": 1952,
+              "text": "Before moving the next part, check if the red circles and blue square are visible above the bins to ensure they are correctly sorted according to the workflow."
+            },
+            {
+              "kind": "ttsReady",
+              "at": 3842,
+              "text": "The current image quality is unusable, so the process cannot be visually assessed.",
+              "ok": true
+            },
+            {
+              "kind": "playing",
+              "at": 3872
+            },
+            {
+              "kind": "ttsReady",
+              "at": 4254,
+              "text": "Before moving the next part, check if the red circles and blue square are visible above the bins to ensure they are correctly sorted according to the workflow.",
+              "ok": true
+            },
+            {
+              "kind": "ended",
+              "at": 9060
+            },
+            {
+              "kind": "playing",
+              "at": 9089
+            },
+            {
+              "kind": "ended",
+              "at": 19001
+            }
+          ]
+        },
+        {
+          "video": "packaging-portrait.mp4",
+          "document": "Packaging.txt",
+          "time": 4,
+          "question": "Hey, what can you see, and what is the next documented action?",
+          "answer": "The image shows a box labeled \"BOX A.\" The next documented action is to place one blue block inside the open box.",
+          "recognized_to_first_token_ms": 1110,
+          "recognized_to_answer_complete_ms": 1233,
+          "recognized_to_audio_ms": 2186,
+          "answer_complete_to_audio_ms": 953,
+          "first_sentence_synthesis_ms": 1027,
+          "synthesis_overlap_ms": 104,
+          "prepared_before_complete": true,
+          "sentence_gaps_ms": [
+            41
+          ],
+          "tts_requests": 2,
+          "speech_provider_success": true,
+          "guidance": "AI\nThe image shows a box labeled \"BOX A.\" The next documented action is to place one blue block inside the open box.",
+          "js_errors": [],
+          "events": [
+            {
+              "kind": "listening",
+              "at": -5
+            },
+            {
+              "kind": "recognized",
+              "at": 0
+            },
+            {
+              "kind": "listening",
+              "at": 152
+            },
+            {
+              "kind": "firstToken",
+              "at": 1110
+            },
+            {
+              "kind": "ttsStart",
+              "at": 1129,
+              "text": "The image shows a box labeled \"BOX A.\""
+            },
+            {
+              "kind": "done",
+              "at": 1233
+            },
+            {
+              "kind": "ttsStart",
+              "at": 1233,
+              "text": "The next documented action is to place one blue block inside the open box."
+            },
+            {
+              "kind": "ttsReady",
+              "at": 2156,
+              "text": "The image shows a box labeled \"BOX A.\"",
+              "ok": true
+            },
+            {
+              "kind": "playing",
+              "at": 2186
+            },
+            {
+              "kind": "ttsReady",
+              "at": 3070,
+              "text": "The next documented action is to place one blue block inside the open box.",
+              "ok": true
+            },
+            {
+              "kind": "ended",
+              "at": 6540
+            },
+            {
+              "kind": "playing",
+              "at": 6581
+            },
+            {
+              "kind": "ended",
+              "at": 12723
+            }
+          ]
+        },
+        {
+          "video": "parts-sorting.mp4",
+          "time": 4,
+          "goals": "Guide me in simple language. Explain what is visible before suggesting a check.",
+          "question": "Hey, describe what is visible, then tell me what to check next.",
+          "answer": "On the left, there are two red circles and a blue square, with the label \"RED ONLY.\" The right side is labeled \"BLUE ONLY,\" but it is empty. Next, check what the task requires regarding the colors and shapes, specifically if you need to interact with red or blue elements.",
+          "recognized_to_first_token_ms": 902,
+          "recognized_to_answer_complete_ms": 1527,
+          "recognized_to_audio_ms": 2219,
+          "answer_complete_to_audio_ms": 692,
+          "first_sentence_synthesis_ms": 1058,
+          "synthesis_overlap_ms": 396,
+          "prepared_before_complete": true,
+          "sentence_gaps_ms": [
+            29
+          ],
+          "tts_requests": 2,
+          "speech_provider_success": true,
+          "guidance": "AI\nOn the left, there are two red circles and a blue square, with the label \"RED ONLY.\" The right side is labeled \"BLUE ONLY,\" but it is empty.",
+          "js_errors": [],
+          "events": [
+            {
+              "kind": "listening",
+              "at": -4
+            },
+            {
+              "kind": "recognized",
+              "at": 0
+            },
+            {
+              "kind": "listening",
+              "at": 157
+            },
+            {
+              "kind": "firstToken",
+              "at": 902
+            },
+            {
+              "kind": "ttsStart",
+              "at": 1131,
+              "text": "On the left, there are two red circles and a blue square, with the label \"RED ONLY.\""
+            },
+            {
+              "kind": "done",
+              "at": 1527
+            },
+            {
+              "kind": "ttsStart",
+              "at": 1527,
+              "text": "The right side is labeled \"BLUE ONLY,\" but it is empty. Next, check what the task requires regarding the colors and shapes, specifically if you need to interact with red or blue elements."
+            },
+            {
+              "kind": "ttsReady",
+              "at": 2189,
+              "text": "On the left, there are two red circles and a blue square, with the label \"RED ONLY.\"",
+              "ok": true
+            },
+            {
+              "kind": "playing",
+              "at": 2219
+            },
+            {
+              "kind": "ttsReady",
+              "at": 3496,
+              "text": "The right side is labeled \"BLUE ONLY,\" but it is empty. Next, check what the task requires regarding the colors and shapes, specifically if you need to interact with red or blue elements.",
+              "ok": true
+            },
+            {
+              "kind": "ended",
+              "at": 7068
+            },
+            {
+              "kind": "playing",
+              "at": 7097
+            },
+            {
+              "kind": "ended",
+              "at": 19057
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

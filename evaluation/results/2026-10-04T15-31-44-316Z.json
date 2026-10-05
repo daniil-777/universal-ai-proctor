@@ -1,0 +1,2426 @@
+{
+  "dataset_version": 1,
+  "generated_at": "2026-10-04T15:31:44.316Z",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "run_kind": "real provider",
+  "cases_in_dataset": 32,
+  "cases_evaluated": 32,
+  "cases_this_execution": 32,
+  "recognition_word_error_rate": null,
+  "limitations": "Targeted regex fact rubrics can miss paraphrases and unlisted claims. Reference overlap is wording similarity, not correctness. Listener replies use prepared recognized transcripts; physical microphone/STT accuracy and clinical accuracy are not measured.",
+  "metrics": {
+    "Guardian": {
+      "cases": 12,
+      "errors": 0,
+      "passed": 7,
+      "fact_recall": 0.9444444444444444,
+      "contradiction_free_rate": 1,
+      "all_rules_pass_rate": 0.5833333333333334,
+      "step_selection_agreement": 0.5,
+      "latency_p50_ms": 4459,
+      "latency_p95_ms": 7565,
+      "first_token_p50_ms": null
+    },
+    "Listener": {
+      "cases": 20,
+      "errors": 0,
+      "passed": 18,
+      "fact_recall": 0.9090909090909091,
+      "contradiction_free_rate": 1,
+      "all_rules_pass_rate": 0.9,
+      "step_selection_agreement": null,
+      "latency_p50_ms": 1295,
+      "latency_p95_ms": 1654,
+      "first_token_p50_ms": 743
+    }
+  },
+  "results": [
+    {
+      "id": "packaging-landscape:guardian-label",
+      "channel": "Guardian",
+      "video": "packaging-landscape.mp4",
+      "time_s": 0.5,
+      "reference": "Packaging.txt",
+      "question": "Describe the current visible process.",
+      "expected_answer": "An open box labeled BOX A is visible.",
+      "required_fact_count": 2,
+      "recorded_at": "2026-10-04T15:30:24.866Z",
+      "answer": "The current view shows the open box labeled 'BOX A', but no additional actions have been observed.",
+      "latency_ms": 5596,
+      "thumbnail": "/evaluation/assets/packaging-landscape-1.jpg",
+      "observation": {
+        "summary": "The current view shows the open box labeled 'BOX A', but no additional actions have been observed.",
+        "guidance": "Continue to inspect the label and ensure it is visible. Once confirmed, proceed to place the blue block inside the box.",
+        "principle": "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image.",
+        "current_step_id": "S1",
+        "status": "watch",
+        "concern": "The label is visible, but confirmation is needed to assess readability and completeness.",
+        "steps": [
+          {
+            "id": "S1",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "status": "unknown",
+                "evidence": "The 'BOX A' label is present but may not be fully readable from this angle.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "status": "unknown",
+                "evidence": "The blue block is not present in the images.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "status": "unknown",
+                "evidence": "Tape application is not observable in the images.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": []
+      },
+      "workflow": {
+        "title": "Custom guidance",
+        "steps": [
+          {
+            "id": "S1",
+            "index": 1,
+            "name": "Read the label",
+            "description": "Inspect the package label.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Inspect the package label."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "BOX A label visibly readable.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S2",
+            "index": 2,
+            "name": "Place the blue block",
+            "description": "Place one blue block in the open box.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Place one blue block in the open box."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "One blue block visibly inside the box.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S3",
+            "index": 3,
+            "name": "Apply tape",
+            "description": "Close the box and place tape across its top.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Close the box and place tape across its top."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "Tape visibly across the box top.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          }
+        ],
+        "principles": [
+          "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image."
+        ],
+        "source": "document",
+        "warnings": []
+      },
+      "current_step": "S1",
+      "image_quality": "available",
+      "status": "watch",
+      "score": {
+        "matched_facts": [
+          "label",
+          "open"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.4,
+        "pass": true
+      },
+      "checks": {
+        "single_observation_does_not_complete": true,
+        "step_selection": true
+      }
+    },
+    {
+      "id": "packaging-landscape:guardian-block",
+      "channel": "Guardian",
+      "video": "packaging-landscape.mp4",
+      "time_s": 2.5,
+      "reference": "Packaging.txt",
+      "question": "Describe the current visible process.",
+      "expected_answer": "One blue block is visible in the open box.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:30:30.672Z",
+      "answer": "The box labeled 'BOX A' is visible, and a blue block has been placed inside it. However, the tape application step is not yet evident.",
+      "latency_ms": 5338,
+      "thumbnail": "/evaluation/assets/packaging-landscape-5.jpg",
+      "observation": {
+        "summary": "The box labeled 'BOX A' is visible, and a blue block has been placed inside it. However, the tape application step is not yet evident.",
+        "guidance": "Ensure that the tape is applied across the top of the box before concluding the process. Verify the box label for clarity if needed.",
+        "principle": "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image.",
+        "current_step_id": "S3",
+        "status": "watch",
+        "concern": "The tape applying step is not visible, which is necessary for process completion.",
+        "steps": [
+          {
+            "id": "S1",
+            "confidence": 0.5,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "status": "met",
+                "evidence": "The label 'BOX A' is clearly visible on the box.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "confidence": 0.7,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "status": "met",
+                "evidence": "The blue block is inside the box, as seen in the second image.",
+                "frame_indices": [
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "status": "unknown",
+                "evidence": "Tape application is not visible in the images.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": []
+      },
+      "workflow": {
+        "title": "Custom guidance",
+        "steps": [
+          {
+            "id": "S1",
+            "index": 1,
+            "name": "Read the label",
+            "description": "Inspect the package label.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Inspect the package label."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "BOX A label visibly readable.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S2",
+            "index": 2,
+            "name": "Place the blue block",
+            "description": "Place one blue block in the open box.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Place one blue block in the open box."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "One blue block visibly inside the box.",
+                "status": "partial",
+                "evidence": "The blue block is inside the box, as seen in the second image.",
+                "confidence": 0.7
+              }
+            ],
+            "confidence": 0.7,
+            "progress": 50,
+            "complete": false,
+            "source": "document",
+            "lastObservedS": 2.5
+          },
+          {
+            "id": "S3",
+            "index": 3,
+            "name": "Apply tape",
+            "description": "Close the box and place tape across its top.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Close the box and place tape across its top."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "Tape visibly across the box top.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          }
+        ],
+        "principles": [
+          "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image."
+        ],
+        "source": "document",
+        "warnings": []
+      },
+      "current_step": "S1",
+      "image_quality": "available",
+      "status": "watch",
+      "score": {
+        "matched_facts": [
+          "blue_block"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.17647058823529413,
+        "pass": true
+      },
+      "checks": {
+        "single_observation_does_not_complete": true,
+        "step_selection": false
+      }
+    },
+    {
+      "id": "packaging-landscape:guardian-tape",
+      "channel": "Guardian",
+      "video": "packaging-landscape.mp4",
+      "time_s": 4.5,
+      "reference": "Packaging.txt",
+      "question": "Describe the current visible process.",
+      "expected_answer": "Tape is visible across the top of the box.",
+      "required_fact_count": 2,
+      "recorded_at": "2026-10-04T15:30:36.121Z",
+      "answer": "The current process involves handling a box labeled 'BOX A'. Recent frames show the box without visible contents or actions taken to progress the steps of placing a blue block and applying tape.",
+      "latency_ms": 7565,
+      "thumbnail": "/evaluation/assets/packaging-landscape-9.jpg",
+      "observation": {
+        "summary": "The current process involves handling a box labeled 'BOX A'. Recent frames show the box without visible contents or actions taken to progress the steps of placing a blue block and applying tape.",
+        "guidance": "Ensure that the box label is readable and check if a blue block is placed inside before proceeding to apply tape. Confirm each step's criteria visually as you advance.",
+        "principle": "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image.",
+        "current_step_id": "S1",
+        "status": "watch",
+        "concern": "The label on the box is not clearly readable in the images, and there's no evidence of the blue block being placed inside the box.",
+        "steps": [
+          {
+            "id": "S1",
+            "confidence": 0.5,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "status": "partial",
+                "evidence": "The 'BOX A' label is visible but obscured in the first frame, and additional visual confirmation is necessary.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "confidence": 0.2,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "status": "unknown",
+                "evidence": "No blue block is visible inside the box, and there is no evidence from the current frames to confirm if it has been placed.",
+                "frame_indices": []
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "status": "unknown",
+                "evidence": "No tape is visible across the box as it remains open without any action of closure indicated in the images.",
+                "frame_indices": []
+              }
+            ]
+          }
+        ],
+        "discovered_steps": [
+          {
+            "step": "Read the label",
+            "objective": "Confirm the visibility of the label identification on the box.",
+            "instruments": "Visual inspection",
+            "actions": "Look for clear visibility of the label reading 'BOX A'.",
+            "criteria": "BOX A label visibly readable.",
+            "duration": "short"
+          },
+          {
+            "step": "Place the blue block",
+            "objective": "Ensure one blue block is placed inside the box before sealing.",
+            "instruments": "Blue block",
+            "actions": "Locate and insert a blue block into the open box.",
+            "criteria": "One blue block visibly inside the box.",
+            "duration": "short"
+          },
+          {
+            "step": "Close and apply tape",
+            "objective": "Seal the box securely with tape.",
+            "instruments": "Tape",
+            "actions": "Close the box and secure with tape across the top.",
+            "criteria": "Tape visibly across the box top.",
+            "duration": "short"
+          }
+        ]
+      },
+      "workflow": {
+        "title": "Custom guidance",
+        "steps": [
+          {
+            "id": "S1",
+            "index": 1,
+            "name": "Read the label",
+            "description": "Inspect the package label.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Inspect the package label."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "BOX A label visibly readable.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S2",
+            "index": 2,
+            "name": "Place the blue block",
+            "description": "Place one blue block in the open box.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Place one blue block in the open box."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "One blue block visibly inside the box.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S3",
+            "index": 3,
+            "name": "Apply tape",
+            "description": "Close the box and place tape across its top.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Close the box and place tape across its top."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "Tape visibly across the box top.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          }
+        ],
+        "principles": [
+          "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image."
+        ],
+        "source": "document",
+        "warnings": []
+      },
+      "current_step": "S1",
+      "image_quality": "available",
+      "status": "watch",
+      "score": {
+        "matched_facts": [
+          "tape",
+          "box"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.14285714285714285,
+        "pass": true
+      },
+      "checks": {
+        "single_observation_does_not_complete": true,
+        "step_selection": false
+      }
+    },
+    {
+      "id": "packaging-landscape:guardian-covered",
+      "channel": "Guardian",
+      "video": "packaging-landscape.mp4",
+      "time_s": 6.5,
+      "reference": "Packaging.txt",
+      "question": "Describe the current visible process.",
+      "expected_answer": "The view is black and cannot be assessed.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:30:43.817Z",
+      "answer": "The latest frame has no discernible visual detail.",
+      "latency_ms": 21,
+      "thumbnail": "/evaluation/assets/packaging-landscape-13.jpg",
+      "observation": {
+        "summary": "The latest frame has no discernible visual detail.",
+        "guidance": "Check the camera view, lighting or playback before continuing observation.",
+        "principle": "",
+        "current_step_id": null,
+        "status": "watch",
+        "concern": "The current view cannot be assessed. Check the camera, lighting or playback; progress is unchanged.",
+        "steps": [],
+        "discovered_steps": []
+      },
+      "workflow": {
+        "title": "Custom guidance",
+        "steps": [
+          {
+            "id": "S1",
+            "index": 1,
+            "name": "Read the label",
+            "description": "Inspect the package label.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Inspect the package label."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "BOX A label visibly readable.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S2",
+            "index": 2,
+            "name": "Place the blue block",
+            "description": "Place one blue block in the open box.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Place one blue block in the open box."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "One blue block visibly inside the box.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S3",
+            "index": 3,
+            "name": "Apply tape",
+            "description": "Close the box and place tape across its top.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Close the box and place tape across its top."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "Tape visibly across the box top.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          }
+        ],
+        "principles": [
+          "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image."
+        ],
+        "source": "document",
+        "warnings": []
+      },
+      "current_step": "S1",
+      "image_quality": "unusable",
+      "status": "watch",
+      "score": {
+        "matched_facts": [
+          "unassessable"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.125,
+        "pass": true
+      },
+      "checks": {
+        "single_observation_does_not_complete": true,
+        "image_quality": true,
+        "status": true
+      }
+    },
+    {
+      "id": "packaging-landscape:guardian-mismatch",
+      "channel": "Guardian",
+      "video": "packaging-landscape.mp4",
+      "time_s": 2.5,
+      "reference": "Coffee_Brewing.txt",
+      "question": "Describe the current visible process.",
+      "expected_answer": "The visible packaging process does not match the coffee reference.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:30:43.970Z",
+      "answer": "The current images do not display any coffee brewing actions, but show a box labeled 'BOX A' which may contain brewing materials. No relevant workflow actions from the coffee brewing process are observed.",
+      "latency_ms": 5138,
+      "thumbnail": "/evaluation/assets/packaging-landscape-5.jpg",
+      "observation": {
+        "summary": "The current images do not display any coffee brewing actions, but show a box labeled 'BOX A' which may contain brewing materials. No relevant workflow actions from the coffee brewing process are observed.",
+        "guidance": "Please ensure that the coffee brewing steps, such as preparing the filter, adding coffee, and pouring water, are being executed. Examine your setup for necessary equipment and ingredients.",
+        "principle": "Use clean equipment.",
+        "current_step_id": "S1",
+        "status": "watch",
+        "concern": "Visible progress in preparing the coffee brewing setup is absent; ensure ingredients and tools are accessible.",
+        "steps": [
+          {
+            "id": "S1",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "status": "unknown",
+                "evidence": "No filter is visible in the images or preparations seen.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "status": "unknown",
+                "evidence": "Ground coffee is not observed in the images or in preparation.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "status": "unknown",
+                "evidence": "No coffee bed wetted in the images; no pouring is visible.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S4",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S4C1",
+                "status": "unknown",
+                "evidence": "Dripper removal and serving are not depicted in the images or any preparations.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": []
+      },
+      "workflow": {
+        "title": "Custom guidance",
+        "steps": [
+          {
+            "id": "S1",
+            "index": 1,
+            "name": "Prepare the filter",
+            "description": "Set up the brewer.",
+            "objective": "Set up the brewer.",
+            "expectedInstruments": [],
+            "actions": [
+              "Place the filter inside the dripper.",
+              "Rinse the filter and discard the rinse water."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "The filter is fitted and rinsed.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S2",
+            "index": 2,
+            "name": "Add ground coffee",
+            "description": "Weigh the ground coffee.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Weigh the ground coffee.",
+              "Add the coffee to the filter and level the bed."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "Ground coffee is visible in the filter.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S3",
+            "index": 3,
+            "name": "Bloom and pour",
+            "description": "Wet the coffee bed evenly with hot water.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Wet the coffee bed evenly with hot water.",
+              "Continue pouring slowly in small circles."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "The coffee bed is wet.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C2",
+                "label": "Water has been poured over the coffee.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S4",
+            "index": 4,
+            "name": "Finish and serve",
+            "description": "Allow the water to drain.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Allow the water to drain.",
+              "Remove the dripper and serve the coffee."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S4C1",
+                "label": "The dripper has been removed.",
+                "status": "unknown"
+              },
+              {
+                "key": "S4C2",
+                "label": "Coffee is present in the serving vessel.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          }
+        ],
+        "principles": [
+          "Use clean equipment.",
+          "Avoid contact with hot water."
+        ],
+        "source": "document",
+        "warnings": []
+      },
+      "current_step": "S1",
+      "image_quality": "available",
+      "status": "watch",
+      "score": {
+        "matched_facts": [
+          "mismatch"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.18604651162790697,
+        "pass": true
+      },
+      "checks": {
+        "single_observation_does_not_complete": true,
+        "unrelated_progress": true
+      }
+    },
+    {
+      "id": "packaging-landscape:guardian-no-document",
+      "channel": "Guardian",
+      "video": "packaging-landscape.mp4",
+      "time_s": 2.5,
+      "reference": null,
+      "question": "Describe the current visible process.",
+      "expected_answer": "A blue block is visible in a box; a provisional packing workflow can be proposed.",
+      "required_fact_count": 2,
+      "recorded_at": "2026-10-04T15:30:49.115Z",
+      "answer": "The process involves opening a box labeled 'BOX A'. Visible actions include the box being opened and a blue object appearing inside it over the observed time.",
+      "latency_ms": 3450,
+      "thumbnail": "/evaluation/assets/packaging-landscape-5.jpg",
+      "observation": {
+        "summary": "The process involves opening a box labeled 'BOX A'. Visible actions include the box being opened and a blue object appearing inside it over the observed time.",
+        "guidance": "Continue inspecting the box for contents and ensure all items are accounted for as per any checklist. If further steps are required, document what needs to be done next after confirming the contents are satisfactory.",
+        "principle": "Observe the workflow carefully to ensure all steps are correctly followed and items are not overlooked.",
+        "current_step_id": null,
+        "status": "ok",
+        "concern": "No immediate concerns visible; however, confirm that all items within the box match expectations.",
+        "steps": [
+          {
+            "id": "open_box",
+            "confidence": 0.9,
+            "criteria": [
+              {
+                "key": "box_opened",
+                "status": "met",
+                "evidence": "The box is visibly open in the second image with contents inside.",
+                "frame_indices": [
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": []
+      },
+      "workflow": {
+        "title": "Process guidance",
+        "steps": [],
+        "principles": [],
+        "source": "document",
+        "warnings": [
+          "No actionable steps found. Add a numbered process or use AI extraction."
+        ]
+      },
+      "current_step": "",
+      "image_quality": "available",
+      "status": "ok",
+      "score": {
+        "matched_facts": [
+          "box",
+          "blue"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.19047619047619047,
+        "pass": true
+      },
+      "checks": {
+        "single_observation_does_not_complete": true,
+        "provisional_workflow": false
+      }
+    },
+    {
+      "id": "packaging-landscape:listener-label",
+      "channel": "Listener",
+      "video": "packaging-landscape.mp4",
+      "time_s": 0.5,
+      "reference": "Packaging.txt",
+      "question": "what text is printed on the box?",
+      "utterance": "Hey, what text is printed on the box?",
+      "expected_answer": "The label reads BOX A.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:30:52.572Z",
+      "answer": "The text printed on the box is \"BOX A.\" This can be confirmed based on the visible evidence from the image. Remember to check the label for clarity before proceeding with any further actions.",
+      "latency_ms": 1262,
+      "first_token_ms": 743,
+      "thumbnail": "/evaluation/assets/packaging-landscape-1.jpg",
+      "score": {
+        "matched_facts": [
+          "label"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.15384615384615385,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-landscape:listener-empty",
+      "channel": "Listener",
+      "video": "packaging-landscape.mp4",
+      "time_s": 1,
+      "reference": "Packaging.txt",
+      "question": "is a blue block visible inside the box?",
+      "utterance": "Hi, is a blue block visible inside the box?",
+      "expected_answer": "No blue block is visible in the open box.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:30:53.841Z",
+      "answer": "No, a blue block is not visible inside the box. The images show an open box labeled \"BOX A,\" but there is no evidence of any blue block inside. Please ensure the block is placed in the box before proceeding.",
+      "latency_ms": 1679,
+      "first_token_ms": 967,
+      "thumbnail": "/evaluation/assets/packaging-landscape-2.jpg",
+      "score": {
+        "matched_facts": [
+          "absence"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.32653061224489793,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-landscape:listener-color",
+      "channel": "Listener",
+      "video": "packaging-landscape.mp4",
+      "time_s": 2.5,
+      "reference": "Packaging.txt",
+      "question": "what color is the visible block?",
+      "utterance": "Hello, what color is the visible block?",
+      "expected_answer": "The visible block is blue.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:30:55.597Z",
+      "answer": "The visible block inside the box is blue. This aligns with the second step in the process, which involves placing a blue block into the open box. Confirming colors and contents is essential before proceeding to the next steps.",
+      "latency_ms": 1273,
+      "first_token_ms": 748,
+      "thumbnail": "/evaluation/assets/packaging-landscape-5.jpg",
+      "score": {
+        "matched_facts": [
+          "blue"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.22727272727272727,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-landscape:listener-count",
+      "channel": "Listener",
+      "video": "packaging-landscape.mp4",
+      "time_s": 2.8,
+      "reference": "Packaging.txt",
+      "question": "how many blue blocks are visible?",
+      "utterance": "Hey, how many blue blocks are visible?",
+      "expected_answer": "One blue block is visible.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:30:56.883Z",
+      "answer": "One blue block is visible inside the box. It's important to confirm visible evidence before progressing with further steps in the process.",
+      "latency_ms": 1034,
+      "first_token_ms": 700,
+      "thumbnail": "/evaluation/assets/packaging-landscape-5.jpg",
+      "score": {
+        "matched_facts": [
+          "count"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.35714285714285715,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-landscape:listener-next-action",
+      "channel": "Listener",
+      "video": "packaging-landscape.mp4",
+      "time_s": 3,
+      "reference": "Packaging.txt",
+      "question": "what is the next documented action after placing the blue block?",
+      "utterance": "Hi, what is the next documented action after placing the blue block?",
+      "expected_answer": "Close the box and apply tape across its top.",
+      "required_fact_count": 2,
+      "recorded_at": "2026-10-04T15:30:57.930Z",
+      "answer": "The next documented action after placing the blue block is to apply tape. This involves closing the box and placing tape across its top to secure it. Make sure to confirm that the box is closed and that tape is visibly applied.",
+      "latency_ms": 1265,
+      "first_token_ms": 714,
+      "thumbnail": "/evaluation/assets/packaging-landscape-6.jpg",
+      "score": {
+        "matched_facts": [
+          "next_tape",
+          "close"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.27450980392156865,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-landscape:listener-tape",
+      "channel": "Listener",
+      "video": "packaging-landscape.mp4",
+      "time_s": 4.5,
+      "reference": "Packaging.txt",
+      "question": "is tape visibly present on the package?",
+      "utterance": "Hey, is tape visibly present on the package?",
+      "expected_answer": "Yes, tape is visible across the top of the box.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:30:59.348Z",
+      "answer": "No, tape is not visibly present on the package. The second image shows the box closed, but it does not confirm the presence of tape across the top. It's important to inspect carefully to ensure all criteria are met before proceeding.",
+      "latency_ms": 1295,
+      "first_token_ms": 701,
+      "thumbnail": "/evaluation/assets/packaging-landscape-9.jpg",
+      "score": {
+        "matched_facts": [
+          "tape"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.19230769230769232,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-landscape:listener-hidden",
+      "channel": "Listener",
+      "video": "packaging-landscape.mp4",
+      "time_s": 5,
+      "reference": "Packaging.txt",
+      "question": "is the blue block visible now?",
+      "utterance": "Hello, is the blue block visible now?",
+      "expected_answer": "No, the blue block is not visible in the closed box.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:00.655Z",
+      "answer": "No, the blue block is not visible now. The images only show a box labeled \"BOX A,\" but they do not provide evidence of the blue block being inside. You should confirm visibility of the blue block before proceeding with the next steps in the process.",
+      "latency_ms": 1654,
+      "first_token_ms": 1002,
+      "thumbnail": "/evaluation/assets/packaging-landscape-10.jpg",
+      "score": {
+        "matched_facts": [
+          "hidden"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.3157894736842105,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-landscape:listener-temperature",
+      "channel": "Listener",
+      "video": "packaging-landscape.mp4",
+      "time_s": 5.3,
+      "reference": "Packaging.txt",
+      "question": "can you confirm the temperature of the box contents?",
+      "utterance": "Hi, can you confirm the temperature of the box contents?",
+      "expected_answer": "The contents temperature cannot be determined from these images.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:02.442Z",
+      "answer": "No, I cannot confirm the temperature of the box contents. The visible evidence does not provide any information regarding the temperature, and I cannot assess hidden contents from the image. It's essential to use a thermometer or similar device to check the temperature accurately.",
+      "latency_ms": 1538,
+      "first_token_ms": 825,
+      "thumbnail": "/evaluation/assets/packaging-landscape-10.jpg",
+      "score": {
+        "matched_facts": [
+          "temperature_unknown"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.18518518518518517,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-landscape:listener-covered",
+      "channel": "Listener",
+      "video": "packaging-landscape.mp4",
+      "time_s": 6.5,
+      "reference": "Packaging.txt",
+      "question": "what is happening in the current view?",
+      "utterance": "Hey, what is happening in the current view?",
+      "expected_answer": "The view is black; no current action can be observed.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:03.990Z",
+      "answer": "The current process cannot be visually assessed as the latest images are unusable. Based on the workflow, the next steps involve reading the label on the box, placing a blue block inside it, and applying tape across the top. It's essential to confirm visible evidence before proceeding with each step.",
+      "latency_ms": 1525,
+      "first_token_ms": 754,
+      "thumbnail": "/evaluation/assets/packaging-landscape-13.jpg",
+      "score": {
+        "matched_facts": [],
+        "missed_facts": [
+          "covered"
+        ],
+        "contradictions": [],
+        "fact_recall": 0,
+        "rubric_precision": 0,
+        "rubric_f1": 0,
+        "reference_overlap": 0.09836065573770492,
+        "pass": false
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-landscape:listener-mismatch",
+      "channel": "Listener",
+      "video": "packaging-landscape.mp4",
+      "time_s": 2.5,
+      "reference": "Coffee_Brewing.txt",
+      "question": "has coffee been brewed in this video?",
+      "utterance": "Hi, has coffee been brewed in this video?",
+      "expected_answer": "No coffee brewing is visible; this is a packaging scene.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:05.528Z",
+      "answer": "No, coffee has not been brewed in this video. The images show a box labeled \"BOX A\" without any indication of coffee preparation or brewing steps. The workflow steps for brewing coffee require specific actions that are not visible in the provided images.",
+      "latency_ms": 1317,
+      "first_token_ms": 788,
+      "thumbnail": "/evaluation/assets/packaging-landscape-5.jpg",
+      "score": {
+        "matched_facts": [
+          "not_coffee"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.1509433962264151,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-portrait:guardian-label",
+      "channel": "Guardian",
+      "video": "packaging-portrait.mp4",
+      "time_s": 0.5,
+      "reference": "Packaging.txt",
+      "question": "Describe the current visible process.",
+      "expected_answer": "An open box labeled BOX A is visible.",
+      "required_fact_count": 2,
+      "recorded_at": "2026-10-04T15:31:06.857Z",
+      "answer": "The visible images show an open box labeled 'BOX A' but do not confirm any actions taken yet. No evidence of reading the label or placing a blue block is observed.",
+      "latency_ms": 4459,
+      "thumbnail": "/evaluation/assets/packaging-portrait-1.jpg",
+      "observation": {
+        "summary": "The visible images show an open box labeled 'BOX A' but do not confirm any actions taken yet. No evidence of reading the label or placing a blue block is observed.",
+        "guidance": "Proceed to read the label clearly and then place one blue block inside the box.",
+        "principle": "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image.",
+        "current_step_id": "S1",
+        "status": "watch",
+        "concern": "The label's visibility is confirmed but no actions taken, such as placing a blue block or applying tape, are visible.",
+        "steps": [
+          {
+            "id": "S1",
+            "confidence": 0.5,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "status": "met",
+                "evidence": "The label 'BOX A' is clearly visible and readable in the images.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "status": "unknown",
+                "evidence": "No blue block is seen in the box.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "status": "unknown",
+                "evidence": "No tape is visible across the box top.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": []
+      },
+      "workflow": {
+        "title": "Custom guidance",
+        "steps": [
+          {
+            "id": "S1",
+            "index": 1,
+            "name": "Read the label",
+            "description": "Inspect the package label.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Inspect the package label."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "BOX A label visibly readable.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S2",
+            "index": 2,
+            "name": "Place the blue block",
+            "description": "Place one blue block in the open box.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Place one blue block in the open box."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "One blue block visibly inside the box.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S3",
+            "index": 3,
+            "name": "Apply tape",
+            "description": "Close the box and place tape across its top.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Close the box and place tape across its top."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "Tape visibly across the box top.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          }
+        ],
+        "principles": [
+          "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image."
+        ],
+        "source": "document",
+        "warnings": []
+      },
+      "current_step": "S1",
+      "image_quality": "available",
+      "status": "watch",
+      "score": {
+        "matched_facts": [
+          "label",
+          "open"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.358974358974359,
+        "pass": true
+      },
+      "checks": {
+        "single_observation_does_not_complete": true,
+        "step_selection": true
+      }
+    },
+    {
+      "id": "packaging-portrait:guardian-block",
+      "channel": "Guardian",
+      "video": "packaging-portrait.mp4",
+      "time_s": 2.5,
+      "reference": "Packaging.txt",
+      "question": "Describe the current visible process.",
+      "expected_answer": "One blue block is visible in the open box.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:11.436Z",
+      "answer": "The blue block has been placed inside the box labeled 'BOX A'. The label on the box is clearly readable, and the next action involves applying tape.",
+      "latency_ms": 6807,
+      "thumbnail": "/evaluation/assets/packaging-portrait-5.jpg",
+      "observation": {
+        "summary": "The blue block has been placed inside the box labeled 'BOX A'. The label on the box is clearly readable, and the next action involves applying tape.",
+        "guidance": "Confirm that the tape is applied after closing the box. Ensure all visible criteria are met before proceeding.",
+        "principle": "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image.",
+        "current_step_id": "S2",
+        "status": "ok",
+        "concern": "",
+        "steps": [
+          {
+            "id": "S1",
+            "confidence": 0.9,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "status": "met",
+                "evidence": "The label 'BOX A' is visible and readable in the first image.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "confidence": 0.9,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "status": "met",
+                "evidence": "The blue block is visibly inside the box in the second image.",
+                "frame_indices": [
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": [
+          {
+            "step": "Apply tape",
+            "objective": "Seal the box securely.",
+            "instruments": "Tape",
+            "actions": "Close the box and place tape across its top.",
+            "criteria": "Tape visibly across the box top.",
+            "duration": "short"
+          }
+        ]
+      },
+      "workflow": {
+        "title": "Custom guidance",
+        "steps": [
+          {
+            "id": "S1",
+            "index": 1,
+            "name": "Read the label",
+            "description": "Inspect the package label.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Inspect the package label."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "BOX A label visibly readable.",
+                "status": "partial",
+                "evidence": "The label 'BOX A' is visible and readable in the first image.",
+                "confidence": 0.9
+              }
+            ],
+            "confidence": 0.9,
+            "progress": 50,
+            "complete": false,
+            "source": "document",
+            "lastObservedS": 2.5
+          },
+          {
+            "id": "S2",
+            "index": 2,
+            "name": "Place the blue block",
+            "description": "Place one blue block in the open box.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Place one blue block in the open box."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "One blue block visibly inside the box.",
+                "status": "partial",
+                "evidence": "The blue block is visibly inside the box in the second image.",
+                "confidence": 0.9
+              }
+            ],
+            "confidence": 0.9,
+            "progress": 50,
+            "complete": false,
+            "source": "document",
+            "lastObservedS": 2.5
+          },
+          {
+            "id": "S3",
+            "index": 3,
+            "name": "Apply tape",
+            "description": "Close the box and place tape across its top.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Close the box and place tape across its top."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "Tape visibly across the box top.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          }
+        ],
+        "principles": [
+          "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image."
+        ],
+        "source": "document",
+        "warnings": []
+      },
+      "current_step": "S2",
+      "image_quality": "available",
+      "status": "ok",
+      "score": {
+        "matched_facts": [
+          "blue_block"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.2222222222222222,
+        "pass": true
+      },
+      "checks": {
+        "single_observation_does_not_complete": true,
+        "step_selection": true
+      }
+    },
+    {
+      "id": "packaging-portrait:guardian-tape",
+      "channel": "Guardian",
+      "video": "packaging-portrait.mp4",
+      "time_s": 4.5,
+      "reference": "Packaging.txt",
+      "question": "Describe the current visible process.",
+      "expected_answer": "Tape is visible across the top of the box.",
+      "required_fact_count": 2,
+      "recorded_at": "2026-10-04T15:31:18.378Z",
+      "answer": "The workflow involves three steps: reading the label, placing a blue block inside the box, and applying tape to seal it. Current observations do not provide sufficient evidence for any visible actions being completed at this time.",
+      "latency_ms": 5159,
+      "thumbnail": "/evaluation/assets/packaging-portrait-9.jpg",
+      "observation": {
+        "summary": "The workflow involves three steps: reading the label, placing a blue block inside the box, and applying tape to seal it. Current observations do not provide sufficient evidence for any visible actions being completed at this time.",
+        "guidance": "Ensure the label is readable before proceeding with placing the blue block inside the box. Confirm each step's criteria are met with visible evidence before moving on to the next step.",
+        "principle": "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image.",
+        "current_step_id": "S1",
+        "status": "watch",
+        "concern": "The label is visible, but its readability and the placement of the blue block have not been confirmed.",
+        "steps": [
+          {
+            "id": "S1",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "status": "unknown",
+                "evidence": "The label 'BOX A' is partially visible, but whether it is fully readable is unclear.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "status": "unknown",
+                "evidence": "No blue block is visibly observed inside the box.",
+                "frame_indices": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "status": "unknown",
+                "evidence": "Tape is not observed across the box top.",
+                "frame_indices": [
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": []
+      },
+      "workflow": {
+        "title": "Custom guidance",
+        "steps": [
+          {
+            "id": "S1",
+            "index": 1,
+            "name": "Read the label",
+            "description": "Inspect the package label.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Inspect the package label."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "BOX A label visibly readable.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S2",
+            "index": 2,
+            "name": "Place the blue block",
+            "description": "Place one blue block in the open box.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Place one blue block in the open box."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "One blue block visibly inside the box.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S3",
+            "index": 3,
+            "name": "Apply tape",
+            "description": "Close the box and place tape across its top.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Close the box and place tape across its top."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "Tape visibly across the box top.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          }
+        ],
+        "principles": [
+          "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image."
+        ],
+        "source": "document",
+        "warnings": []
+      },
+      "current_step": "S1",
+      "image_quality": "available",
+      "status": "watch",
+      "score": {
+        "matched_facts": [
+          "tape",
+          "box"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.13043478260869565,
+        "pass": true
+      },
+      "checks": {
+        "single_observation_does_not_complete": true,
+        "step_selection": false
+      }
+    },
+    {
+      "id": "packaging-portrait:guardian-covered",
+      "channel": "Guardian",
+      "video": "packaging-portrait.mp4",
+      "time_s": 6.5,
+      "reference": "Packaging.txt",
+      "question": "Describe the current visible process.",
+      "expected_answer": "The view is black and cannot be assessed.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:23.663Z",
+      "answer": "The latest frame has no discernible visual detail.",
+      "latency_ms": 18,
+      "thumbnail": "/evaluation/assets/packaging-portrait-13.jpg",
+      "observation": {
+        "summary": "The latest frame has no discernible visual detail.",
+        "guidance": "Check the camera view, lighting or playback before continuing observation.",
+        "principle": "",
+        "current_step_id": null,
+        "status": "watch",
+        "concern": "The current view cannot be assessed. Check the camera, lighting or playback; progress is unchanged.",
+        "steps": [],
+        "discovered_steps": []
+      },
+      "workflow": {
+        "title": "Custom guidance",
+        "steps": [
+          {
+            "id": "S1",
+            "index": 1,
+            "name": "Read the label",
+            "description": "Inspect the package label.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Inspect the package label."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "BOX A label visibly readable.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S2",
+            "index": 2,
+            "name": "Place the blue block",
+            "description": "Place one blue block in the open box.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Place one blue block in the open box."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "One blue block visibly inside the box.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S3",
+            "index": 3,
+            "name": "Apply tape",
+            "description": "Close the box and place tape across its top.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Close the box and place tape across its top."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "Tape visibly across the box top.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          }
+        ],
+        "principles": [
+          "Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image."
+        ],
+        "source": "document",
+        "warnings": []
+      },
+      "current_step": "S1",
+      "image_quality": "unusable",
+      "status": "watch",
+      "score": {
+        "matched_facts": [
+          "unassessable"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.125,
+        "pass": true
+      },
+      "checks": {
+        "single_observation_does_not_complete": true,
+        "image_quality": true,
+        "status": true
+      }
+    },
+    {
+      "id": "packaging-portrait:guardian-mismatch",
+      "channel": "Guardian",
+      "video": "packaging-portrait.mp4",
+      "time_s": 2.5,
+      "reference": "Coffee_Brewing.txt",
+      "question": "Describe the current visible process.",
+      "expected_answer": "The visible packaging process does not match the coffee reference.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:23.837Z",
+      "answer": "The current visual context shows a box labeled 'BOX A.' The contents or actions related to coffee brewing steps are not visible in the frames.",
+      "latency_ms": 3244,
+      "thumbnail": "/evaluation/assets/packaging-portrait-5.jpg",
+      "observation": {
+        "summary": "The current visual context shows a box labeled 'BOX A.' The contents or actions related to coffee brewing steps are not visible in the frames.",
+        "guidance": "Focus on the visible items and ensure they meet the criteria for your next steps in the coffee brewing process. Verify if necessary materials are accessible and ready for use.",
+        "principle": "Use clean equipment.",
+        "current_step_id": "S1",
+        "status": "watch",
+        "concern": "The contents of 'BOX A' are unknown, which may imply that necessary materials for brewing coffee are either present or missing, causing uncertainty in the next steps.",
+        "steps": [
+          {
+            "id": "S1C1",
+            "confidence": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "status": "unknown",
+                "evidence": "The filter's status is unobservable as the current frames only show the box without context for the filter or coffee brewing equipment.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": []
+      },
+      "workflow": {
+        "title": "Custom guidance",
+        "steps": [
+          {
+            "id": "S1",
+            "index": 1,
+            "name": "Prepare the filter",
+            "description": "Set up the brewer.",
+            "objective": "Set up the brewer.",
+            "expectedInstruments": [],
+            "actions": [
+              "Place the filter inside the dripper.",
+              "Rinse the filter and discard the rinse water."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "The filter is fitted and rinsed.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S2",
+            "index": 2,
+            "name": "Add ground coffee",
+            "description": "Weigh the ground coffee.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Weigh the ground coffee.",
+              "Add the coffee to the filter and level the bed."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "Ground coffee is visible in the filter.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S3",
+            "index": 3,
+            "name": "Bloom and pour",
+            "description": "Wet the coffee bed evenly with hot water.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Wet the coffee bed evenly with hot water.",
+              "Continue pouring slowly in small circles."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "The coffee bed is wet.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C2",
+                "label": "Water has been poured over the coffee.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          },
+          {
+            "id": "S4",
+            "index": 4,
+            "name": "Finish and serve",
+            "description": "Allow the water to drain.",
+            "objective": "",
+            "expectedInstruments": [],
+            "actions": [
+              "Allow the water to drain.",
+              "Remove the dripper and serve the coffee."
+            ],
+            "typicalDurationMin": 0,
+            "criteria": [
+              {
+                "key": "S4C1",
+                "label": "The dripper has been removed.",
+                "status": "unknown"
+              },
+              {
+                "key": "S4C2",
+                "label": "Coffee is present in the serving vessel.",
+                "status": "unknown"
+              }
+            ],
+            "confidence": 0,
+            "progress": 0,
+            "complete": false,
+            "source": "document"
+          }
+        ],
+        "principles": [
+          "Use clean equipment.",
+          "Avoid contact with hot water."
+        ],
+        "source": "document",
+        "warnings": []
+      },
+      "current_step": "S1",
+      "image_quality": "available",
+      "status": "watch",
+      "score": {
+        "matched_facts": [
+          "mismatch"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.17142857142857143,
+        "pass": true
+      },
+      "checks": {
+        "single_observation_does_not_complete": true,
+        "unrelated_progress": true
+      }
+    },
+    {
+      "id": "packaging-portrait:guardian-no-document",
+      "channel": "Guardian",
+      "video": "packaging-portrait.mp4",
+      "time_s": 2.5,
+      "reference": null,
+      "question": "Describe the current visible process.",
+      "expected_answer": "A blue block is visible in a box; a provisional packing workflow can be proposed.",
+      "required_fact_count": 2,
+      "recorded_at": "2026-10-04T15:31:27.086Z",
+      "answer": "An action is observed involving the contents of 'Box A' being partially visible. The visible action relates to the interaction with the box and its contents.",
+      "latency_ms": 3024,
+      "thumbnail": "/evaluation/assets/packaging-portrait-5.jpg",
+      "observation": {
+        "summary": "An action is observed involving the contents of 'Box A' being partially visible. The visible action relates to the interaction with the box and its contents.",
+        "guidance": "Continue to monitor the activities involving Box A to identify further actions. Look for additional steps indicating how the contents are handled or interacted with.",
+        "principle": "Observe each visual change in the boxes and their contents for insight into the ongoing process.",
+        "current_step_id": null,
+        "status": "ok",
+        "concern": "",
+        "steps": [
+          {
+            "id": "1",
+            "confidence": 0.8,
+            "criteria": [
+              {
+                "key": "box_interaction",
+                "status": "partial",
+                "evidence": "The box is open with a blue item now inside compared to the previous frame.",
+                "frame_indices": [
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": []
+      },
+      "workflow": {
+        "title": "Process guidance",
+        "steps": [],
+        "principles": [],
+        "source": "document",
+        "warnings": [
+          "No actionable steps found. Add a numbered process or use AI extraction."
+        ]
+      },
+      "current_step": "",
+      "image_quality": "available",
+      "status": "ok",
+      "score": {
+        "matched_facts": [
+          "box"
+        ],
+        "missed_facts": [
+          "blue"
+        ],
+        "contradictions": [],
+        "fact_recall": 0.5,
+        "rubric_precision": 1,
+        "rubric_f1": 0.6666666666666666,
+        "reference_overlap": 0.14634146341463414,
+        "pass": false
+      },
+      "checks": {
+        "single_observation_does_not_complete": true,
+        "provisional_workflow": false
+      }
+    },
+    {
+      "id": "packaging-portrait:listener-label",
+      "channel": "Listener",
+      "video": "packaging-portrait.mp4",
+      "time_s": 0.5,
+      "reference": "Packaging.txt",
+      "question": "what text is printed on the box?",
+      "utterance": "Hey, what text is printed on the box?",
+      "expected_answer": "The label reads BOX A.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:30.120Z",
+      "answer": "The text printed on the box is \"BOX A.\" This indicates that you're working with a specific container designated as BOX A, which may be relevant for your process. Ensure to confirm visible evidence at each step when proceeding with the tasks outlined in the workflow.",
+      "latency_ms": 1378,
+      "first_token_ms": 829,
+      "thumbnail": "/evaluation/assets/packaging-portrait-1.jpg",
+      "score": {
+        "matched_facts": [
+          "label"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.11538461538461539,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-portrait:listener-empty",
+      "channel": "Listener",
+      "video": "packaging-portrait.mp4",
+      "time_s": 1,
+      "reference": "Packaging.txt",
+      "question": "is a blue block visible inside the box?",
+      "utterance": "Hi, is a blue block visible inside the box?",
+      "expected_answer": "No blue block is visible in the open box.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:31.509Z",
+      "answer": "No, a blue block is not visible inside the box in the images provided. The box is open, but the contents are not visible, so we cannot confirm whether the blue block has been placed inside. It's essential to verify the visible evidence before proceeding with the next steps.",
+      "latency_ms": 1217,
+      "first_token_ms": 647,
+      "thumbnail": "/evaluation/assets/packaging-portrait-2.jpg",
+      "score": {
+        "matched_facts": [
+          "absence"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.2711864406779661,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-portrait:listener-color",
+      "channel": "Listener",
+      "video": "packaging-portrait.mp4",
+      "time_s": 2.5,
+      "reference": "Packaging.txt",
+      "question": "what color is the visible block?",
+      "utterance": "Hello, what color is the visible block?",
+      "expected_answer": "The visible block is blue.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:32.804Z",
+      "answer": "The block visible in the image is blue. In the second image, you can see it placed inside the open box labeled \"BOX A.\" This confirms that the blue block is correctly positioned as part of the ongoing process.",
+      "latency_ms": 1289,
+      "first_token_ms": 767,
+      "thumbnail": "/evaluation/assets/packaging-portrait-5.jpg",
+      "score": {
+        "matched_facts": [
+          "blue"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.18181818181818182,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-portrait:listener-count",
+      "channel": "Listener",
+      "video": "packaging-portrait.mp4",
+      "time_s": 2.8,
+      "reference": "Packaging.txt",
+      "question": "how many blue blocks are visible?",
+      "utterance": "Hey, how many blue blocks are visible?",
+      "expected_answer": "One blue block is visible.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:34.105Z",
+      "answer": "One blue block is visible inside the box. According to the workflow, the next step is to confirm that the blue block is placed correctly and then proceed to apply tape across the box top.",
+      "latency_ms": 1222,
+      "first_token_ms": 677,
+      "thumbnail": "/evaluation/assets/packaging-portrait-5.jpg",
+      "score": {
+        "matched_facts": [
+          "count"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.25,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-portrait:listener-next-action",
+      "channel": "Listener",
+      "video": "packaging-portrait.mp4",
+      "time_s": 3,
+      "reference": "Packaging.txt",
+      "question": "what is the next documented action after placing the blue block?",
+      "utterance": "Hi, what is the next documented action after placing the blue block?",
+      "expected_answer": "Close the box and apply tape across its top.",
+      "required_fact_count": 2,
+      "recorded_at": "2026-10-04T15:31:35.337Z",
+      "answer": "After placing the blue block inside the box, the next documented action is to apply tape. This involves closing the box and placing tape across its top to secure it. Ensure you verify that the tape is applied correctly once you reach that step.",
+      "latency_ms": 1438,
+      "first_token_ms": 743,
+      "thumbnail": "/evaluation/assets/packaging-portrait-6.jpg",
+      "score": {
+        "matched_facts": [
+          "next_tape",
+          "close"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.2641509433962264,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-portrait:listener-tape",
+      "channel": "Listener",
+      "video": "packaging-portrait.mp4",
+      "time_s": 4.5,
+      "reference": "Packaging.txt",
+      "question": "is tape visibly present on the package?",
+      "utterance": "Hey, is tape visibly present on the package?",
+      "expected_answer": "Yes, tape is visible across the top of the box.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:36.899Z",
+      "answer": "Yes, tape is visibly present on the package in the second image. The tape is applied across the top of the box, indicating it has been closed. Before proceeding further, ensure that the label and contents are also confirmed.",
+      "latency_ms": 1586,
+      "first_token_ms": 890,
+      "thumbnail": "/evaluation/assets/packaging-portrait-9.jpg",
+      "score": {
+        "matched_facts": [
+          "tape"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.3673469387755102,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-portrait:listener-hidden",
+      "channel": "Listener",
+      "video": "packaging-portrait.mp4",
+      "time_s": 5,
+      "reference": "Packaging.txt",
+      "question": "is the blue block visible now?",
+      "utterance": "Hello, is the blue block visible now?",
+      "expected_answer": "No, the blue block is not visible in the closed box.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:38.496Z",
+      "answer": "No, the blue block is not visible now. The images show only the box labeled \"BOX A\" without any indication of the blue block inside. You should confirm the presence of the blue block before proceeding with the next steps.",
+      "latency_ms": 1245,
+      "first_token_ms": 696,
+      "thumbnail": "/evaluation/assets/packaging-portrait-10.jpg",
+      "score": {
+        "matched_facts": [
+          "hidden"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.35294117647058826,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-portrait:listener-temperature",
+      "channel": "Listener",
+      "video": "packaging-portrait.mp4",
+      "time_s": 5.3,
+      "reference": "Packaging.txt",
+      "question": "can you confirm the temperature of the box contents?",
+      "utterance": "Hi, can you confirm the temperature of the box contents?",
+      "expected_answer": "The contents temperature cannot be determined from these images.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:39.897Z",
+      "answer": "I cannot confirm the temperature of the box contents, as there’s no visible evidence available to assess that. The process requires visible validation at each step, which includes confirming the contents of the box, but I cannot verify hidden conditions.",
+      "latency_ms": 1535,
+      "first_token_ms": 829,
+      "thumbnail": "/evaluation/assets/packaging-portrait-10.jpg",
+      "score": {
+        "matched_facts": [
+          "temperature_unknown"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.12,
+        "pass": true
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-portrait:listener-covered",
+      "channel": "Listener",
+      "video": "packaging-portrait.mp4",
+      "time_s": 6.5,
+      "reference": "Packaging.txt",
+      "question": "what is happening in the current view?",
+      "utterance": "Hey, what is happening in the current view?",
+      "expected_answer": "The view is black; no current action can be observed.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:41.443Z",
+      "answer": "The current process cannot be visually assessed due to unusable image quality. Based on the workflow, the first step is to inspect the package label to ensure \"BOX A\" is readable before proceeding with placing a blue block inside and applying tape on the box. Without confirmation of visible evidence, I cannot provide further details on what is happening.",
+      "latency_ms": 1568,
+      "first_token_ms": 715,
+      "thumbnail": "/evaluation/assets/packaging-portrait-13.jpg",
+      "score": {
+        "matched_facts": [],
+        "missed_facts": [
+          "covered"
+        ],
+        "contradictions": [],
+        "fact_recall": 0,
+        "rubric_precision": 0,
+        "rubric_f1": 0,
+        "reference_overlap": 0.08695652173913043,
+        "pass": false
+      },
+      "checks": {}
+    },
+    {
+      "id": "packaging-portrait:listener-mismatch",
+      "channel": "Listener",
+      "video": "packaging-portrait.mp4",
+      "time_s": 2.5,
+      "reference": "Coffee_Brewing.txt",
+      "question": "has coffee been brewed in this video?",
+      "utterance": "Hi, has coffee been brewed in this video?",
+      "expected_answer": "No coffee brewing is visible; this is a packaging scene.",
+      "required_fact_count": 1,
+      "recorded_at": "2026-10-04T15:31:43.017Z",
+      "answer": "No, coffee has not been brewed in this video. The images show a box labeled \"BOX A\" but do not provide any evidence related to the coffee brewing process as described in the workflow. Steps such as preparing the filter or adding coffee are not visible.",
+      "latency_ms": 1293,
+      "first_token_ms": 714,
+      "thumbnail": "/evaluation/assets/packaging-portrait-5.jpg",
+      "score": {
+        "matched_facts": [
+          "not_coffee"
+        ],
+        "missed_facts": [],
+        "contradictions": [],
+        "fact_recall": 1,
+        "rubric_precision": 1,
+        "rubric_f1": 1,
+        "reference_overlap": 0.14285714285714285,
+        "pass": true
+      },
+      "checks": {}
+    }
+  ]
+}

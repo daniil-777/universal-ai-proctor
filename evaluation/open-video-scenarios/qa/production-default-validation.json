@@ -1,0 +1,25 @@
+{
+  "tested_at": "2026-10-05T11:32:15Z",
+  "api_base": "http://127.0.0.1:8101",
+  "explicit_model_supplied": false,
+  "catalog_default": "gpt-6-astra",
+  "loaded_steps": 7,
+  "current_step_id": "S4",
+  "current_stage_id": "S4",
+  "used_frames": 9,
+  "frame_times_s": [
+    109.6,
+    111,
+    112.44,
+    113.83999999999999,
+    115.28,
+    116.72,
+    116.75999999999999,
+    117.16,
+    117.56
+  ],
+  "guardian_ms": 9157,
+  "wall_ms": 9167,
+  "summary": "The latest image shows a circular monochrome imaging field with dark branching lines and a diagonal linear object against a black background. This replaces the colored operative field visible historically in frames 0\u20134; operative tissue and working tips are not currently visible.",
+  "mock": false
+}

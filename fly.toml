@@ -1,0 +1,48 @@
+# Replace the app name and matching origin before deploying. A Fly account,
+# billable Machine and persistent volume are required; this file creates none.
+app = "universal-ai-proctor-change-me"
+primary_region = "fra"
+kill_signal = "SIGTERM"
+kill_timeout = "60s"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  NODE_ENV = "production"
+  HOST = "0.0.0.0"
+  PORT = "8101"
+  MOCK = "0"
+  ACCOUNT_COOKIE_SECURE = "true"
+  ACCOUNT_PUBLIC_ORIGIN = "https://universal-ai-proctor-change-me.fly.dev"
+  DATA_DIR = "/data/accounts"
+  UPLOAD_ROOT = "/data/uploads"
+  FFMPEG_CONCURRENCY = "1"
+
+[http_service]
+  internal_port = 8101
+  force_https = true
+  auto_stop_machines = "off"
+  auto_start_machines = true
+  min_machines_running = 1
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 10
+    hard_limit = 20
+  [[http_service.checks]]
+    grace_period = "30s"
+    interval = "30s"
+    timeout = "5s"
+    method = "GET"
+    path = "/api/health"
+
+[mounts]
+  source = "process_guide_data"
+  destination = "/data"
+  initial_size = "5GB"
+  snapshot_retention = 7
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 2
+  memory = "2gb"

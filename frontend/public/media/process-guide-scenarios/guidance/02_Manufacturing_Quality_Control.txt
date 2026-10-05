@@ -1,0 +1,58 @@
+DEMO: Manufacturing quality control - precision component and inspection jig
+
+Principles:
+- This guide describes a generated demonstration clip. It is not a ground-truth label set, a validated inspection plan or evidence that a component passed quality control.
+- Visual observation records the visible handling and inspection sequence. Operator verification establishes part identity, instrument condition, tolerances and the final decision.
+- A short assembly clip may show only a subset of these steps. Keep actions outside the clip or behind hands unobserved.
+- A part that appears seated in a jig is not thereby dimensionally correct, electrically functional or approved for release.
+- Use the operator's inspection reference and handling procedure. Do not invent a numerical tolerance, measured value or approved result.
+- Keep the relevant component, jig and hands visible; request another view when the inspection region is obscured.
+- Completion of these visual handling steps does not complete the inspection record or release decision; the operator verifies those obligations separately.
+
+Step 1: Show the component and jig
+Objective: Establish the visible inspection context before handling the component.
+Tools: Demonstration precision component; operator-selected inspection jig; clean inspection surface.
+Actions:
+- Show the component and jig on the inspection surface.
+- Hold or point to the component or jig before beginning the seating movement.
+Criteria:
+- Visual observation: The component and inspection jig are both visible on the work surface.
+- Visual observation: The operator holds or points to the component or jig before the seating movement begins.
+Warnings:
+- Step 1 operator verification: Confirm the actual part identifier, jig suitability, cleanliness and inspection reference outside the visual model; appearance does not establish these properties.
+
+Step 2: Seat the component for inspection
+Objective: Place the demonstration component in the operator-designated inspection position.
+Tools: Demonstration component; inspection jig.
+Actions:
+- Move the component from the staging position to the operator-designated jig position.
+- Hold it in or against that jig position so the placement can be seen.
+Criteria:
+- Visual observation: The component visibly moves from the staging position to the jig.
+- Visual observation: The component remains in the jig position long enough for its placement to be seen.
+Warnings:
+- Step 2 operator verification: Follow the authorized handling method without forcing a fit. Seating force, clamping pressure and fixture engagement require operator checks; they cannot be inferred from the movement of a hand or an apparently flush surface.
+
+Step 3: Show the component-to-jig comparison
+Objective: Show the comparison between the component and inspection reference.
+Tools: Seated component; jig reference feature; optional operator-selected inspection instrument.
+Actions:
+- Hold or point to the accessible component-to-jig interface or reference feature.
+- Keep the comparison region in view during an inspection pause.
+Criteria:
+- Visual observation: The operator holds or points to the component-to-jig interface or reference feature.
+- Visual observation: The region being compared is visible during the inspection.
+Warnings:
+- Step 3 operator verification: Document any gap, obstruction or uncertain comparison separately. Acceptable fit, dimensions, calibration, surface defects and function depend on the inspection plan and actual readings. Do not turn an apparent alignment into a fabricated tolerance result.
+
+Step 4: Park the component after inspection
+Objective: End handling in a visible review position.
+Tools: Operator-designated review tray or staging position; component; inspection jig.
+Actions:
+- Return or park the component in the designated review position after inspection.
+- Pause handling with the component and jig still identifiable.
+Criteria:
+- Visual observation: The component is visibly parked in the review position after the inspection action.
+- Visual observation: Handling pauses with the component and jig still identifiable.
+Warnings:
+- Step 4 operator verification: Record the actual inspection evidence and unresolved questions separately. Traceability, disposition and the release decision require the actual inspection record and authorized human review. Completion of this parking step is not evidence of documented inspection or acceptance.

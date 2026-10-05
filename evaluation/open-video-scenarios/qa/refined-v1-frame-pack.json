@@ -1,0 +1,2272 @@
+{
+  "version": 1,
+  "prepared_at": "2026-10-05T11:56:29.058Z",
+  "bank": "qa/recognition-question-bank.json",
+  "bank_sha256": "b249bf6fa988b2b8efdd6a7b61f38abc78e08876f5e26f8dda72896f8c9d0e4a",
+  "samples": 9,
+  "window_seconds": 8,
+  "latest_motion_seconds": 0.8,
+  "sampler_sha256": "73a1f05f8c4f3a1d1650ba3e314c4cfc8e86b330fdba7b51146d684bdf99892d",
+  "sampling": "production-adaptive-motion-salience",
+  "description": "Unchanged case times and banks. Production adaptive sampler selects actual trailing-window JPEGs from bounded motion candidates, retaining recent views. Identical hash-verified pixels/timestamps are replayed to all models; no expected IDs or answers enter selection. No future images.",
+  "cases": [
+    {
+      "id": "real-house-construction-stage-1",
+      "scenario_id": "real-house-construction",
+      "current_s": 10,
+      "source_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-1-0.jpg",
+          "sha256": "012a83574b408963aa63501ba85715200735cedc67af7af1a7e5a73fc04749c6",
+          "timestamp_s": 2
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-1-1.jpg",
+          "sha256": "d6007a437f2d105dce55ca1c7b9fa87291b12df0b8088d497739fde0d8b20461",
+          "timestamp_s": 7.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-1-2.jpg",
+          "sha256": "e2bf0b37400b3bb64c13b560ba89250fd4d4c406a48fa4eb60b0f7b49e6ccc34",
+          "timestamp_s": 8.280000000000001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-1-3.jpg",
+          "sha256": "a0e6058da89f7b6bee879d5a3edc310ef5d5585c0510418e7f55f480ff45d282",
+          "timestamp_s": 8.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-1-4.jpg",
+          "sha256": "30caf6111799e6f5da19f9d7cbfbfbc7c65a3417274c28d5fb3fb3c2ac2a173d",
+          "timestamp_s": 8.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-1-5.jpg",
+          "sha256": "57a1da2f79f8a77ab04ef5f1d3330bd3cb6b8c8586ae219e9c3c522ea63736aa",
+          "timestamp_s": 9.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-1-6.jpg",
+          "sha256": "8f9a3f7ec89300f726f49659821311228c85dd6cc592e767d91bfa9750de4518",
+          "timestamp_s": 9.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-1-7.jpg",
+          "sha256": "146c47228703949a5470367d1b5c6d7b2dfbbc0f03f98f1b8c547f35fc5cd5e1",
+          "timestamp_s": 9.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-1-8.jpg",
+          "sha256": "d5dad33a7b0ddb102a40e9b4059e72ef795f9fe22d3d33a8d32caa30d42d8ba3",
+          "timestamp_s": 9.96
+        }
+      ],
+      "extraction_ms": 1184
+    },
+    {
+      "id": "real-house-construction-stage-2",
+      "scenario_id": "real-house-construction",
+      "current_s": 40,
+      "source_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-2-0.jpg",
+          "sha256": "80e8fa63ce08df806f5a6ece2323c9fe8b19bd48515dcc26db116f094329cd4a",
+          "timestamp_s": 32
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-2-1.jpg",
+          "sha256": "fefac898dfe1f38b645df37fed99277ab61a0503aff99d3e477f17331d248e0d",
+          "timestamp_s": 32.32
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-2-2.jpg",
+          "sha256": "1d2b4d02024b02d6da3062447461689dd8a0f8f6701b712f48179debc8bc0785",
+          "timestamp_s": 37.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-2-3.jpg",
+          "sha256": "4f72d624bfb10602ef8efc0ee3c0acc720a5d9699458039fe0f63cfa4f13ef15",
+          "timestamp_s": 38.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-2-4.jpg",
+          "sha256": "02ef28701727617dbbb5ea3fd417eaeda087709a724c20d49021e421242ff768",
+          "timestamp_s": 39.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-2-5.jpg",
+          "sha256": "93ce0f85c5b59335a736063561c0af41b617c992e52a6b28cb6b7d60163a24f1",
+          "timestamp_s": 39.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-2-6.jpg",
+          "sha256": "f7cc033fc4de3cbdf9f400726fff1c6833f8f5e75bb35c89b6c61a83406ca193",
+          "timestamp_s": 39.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-2-7.jpg",
+          "sha256": "4c044e289c04c41e5b8e5d0fd36369e25177056a6678a53067b22b33e40f1db1",
+          "timestamp_s": 39.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-2-8.jpg",
+          "sha256": "480e9c9efc2630bbc99d2fb24e0fdf1cfe78805252cd209091182513741867c6",
+          "timestamp_s": 39.96
+        }
+      ],
+      "extraction_ms": 1135
+    },
+    {
+      "id": "real-house-construction-stage-3",
+      "scenario_id": "real-house-construction",
+      "current_s": 90,
+      "source_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-3-0.jpg",
+          "sha256": "b8ea9fb6b6bd999e555ac50671f3af24fdbfa3e891eeb2125a900cc86c7f33b9",
+          "timestamp_s": 82
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-3-1.jpg",
+          "sha256": "056e81e944bdff1df86aa4a9a9f64e07acf447fef50690362c55b2d4e1f45f7f",
+          "timestamp_s": 86.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-3-2.jpg",
+          "sha256": "ea124561907b1388d3f57e271a132d5bf7493168b049f440ab6aaa17d78aea76",
+          "timestamp_s": 88.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-3-3.jpg",
+          "sha256": "202c114d53041d46272769dc13505296e0911e01933bb805b395a34e554ceb94",
+          "timestamp_s": 88.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-3-4.jpg",
+          "sha256": "1c7ae525896df84275fefd73b53351df7859202cd7ef92c5413495037693b4ce",
+          "timestamp_s": 89.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-3-5.jpg",
+          "sha256": "779e93d8abdb4fe71c18baaa9789a5651567081ae4aeda79bf1604adba6cb30e",
+          "timestamp_s": 89.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-3-6.jpg",
+          "sha256": "747ec1571067c028021de697fee3ceb3150314b86d8496f29862b3c6e321fcc3",
+          "timestamp_s": 89.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-3-7.jpg",
+          "sha256": "e8fc532a0ba7c24d4381371f8950e206d9a9c6dc0ef569b88967690c2692c9ef",
+          "timestamp_s": 89.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-3-8.jpg",
+          "sha256": "177366f365bac055d28a0bf9e3582977bf022e96b224f6020bbe9764381b9ef0",
+          "timestamp_s": 89.96000000000001
+        }
+      ],
+      "extraction_ms": 1802
+    },
+    {
+      "id": "real-house-construction-stage-4",
+      "scenario_id": "real-house-construction",
+      "current_s": 115,
+      "source_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-4-0.jpg",
+          "sha256": "5fda1effc3fa3f6f00a710edec1d2ce123993358a518a972c14679463f9dd2d8",
+          "timestamp_s": 107
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-4-1.jpg",
+          "sha256": "7400657e95f9d171a22204918b04e3980563c4d36dd404b7cf9cf66313a7e174",
+          "timestamp_s": 112.68
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-4-2.jpg",
+          "sha256": "3b424287e8400cc336dc7073513f8537cda4c7fc15ad639499e817ad828dc543",
+          "timestamp_s": 113.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-4-3.jpg",
+          "sha256": "7f9d8727ed4aa828be4b68ecc013096cae0bc8c34a31a8d4b3f29392dcbf9a08",
+          "timestamp_s": 113.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-4-4.jpg",
+          "sha256": "45577feb42879986b4dafda25df28445534dae5f8afac978d85c8f7c5a471499",
+          "timestamp_s": 113.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-4-5.jpg",
+          "sha256": "2e92293e8199c9d6793b1ea36813b8f7df0e7260c02da7b4da2fcd98291ccbd5",
+          "timestamp_s": 114.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-4-6.jpg",
+          "sha256": "630be536ebbca1399f1dd4257afd07d9fd5b2da2803fc4a081a834a594427b6b",
+          "timestamp_s": 114.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-4-7.jpg",
+          "sha256": "d6dce89bf1c4327e4520b3fca1aa87a18f6773ffc5fa5583f8d1d96ebf8885d3",
+          "timestamp_s": 114.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-4-8.jpg",
+          "sha256": "4b337174948be7b0071ad7705c86bddbfa305703dec055b2e68f5a4152fcf6cb",
+          "timestamp_s": 114.96000000000001
+        }
+      ],
+      "extraction_ms": 1261
+    },
+    {
+      "id": "real-house-construction-stage-5",
+      "scenario_id": "real-house-construction",
+      "current_s": 130,
+      "source_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-5-0.jpg",
+          "sha256": "6241639a84d852a3d0c6e7244193eaeb0ae9ad6bc64695a4f800cf083dc8d5f5",
+          "timestamp_s": 122
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-5-1.jpg",
+          "sha256": "deb945a0c1402e3dc1a40be4afa564f2e0e4281610112199bc4ab9be291eb5f6",
+          "timestamp_s": 126.64
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-5-2.jpg",
+          "sha256": "c056ab1a1c4b68652d4fab4958fd6a519578ba7fe2979c9d135387bb68ef99a7",
+          "timestamp_s": 128.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-5-3.jpg",
+          "sha256": "e2618db753ceb871409b90f9a3c89f5c6114396aac9aab1fc1dfbd3fefcc1f9b",
+          "timestamp_s": 128.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-5-4.jpg",
+          "sha256": "19dc7b06e1873cfe3d27f8449f827c52ff09165b3d2041cac00936bfc5b4d2d3",
+          "timestamp_s": 128.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-5-5.jpg",
+          "sha256": "ec0bfa49cb2fc47bf65bcb3df63856833e80ff9e671553a398a9163ce265a43d",
+          "timestamp_s": 129.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-5-6.jpg",
+          "sha256": "2b47e7f57da07186afd9424ed57f5e39c3fbe8f561f5d6692fe5d323df2a2147",
+          "timestamp_s": 129.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-5-7.jpg",
+          "sha256": "4cd168556eb63e7323abadb5845ea6332a47bf2d8f92e66a8a5b4e6fdc011b81",
+          "timestamp_s": 129.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-5-8.jpg",
+          "sha256": "4be2f273d6aa769eee82a8d8c23d04e5eb3163bcecc69a202ebe62010a0822b7",
+          "timestamp_s": 129.96
+        }
+      ],
+      "extraction_ms": 1567
+    },
+    {
+      "id": "real-house-construction-stage-6",
+      "scenario_id": "real-house-construction",
+      "current_s": 170,
+      "source_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-6-0.jpg",
+          "sha256": "8df4afae8608502f9d6e7ff21c5698a00078a2a3202aa6476e00ea052461fa27",
+          "timestamp_s": 162
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-6-1.jpg",
+          "sha256": "51a2cdc7c20a11fd36594a6f9294b085e843e93107b9fedc2fc39b1735d6e7d4",
+          "timestamp_s": 163.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-6-2.jpg",
+          "sha256": "ea1131eab94891e7d2134fd77b20844bea5852fe7291cd6bbc4c94749b1b6ed2",
+          "timestamp_s": 167.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-6-3.jpg",
+          "sha256": "362391e630c04e4b018d7277d8e88e8759af1550a45d7b1bd6b6d6609f254283",
+          "timestamp_s": 168.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-6-4.jpg",
+          "sha256": "bfd29577e3dd7b3b07036c224535fe2acc49c27c48efd9f9ec005fda70323db4",
+          "timestamp_s": 169.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-6-5.jpg",
+          "sha256": "5244e1ac56c694dc2c6a666d2783e15ed802e9568e60d24f534d8e5206f8224f",
+          "timestamp_s": 169.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-6-6.jpg",
+          "sha256": "89172dd0e4b4962133a9e2666d3d93ecfda68554bc2b1c1c177da5e1dc3beaef",
+          "timestamp_s": 169.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-6-7.jpg",
+          "sha256": "c55738efbb71e0bd11b770c0129fd11edc0d153b9521516f46352066916d3f3d",
+          "timestamp_s": 169.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-6-8.jpg",
+          "sha256": "3182b31df94d8adff3dfdd82ec4b41adb992bce35a1623d16156fe57c74bfa52",
+          "timestamp_s": 169.96
+        }
+      ],
+      "extraction_ms": 1015
+    },
+    {
+      "id": "real-house-construction-uncertainty-1",
+      "scenario_id": "real-house-construction",
+      "current_s": 130,
+      "source_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-1-0.jpg",
+          "sha256": "6241639a84d852a3d0c6e7244193eaeb0ae9ad6bc64695a4f800cf083dc8d5f5",
+          "timestamp_s": 122
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-1-1.jpg",
+          "sha256": "deb945a0c1402e3dc1a40be4afa564f2e0e4281610112199bc4ab9be291eb5f6",
+          "timestamp_s": 126.64
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-1-2.jpg",
+          "sha256": "c056ab1a1c4b68652d4fab4958fd6a519578ba7fe2979c9d135387bb68ef99a7",
+          "timestamp_s": 128.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-1-3.jpg",
+          "sha256": "e2618db753ceb871409b90f9a3c89f5c6114396aac9aab1fc1dfbd3fefcc1f9b",
+          "timestamp_s": 128.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-1-4.jpg",
+          "sha256": "19dc7b06e1873cfe3d27f8449f827c52ff09165b3d2041cac00936bfc5b4d2d3",
+          "timestamp_s": 128.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-1-5.jpg",
+          "sha256": "ec0bfa49cb2fc47bf65bcb3df63856833e80ff9e671553a398a9163ce265a43d",
+          "timestamp_s": 129.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-1-6.jpg",
+          "sha256": "2b47e7f57da07186afd9424ed57f5e39c3fbe8f561f5d6692fe5d323df2a2147",
+          "timestamp_s": 129.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-1-7.jpg",
+          "sha256": "4cd168556eb63e7323abadb5845ea6332a47bf2d8f92e66a8a5b4e6fdc011b81",
+          "timestamp_s": 129.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-1-8.jpg",
+          "sha256": "4be2f273d6aa769eee82a8d8c23d04e5eb3163bcecc69a202ebe62010a0822b7",
+          "timestamp_s": 129.96
+        }
+      ],
+      "extraction_ms": 1888
+    },
+    {
+      "id": "real-house-construction-uncertainty-2",
+      "scenario_id": "real-house-construction",
+      "current_s": 90,
+      "source_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-2-0.jpg",
+          "sha256": "b8ea9fb6b6bd999e555ac50671f3af24fdbfa3e891eeb2125a900cc86c7f33b9",
+          "timestamp_s": 82
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-2-1.jpg",
+          "sha256": "056e81e944bdff1df86aa4a9a9f64e07acf447fef50690362c55b2d4e1f45f7f",
+          "timestamp_s": 86.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-2-2.jpg",
+          "sha256": "ea124561907b1388d3f57e271a132d5bf7493168b049f440ab6aaa17d78aea76",
+          "timestamp_s": 88.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-2-3.jpg",
+          "sha256": "202c114d53041d46272769dc13505296e0911e01933bb805b395a34e554ceb94",
+          "timestamp_s": 88.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-2-4.jpg",
+          "sha256": "1c7ae525896df84275fefd73b53351df7859202cd7ef92c5413495037693b4ce",
+          "timestamp_s": 89.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-2-5.jpg",
+          "sha256": "779e93d8abdb4fe71c18baaa9789a5651567081ae4aeda79bf1604adba6cb30e",
+          "timestamp_s": 89.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-2-6.jpg",
+          "sha256": "747ec1571067c028021de697fee3ceb3150314b86d8496f29862b3c6e321fcc3",
+          "timestamp_s": 89.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-2-7.jpg",
+          "sha256": "e8fc532a0ba7c24d4381371f8950e206d9a9c6dc0ef569b88967690c2692c9ef",
+          "timestamp_s": 89.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-uncertainty-2-8.jpg",
+          "sha256": "177366f365bac055d28a0bf9e3582977bf022e96b224f6020bbe9764381b9ef0",
+          "timestamp_s": 89.96000000000001
+        }
+      ],
+      "extraction_ms": 3183
+    },
+    {
+      "id": "real-manufacturing-stage-1",
+      "scenario_id": "real-manufacturing",
+      "current_s": 27,
+      "source_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-1-0.jpg",
+          "sha256": "96e0eb8ae6a652cd5e35eb9df0fac90ee780bc9c1ad7af6660540d85c528d23c",
+          "timestamp_s": 19
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-1-1.jpg",
+          "sha256": "27e4bc12e688b9fb1f286d2c28772ef81059f4361e66fa074c5747d83c2e17ea",
+          "timestamp_s": 21.64
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-1-2.jpg",
+          "sha256": "c978f3a23c9a4f7e43f92da10509d3693f64ce19a1e68c585837a88bf6de522b",
+          "timestamp_s": 24.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-1-3.jpg",
+          "sha256": "866613ef30188699feff56658d42196e02ce2ca0c5ff3ded0e2f3d22cd511255",
+          "timestamp_s": 25.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-1-4.jpg",
+          "sha256": "7bb047de693717f6a8dd8e9e9d0fcfe7dce9847685687939fff5dce7f44f17d9",
+          "timestamp_s": 25.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-1-5.jpg",
+          "sha256": "3e40c65f7117ca7aab9ae6afc8f7e173ce7106993498543757557f39f9ac9e53",
+          "timestamp_s": 26.119999999999997
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-1-6.jpg",
+          "sha256": "7295ebc8f0b608b28ed0bc159504d5138bd1d511e6abaf85e05811cc0bc68bea",
+          "timestamp_s": 26.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-1-7.jpg",
+          "sha256": "b0cd81da9b6360bba149cf289803ac331ed64c9129b53000c213f6129bb8b5d1",
+          "timestamp_s": 26.560000000000002
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-1-8.jpg",
+          "sha256": "95c98c5dfae4b47aa77454e8b7e6f8f5ec847d075c48c739692342909ef7273c",
+          "timestamp_s": 26.96
+        }
+      ],
+      "extraction_ms": 1884
+    },
+    {
+      "id": "real-manufacturing-stage-2",
+      "scenario_id": "real-manufacturing",
+      "current_s": 35,
+      "source_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-0.jpg",
+          "sha256": "cbea0aa6c0580fc1fdd0c42d47728dc1e4c713bbd9e899caf417e8024bdefc94",
+          "timestamp_s": 27
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-1.jpg",
+          "sha256": "9c3efb5eda57dc15f5507d8aa241954c8bcbf982d2d37a0243d82de74053f52a",
+          "timestamp_s": 28.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-2.jpg",
+          "sha256": "a79ecd0d0b8d97ad0e0e60cda44892f206af4083577d798a4bf5d81d4f97ad66",
+          "timestamp_s": 33.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-3.jpg",
+          "sha256": "849e927ac5b658ba123de640d53422b84238826286fa99dc602b4ac12d3da5c2",
+          "timestamp_s": 33.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-4.jpg",
+          "sha256": "49821edd933810f64c97cb98da5f780e548659bd6368e4f189ad21abe2323889",
+          "timestamp_s": 34.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-5.jpg",
+          "sha256": "a10c69563b205cdde18b38e160d3a61ec42f065facb9b51a8dd442cff8939c17",
+          "timestamp_s": 34.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-6.jpg",
+          "sha256": "c75df60475227e1b907f78506cb00a00c7cc30f3f90a92675c2999c3cbd89ed1",
+          "timestamp_s": 34.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-7.jpg",
+          "sha256": "e1c6cf8a5a3d215b5107015865b87f5bb47844a9bd2b026b2db83fd1169422d3",
+          "timestamp_s": 34.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-8.jpg",
+          "sha256": "5ea04d9d19971d114d19bbeb37e3edf22c368adaf28e85adc8364be325376312",
+          "timestamp_s": 34.96
+        }
+      ],
+      "extraction_ms": 1568
+    },
+    {
+      "id": "real-manufacturing-stage-3",
+      "scenario_id": "real-manufacturing",
+      "current_s": 60,
+      "source_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-3-0.jpg",
+          "sha256": "573f57cf4953fb39ae4369176291b079105705c8bdec5372d5812d77f8a914f1",
+          "timestamp_s": 52
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-3-1.jpg",
+          "sha256": "8ed94de63b57b850e87a437262252375b0077c96625e8f3c1f37784ea287710f",
+          "timestamp_s": 56.24
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-3-2.jpg",
+          "sha256": "4ae7cd596fa2b7443422abe1ca61ef6748ef873807077185e1d01ea09c7df479",
+          "timestamp_s": 57.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-3-3.jpg",
+          "sha256": "2a61812c21966a3ef956eab0f5da990601844942a917c4f9ac2f64a0c64d1ce5",
+          "timestamp_s": 58.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-3-4.jpg",
+          "sha256": "0daead457b1decc2ce1f136d4a0525a06b1b14d052153137c47b7841e915f186",
+          "timestamp_s": 58.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-3-5.jpg",
+          "sha256": "58e1af0b5e9be809337a0eee1eda8ca8233af401167b5ddbe7c6dd615f0375a5",
+          "timestamp_s": 59.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-3-6.jpg",
+          "sha256": "3669374d7083baab41355efdadc8e13b8e2003b107446422c71b781ebb937e84",
+          "timestamp_s": 59.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-3-7.jpg",
+          "sha256": "4d8fc9a6d1ef62112f233975bd6eb483c6aca2619ca94ca47ff054fa8a984b6f",
+          "timestamp_s": 59.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-3-8.jpg",
+          "sha256": "49b3321bad22e76289617e68b72cdd3705fd69e815c715fb5a765cad9404e7ba",
+          "timestamp_s": 59.96
+        }
+      ],
+      "extraction_ms": 1163
+    },
+    {
+      "id": "real-manufacturing-stage-4",
+      "scenario_id": "real-manufacturing",
+      "current_s": 90,
+      "source_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-4-0.jpg",
+          "sha256": "7f6af235dfd886317c2d5a9c8b6df39f691118771b2765b79c72ed03209f6685",
+          "timestamp_s": 82
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-4-1.jpg",
+          "sha256": "d51598e87019d3f7dbe5c3236a953afb3d5fddef2a61563e508a28b002e740f9",
+          "timestamp_s": 85.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-4-2.jpg",
+          "sha256": "4a8f725c6e04de496c9f641132688498da74b0dcaf35c1e53c6b3fd0c7c4bb2d",
+          "timestamp_s": 88.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-4-3.jpg",
+          "sha256": "1ae668668606b081d6c8348889df426309e0f4200d003da5e8ee159e94cdba6a",
+          "timestamp_s": 88.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-4-4.jpg",
+          "sha256": "2d66fb272d0ccfc72b2f41a091f8538de9098488f7554ceb58e3bf59e71919ce",
+          "timestamp_s": 88.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-4-5.jpg",
+          "sha256": "9baab9c757316906538600894bacc699e1a1c21ee26bc13a6e7a9dca969a2e36",
+          "timestamp_s": 89.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-4-6.jpg",
+          "sha256": "e7667f7b5cc4a043a29c2de3c71b6ee19c0b158ebcc4098a33118035d155434d",
+          "timestamp_s": 89.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-4-7.jpg",
+          "sha256": "c18540ea1be64dd5382b8c5e8e86886fe13f8c639be58599801224254406498a",
+          "timestamp_s": 89.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-4-8.jpg",
+          "sha256": "bc2ddc31a84aa5559bfeab3f5bbb0b4632c203e58931d657042aa577c355bcb0",
+          "timestamp_s": 89.96000000000001
+        }
+      ],
+      "extraction_ms": 1361
+    },
+    {
+      "id": "real-manufacturing-stage-5",
+      "scenario_id": "real-manufacturing",
+      "current_s": 135,
+      "source_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-5-0.jpg",
+          "sha256": "6e76f7abad0acd34f686eba2409ed93e8d04d257192b72213d0d3aed60486c03",
+          "timestamp_s": 127
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-5-1.jpg",
+          "sha256": "b45d59f31c1412fad6e55b77c7b52f1e106a69060abc9c9d281bfe895ebeff86",
+          "timestamp_s": 132.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-5-2.jpg",
+          "sha256": "63b08306b6fa1ffe6dae54ccdb99e4d57d68945780c2101a5feab6d623da3f80",
+          "timestamp_s": 132.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-5-3.jpg",
+          "sha256": "015337bccc824cb318c15674486a1874714185cd4e11d2fc48593def460385a1",
+          "timestamp_s": 133.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-5-4.jpg",
+          "sha256": "80eb716f10643cffba3f4b31a4f0f4c79ea5704c9711f0825c64002abeb6a185",
+          "timestamp_s": 133.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-5-5.jpg",
+          "sha256": "aeb90e03bb82c93bc18c86427439ae80b486ad5d5e34dae580baa17c104560ec",
+          "timestamp_s": 134.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-5-6.jpg",
+          "sha256": "78f197e192ad04be857f7b9dd4da2a18e084b6a0ee5a038b16fa0023a137194b",
+          "timestamp_s": 134.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-5-7.jpg",
+          "sha256": "f24d6906a4bd18c10c0918b38e52604b7bf9934599c285f93e1315a6e17c0102",
+          "timestamp_s": 134.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-5-8.jpg",
+          "sha256": "bd18852a1a57f5ccd704109422f40d3a4ebbe09aeb318b2360cb11ab420e4a86",
+          "timestamp_s": 134.96
+        }
+      ],
+      "extraction_ms": 1418
+    },
+    {
+      "id": "real-manufacturing-stage-6",
+      "scenario_id": "real-manufacturing",
+      "current_s": 160,
+      "source_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-0.jpg",
+          "sha256": "51a212068db379ca5088e2bf446b8850faf870fefd900980118910775b0ce88c",
+          "timestamp_s": 152
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-1.jpg",
+          "sha256": "9907d551dc64d693dde3f31c20e8f08933789d964d7eb6a3ec03ae9366ef5cf7",
+          "timestamp_s": 155.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-2.jpg",
+          "sha256": "85c3362a4f5007494c3a3845d10786e0a895a8590d335509d2f4d8525bb1b0d6",
+          "timestamp_s": 157.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-3.jpg",
+          "sha256": "dbd8578512e6d74546443ae018d7cd2977bf7a809272dc05d5a0058c7f81c852",
+          "timestamp_s": 158.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-4.jpg",
+          "sha256": "9542723ef499f511b5a8f38c5c84bd2fe2c7a4c3f4b7aa4bd05645614d22a599",
+          "timestamp_s": 159.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-5.jpg",
+          "sha256": "6391c64f7e4d7f398f49a1f374b41ab8436464537c7c34b92a2a7f3389367d15",
+          "timestamp_s": 159.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-6.jpg",
+          "sha256": "ac57f7fea0195f86c6a012a68593ca5ec6d0b39d5f430f4f88d485115559303e",
+          "timestamp_s": 159.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-7.jpg",
+          "sha256": "218ea201a20a21e825fe36b462937fc21feac56085719007dc8c4a72d8a5520d",
+          "timestamp_s": 159.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-8.jpg",
+          "sha256": "f6dc2543e9d34fbdd03b556332840181e9ee2d6557a06e688fb7d34b5569e271",
+          "timestamp_s": 159.96
+        }
+      ],
+      "extraction_ms": 1726
+    },
+    {
+      "id": "real-manufacturing-uncertainty-1",
+      "scenario_id": "real-manufacturing",
+      "current_s": 60,
+      "source_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-1-0.jpg",
+          "sha256": "573f57cf4953fb39ae4369176291b079105705c8bdec5372d5812d77f8a914f1",
+          "timestamp_s": 52
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-1-1.jpg",
+          "sha256": "8ed94de63b57b850e87a437262252375b0077c96625e8f3c1f37784ea287710f",
+          "timestamp_s": 56.24
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-1-2.jpg",
+          "sha256": "4ae7cd596fa2b7443422abe1ca61ef6748ef873807077185e1d01ea09c7df479",
+          "timestamp_s": 57.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-1-3.jpg",
+          "sha256": "2a61812c21966a3ef956eab0f5da990601844942a917c4f9ac2f64a0c64d1ce5",
+          "timestamp_s": 58.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-1-4.jpg",
+          "sha256": "0daead457b1decc2ce1f136d4a0525a06b1b14d052153137c47b7841e915f186",
+          "timestamp_s": 58.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-1-5.jpg",
+          "sha256": "58e1af0b5e9be809337a0eee1eda8ca8233af401167b5ddbe7c6dd615f0375a5",
+          "timestamp_s": 59.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-1-6.jpg",
+          "sha256": "3669374d7083baab41355efdadc8e13b8e2003b107446422c71b781ebb937e84",
+          "timestamp_s": 59.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-1-7.jpg",
+          "sha256": "4d8fc9a6d1ef62112f233975bd6eb483c6aca2619ca94ca47ff054fa8a984b6f",
+          "timestamp_s": 59.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-1-8.jpg",
+          "sha256": "49b3321bad22e76289617e68b72cdd3705fd69e815c715fb5a765cad9404e7ba",
+          "timestamp_s": 59.96
+        }
+      ],
+      "extraction_ms": 706
+    },
+    {
+      "id": "real-manufacturing-uncertainty-2",
+      "scenario_id": "real-manufacturing",
+      "current_s": 90,
+      "source_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-2-0.jpg",
+          "sha256": "7f6af235dfd886317c2d5a9c8b6df39f691118771b2765b79c72ed03209f6685",
+          "timestamp_s": 82
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-2-1.jpg",
+          "sha256": "d51598e87019d3f7dbe5c3236a953afb3d5fddef2a61563e508a28b002e740f9",
+          "timestamp_s": 85.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-2-2.jpg",
+          "sha256": "4a8f725c6e04de496c9f641132688498da74b0dcaf35c1e53c6b3fd0c7c4bb2d",
+          "timestamp_s": 88.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-2-3.jpg",
+          "sha256": "1ae668668606b081d6c8348889df426309e0f4200d003da5e8ee159e94cdba6a",
+          "timestamp_s": 88.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-2-4.jpg",
+          "sha256": "2d66fb272d0ccfc72b2f41a091f8538de9098488f7554ceb58e3bf59e71919ce",
+          "timestamp_s": 88.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-2-5.jpg",
+          "sha256": "9baab9c757316906538600894bacc699e1a1c21ee26bc13a6e7a9dca969a2e36",
+          "timestamp_s": 89.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-2-6.jpg",
+          "sha256": "e7667f7b5cc4a043a29c2de3c71b6ee19c0b158ebcc4098a33118035d155434d",
+          "timestamp_s": 89.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-2-7.jpg",
+          "sha256": "c18540ea1be64dd5382b8c5e8e86886fe13f8c639be58599801224254406498a",
+          "timestamp_s": 89.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-uncertainty-2-8.jpg",
+          "sha256": "bc2ddc31a84aa5559bfeab3f5bbb0b4632c203e58931d657042aa577c355bcb0",
+          "timestamp_s": 89.96000000000001
+        }
+      ],
+      "extraction_ms": 852
+    },
+    {
+      "id": "real-surgery-stage-1",
+      "scenario_id": "real-surgery",
+      "current_s": 11,
+      "source_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-1-0.jpg",
+          "sha256": "0c1cbfa9a673f1b817da404adaf551889f54215873deecc4d0fe9fba3b540a3b",
+          "timestamp_s": 3
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-1-1.jpg",
+          "sha256": "773112af13332ad63cea3278d955fc38f93c8ad61a8619b71db09199ba011ba9",
+          "timestamp_s": 5.64
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-1-2.jpg",
+          "sha256": "03e81e9d740443a691bcd0e0558d8a8f31a9eeae6115791366d6cba04ff12a08",
+          "timestamp_s": 8.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-1-3.jpg",
+          "sha256": "d1c0f940e20f4326e4b3e4543ae408c99328da6daa25669a563f4e4fe7c5536d",
+          "timestamp_s": 10.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-1-4.jpg",
+          "sha256": "d1c0f940e20f4326e4b3e4543ae408c99328da6daa25669a563f4e4fe7c5536d",
+          "timestamp_s": 10.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-1-5.jpg",
+          "sha256": "d1c0f940e20f4326e4b3e4543ae408c99328da6daa25669a563f4e4fe7c5536d",
+          "timestamp_s": 10.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-1-6.jpg",
+          "sha256": "dbb0c2b794f86c5e65d738328034fc942c0d4a3eb85e581166bf9e253d22bc35",
+          "timestamp_s": 10.96
+        }
+      ],
+      "extraction_ms": 281
+    },
+    {
+      "id": "real-surgery-stage-2",
+      "scenario_id": "real-surgery",
+      "current_s": 27,
+      "source_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-0.jpg",
+          "sha256": "82d8fa04c4b54f8a56d35cf4656006f5c4b101b1492ceb0dc43bc31716f53250",
+          "timestamp_s": 19
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-1.jpg",
+          "sha256": "258e365a2b5d975582fcc961d3ea80e3ea86d310d1115abe2053dd6bf589d6cb",
+          "timestamp_s": 19.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-2.jpg",
+          "sha256": "beaef148698389194a8064eaa7e346176be205c8f8e2628cabdbeac36e9d2da9",
+          "timestamp_s": 24.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-3.jpg",
+          "sha256": "bfb281a5a48e564f4dc9ff33fc9c3494c892b8643d9246ae0a74d335db55d9c8",
+          "timestamp_s": 25.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-4.jpg",
+          "sha256": "0397485be8e91be0f1e508118641eb856000c272b574c6417e5ee3a08ceee3c0",
+          "timestamp_s": 25.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-5.jpg",
+          "sha256": "4f1ab9afa8883a4b29cffa73d5c68b0b683438bb83aff58a54caa0aba2576c65",
+          "timestamp_s": 26.119999999999997
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-6.jpg",
+          "sha256": "94bb7f2ad6dfe685746e690714a75f061ee50ed03faac26855704d3c3b49c67f",
+          "timestamp_s": 26.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-7.jpg",
+          "sha256": "6e40a280c9ea2c26168e237b0b583f3a5522e0f55547fb6b0a3fdd49fe539d0b",
+          "timestamp_s": 26.560000000000002
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-8.jpg",
+          "sha256": "69dbc059e49d813fab906b89d53ee8afce6e2454a4e6af1e9db7631ae8b56411",
+          "timestamp_s": 26.96
+        }
+      ],
+      "extraction_ms": 896
+    },
+    {
+      "id": "real-surgery-stage-3",
+      "scenario_id": "real-surgery",
+      "current_s": 82,
+      "source_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-0.jpg",
+          "sha256": "0816470fec29c9c7a286c2c422a122b3e3b698c898fa79eb69503414427cf008",
+          "timestamp_s": 74
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-1.jpg",
+          "sha256": "528c6660461942afe32efdae3e07051add15fe678fba7ad65a4d7961a0c34aca",
+          "timestamp_s": 75.4
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-2.jpg",
+          "sha256": "0b4cd17764d851cc11773d1a4f458aa92e6496ecce75b460b0e3637c763fedc1",
+          "timestamp_s": 79.96000000000001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-3.jpg",
+          "sha256": "c4d165781ca6ad4ae7d59364e1c13cf9e947eb06e96b28ca66ffed3d22ac6a22",
+          "timestamp_s": 80.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-4.jpg",
+          "sha256": "8272183a9626ae6827ed445dd45e30b1e4615ee248b19c6b9eb898bf35cbcc95",
+          "timestamp_s": 80.96000000000001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-5.jpg",
+          "sha256": "44cb626b06dede926d152944434a1baf6c82ea5a4d5b0e0cecd611a2e6d393a1",
+          "timestamp_s": 81.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-6.jpg",
+          "sha256": "71def5c8bd7b2076f1ddfbef0721185d4e280f43bf02a395678e0ba0f76c8e9a",
+          "timestamp_s": 81.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-7.jpg",
+          "sha256": "93ec12cffa22dfe02e585dd3692a3aba72981638e57e85f52503ea80abda4fe3",
+          "timestamp_s": 81.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-8.jpg",
+          "sha256": "a4686d9887402cde2e6c60aaecaf6153edecda28d4b9b9270e1593d5983f3a08",
+          "timestamp_s": 81.96000000000001
+        }
+      ],
+      "extraction_ms": 614
+    },
+    {
+      "id": "real-surgery-stage-4",
+      "scenario_id": "real-surgery",
+      "current_s": 117.6,
+      "source_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-4-0.jpg",
+          "sha256": "9630efacd3e015da3f64af5929312731b0919c828468d9e6c41090d97484c16c",
+          "timestamp_s": 109.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-4-1.jpg",
+          "sha256": "16dbb5bfb3e983e284ded04e072088cbff839f1b15168b367e8181b1b42c7b1a",
+          "timestamp_s": 110.24
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-4-2.jpg",
+          "sha256": "78bf6341818eac1bf0831cd9d9d73d4f98537341d4f9103765c32cd10005ec44",
+          "timestamp_s": 111.91999999999999
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-4-3.jpg",
+          "sha256": "febb9d270900aa0e462d867fa4ce193c546561552f480a5c45c88674fd5277c6",
+          "timestamp_s": 113.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-4-4.jpg",
+          "sha256": "5edba2f4aee5f8053fac5d17445806fc4ebe0f1fa0eee7961958fca5ec34c4a2",
+          "timestamp_s": 114.88
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-4-5.jpg",
+          "sha256": "de6f86edc985cdbd17124113dba90a53592f1502d3e91fe5c3920539ec0c5851",
+          "timestamp_s": 116.72
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-4-6.jpg",
+          "sha256": "de6f86edc985cdbd17124113dba90a53592f1502d3e91fe5c3920539ec0c5851",
+          "timestamp_s": 116.75999999999999
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-4-7.jpg",
+          "sha256": "de6f86edc985cdbd17124113dba90a53592f1502d3e91fe5c3920539ec0c5851",
+          "timestamp_s": 117.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-4-8.jpg",
+          "sha256": "26725a81f6b39689933e12d719d37bb7f5701ec0e9a5b39cb516633b3d9c7678",
+          "timestamp_s": 117.56
+        }
+      ],
+      "extraction_ms": 513
+    },
+    {
+      "id": "real-surgery-stage-5",
+      "scenario_id": "real-surgery",
+      "current_s": 137,
+      "source_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-0.jpg",
+          "sha256": "38b0627592bc3b08f9ca8a66b29679063b1b6d4ad462e7b3d7c010e7bae373df",
+          "timestamp_s": 129
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-1.jpg",
+          "sha256": "204bebbeab33cc8ddf9c80227a0730394718379cec108ae1c4c97100c4f5a624",
+          "timestamp_s": 131.32
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-2.jpg",
+          "sha256": "bffe0b8de8f30b9c697cdaf49c33becc3f6f93eefaf04e7c9657de7456e2b82e",
+          "timestamp_s": 134.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-3.jpg",
+          "sha256": "f7511f506851730990fdfb30db2775ee0feece4df436ce310d84d6bc9aa4fb98",
+          "timestamp_s": 135.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-4.jpg",
+          "sha256": "2c351e975f6c8b27d398696474871982a2f78acb926685c79fcc681fbd3d15fd",
+          "timestamp_s": 135.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-5.jpg",
+          "sha256": "7d867aba66fa2376c08a726a37e975d8679e7450b669c7d6c407591071606314",
+          "timestamp_s": 136.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-6.jpg",
+          "sha256": "5d8ce7ad26dbb0cdc924424494dc05e643961381e45839fcf803a38dff327a2a",
+          "timestamp_s": 136.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-7.jpg",
+          "sha256": "eedebeeec97bd997a30c9a2f83732ea7a2ccc75d31a056a971f60758e6ba8976",
+          "timestamp_s": 136.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-8.jpg",
+          "sha256": "0cbb1ad555f38d51bfb9e11572d7bfbfa49594ec791707b006f2266a4d43fba3",
+          "timestamp_s": 136.96
+        }
+      ],
+      "extraction_ms": 504
+    },
+    {
+      "id": "real-surgery-stage-6",
+      "scenario_id": "real-surgery",
+      "current_s": 162,
+      "source_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-6-0.jpg",
+          "sha256": "8d31be6e6ca8b11b000d2a80ebf91b88cd6a2fbad093d0d681e13b6c89f3cbb5",
+          "timestamp_s": 154
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-6-1.jpg",
+          "sha256": "29011e364fdc805b426b514b73f40d5ba724fcfcd56646f4e96dc418f0339818",
+          "timestamp_s": 157.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-6-2.jpg",
+          "sha256": "dc991148dfe066234070ca5d66c606ae355754b37b7aa435c763bf4513519e25",
+          "timestamp_s": 159.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-6-3.jpg",
+          "sha256": "c66ce2d644efe476f724cb322265b38757af61ad2f3ff0cde9a6169913b1a900",
+          "timestamp_s": 160.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-6-4.jpg",
+          "sha256": "a85372d72d45c67a952e5c08831cb18b6118e19a50596615b6b3c1076f6984c4",
+          "timestamp_s": 160.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-6-5.jpg",
+          "sha256": "09804bc50ca2c4b6920b4d1c066d276b27e65d6d4a94164ba2c241ba3715d152",
+          "timestamp_s": 161.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-6-6.jpg",
+          "sha256": "6791835fb2335655b00ef98f8d6b5235efdb88503e89c1f943f5f83b6331b37c",
+          "timestamp_s": 161.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-6-7.jpg",
+          "sha256": "90ce8a1fad6677c6a5c7d4db839a8705b420d673f95d03b41fec664d08013777",
+          "timestamp_s": 161.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-6-8.jpg",
+          "sha256": "bbda91460b29e9654bf7c551dae91a61caa86c1a04d29ebef4e8cdc9b8ef5e9a",
+          "timestamp_s": 161.96
+        }
+      ],
+      "extraction_ms": 511
+    },
+    {
+      "id": "real-surgery-stage-7",
+      "scenario_id": "real-surgery",
+      "current_s": 178,
+      "source_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-7-0.jpg",
+          "sha256": "a1d0c1ff045a15f59f2006f8b3345b22fefb96b91d25ef9142d3cc2344f80208",
+          "timestamp_s": 170
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-7-1.jpg",
+          "sha256": "b44fc8285ab89d704752b0bc5b2cebc7c32999df7444c98d29b5587a08db1892",
+          "timestamp_s": 170.64
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-7-2.jpg",
+          "sha256": "989e1df4d600c69e24fdc25e49cf7b1c362b37effc351aa4150c6d8cb28458f8",
+          "timestamp_s": 176.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-7-3.jpg",
+          "sha256": "11d29a03a5514332d30629a631c42a5998ee90d304004301d380123f82ad187c",
+          "timestamp_s": 176.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-7-4.jpg",
+          "sha256": "0b761df96c5275ca0ed25e0f6c4f9872100efdb5aa418569c78e3768c59217f7",
+          "timestamp_s": 176.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-7-5.jpg",
+          "sha256": "00f870499ef7a8bb9f6cc35feeb5387b07c6c6138bfdcee9486a6019747b1a71",
+          "timestamp_s": 177.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-7-6.jpg",
+          "sha256": "f371d405dd327a6be6d59a8de5405cc26d2526a8dc1312e0aa27fdbee22f97ea",
+          "timestamp_s": 177.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-7-7.jpg",
+          "sha256": "5d82aa296f7c785e7826def892a18abd8030ffc627340e070671bd212d239757",
+          "timestamp_s": 177.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-7-8.jpg",
+          "sha256": "cbc3716b5104e5251108598386e6eb6f7b4dfe4c33e80834a7d77446c1b7a196",
+          "timestamp_s": 177.96
+        }
+      ],
+      "extraction_ms": 314
+    },
+    {
+      "id": "real-surgery-uncertainty-1",
+      "scenario_id": "real-surgery",
+      "current_s": 82,
+      "source_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-1-0.jpg",
+          "sha256": "0816470fec29c9c7a286c2c422a122b3e3b698c898fa79eb69503414427cf008",
+          "timestamp_s": 74
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-1-1.jpg",
+          "sha256": "528c6660461942afe32efdae3e07051add15fe678fba7ad65a4d7961a0c34aca",
+          "timestamp_s": 75.4
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-1-2.jpg",
+          "sha256": "0b4cd17764d851cc11773d1a4f458aa92e6496ecce75b460b0e3637c763fedc1",
+          "timestamp_s": 79.96000000000001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-1-3.jpg",
+          "sha256": "c4d165781ca6ad4ae7d59364e1c13cf9e947eb06e96b28ca66ffed3d22ac6a22",
+          "timestamp_s": 80.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-1-4.jpg",
+          "sha256": "8272183a9626ae6827ed445dd45e30b1e4615ee248b19c6b9eb898bf35cbcc95",
+          "timestamp_s": 80.96000000000001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-1-5.jpg",
+          "sha256": "44cb626b06dede926d152944434a1baf6c82ea5a4d5b0e0cecd611a2e6d393a1",
+          "timestamp_s": 81.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-1-6.jpg",
+          "sha256": "71def5c8bd7b2076f1ddfbef0721185d4e280f43bf02a395678e0ba0f76c8e9a",
+          "timestamp_s": 81.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-1-7.jpg",
+          "sha256": "93ec12cffa22dfe02e585dd3692a3aba72981638e57e85f52503ea80abda4fe3",
+          "timestamp_s": 81.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-1-8.jpg",
+          "sha256": "a4686d9887402cde2e6c60aaecaf6153edecda28d4b9b9270e1593d5983f3a08",
+          "timestamp_s": 81.96000000000001
+        }
+      ],
+      "extraction_ms": 302
+    },
+    {
+      "id": "real-surgery-uncertainty-2",
+      "scenario_id": "real-surgery",
+      "current_s": 162,
+      "source_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-2-0.jpg",
+          "sha256": "8d31be6e6ca8b11b000d2a80ebf91b88cd6a2fbad093d0d681e13b6c89f3cbb5",
+          "timestamp_s": 154
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-2-1.jpg",
+          "sha256": "29011e364fdc805b426b514b73f40d5ba724fcfcd56646f4e96dc418f0339818",
+          "timestamp_s": 157.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-2-2.jpg",
+          "sha256": "dc991148dfe066234070ca5d66c606ae355754b37b7aa435c763bf4513519e25",
+          "timestamp_s": 159.96
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-2-3.jpg",
+          "sha256": "c66ce2d644efe476f724cb322265b38757af61ad2f3ff0cde9a6169913b1a900",
+          "timestamp_s": 160.28
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-2-4.jpg",
+          "sha256": "a85372d72d45c67a952e5c08831cb18b6118e19a50596615b6b3c1076f6984c4",
+          "timestamp_s": 160.6
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-2-5.jpg",
+          "sha256": "09804bc50ca2c4b6920b4d1c066d276b27e65d6d4a94164ba2c241ba3715d152",
+          "timestamp_s": 161.12
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-2-6.jpg",
+          "sha256": "6791835fb2335655b00ef98f8d6b5235efdb88503e89c1f943f5f83b6331b37c",
+          "timestamp_s": 161.16
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-2-7.jpg",
+          "sha256": "90ce8a1fad6677c6a5c7d4db839a8705b420d673f95d03b41fec664d08013777",
+          "timestamp_s": 161.56
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-uncertainty-2-8.jpg",
+          "sha256": "bbda91460b29e9654bf7c551dae91a61caa86c1a04d29ebef4e8cdc9b8ef5e9a",
+          "timestamp_s": 161.96
+        }
+      ],
+      "extraction_ms": 256
+    },
+    {
+      "id": "real-dancing-stage-1",
+      "scenario_id": "real-dancing",
+      "current_s": 7,
+      "source_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-0.jpg",
+          "sha256": "5912816de46e48e87d9bfbf45ca05ce8fbf03687e048d2fa0b88901a4ad38247",
+          "timestamp_s": 0
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-1.jpg",
+          "sha256": "4dc162edca2215c5e5768c114568cb4d37b81033dafa1ff182b3dc3a5f886b36",
+          "timestamp_s": 2.3023
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-2.jpg",
+          "sha256": "3e9cea79e8e1e875b07d5a4366603bd814a2309369ec08c23729e720d06522dd",
+          "timestamp_s": 5.3053
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-3.jpg",
+          "sha256": "395a9b7f856c1d2a99046e1f0e1d9b683c866b2d8dbb609547e1ef5550e13905",
+          "timestamp_s": 5.972633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-4.jpg",
+          "sha256": "7c3762e0e2b242c6feab2f4f4d3e4ab7bb599f8546863860c1d1ddc136df45cb",
+          "timestamp_s": 6.139467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-5.jpg",
+          "sha256": "25ce3a41605f623667e74f4e1f941f6025b43364fe5408deec4a1a66892dc034",
+          "timestamp_s": 6.172833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-6.jpg",
+          "sha256": "675d31f93fabc3723f6e731c597a7ae3e32347efcf1ee98419d6d6847ab72650",
+          "timestamp_s": 6.3063
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-7.jpg",
+          "sha256": "606191135e6f5a7239a4358d154dbb06fe54a8caf10a5ed78131425635a9a722",
+          "timestamp_s": 6.573233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-8.jpg",
+          "sha256": "964b01c6db3023b9cba007f2d1fbe7f8c8f98fe88a5266b6f275c239cd1c5a8f",
+          "timestamp_s": 6.973633
+        }
+      ],
+      "extraction_ms": 236
+    },
+    {
+      "id": "real-dancing-stage-2",
+      "scenario_id": "real-dancing",
+      "current_s": 19,
+      "source_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-0.jpg",
+          "sha256": "33c009fa7f3ea74ac4267c4ce80ed8cd18ec32709fc00ed071533ba850a0075e",
+          "timestamp_s": 11.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-1.jpg",
+          "sha256": "3bf9abe90b3213e5a2410c03a568f30b9b2f295d2fe9e52d89d0ae14f083584c",
+          "timestamp_s": 13.636967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-2.jpg",
+          "sha256": "3211e34c8e68e7b5713a37bfcf0d3932ef829067b2dc842a3495e430bdaec2b9",
+          "timestamp_s": 17.307299999999998
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-3.jpg",
+          "sha256": "4828c92b13201488ea9bdfffaeae02d44abdf8c95b6b76c146fb520172de6d85",
+          "timestamp_s": 17.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-4.jpg",
+          "sha256": "cf2741790698a02be4bbb7b12b42fd8ef3ede709be7957268cb03a85609c9fb3",
+          "timestamp_s": 18.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-5.jpg",
+          "sha256": "b8bcefb050104d422486f22f4a9f078884f0e4428509d939c6ebb1140b84ceaf",
+          "timestamp_s": 18.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-6.jpg",
+          "sha256": "ecf3c062e17420e2f7f0afefa9f8b5becaaedaef0130ed393d167424e30f0ce6",
+          "timestamp_s": 18.3083
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-7.jpg",
+          "sha256": "cb27cde2fd4d77cb0bacbc42fa93d4aeddfcefd634f7204ed5c595c04c708e3c",
+          "timestamp_s": 18.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-8.jpg",
+          "sha256": "155fdcc816cb0289b8a09fa26a339124db2ca3d76d79883febda6b661e766615",
+          "timestamp_s": 18.975633000000002
+        }
+      ],
+      "extraction_ms": 278
+    },
+    {
+      "id": "real-dancing-stage-3",
+      "scenario_id": "real-dancing",
+      "current_s": 35,
+      "source_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-0.jpg",
+          "sha256": "d6d774ae9063ef6708ba50a418ccaa8a73df8df41be578a61b21e9f38fe391f5",
+          "timestamp_s": 27.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-1.jpg",
+          "sha256": "a31a6071b82ce8b7bbb3ed662dd78b6e7e8ae9ed2ef9b0aafc77586d359c23e0",
+          "timestamp_s": 28.635967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-2.jpg",
+          "sha256": "458ce62ba2ce0b36135d638dc764953f80f7459cec00852a4eaff348d34905b3",
+          "timestamp_s": 33.3073
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-3.jpg",
+          "sha256": "c050c847cfbb9f5295bdfdb9710b3c58cc98b42fbc3ea8f9c987b00d75218a12",
+          "timestamp_s": 33.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-4.jpg",
+          "sha256": "fad213065d99efc8eb870e5de0d40cee6dd34c348dac2874ca88bfe57e2b3b2b",
+          "timestamp_s": 34.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-5.jpg",
+          "sha256": "d414c89e58be9d7fb0eedc0e43439574e6f326c71dbca196ce4cba9b0b1ab513",
+          "timestamp_s": 34.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-6.jpg",
+          "sha256": "ccbd91f1c447f67b85e49c95c4551d8a2943093e60e8021f19b4a7f3032be2f2",
+          "timestamp_s": 34.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-7.jpg",
+          "sha256": "a84d519dabd4971a0deff9b865ad0065424e8eec429a1e8a32a25d647d6306d2",
+          "timestamp_s": 34.641967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-8.jpg",
+          "sha256": "86dd05db589e93ec5eb6c4186edf95c2096927cc854ea7b11d5d282a84ea70ce",
+          "timestamp_s": 34.975633
+        }
+      ],
+      "extraction_ms": 245
+    },
+    {
+      "id": "real-dancing-stage-4",
+      "scenario_id": "real-dancing",
+      "current_s": 50,
+      "source_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-4-0.jpg",
+          "sha256": "26886e0ffb89d70fd049acb425d402c36f58f7de0269ebbd2db91d433691c846",
+          "timestamp_s": 42.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-4-1.jpg",
+          "sha256": "0daf42c9b6797553ce80d08caeab220a7c6bcbcb63f8c1793d55534ff17dba0a",
+          "timestamp_s": 42.968633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-4-2.jpg",
+          "sha256": "b90ebc3667ee481a7ca3a433b3a153d2323587ecc2b41a1fd74157806667ff00",
+          "timestamp_s": 48.640967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-4-3.jpg",
+          "sha256": "9fcd9e9a5e75d0a527ccbb82db9c68b237d69a93dbd18ea2d3641fec6d27bdbb",
+          "timestamp_s": 48.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-4-4.jpg",
+          "sha256": "b9c7b6253578d4028964fb2d52acded0dd46327c38f3b80c4aaa287a8471f6c1",
+          "timestamp_s": 49.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-4-5.jpg",
+          "sha256": "81e4d157c2bcbb20108833f8bec17134c5facf3ef8ac4257a81e0ca93ca276c6",
+          "timestamp_s": 49.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-4-6.jpg",
+          "sha256": "7d24acdc461c7fe46ef7a058b06200866275f6f0004246c8ada7a90fc43a0719",
+          "timestamp_s": 49.3083
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-4-7.jpg",
+          "sha256": "54e33ac7a2e9faa6cc68783ff26dcd84d888b17e89fa296c12f3ab8896cfe6f0",
+          "timestamp_s": 49.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-4-8.jpg",
+          "sha256": "9db306bf4b867eee8b949234d2c1da30facd883e80a5601d87ff298e9293ca61",
+          "timestamp_s": 49.975633
+        }
+      ],
+      "extraction_ms": 188
+    },
+    {
+      "id": "real-dancing-stage-5",
+      "scenario_id": "real-dancing",
+      "current_s": 70,
+      "source_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-0.jpg",
+          "sha256": "112821903e06d79438ca88a59295f7e104a33ef1ceca46c34ccbb82f020b0f83",
+          "timestamp_s": 62.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-1.jpg",
+          "sha256": "06f572d866ec39e72cd39d8fe5fa741da90067b7e4ce8d07f9a58b795b9f0903",
+          "timestamp_s": 65.637967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-2.jpg",
+          "sha256": "52ca5db9a6082c1328ad65931f310b91f8eb9768f5e85d265ffe477f8d8be4fb",
+          "timestamp_s": 68.640967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-3.jpg",
+          "sha256": "3f417c052efdb21c77f5f695062b636e406efaf68e580c3b67f2ed2d8b6446a0",
+          "timestamp_s": 68.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-4.jpg",
+          "sha256": "c931c7758d66abd46d36054bf0bc20e231c08a8c7cb21377ac74b7e24e232425",
+          "timestamp_s": 69.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-5.jpg",
+          "sha256": "14ebef602d26bacf759e44e3077b683d1a63c01cf1411e60c43ae2ccee8d66f5",
+          "timestamp_s": 69.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-6.jpg",
+          "sha256": "aa6af4a5387f021ddf458472a3b8e4f5c93be6057a8b2952946b6257a65e039e",
+          "timestamp_s": 69.3083
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-7.jpg",
+          "sha256": "491fbabeb65fc9a2d00f81509df085b252e8d182733aaa0b6e1cee16d944ac9c",
+          "timestamp_s": 69.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-8.jpg",
+          "sha256": "5f551bfb1c064a54fb82c016634f97999c5c9cf285dfea7f18da0a4207759db2",
+          "timestamp_s": 69.975633
+        }
+      ],
+      "extraction_ms": 183
+    },
+    {
+      "id": "real-dancing-stage-6",
+      "scenario_id": "real-dancing",
+      "current_s": 96,
+      "source_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-0.jpg",
+          "sha256": "e3b2d92d76f0dc9b2577e1222e4ee2a1136552112719ac31ef62c976568ef191",
+          "timestamp_s": 88.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-1.jpg",
+          "sha256": "d4293f8fe1808fb5c9b8207461e09590cc4669486a787e5dfb544cbdd4f6211f",
+          "timestamp_s": 89.969633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-2.jpg",
+          "sha256": "686c7e9c6474477d73b858c93749517ffc10f4422c4ba7e4e201e28db6c07bf9",
+          "timestamp_s": 94.3073
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-3.jpg",
+          "sha256": "e38b3116b1511f9833bae27f9125a22539701007ae9f946e3eb96f4fd1277b7b",
+          "timestamp_s": 94.640967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-4.jpg",
+          "sha256": "ad6ea562b8b3b1aed3c21b892df5b9ea7b3fc73fd3248c1a16f6646ea64e28ad",
+          "timestamp_s": 95.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-5.jpg",
+          "sha256": "bfd835957c4f4b2d4398083511af5ef837f52d9f205edbcefbda7a44f998b7f3",
+          "timestamp_s": 95.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-6.jpg",
+          "sha256": "719d9ad8a050c8a5cb8e15532a20db203da4b5de25b0dd393abfeb87d1244fc6",
+          "timestamp_s": 95.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-7.jpg",
+          "sha256": "dc1bea0a1013d8d6d6a1a07c7006436078ae967edc6f1bd4865edbf3716d5053",
+          "timestamp_s": 95.641967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-8.jpg",
+          "sha256": "d0ae2d0efc4eec0e82966e2dc331543bd66156909dc757f867d84c2834c6a186",
+          "timestamp_s": 95.975633
+        }
+      ],
+      "extraction_ms": 201
+    },
+    {
+      "id": "real-dancing-stage-7",
+      "scenario_id": "real-dancing",
+      "current_s": 104,
+      "source_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-0.jpg",
+          "sha256": "385177670087ecc5997fb1422f0e4d8ef2f07e46837105f8dacb907025559633",
+          "timestamp_s": 96.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-1.jpg",
+          "sha256": "3a60cd1e7d81dacb06ec18856b85dc5857b85f32b235f466b399fc2bcdf1e945",
+          "timestamp_s": 100.972633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-2.jpg",
+          "sha256": "069049da8c1b7d48ec339a5511d41e05f4ff2859e815b68cad9f7cbb25d8158f",
+          "timestamp_s": 102.3073
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-3.jpg",
+          "sha256": "b8cbd4337a0f6747f36fce5024a9d51cd48cde28e3e927dd9617b33f5475e7eb",
+          "timestamp_s": 102.640967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-4.jpg",
+          "sha256": "e713e60c711e3dab24d7f32524f0052311c288cb70ba5ddde456769c2fd6abcf",
+          "timestamp_s": 102.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-5.jpg",
+          "sha256": "2b3bed4ad92c84297d47afa4b746bdb25312ef5f7756bf43a7668aff9e0e524b",
+          "timestamp_s": 103.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-6.jpg",
+          "sha256": "3ee8dff9e4c5bd644b9f9187c96f393417b587c797d0f515742dda5584fa2e78",
+          "timestamp_s": 103.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-7.jpg",
+          "sha256": "c1ae72f96f774461aada66bad630ca078a34eb74de0b104eb47f2c88c01da1ff",
+          "timestamp_s": 103.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-8.jpg",
+          "sha256": "390df3da4c581310418494cda6845fc9ae2888db32162016d91171919508ab3a",
+          "timestamp_s": 103.975633
+        }
+      ],
+      "extraction_ms": 189
+    },
+    {
+      "id": "real-dancing-stage-8",
+      "scenario_id": "real-dancing",
+      "current_s": 115,
+      "source_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-0.jpg",
+          "sha256": "2ced473d59a0c1effb70312096f11578adde221e6dd4a4dcc14480295469160d",
+          "timestamp_s": 107.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-1.jpg",
+          "sha256": "95c6c3f8cfbf6ec46733404024758a4e2deab91a09949974fd055131cf560cd5",
+          "timestamp_s": 107.968633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-2.jpg",
+          "sha256": "a4a5249b77f22c16ec99fed3b0943c4ca152bc7b47f3881b4eca7b9afdfaaa42",
+          "timestamp_s": 113.3073
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-3.jpg",
+          "sha256": "62a7802ef3927cf45cee9f67002c569a408192473425ec9edcad3088a6dc0eb2",
+          "timestamp_s": 113.640967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-4.jpg",
+          "sha256": "119d2fbed8977f6043b08005b16b25da1ba80f1f3d041fa47c8de7a96ae62879",
+          "timestamp_s": 114.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-5.jpg",
+          "sha256": "084a4ef99af48e55e21438b68de595758bcb087b18ab8d72dc720d0fb3b0301c",
+          "timestamp_s": 114.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-6.jpg",
+          "sha256": "311db3a82285e88b471f18295055ba6abeb090e9140231a6c6505aad1c6c8608",
+          "timestamp_s": 114.3083
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-7.jpg",
+          "sha256": "f63c00d31be8da15fde6bd573492b85ae4ff8545a9accd837b840c52de4e90a0",
+          "timestamp_s": 114.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-8.jpg",
+          "sha256": "164dbea4afba5c4f132bed45ff3f5a58564dfc9848981888852b94605768eca2",
+          "timestamp_s": 114.975633
+        }
+      ],
+      "extraction_ms": 188
+    },
+    {
+      "id": "real-dancing-uncertainty-1",
+      "scenario_id": "real-dancing",
+      "current_s": 19,
+      "source_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-1-0.jpg",
+          "sha256": "33c009fa7f3ea74ac4267c4ce80ed8cd18ec32709fc00ed071533ba850a0075e",
+          "timestamp_s": 11.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-1-1.jpg",
+          "sha256": "3bf9abe90b3213e5a2410c03a568f30b9b2f295d2fe9e52d89d0ae14f083584c",
+          "timestamp_s": 13.636967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-1-2.jpg",
+          "sha256": "3211e34c8e68e7b5713a37bfcf0d3932ef829067b2dc842a3495e430bdaec2b9",
+          "timestamp_s": 17.307299999999998
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-1-3.jpg",
+          "sha256": "4828c92b13201488ea9bdfffaeae02d44abdf8c95b6b76c146fb520172de6d85",
+          "timestamp_s": 17.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-1-4.jpg",
+          "sha256": "cf2741790698a02be4bbb7b12b42fd8ef3ede709be7957268cb03a85609c9fb3",
+          "timestamp_s": 18.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-1-5.jpg",
+          "sha256": "b8bcefb050104d422486f22f4a9f078884f0e4428509d939c6ebb1140b84ceaf",
+          "timestamp_s": 18.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-1-6.jpg",
+          "sha256": "ecf3c062e17420e2f7f0afefa9f8b5becaaedaef0130ed393d167424e30f0ce6",
+          "timestamp_s": 18.3083
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-1-7.jpg",
+          "sha256": "cb27cde2fd4d77cb0bacbc42fa93d4aeddfcefd634f7204ed5c595c04c708e3c",
+          "timestamp_s": 18.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-1-8.jpg",
+          "sha256": "155fdcc816cb0289b8a09fa26a339124db2ca3d76d79883febda6b661e766615",
+          "timestamp_s": 18.975633000000002
+        }
+      ],
+      "extraction_ms": 202
+    },
+    {
+      "id": "real-dancing-uncertainty-2",
+      "scenario_id": "real-dancing",
+      "current_s": 96,
+      "source_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-2-0.jpg",
+          "sha256": "e3b2d92d76f0dc9b2577e1222e4ee2a1136552112719ac31ef62c976568ef191",
+          "timestamp_s": 88.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-2-1.jpg",
+          "sha256": "d4293f8fe1808fb5c9b8207461e09590cc4669486a787e5dfb544cbdd4f6211f",
+          "timestamp_s": 89.969633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-2-2.jpg",
+          "sha256": "686c7e9c6474477d73b858c93749517ffc10f4422c4ba7e4e201e28db6c07bf9",
+          "timestamp_s": 94.3073
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-2-3.jpg",
+          "sha256": "e38b3116b1511f9833bae27f9125a22539701007ae9f946e3eb96f4fd1277b7b",
+          "timestamp_s": 94.640967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-2-4.jpg",
+          "sha256": "ad6ea562b8b3b1aed3c21b892df5b9ea7b3fc73fd3248c1a16f6646ea64e28ad",
+          "timestamp_s": 95.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-2-5.jpg",
+          "sha256": "bfd835957c4f4b2d4398083511af5ef837f52d9f205edbcefbda7a44f998b7f3",
+          "timestamp_s": 95.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-2-6.jpg",
+          "sha256": "719d9ad8a050c8a5cb8e15532a20db203da4b5de25b0dd393abfeb87d1244fc6",
+          "timestamp_s": 95.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-2-7.jpg",
+          "sha256": "dc1bea0a1013d8d6d6a1a07c7006436078ae967edc6f1bd4865edbf3716d5053",
+          "timestamp_s": 95.641967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-uncertainty-2-8.jpg",
+          "sha256": "d0ae2d0efc4eec0e82966e2dc331543bd66156909dc757f867d84c2834c6a186",
+          "timestamp_s": 95.975633
+        }
+      ],
+      "extraction_ms": 217
+    },
+    {
+      "id": "real-sport-stage-1",
+      "scenario_id": "real-sport",
+      "current_s": 37,
+      "source_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-1-0.jpg",
+          "sha256": "a16c83c670acf141b00b282d8b77d23859415b0a4d62b749df6206a2b2bbc149",
+          "timestamp_s": 29.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-1-1.jpg",
+          "sha256": "9246325c51396f609c0a8cccc9a014679e29bddf08da1acbecd663c1c2d0f177",
+          "timestamp_s": 34.3063
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-1-2.jpg",
+          "sha256": "4a73ebb9db10e6f23d953ab97bab9226afd3a2cca0727505cb28450218504840",
+          "timestamp_s": 35.3073
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-1-3.jpg",
+          "sha256": "7a76237d55857f5391b328655a628b01cf0784e0dfe7f4c051f34e1d5dff2ded",
+          "timestamp_s": 35.640967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-1-4.jpg",
+          "sha256": "cbb703b9b3e00260b6bba590ff22e23ccd69ce30deabbeda7224655e156e9e03",
+          "timestamp_s": 35.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-1-5.jpg",
+          "sha256": "004e7dc32e9868d05a9203e9c7fbb1f8b1d18e1fdd3140b522a244c2b34a4cbd",
+          "timestamp_s": 36.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-1-6.jpg",
+          "sha256": "4ff6026ae611812627679dee998cee82ce13b3d958f34e6afeedf55abf85f8aa",
+          "timestamp_s": 36.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-1-7.jpg",
+          "sha256": "4aa75d77a60522aac276702ce10a0905d1930f183f23af6be38c54a77baac89e",
+          "timestamp_s": 36.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-1-8.jpg",
+          "sha256": "1dac3901b1811fc292066b7f8cf50fcdb7108e16e948598affb1133a28145cde",
+          "timestamp_s": 36.975633
+        }
+      ],
+      "extraction_ms": 1917
+    },
+    {
+      "id": "real-sport-stage-2",
+      "scenario_id": "real-sport",
+      "current_s": 41,
+      "source_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-2-0.jpg",
+          "sha256": "37a4417262d35860b920fc71f10884ae0eda3692c21d6a863b7b450ce314d803",
+          "timestamp_s": 33.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-2-1.jpg",
+          "sha256": "8a7c3783f1fbc146d380ba7bded652ec2d6803ce3052b383fc5cbf1049d2bd9b",
+          "timestamp_s": 33.968633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-2-2.jpg",
+          "sha256": "561ecbacf7f4b82d1ac49830940e23ec7838c6d8f344bc75315e2e51e509d6fd",
+          "timestamp_s": 39.3073
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-2-3.jpg",
+          "sha256": "11876c3017cbab5825175969103c1cae2c510b905ea131bd3e93bc6dff9a03e0",
+          "timestamp_s": 39.640967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-2-4.jpg",
+          "sha256": "b927e1dda2b797595511e663825b1e294efe0425a52057e98293312d63c88be4",
+          "timestamp_s": 39.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-2-5.jpg",
+          "sha256": "21b7db4306d0ba5bd8199310f6d7fbb93167ff274280ad7a89c60bac24730993",
+          "timestamp_s": 40.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-2-6.jpg",
+          "sha256": "de49062981123ff6ae9babe8b3865016731efe6f3074fdf16df8f1653badf2b4",
+          "timestamp_s": 40.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-2-7.jpg",
+          "sha256": "9052d7bd3c6bc8bc8b89d88f04ee689e160a88fd6371be4521aa1f6258697ccd",
+          "timestamp_s": 40.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-2-8.jpg",
+          "sha256": "713eb405fdc18fc786a10a6f59e52633ba335ea18e35a4c0f9f3864c7b211128",
+          "timestamp_s": 40.975633
+        }
+      ],
+      "extraction_ms": 2236
+    },
+    {
+      "id": "real-sport-stage-3",
+      "scenario_id": "real-sport",
+      "current_s": 50,
+      "source_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-3-0.jpg",
+          "sha256": "26475c6f4567e903ef2463e7f9cabc268ff52f81c0c6186ca7f3020a02c24ec4",
+          "timestamp_s": 42.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-3-1.jpg",
+          "sha256": "57c7488d6a9d425635cd9154aec9a77d28f622ea64d73ba72aab3d2c34429282",
+          "timestamp_s": 42.634967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-3-2.jpg",
+          "sha256": "cc4faf6961c191e9ed7660b57ac18cc7f5b822dbf24d99362d991538b7352787",
+          "timestamp_s": 48.3073
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-3-3.jpg",
+          "sha256": "d1d5136f1f18367f291610a5be92d76de2ad78367cdfc45b7da88e2d1fdeee25",
+          "timestamp_s": 48.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-3-4.jpg",
+          "sha256": "4c81091845a19ef2295b30ac1af1b282921b329e6dbe83b18b011c65a7c374ce",
+          "timestamp_s": 49.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-3-5.jpg",
+          "sha256": "fd56c67ee67f6cb29c66fea988c1f43136a49d807dbfde52471ffda13890ed98",
+          "timestamp_s": 49.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-3-6.jpg",
+          "sha256": "257a167b5db78b2dcc786c152b781e2f83e24b5cd103b7f4fd584ca120969735",
+          "timestamp_s": 49.3083
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-3-7.jpg",
+          "sha256": "1797d1abbd1da63745a8e4748e5e979f10338c7c5bd60dd1eb0ed7cd6781360a",
+          "timestamp_s": 49.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-3-8.jpg",
+          "sha256": "48ca989301377f48ccd3bbc95c456777c0bdb5fae928a59e5d562869f1467825",
+          "timestamp_s": 49.975633
+        }
+      ],
+      "extraction_ms": 1775
+    },
+    {
+      "id": "real-sport-stage-4",
+      "scenario_id": "real-sport",
+      "current_s": 93,
+      "source_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-4-0.jpg",
+          "sha256": "2e8be0a83efca3ddcb192b2933b821c0757be5019c9b4a1eedccc4a448f24773",
+          "timestamp_s": 85.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-4-1.jpg",
+          "sha256": "d9122496330243974d3ee1f93ad16069e2d6431fbdcce2346b37b7cc9666e9ed",
+          "timestamp_s": 89.972633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-4-2.jpg",
+          "sha256": "90d389899ce5a1b8a0fee471330215c90d25916be14e2455246cc3372ed8d8aa",
+          "timestamp_s": 91.3073
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-4-3.jpg",
+          "sha256": "eec74d38263d2d60867fb9be1d5b6011c8472725acd9ea0fe2d24bbb93239e00",
+          "timestamp_s": 91.640967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-4-4.jpg",
+          "sha256": "8d83facd66591a198fefc088e816c9365cde8e260fd4cac9e8a133fc244e1829",
+          "timestamp_s": 91.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-4-5.jpg",
+          "sha256": "3cafed91d5d9ddf5007f43a1a8ec7fb784d8156ee3fca9d4e302f5011b379530",
+          "timestamp_s": 92.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-4-6.jpg",
+          "sha256": "40ecbf78e1dd9d51bda26769cfa21f807755f53da6a45cfbd25d0761acfb7d55",
+          "timestamp_s": 92.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-4-7.jpg",
+          "sha256": "fd4d9671505e4aa046d9c439d2b6c9fd9534e5477a09a69720ff181918205195",
+          "timestamp_s": 92.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-4-8.jpg",
+          "sha256": "45a80cddd0de706e231372a428d2dede9bc897769f98cba4a03ae9c23543b6ae",
+          "timestamp_s": 92.975633
+        }
+      ],
+      "extraction_ms": 1944
+    },
+    {
+      "id": "real-sport-stage-5",
+      "scenario_id": "real-sport",
+      "current_s": 107,
+      "source_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-5-0.jpg",
+          "sha256": "7242c89c5cd49eb45ce4c12122d8314e1b8275511918fe73288c390b51bc3811",
+          "timestamp_s": 99.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-5-1.jpg",
+          "sha256": "21370d188f2d5d821eecfb8b4fb87fdbba1560878959148269f9ac6e6fb597ed",
+          "timestamp_s": 102.3043
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-5-2.jpg",
+          "sha256": "6ef5c623f93a13f9769641682183df052e6a7ed0cec181f9af6f725348172484",
+          "timestamp_s": 105.3073
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-5-3.jpg",
+          "sha256": "6b6a8452b69170bd6ab344d4f13977216628814606ab1f863a5d1e30808cfb11",
+          "timestamp_s": 105.640967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-5-4.jpg",
+          "sha256": "dcf7e62b76b9b57b4130daa46d933f9c52caf7384adfd8a1bf6f5c15df3e9700",
+          "timestamp_s": 105.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-5-5.jpg",
+          "sha256": "c427c2b0610e3456221ad39afab5b3ad5164b26eaa1785d21ea36bd8fc72706a",
+          "timestamp_s": 106.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-5-6.jpg",
+          "sha256": "80d6b80733f5cd9ddbccf205fca9847e8b3777c4616d4dbe114ae9c3089b980e",
+          "timestamp_s": 106.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-5-7.jpg",
+          "sha256": "07b8f9e6e0acb45465c107d6d3ad400fdf0de4a588c15bcca54b0bb7c5d5e1dc",
+          "timestamp_s": 106.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-5-8.jpg",
+          "sha256": "f0ada9d0acd0306aa42d0ab76296a3121b4c717fcfca30ca9aab26cc6a867c00",
+          "timestamp_s": 106.975633
+        }
+      ],
+      "extraction_ms": 1677
+    },
+    {
+      "id": "real-sport-uncertainty-1",
+      "scenario_id": "real-sport",
+      "current_s": 50,
+      "source_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-1-0.jpg",
+          "sha256": "26475c6f4567e903ef2463e7f9cabc268ff52f81c0c6186ca7f3020a02c24ec4",
+          "timestamp_s": 42.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-1-1.jpg",
+          "sha256": "57c7488d6a9d425635cd9154aec9a77d28f622ea64d73ba72aab3d2c34429282",
+          "timestamp_s": 42.634967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-1-2.jpg",
+          "sha256": "cc4faf6961c191e9ed7660b57ac18cc7f5b822dbf24d99362d991538b7352787",
+          "timestamp_s": 48.3073
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-1-3.jpg",
+          "sha256": "d1d5136f1f18367f291610a5be92d76de2ad78367cdfc45b7da88e2d1fdeee25",
+          "timestamp_s": 48.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-1-4.jpg",
+          "sha256": "4c81091845a19ef2295b30ac1af1b282921b329e6dbe83b18b011c65a7c374ce",
+          "timestamp_s": 49.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-1-5.jpg",
+          "sha256": "fd56c67ee67f6cb29c66fea988c1f43136a49d807dbfde52471ffda13890ed98",
+          "timestamp_s": 49.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-1-6.jpg",
+          "sha256": "257a167b5db78b2dcc786c152b781e2f83e24b5cd103b7f4fd584ca120969735",
+          "timestamp_s": 49.3083
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-1-7.jpg",
+          "sha256": "1797d1abbd1da63745a8e4748e5e979f10338c7c5bd60dd1eb0ed7cd6781360a",
+          "timestamp_s": 49.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-1-8.jpg",
+          "sha256": "48ca989301377f48ccd3bbc95c456777c0bdb5fae928a59e5d562869f1467825",
+          "timestamp_s": 49.975633
+        }
+      ],
+      "extraction_ms": 1646
+    },
+    {
+      "id": "real-sport-uncertainty-2",
+      "scenario_id": "real-sport",
+      "current_s": 107,
+      "source_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "frames": [
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-2-0.jpg",
+          "sha256": "7242c89c5cd49eb45ce4c12122d8314e1b8275511918fe73288c390b51bc3811",
+          "timestamp_s": 99.001
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-2-1.jpg",
+          "sha256": "21370d188f2d5d821eecfb8b4fb87fdbba1560878959148269f9ac6e6fb597ed",
+          "timestamp_s": 102.3043
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-2-2.jpg",
+          "sha256": "6ef5c623f93a13f9769641682183df052e6a7ed0cec181f9af6f725348172484",
+          "timestamp_s": 105.3073
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-2-3.jpg",
+          "sha256": "6b6a8452b69170bd6ab344d4f13977216628814606ab1f863a5d1e30808cfb11",
+          "timestamp_s": 105.640967
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-2-4.jpg",
+          "sha256": "dcf7e62b76b9b57b4130daa46d933f9c52caf7384adfd8a1bf6f5c15df3e9700",
+          "timestamp_s": 105.974633
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-2-5.jpg",
+          "sha256": "c427c2b0610e3456221ad39afab5b3ad5164b26eaa1785d21ea36bd8fc72706a",
+          "timestamp_s": 106.141467
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-2-6.jpg",
+          "sha256": "80d6b80733f5cd9ddbccf205fca9847e8b3777c4616d4dbe114ae9c3089b980e",
+          "timestamp_s": 106.174833
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-2-7.jpg",
+          "sha256": "07b8f9e6e0acb45465c107d6d3ad400fdf0de4a588c15bcca54b0bb7c5d5e1dc",
+          "timestamp_s": 106.575233
+        },
+        {
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-uncertainty-2-8.jpg",
+          "sha256": "f0ada9d0acd0306aa42d0ab76296a3121b4c717fcfca30ca9aab26cc6a867c00",
+          "timestamp_s": 106.975633
+        }
+      ],
+      "extraction_ms": 2436
+    }
+  ]
+}

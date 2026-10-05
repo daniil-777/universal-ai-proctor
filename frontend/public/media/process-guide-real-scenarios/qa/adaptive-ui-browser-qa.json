@@ -1,0 +1,265 @@
+{
+  "generated_at": "2026-10-05T11:56:25.888Z",
+  "base_url": "http://localhost:8101",
+  "browser": "isolated headless Chromium",
+  "real_model_calls": 0,
+  "cases": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 844,
+        "touch": true
+      },
+      "console_errors": [],
+      "failed_resources": [],
+      "page_errors": [],
+      "model_requests": [],
+      "checks": {
+        "intro_no_horizontal_overflow": true,
+        "library_button": {
+          "box": {
+            "x": 16,
+            "y": 318.171875,
+            "width": 288,
+            "height": 88.25
+          },
+          "href": "/media/process-guide-real-scenarios/index.html"
+        },
+        "quick_tour": {
+          "duration_s": 20,
+          "width": 960,
+          "height": 600,
+          "muted": true,
+          "source": "http://localhost:8101/media/process-guide-tour.mp4"
+        },
+        "gallery": {
+          "videos": 5,
+          "instruction_downloads": 5,
+          "inline_instruction_panels": 5,
+          "horizontal_overflow": false,
+          "removed_review_prompts_absent": true
+        },
+        "help_narrated_walkthrough": {
+          "entry": "Settings",
+          "duration_s": 90,
+          "width": 1920,
+          "height": 1080,
+          "muted": false,
+          "source": "http://localhost:8101/media/process-guide-walkthrough.mp4",
+          "chapters": 8,
+          "transcript_segments": 15,
+          "captions_status": 200
+        },
+        "workspace_no_horizontal_overflow": true,
+        "defaults": {
+          "model": "gpt-6-astra",
+          "frames": 9,
+          "window_s": 8
+        },
+        "guidance_resize": {
+          "input": "touch",
+          "before": {
+            "x": 0,
+            "y": 208.140625,
+            "width": 320,
+            "height": 163.09375
+          },
+          "after": {
+            "x": 0,
+            "y": 197,
+            "width": 270,
+            "height": 223.09375
+          }
+        },
+        "guardian_proportional_resize": {
+          "input": "touch",
+          "before": {
+            "x": 12,
+            "y": 105,
+            "width": 296,
+            "height": 34
+          },
+          "after": {
+            "x": 61.921875,
+            "y": 105,
+            "width": 196.15625,
+            "height": 22.53125
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024,
+        "touch": true
+      },
+      "console_errors": [],
+      "failed_resources": [],
+      "page_errors": [],
+      "model_requests": [],
+      "checks": {
+        "intro_no_horizontal_overflow": true,
+        "library_button": {
+          "box": {
+            "x": 24,
+            "y": 375.9375,
+            "width": 333.25,
+            "height": 68.75
+          },
+          "href": "/media/process-guide-real-scenarios/index.html"
+        },
+        "quick_tour": {
+          "duration_s": 20,
+          "width": 960,
+          "height": 600,
+          "muted": true,
+          "source": "http://localhost:8101/media/process-guide-tour.mp4"
+        },
+        "gallery": {
+          "videos": 5,
+          "instruction_downloads": 5,
+          "inline_instruction_panels": 5,
+          "horizontal_overflow": false,
+          "removed_review_prompts_absent": true
+        },
+        "help_narrated_walkthrough": {
+          "entry": "Help",
+          "duration_s": 90,
+          "width": 1920,
+          "height": 1080,
+          "muted": false,
+          "source": "http://localhost:8101/media/process-guide-walkthrough.mp4",
+          "chapters": 8,
+          "transcript_segments": 15,
+          "captions_status": 200
+        },
+        "workspace_no_horizontal_overflow": true,
+        "defaults": {
+          "model": "gpt-6-astra",
+          "frames": 9,
+          "window_s": 8
+        },
+        "guidance_resize": {
+          "input": "touch",
+          "before": {
+            "x": 12,
+            "y": 826,
+            "width": 444,
+            "height": 133
+          },
+          "after": {
+            "x": 12,
+            "y": 766,
+            "width": 374,
+            "height": 193
+          }
+        },
+        "guardian_proportional_resize": {
+          "input": "touch",
+          "before": {
+            "x": 14,
+            "y": 109,
+            "width": 440,
+            "height": 34
+          },
+          "after": {
+            "x": 64.09375,
+            "y": 109,
+            "width": 339.8125,
+            "height": 26.25
+          }
+        }
+      },
+      "passed": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "touch": false
+      },
+      "console_errors": [],
+      "failed_resources": [],
+      "page_errors": [],
+      "model_requests": [],
+      "checks": {
+        "intro_no_horizontal_overflow": true,
+        "library_button": {
+          "box": {
+            "x": 140,
+            "y": 450.9375,
+            "width": 333.25,
+            "height": 68.75
+          },
+          "href": "/media/process-guide-real-scenarios/index.html"
+        },
+        "quick_tour": {
+          "duration_s": 20,
+          "width": 960,
+          "height": 600,
+          "muted": true,
+          "source": "http://localhost:8101/media/process-guide-tour.mp4"
+        },
+        "gallery": {
+          "videos": 5,
+          "instruction_downloads": 5,
+          "inline_instruction_panels": 5,
+          "horizontal_overflow": false,
+          "removed_review_prompts_absent": true
+        },
+        "help_narrated_walkthrough": {
+          "entry": "Help",
+          "duration_s": 90,
+          "width": 1920,
+          "height": 1080,
+          "muted": false,
+          "source": "http://localhost:8101/media/process-guide-walkthrough.mp4",
+          "chapters": 8,
+          "transcript_segments": 15,
+          "captions_status": 200
+        },
+        "workspace_no_horizontal_overflow": true,
+        "defaults": {
+          "model": "gpt-6-astra",
+          "frames": 9,
+          "window_s": 8
+        },
+        "guidance_resize": {
+          "input": "mouse",
+          "before": {
+            "x": 300.59375,
+            "y": 820,
+            "width": 767,
+            "height": 115
+          },
+          "after": {
+            "x": 300.59375,
+            "y": 760,
+            "width": 697,
+            "height": 175
+          }
+        },
+        "guardian_proportional_resize": {
+          "input": "mouse",
+          "before": {
+            "x": 464.046875,
+            "y": 85,
+            "width": 440,
+            "height": 34
+          },
+          "after": {
+            "x": 514.140625,
+            "y": 85,
+            "width": 339.8125,
+            "height": 26.25
+          }
+        }
+      },
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

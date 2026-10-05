@@ -1,0 +1,7 @@
+Video of EZ Bar Curl and Straight Bar Curl — Colossus Fitness
+Source: https://commons.wikimedia.org/wiki/File:Video_of_EZ_Bar_Curl_and_Straight_Bar_Curl.webm
+License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+License URL: https://creativecommons.org/licenses/by/3.0
+Downloaded official full 1080p Commons derivative: https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ec/Video_of_EZ_Bar_Curl_and_Straight_Bar_Curl.webm/Video_of_EZ_Bar_Curl_and_Straight_Bar_Curl.webm.1080p.vp9.webm
+Changes: converted VP9/Opus to H.264/yuv420p and AAC in faststart MP4. Full source timeline, native dimensions, original audio; no trim, speed change, looping, or generated content.
+The source is an edited educational demonstration. Its spoken recommendations are not independently measured evidence of technique, safety, medical effect, or exercise suitability.

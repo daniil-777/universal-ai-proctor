@@ -1,0 +1,57 @@
+{
+  "verified_at": "2026-10-05",
+  "scope": "Local compiled production and Vite proxy with real media decoding, PDF workers and persistent account storage. Temporary accounts and uploaded test sources were removed. No AI provider calls or external messages.",
+  "runs": [
+    {
+      "base": "http://localhost:8101",
+      "passed": true,
+      "pdf_bytes": 32929,
+      "pdf_ms": 221,
+      "saved_pdf_bytes": 32933,
+      "unique_saved_runs": 1,
+      "unsupported_pdf_characters_rejected": true,
+      "unicode_html_preserved": true,
+      "provider_calls": 0,
+      "temporary_account_removed": true
+    },
+    {
+      "base": "http://127.0.0.1:8180",
+      "passed": true,
+      "pdf_bytes": 32938,
+      "pdf_ms": 310,
+      "saved_pdf_bytes": 32940,
+      "unique_saved_runs": 1,
+      "unsupported_pdf_characters_rejected": true,
+      "unicode_html_preserved": true,
+      "provider_calls": 0,
+      "temporary_account_removed": true
+    },
+    {
+      "base": "http://localhost:8101",
+      "layout": "professional-report-2026-10-05",
+      "passed": true,
+      "pdf_bytes": 34655,
+      "pdf_ms": 242,
+      "saved_pdf_bytes": 34649,
+      "unique_saved_runs": 1,
+      "unsupported_pdf_characters_rejected": true,
+      "unicode_html_preserved": true,
+      "provider_calls": 0,
+      "temporary_account_removed": true
+    },
+    {
+      "base": "http://localhost:8101",
+      "layout": "report-priorities-and-guardian-index-2026-10-05",
+      "passed": true,
+      "pdf_bytes": 40452,
+      "pdf_ms": 384,
+      "saved_pdf_bytes": 40456,
+      "unique_saved_runs": 1,
+      "unsupported_pdf_characters_rejected": true,
+      "unicode_html_preserved": true,
+      "provider_calls": 0,
+      "temporary_account_removed": true
+    }
+  ],
+  "limits": "Single local runs, not public hosting or physical-device share-sheet/throughput guarantees. Email verification/reset and multi-instance synchronization are not implemented."
+}

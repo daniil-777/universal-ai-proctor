@@ -1,0 +1,422 @@
+[
+  {
+    "id": "real-house-construction-stage-1",
+    "scenario_id": "real-house-construction",
+    "requested_timestamp_s": 10,
+    "video_file": "videos/real-01-house.mp4",
+    "frame_file": "qa/review-v2/real-house-construction-stage-1.jpg"
+  },
+  {
+    "id": "real-house-construction-stage-2",
+    "scenario_id": "real-house-construction",
+    "requested_timestamp_s": 40,
+    "video_file": "videos/real-01-house.mp4",
+    "frame_file": "qa/review-v2/real-house-construction-stage-2.jpg"
+  },
+  {
+    "id": "real-house-construction-stage-3",
+    "scenario_id": "real-house-construction",
+    "requested_timestamp_s": 90,
+    "video_file": "videos/real-01-house.mp4",
+    "frame_file": "qa/review-v2/real-house-construction-stage-3.jpg"
+  },
+  {
+    "id": "real-house-construction-stage-4",
+    "scenario_id": "real-house-construction",
+    "requested_timestamp_s": 115,
+    "video_file": "videos/real-01-house.mp4",
+    "frame_file": "qa/review-v2/real-house-construction-stage-4.jpg"
+  },
+  {
+    "id": "real-house-construction-stage-5",
+    "scenario_id": "real-house-construction",
+    "requested_timestamp_s": 130,
+    "video_file": "videos/real-01-house.mp4",
+    "frame_file": "qa/review-v2/real-house-construction-stage-5.jpg"
+  },
+  {
+    "id": "real-house-construction-stage-6",
+    "scenario_id": "real-house-construction",
+    "requested_timestamp_s": 170,
+    "video_file": "videos/real-01-house.mp4",
+    "frame_file": "qa/review-v2/real-house-construction-stage-6.jpg"
+  },
+  {
+    "id": "real-manufacturing-stage-1",
+    "scenario_id": "real-manufacturing",
+    "requested_timestamp_s": 27,
+    "video_file": "videos/real-02-manufacturing.mp4",
+    "frame_file": "qa/review-v2/real-manufacturing-stage-1.jpg"
+  },
+  {
+    "id": "real-manufacturing-stage-2",
+    "scenario_id": "real-manufacturing",
+    "requested_timestamp_s": 35,
+    "video_file": "videos/real-02-manufacturing.mp4",
+    "frame_file": "qa/review-v2/real-manufacturing-stage-2.jpg"
+  },
+  {
+    "id": "real-manufacturing-stage-3",
+    "scenario_id": "real-manufacturing",
+    "requested_timestamp_s": 60,
+    "video_file": "videos/real-02-manufacturing.mp4",
+    "frame_file": "qa/review-v2/real-manufacturing-stage-3.jpg"
+  },
+  {
+    "id": "real-manufacturing-stage-4",
+    "scenario_id": "real-manufacturing",
+    "requested_timestamp_s": 90,
+    "video_file": "videos/real-02-manufacturing.mp4",
+    "frame_file": "qa/review-v2/real-manufacturing-stage-4.jpg"
+  },
+  {
+    "id": "real-manufacturing-stage-5",
+    "scenario_id": "real-manufacturing",
+    "requested_timestamp_s": 135,
+    "video_file": "videos/real-02-manufacturing.mp4",
+    "frame_file": "qa/review-v2/real-manufacturing-stage-5.jpg"
+  },
+  {
+    "id": "real-manufacturing-stage-6",
+    "scenario_id": "real-manufacturing",
+    "requested_timestamp_s": 160,
+    "video_file": "videos/real-02-manufacturing.mp4",
+    "frame_file": "qa/review-v2/real-manufacturing-stage-6.jpg"
+  },
+  {
+    "id": "real-surgery-stage-1",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 11,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/real-surgery-stage-1.jpg"
+  },
+  {
+    "id": "real-surgery-stage-2",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 27,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/real-surgery-stage-2.jpg"
+  },
+  {
+    "id": "real-surgery-stage-3",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 82,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/real-surgery-stage-3.jpg"
+  },
+  {
+    "id": "real-surgery-stage-4",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 117.6,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/real-surgery-stage-4.jpg"
+  },
+  {
+    "id": "real-surgery-stage-5",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 137,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/real-surgery-stage-5.jpg"
+  },
+  {
+    "id": "real-surgery-stage-6",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 162,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/real-surgery-stage-6.jpg"
+  },
+  {
+    "id": "real-surgery-stage-7",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 178,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/real-surgery-stage-7.jpg"
+  },
+  {
+    "id": "real-dancing-stage-1",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 7,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/real-dancing-stage-1.jpg"
+  },
+  {
+    "id": "real-dancing-stage-2",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 19,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/real-dancing-stage-2.jpg"
+  },
+  {
+    "id": "real-dancing-stage-3",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 35,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/real-dancing-stage-3.jpg"
+  },
+  {
+    "id": "real-dancing-stage-4",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 50,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/real-dancing-stage-4.jpg"
+  },
+  {
+    "id": "real-dancing-stage-5",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 70,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/real-dancing-stage-5.jpg"
+  },
+  {
+    "id": "real-dancing-stage-6",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 96,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/real-dancing-stage-6.jpg"
+  },
+  {
+    "id": "real-dancing-stage-7",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 104,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/real-dancing-stage-7.jpg"
+  },
+  {
+    "id": "real-dancing-stage-8",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 115,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/real-dancing-stage-8.jpg"
+  },
+  {
+    "id": "real-sport-stage-1",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 37,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/real-sport-stage-1.jpg"
+  },
+  {
+    "id": "real-sport-stage-2",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 41,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/real-sport-stage-2.jpg"
+  },
+  {
+    "id": "real-sport-stage-3",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 50,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/real-sport-stage-3.jpg"
+  },
+  {
+    "id": "real-sport-stage-4",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 93,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/real-sport-stage-4.jpg"
+  },
+  {
+    "id": "real-sport-stage-5",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 107,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/real-sport-stage-5.jpg"
+  },
+  {
+    "id": "candidate-sport-low-33",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 33,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/candidate-sport-low-33.jpg"
+  },
+  {
+    "id": "candidate-sport-low-34",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 34,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/candidate-sport-low-34.jpg"
+  },
+  {
+    "id": "candidate-sport-low-35",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 35,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/candidate-sport-low-35.jpg"
+  },
+  {
+    "id": "candidate-sport-low-35.5",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 35.5,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/candidate-sport-low-35.5.jpg"
+  },
+  {
+    "id": "candidate-sport-low-36",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 36,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/candidate-sport-low-36.jpg"
+  },
+  {
+    "id": "candidate-sport-low-36.5",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 36.5,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/candidate-sport-low-36.5.jpg"
+  },
+  {
+    "id": "candidate-sport-low-37",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 37,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/candidate-sport-low-37.jpg"
+  },
+  {
+    "id": "candidate-sport-low-37.5",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 37.5,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/candidate-sport-low-37.5.jpg"
+  },
+  {
+    "id": "candidate-sport-low-38",
+    "scenario_id": "real-sport",
+    "requested_timestamp_s": 38,
+    "video_file": "videos/real-05-sport.mp4",
+    "frame_file": "qa/review-v2/candidate-sport-low-38.jpg"
+  },
+  {
+    "id": "candidate-surgery-woven-131",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 131,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/candidate-surgery-woven-131.jpg"
+  },
+  {
+    "id": "candidate-surgery-woven-133",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 133,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/candidate-surgery-woven-133.jpg"
+  },
+  {
+    "id": "candidate-surgery-woven-135",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 135,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/candidate-surgery-woven-135.jpg"
+  },
+  {
+    "id": "candidate-surgery-woven-137",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 137,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/candidate-surgery-woven-137.jpg"
+  },
+  {
+    "id": "candidate-surgery-woven-139",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 139,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/candidate-surgery-woven-139.jpg"
+  },
+  {
+    "id": "candidate-surgery-woven-141",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 141,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/candidate-surgery-woven-141.jpg"
+  },
+  {
+    "id": "candidate-surgery-woven-143",
+    "scenario_id": "real-surgery",
+    "requested_timestamp_s": 143,
+    "video_file": "videos/real-03-surgery.mp4",
+    "frame_file": "qa/review-v2/candidate-surgery-woven-143.jpg"
+  },
+  {
+    "id": "candidate-dancing-16",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 16,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/candidate-dancing-16.jpg"
+  },
+  {
+    "id": "candidate-dancing-17",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 17,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/candidate-dancing-17.jpg"
+  },
+  {
+    "id": "candidate-dancing-21",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 21,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/candidate-dancing-21.jpg"
+  },
+  {
+    "id": "candidate-dancing-23",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 23,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/candidate-dancing-23.jpg"
+  },
+  {
+    "id": "candidate-dancing-25",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 25,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/candidate-dancing-25.jpg"
+  },
+  {
+    "id": "candidate-dancing-47",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 47,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/candidate-dancing-47.jpg"
+  },
+  {
+    "id": "candidate-dancing-53",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 53,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/candidate-dancing-53.jpg"
+  },
+  {
+    "id": "candidate-dancing-55",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 55,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/candidate-dancing-55.jpg"
+  },
+  {
+    "id": "candidate-dancing-102.5",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 102.5,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/candidate-dancing-102.5.jpg"
+  },
+  {
+    "id": "candidate-dancing-103",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 103,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/candidate-dancing-103.jpg"
+  },
+  {
+    "id": "candidate-dancing-105",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 105,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/candidate-dancing-105.jpg"
+  },
+  {
+    "id": "candidate-dancing-106",
+    "scenario_id": "real-dancing",
+    "requested_timestamp_s": 106,
+    "video_file": "videos/real-04-dancing.mp4",
+    "frame_file": "qa/review-v2/candidate-dancing-106.jpg"
+  }
+]

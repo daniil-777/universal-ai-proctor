@@ -1,0 +1,16 @@
+SEEDANCE SCENE: Sport technique control
+
+SHORT PREVIEW: 4 seconds, 16:9, 1080p output, silent
+
+Photorealistic premium enterprise commercial. Landscape 16:9, 1920 by 1080 output, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. An adult recreational athlete in ordinary training clothes and flat athletic shoes performs one comfortable shallow-to-moderate bodyweight squat in a clean daylight fitness studio. Entire body and both feet stay clearly visible in a stable three-quarter view. Over four seconds the athlete begins standing, lowers slowly to a self-selected comfortable depth, pauses briefly, then returns to standing. Natural controlled movement and coherent knees, hands and feet; no barbell, heavy weights, maximal effort, jumps or exaggerated range. Camera remains fixed; clear uncluttered floor.
+
+EXPANDED VERSION: 12 seconds, 16:9, 1080p
+
+Photorealistic premium enterprise commercial. Landscape 16:9, 1920 by 1080 output, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. Show one adult athlete in an uncluttered training area: a comfortable standing setup, one slow unloaded squat with a brief pause at a self-selected depth, a controlled return to standing, then a relaxed review pause with a coach nearby. Full body and both feet remain visible. No heavy loading, maximal effort, forced depth or pain performance. Do not imply diagnostic assessment, injury prediction or medical clearance.
+
+MODEL OPTIONS
+Seedance 1.5 Pro: the affordable preview model quoted through Higgsfield.
+Seedance 2.5: newer premium option for the expanded version, subject to available credits.
+Do not generate an app interface or fake AI results inside the footage. Add actual app captures in a separate approved edit.
+
+Output dimensions will be measured from the MP4. This does not establish the provider's internal rendering or upscaling method.

@@ -1,0 +1,18 @@
+GEMINI / GOOGLE VIDEO GENERATION: Dance technique control
+
+Recommended Gemini-native generator: Gemini Omni 1.1 Flash (gemini-omni-1.1-flash). Google currently recommends Omni as its default generation route. For a premium cinematic alternative, use Veo 3.1 standard (veo-3.1-generate-preview), rather than a fast/lite variant. Availability, quotas and output settings depend on your account. These are prompts, not Gemini generations.
+
+TARGET
+One 8-second landscape scene; select 1080p in the product settings where supported. Omni 1080p is an upscaled output; do not call it native 1080p.
+
+PROMPT
+Photorealistic premium enterprise commercial. Landscape 16:9, a final 1920 by 1080 frame, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. Build this as a coherent eight-second demonstration with a short establishing view and two or three clearly separated visible actions. An adult beginner dancer performs a slow simple practice phrase: neutral start, side step to the right and close, return step to the left and close, a gentle quarter turn and a held finish. Keep the full body and both feet visible, with natural balance and ordinary rehearsal pace. Stable camera, clear floor, no mirrors, no acrobatics or forced stretching. Preserve the order so an observer can review the phrase. Keep the final second as a quiet review pause. Avoid visual claims of an approved inspection.
+
+DESCRIPTION FOR SCRIPTING
+An adult dancer performs a basic side-step sequence with a visible pause; the guide tracks the sequence and what remains unobserved.
+
+SOURCES (verified 2026-10-05)
+https://ai.google.dev/gemini-api/docs/models
+https://ai.google.dev/gemini-api/docs/video
+https://ai.google.dev/gemini-api/docs/omni
+https://deepmind.google/models/veo/

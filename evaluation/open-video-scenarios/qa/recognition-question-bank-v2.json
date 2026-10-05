@@ -1,0 +1,1817 @@
+{
+  "schema_version": "2.0-diagnostic",
+  "prepared_at": "2026-10-05T10:39:47.943545+00:00",
+  "notes": [
+    "Authored reference answers grounded in the supplied guides and timestamped visual reviews. This is a question bank, not a provider test result.",
+    "A stage question identifies an observed phase; one frame does not prove all listed completion criteria occurred. Preserve evidence_required_for_complete when evaluating step completion.",
+    "Expected concept groups are synonyms: any phrase within each group can match. Case-insensitive lexical matching is only a proxy, not semantic, clinical, or safety validation.",
+    "Prohibited claims are examples of unsupported affirmative conclusions. Avoid naive substring flags when an answer explicitly negates such a claim.",
+    "Time anchors use delivered MP4 playback seconds. Guide windows are approximate; edited/timelapse sources do not establish real-world elapsed process time.",
+    "Surgical cases request retrospective description of published footage. They do not request clinical action, diagnosis, treatment, or certification.",
+    "The original 42-case bank and its raw 17/32 exact-stage agreement are preserved. This v2 changes five anchors and dance question/reference wording after direct visual review.",
+    "The planned v2 provider protocol uses six frames over five seconds. Changing both sampling and question anchors confounds any before/after algorithm-accuracy claim; compare as a diagnostic only.",
+    "All expected_stage_ids are singleton arrays. No alternate correct stage IDs were added merely to improve scores. Similar dance phases still require temporal evidence and may remain ambiguous.",
+    "Reference answers describe the reviewed anchor frame unless explicitly conditional on the multi-frame sequence. Completion criteria are retained verbatim from the parsed guide and are not asserted satisfied by the anchor.",
+    "Source-frame paths are relative to evaluation/open-video-scenarios. Requested ffmpeg timestamps target actual delivery clips; image extraction may land on the nearest encoded frame."
+  ],
+  "scenarios": [
+    {
+      "id": "real-house-construction",
+      "video_file": "videos/real-01-house.mp4",
+      "guidance_file": "guidance/Real_01_House_Construction.txt",
+      "step_count": 6
+    },
+    {
+      "id": "real-manufacturing",
+      "video_file": "videos/real-02-manufacturing.mp4",
+      "guidance_file": "guidance/Real_02_Manufacturing.txt",
+      "step_count": 6
+    },
+    {
+      "id": "real-surgery",
+      "video_file": "videos/real-03-surgery.mp4",
+      "guidance_file": "guidance/Real_03_Surgery.txt",
+      "step_count": 7
+    },
+    {
+      "id": "real-dancing",
+      "video_file": "videos/real-04-dancing.mp4",
+      "guidance_file": "guidance/Real_04_Dancing.txt",
+      "step_count": 8
+    },
+    {
+      "id": "real-sport",
+      "video_file": "videos/real-05-sport.mp4",
+      "guidance_file": "guidance/Real_05_Sport.txt",
+      "step_count": 5
+    }
+  ],
+  "cases": [
+    {
+      "id": "real-house-construction-stage-1",
+      "scenario_id": "real-house-construction",
+      "channel": "stage",
+      "timestamp_s": 10,
+      "expected_step_id": "S1",
+      "expected_step_name": "Observe panel-edge preparation and hardware presentation",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "fastener",
+          "screw",
+          "hardware"
+        ],
+        [
+          "hand",
+          "glove"
+        ]
+      ],
+      "reference_answer": "Panel-edge preparation and presented fasteners are shown. Hardware in a gloved hand is observable, but fastening quality is unverified.",
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:00",
+          "end": "00:34"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Visual observation: An applicator and exposed insulated panel edge appear together in a close-up.",
+        "Visual observation: Metal fasteners are visibly presented in a gloved hand.",
+        "Visual observation: A close-up shows the panel or timber edge being joined."
+      ],
+      "expected_stage_ids": [
+        "S1"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-house-construction-stage-1.jpg"
+    },
+    {
+      "id": "real-house-construction-stage-2",
+      "scenario_id": "real-house-construction",
+      "channel": "stage",
+      "timestamp_s": 40,
+      "expected_step_id": "S2",
+      "expected_step_name": "Observe the ground-floor wall enclosure",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "wall",
+          "panel"
+        ],
+        [
+          "ground",
+          "lower",
+          "first floor"
+        ]
+      ],
+      "reference_answer": "The lower-storey wall enclosure is developing: upright wall panels and openings are visible. Hidden connections remain unverified.",
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:34",
+          "end": "01:05"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Visual observation: Wide views show upright wall panels around the ground-floor deck.",
+        "Visual observation: Later views show a more developed wall perimeter than earlier views in this excerpt.",
+        "Visual observation: At least one opening or interior partition is visible in the ground-floor enclosure."
+      ],
+      "expected_stage_ids": [
+        "S2"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-house-construction-stage-2.jpg"
+    },
+    {
+      "id": "real-house-construction-stage-3",
+      "scenario_id": "real-house-construction",
+      "channel": "stage",
+      "timestamp_s": 90,
+      "expected_step_id": "S3",
+      "expected_step_name": "Observe upper-floor framing and the next wall level",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "upper",
+          "second",
+          "next storey",
+          "next story"
+        ],
+        [
+          "wall",
+          "panel",
+          "floor"
+        ]
+      ],
+      "reference_answer": "Upper-floor or upper-storey assembly is visible above the lower enclosure. This identifies a construction phase, not a structural result.",
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "guide_time_window": [
+        {
+          "start": "01:05",
+          "end": "01:35"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Visual observation: Timber members or decking span the top of the lower wall enclosure.",
+        "Visual observation: A later wide view shows upright panels forming the next storey."
+      ],
+      "expected_stage_ids": [
+        "S3"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-house-construction-stage-3.jpg"
+    },
+    {
+      "id": "real-house-construction-stage-4",
+      "scenario_id": "real-house-construction",
+      "channel": "stage",
+      "timestamp_s": 115,
+      "expected_step_id": "S4",
+      "expected_step_name": "Observe upper-wall edge work and roof-outline growth",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "roof",
+          "pitched",
+          "rafter"
+        ],
+        [
+          "frame",
+          "timber",
+          "member"
+        ]
+      ],
+      "reference_answer": "The upper storey has a developing pitched roof frame. Roof members are visible, but completion and correct bracing are unverified.",
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "guide_time_window": [
+        {
+          "start": "01:35",
+          "end": "02:06"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Visual observation: The applicator is held along the exposed upper panel edge.",
+        "Visual observation: Wide views show pitched roof members above the upper-storey walls."
+      ],
+      "expected_stage_ids": [
+        "S4"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-house-construction-stage-4.jpg"
+    },
+    {
+      "id": "real-house-construction-stage-5",
+      "scenario_id": "real-house-construction",
+      "channel": "stage",
+      "timestamp_s": 130,
+      "expected_step_id": "S5",
+      "expected_step_name": "Observe roof support and connection details",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "support",
+          "beam",
+          "bearing",
+          "connection",
+          "joint"
+        ],
+        [
+          "roof",
+          "rafter",
+          "timber"
+        ]
+      ],
+      "reference_answer": "The close-up shows roof timber meeting its support beam or connection region. Actual dimensions and load capacity are unverified.",
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "guide_time_window": [
+        {
+          "start": "02:06",
+          "end": "02:32"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Visual observation: Two or more roof members and their support region are visible together.",
+        "Visual observation: A close-up exposes a timber connection or bearing region."
+      ],
+      "expected_stage_ids": [
+        "S5"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-house-construction-stage-5.jpg"
+    },
+    {
+      "id": "real-house-construction-stage-6",
+      "scenario_id": "real-house-construction",
+      "channel": "stage",
+      "timestamp_s": 170,
+      "expected_step_id": "S6",
+      "expected_step_name": "Observe external sheet and roof-covering work",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "roof",
+          "covering",
+          "sheet",
+          "exterior"
+        ],
+        [
+          "worker",
+          "handling",
+          "installation",
+          "rows"
+        ]
+      ],
+      "reference_answer": "Roof-covering and external-sheet work are the later visible phase. A worker and covering rows identify the activity, without proving weather-tightness.",
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "guide_time_window": [
+        {
+          "start": "02:32",
+          "end": "03:00"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Visual observation: Dark sheet material is handled or visible on an exterior surface.",
+        "Visual observation: A worker and installed roof-covering rows are visible in the roof view.",
+        "Visual observation: An exterior view shows the roof and upper wall outline together."
+      ],
+      "expected_stage_ids": [
+        "S6"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-house-construction-stage-6.jpg"
+    },
+    {
+      "id": "real-house-construction-uncertainty-1",
+      "scenario_id": "real-house-construction",
+      "channel": "uncertainty",
+      "timestamp_s": 130,
+      "expected_step_id": null,
+      "question": "Can this view confirm fastening torque, hidden joint strength, or structural approval?",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "not enough"
+        ],
+        [
+          "torque",
+          "strength",
+          "approval",
+          "hidden"
+        ]
+      ],
+      "reference_answer": "No. Visible timber and hardware cannot establish torque, hidden strength, or approval. Those require the responsible inspection process.",
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "guide_time_window": [],
+      "evidence_required_for_complete": [],
+      "expected_stage_ids": []
+    },
+    {
+      "id": "real-house-construction-uncertainty-2",
+      "scenario_id": "real-house-construction",
+      "channel": "uncertainty",
+      "timestamp_s": 90,
+      "expected_step_id": null,
+      "question": "Does the three-minute construction playback show the house was built in three minutes?",
+      "expected_concepts": [
+        [
+          "time-lapse",
+          "timelapse",
+          "edited"
+        ],
+        [
+          "cannot",
+          "does not",
+          "not represent",
+          "not indicate"
+        ]
+      ],
+      "reference_answer": "No. The original includes edited time-lapse footage, so playback duration does not represent site-work duration.",
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "guide_time_window": [],
+      "evidence_required_for_complete": [],
+      "expected_stage_ids": []
+    },
+    {
+      "id": "real-manufacturing-stage-1",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "timestamp_s": 27,
+      "expected_step_id": "S1",
+      "expected_step_name": "Observe machining context and controller interaction",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "controller",
+          "console",
+          "control panel"
+        ],
+        [
+          "operator",
+          "person",
+          "worker"
+        ]
+      ],
+      "reference_answer": "An operator interacting with a machine controller is shown. The console interaction is visible, while program correctness remains unverified.",
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:00",
+          "end": "00:30"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Visual observation: A machine work area with a mounted tool or workpiece is visible.",
+        "Visual observation: An operator is visibly present at a controller console and interacts with its controls."
+      ],
+      "expected_stage_ids": [
+        "S1"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-manufacturing-stage-1.jpg"
+    },
+    {
+      "id": "real-manufacturing-stage-2",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "timestamp_s": 35,
+      "expected_step_id": "S2",
+      "expected_step_name": "Observe machine-tool activity",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "machine",
+          "machining",
+          "tool"
+        ],
+        [
+          "workpiece",
+          "mould",
+          "mold",
+          "fixture"
+        ]
+      ],
+      "reference_answer": "Machine-tool activity is the phase: a mounted workpiece or tooling appears in the machine work area. Parameters and acceptance are unverified.",
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:30",
+          "end": "00:52"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Visual observation: The mounted workpiece and tool region appear together in the machine view.",
+        "Visual observation: Visible motion occurs in the tool or workpiece region.",
+        "Visual observation: A later close-up shows a machining or tool region from a different viewpoint."
+      ],
+      "expected_stage_ids": [
+        "S2"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-manufacturing-stage-2.jpg"
+    },
+    {
+      "id": "real-manufacturing-stage-3",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "timestamp_s": 60,
+      "expected_step_id": "S3",
+      "expected_step_name": "Observe tool presentation and manual tooling work",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "indicator",
+          "gauge",
+          "gage",
+          "probe"
+        ],
+        [
+          "display",
+          "metal",
+          "block",
+          "measurement"
+        ]
+      ],
+      "reference_answer": "The tool-presentation and manual-tooling section includes a digital indicator with a probe above a metal block. This is not a calibrated acceptance result.",
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:52",
+          "end": "01:15"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Visual observation: Several tools are presented in a rack with a display or control unit nearby.",
+        "Visual observation: A digital indicator with a probe is shown above a metal block.",
+        "Visual observation: Hands and an exposed tooling assembly appear together during manual work."
+      ],
+      "expected_stage_ids": [
+        "S3"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-manufacturing-stage-3.jpg"
+    },
+    {
+      "id": "real-manufacturing-stage-4",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "timestamp_s": 90,
+      "expected_step_id": "S4",
+      "expected_step_name": "Observe product presentation and further tooling operations",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "tool",
+          "spindle",
+          "machine"
+        ],
+        [
+          "block",
+          "tooling",
+          "metal",
+          "workpiece"
+        ]
+      ],
+      "reference_answer": "Further tooling operations are shown, with a spindle or tool positioned over mounted metal blocks. The film does not establish one continuous tracked part.",
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "guide_time_window": [
+        {
+          "start": "01:15",
+          "end": "01:55"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Visual observation: A manufactured component is visibly presented separately from the machine footage.",
+        "Visual observation: A later machine view shows a tool positioned over mounted metal blocks or tooling."
+      ],
+      "expected_stage_ids": [
+        "S4"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-manufacturing-stage-4.jpg"
+    },
+    {
+      "id": "real-manufacturing-stage-5",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "timestamp_s": 135,
+      "expected_step_id": "S5",
+      "expected_step_name": "Observe sample parts and collaborative drawing review",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "drawing",
+          "plan",
+          "board"
+        ],
+        [
+          "people",
+          "group",
+          "review",
+          "point"
+        ]
+      ],
+      "reference_answer": "The sample-and-design-review section shows a group reviewing or pointing toward a drawing on a board. Review activity is visible, approval is unverified.",
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "guide_time_window": [
+        {
+          "start": "01:55",
+          "end": "02:20"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Visual observation: Multiple coloured sample parts are shown together.",
+        "Visual observation: A group stands beside a drawing or plan, with a visible pointing gesture toward it."
+      ],
+      "expected_stage_ids": [
+        "S5"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-manufacturing-stage-5.jpg"
+    },
+    {
+      "id": "real-manufacturing-stage-6",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "timestamp_s": 160,
+      "expected_step_id": "S6",
+      "expected_step_name": "Observe final machine and mould-detail views",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "mould",
+          "mold",
+          "tooling"
+        ],
+        [
+          "detail",
+          "assembly",
+          "cavity",
+          "internal",
+          "open"
+        ]
+      ],
+      "reference_answer": "The final tooling montage shows an exposed mould or tooling assembly with internal detail. Its appearance does not establish an accepted finished product.",
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "guide_time_window": [
+        {
+          "start": "02:20",
+          "end": "02:55"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Visual observation: A machine component visibly moves or rotates in close-up.",
+        "Visual observation: An exposed mould or tooling assembly is shown with its cavities or internal features visible."
+      ],
+      "expected_stage_ids": [
+        "S6"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-manufacturing-stage-6.jpg"
+    },
+    {
+      "id": "real-manufacturing-uncertainty-1",
+      "scenario_id": "real-manufacturing",
+      "channel": "uncertainty",
+      "timestamp_s": 60,
+      "expected_step_id": null,
+      "question": "Does the displayed indicator prove this part passed its dimensional tolerance or that the instrument is calibrated?",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ],
+        [
+          "tolerance",
+          "calibration",
+          "calibrated",
+          "acceptance"
+        ]
+      ],
+      "reference_answer": "No. A displayed indicator alone cannot establish calibration, a specified tolerance, or acceptance. Traceable measurements and the actual specification are missing.",
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "guide_time_window": [],
+      "evidence_required_for_complete": [],
+      "expected_stage_ids": []
+    },
+    {
+      "id": "real-manufacturing-uncertainty-2",
+      "scenario_id": "real-manufacturing",
+      "channel": "uncertainty",
+      "timestamp_s": 90,
+      "expected_step_id": null,
+      "question": "Can we confirm all these machine and product shots follow one identified workpiece continuously?",
+      "expected_concepts": [
+        [
+          "montage",
+          "edited",
+          "multiple",
+          "several"
+        ],
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ]
+      ],
+      "reference_answer": "No. This is an edited promotional montage of several jobs and products, without a verified genealogy for one workpiece.",
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "guide_time_window": [],
+      "evidence_required_for_complete": [],
+      "expected_stage_ids": []
+    },
+    {
+      "id": "real-surgery-stage-1",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "timestamp_s": 11,
+      "expected_step_id": "S1",
+      "expected_step_name": "Recognize the introduction and pre-procedure images",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "grayscale",
+          "gray",
+          "grey",
+          "cross-sectional",
+          "ct",
+          "imaging"
+        ],
+        [
+          "introduction",
+          "introductory",
+          "before",
+          "pre-procedure",
+          "presentation"
+        ]
+      ],
+      "reference_answer": "Introductory cross-sectional grayscale imaging is shown before the endoscopic working view. It does not establish a diagnosis or operative action.",
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:00",
+          "end": "00:20"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "The opening title card is visible before the operative footage.",
+        "A sequence of grayscale cross-sectional images is visible before the first endoscopic scene."
+      ],
+      "expected_stage_ids": [
+        "S1"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-surgery-stage-1.jpg"
+    },
+    {
+      "id": "real-surgery-stage-2",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "timestamp_s": 27,
+      "expected_step_id": "S2",
+      "expected_step_name": "Observe the first endoscopic instrument scene",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "endoscopic",
+          "laparoscopic",
+          "operative"
+        ],
+        [
+          "instrument",
+          "tip",
+          "field"
+        ]
+      ],
+      "reference_answer": "The first colored endoscopic instrument scene is shown. Instrument tips are visible in the field, without enough evidence to identify hidden contact or success.",
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:20",
+          "end": "00:40"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "A colored endoscopic field replaces the introductory imaging.",
+        "Visible instrument tips move in the operative field during this section."
+      ],
+      "expected_stage_ids": [
+        "S2"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-surgery-stage-2.jpg"
+    },
+    {
+      "id": "real-surgery-stage-3",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "timestamp_s": 82,
+      "expected_step_id": "S3",
+      "expected_step_name": "Follow the visible thread and instrument sequence",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "thread",
+          "loop",
+          "suture"
+        ],
+        [
+          "instrument",
+          "tip",
+          "handling"
+        ]
+      ],
+      "reference_answer": "The visible thread or loop and instrument-handling phase is shown. Movement can be described without declaring a secure knot or successful repair.",
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:40",
+          "end": "01:55"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "A thread or loop is visible together with working instrument tips.",
+        "The thread position changes while a visible tip handles or approaches it.",
+        "Repeated instrument movements are visible in the close-up sequence."
+      ],
+      "expected_stage_ids": [
+        "S3"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-surgery-stage-3.jpg"
+    },
+    {
+      "id": "real-surgery-stage-4",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "timestamp_s": 117.6,
+      "expected_step_id": "S4",
+      "expected_step_name": "Recognize the intervening change of imaging view",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "circular",
+          "round",
+          "monochrome",
+          "grayscale",
+          "gray",
+          "grey"
+        ],
+        [
+          "image",
+          "imaging",
+          "view"
+        ]
+      ],
+      "reference_answer": "A brief circular monochrome imaging view interrupts the operative sequence. This is a change of displayed view, not a diagnostic conclusion.",
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "guide_time_window": [
+        {
+          "start": "01:55",
+          "end": "02:05"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "A circular grayscale imaging view appears between operative scenes.",
+        "The displayed video returns to a colored endoscopic field after that view."
+      ],
+      "expected_stage_ids": [
+        "S4"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-surgery-stage-4.jpg"
+    },
+    {
+      "id": "real-surgery-stage-5",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "timestamp_s": 133,
+      "expected_step_id": "S5",
+      "expected_step_name": "Observe the visible woven-material sequence",
+      "question": "Which visible descriptive phase is most consistent with the clearly woven light material near the instrument? Describe its texture and acknowledge any separate tube visible; do not prescribe surgical action.",
+      "expected_concepts": [
+        [
+          "woven",
+          "weave",
+          "mesh",
+          "gauze",
+          "cloth"
+        ],
+        [
+          "instrument",
+          "grasper",
+          "tool"
+        ]
+      ],
+      "reference_answer": "S5 is most consistent with the clearly exposed woven light material near an instrument. Its mesh/weave texture is visible, while a separate reddish/orange tube is also in the scene. This is retrospective image description and does not establish clinical outcome or recommend an instrument action.",
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "guide_time_window": [
+        {
+          "start": "02:10",
+          "end": "02:38"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "White woven material is visibly present in the operative field.",
+        "Its position or exposed portion changes during visible instrument handling."
+      ],
+      "expected_stage_ids": [
+        "S5"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/candidate-surgery-woven-133.jpg"
+    },
+    {
+      "id": "real-surgery-stage-6",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "timestamp_s": 162,
+      "expected_step_id": "S6",
+      "expected_step_name": "Observe the later tube and instrument views",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "tube",
+          "curved",
+          "clear"
+        ],
+        [
+          "instrument",
+          "handling",
+          "field"
+        ]
+      ],
+      "reference_answer": "The later tube-and-instrument phase is shown. A clear curved tube is visible, without evidence establishing correct placement or drainage effectiveness.",
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "guide_time_window": [
+        {
+          "start": "02:38",
+          "end": "02:55"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "A clear curved tube is visible in a later endoscopic scene.",
+        "Visible tube or instrument handling occurs after the woven-material sequence."
+      ],
+      "expected_stage_ids": [
+        "S6"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-surgery-stage-6.jpg"
+    },
+    {
+      "id": "real-surgery-stage-7",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "timestamp_s": 178,
+      "expected_step_id": "S7",
+      "expected_step_name": "Recognize the final displayed image",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "cross-sectional",
+          "ct",
+          "grayscale",
+          "gray",
+          "grey"
+        ],
+        [
+          "final",
+          "end",
+          "ending",
+          "last"
+        ]
+      ],
+      "reference_answer": "A final grayscale cross-sectional image is displayed at the end of the supplied excerpt. It does not prove recovery or completion of the actual operation.",
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "guide_time_window": [
+        {
+          "start": "02:55",
+          "end": "03:00"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "A final grayscale cross-sectional image is displayed after the later operative scenes.",
+        "The supplied clip ends after the final displayed image."
+      ],
+      "expected_stage_ids": [
+        "S7"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-surgery-stage-7.jpg"
+    },
+    {
+      "id": "real-surgery-uncertainty-1",
+      "scenario_id": "real-surgery",
+      "channel": "uncertainty",
+      "timestamp_s": 82,
+      "expected_step_id": null,
+      "question": "Does this visible thread pull establish a secure knot, successful repair, or absence of tissue injury?",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not establish",
+          "not prove",
+          "no"
+        ],
+        [
+          "knot",
+          "repair",
+          "injury",
+          "qualified",
+          "surgeon"
+        ]
+      ],
+      "reference_answer": "No. A visible thread pull cannot establish knot security, repair adequacy, or absence of injury. Qualified surgeon review and the full case context are required.",
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "guide_time_window": [],
+      "evidence_required_for_complete": [],
+      "expected_stage_ids": []
+    },
+    {
+      "id": "real-surgery-uncertainty-2",
+      "scenario_id": "real-surgery",
+      "channel": "uncertainty",
+      "timestamp_s": 162,
+      "expected_step_id": null,
+      "question": "Can the visible tube or final imaging certify drainage effectiveness or a successful patient outcome?",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not establish",
+          "not prove",
+          "no"
+        ],
+        [
+          "drainage",
+          "outcome",
+          "patient",
+          "case record",
+          "qualified"
+        ]
+      ],
+      "reference_answer": "No. Tube visibility and final imaging do not establish drainage effectiveness or a patient outcome. Those require the case record and qualified review.",
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "guide_time_window": [],
+      "evidence_required_for_complete": [],
+      "expected_stage_ids": []
+    },
+    {
+      "id": "real-dancing-stage-1",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "timestamp_s": 7,
+      "expected_step_id": "S1",
+      "expected_step_name": "Observe the opening shoe contact and lift",
+      "question": "In this tight side-on shoe crop, which guidance phase is most consistent with the visible lift? Describe what is visible and do not assume a floor return outside the supplied frames.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "side",
+          "cropped",
+          "crop",
+          "support"
+        ]
+      ],
+      "reference_answer": "The tight side-on opening shoe-lift example is most consistent with S1. The supporting shoe is visible at the floor; the other shoe is cropped or raised out of the anchor frame. This frame does not establish the opening two-shoe stance or a later return.",
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:00",
+          "end": "00:13"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Both shoes are visibly on the floor in the opening stance.",
+        "A working shoe is visibly tilted or raised while the other shoe remains near its starting position.",
+        "The working shoe is visibly back beside the other shoe before the shot changes."
+      ],
+      "expected_stage_ids": [
+        "S1"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-dancing-stage-1.jpg",
+      "stage_discrimination_limitations": "Repeated shoe motions are not uniquely identifiable from one still. Use actual camera crop and direction across the supplied window; allow uncertainty rather than declaring completion."
+    },
+    {
+      "id": "real-dancing-stage-2",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "timestamp_s": 23,
+      "expected_step_id": "S2",
+      "expected_step_name": "Observe the lifted shoe in the oblique view",
+      "question": "In this oblique close view, which phase is most consistent with the free shoe raised behind the supporting leg? Use the motion window to separate it from later similar shoe-lift examples.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "behind",
+          "back",
+          "rear",
+          "raised",
+          "lift"
+        ]
+      ],
+      "reference_answer": "The oblique lifted-shoe example S2 is most consistent with the anchor: a free shoe is visibly raised behind the grounded supporting leg. A return to the floor should only be reported if it appears in the supplied sequence.",
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:14",
+          "end": "00:26"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "One shoe is visibly lifted clear of the floor during the example.",
+        "The other shoe is visible at the floor while the working shoe is raised.",
+        "Both shoes are visibly at the floor again within this shot."
+      ],
+      "expected_stage_ids": [
+        "S2"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/candidate-dancing-23.jpg",
+      "stage_discrimination_limitations": "Repeated shoe motions are not uniquely identifiable from one still. Use actual camera crop and direction across the supplied window; allow uncertainty rather than declaring completion."
+    },
+    {
+      "id": "real-dancing-stage-3",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "timestamp_s": 35,
+      "expected_step_id": "S3",
+      "expected_step_name": "Observe the forward and backward shoe movement",
+      "question": "In this front/oblique close-foot view, identify the phase best supported by the sequence and describe the working shoe direction. Do not infer a forward-and-back cycle solely from one raised-shoe frame.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "raised",
+          "lift",
+          "behind",
+          "back"
+        ]
+      ],
+      "reference_answer": "S3 is the guide phase for this front/oblique forward-and-back example. The reviewed anchor shows a raised working shoe beside or behind the supporting leg. Forward movement and a return require the surrounding frames; the anchor alone cannot distinguish every similar close-foot example.",
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:28",
+          "end": "00:42"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "A working shoe is visibly forward of the other shoe in this example.",
+        "The shoe subsequently returns close to the starting stance within the shot.",
+        "A later working-shoe position is visibly off the floor while the other shoe remains visible at the floor."
+      ],
+      "expected_stage_ids": [
+        "S3"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-dancing-stage-3.jpg",
+      "stage_discrimination_limitations": "Repeated shoe motions are not uniquely identifiable from one still. Use actual camera crop and direction across the supplied window; allow uncertainty rather than declaring completion."
+    },
+    {
+      "id": "real-dancing-stage-4",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "timestamp_s": 53,
+      "expected_step_id": "S4",
+      "expected_step_name": "Observe changing shoe orientation near the floor",
+      "question": "In this front/oblique close-foot view, which phase is most consistent with the visible angled shoe or raised heel near the floor? Explain whether the supplied frames actually show a change in orientation.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "angled",
+          "angle",
+          "heel",
+          "orientation",
+          "turn"
+        ]
+      ],
+      "reference_answer": "S4 is most consistent with the near-floor shoe-orientation example. The reviewed anchor shows an angled working shoe or raised heel beside the other shoe. An orientation change or return should only be claimed when visible across the supplied frames.",
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:44",
+          "end": "00:58"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "The working shoe visibly changes orientation relative to the other shoe.",
+        "An angled shoe or raised heel is visible during the example.",
+        "The shoes return close together at the floor before the next transition."
+      ],
+      "expected_stage_ids": [
+        "S4"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/candidate-dancing-53.jpg",
+      "stage_discrimination_limitations": "Repeated shoe motions are not uniquely identifiable from one still. Use actual camera crop and direction across the supplied window; allow uncertainty rather than declaring completion."
+    },
+    {
+      "id": "real-dancing-stage-5",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "timestamp_s": 70,
+      "expected_step_id": "S5",
+      "expected_step_name": "Observe the later forward shoe lifts and returns",
+      "question": "In this later front/oblique close-foot sequence, which phase is most consistent with the working shoe passing forward or across the supporting foot? State the visible direction and any ambiguity with earlier examples.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "forward",
+          "across",
+          "blur",
+          "moving",
+          "move"
+        ]
+      ],
+      "reference_answer": "S5 is the later forward/across shoe-lift series. The anchor shows a moving working shoe forward or across the other with motion blur. The return and exact edited example need temporal context; similar close-foot phases cannot be separated from a generic lift alone.",
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "01:00",
+          "end": "01:22"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "The working shoe is visibly forward of or across the other shoe during this series.",
+        "A raised working-shoe position is visible while the other shoe remains in view.",
+        "The working shoe is subsequently visible near the other shoe at the floor within the same example."
+      ],
+      "expected_stage_ids": [
+        "S5"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-dancing-stage-5.jpg",
+      "stage_discrimination_limitations": "Repeated shoe motions are not uniquely identifiable from one still. Use actual camera crop and direction across the supplied window; allow uncertainty rather than declaring completion."
+    },
+    {
+      "id": "real-dancing-stage-6",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "timestamp_s": 96,
+      "expected_step_id": "S6",
+      "expected_step_name": "Observe the faster and lower-camera footwork examples",
+      "question": "Which phase is most consistent with this lower-camera view of a raised shoe with its sole facing the camera? Describe the camera cue and avoid inferring whole-body balance.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "sole",
+          "lower",
+          "low",
+          "camera"
+        ]
+      ],
+      "reference_answer": "S6 is supported by the distinct lower-camera view: a raised working shoe and its sole are visible toward the camera. The cropped body prevents whole-body balance assessment. A return or the preceding faster view requires separate temporal evidence.",
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "01:24",
+          "end": "01:29"
+        },
+        {
+          "start": "01:31",
+          "end": "01:40"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "The two shoes visibly change their relative positions in the front-view example.",
+        "A shoe is visibly raised or its sole is visible in the subsequent lower-view example.",
+        "Both shoes are visible near the floor again in that lower-view shot."
+      ],
+      "expected_stage_ids": [
+        "S6"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-dancing-stage-6.jpg",
+      "stage_discrimination_limitations": "Repeated shoe motions are not uniquely identifiable from one still. Use actual camera crop and direction across the supplied window; allow uncertainty rather than declaring completion."
+    },
+    {
+      "id": "real-dancing-stage-7",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "timestamp_s": 106,
+      "expected_step_id": "S7",
+      "expected_step_name": "Observe the wider rear-foot lift",
+      "question": "In this wider body crop, which phase is most consistent with the free shoe lifting behind the supporting leg? Distinguish the camera and rearward motion from the later travelling sequence.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "rear",
+          "behind",
+          "back",
+          "raised"
+        ]
+      ],
+      "reference_answer": "S7 is most consistent with the wider rear-foot lift. The anchor clearly shows a free shoe raised behind the supporting leg, whose shoe is at the floor. A return is not proved by this frame; lateral travel belongs to a separate sequence and must be observed.",
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "01:42",
+          "end": "01:47"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "A free shoe is visibly raised behind the supporting leg.",
+        "The supporting shoe remains visible at the floor during that raised position.",
+        "Both shoes are visible near the floor again before the following transition."
+      ],
+      "expected_stage_ids": [
+        "S7"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/candidate-dancing-106.jpg",
+      "stage_discrimination_limitations": "Repeated shoe motions are not uniquely identifiable from one still. Use actual camera crop and direction across the supplied window; allow uncertainty rather than declaring completion."
+    },
+    {
+      "id": "real-dancing-stage-8",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "timestamp_s": 115,
+      "expected_step_id": "S8",
+      "expected_step_name": "Observe the final travelling and crossed-foot sequence",
+      "question": "In this wider final sequence, which phase is best supported by crossed-foot positions and movement across the floor? Distinguish observed lateral travel from an isolated rear-foot lift.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot",
+          "feet"
+        ],
+        [
+          "cross",
+          "travel",
+          "across",
+          "wider"
+        ]
+      ],
+      "reference_answer": "S8 is the final travelling/crossed-foot sequence. The anchor shows a crossed or lifted shoe relationship in the wider crop. Travel across the floor and a later separated position require the supplied multi-frame context; an isolated rear lift is not sufficient to prove them.",
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "01:49",
+          "end": "02:02"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "A crossed-foot position is visible in the final sequence.",
+        "The shoes subsequently change to a separated or grounded position within the same shot.",
+        "The performer visibly changes position across the floor during the sequence."
+      ],
+      "expected_stage_ids": [
+        "S8"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-dancing-stage-8.jpg",
+      "stage_discrimination_limitations": "Repeated shoe motions are not uniquely identifiable from one still. Use actual camera crop and direction across the supplied window; allow uncertainty rather than declaring completion."
+    },
+    {
+      "id": "real-dancing-uncertainty-1",
+      "scenario_id": "real-dancing",
+      "channel": "uncertainty",
+      "timestamp_s": 19,
+      "expected_step_id": null,
+      "question": "Can this cropped view establish the performer’s whole-body balance, a precise ankle angle, or safe technique?",
+      "expected_concepts": [
+        [
+          "crop",
+          "cropped",
+          "upper body",
+          "head"
+        ],
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ]
+      ],
+      "reference_answer": "No. The head and much of the upper body are cropped, and the video does not measure a precise ankle angle or establish whole-body balance or safety.",
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "guide_time_window": [],
+      "evidence_required_for_complete": [],
+      "expected_stage_ids": []
+    },
+    {
+      "id": "real-dancing-uncertainty-2",
+      "scenario_id": "real-dancing",
+      "channel": "uncertainty",
+      "timestamp_s": 96,
+      "expected_step_id": null,
+      "question": "Can we join movements across the tiled wipe to claim one continuous repetition or an exact tap count?",
+      "expected_concepts": [
+        [
+          "cut",
+          "wipe",
+          "transition",
+          "edited",
+          "separate"
+        ],
+        [
+          "cannot",
+          "not",
+          "no",
+          "unverified"
+        ]
+      ],
+      "reference_answer": "No. The wipe separates examples, and blur or missing contacts prevent reconstructing a continuous repetition or exact tap count across the edit.",
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "guide_time_window": [],
+      "evidence_required_for_complete": [],
+      "expected_stage_ids": []
+    },
+    {
+      "id": "real-sport-stage-1",
+      "scenario_id": "real-sport",
+      "channel": "stage",
+      "timestamp_s": 35,
+      "expected_step_id": "S1",
+      "expected_step_name": "Identify the EZ bar and visible starting grip",
+      "question": "Which guidance phase is most consistent with this overhead view of hands contacting the bar near the floor? Identify the visible bar shape and explain which starting-position criteria are not yet shown.",
+      "expected_concepts": [
+        [
+          "bar",
+          "ez"
+        ],
+        [
+          "floor",
+          "pickup",
+          "pick up",
+          "grip",
+          "hands"
+        ]
+      ],
+      "reference_answer": "The beginning of S1, starting grip and pickup, is most consistent: both hands contact an angled EZ bar near the floor in an overhead view. The anchor does not show an upright low hold, a complete pickup, or a curl repetition.",
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:35",
+          "end": "00:38"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "A bar with angled shaft sections and plates is visible.",
+        "Both hands visibly hold the bar in the starting close view.",
+        "The bar is visibly below the torso with the arms extended downward in that view."
+      ],
+      "expected_stage_ids": [
+        "S1"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/candidate-sport-low-35.jpg"
+    },
+    {
+      "id": "real-sport-stage-2",
+      "scenario_id": "real-sport",
+      "channel": "stage",
+      "timestamp_s": 41,
+      "expected_step_id": "S2",
+      "expected_step_name": "Observe an EZ-bar raise and lowering in the close view",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "ez",
+          "angled",
+          "bent"
+        ],
+        [
+          "raise",
+          "raised",
+          "torso",
+          "curl",
+          "elbow"
+        ]
+      ],
+      "reference_answer": "The close-view EZ-bar raise/lower demonstration is shown. The raised bar is near the torso with increased elbow bend; a full repetition needs a subsequent lowering in the same shot.",
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:39",
+          "end": "00:43"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "The bar is visibly closer to the upper torso in a raised position.",
+        "Both hands remain visibly on the bar in the raised position.",
+        "A subsequent low bar position is visible with less elbow bend in the same view."
+      ],
+      "expected_stage_ids": [
+        "S2"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-sport-stage-2.jpg"
+    },
+    {
+      "id": "real-sport-stage-3",
+      "scenario_id": "real-sport",
+      "channel": "stage",
+      "timestamp_s": 50,
+      "expected_step_id": "S3",
+      "expected_step_name": "Observe the later EZ-bar demonstration views",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "ez",
+          "angled",
+          "bent"
+        ],
+        [
+          "wider",
+          "demonstration",
+          "bar",
+          "raise",
+          "lower"
+        ]
+      ],
+      "reference_answer": "The later, wider EZ-bar demonstration is shown. Bar position and hand contact are visible, but edits do not establish a completed set.",
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "00:44",
+          "end": "01:03"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "Both hands visibly hold the angled bar in the wider demonstration view.",
+        "A raised bar position near the torso is visible within that view.",
+        "A later low bar position is visible within the same demonstration view."
+      ],
+      "expected_stage_ids": [
+        "S3"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-sport-stage-3.jpg"
+    },
+    {
+      "id": "real-sport-stage-4",
+      "scenario_id": "real-sport",
+      "channel": "stage",
+      "timestamp_s": 93,
+      "expected_step_id": "S4",
+      "expected_step_name": "Identify the straight bar and visible starting position",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "straight"
+        ],
+        [
+          "bar",
+          "grip",
+          "hands",
+          "low",
+          "starting"
+        ]
+      ],
+      "reference_answer": "The straight-bar starting position is shown. Both hands hold a straight-shaft bar low before the curl demonstration, without verified plate load or equipment checks.",
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "01:29",
+          "end": "01:36"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "A visibly straight bar with plates is present in this example.",
+        "Both hands visibly hold the bar while the performer stands upright.",
+        "The bar is visibly held low in front of the thighs before the curl demonstration."
+      ],
+      "expected_stage_ids": [
+        "S4"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-sport-stage-4.jpg"
+    },
+    {
+      "id": "real-sport-stage-5",
+      "scenario_id": "real-sport",
+      "channel": "stage",
+      "timestamp_s": 107,
+      "expected_step_id": "S5",
+      "expected_step_name": "Observe the straight-bar raise and lowering",
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "expected_concepts": [
+        [
+          "straight"
+        ],
+        [
+          "raise",
+          "raised",
+          "torso",
+          "curl",
+          "elbow",
+          "lower"
+        ]
+      ],
+      "reference_answer": "The straight-bar raise/lower demonstration is shown. The bar moves toward the torso with increased elbow bend, while exact angles, load, and suitability remain unverified.",
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "guide_time_window": [
+        {
+          "start": "01:37",
+          "end": "01:53"
+        },
+        {
+          "start": "01:54",
+          "end": "01:55"
+        }
+      ],
+      "evidence_required_for_complete": [
+        "A raised straight-bar position close to the torso is visible.",
+        "Both hands visibly hold the straight shaft in that raised position.",
+        "A subsequent low bar position is visible with less elbow bend in the same shot."
+      ],
+      "expected_stage_ids": [
+        "S5"
+      ],
+      "reviewed_anchor_frame": "qa/review-v2/real-sport-stage-5.jpg"
+    },
+    {
+      "id": "real-sport-uncertainty-1",
+      "scenario_id": "real-sport",
+      "channel": "uncertainty",
+      "timestamp_s": 50,
+      "expected_step_id": null,
+      "question": "Can this edited demonstration confirm an exact completed repetition set, plate weight, or precise joint angles?",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ],
+        [
+          "edit",
+          "repetition",
+          "weight",
+          "angle",
+          "load"
+        ]
+      ],
+      "reference_answer": "No. Edits and crops prevent establishing an exact completed set, and the guide provides no independent load or joint-angle measurement.",
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "guide_time_window": [],
+      "evidence_required_for_complete": [],
+      "expected_stage_ids": []
+    },
+    {
+      "id": "real-sport-uncertainty-2",
+      "scenario_id": "real-sport",
+      "channel": "uncertainty",
+      "timestamp_s": 107,
+      "expected_step_id": null,
+      "question": "Does seeing this straight-bar curl prove it is medically suitable or comfortable for this person or another viewer?",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ],
+        [
+          "suitability",
+          "medical",
+          "comfortable",
+          "comfort",
+          "pain",
+          "individual"
+        ]
+      ],
+      "reference_answer": "No. Visible bar motion cannot establish medical suitability, comfort, or pain. These individual factors are not measured by the footage.",
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "guide_time_window": [],
+      "evidence_required_for_complete": [],
+      "expected_stage_ids": []
+    }
+  ],
+  "baseline_file": "recognition-question-bank.json",
+  "review_variant": "Actual delivered-frame anchor review; diagnostic follow-up, not replacement baseline"
+}

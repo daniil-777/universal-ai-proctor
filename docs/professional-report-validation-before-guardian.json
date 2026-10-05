@@ -1,0 +1,236 @@
+{
+  "verified_at": "2026-10-05",
+  "runtime": "Node 24.18.0 on this Mac",
+  "scope": "Professional-layout native PDF and offline HTML exports. Synthetic fixtures only; no model calls or external network. This verifies document composition and event-loop responsiveness, not clinical accuracy or hosted capacity.",
+  "reproduce": {
+    "sample": "cd backend && fnm exec --using=24.18.0 node --import tsx scripts/report-preview.mts",
+    "realistic": "cd backend && fnm exec --using=24.18.0 node --import tsx scripts/report-stress.mts realistic",
+    "maximum": "cd backend && fnm exec --using=24.18.0 node --import tsx scripts/report-stress.mts maximum",
+    "targeted_tests": "cd backend && fnm exec --using=24.18.0 npm exec vitest run tests/analysisReport.test.ts tests/reportScheduling.test.ts"
+  },
+  "measurement_notes": [
+    "No rerender was performed to write this verification record. Artifact byte sizes were read from the completed outputs.",
+    "Timing values are the recorded run values in whole milliseconds. Memory values below are retained rounded measurements from the run notes; they are explicitly approximate, not reconstructed exact raw logs.",
+    "Stress measurements were taken while other workspace validation activity was occurring. Latency and memory are hardware- and load-dependent.",
+    "All size values named mib use 1024 * 1024 bytes; benchmark stdout historically labels these values mb."
+  ],
+  "sample": {
+    "fixture": "Precision assembly / training review; 3 steps, 9 criteria, 3 evidence frames, 2 exceptions, 3 manual preparation checks. Illustrative fixture, not a live account snapshot.",
+    "native_pdf": {
+      "path": "output/pdf/process-guide-analysis-sample.pdf",
+      "bytes": 46945,
+      "mib": 0.044770240783691406,
+      "pages": 5,
+      "generation_ms": 339
+    },
+    "offline_html": {
+      "path": "output/pdf/process-guide-analysis-sample.html",
+      "bytes": 38590,
+      "mib": 0.03680229187011719
+    },
+    "fixture_json": "output/pdf/process-guide-analysis-sample.json",
+    "html_print_pdf": {
+      "path": "tmp/pdfs/report-editorial-html-print.pdf",
+      "bytes": 640768,
+      "mib": 0.611083984375,
+      "pages": 5,
+      "browser": "Chrome 154, A4 with backgrounds"
+    },
+    "visual_inspection": {
+      "native_pdf": {
+        "inspected_pages": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "page_images": [
+          "tmp/pdfs/report-editorial-1.png",
+          "tmp/pdfs/report-editorial-2.png",
+          "tmp/pdfs/report-editorial-3.png",
+          "tmp/pdfs/report-editorial-4.png",
+          "tmp/pdfs/report-editorial-5.png"
+        ],
+        "result": "All pages inspected: clear hierarchy, readable text, intact photographs and metadata, no clipping or overlap."
+      },
+      "html_print": {
+        "inspected_pages": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "page_images": [
+          "tmp/pdfs/report-editorial-print-1.png",
+          "tmp/pdfs/report-editorial-print-2.png",
+          "tmp/pdfs/report-editorial-print-3.png",
+          "tmp/pdfs/report-editorial-print-4.png",
+          "tmp/pdfs/report-editorial-print-5.png"
+        ],
+        "result": "All pages inspected after fixing section kicker/title fragmentation: headings retained together, evidence images present, no clipping or overlap."
+      }
+    }
+  },
+  "responsive_html": {
+    "profiles": [
+      {
+        "name": "desktop",
+        "engine": "Chrome",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "horizontal_overflow": false,
+        "images": 3,
+        "decoded_images": 3,
+        "page_errors": [],
+        "full_page_screenshot": "tmp/pdfs/report-editorial-desktop.png",
+        "viewport_screenshot": "tmp/pdfs/report-editorial-desktop-cover.png"
+      },
+      {
+        "name": "phone",
+        "engine": "WebKit",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "horizontal_overflow": false,
+        "images": 3,
+        "decoded_images": 3,
+        "page_errors": [],
+        "full_page_screenshot": "tmp/pdfs/report-editorial-phone.png",
+        "viewport_screenshot": "tmp/pdfs/report-editorial-phone-cover.png"
+      },
+      {
+        "name": "tablet",
+        "engine": "WebKit",
+        "viewport": {
+          "width": 820,
+          "height": 1180
+        },
+        "horizontal_overflow": false,
+        "images": 3,
+        "decoded_images": 3,
+        "page_errors": [],
+        "full_page_screenshot": "tmp/pdfs/report-editorial-tablet.png",
+        "viewport_screenshot": "tmp/pdfs/report-editorial-tablet-cover.png"
+      }
+    ],
+    "visual_inspection": "All three viewport screenshots inspected; mobile statistics wrap to a readable 2-by-2 grid and evidence cards stack without horizontal overflow."
+  },
+  "stress": {
+    "common_input": {
+      "steps": 100,
+      "criteria_per_step": 30,
+      "total_criteria": 3000,
+      "evidence_events": 150,
+      "thumbnails": 24,
+      "principles": 40,
+      "manual_preparation_checks": 80
+    },
+    "realistic": {
+      "label_characters": 120,
+      "criterion_evidence_characters": 180,
+      "exceptions": 20,
+      "decisions_per_exception": 4,
+      "pdf": {
+        "path": "tmp/pdfs/report-stress-realistic.pdf",
+        "bytes": 1193776,
+        "mib": 1.1384735107421875,
+        "pages": 609,
+        "generation_ms": 1295
+      },
+      "html": {
+        "path": "tmp/pdfs/report-stress-realistic.html",
+        "bytes": 1883713,
+        "mib": 1.7964487075805664
+      },
+      "main_thread": {
+        "synchronous_return_ms": 8,
+        "timer_delay_ms": 15,
+        "timer_ran_during_render": true,
+        "heap_mib_after_approx": 14.3
+      },
+      "peak_whole_process_rss_mib_approx": 403
+    },
+    "maximum": {
+      "label_characters": 445,
+      "criterion_evidence_characters": 1000,
+      "step_objective_characters": 5000,
+      "exceptions": 80,
+      "decisions_per_exception": 20,
+      "decision_note_characters": 1000,
+      "preparation_label_characters": 2000,
+      "pdf": {
+        "path": "tmp/pdfs/report-stress-maximum.pdf",
+        "bytes": 4541538,
+        "mib": 4.331148147583008,
+        "pages": 2939,
+        "generation_ms": 5050
+      },
+      "html": {
+        "path": "tmp/pdfs/report-stress-maximum.html",
+        "bytes": 8312387,
+        "mib": 7.927309989929199,
+        "generation_ms": 13
+      },
+      "main_thread": {
+        "synchronous_return_ms": 14,
+        "timer_delay_ms": 26,
+        "timer_ran_during_render": true,
+        "heap_mib_after_approx": 41
+      },
+      "peak_whole_process_rss_mib_approx": 805.9,
+      "retention_checks": [
+        {
+          "text": "FINAL_CRITERION_MARKER_9999",
+          "page": 2235,
+          "retained": true,
+          "visually_inspected": true,
+          "image": "tmp/pdfs/report-editorial-finalcriterion-2235.png"
+        },
+        {
+          "text": "Evidence record 150",
+          "page": 2898,
+          "retained": true,
+          "verification": "Extracted PDF text"
+        },
+        {
+          "text": "Preparation check 80",
+          "page": 2939,
+          "retained": true,
+          "visually_inspected": true,
+          "image": "tmp/pdfs/report-editorial-lastpage-2939.png"
+        },
+        {
+          "text": "Reference digest",
+          "page": 2939,
+          "retained": true,
+          "visually_inspected": true,
+          "image": "tmp/pdfs/report-editorial-lastpage-2939.png"
+        }
+      ],
+      "extracted_text": "tmp/pdfs/report-editorial-stress.txt",
+      "file_budget": "PDF and offline HTML each remain below the frontend 30 MB prepared-file limit. Long documents retain all supplied information; a 2939-page synthetic maximum is not a typical report."
+    },
+    "limits_and_memory_caveat": "The PDF scheduler admits one active worker and two queued snapshots, uses a 30-second overall deadline and supports cancellation. The worker V8 old-generation heap limit is 384 MB; it does not cap native buffers, shared allocations, or whole-process RSS. The reported main-thread heap is not worker heap. Peak whole-process RSS is an observed high-water mark including worker/native allocations, not a memory-limit guarantee. Saved account snapshots have a separate 2 MB limit."
+  },
+  "tests": {
+    "renderer": 11,
+    "scheduler": 9,
+    "total": 20,
+    "passed": 20,
+    "added_for_this_layout": 2,
+    "backend_typecheck": "passed"
+  },
+  "preserved_guards": [
+    "Escaped offline HTML and restrictive Content Security Policy",
+    "Printed-text missing-glyph PDF rejection with actionable offline HTML fallback",
+    "Bounded worker admission, deadline and abort behavior",
+    "Distinct AI, system, simulated and manual provenance",
+    "Recorded-sample scope notice, retained decision notes and omission counts, source identity and reference digest"
+  ],
+  "historical_record": "docs/report-worker-stress.json remains unchanged and describes the earlier renderer layout."
+}

@@ -1,0 +1,113 @@
+{
+  "reviewed_at": "2026-10-05T10:25:17.415944+00:00",
+  "file": "videos/real-05-sport.mp4",
+  "method": "Visual review of every labelled actual-PTS frame at 4.8-second intervals across the full clip, then 71 actual-PTS 1-second frames around exercise pickup, curl and edit transitions, plus two 960px equipment/grip frames. No installed local ASR engine; no transcript or paid model used.",
+  "overview_evidence": "evidence/05-sport-review-frame-times.json",
+  "fine_evidence": "evidence/05-sport-fine-review-frame-times.json",
+  "reviewed_fine_sheets": [
+    "evidence/05_sport_fine-1.jpg",
+    "evidence/05_sport_fine-2.jpg",
+    "evidence/05_sport_fine-3.jpg",
+    "evidence/05_sport_fine-4.jpg"
+  ],
+  "intervals": [
+    {
+      "start_s": 0,
+      "end_s": 11,
+      "kind": "intro/logo",
+      "observations": [
+        "Gym presenter and branding; not a demonstrated curl."
+      ]
+    },
+    {
+      "start_s": 12,
+      "end_s": 34,
+      "kind": "explanation",
+      "observations": [
+        "First presenter talks and shows empty-hand grip gestures. No bar curl credited."
+      ]
+    },
+    {
+      "start_s": 35,
+      "end_s": 38,
+      "kind": "EZ bar setup",
+      "observations": [
+        "Performer bends toward angled bar, holds it with two hands, stands with bar low; close view reveals angled shaft and underhand hand contact."
+      ]
+    },
+    {
+      "start_s": 39,
+      "end_s": 43,
+      "kind": "EZ bar close-view motion",
+      "observations": [
+        "Bar moves near torso and back low, with corresponding visible elbow bend changes. Head and feet outside close crop."
+      ]
+    },
+    {
+      "start_s": 44,
+      "end_s": 63,
+      "kind": "EZ bar demonstration with reframing",
+      "observations": [
+        "Wider, closer and later wider views show raised and low bar positions. Framing changes limit continuity and repetition counts."
+      ]
+    },
+    {
+      "start_s": 64,
+      "end_s": 88,
+      "kind": "explanation",
+      "observations": [
+        "Second presenter talks and gestures; not credited as completed curl evidence."
+      ]
+    },
+    {
+      "start_s": 89,
+      "end_s": 96,
+      "kind": "straight bar setup",
+      "observations": [
+        "Second performer bends to straight bar, picks it up with two hands, and stands with the bar low."
+      ]
+    },
+    {
+      "start_s": 97,
+      "end_s": 113,
+      "kind": "straight bar demonstration",
+      "observations": [
+        "Visible straight-bar raises toward torso and returns low. Camera shifts to a closer side view. No exact load, tempo or repetition count measured."
+      ]
+    },
+    {
+      "start_s": 114,
+      "end_s": 115,
+      "kind": "demonstration exit",
+      "observations": [
+        "Performer bends and lowers bar out of main crop. Final floor contact/release not confirmed."
+      ]
+    },
+    {
+      "start_s": 116,
+      "end_s": 151,
+      "kind": "explanation",
+      "observations": [
+        "Speaker talks/gestures after the exercise; these explanations are not measured outcome evidence."
+      ]
+    },
+    {
+      "start_s": 152,
+      "end_s": 173.22,
+      "kind": "promotional ending",
+      "observations": [
+        "Website/subscription cards, unrelated inset exercise footage and animated logos. Excluded from main exercise criteria."
+      ]
+    }
+  ],
+  "limits": [
+    "All intervals are approximate visual anchors, not prescribed durations.",
+    "Native video resolution is 1920\u00d71080; review sheets are downscaled. Two native aspect close views used to distinguish bar shape and hand contact.",
+    "The source contains edits, camera reframing, blur and body/equipment crops.",
+    "Audio retained but untranscribed; source explanations are separate from measured visual evidence.",
+    "No plate weight, joint angle, force, muscle recruitment, repetition target, pain/comfort, clinical suitability or safety certification inferred.",
+    "No original-source verification beyond Commons metadata and official derivative source; original endpoint remained rate limited."
+  ],
+  "guide": "guidance/Real_05_Sport.txt",
+  "criteria_initial_state": "All unknown; no fixture success claimed."
+}

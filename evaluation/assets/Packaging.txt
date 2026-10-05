@@ -1,0 +1,10 @@
+Step 1: Read the label
+Actions: Inspect the package label.
+Criteria: BOX A label visibly readable.
+Step 2: Place the blue block
+Actions: Place one blue block in the open box.
+Criteria: One blue block visibly inside the box.
+Step 3: Apply tape
+Actions: Close the box and place tape across its top.
+Criteria: Tape visibly across the box top.
+Principles: Confirm visible evidence before continuing. Hidden contents and temperatures cannot be verified from an image.

@@ -1,0 +1,1107 @@
+{
+  "tested_at": "2026-10-05T12:01:15.359Z",
+  "model": "gpt-6-astra",
+  "provider": "openai",
+  "reasoning_effort": "medium",
+  "mock": false,
+  "bank_sha256": "a910cf9087bff97e83434e35b3564164840979f9def5c98c2ce7f06c4ddd8a5a",
+  "frame_pack_sha256": "644a62662027472c6e5368616cf1df2d7c9ab11583debf2291537d0911090b2a",
+  "bank": "qa/recognition-question-bank-v2.json",
+  "samples": 9,
+  "window_seconds": 8,
+  "guardian_only": true,
+  "protocol": "Chronological cases in all five real videos. Every model receives the exact same SHA256-verified frozen JPEGs and displayed timestamps through the production API, same guides and system prompt; selected reasoning effort recorded in metadata where supported. No expected answers/IDs passed to the model. Independent visual review is distinct from strict stage ID and lexical concept recall. Single observations do not establish sustained completion.",
+  "case_count": 4,
+  "stage_case_count": 4,
+  "answered_questions": 0,
+  "errors": 0,
+  "raw_stage_matches": 3,
+  "ui_stage_matches": 3,
+  "lexical_concept_recall": null,
+  "results": [
+    {
+      "id": "real-dancing-stage-2",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "expected_step_id": "S2",
+      "timestamp_s": 23,
+      "question": "In this oblique close view, which phase is most consistent with the free shoe raised behind the supporting leg? Use the motion window to separate it from later similar shoe-lift examples.",
+      "reference_answer": "The oblique lifted-shoe example S2 is most consistent with the anchor: a free shoe is visibly raised behind the grounded supporting leg. A return to the floor should only be reported if it appears in the supplied sequence.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "behind",
+          "back",
+          "rear",
+          "raised",
+          "lift"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "6a0228482eb07f9c874d88247f3d3748feb3738d411a2bdb6ad41286d63198fc",
+        "72862987e63d2ae5d1645fb951c5ca3be107adf463035541866ffaf35eea64b1",
+        "1db44a67c7f8b1fef9581d7d46413802d7b086d827b8b1b6829f72c9c76f232a",
+        "4c632fb9d80e31ec10d9db20ef087e2d4e2413854184e88eaf94993f0259896d",
+        "59253ed344a8f2cc79a4e82acd501f5e2fd847f84a3c255cfb0bc448e9233faa",
+        "a65b4aae61cb9f042dce23274cb6086fbc211d590f33f10a0224caf05a6b447c",
+        "4bbd7218e625d77d3e3f662ce6eedc25df06d421d5a48c6da41d66818442fd27",
+        "85f8551e2641cd18eb07eb8a395432fdbb6d33d4627c3283717006751dacdce0",
+        "428ee5f83eea74c252ca72d791ddf4954847a9f66043893c7d1f15316c8f4539"
+      ],
+      "guardian_latency_ms": 12711,
+      "guardian": {
+        "observation": {
+          "summary": "The latest view shows one brown shoe raised behind the supporting leg, with the other shoe visibly at the floor against a purple wall. The raised shoe is partly cropped at the upper edge; this matches the oblique lifted-shoe example.",
+          "guidance": "Follow the raised shoe until both shoes are clearly visible at the floor within this same shot. Do not count the blurred near-floor pass as a confirmed contact or completed return.",
+          "principle": "Use clear shoe–floor relationships within one uninterrupted shot; this reduces mistaken contact and repetition judgments without establishing technique safety.",
+          "current_step_id": "S2",
+          "phase_evidence": {
+            "confidence": 0.9,
+            "evidence": "The close oblique view shows the free shoe raised behind the supporting leg while the supporting shoe remains at the floor, distinguishing this rearward lift from a forward extension.",
+            "frame_indices": [
+              8
+            ],
+            "continuity": false
+          },
+          "status": "ok",
+          "concern": "Motion blur during the low pass and cropping of the latest raised shoe limit contact assessment; no clear physical hazard is visible.",
+          "steps": [
+            {
+              "id": "S2",
+              "confidence": 0.9,
+              "criteria": [
+                {
+                  "key": "S2C1",
+                  "status": "met",
+                  "evidence": "The shoe at the upper left is visibly clear of the floor, despite being partly cropped.",
+                  "frame_indices": [
+                    8
+                  ]
+                },
+                {
+                  "key": "S2C2",
+                  "status": "met",
+                  "evidence": "The other brown shoe remains visibly at the floor beneath the supporting leg while the free shoe is raised.",
+                  "frame_indices": [
+                    8
+                  ]
+                },
+                {
+                  "key": "S2C3",
+                  "status": "unknown",
+                  "evidence": "Historically, both shoes were at the floor in frame 2, before the visible lift. The later near-floor shoe is blurred in frame 7 and raised in frame 8, so a subsequent two-shoe floor position is not confirmed.",
+                  "frame_indices": [
+                    2,
+                    7,
+                    8
+                  ]
+                }
+              ]
+            }
+          ],
+          "discovered_steps": []
+        },
+        "current_stage_id": "S2",
+        "used_frames": 9,
+        "frame_times_s": [
+          15.001,
+          20.706699999999998,
+          21.307299999999998,
+          21.974633,
+          22.141467,
+          22.174833,
+          22.3083,
+          22.575233,
+          22.975633000000002
+        ],
+        "ms": 12702,
+        "image_quality": "available",
+        "criteria": [
+          {
+            "id": "S1",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "Both shoes are visibly on the floor in the opening stance.",
+                "status": "unknown"
+              },
+              {
+                "key": "S1C2",
+                "label": "A working shoe is visibly tilted or raised while the other shoe remains near its starting position.",
+                "status": "unknown"
+              },
+              {
+                "key": "S1C3",
+                "label": "The working shoe is visibly back beside the other shoe before the shot changes.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "complete": false,
+            "progress": 33,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "One shoe is visibly lifted clear of the floor during the example.",
+                "status": "partial",
+                "evidence": "The shoe at the upper left is visibly clear of the floor, despite being partly cropped.",
+                "confidence": 0.9
+              },
+              {
+                "key": "S2C2",
+                "label": "The other shoe is visible at the floor while the working shoe is raised.",
+                "status": "partial",
+                "evidence": "The other brown shoe remains visibly at the floor beneath the supporting leg while the free shoe is raised.",
+                "confidence": 0.9
+              },
+              {
+                "key": "S2C3",
+                "label": "Both shoes are visibly at the floor again within this shot.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "A working shoe is visibly forward of the other shoe in this example.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C2",
+                "label": "The shoe subsequently returns close to the starting stance within the shot.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C3",
+                "label": "A later working-shoe position is visibly off the floor while the other shoe remains visible at the floor.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S4",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S4C1",
+                "label": "The working shoe visibly changes orientation relative to the other shoe.",
+                "status": "unknown"
+              },
+              {
+                "key": "S4C2",
+                "label": "An angled shoe or raised heel is visible during the example.",
+                "status": "unknown"
+              },
+              {
+                "key": "S4C3",
+                "label": "The shoes return close together at the floor before the next transition.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S5",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S5C1",
+                "label": "The working shoe is visibly forward of or across the other shoe during this series.",
+                "status": "unknown"
+              },
+              {
+                "key": "S5C2",
+                "label": "A raised working-shoe position is visible while the other shoe remains in view.",
+                "status": "unknown"
+              },
+              {
+                "key": "S5C3",
+                "label": "The working shoe is subsequently visible near the other shoe at the floor within the same example.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S6",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S6C1",
+                "label": "The two shoes visibly change their relative positions in the front-view example.",
+                "status": "unknown"
+              },
+              {
+                "key": "S6C2",
+                "label": "A shoe is visibly raised or its sole is visible in the subsequent lower-view example.",
+                "status": "unknown"
+              },
+              {
+                "key": "S6C3",
+                "label": "Both shoes are visible near the floor again in that lower-view shot.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S7",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S7C1",
+                "label": "A free shoe is visibly raised behind the supporting leg.",
+                "status": "unknown"
+              },
+              {
+                "key": "S7C2",
+                "label": "The supporting shoe remains visible at the floor during that raised position.",
+                "status": "unknown"
+              },
+              {
+                "key": "S7C3",
+                "label": "Both shoes are visible near the floor again before the following transition.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S8",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S8C1",
+                "label": "A crossed-foot position is visible in the final sequence.",
+                "status": "unknown"
+              },
+              {
+                "key": "S8C2",
+                "label": "The shoes subsequently change to a separated or grounded position within the same shot.",
+                "status": "unknown"
+              },
+              {
+                "key": "S8C3",
+                "label": "The performer visibly changes position across the floor during the sequence.",
+                "status": "unknown"
+              }
+            ]
+          }
+        ]
+      },
+      "raw_stage_match": true,
+      "ui_stage_match": true,
+      "latency_ms": 12727
+    },
+    {
+      "id": "real-surgery-stage-2",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "expected_step_id": "S2",
+      "timestamp_s": 27,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The first colored endoscopic instrument scene is shown. Instrument tips are visible in the field, without enough evidence to identify hidden contact or success.",
+      "expected_concepts": [
+        [
+          "endoscopic",
+          "laparoscopic",
+          "operative"
+        ],
+        [
+          "instrument",
+          "tip",
+          "field"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "82d8fa04c4b54f8a56d35cf4656006f5c4b101b1492ceb0dc43bc31716f53250",
+        "258e365a2b5d975582fcc961d3ea80e3ea86d310d1115abe2053dd6bf589d6cb",
+        "beaef148698389194a8064eaa7e346176be205c8f8e2628cabdbeac36e9d2da9",
+        "bfb281a5a48e564f4dc9ff33fc9c3494c892b8643d9246ae0a74d335db55d9c8",
+        "0397485be8e91be0f1e508118641eb856000c272b574c6417e5ee3a08ceee3c0",
+        "4f1ab9afa8883a4b29cffa73d5c68b0b683438bb83aff58a54caa0aba2576c65",
+        "94bb7f2ad6dfe685746e690714a75f061ee50ed03faac26855704d3c3b49c67f",
+        "6e40a280c9ea2c26168e237b0b583f3a5522e0f55547fb6b0a3fdd49fe539d0b",
+        "69dbc059e49d813fab906b89d53ee8afce6e2454a4e6af1e9db7631ae8b56411"
+      ],
+      "guardian_latency_ms": 13213,
+      "guardian": {
+        "observation": {
+          "summary": "The latest colored endoscopic view shows a broad gray instrument extending from the left across the center, beside orange-red tissue and a dark glossy region below. The instrument and bright reflections obscure fine detail at its tip.",
+          "guidance": "Track the visible tip and its position relative to nearby tissue, marking obscured contact as uncertain. Review a clearer view before interpreting tool function or tissue effects.",
+          "principle": "Visible instrument movement supports an observational checkpoint, not treatment success; preserving uncertainty around obscured contact reduces unsupported clinical interpretation.",
+          "current_step_id": "S2",
+          "phase_evidence": {
+            "confidence": 0.82,
+            "evidence": "The latest view directly shows a broad gray working instrument in a colored endoscopic tissue field, supporting the instrument-scene checkpoint; no distinctive thread, woven material, or clear curved tube is identifiable.",
+            "frame_indices": [
+              8
+            ],
+            "continuity": false
+          },
+          "status": "watch",
+          "concern": "The central instrument and glare limit inspection of the tip–tissue interface; exact contact and any tissue effect remain uncertain.",
+          "steps": [
+            {
+              "id": "S2",
+              "confidence": 0.88,
+              "criteria": [
+                {
+                  "key": "S2C1",
+                  "status": "partial",
+                  "evidence": "Colored endoscopic tissue views are visible, including the latest image, but the supplied images do not show introductory imaging or its replacement.",
+                  "frame_indices": [
+                    0,
+                    8
+                  ]
+                },
+                {
+                  "key": "S2C2",
+                  "status": "met",
+                  "evidence": "Across the recent views, the broad gray instrument tip shifts from the upper central field toward the center-right and adopts a more horizontal orientation relative to the orange tissue band.",
+                  "frame_indices": [
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                }
+              ]
+            }
+          ],
+          "discovered_steps": []
+        },
+        "current_stage_id": "S2",
+        "used_frames": 9,
+        "frame_times_s": [
+          19,
+          19.96,
+          24.96,
+          25.28,
+          25.6,
+          26.119999999999997,
+          26.16,
+          26.560000000000002,
+          26.96
+        ],
+        "ms": 13203,
+        "image_quality": "available",
+        "criteria": [
+          {
+            "id": "S1",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "The opening title card is visible before the operative footage.",
+                "status": "unknown"
+              },
+              {
+                "key": "S1C2",
+                "label": "A sequence of grayscale cross-sectional images is visible before the first endoscopic scene.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "complete": false,
+            "progress": 50,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "A colored endoscopic field replaces the introductory imaging.",
+                "status": "partial",
+                "evidence": "Colored endoscopic tissue views are visible, including the latest image, but the supplied images do not show introductory imaging or its replacement.",
+                "confidence": 0.88
+              },
+              {
+                "key": "S2C2",
+                "label": "Visible instrument tips move in the operative field during this section.",
+                "status": "partial",
+                "evidence": "Across the recent views, the broad gray instrument tip shifts from the upper central field toward the center-right and adopts a more horizontal orientation relative to the orange tissue band.",
+                "confidence": 0.88
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "A thread or loop is visible together with working instrument tips.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C2",
+                "label": "The thread position changes while a visible tip handles or approaches it.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C3",
+                "label": "Repeated instrument movements are visible in the close-up sequence.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S4",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S4C1",
+                "label": "A circular grayscale imaging view appears between operative scenes.",
+                "status": "unknown"
+              },
+              {
+                "key": "S4C2",
+                "label": "The displayed video returns to a colored endoscopic field after that view.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S5",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S5C1",
+                "label": "White woven material is visibly present in the operative field.",
+                "status": "unknown"
+              },
+              {
+                "key": "S5C2",
+                "label": "Its position or exposed portion changes during visible instrument handling.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S6",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S6C1",
+                "label": "A clear curved tube is visible in a later endoscopic scene.",
+                "status": "unknown"
+              },
+              {
+                "key": "S6C2",
+                "label": "Visible tube or instrument handling occurs after the woven-material sequence.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S7",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S7C1",
+                "label": "A final grayscale cross-sectional image is displayed after the later operative scenes.",
+                "status": "unknown"
+              },
+              {
+                "key": "S7C2",
+                "label": "The supplied clip ends after the final displayed image.",
+                "status": "unknown"
+              }
+            ]
+          }
+        ]
+      },
+      "raw_stage_match": true,
+      "ui_stage_match": true,
+      "latency_ms": 13233
+    },
+    {
+      "id": "real-manufacturing-stage-2",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "expected_step_id": "S2",
+      "timestamp_s": 35,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "Machine-tool activity is the phase: a mounted workpiece or tooling appears in the machine work area. Parameters and acceptance are unverified.",
+      "expected_concepts": [
+        [
+          "machine",
+          "machining",
+          "tool"
+        ],
+        [
+          "workpiece",
+          "mould",
+          "mold",
+          "fixture"
+        ]
+      ],
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "cbea0aa6c0580fc1fdd0c42d47728dc1e4c713bbd9e899caf417e8024bdefc94",
+        "9c3efb5eda57dc15f5507d8aa241954c8bcbf982d2d37a0243d82de74053f52a",
+        "a79ecd0d0b8d97ad0e0e60cda44892f206af4083577d798a4bf5d81d4f97ad66",
+        "849e927ac5b658ba123de640d53422b84238826286fa99dc602b4ac12d3da5c2",
+        "49821edd933810f64c97cb98da5f780e548659bd6368e4f189ad21abe2323889",
+        "a10c69563b205cdde18b38e160d3a61ec42f065facb9b51a8dd442cff8939c17",
+        "c75df60475227e1b907f78506cb00a00c7cc30f3f90a92675c2999c3cbd89ed1",
+        "e1c6cf8a5a3d215b5107015865b87f5bb47844a9bd2b026b2db83fd1169422d3",
+        "5ea04d9d19971d114d19bbeb37e3edf22c368adaf28e85adc8364be325376312"
+      ],
+      "guardian_latency_ms": 19830,
+      "guardian": {
+        "observation": {
+          "summary": "The latest view shows a projecting metal fixture plate with two rounded holders, dark rails, and cables inside a machine enclosure. The plate changes position and orientation across the recent frames, but a separate workpiece, cutting tool, and contact point are not clearly identifiable.",
+          "guidance": "Observe the next clear machine view for a distinguishable tool, mounted workpiece, and their relative motion. Record the visible fixture movement without treating it as proof of cutting or a completed machining cycle.",
+          "principle": "Separating visible machine movement from inferred machining reduces the risk of falsely recording process completion; montage shots do not establish one continuous production job.",
+          "current_step_id": null,
+          "phase_evidence": null,
+          "status": "ok",
+          "concern": "No specific physical hazard is evident; shadow and the viewing angle limit identification of the working region.",
+          "steps": [
+            {
+              "id": "S1",
+              "confidence": 0.96,
+              "criteria": [
+                {
+                  "key": "S1C2",
+                  "status": "met",
+                  "evidence": "Historical observation only: an operator faces the controller with a thumb contacting a button beneath its screen. The operator and controller are no longer visible in the latest shot.",
+                  "frame_indices": [
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "S2",
+              "confidence": 0.66,
+              "criteria": [
+                {
+                  "key": "S2C1",
+                  "status": "partial",
+                  "evidence": "A metal fixture plate and paired holders are visible inside the machine, but a distinct mounted workpiece and working tool cannot both be identified.",
+                  "frame_indices": [
+                    8
+                  ]
+                },
+                {
+                  "key": "S2C2",
+                  "status": "partial",
+                  "evidence": "The projecting fixture assembly changes position and orientation within the continuous machine view; whether the moving assembly carries a workpiece or tool is unclear.",
+                  "frame_indices": [
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "S6",
+              "confidence": 0.9,
+              "criteria": [
+                {
+                  "key": "S6C1",
+                  "status": "met",
+                  "evidence": "The metal machine-mounted plate visibly changes orientation and position in close view. This shared movement cue does not distinguish the final-machine checkpoint from the machine-activity checkpoint, so current phase identity remains unresolved.",
+                  "frame_indices": [
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                }
+              ]
+            }
+          ],
+          "discovered_steps": []
+        },
+        "current_stage_id": "",
+        "used_frames": 9,
+        "frame_times_s": [
+          27,
+          28.96,
+          33.6,
+          33.96,
+          34.12,
+          34.16,
+          34.28,
+          34.56,
+          34.96
+        ],
+        "ms": 19812,
+        "image_quality": "available",
+        "criteria": [
+          {
+            "id": "S1",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "Visual observation: A machine work area with a mounted tool or workpiece is visible.",
+                "status": "unknown"
+              },
+              {
+                "key": "S1C2",
+                "label": "Visual observation: An operator is visibly present at a controller console and interacts with its controls.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "complete": false,
+            "progress": 33,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "Visual observation: The mounted workpiece and tool region appear together in the machine view.",
+                "status": "partial",
+                "evidence": "A metal fixture plate and paired holders are visible inside the machine, but a distinct mounted workpiece and working tool cannot both be identified.",
+                "confidence": 0.66
+              },
+              {
+                "key": "S2C2",
+                "label": "Visual observation: Visible motion occurs in the tool or workpiece region.",
+                "status": "partial",
+                "evidence": "The projecting fixture assembly changes position and orientation within the continuous machine view; whether the moving assembly carries a workpiece or tool is unclear.",
+                "confidence": 0.66
+              },
+              {
+                "key": "S2C3",
+                "label": "Visual observation: A later close-up shows a machining or tool region from a different viewpoint.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "Visual observation: Several tools are presented in a rack with a display or control unit nearby.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C2",
+                "label": "Visual observation: A digital indicator with a probe is shown above a metal block.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C3",
+                "label": "Visual observation: Hands and an exposed tooling assembly appear together during manual work.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S4",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S4C1",
+                "label": "Visual observation: A manufactured component is visibly presented separately from the machine footage.",
+                "status": "unknown"
+              },
+              {
+                "key": "S4C2",
+                "label": "Visual observation: A later machine view shows a tool positioned over mounted metal blocks or tooling.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S5",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S5C1",
+                "label": "Visual observation: Multiple coloured sample parts are shown together.",
+                "status": "unknown"
+              },
+              {
+                "key": "S5C2",
+                "label": "Visual observation: A group stands beside a drawing or plan, with a visible pointing gesture toward it.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S6",
+            "complete": false,
+            "progress": 25,
+            "criteria": [
+              {
+                "key": "S6C1",
+                "label": "Visual observation: A machine component visibly moves or rotates in close-up.",
+                "status": "partial",
+                "evidence": "The metal machine-mounted plate visibly changes orientation and position in close view. This shared movement cue does not distinguish the final-machine checkpoint from the machine-activity checkpoint, so current phase identity remains unresolved.",
+                "confidence": 0.9
+              },
+              {
+                "key": "S6C2",
+                "label": "Visual observation: An exposed mould or tooling assembly is shown with its cavities or internal features visible.",
+                "status": "unknown"
+              }
+            ]
+          }
+        ]
+      },
+      "raw_stage_match": false,
+      "ui_stage_match": false,
+      "latency_ms": 19853
+    },
+    {
+      "id": "real-dancing-stage-5",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "expected_step_id": "S5",
+      "timestamp_s": 70,
+      "question": "In this later front/oblique close-foot sequence, which phase is most consistent with the working shoe passing forward or across the supporting foot? State the visible direction and any ambiguity with earlier examples.",
+      "reference_answer": "S5 is the later forward/across shoe-lift series. The anchor shows a moving working shoe forward or across the other with motion blur. The return and exact edited example need temporal context; similar close-foot phases cannot be separated from a generic lift alone.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "forward",
+          "across",
+          "blur",
+          "moving",
+          "move"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "112821903e06d79438ca88a59295f7e104a33ef1ceca46c34ccbb82f020b0f83",
+        "06f572d866ec39e72cd39d8fe5fa741da90067b7e4ce8d07f9a58b795b9f0903",
+        "52ca5db9a6082c1328ad65931f310b91f8eb9768f5e85d265ffe477f8d8be4fb",
+        "3f417c052efdb21c77f5f695062b636e406efaf68e580c3b67f2ed2d8b6446a0",
+        "c931c7758d66abd46d36054bf0bc20e231c08a8c7cb21377ac74b7e24e232425",
+        "14ebef602d26bacf759e44e3077b683d1a63c01cf1411e60c43ae2ccee8d66f5",
+        "aa6af4a5387f021ddf458472a3b8e4f5c93be6057a8b2952946b6257a65e039e",
+        "491fbabeb65fc9a2d00f81509df085b252e8d182733aaa0b6e1cee16d944ac9c",
+        "5f551bfb1c064a54fb82c016634f97999c5c9cf285dfea7f18da0a4207759db2"
+      ],
+      "guardian_latency_ms": 17843,
+      "guardian": {
+        "observation": {
+          "summary": "The latest view shows two tan shoes close together on a pale floor, with one angled behind the other; lower legs and black cropped trousers are visible. The nearby frames show a raised shoe extending forward and coming back near its partner, consistent with the forward-lift series.",
+          "guidance": "Follow each shoe separately through the uninterrupted shot, distinguishing a visible gap beneath the shoe from floor contact. Leave blurred contacts and repetition counts unconfirmed.",
+          "principle": "Use ordered shoe positions within the same shot; this reduces mistaken contact and cycle judgments without establishing technique quality or safety.",
+          "current_step_id": "S5",
+          "phase_evidence": {
+            "confidence": 0.82,
+            "evidence": "The front/oblique close view shows one shoe raised beside the other in frame 5, extended toward the foreground in frame 6, and close to its partner in frames 7–8. These earlier sampled actions identify the ongoing forward-lift episode; the latest frame shows the close shoe positions, not the earlier extension.",
+            "frame_indices": [
+              5,
+              6,
+              7,
+              8
+            ],
+            "continuity": true
+          },
+          "status": "watch",
+          "concern": "Motion blur around the shoes makes some brief floor contacts uncertain; no specific physical hazard is established.",
+          "steps": [
+            {
+              "id": "S5",
+              "confidence": 0.86,
+              "criteria": [
+                {
+                  "key": "S5C1",
+                  "status": "met",
+                  "evidence": "One shoe extends clearly into the foreground, forward of the other shoe.",
+                  "frame_indices": [
+                    6
+                  ]
+                },
+                {
+                  "key": "S5C2",
+                  "status": "met",
+                  "evidence": "The image-left shoe is visibly raised with a gap beneath it while the other shoe remains fully in view at the floor.",
+                  "frame_indices": [
+                    5
+                  ]
+                },
+                {
+                  "key": "S5C3",
+                  "status": "met",
+                  "evidence": "After the raised and forward positions, the working shoe is visibly at the floor close to the other shoe in the same unchanged view.",
+                  "frame_indices": [
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                }
+              ]
+            }
+          ],
+          "discovered_steps": []
+        },
+        "current_stage_id": "S5",
+        "used_frames": 9,
+        "frame_times_s": [
+          62.001,
+          65.637967,
+          68.640967,
+          68.974633,
+          69.141467,
+          69.174833,
+          69.3083,
+          69.575233,
+          69.975633
+        ],
+        "ms": 17838,
+        "image_quality": "available",
+        "criteria": [
+          {
+            "id": "S1",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "Both shoes are visibly on the floor in the opening stance.",
+                "status": "unknown"
+              },
+              {
+                "key": "S1C2",
+                "label": "A working shoe is visibly tilted or raised while the other shoe remains near its starting position.",
+                "status": "unknown"
+              },
+              {
+                "key": "S1C3",
+                "label": "The working shoe is visibly back beside the other shoe before the shot changes.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "complete": false,
+            "progress": 33,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "One shoe is visibly lifted clear of the floor during the example.",
+                "status": "partial",
+                "evidence": "The shoe at the upper left is visibly clear of the floor, despite being partly cropped.",
+                "confidence": 0.9
+              },
+              {
+                "key": "S2C2",
+                "label": "The other shoe is visible at the floor while the working shoe is raised.",
+                "status": "partial",
+                "evidence": "The other brown shoe remains visibly at the floor beneath the supporting leg while the free shoe is raised.",
+                "confidence": 0.9
+              },
+              {
+                "key": "S2C3",
+                "label": "Both shoes are visibly at the floor again within this shot.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "A working shoe is visibly forward of the other shoe in this example.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C2",
+                "label": "The shoe subsequently returns close to the starting stance within the shot.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C3",
+                "label": "A later working-shoe position is visibly off the floor while the other shoe remains visible at the floor.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S4",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S4C1",
+                "label": "The working shoe visibly changes orientation relative to the other shoe.",
+                "status": "unknown"
+              },
+              {
+                "key": "S4C2",
+                "label": "An angled shoe or raised heel is visible during the example.",
+                "status": "unknown"
+              },
+              {
+                "key": "S4C3",
+                "label": "The shoes return close together at the floor before the next transition.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S5",
+            "complete": false,
+            "progress": 50,
+            "criteria": [
+              {
+                "key": "S5C1",
+                "label": "The working shoe is visibly forward of or across the other shoe during this series.",
+                "status": "partial",
+                "evidence": "One shoe extends clearly into the foreground, forward of the other shoe.",
+                "confidence": 0.86
+              },
+              {
+                "key": "S5C2",
+                "label": "A raised working-shoe position is visible while the other shoe remains in view.",
+                "status": "partial",
+                "evidence": "The image-left shoe is visibly raised with a gap beneath it while the other shoe remains fully in view at the floor.",
+                "confidence": 0.86
+              },
+              {
+                "key": "S5C3",
+                "label": "The working shoe is subsequently visible near the other shoe at the floor within the same example.",
+                "status": "partial",
+                "evidence": "After the raised and forward positions, the working shoe is visibly at the floor close to the other shoe in the same unchanged view.",
+                "confidence": 0.86
+              }
+            ]
+          },
+          {
+            "id": "S6",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S6C1",
+                "label": "The two shoes visibly change their relative positions in the front-view example.",
+                "status": "unknown"
+              },
+              {
+                "key": "S6C2",
+                "label": "A shoe is visibly raised or its sole is visible in the subsequent lower-view example.",
+                "status": "unknown"
+              },
+              {
+                "key": "S6C3",
+                "label": "Both shoes are visible near the floor again in that lower-view shot.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S7",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S7C1",
+                "label": "A free shoe is visibly raised behind the supporting leg.",
+                "status": "unknown"
+              },
+              {
+                "key": "S7C2",
+                "label": "The supporting shoe remains visible at the floor during that raised position.",
+                "status": "unknown"
+              },
+              {
+                "key": "S7C3",
+                "label": "Both shoes are visible near the floor again before the following transition.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S8",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S8C1",
+                "label": "A crossed-foot position is visible in the final sequence.",
+                "status": "unknown"
+              },
+              {
+                "key": "S8C2",
+                "label": "The shoes subsequently change to a separated or grounded position within the same shot.",
+                "status": "unknown"
+              },
+              {
+                "key": "S8C3",
+                "label": "The performer visibly changes position across the floor during the sequence.",
+                "status": "unknown"
+              }
+            ]
+          }
+        ]
+      },
+      "raw_stage_match": true,
+      "ui_stage_match": true,
+      "latency_ms": 17853
+    }
+  ]
+}

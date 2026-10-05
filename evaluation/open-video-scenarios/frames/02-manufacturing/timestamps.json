@@ -1,0 +1,82 @@
+[
+  {
+    "file": "frame-001.jpg",
+    "source_seconds": 0.0
+  },
+  {
+    "file": "frame-002.jpg",
+    "source_seconds": 9.0
+  },
+  {
+    "file": "frame-003.jpg",
+    "source_seconds": 18.0
+  },
+  {
+    "file": "frame-004.jpg",
+    "source_seconds": 27.0
+  },
+  {
+    "file": "frame-005.jpg",
+    "source_seconds": 36.0
+  },
+  {
+    "file": "frame-006.jpg",
+    "source_seconds": 45.0
+  },
+  {
+    "file": "frame-007.jpg",
+    "source_seconds": 54.0
+  },
+  {
+    "file": "frame-008.jpg",
+    "source_seconds": 63.0
+  },
+  {
+    "file": "frame-009.jpg",
+    "source_seconds": 72.0
+  },
+  {
+    "file": "frame-010.jpg",
+    "source_seconds": 81.0
+  },
+  {
+    "file": "frame-011.jpg",
+    "source_seconds": 90.0
+  },
+  {
+    "file": "frame-012.jpg",
+    "source_seconds": 99.0
+  },
+  {
+    "file": "frame-013.jpg",
+    "source_seconds": 108.0
+  },
+  {
+    "file": "frame-014.jpg",
+    "source_seconds": 117.0
+  },
+  {
+    "file": "frame-015.jpg",
+    "source_seconds": 126.0
+  },
+  {
+    "file": "frame-016.jpg",
+    "source_seconds": 135.0
+  },
+  {
+    "file": "frame-017.jpg",
+    "source_seconds": 144.0
+  },
+  {
+    "file": "frame-018.jpg",
+    "source_seconds": 153.0
+  },
+  {
+    "file": "frame-019.jpg",
+    "source_seconds": 162.0
+  },
+  {
+    "file": "frame-020.jpg",
+    "source_seconds": 171.0
+  }
+]

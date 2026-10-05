@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-10-04T19:49:57.803Z",
+  "results": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "goals_saved": true,
+      "resize_before": {
+        "x": 300.59375,
+        "y": 820,
+        "width": 767,
+        "height": 115
+      },
+      "resize_after": {
+        "x": 300.59375,
+        "y": 775,
+        "width": 743,
+        "height": 160
+      },
+      "overflow": false,
+      "js_errors": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "goals_saved": true,
+      "resize_before": {
+        "x": 0,
+        "y": 242.140625,
+        "width": 390,
+        "height": 121.09375
+      },
+      "resize_after": {
+        "x": 0,
+        "y": 203.234375,
+        "width": 366,
+        "height": 160
+      },
+      "overflow": false,
+      "js_errors": []
+    },
+    {
+      "viewport": {
+        "width": 820,
+        "height": 1180
+      },
+      "goals_saved": true,
+      "resize_before": {
+        "x": 12,
+        "y": 974,
+        "width": 484,
+        "height": 133
+      },
+      "resize_after": {
+        "x": 12,
+        "y": 942,
+        "width": 460,
+        "height": 165
+      },
+      "overflow": false,
+      "js_errors": []
+    }
+  ]
+}

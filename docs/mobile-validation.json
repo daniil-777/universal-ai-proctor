@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-04T18:36:43.931751+00:00",
+  "app_url": "http://localhost:8101",
+  "test_totals": {
+    "backend": 114,
+    "frontend_unit": 19,
+    "browser": 58,
+    "total": 191
+  },
+  "browser_engines": [
+    "Chrome with touch emulation",
+    "WebKit phone and tablet emulation"
+  ],
+  "touch_viewports": [
+    [
+      320,
+      568
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      412,
+      915
+    ],
+    [
+      740,
+      390
+    ],
+    [
+      600,
+      960
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      820,
+      1180
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      1180,
+      820
+    ]
+  ],
+  "keyboard_cases": [
+    {
+      "layout": [
+        320,
+        568
+      ],
+      "visible_height": 290,
+      "offset_top": 0
+    },
+    {
+      "layout": [
+        390,
+        844
+      ],
+      "visible_height": 360,
+      "offset_top": 0
+    },
+    {
+      "layout": [
+        820,
+        1180
+      ],
+      "visible_height": 420,
+      "offset_top": 80
+    },
+    {
+      "layout": [
+        1180,
+        820
+      ],
+      "visible_height": 340,
+      "offset_top": 35
+    }
+  ],
+  "additional_checks": [
+    "shared chat + panned keyboard",
+    "200% root font + reduced motion at 320/600/820px",
+    "200% text + 290px keyboard viewport",
+    "44px controls and resize handle",
+    "source drawer focus loop, nested dialog, Escape and restoration",
+    "release inert/focus state when resizing to desktop",
+    "WebKit H.264 playback, End/Home seeking, portrait/landscape rotation",
+    "camera stream identity and actual recording download after touch resizing",
+    "chat Close/header stays visible before and after Send at 200% text with keyboard open"
+  ],
+  "capture_checks": {
+    "paused_observation_ms": 2300,
+    "additional_jpeg_encodes": 0,
+    "manual_rechecks": 2,
+    "additional_encodes_for_manual_rechecks": 0,
+    "seek_refresh_encodes": 1,
+    "detail_refresh_encodes": 1,
+    "hidden_observation_ms": 1700,
+    "hidden_jpeg_encodes": 0,
+    "resumes_capture_when_visible": true
+  },
+  "typechecks": "pass",
+  "production_build": "pass",
+  "lint_errors": 0,
+  "inherited_lint_warnings": 8,
+  "frontend_production_audit_vulnerabilities": 0,
+  "limitations": [
+    "Emulated layouts, viewport keyboard events and fake capture devices; no physical phones/tablets or native keyboard/picker verification.",
+    "Speech recognition accuracy and clinical/process accuracy are separate from these software checks."
+  ],
+  "final_browser_result": {
+    "status": "passed",
+    "failedTests": []
+  },
+  "intro": {
+    "viewports_200_percent_text": [
+      320,
+      390,
+      600,
+      820,
+      1440
+    ],
+    "tour_webkit_devices": [
+      "iPhone 13",
+      "iPad Pro 11"
+    ],
+    "tour_duration_seconds": 20,
+    "tour_bytes": 181957,
+    "initial_mp4_requests": 0,
+    "range_requests": "206 Partial Content",
+    "sample_request_count_intro_to_workspace": 1
+  }
+}

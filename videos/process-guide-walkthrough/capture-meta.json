@@ -1,0 +1,536 @@
+{
+  "captured_at": "2026-10-05T06:12:28.784Z",
+  "captures": [
+    {
+      "id": "overview",
+      "src": "assets/screens/overview.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 220,
+        "y": 141,
+        "width": 1160,
+        "height": 582.5
+      },
+      "highlights": [
+        {
+          "label": "Set up your session",
+          "x": 220,
+          "y": 491.3125,
+          "width": 191.703125,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "id": "source",
+      "src": "assets/screens/source.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 220,
+        "y": 459.5,
+        "width": 1160,
+        "height": 828.1875
+      },
+      "highlights": [
+        {
+          "label": "Upload a video\n\nPlay, pause and inspect any recorded process.",
+          "x": 220,
+          "y": 614.1875,
+          "width": 376,
+          "height": 145.5
+        },
+        {
+          "label": "Use your camera\n\nFollow a process as it happens, with live guidance.",
+          "x": 612,
+          "y": 614.1875,
+          "width": 376,
+          "height": 145.5
+        },
+        {
+          "label": "Share a screen\n\nGuide software workflows or a shared video feed.",
+          "x": 1004,
+          "y": 614.1875,
+          "width": 376,
+          "height": 145.5
+        }
+      ]
+    },
+    {
+      "id": "guide",
+      "src": "assets/screens/guide.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 220,
+        "y": 459.5,
+        "width": 1160,
+        "height": 832.1875
+      },
+      "highlights": [
+        {
+          "label": "Upload guidance",
+          "x": 1135,
+          "y": 873.6875,
+          "width": 224,
+          "height": 40
+        },
+        {
+          "label": "Choose a sample guidance document",
+          "x": 1135,
+          "y": 921.6875,
+          "width": 224,
+          "height": 40
+        }
+      ]
+    },
+    {
+      "id": "wishes",
+      "src": "assets/screens/wishes.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 512,
+        "y": 175.5,
+        "width": 576,
+        "height": 649
+      },
+      "highlights": [
+        {
+          "label": "",
+          "x": 537,
+          "y": 354.5,
+          "width": 526,
+          "height": 174
+        },
+        {
+          "label": "Save goals",
+          "x": 960.046875,
+          "y": 755.5,
+          "width": 102.953125,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "id": "resize",
+      "src": "assets/screens/resize.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 0,
+        "y": 73,
+        "width": 1600,
+        "height": 927
+      },
+      "highlights": [
+        {
+          "label": "",
+          "x": 1199.5,
+          "y": 73,
+          "width": 1,
+          "height": 927
+        }
+      ]
+    },
+    {
+      "id": "resize-guidance",
+      "src": "assets/screens/resize-guidance.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 320.59375,
+        "y": 73,
+        "width": 878.90625,
+        "height": 927
+      },
+      "highlights": [
+        {
+          "label": "Resize guidance area",
+          "x": 1143.59375,
+          "y": 820,
+          "width": 44,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "id": "steps",
+      "src": "assets/screens/steps.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 1200.5,
+        "y": 73,
+        "width": 399.5,
+        "height": 927
+      },
+      "highlights": [
+        {
+          "label": "Steps",
+          "x": 1213.5,
+          "y": 85,
+          "width": 73.296875,
+          "height": 30
+        },
+        {
+          "label": "Confirm Inspect loose parts manually",
+          "x": 1481.09375,
+          "y": 543.375,
+          "width": 93.90625,
+          "height": 16.5
+        }
+      ]
+    },
+    {
+      "id": "principles",
+      "src": "assets/screens/principles.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 1200.5,
+        "y": 73,
+        "width": 399.5,
+        "height": 927
+      },
+      "highlights": [
+        {
+          "label": "Principles",
+          "x": 1288.796875,
+          "y": 85,
+          "width": 73.296875,
+          "height": 30
+        }
+      ]
+    },
+    {
+      "id": "manual",
+      "src": "assets/screens/manual.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 1200.5,
+        "y": 73,
+        "width": 399.5,
+        "height": 927
+      },
+      "highlights": [
+        {
+          "label": "Reset Inspect loose parts manually",
+          "x": 1518.078125,
+          "y": 567.375,
+          "width": 56.921875,
+          "height": 16.5
+        }
+      ]
+    },
+    {
+      "id": "chat",
+      "src": "assets/screens/chat.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 1180,
+        "y": 420,
+        "width": 400,
+        "height": 560
+      },
+      "highlights": [
+        {
+          "label": "Message",
+          "x": 1193,
+          "y": 807,
+          "width": 322,
+          "height": 80
+        },
+        {
+          "label": "Listen",
+          "x": 1193,
+          "y": 895,
+          "width": 84.03125,
+          "height": 36
+        },
+        {
+          "label": "Voice answers",
+          "x": 1285.03125,
+          "y": 895,
+          "width": 36,
+          "height": 36
+        }
+      ]
+    },
+    {
+      "id": "guardian",
+      "src": "assets/screens/guardian.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 1200.5,
+        "y": 73,
+        "width": 399.5,
+        "height": 927
+      },
+      "highlights": [
+        {
+          "label": "Guardian",
+          "x": 1364.09375,
+          "y": 85,
+          "width": 73.296875,
+          "height": 30
+        }
+      ]
+    },
+    {
+      "id": "readiness",
+      "src": "assets/screens/readiness.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 1200.5,
+        "y": 73,
+        "width": 399.5,
+        "height": 927
+      },
+      "highlights": [
+        {
+          "label": "Save job context",
+          "x": 1213.5,
+          "y": 545.5,
+          "width": 133.171875,
+          "height": 36
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "src": "assets/screens/review.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 1200.5,
+        "y": 73,
+        "width": 399.5,
+        "height": 927
+      },
+      "highlights": [
+        {
+          "label": "Save frame",
+          "x": 1226.5,
+          "y": 362.5,
+          "width": 122,
+          "height": 36
+        },
+        {
+          "label": "Exceptions (0)",
+          "x": 1402.75,
+          "y": 224.5,
+          "width": 180.25,
+          "height": 40
+        }
+      ]
+    },
+    {
+      "id": "exception",
+      "src": "assets/screens/exception.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 1200.5,
+        "y": 73,
+        "width": 399.5,
+        "height": 927
+      },
+      "highlights": [
+        {
+          "label": "Raise exception",
+          "x": 1226.5,
+          "y": 362.5,
+          "width": 127.765625,
+          "height": 36
+        }
+      ]
+    },
+    {
+      "id": "report",
+      "src": "assets/screens/report.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 288,
+        "y": 12,
+        "width": 1024,
+        "height": 976
+      },
+      "highlights": [
+        {
+          "label": "Prepare PDF",
+          "x": 334,
+          "y": 410,
+          "width": 130.390625,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "id": "export",
+      "src": "assets/screens/export.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 288,
+        "y": 12,
+        "width": 1024,
+        "height": 976
+      },
+      "highlights": [
+        {
+          "label": "Download PDF",
+          "x": 334,
+          "y": 410,
+          "width": 144.265625,
+          "height": 44
+        },
+        {
+          "label": "Offline HTML",
+          "x": 752.875,
+          "y": 410,
+          "width": 137.421875,
+          "height": 44
+        },
+        {
+          "label": "Share PDF",
+          "x": 486.265625,
+          "y": 410,
+          "width": 118.921875,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "id": "account",
+      "src": "assets/screens/account.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 352,
+        "y": 123.8125,
+        "width": 896,
+        "height": 752.375
+      },
+      "highlights": [
+        {
+          "label": "Create my account",
+          "x": 764.6875,
+          "y": 778.1875,
+          "width": 429.3125,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "id": "save",
+      "src": "assets/screens/save.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 352,
+        "y": 12,
+        "width": 896,
+        "height": 976
+      },
+      "highlights": [
+        {
+          "label": "Save current result",
+          "x": 1036.5,
+          "y": 660.75,
+          "width": 165.5,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "id": "saved",
+      "src": "assets/screens/saved.png",
+      "viewport": {
+        "width": 1600,
+        "height": 1000,
+        "deviceScaleFactor": 2
+      },
+      "crop": {
+        "x": 352,
+        "y": 12,
+        "width": 896,
+        "height": 976
+      },
+      "highlights": [
+        {
+          "label": "Close result",
+          "x": 1109.203125,
+          "y": 201.25,
+          "width": 92.796875,
+          "height": 44
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "fixture_calls": 0,
+  "paid_visual_calls": 0,
+  "in_memory_accounts": true,
+  "notes": "Screens are the actual local app. The extraction fixture maps the supplied four-step Parts_Sorting.txt literally; no camera, microphone, paid vision, or share upload was invoked. Manual confirmation, bookmarks, exception, PDF preparation and account save are actual interactions."
+}

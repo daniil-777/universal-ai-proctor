@@ -1,0 +1,221 @@
+Description of a Scene
+Arthroscopic intra-articular shoulder scene during Bankart repair, viewed mainly from a posterior portal. Visible structures include the humeral head, glenoid, anterior-inferior labrum, capsule, and glenoid neck. Instruments enter through anterior portals for probing, tissue mobilization, glenoid preparation, anchor insertion, suture passage, fixation, and final review of the repaired labrum.
+
+Step 1: Portals
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- Clear intra-articular arthroscopic view is present.
+- At least one anterior working cannula is visible in the joint.
+- Portal setup for viewing and working access appears established.
+
+Errors:
+
+Typical_duration:
+
+
+Step 2: Arthroscopic Instability Assessment
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- The anterior-inferior labrum / glenoid region is clearly inspected with the scope or probe.
+- Diagnostic assessment is visibly performed before repair begins.
+
+Errors:
+
+Typical_duration:
+
+
+Step 3: Capsulolabral Mobilization / Glenoid Preparation
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- Capsulolabral tissue is clearly lifted or separated from the glenoid neck.
+- The anterior glenoid neck is clearly exposed.
+- A preparation tool visibly abrades or prepares the glenoid neck.
+
+Errors:
+
+Typical_duration:
+
+
+Step 4: Inferior Anchor Preparation / Insertion
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- The drill guide is clearly seated on the inferior anterior glenoid.
+- Drilling is clearly seen.
+- The first anchor is visibly inserted into the drilled site.
+
+Errors:
+
+Typical_duration:
+
+
+Step 5: Suture Delivery / Management (Inferior Anchor)
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- A suture-passing device clearly penetrates the capsulolabral tissue.
+- Suture is visibly passed through the tissue.
+- A free suture limb is visibly retrieved out of the cannula.
+
+Errors:
+
+Typical_duration:
+
+
+Step 6: Knot-Tying / Knotless Construct (Inferior Anchor)
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- Capsulolabral tissue is visibly drawn toward the glenoid.
+- Knot or knotless fixation is visibly seated.
+- Suture tails are visibly cut or no longer free.
+
+Errors:
+
+Typical_duration:
+
+
+Step 7: Second Anchor Preparation / Insertion
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- The drill guide is clearly placed at a second, more superior glenoid position.
+- Drilling is seen.
+- The second anchor is inserted and seated.
+
+Errors:
+
+Typical_duration:
+
+
+Step 8: Suture Delivery / Management (Second Anchor)
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- A passing device clearly penetrates the capsulolabral tissue.
+- The second suture is visibly passed through tissue.
+- The suture limb is clearly retrieved.
+
+Errors:
+
+Typical_duration:
+
+
+Step 9: Knot-Tying / Knotless Construct (Second Anchor)
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- Tissue is visibly pulled and fixed to the glenoid.
+- The second fixation point looks seated and stable.
+- Suture tails are cut or cleared.
+
+Errors:
+
+Typical_duration:
+
+
+Step 10: Third Anchor Preparation / Insertion
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- The drill guide is clearly placed at a superior repair position.
+- Drilling is visible.
+- The third anchor is inserted and seated.
+
+Errors:
+
+Typical_duration:
+
+
+Step 11: Suture Delivery / Management (Third Anchor)
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- A passing device penetrates the target tissue.
+- The third suture is visibly passed through tissue.
+- The suture limb is clearly retrieved outside the cannula.
+
+Errors:
+
+Typical_duration:
+
+
+Step 12: Knot-Tying / Knotless Construct (Third Anchor)
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- Tissue is visibly reduced and secured at the third anchor.
+- Final fixation is visibly seated.
+- Suture tails are cut or no longer free.
+
+Errors:
+
+Typical_duration:
+
+
+Step 13: Procedure Review
+Objective:
+
+Expected_instruments:
+
+Actions:
+
+Completion_criteria:
+- The final repaired anterior labrum is clearly visualized.
+- The repair appears continuous across anchor points.
+- A restored labral bumper / elevated soft tissue along the anterior glenoid is visible.
+
+Errors:
+
+Typical_duration:

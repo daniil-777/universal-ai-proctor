@@ -1,0 +1,72 @@
+DEMO: Surgical simulation control - dry-lab laparoscopic box trainer
+
+Principles:
+- This guide describes a generated educational clip inside a non-patient dry-lab box trainer, with a coloured silicone target and a blunt practice instrument. It is not a clinical procedure, ground-truth label set or competency assessment.
+- The instructor authorizes this practice exercise and verifies the trainer, target, instrument and intended non-contact movement before use.
+- Visual observation records only the visible interior scene and instrument motion. Simulation context and instructor authorization require operator confirmation, not an assumption from appearance.
+- Keep the instrument tip and coloured silicone target visible during the approach, pause and withdrawal. Obscured motion or ambiguous contact remains unknown.
+- Video perspective does not establish a measured distance, applied force or physical contact that cannot be resolved in the view.
+- A short clip may omit setup, parking or instructor discussion. Do not infer that an unshown action has occurred.
+- The intended exercise is a slow approach, a pause before contact and withdrawal. The instructor confirms that condition separately from the visible motion checkpoints.
+- Cutting, penetration, manipulation of the target and clinical intervention are outside this demonstration.
+- Completion of these visual steps records the shown demonstration only. The instructor's authorization, exercise review and learning judgment are separate human checks.
+
+Step 1: Establish the trainer interior and target
+Objective: Show the visible dry-lab practice scene and coloured target.
+Tools: Dry-lab laparoscopic box trainer; coloured silicone practice target; internal camera view.
+Actions:
+- Show the box-trainer interior.
+- Keep the coloured silicone target visible within that interior view.
+Criteria:
+- Visual observation: The box-trainer interior is visible in the recorded view.
+- Visual observation: The coloured silicone practice target is visible before the approach sequence.
+Warnings:
+- Step 1 instructor verification: Confirm the non-patient dry-lab context and the authorized exercise. The camera image alone does not establish the setting or suitability of the training props.
+
+Step 2: Show the practice instrument tip before approach
+Objective: Establish visibility of the blunt instrument and target before movement toward the target.
+Tools: Blunt practice instrument; coloured silicone target; internal camera view.
+Actions:
+- Bring the practice instrument tip into the recorded box-trainer view.
+- Hold the tip and target in view before beginning the approach.
+Criteria:
+- Visual observation: The practice instrument tip is visible in the box-trainer interior.
+- Visual observation: The tip and coloured target are shown together before approach motion begins.
+Warnings:
+- Step 2 instructor verification: Confirm the actual blunt practice instrument and its suitability for the exercise. Instrument identity and hidden portions of the tool are not established from a cropped tip view.
+
+Step 3: Approach and pause in the trainer view
+Objective: Observe the instructed approach and visible pause without claiming a measured gap or contact result.
+Tools: Blunt practice instrument; coloured silicone target; internal camera view.
+Actions:
+- Move the visible tip slowly toward the instructor-designated silicone target.
+- Hold the tip still with the target in view after the approach.
+Criteria:
+- Visual observation: The visible tip moves toward the coloured silicone target.
+- Visual observation: The tip visibly pauses after the approach while the tip and target remain in view.
+Warnings:
+- Step 3 instructor verification: The instructor checks whether the intended pause-before-contact exercise was followed. Keep contact unknown if perspective or occlusion makes it ambiguous; do not infer force or a precise separation from pixels.
+
+Step 4: Withdraw the visible instrument tip
+Objective: Record the visible withdrawal without inventing an off-camera parked condition.
+Tools: Blunt practice instrument; silicone target; internal camera view.
+Actions:
+- Withdraw the visible tip away from the coloured target after the approach pause.
+- Keep the target in view during the withdrawal movement.
+Criteria:
+- Visual observation: The instrument tip visibly moves away from the target after the approach pause.
+- Visual observation: The target remains visible during the recorded withdrawal movement.
+Warnings:
+- Step 4 instructor verification: Record parking only if the rest and placement event are actually shown. An instrument leaving the camera view does not establish parking; otherwise keep the parked condition unobserved and let the instructor confirm it separately.
+
+Step 5: Hold the final trainer view
+Objective: End the visible demonstration with a stable interior view.
+Tools: Recorded box-trainer view; coloured silicone target.
+Actions:
+- Hold the final interior view after the visible withdrawal.
+- Keep the coloured silicone target visible in that final view.
+Criteria:
+- Visual observation: A final interior view is held after the recorded withdrawal.
+- Visual observation: The coloured silicone target remains visible in that final view.
+Warnings:
+- Step 5 instructor verification: Review the recorded approach, pause and withdrawal with the instructor and document unresolved questions separately. A held final image does not prove that discussion, documentation or a proficiency assessment occurred.

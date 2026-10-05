@@ -1,0 +1,73 @@
+{
+  "validated_at": "2026-10-05T10:34:49.494Z",
+  "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/qa/recognition-report.html",
+  "status": "passed",
+  "results": [
+    {
+      "width": 320,
+      "status": 200,
+      "title": "Process Guide — Real video test report",
+      "overflow": false,
+      "links": [
+        {
+          "text": "Video library",
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/index.html",
+          "status": 200,
+          "type": "text/html; charset=utf-8"
+        },
+        {
+          "text": "Full text report",
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/qa/recognition-report.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8"
+        },
+        {
+          "text": "Prepared question bank",
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/qa/recognition-question-bank.json",
+          "status": 200,
+          "type": "application/json; charset=utf-8"
+        },
+        {
+          "text": "Raw results and metrics",
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/qa/live-recognition-results.json",
+          "status": 200,
+          "type": "application/json; charset=utf-8"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "status": 200,
+      "title": "Process Guide — Real video test report",
+      "overflow": false,
+      "links": [
+        {
+          "text": "Video library",
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/index.html",
+          "status": 200,
+          "type": "text/html; charset=utf-8"
+        },
+        {
+          "text": "Full text report",
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/qa/recognition-report.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8"
+        },
+        {
+          "text": "Prepared question bank",
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/qa/recognition-question-bank.json",
+          "status": 200,
+          "type": "application/json; charset=utf-8"
+        },
+        {
+          "text": "Raw results and metrics",
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/qa/live-recognition-results.json",
+          "status": 200,
+          "type": "application/json; charset=utf-8"
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

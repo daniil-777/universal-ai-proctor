@@ -1,0 +1,172 @@
+{
+  "recorded_at_utc": "2026-10-05T09:18:03Z",
+  "scope": "Targeted report, Guardian clip library, original surgical sample and final browser acceptance records",
+  "result": "passed",
+  "distinct_regression_cases": 9,
+  "final_build_recheck": {
+    "recorded_at_utc": "2026-10-05T09:00:03Z",
+    "initial_full_suite": {
+      "cases": 93,
+      "passed": 82,
+      "failed": 11,
+      "reported_duration": "4.1m"
+    },
+    "stable_build_recheck": {
+      "cases": 20,
+      "passed": 20,
+      "failed": 0,
+      "reported_duration": "2.0m",
+      "coverage": "All 11 repaired cases plus 9 affected report and media cases"
+    },
+    "harness_repairs": [
+      "Capture-efficiency and nine responsive profiles now inspect the actual encoded browser-canvas JPEG instead of decoding empty request images; complete server-video windows intentionally omit browser images",
+      "The surgical finding label uses its actual sampled presentation timestamp, which can be 29.9667 seconds for a 30-second seek"
+    ],
+    "surgical_window": {
+      "request_browser_frames": 0,
+      "requested_samples": 4,
+      "returned_actual_server_frames": 4,
+      "window_seconds": 5,
+      "timestamps": "Four strictly increasing actual server sample times within 25\u201330 seconds",
+      "qa": "No browser frames; authoritative surgical source with a 4-second server window"
+    },
+    "app_defects_found_during_initial_media_recheck": 0,
+    "note": "Historical initial complete run and harness recheck; see final_browser_acceptance for the later UI corrections and final result."
+  },
+  "final_browser_acceptance": {
+    "recorded_at_utc": "2026-10-05T09:18:03Z",
+    "distinct_cases_verified": 93,
+    "complete_suite_after_harness_repairs": {
+      "cases": 93,
+      "passed": 92,
+      "failed": 1,
+      "reported_duration": "3.9m",
+      "failure": "Intro header exceeded the 320-pixel viewport at 200% text"
+    },
+    "related_ui_recheck": {
+      "cases": 41,
+      "passed": 40,
+      "failed": 1,
+      "reported_duration": "2.2m",
+      "failure": "The bounded surgical sample dropdown still clipped its actual item text because Radix ItemText discards className/style props"
+    },
+    "final_affected_recheck": {
+      "cases": 22,
+      "passed": 22,
+      "failed": 0,
+      "reported_duration": "1.2m",
+      "scope": "All 12 intro cases, all 8 report/surgery/Guardian cases, plus small-phone and tablet-landscape responsive settings workflows"
+    },
+    "resolved_ui_defects": [
+      "Intro brand header now preserves its full enlarged title and keeps the 44-pixel theme control inside the viewport",
+      "The Guidance goals button wraps its full label instead of expanding the settled page to 355 pixels on a 320-pixel phone",
+      "Select popovers remain inside the viewport and their actual rendered text spans wrap the complete surgical title and metadata"
+    ],
+    "strict_intro_checks": [
+      "Wait for the lazy intro preferences controls and loaded fonts before measuring 200% text",
+      "No page overflow; full Process Guide title has no horizontal or vertical clipping",
+      "Theme control remains at least 44 by 44 pixels and fully inside the viewport",
+      "Surgical sample option preserves its complete title, Original default and 4:12 metadata without internal or viewport clipping",
+      "No page overflow after the sample menu closes"
+    ],
+    "final_screenshots": [
+      "screenshots/intro-small-phone-200-header.png",
+      "screenshots/intro-small-phone-200-text.png",
+      "screenshots/intro-small-phone-200-source-menu.png"
+    ],
+    "counting_note": "All 93 distinct cases were verified across the 92-pass complete run and the final 22-pass affected recheck. This is not a claim that a single complete 93-case run was entirely green. Repeated cases are not added to the distinct-case count.",
+    "port_8102": "Released after the final run"
+  },
+  "runs": [
+    {
+      "cases": 8,
+      "duration_seconds": 56.4,
+      "files": [
+        "frontend/tests/report-review.spec.ts",
+        "frontend/tests/report-guardian-library.spec.ts",
+        "frontend/tests/review-account.spec.ts"
+      ],
+      "selection": "Three report viewport workflows, four Guardian/surgery workflows and the existing shareable PDF/offline HTML export workflow"
+    },
+    {
+      "cases": 1,
+      "duration_seconds": 7.3,
+      "test_seconds": 5.4,
+      "selection": "Prepared PDF retains its prior snapshot until explicitly refreshed after a decision"
+    },
+    {
+      "cases": 1,
+      "duration_seconds": 6.9,
+      "test_seconds": 5.2,
+      "selection": "Original surgical sample workflow repeated after strengthening screenshot viewport readiness"
+    },
+    {
+      "cases": 2,
+      "duration_seconds": 8.8,
+      "selection": "Final popup readability refinement: strict320px/200% source menu and original surgical sample onboarding",
+      "result": "passed",
+      "new_distinct_cases": 0
+    }
+  ],
+  "profiles": [
+    {
+      "engine": "Chrome",
+      "viewport": "1440x1000",
+      "scope": "Report desktop"
+    },
+    {
+      "engine": "Chrome",
+      "viewport": "320x740",
+      "scope": "Report small phone"
+    },
+    {
+      "engine": "WebKit",
+      "viewport": "820x1180",
+      "scope": "Report and delayed Guardian clip on tablet"
+    },
+    {
+      "engine": "WebKit",
+      "viewport": "1440x1000",
+      "scope": "Original surgical sample and Guardian media lifecycle"
+    },
+    {
+      "engine": "WebKit",
+      "viewport": "320x740",
+      "scope": "Original surgical sample replacement on small phone"
+    }
+  ],
+  "verified": [
+    "Original surgical TXT is byte-identical to AI-Proctor/llmDescription/Cholecystectomy.txt",
+    "Original surgical media decodes at 660-pixel width, seeks to 30 seconds and reports duration within one presentation frame of 252.766667 seconds",
+    "All six original surgical steps retain actions and criteria, including bare section headings and the second artery subsection",
+    "Explicit visual analysis and streaming Q&A contain the surgical reference; manual confirmation is explicitly labelled",
+    "Report priorities and section navigation focus labelled regions across desktop, 320-pixel phone and tablet",
+    "Report photos require one explicit image-inclusive request when not already cached",
+    "Resolved issue history and safe offline HTML preserve recorded decisions without altering workflow progress",
+    "Prepared PDF discloses its recorded version until the operator explicitly refreshes it",
+    "Report module is deferred until opened; Guardian clips require explicit preparation and guarded source/reference query parameters",
+    "A real prepared Guardian MP4 decodes, remains paused initially, downloads and can be sent to a local native-share stub",
+    "Closing releases the Guardian video element and revokes its blob URL",
+    "A delayed valid old-source clip cannot reappear after closing and replacing the video/reference"
+  ],
+  "screenshots": [
+    "screenshots/surgery-default-report-recorded-frame.png",
+    "screenshots/surgery-sample-small-phone.png",
+    "screenshots/guardian-library-watch-findings.png",
+    "screenshots/guardian-library-alert-preview.png",
+    "screenshots/guardian-library-tablet-source-replacement.png"
+  ],
+  "isolation": {
+    "backend": "Temporary local fixture server on port 8102",
+    "accounts": "In-memory fixture account store",
+    "provider": "Deterministic fixtureComplete; no external model requests",
+    "sharing": "Browser-local navigator.share stub; no external messages",
+    "production_port_8101": "Untouched"
+  },
+  "limitations": [
+    "Deterministic answers verify routing and grounding, not clinical recognition or medical accuracy",
+    "Browser touch profiles emulate viewports; physical devices, microphones, cameras and OS share sheets are not covered",
+    "The general app deliberately has no active simulator telemetry tripwire",
+    "Preserved media and guidance bytes do not establish equivalence to the original specialized phase detector or Guardian model"
+  ]
+}

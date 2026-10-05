@@ -1,0 +1,73 @@
+{
+  "reason": "Chapter starts are rounded up to the first actual30fps frame of a scene. Fractional times could seek to the preceding outgoing video frame.",
+  "changes": [
+    {
+      "id": "start",
+      "old_start_s": 0,
+      "start_s": 0.0,
+      "old_end_s": 11.7860622,
+      "end_s": 11.8
+    },
+    {
+      "id": "setup",
+      "old_start_s": 11.7860622,
+      "start_s": 11.8,
+      "old_end_s": 23.612999400000003,
+      "end_s": 23.633333333333333
+    },
+    {
+      "id": "workflow",
+      "old_start_s": 23.612999400000003,
+      "start_s": 23.633333333333333,
+      "old_end_s": 41.11958320000001,
+      "end_s": 41.13333333333333
+    },
+    {
+      "id": "guidance",
+      "old_start_s": 41.11958320000001,
+      "start_s": 41.13333333333333,
+      "old_end_s": 53.30666640000001,
+      "end_s": 53.333333333333336
+    },
+    {
+      "id": "readiness",
+      "old_start_s": 53.30666640000001,
+      "start_s": 53.333333333333336,
+      "old_end_s": 59.49520800000001,
+      "end_s": 59.5
+    },
+    {
+      "id": "review",
+      "old_start_s": 59.49520800000001,
+      "start_s": 59.5,
+      "old_end_s": 64.72356260000001,
+      "end_s": 64.73333333333333
+    },
+    {
+      "id": "report",
+      "old_start_s": 64.72356260000001,
+      "start_s": 64.73333333333333,
+      "old_end_s": 77.18302080000001,
+      "end_s": 77.2
+    },
+    {
+      "id": "account",
+      "old_start_s": 77.18302080000001,
+      "start_s": 77.2,
+      "old_end_s": 90,
+      "end_s": 90
+    }
+  ],
+  "account_boundary": {
+    "outgoing_frame": 2315,
+    "outgoing_time_s": 77.16666666666667,
+    "incoming_frame": 2316,
+    "incoming_time_s": 77.2,
+    "proof": [
+      "renders/proof/account-boundary-01.png",
+      "renders/proof/account-boundary-02.png"
+    ]
+  },
+  "video_rerendered": false,
+  "voice_or_transcript_changed": false
+}

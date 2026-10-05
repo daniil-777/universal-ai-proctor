@@ -1,0 +1,14 @@
+{
+  "duration": 90,
+  "assertions": [
+    {
+      "kind": "keepsMoving",
+      "withinSelector": "#progress",
+      "maxStaticSec": 1
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": ".head"
+    }
+  ]
+}

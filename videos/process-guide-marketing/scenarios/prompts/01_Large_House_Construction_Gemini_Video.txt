@@ -1,0 +1,18 @@
+GEMINI / GOOGLE VIDEO GENERATION: Large-house construction control
+
+Recommended Gemini-native generator: Gemini Omni 1.1 Flash (gemini-omni-1.1-flash). Google currently recommends Omni as its default generation route. For a premium cinematic alternative, use Veo 3.1 standard (veo-3.1-generate-preview), rather than a fast/lite variant. Availability, quotas and output settings depend on your account. These are prompts, not Gemini generations.
+
+TARGET
+One 8-second landscape scene; select 1080p in the product settings where supported. Omni 1080p is an upscaled output; do not call it native 1080p.
+
+PROMPT
+Photorealistic premium enterprise commercial. Landscape 16:9, a final 1920 by 1080 frame, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. Build this as a coherent eight-second demonstration with a short establishing view and two or three clearly separated visible actions. Opening wide view of the same large modern house at the framing stage, then a smooth approach to an adult site supervisor in PPE. The supervisor reviews a plain plan sheet, places a level on a visible timber wall post, pauses to inspect the visible workmanship, and makes one note on a clipboard. Keep the house geometry stable and the actions sequential. Show a single construction checkpoint, not the whole build completed in seconds. Keep the final second as a quiet review pause. Avoid visual claims of an approved inspection.
+
+DESCRIPTION FOR SCRIPTING
+A site supervisor visually checks a timber wall frame at a large modern house under construction; construction oversight, visible workmanship review and checkpoint recording.
+
+SOURCES (verified 2026-10-05)
+https://ai.google.dev/gemini-api/docs/models
+https://ai.google.dev/gemini-api/docs/video
+https://ai.google.dev/gemini-api/docs/omni
+https://deepmind.google/models/veo/

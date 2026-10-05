@@ -1,0 +1,16 @@
+SEEDANCE SCENE: Surgical training observation
+
+SHORT PREVIEW: 4 seconds, 16:9, 1080p output, silent
+
+Photorealistic premium enterprise commercial. Landscape 16:9, 1920 by 1080 output, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. A pristine surgical-skills simulation laboratory, no patient. Macro close-up inside a clearly artificial dry-lab laparoscopic box trainer shows a blunt practice instrument approaching a coloured silicone target, stopping just before contact, then moving away gently. An adult trainee in scrubs and light-blue gloves is partially visible outside the trainer. Four seconds of slow deliberate coherent motion; stable silicone target and realistic instrument geometry. Balanced clinical lighting. No real anatomy, blood, cutting, puncture, dissection, medication, operation on a person or claims of clinical success.
+
+EXPANDED VERSION: 12 seconds, 16:9, 1080p
+
+Photorealistic premium enterprise commercial. Landscape 16:9, 1920 by 1080 output, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. Show an adult instructor and trainee reviewing a clearly nonpatient laparoscopic box trainer. Establish the simulator, reveal a blunt instrument approaching a coloured silicone practice target, pause for instructor observation, then gently withdraw and park the tool. Keep the entire task non-invasive. The instructor reviews the practice visually; do not show treatment, dissection, real anatomy or any assertion that a trainee is clinically competent.
+
+MODEL OPTIONS
+Seedance 1.5 Pro: the affordable preview model quoted through Higgsfield.
+Seedance 2.5: newer premium option for the expanded version, subject to available credits.
+Do not generate an app interface or fake AI results inside the footage. Add actual app captures in a separate approved edit.
+
+Output dimensions will be measured from the MP4. This does not establish the provider's internal rendering or upscaling method.

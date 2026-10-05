@@ -1,0 +1,46 @@
+{
+  "verified_at": "2026-10-05",
+  "app_url": "http://localhost:8101",
+  "units": {
+    "backend": 239,
+    "frontend": 123,
+    "passed": true
+  },
+  "browser": {
+    "distinct_workflows": 93,
+    "full_run_passed": 92,
+    "full_run_total": 93,
+    "full_run_minutes": 3.9,
+    "final_affected_passed": 22,
+    "final_affected_total": 22,
+    "final_affected_minutes": 1.2,
+    "all_distinct_workflows_verified_across_runs": true,
+    "single_green_full_run_claimed": false,
+    "final_readability_refinement": {
+      "passed": 2,
+      "total": 2,
+      "duration_s": 8.8,
+      "scope": "Natural dropdown width bounded by viewport plus readable metadata leading; strict320px/200%-text popup and original surgical onboarding/video/API check"
+    }
+  },
+  "typechecks_passed": true,
+  "lint_errors": 0,
+  "inherited_lint_warnings": 8,
+  "builds_passed": true,
+  "compiled_defaults": {
+    "guardian_model": "gpt-4o",
+    "question_model": "gpt-4o",
+    "initial_js_gzip_kb": 204.22,
+    "css_gzip_kb": 18.08
+  },
+  "real_provider_scope": "Four complete nine-request runs at12,105,216seconds; two images/high detail/no compression, plus preliminarytwo-call harness failure. Actual4-frame default server-window routing/decoding is verified separately by browser/API tests. No full clinical-accuracy claim.",
+  "evidence": [
+    "surgical-default-model-comparison.json",
+    "surgical-default-live-validation.json",
+    "surgery-production-smoke.json",
+    "report-browser-validation.json",
+    "professional-report-validation.json",
+    "guardian-clip-validation.json",
+    "account-live-smoke.json"
+  ]
+}

@@ -1,0 +1,85 @@
+REAL VIDEO: Tool and mould manufacturing - observable workshop checkpoints
+
+Source: SCHMELZER FORMENTECHNIK Waldershof Fichtelgebirge Imagefilm, 2012.
+Author: handysheriff (the author/channel credited by the source); Schmelzer Formentechnik is the featured company.
+Source page: https://commons.wikimedia.org/wiki/File:SCHMELZER_FORMENTECHNIK_Waldershof_Fichtelgebirge_Imagefilm.webm
+License: Creative Commons Attribution 3.0 Unported, https://creativecommons.org/licenses/by/3.0/
+Changes: Full source film, 02:55.099; converted to H.264/AAC MP4. Original montage timing and shot order preserved. No upscaling.
+
+Principles:
+- Source: https://commons.wikimedia.org/wiki/File:SCHMELZER_FORMENTECHNIK_Waldershof_Fichtelgebirge_Imagefilm.webm
+- Author: handysheriff. Video license: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/
+- This is real manufacturing footage in a company promotional film. Shots show several machines, tools, moulds, and products; they do not establish one continuous production job or the history of one tracked workpiece.
+- Use the steps as viewing checkpoints in the film's order. Mark visible activities observed; do not treat all checkpoints as proof that a part is completed, inspected, accepted, or ready for use.
+- Approximate time windows refer to the playback. Crossfades and short inserts can obscure tool contact or chronology; record uncertainty rather than inferring an operation.
+- Names such as mould, controller, and cutting tool describe visible context. Do not infer machine programs, cutting parameters, tool identity, material grade, tolerances, calibration, or metrology results from appearance alone.
+- A controller display, tool rack, CAD drawing, polished surface, or finished-looking part is not evidence of a passing quality-control result.
+- The guide is an educational observation aid. Production instructions, machine access, safe setup, guarding, energy isolation, and acceptance criteria come from the responsible workplace and manufacturer.
+- Preserve the original branding as source context. The source author and featured company do not endorse Process Guide.
+
+Step 1: Observe machining context and controller interaction
+Objective: Around 00:00-00:30, identify the tooling context and an operator at a machine controller.
+Tools: Visible tooling or workpiece; machining enclosure; controller console.
+Actions:
+- Observe the early close-up tooling views and the machine work area.
+- Observe the operator interacting with the controller console.
+Criteria:
+- Visual observation: A machine work area with a mounted tool or workpiece is visible.
+- Visual observation: An operator is visibly present at a controller console and interacts with its controls.
+
+Step 2: Observe machine-tool activity
+Objective: Around 00:30-00:52, recognize a visible tool-and-workpiece operation in the machine views.
+Tools: Machine spindle or cutting tool; mounted workpiece; visible fixture.
+Actions:
+- Observe the relative movement of the tool and the mounted workpiece.
+- Identify only the contact region visible in the current shot; keep obscured contact uncertain.
+Criteria:
+- Visual observation: The mounted workpiece and tool region appear together in the machine view.
+- Visual observation: Visible motion occurs in the tool or workpiece region.
+- Visual observation: A later close-up shows a machining or tool region from a different viewpoint.
+
+Step 3: Observe tool presentation and manual tooling work
+Objective: Around 00:52-01:15, recognize the displayed tools, digital indicator, and hands-on mould or tooling activity.
+Tools: Displayed tool rack and control unit; digital indicator with a probe; tooling assembly; handheld implement where visible.
+Actions:
+- Observe the row of tools and the adjacent display/control unit.
+- Observe the digital indicator and its probe shown above a metal block.
+- Observe hands working at the exposed tooling assembly.
+Criteria:
+- Visual observation: Several tools are presented in a rack with a display or control unit nearby.
+- Visual observation: A digital indicator with a probe is shown above a metal block.
+- Visual observation: Hands and an exposed tooling assembly appear together during manual work.
+
+Step 4: Observe product presentation and further tooling operations
+Objective: Around 01:15-01:55, distinguish the presented product from subsequent machine-tool footage.
+Tools: Displayed manufactured component; metal blocks or tooling; machine-tool work area.
+Actions:
+- Observe the isolated product shown against the light background.
+- Observe the subsequent close-up tool-and-metal-block views and later tooling-machine shots.
+Criteria:
+- Visual observation: A manufactured component is visibly presented separately from the machine footage.
+- Visual observation: A later machine view shows a tool positioned over mounted metal blocks or tooling.
+
+Step 5: Observe sample parts and collaborative drawing review
+Objective: Around 01:55-02:20, identify the sample-part display and the group reviewing a drawing.
+Tools: Displayed coloured sample parts; drawing or plan board.
+Actions:
+- Observe the group of coloured sample parts.
+- Observe people pointing to or discussing a drawing displayed on a board.
+Criteria:
+- Visual observation: Multiple coloured sample parts are shown together.
+- Visual observation: A group stands beside a drawing or plan, with a visible pointing gesture toward it.
+
+Step 6: Observe final machine and mould-detail views
+Objective: Around 02:20-02:55, identify the finishing montage's machine motion and exposed mould detail.
+Tools: Visible machine component; open mould or tooling assembly.
+Actions:
+- Observe the moving machine component in the close-up shot.
+- Observe the subsequent exposed mould or tooling detail and the film's closing views.
+Criteria:
+- Visual observation: A machine component visibly moves or rotates in close-up.
+- Visual observation: An exposed mould or tooling assembly is shown with its cavities or internal features visible.
+
+Warnings:
+- For an actual job, obtain the workplace instruction, part identity, drawing revision, material specification, machine program, relevant measurements, and acceptance criteria.
+- Any quality-control conclusion requires traceable measurements and the responsible reviewer. The film provides no verified inspection results, tolerances, calibrated accuracy, or release decision.

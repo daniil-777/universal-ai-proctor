@@ -1,0 +1,270 @@
+{
+  "validated_at": "2026-10-05T09:56:13.276Z",
+  "total_steps": 23,
+  "documents": [
+    {
+      "file": "01_Large_House_Construction.txt",
+      "steps": 5,
+      "principles": 12,
+      "warnings": [],
+      "step_names": [
+        "Show the work zone and observation area",
+        "Show the visible access route and materials",
+        "Compare accessible framing with a visible reference",
+        "Show an accessible connection area",
+        "Present a checkpoint for follow-up"
+      ],
+      "criteria": [
+        {
+          "step": "Show the work zone and observation area",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Show the visible access route and materials",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Compare accessible framing with a visible reference",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Show an accessible connection area",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Present a checkpoint for follow-up",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        }
+      ],
+      "structured_rows": 5
+    },
+    {
+      "file": "02_Manufacturing_Quality_Control.txt",
+      "steps": 4,
+      "principles": 11,
+      "warnings": [],
+      "step_names": [
+        "Show the component and jig",
+        "Seat the component for inspection",
+        "Show the component-to-jig comparison",
+        "Park the component after inspection"
+      ],
+      "criteria": [
+        {
+          "step": "Show the component and jig",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Seat the component for inspection",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Show the component-to-jig comparison",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Park the component after inspection",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        }
+      ],
+      "structured_rows": 4
+    },
+    {
+      "file": "03_Surgical_Simulation_Control.txt",
+      "steps": 5,
+      "principles": 14,
+      "warnings": [],
+      "step_names": [
+        "Establish the trainer interior and target",
+        "Show the practice instrument tip before approach",
+        "Approach and pause in the trainer view",
+        "Withdraw the visible instrument tip",
+        "Hold the final trainer view"
+      ],
+      "criteria": [
+        {
+          "step": "Establish the trainer interior and target",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Show the practice instrument tip before approach",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Approach and pause in the trainer view",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Withdraw the visible instrument tip",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Hold the final trainer view",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        }
+      ],
+      "structured_rows": 5
+    },
+    {
+      "file": "04_Dance_Technique_Control.txt",
+      "steps": 4,
+      "principles": 12,
+      "warnings": [],
+      "step_names": [
+        "Establish a visible starting position",
+        "Perform the visible side-step sequence",
+        "Show the cued change in facing direction",
+        "Finish in a visible resting stance"
+      ],
+      "criteria": [
+        {
+          "step": "Establish a visible starting position",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Perform the visible side-step sequence",
+          "count": 3,
+          "statuses": [
+            "unknown",
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Show the cued change in facing direction",
+          "count": 3,
+          "statuses": [
+            "unknown",
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Finish in a visible resting stance",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        }
+      ],
+      "structured_rows": 4
+    },
+    {
+      "file": "05_Sport_Squat_Technique_Control.txt",
+      "steps": 5,
+      "principles": 12,
+      "warnings": [],
+      "step_names": [
+        "Show the starting stance",
+        "Show the visible descent",
+        "Show the lower-position pause",
+        "Return to the upright position",
+        "Finish with a visible resting pause"
+      ],
+      "criteria": [
+        {
+          "step": "Show the starting stance",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Show the visible descent",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Show the lower-position pause",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Return to the upright position",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        },
+        {
+          "step": "Finish with a visible resting pause",
+          "count": 2,
+          "statuses": [
+            "unknown",
+            "unknown"
+          ]
+        }
+      ],
+      "structured_rows": 5
+    }
+  ]
+}

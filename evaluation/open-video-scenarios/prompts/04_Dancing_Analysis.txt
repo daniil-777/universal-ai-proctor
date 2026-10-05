@@ -1,0 +1,9 @@
+DEMO — REAL TAP FOOTWORK VIDEO + GUIDANCE REVIEW
+
+Upload real-04-dancing.mp4 together with Real_04_Dancing.txt. Inspect the actual uploaded frames before making observations. The TXT supplies expected visible phases, not proof that they occurred.
+
+Track only shoes, visible lower legs and clear floor contacts. The video is a set of edited examples; cuts and tiled wipes break continuity. Re-establish the visible shoe positions after each transition. For each reference step, return observed / partial / unobserved / uncertain, approximate MM:SS anchors, direct visible evidence and missing information.
+
+Use higher frame-rate inspection around short contacts, lifts and transitions; sparse sampling can miss footwork. Do not fabricate counts, musical timing, pressure, joint angles, whole-body posture, balance, technical grades or safety approval. Blur and cropping should produce uncertainty rather than an invented tap name. Spoken explanations and on-screen statements are claims, not measured performance evidence. Keep any operator confirmation separate from visual observations.
+
+Return a concise scene summary, step-evidence table and unresolved review questions. Do not treat a blank source ending as a physical fault or a completed practice set.

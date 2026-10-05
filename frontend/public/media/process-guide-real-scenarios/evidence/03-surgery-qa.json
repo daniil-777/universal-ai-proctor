@@ -1,0 +1,25 @@
+{
+  "id": "real-surgery",
+  "file": "videos/real-03-surgery.mp4",
+  "duration_s": 180,
+  "bytes": 14724822,
+  "sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+  "native_dimensions": {
+    "width": 480,
+    "height": 272
+  },
+  "author": "Marzano E, Rosso E, Oussoultzoglou E, Collange O, Bachellier P, Pessaux P",
+  "license": "CC BY 2.0",
+  "license_url": "https://creativecommons.org/licenses/by/2.0/",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Laparoscopic-treatment-of-biliary-peritonitis-following-nonoperative-management-of-blunt-liver-1749-7922-5-26-S1.ogv",
+  "source_duration_s": 180.687528,
+  "excerpt": {
+    "start_s": 0,
+    "end_s": 180,
+    "source_duration_s": 180.687528,
+    "description": "Last 0.688 seconds omitted; unchanged source speed and shot order."
+  },
+  "changes": "Converted Theora/Vorbis to H.264/AAC; source interval 00:00–03:00; native 480×272 preserved.",
+  "decode_check": "passed",
+  "review_method": "Actual timestamped samples across the clip; visible phases reviewed with occlusion and edited-scene limits. No audible narration."
+}

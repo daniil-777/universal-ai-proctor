@@ -1,0 +1,39 @@
+# Paid deployment template; applying this Blueprint creates billable resources.
+# Current official plan IDs replace older names such as "standard" / "starter".
+services:
+  - type: web
+    name: universal-ai-proctor
+    runtime: docker
+    region: frankfurt
+    plan: 1c-2g
+    numInstances: 1
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeployTrigger: off
+    maxShutdownDelaySeconds: 60
+    disk:
+      name: process-guide-data
+      mountPath: /data
+      sizeGB: 5
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: "8101"
+      - key: MOCK
+        value: "0"
+      - key: ACCOUNT_COOKIE_SECURE
+        value: "true"
+      - key: ACCOUNT_PUBLIC_ORIGIN
+        sync: false
+      - key: DATA_DIR
+        value: /data/accounts
+      - key: UPLOAD_ROOT
+        value: /data/uploads
+      - key: FFMPEG_CONCURRENCY
+        value: "1"
+      - key: OPENAI_API_KEY
+        sync: false

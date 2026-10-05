@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-10-05T12:09:56.378Z",
+  "deployment_base": "/universal-ai-proctor/",
+  "static_hosting": true,
+  "full_app_url_fixture": "https://full-workspace.example.com/",
+  "cases": [
+    {
+      "width": 320,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_resources": [],
+      "api_requests": [],
+      "passed": true
+    },
+    {
+      "width": 768,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_resources": [],
+      "api_requests": [],
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "console_errors": [],
+      "page_errors": [],
+      "failed_resources": [],
+      "api_requests": [],
+      "passed": true
+    }
+  ],
+  "passed": true
+}

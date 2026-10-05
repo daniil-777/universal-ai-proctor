@@ -1,0 +1,33 @@
+{
+  "model": "seedance_2_5",
+  "edit_status": "paused for user script review",
+  "clips": [
+    {
+      "name": "assembly",
+      "job_id": "88f6b685-f67b-47ba-bf94-bdc63a2da487",
+      "file": "assets/footage/assembly.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.041667,
+      "sha256": "30e39dc395ebc652e2735f7d06902a70dafa39230fc7b8f62c097bc4ebec796a"
+    },
+    {
+      "name": "laboratory",
+      "job_id": "21490326-c697-48c8-8a7f-cc5bc1abda6f",
+      "file": "assets/footage/laboratory.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.041667,
+      "sha256": "64f0d96805b0facfc651cc8047681913b872b21c50faed8cb7c9bddfbc9bddb6"
+    },
+    {
+      "name": "kitchen",
+      "job_id": "065ecfd6-d406-4497-b128-eda9b014795d",
+      "file": "assets/footage/kitchen.mp4",
+      "width": 1920,
+      "height": 1080,
+      "duration": 6.041667,
+      "sha256": "9a8eec0ac309d50a62d6d1359aca817a9407063128165406a297b13ad8208d64"
+    }
+  ]
+}

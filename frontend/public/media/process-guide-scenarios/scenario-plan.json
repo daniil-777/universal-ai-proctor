@@ -1,0 +1,250 @@
+{
+  "created_at": "2026-10-05T09:40:28.174Z",
+  "purpose": "Five generated process demonstrations with matching uploadable guidance and editable prompts",
+  "generation_status": "completed",
+  "scenarios": [
+    {
+      "id": "01",
+      "slug": "Large_House_Construction",
+      "title": "Large-house construction control",
+      "description": "An adult site supervisor positions a spirit level against a timber wall element beside a large house under construction.",
+      "short": "A large beautiful contemporary two-storey house under construction stands behind an adult construction supervisor wearing a hard hat, high-visibility vest, safety glasses and work boots. Safe daylight work area, no moving crane or heavy machinery, no one working at height. Medium-wide eye-level framing shows the house structure, supervisor and full vertical timber wall post. During four seconds the supervisor calmly places a spirit level against the timber post, looks toward the level, then holds still to inspect it. The level and post remain clearly visible. Smooth subtle lateral camera move. No magical building transformation or instant construction.",
+      "long": "Opening wide view of the same large modern house at the framing stage, then a smooth approach to an adult site supervisor in PPE. The supervisor reviews a plain plan sheet, places a level on a visible timber wall post, pauses to inspect the visible workmanship, and makes one note on a clipboard. Keep the house geometry stable and the actions sequential. Show a single construction checkpoint, not the whole build completed in seconds.",
+      "focus": "Identify the visible construction stage, PPE and work-zone visibility, the placement of the level, the pause for inspection and any visible recording action. Treat unseen foundations, structural loads, dimensions, building-code approval and hidden connections as unverified. A level being present does not prove the post is plumb.",
+      "guidance": "guidance/01_Large_House_Construction.txt",
+      "video": "videos/01_Large_House_Construction.mp4",
+      "seedance_prompt": "prompts/01_Large_House_Construction_Seedance.txt",
+      "preview_prompt": "Photorealistic premium enterprise commercial. Landscape 16:9, native 1920 by 1080, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. A large beautiful contemporary two-storey house under construction stands behind an adult construction supervisor wearing a hard hat, high-visibility vest, safety glasses and work boots. Safe daylight work area, no moving crane or heavy machinery, no one working at height. Medium-wide eye-level framing shows the house structure, supervisor and full vertical timber wall post. During four seconds the supervisor calmly places a spirit level against the timber post, looks toward the level, then holds still to inspect it. The level and post remain clearly visible. Smooth subtle lateral camera move. No magical building transformation or instant construction.",
+      "generation": {
+        "model": "seedance1_5",
+        "name": "Seedance 1.5 Pro",
+        "job_id": "413450ad-cd79-4684-92f1-4142971fa363",
+        "requested_duration": 4,
+        "requested_resolution": "1080p",
+        "quoted_credits": 12
+      },
+      "actual_video": {
+        "id": "01",
+        "title": "Large-house construction control",
+        "file": "videos/01_Large_House_Construction.mp4",
+        "model": "seedance1_5",
+        "job_id": "413450ad-cd79-4684-92f1-4142971fa363",
+        "width": 1920,
+        "height": 1080,
+        "duration": 4.041667,
+        "fps": "24/1",
+        "codec": "h264",
+        "pixel_format": "yuv420p",
+        "size": 9432316,
+        "sha256": "c4ce9d964bfd03b644df4d3bc3e0f5bf6a2a011e22a19693653ba602f0980333",
+        "decode_check": "passed",
+        "poster": "posters/01_Large_House_Construction.jpg",
+        "review_strip": "qa/01_Large_House_Construction_frames.jpg"
+      },
+      "poster": "posters/01_Large_House_Construction.jpg",
+      "intended_description": "A site supervisor visually checks a timber wall frame at a large modern house under construction; construction oversight, visible workmanship review and checkpoint recording.",
+      "visual_review": {
+        "scenario": "01",
+        "visible": "Supervisor raises a spirit level and holds it vertically against the accessible timber wall element beside a two-storey building.",
+        "limits": "Bubble reading, structural capacity, hidden connections and code compliance are not established. Plans, a separate access inspection and written checkpoint record are not shown."
+      }
+    },
+    {
+      "id": "02",
+      "slug": "Manufacturing_Quality_Control",
+      "title": "Manufacturing quality control",
+      "description": "Gloved hands lower a metal component onto an inspection fixture. Seating quality and alignment remain matters for review.",
+      "short": "In a spotless modern precision-assembly cell, an adult technician wearing close-fitting light-grey protective gloves carefully lowers one small machined aluminium component into a clearly matching dark fixture on a charcoal bench. In four seconds the component approaches the fixture, seats gently, and the hands pause so its visible alignment can be inspected. Macro three-quarter view retains both hands, the complete component and the fixture. Soft diffuse light with restrained teal reflections. No powered machine moving, sparks, invented numerical measurement or readable screen.",
+      "long": "At the same precision-assembly cell, show one technician checking a clear fixture, gently seating a small machined component, making a visible alignment check with a passive inspection tool, then parking the component for human review. Preserve the exact part and fixture throughout. A deliberate pause must separate placement from inspection. Do not imply that invisible tolerances have been measured or that the part automatically passed.",
+      "focus": "Identify part approach, seating, visible alignment inspection and any separation or recording action. Distinguish visible contact from a calibrated measurement. Do not invent tolerances, material grade, torque, internal defects or a pass/fail result without a supplied specification and observable evidence.",
+      "guidance": "guidance/02_Manufacturing_Quality_Control.txt",
+      "video": "videos/02_Manufacturing_Quality_Control.mp4",
+      "seedance_prompt": "prompts/02_Manufacturing_Quality_Control_Seedance.txt",
+      "preview_prompt": "Photorealistic premium enterprise commercial. Landscape 16:9, native 1920 by 1080, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. In a spotless modern precision-assembly cell, an adult technician wearing close-fitting light-grey protective gloves carefully lowers one small machined aluminium component into a clearly matching dark fixture on a charcoal bench. In four seconds the component approaches the fixture, seats gently, and the hands pause so its visible alignment can be inspected. Macro three-quarter view retains both hands, the complete component and the fixture. Soft diffuse light with restrained teal reflections. No powered machine moving, sparks, invented numerical measurement or readable screen.",
+      "generation": {
+        "model": "seedance1_5",
+        "name": "Seedance 1.5 Pro",
+        "job_id": "421cf138-b00b-4b77-846c-0cfbd440d226",
+        "requested_duration": 4,
+        "requested_resolution": "1080p",
+        "quoted_credits": 12
+      },
+      "actual_video": {
+        "id": "02",
+        "title": "Manufacturing quality control",
+        "file": "videos/02_Manufacturing_Quality_Control.mp4",
+        "model": "seedance1_5",
+        "job_id": "421cf138-b00b-4b77-846c-0cfbd440d226",
+        "width": 1920,
+        "height": 1080,
+        "duration": 4.041667,
+        "fps": "24/1",
+        "codec": "h264",
+        "pixel_format": "yuv420p",
+        "size": 6814966,
+        "sha256": "19ce6a18de11b86680e3fd578f4daf68730e4504240f398625103a0472d6a20c",
+        "decode_check": "passed",
+        "poster": "posters/02_Manufacturing_Quality_Control.jpg",
+        "review_strip": "qa/02_Manufacturing_Quality_Control_frames.jpg"
+      },
+      "poster": "posters/02_Manufacturing_Quality_Control.jpg",
+      "intended_description": "A precision-assembly operator positions a machined component in a fixture, then pauses for a visible alignment review.",
+      "visual_review": {
+        "scenario": "02",
+        "visible": "Two gloved hands lower a cylindrical metal component onto the fixture and then release or pause around it.",
+        "limits": "Whether the intended fixture seat is correctly engaged is uncertain from this view. No tolerance reading, part identifier, calibration check, release decision or separate parking event is established."
+      }
+    },
+    {
+      "id": "03",
+      "slug": "Surgical_Simulation_Control",
+      "title": "Surgical training observation",
+      "description": "A gloved trainee moves a practice instrument toward a coloured artificial target. Withdrawal is not clearly shown in this preview.",
+      "short": "A pristine surgical-skills simulation laboratory, no patient. Macro close-up inside a clearly artificial dry-lab laparoscopic box trainer shows a blunt practice instrument approaching a coloured silicone target, stopping just before contact, then moving away gently. An adult trainee in scrubs and light-blue gloves is partially visible outside the trainer. Four seconds of slow deliberate coherent motion; stable silicone target and realistic instrument geometry. Balanced clinical lighting. No real anatomy, blood, cutting, puncture, dissection, medication, operation on a person or claims of clinical success.",
+      "long": "Show an adult instructor and trainee reviewing a clearly nonpatient laparoscopic box trainer. Establish the simulator, reveal a blunt instrument approaching a coloured silicone practice target, pause for instructor observation, then gently withdraw and park the tool. Keep the entire task non-invasive. The instructor reviews the practice visually; do not show treatment, dissection, real anatomy or any assertion that a trainee is clinically competent.",
+      "focus": "Confirm that the scene appears to be a nonpatient simulation; describe field visibility, visible instrument approach, pause, withdrawal and parking. Note occlusion or incomplete views. Limit output to educational observation and questions for an instructor. Do not prescribe surgical technique, instrument routes, tissue manipulation, treatment, diagnosis, medication or clinical safety decisions.",
+      "guidance": "guidance/03_Surgical_Simulation_Control.txt",
+      "video": "videos/03_Surgical_Simulation_Control.mp4",
+      "seedance_prompt": "prompts/03_Surgical_Simulation_Control_Seedance.txt",
+      "preview_prompt": "Photorealistic premium enterprise commercial. Landscape 16:9, native 1920 by 1080, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. A pristine surgical-skills simulation laboratory, no patient. Macro close-up inside a clearly artificial dry-lab laparoscopic box trainer shows a blunt practice instrument approaching a coloured silicone target, stopping just before contact, then moving away gently. An adult trainee in scrubs and light-blue gloves is partially visible outside the trainer. Four seconds of slow deliberate coherent motion; stable silicone target and realistic instrument geometry. Balanced clinical lighting. No real anatomy, blood, cutting, puncture, dissection, medication, operation on a person or claims of clinical success.",
+      "generation": {
+        "model": "seedance1_5",
+        "name": "Seedance 1.5 Pro",
+        "job_id": "19c5aa68-68a0-46f3-bf7e-af88f2e706cb",
+        "requested_duration": 4,
+        "requested_resolution": "1080p",
+        "quoted_credits": 12
+      },
+      "actual_video": {
+        "id": "03",
+        "title": "Surgical training observation",
+        "file": "videos/03_Surgical_Simulation_Control.mp4",
+        "model": "seedance1_5",
+        "job_id": "19c5aa68-68a0-46f3-bf7e-af88f2e706cb",
+        "width": 1920,
+        "height": 1080,
+        "duration": 4.041667,
+        "fps": "24/1",
+        "codec": "h264",
+        "pixel_format": "yuv420p",
+        "size": 6037086,
+        "sha256": "a606f77fd5e0ad5a43052b2798f6aea856f26370488f7bac9b2baf8ed6a8ba79",
+        "decode_check": "passed",
+        "poster": "posters/03_Surgical_Simulation_Control.jpg",
+        "review_strip": "qa/03_Surgical_Simulation_Control_frames.jpg"
+      },
+      "poster": "posters/03_Surgical_Simulation_Control.jpg",
+      "intended_description": "A nonpatient laparoscopic skills trainer demonstrates visible instrument navigation and an instructor review pause.",
+      "visual_review": {
+        "scenario": "03",
+        "visible": "Gloved hand moves a practice instrument toward coloured artificial targets in a tray or trainer-like setting; movement pauses near a target.",
+        "limits": "Instrument geometry is generated and must not be treated as a faithful model of a real laparoscopic tool. Contact is ambiguous, and a clear withdrawal is not shown. The requested approach-pause-withdrawal sequence is incomplete; withdrawal and final-after-withdrawal steps remain unobserved. Context and instrument suitability need instructor confirmation."
+      }
+    },
+    {
+      "id": "04",
+      "slug": "Dance_Technique_Control",
+      "title": "Dance technique control",
+      "description": "An adult dancer performs a short step-and-turn phrase in a mirrored studio. Track the foreground dancer consistently.",
+      "short": "An adult beginner dancer in comfortable fitted rehearsal clothes and flat dance shoes practices in a bright premium dance studio with a clear wooden floor. Full body from head to shoes remains in frame throughout, no mirror reflections creating extra people. During four seconds the dancer begins upright, performs one calm rightward side step followed by bringing the other foot beside it, then holds a comfortable stable pose. Natural anatomy, clear foot contact and consistent limb identity. Locked eye-level camera, ample floor space, no acrobatics or extreme flexibility.",
+      "long": "An adult beginner dancer performs a slow simple practice phrase: neutral start, side step to the right and close, return step to the left and close, a gentle quarter turn and a held finish. Keep the full body and both feet visible, with natural balance and ordinary rehearsal pace. Stable camera, clear floor, no mirrors, no acrobatics or forced stretching. Preserve the order so an observer can review the phrase.",
+      "focus": "Track visible start position, side-step direction, closing step, return step, quarter turn and held finish only when each is shown. Count repetitions only if complete. Distinguish timing visible in the video from musical timing when no soundtrack is present. Do not invent precise joint angles, injury risk, skill grade or steps hidden by occlusion.",
+      "guidance": "guidance/04_Dance_Technique_Control.txt",
+      "video": "videos/04_Dance_Technique_Control.mp4",
+      "seedance_prompt": "prompts/04_Dance_Technique_Control_Seedance.txt",
+      "preview_prompt": "Photorealistic premium enterprise commercial. Landscape 16:9, native 1920 by 1080, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. An adult beginner dancer in comfortable fitted rehearsal clothes and flat dance shoes practices in a bright premium dance studio with a clear wooden floor. Full body from head to shoes remains in frame throughout, no mirror reflections creating extra people. During four seconds the dancer begins upright, performs one calm rightward side step followed by bringing the other foot beside it, then holds a comfortable stable pose. Natural anatomy, clear foot contact and consistent limb identity. Locked eye-level camera, ample floor space, no acrobatics or extreme flexibility.",
+      "generation": {
+        "model": "seedance1_5",
+        "name": "Seedance 1.5 Pro",
+        "job_id": "c3c9d7e3-c9c8-43a6-8ac5-97eeb5eba320",
+        "requested_duration": 4,
+        "requested_resolution": "1080p",
+        "quoted_credits": 12
+      },
+      "actual_video": {
+        "id": "04",
+        "title": "Dance technique control",
+        "file": "videos/04_Dance_Technique_Control.mp4",
+        "model": "seedance1_5",
+        "job_id": "c3c9d7e3-c9c8-43a6-8ac5-97eeb5eba320",
+        "width": 1920,
+        "height": 1080,
+        "duration": 4.041667,
+        "fps": "24/1",
+        "codec": "h264",
+        "pixel_format": "yuv420p",
+        "size": 7001184,
+        "sha256": "192b5e8b72169080d0bfb23b9862b165af03ff800311c1d9d1de21eae3e52424",
+        "decode_check": "passed",
+        "poster": "posters/04_Dance_Technique_Control.jpg",
+        "review_strip": "qa/04_Dance_Technique_Control_frames.jpg"
+      },
+      "poster": "posters/04_Dance_Technique_Control.jpg",
+      "intended_description": "An adult dancer performs a basic side-step sequence with a visible pause; the guide tracks the sequence and what remains unobserved.",
+      "visual_review": {
+        "scenario": "04",
+        "visible": "Foreground dancer takes a short lateral/diagonal step and changes facing direction, ending in a pause. A mirror reflection is visible behind the foreground performer.",
+        "limits": "Track the foreground dancer only. Do not count the reflection as another participant or repetition. A return to the initial spot is not clearly shown, and the exact coach cue and quarter-turn angle cannot be established."
+      }
+    },
+    {
+      "id": "05",
+      "slug": "Sport_Squat_Technique_Control",
+      "title": "Sport technique control",
+      "description": "An adult athlete lowers into a bodyweight squat and rises, with the full body and feet visible.",
+      "short": "An adult recreational athlete in ordinary training clothes and flat athletic shoes performs one comfortable shallow-to-moderate bodyweight squat in a clean daylight fitness studio. Entire body and both feet stay clearly visible in a stable three-quarter view. Over four seconds the athlete begins standing, lowers slowly to a self-selected comfortable depth, pauses briefly, then returns to standing. Natural controlled movement and coherent knees, hands and feet; no barbell, heavy weights, maximal effort, jumps or exaggerated range. Camera remains fixed; clear uncluttered floor.",
+      "long": "Show one adult athlete in an uncluttered training area: a comfortable standing setup, one slow unloaded squat with a brief pause at a self-selected depth, a controlled return to standing, then a relaxed review pause with a coach nearby. Full body and both feet remain visible. No heavy loading, maximal effort, forced depth or pain performance. Do not imply diagnostic assessment, injury prediction or medical clearance.",
+      "focus": "Track visible setup, lowering, bottom pause and return to standing, noting whether a full repetition is visible. Describe observable balance and symmetry qualitatively with camera limitations. Do not infer pain, muscle activation, exact joint angles, internal loading, injury probability or medically safe clearance. A coach should review unclear or uncomfortable performance.",
+      "guidance": "guidance/05_Sport_Squat_Technique_Control.txt",
+      "video": "videos/05_Sport_Squat_Technique_Control.mp4",
+      "seedance_prompt": "prompts/05_Sport_Squat_Technique_Control_Seedance.txt",
+      "preview_prompt": "Photorealistic premium enterprise commercial. Landscape 16:9, native 1920 by 1080, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. An adult recreational athlete in ordinary training clothes and flat athletic shoes performs one comfortable shallow-to-moderate bodyweight squat in a clean daylight fitness studio. Entire body and both feet stay clearly visible in a stable three-quarter view. Over four seconds the athlete begins standing, lowers slowly to a self-selected comfortable depth, pauses briefly, then returns to standing. Natural controlled movement and coherent knees, hands and feet; no barbell, heavy weights, maximal effort, jumps or exaggerated range. Camera remains fixed; clear uncluttered floor.",
+      "generation": {
+        "model": "seedance1_5",
+        "name": "Seedance 1.5 Pro",
+        "job_id": "9321619e-a545-4412-b18a-f11bdd02ea9b",
+        "requested_duration": 4,
+        "requested_resolution": "1080p",
+        "quoted_credits": 12
+      },
+      "actual_video": {
+        "id": "05",
+        "title": "Sport technique control",
+        "file": "videos/05_Sport_Squat_Technique_Control.mp4",
+        "model": "seedance1_5",
+        "job_id": "9321619e-a545-4412-b18a-f11bdd02ea9b",
+        "width": 1920,
+        "height": 1080,
+        "duration": 4.041667,
+        "fps": "24/1",
+        "codec": "h264",
+        "pixel_format": "yuv420p",
+        "size": 4666249,
+        "sha256": "ab1e23cabdd0c317d3c0116fb670280d131afd0088fbcb3cd1a451d807f87e5a",
+        "decode_check": "passed",
+        "poster": "posters/05_Sport_Squat_Technique_Control.jpg",
+        "review_strip": "qa/05_Sport_Squat_Technique_Control_frames.jpg"
+      },
+      "poster": "posters/05_Sport_Squat_Technique_Control.jpg",
+      "intended_description": "An adult athlete performs one comfortable, unloaded bodyweight squat; observation focuses on visible phases and human coaching review.",
+      "visual_review": {
+        "scenario": "05",
+        "visible": "Athlete begins upright, lowers, briefly occupies a lower position, and rises to upright; the body and feet remain visible.",
+        "limits": "Only one visible cycle is represented. Do not infer pain, loading symmetry, precise joint angles, readiness or ideal technique; the lowered position is not a prescribed depth target."
+      }
+    }
+  ],
+  "planned_credit_cost": 60,
+  "credit_observation": {
+    "quoted_total": 60,
+    "balance_before_submission": 88.59,
+    "balance_after_completion": 58.59,
+    "observed_balance_change": 30,
+    "note": "Balance readings are observations, not a per-job billing ledger; preflight quote differed from the observed balance change."
+  },
+  "visual_review": {
+    "method": "Human review of eight frames per clip at 2 fps, supplemented by decoder and browser playback checks",
+    "findings_file": "qa/visual-review.txt",
+    "not_ground_truth": true
+  }
+}

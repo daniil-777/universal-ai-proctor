@@ -1,0 +1,1054 @@
+{
+  "version": 1,
+  "release": "v1.0.0",
+  "assets": [
+    {
+      "name": "41eff5c46aec-uncomplicated-cholecystectomy.mp4",
+      "sha256": "41eff5c46aec953cbabe7861213fb7d7c30a6f0c702066034623630b61a0e1fd",
+      "size": 37894412,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/41eff5c46aec-uncomplicated-cholecystectomy.mp4",
+      "targets": [
+        {
+          "path": "sample-videos/uncomplicated-cholecystectomy.mp4",
+          "groups": [
+            "runtime"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "b527f5cc0a38-real-03-surgery.mp4",
+      "sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "size": 14724822,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/b527f5cc0a38-real-03-surgery.mp4",
+      "targets": [
+        {
+          "path": "sample-videos/real-03-surgery.mp4",
+          "groups": [
+            "runtime"
+          ]
+        },
+        {
+          "path": "frontend/public/media/process-guide-real-scenarios/videos/real-03-surgery.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "evaluation/open-video-scenarios/videos/real-03-surgery.mp4",
+          "groups": [
+            "evaluation",
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "97d123166760-real-05-sport.mp4",
+      "sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "size": 113075870,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/97d123166760-real-05-sport.mp4",
+      "targets": [
+        {
+          "path": "sample-videos/real-05-sport.mp4",
+          "groups": [
+            "runtime"
+          ]
+        },
+        {
+          "path": "frontend/public/media/process-guide-real-scenarios/videos/real-05-sport.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "evaluation/open-video-scenarios/videos/real-05-sport.mp4",
+          "groups": [
+            "evaluation",
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "55f58ce1ecb8-real-04-dancing.mp4",
+      "sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "size": 5434324,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/55f58ce1ecb8-real-04-dancing.mp4",
+      "targets": [
+        {
+          "path": "sample-videos/real-04-dancing.mp4",
+          "groups": [
+            "runtime"
+          ]
+        },
+        {
+          "path": "frontend/public/media/process-guide-real-scenarios/videos/real-04-dancing.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "evaluation/open-video-scenarios/videos/real-04-dancing.mp4",
+          "groups": [
+            "evaluation",
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "37c44edfe3a3-real-02-manufacturing.mp4",
+      "sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "size": 86059091,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/37c44edfe3a3-real-02-manufacturing.mp4",
+      "targets": [
+        {
+          "path": "sample-videos/real-02-manufacturing.mp4",
+          "groups": [
+            "runtime"
+          ]
+        },
+        {
+          "path": "frontend/public/media/process-guide-real-scenarios/videos/real-02-manufacturing.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "evaluation/open-video-scenarios/videos/real-02-manufacturing.mp4",
+          "groups": [
+            "evaluation",
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "01e4348ee460-real-01-house.mp4",
+      "sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "size": 99506681,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/01e4348ee460-real-01-house.mp4",
+      "targets": [
+        {
+          "path": "sample-videos/real-01-house.mp4",
+          "groups": [
+            "runtime"
+          ]
+        },
+        {
+          "path": "frontend/public/media/process-guide-real-scenarios/videos/real-01-house.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "evaluation/open-video-scenarios/videos/real-01-house.mp4",
+          "groups": [
+            "evaluation",
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3a7c07a1cc17-process-guide-walkthrough.mp4",
+      "sha256": "3a7c07a1cc17268e69df9f3e34dd2604bb652e103a76351d1d8a04f4ec9eff48",
+      "size": 18394918,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/3a7c07a1cc17-process-guide-walkthrough.mp4",
+      "targets": [
+        {
+          "path": "frontend/public/media/process-guide-walkthrough.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "videos/process-guide-walkthrough/renders/process-guide-walkthrough.mp4",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "6b5499ae1938-process-guide-tour.mp4",
+      "sha256": "6b5499ae1938676807193994f856f592d81a10bbcdb80a4b1a7a9a254162008d",
+      "size": 181957,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/6b5499ae1938-process-guide-tour.mp4",
+      "targets": [
+        {
+          "path": "frontend/public/media/process-guide-tour.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "a2d31ca49ad4-process-guide-scenarios.zip",
+      "sha256": "a2d31ca49ad45c1e8421044b349e9d564cff2e7d5009c8fa853aeee93cf17167",
+      "size": 39476949,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/a2d31ca49ad4-process-guide-scenarios.zip",
+      "targets": [
+        {
+          "path": "frontend/public/media/process-guide-scenarios/process-guide-scenarios.zip",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "frontend/public/media/process-guide-generated-scenarios/process-guide-scenarios.zip",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "19ce6a18de11-02_Manufacturing_Quality_Control.mp4",
+      "sha256": "19ce6a18de11b86680e3fd578f4daf68730e4504240f398625103a0472d6a20c",
+      "size": 6814966,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/19ce6a18de11-02_Manufacturing_Quality_Control.mp4",
+      "targets": [
+        {
+          "path": "frontend/public/media/process-guide-scenarios/videos/02_Manufacturing_Quality_Control.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "frontend/public/media/process-guide-generated-scenarios/videos/02_Manufacturing_Quality_Control.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "videos/process-guide-marketing/scenarios/videos/02_Manufacturing_Quality_Control.mp4",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ab1e23cabdd0-05_Sport_Squat_Technique_Control.mp4",
+      "sha256": "ab1e23cabdd0c317d3c0116fb670280d131afd0088fbcb3cd1a451d807f87e5a",
+      "size": 4666249,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/ab1e23cabdd0-05_Sport_Squat_Technique_Control.mp4",
+      "targets": [
+        {
+          "path": "frontend/public/media/process-guide-scenarios/videos/05_Sport_Squat_Technique_Control.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "frontend/public/media/process-guide-generated-scenarios/videos/05_Sport_Squat_Technique_Control.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "videos/process-guide-marketing/scenarios/videos/05_Sport_Squat_Technique_Control.mp4",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "a606f77fd5e0-03_Surgical_Simulation_Control.mp4",
+      "sha256": "a606f77fd5e0ad5a43052b2798f6aea856f26370488f7bac9b2baf8ed6a8ba79",
+      "size": 6037086,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/a606f77fd5e0-03_Surgical_Simulation_Control.mp4",
+      "targets": [
+        {
+          "path": "frontend/public/media/process-guide-scenarios/videos/03_Surgical_Simulation_Control.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "frontend/public/media/process-guide-generated-scenarios/videos/03_Surgical_Simulation_Control.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "videos/process-guide-marketing/scenarios/videos/03_Surgical_Simulation_Control.mp4",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "c4ce9d964bfd-01_Large_House_Construction.mp4",
+      "sha256": "c4ce9d964bfd03b644df4d3bc3e0f5bf6a2a011e22a19693653ba602f0980333",
+      "size": 9432316,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/c4ce9d964bfd-01_Large_House_Construction.mp4",
+      "targets": [
+        {
+          "path": "frontend/public/media/process-guide-scenarios/videos/01_Large_House_Construction.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "frontend/public/media/process-guide-generated-scenarios/videos/01_Large_House_Construction.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "videos/process-guide-marketing/scenarios/videos/01_Large_House_Construction.mp4",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "192b5e8b7216-04_Dance_Technique_Control.mp4",
+      "sha256": "192b5e8b72169080d0bfb23b9862b165af03ff800311c1d9d1de21eae3e52424",
+      "size": 7001184,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/192b5e8b7216-04_Dance_Technique_Control.mp4",
+      "targets": [
+        {
+          "path": "frontend/public/media/process-guide-scenarios/videos/04_Dance_Technique_Control.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "frontend/public/media/process-guide-generated-scenarios/videos/04_Dance_Technique_Control.mp4",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        },
+        {
+          "path": "videos/process-guide-marketing/scenarios/videos/04_Dance_Technique_Control.mp4",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "274c81b1b863-process-guide-real-scenarios.zip",
+      "sha256": "274c81b1b86354d0f8e1a85233bbedefee03472f189bad2e69929ed1c4b53820",
+      "size": 479659440,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/274c81b1b863-process-guide-real-scenarios.zip",
+      "targets": [
+        {
+          "path": "frontend/public/media/process-guide-real-scenarios/process-guide-real-scenarios.zip",
+          "groups": [
+            "runtime",
+            "public"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "7063075d741a-voice-professional-cedar.mp3",
+      "sha256": "7063075d741a7494647636a3fe363c0dbae322c1db35922fe41aa1e4e32aac00",
+      "size": 129792,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/7063075d741a-voice-professional-cedar.mp3",
+      "targets": [
+        {
+          "path": "docs/voice-professional-cedar.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "d1e3122e33e7-voice-gpt-4o-mini-tts-1.mp3",
+      "sha256": "d1e3122e33e713ff01045f6ffc52ac05b056724836b283bdbfab2ffe150afcd2",
+      "size": 73728,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/d1e3122e33e7-voice-gpt-4o-mini-tts-1.mp3",
+      "targets": [
+        {
+          "path": "docs/voice-gpt-4o-mini-tts-1.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1fc7d8d4770f-voice-gpt-4o-mini-tts-2.mp3",
+      "sha256": "1fc7d8d4770ff58ddf2022ee9d07112cbef333a068aba881f147f86ccd9b8ddb",
+      "size": 88320,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/1fc7d8d4770f-voice-gpt-4o-mini-tts-2.mp3",
+      "targets": [
+        {
+          "path": "docs/voice-gpt-4o-mini-tts-2.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "bdbfe97eea69-voice-tts-1-2.mp3",
+      "sha256": "bdbfe97eea69a57bb6f31d95e30bb4feedd647741ac258d1527503d7d22b6558",
+      "size": 74112,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/bdbfe97eea69-voice-tts-1-2.mp3",
+      "targets": [
+        {
+          "path": "docs/voice-tts-1-2.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "a717dc9f3da9-voice-tts-1-1.mp3",
+      "sha256": "a717dc9f3da929ee69aaf8f93e4e573d7f17da91eebf543c66d7bb1ba04edcda",
+      "size": 78720,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/a717dc9f3da9-voice-tts-1-1.mp3",
+      "targets": [
+        {
+          "path": "docs/voice-tts-1-1.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "64f0d96805b0-laboratory.mp4",
+      "sha256": "64f0d96805b0facfc651cc8047681913b872b21c50faed8cb7c9bddfbc9bddb6",
+      "size": 7564937,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/64f0d96805b0-laboratory.mp4",
+      "targets": [
+        {
+          "path": "videos/process-guide-marketing/assets/footage/laboratory.mp4",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "30e39dc395eb-assembly.mp4",
+      "sha256": "30e39dc395ebc652e2735f7d06902a70dafa39230fc7b8f62c097bc4ebec796a",
+      "size": 6454396,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/30e39dc395eb-assembly.mp4",
+      "targets": [
+        {
+          "path": "videos/process-guide-marketing/assets/footage/assembly.mp4",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "9a8eec0ac309-kitchen.mp4",
+      "sha256": "9a8eec0ac309d50a62d6d1359aca817a9407063128165406a297b13ad8208d64",
+      "size": 12202148,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/9a8eec0ac309-kitchen.mp4",
+      "targets": [
+        {
+          "path": "videos/process-guide-marketing/assets/footage/kitchen.mp4",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5acfb14f3d1b-overview.wav",
+      "sha256": "5acfb14f3d1b5b6bf763c7d0b22230738febd6de212c264fd35fb09156361ca1",
+      "size": 446234,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/5acfb14f3d1b-overview.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/overview.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5c4f13908995-export.wav",
+      "sha256": "5c4f1390899508b27aafa16f2eb58f41df12637549bd510baef31d51302c14dc",
+      "size": 598746,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/5c4f13908995-export.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/export.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "76c50a625e0e-guardian.wav",
+      "sha256": "76c50a625e0ec546dc0b038c533af9373da7c3b79f9b559c6daa10917f40d9d1",
+      "size": 476548,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/76c50a625e0e-guardian.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/guardian.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "05759bbd624c-resize.mp3",
+      "sha256": "05759bbd624c98e20134412b9f20c160cace0a399c2b8c392a773c3a0fbf92b2",
+      "size": 81792,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/05759bbd624c-resize.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/resize.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "f43a30c1a381-source.mp3",
+      "sha256": "f43a30c1a381aa4c8657278e23b0ce9f0bcbcc6949b38015f81defe2c38fb26c",
+      "size": 111360,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/f43a30c1a381-source.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/source.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "112f922b3d84-review.wav",
+      "sha256": "112f922b3d8490c49c375394b4b2dd0c5e69761a8aeab2a17e071ede18e252dc",
+      "size": 463126,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/112f922b3d84-review.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/review.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "447f278d48b5-guide.wav",
+      "sha256": "447f278d48b548f00042085901282c2d458d7db216057a4c1601d8ef893679c4",
+      "size": 542668,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/447f278d48b5-guide.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/guide.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "b35f86e20363-saved.wav",
+      "sha256": "b35f86e20363fef12d7a6f12c60728a58417be3dd5e673ccd7b9c59d3e206268",
+      "size": 729560,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/b35f86e20363-saved.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/saved.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "15d603169337-wishes.mp3",
+      "sha256": "15d6031693375b5938eee7c1a496379e6bc35d7fef74128815cbf229f02402d2",
+      "size": 94464,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/15d603169337-wishes.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/wishes.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "17dd18a41ae3-chat.mp3",
+      "sha256": "17dd18a41ae354331fd2777926281142ff0f2978cb2a1ec4d7a11f789e97c4dd",
+      "size": 112896,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/17dd18a41ae3-chat.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/chat.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cb5b23168947-readiness.wav",
+      "sha256": "cb5b231689475e960b0274e17f58c6c7226c898520f870d7ddd079671e8428e9",
+      "size": 555304,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/cb5b23168947-readiness.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/readiness.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "f98bd1d088fa-account.wav",
+      "sha256": "f98bd1d088fa003f80fef157a0eaa4d1be6a52c122406f80ab0f302fdd9da7f3",
+      "size": 423278,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/f98bd1d088fa-account.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/account.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "32da7608a4d4-report.mp3",
+      "sha256": "32da7608a4d46a2dd2ff35f7a991125aa380065b791e5e34ab0a0260c1d69550",
+      "size": 95232,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/32da7608a4d4-report.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/report.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "f3e449526d3c-steps.wav",
+      "sha256": "f3e449526d3c815147e980671ffd6c3a22a5702b102e5154a68479fff6d927a3",
+      "size": 578484,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/f3e449526d3c-steps.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/steps.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4d9122ec27dd-manual.mp3",
+      "sha256": "4d9122ec27dda1817e69153f9f36a10ee8acc8aee94275bace7c21dad4cc30fb",
+      "size": 98688,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/4d9122ec27dd-manual.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/manual.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "1e14eef3cd25-overview.mp3",
+      "sha256": "1e14eef3cd256421e2425975d45fb4e1e537b8729bf3096f038b9904f820e41f",
+      "size": 81792,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/1e14eef3cd25-overview.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/overview.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4adf41dbc709-export.mp3",
+      "sha256": "4adf41dbc709c550b850526f131c812daf2e83efbe4db95ebe5c45db09c56062",
+      "size": 109824,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/4adf41dbc709-export.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/export.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "7e7d5465a2f8-source.wav",
+      "sha256": "7e7d5465a2f80422cd2a78103a4d93c44d25fd2050126b7b793a3e1abda109b1",
+      "size": 607636,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/7e7d5465a2f8-source.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/source.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5760abe40600-guide.mp3",
+      "sha256": "5760abe40600aa1db4915df9560415c40a4cebfa427ee2b05cd6c7934a3b7ee4",
+      "size": 99456,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/5760abe40600-guide.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/guide.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "22af36ecead4-review.mp3",
+      "sha256": "22af36ecead4194948089c718a7671f0a99b5fbcc5fa9bd0412fccf376986754",
+      "size": 84864,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/22af36ecead4-review.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/review.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "60bbb3a84e93-resize.wav",
+      "sha256": "60bbb3a84e937e9f5b763729d64df215f996b48c19be5eece1d1a12a01a94ce1",
+      "size": 446430,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/60bbb3a84e93-resize.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/resize.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "0499d1acc982-guardian.mp3",
+      "sha256": "0499d1acc982b16f3b242880365531f3d581c01230c0251b913e548cbe4155fc",
+      "size": 87168,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/0499d1acc982-guardian.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/guardian.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "02f544eb440a-saved.mp3",
+      "sha256": "02f544eb440a3beae00323fe810a68cb69544396004dd8a8125d8865f381340c",
+      "size": 133632,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/02f544eb440a-saved.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/saved.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2e9c09660029-account.mp3",
+      "sha256": "2e9c09660029607f7fa66e284964a02d29bbc34eb04a0d07168055b416de6896",
+      "size": 77568,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/2e9c09660029-account.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/account.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "9c621b3e27de-report.wav",
+      "sha256": "9c621b3e27deb230372f7914154efd12b409b1da54d2a515bea8126c7a6ca01c",
+      "size": 519770,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/9c621b3e27de-report.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/report.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "96aa97c53372-readiness.mp3",
+      "sha256": "96aa97c5337245572ff2ce905da0c48b3dabd9e40321800673d2dcd572cc19d1",
+      "size": 101760,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/96aa97c53372-readiness.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/readiness.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "043f2c4d0744-wishes.wav",
+      "sha256": "043f2c4d07442d6a63bab65e4df827050f9adff8e0c5fd26cf87c2d5a6ebaeba",
+      "size": 515126,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/043f2c4d0744-wishes.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/wishes.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "11162a7cfe9b-chat.wav",
+      "sha256": "11162a7cfe9b9ee0994d27f71738998576a711072ebb917cfda869fb39679348",
+      "size": 615820,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/11162a7cfe9b-chat.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/chat.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4ae2bfa8eebd-steps.mp3",
+      "sha256": "4ae2bfa8eebd79a88fb4082988b5677b19ce3cef07148e6aeefdbdafbc91a5ea",
+      "size": 106368,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/4ae2bfa8eebd-steps.mp3",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/steps.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "83fa5f47d734-manual.wav",
+      "sha256": "83fa5f47d734daabc51ff77f1d21481a156e2c21c72b76a8d3b87b3de90d2458",
+      "size": 539330,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/83fa5f47d734-manual.wav",
+      "targets": [
+        {
+          "path": "videos/process-guide-walkthrough/assets/voice/manual.wav",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "07d71ab9906a-process-guide-tour.mp4",
+      "sha256": "07d71ab9906a7a06ee615b38926689745ffd69fb2e807b0b0287099bdcfb45b0",
+      "size": 182269,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/07d71ab9906a-process-guide-tour.mp4",
+      "targets": [
+        {
+          "path": "videos/process-guide-tour/renders/process-guide-tour.mp4",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2597dfdc4a61-01-house.webm",
+      "sha256": "2597dfdc4a61b7ff3dbda06ffc31f32309ca2e7b450c3c626539a3b702cbb6cf",
+      "size": 98504769,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/2597dfdc4a61-01-house.webm",
+      "targets": [
+        {
+          "path": "evaluation/open-video-scenarios/sources/01-house.webm",
+          "groups": [
+            "evaluation",
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5e587be9802e-05_curl_commons_1080p.webm",
+      "sha256": "5e587be9802eeb8549d4f14695e4432ee16989d2010689452153a789b2d8fb25",
+      "size": 79581517,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/5e587be9802e-05_curl_commons_1080p.webm",
+      "targets": [
+        {
+          "path": "evaluation/open-video-scenarios/sources/05_curl_commons_1080p.webm",
+          "groups": [
+            "evaluation",
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "183d5e3818d5-04_tap_original.webm",
+      "sha256": "183d5e3818d5a8d6b1e8b3f5c6bf40b90aec28a04c9d81bfacbf2cb412451cf2",
+      "size": 6532126,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/183d5e3818d5-04_tap_original.webm",
+      "targets": [
+        {
+          "path": "evaluation/open-video-scenarios/sources/04_tap_original.webm",
+          "groups": [
+            "evaluation",
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "f47d40deac0f-02-manufacturing.webm",
+      "sha256": "f47d40deac0fd9b5e573e56ca85b74fa9f68540ac8db831994edae72d7fcd69f",
+      "size": 105794040,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/f47d40deac0f-02-manufacturing.webm",
+      "targets": [
+        {
+          "path": "evaluation/open-video-scenarios/sources/02-manufacturing.webm",
+          "groups": [
+            "evaluation",
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "6111cfc31043-03_surgery_original.ogv",
+      "sha256": "6111cfc31043e0c7f98a38e97c040e73299f2b817390e2d4690c2b88c40ebabb",
+      "size": 19735499,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/6111cfc31043-03_surgery_original.ogv",
+      "targets": [
+        {
+          "path": "evaluation/open-video-scenarios/sources/03_surgery_original.ogv",
+          "groups": [
+            "evaluation",
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "29a9873a0bf0-parts-sorting.mp4",
+      "sha256": "29a9873a0bf0bc02fbd8f52c40e93c01fc4d667ed001970445cba1d818b56c18",
+      "size": 66598,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/29a9873a0bf0-parts-sorting.mp4",
+      "targets": [
+        {
+          "path": "evaluation/assets/parts-sorting.mp4",
+          "groups": [
+            "runtime",
+            "evaluation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "fc8bb2a42578-control-panel.mp4",
+      "sha256": "fc8bb2a425783e104e6c26a2dfa221c8b6ecc44179015a5a4ca73455dd1845eb",
+      "size": 50714,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/fc8bb2a42578-control-panel.mp4",
+      "targets": [
+        {
+          "path": "evaluation/assets/control-panel.mp4",
+          "groups": [
+            "runtime",
+            "evaluation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "9f9e3dbeab76-packaging-landscape.mp4",
+      "sha256": "9f9e3dbeab768a90fe964e4922415e98f6e6f327c0723a511b4c8a153f5aae38",
+      "size": 11980,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/9f9e3dbeab76-packaging-landscape.mp4",
+      "targets": [
+        {
+          "path": "evaluation/assets/packaging-landscape.mp4",
+          "groups": [
+            "runtime",
+            "evaluation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3e1eb218f2bf-packaging-portrait.mp4",
+      "sha256": "3e1eb218f2bf24588070b58d7fd89ba7f8ba71c329ea0a327f897cf0921e6257",
+      "size": 7837,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.0/3e1eb218f2bf-packaging-portrait.mp4",
+      "targets": [
+        {
+          "path": "evaluation/assets/packaging-portrait.mp4",
+          "groups": [
+            "runtime",
+            "evaluation"
+          ]
+        }
+      ]
+    }
+  ]
+}

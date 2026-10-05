@@ -1,0 +1,13 @@
+Step 1: Inspect loose parts
+Actions: Inspect the parts above the bins.
+Criteria: Two red circles and one blue square visibly above the bins.
+Step 2: Sort red parts
+Actions: Put both red circles into the RED ONLY bin on the left.
+Criteria: Two red circles visibly inside the left bin.
+Step 3: Sort the blue part
+Actions: Put the blue square into the BLUE ONLY bin on the right.
+Criteria: One blue square visibly inside the right bin.
+Step 4: Check the final layout
+Actions: Check that the red bin contains only red circles and the blue bin only the blue square; investigate any unexpected loose part.
+Criteria: Left bin visibly contains only two red circles. Right bin visibly contains only one blue square.
+Principles: Never infer contents from an obstructed view. Follow the current evidence; appearance cannot establish weight, material or temperature.

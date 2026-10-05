@@ -1,0 +1,712 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── VirtaMed corporate light theme (matches the Connect portal) ──────────
+       Light gray page, white cards with soft shadows, petrol/teal primary,
+       dark-navy header (scoped via .theme-header below). */
+    --background: 200 25% 96%; /* light blue-gray page */
+    --foreground: 208 30% 14%; /* dark slate text */
+
+    --card: 0 0% 100%; /* white cards */
+    --card-foreground: 208 30% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 208 30% 14%;
+
+    --primary: 189 82% 30%; /* VirtaMed teal (#0e7d8e) */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 196 25% 93%;
+    --secondary-foreground: 208 30% 14%;
+
+    --muted: 200 20% 94%;
+    --muted-foreground: 206 12% 43%;
+
+    --accent: 189 70% 93%; /* light teal tint for hovers */
+    --accent-foreground: 189 82% 24%;
+
+    --destructive: 0 70% 46%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 65% 32%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 33 92% 40%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 205 20% 87%;
+    --input: 205 20% 84%;
+    --ring: 189 82% 30%;
+
+    --radius: 0.75rem; /* generous corporate rounding */
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 208 30% 14%;
+    --sidebar-primary: 189 82% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 20% 94%;
+    --sidebar-accent-foreground: 208 30% 14%;
+    --sidebar-border: 205 20% 87%;
+    --sidebar-ring: 189 82% 30%;
+  }
+
+  /* ── Dark-navy header island (the Connect portal's top bar) ────────────────
+     Scoped variable override: everything inside the TopBar keeps using the
+     normal token classes (bg-card, text-foreground, border-border …) but they
+     resolve to the corporate navy palette. Portaled dropdown panels still use
+     the light :root tokens — same as the company site. */
+  .theme-header {
+    --background: 204 55% 9%; /* #0a1c29 navy */
+    --foreground: 200 20% 96%;
+    --card: 204 55% 9%;
+    --card-foreground: 200 20% 96%;
+    --muted: 204 40% 16%;
+    --muted-foreground: 204 15% 68%;
+    --secondary: 204 40% 16%;
+    --secondary-foreground: 200 20% 96%;
+    --accent: 189 82% 30%;
+    --accent-foreground: 0 0% 100%;
+    --primary: 189 82% 34%; /* teal "active pill" like the Cockpit tab */
+    --primary-foreground: 0 0% 100%;
+    --border: 204 30% 20%;
+    --input: 204 30% 24%;
+    --destructive: 0 75% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 150 55% 50%;
+    --success-foreground: 204 55% 9%;
+    --warning: 40 90% 58%;
+    --warning-foreground: 204 55% 9%;
+    --ring: 189 82% 45%;
+  }
+
+  /* ── Optional dark clinical theme (Settings → Dark theme) ─────────────────
+     The previous Catppuccin palette, kept for OR/low-light use. */
+  .dark {
+    --background: 232 19% 15%;
+    --foreground: 226 64% 88%;
+    --card: 234 18% 12%;
+    --card-foreground: 226 64% 88%;
+    --popover: 234 18% 12%;
+    --popover-foreground: 226 64% 88%;
+    --primary: 217 92% 76%;
+    --primary-foreground: 232 19% 12%;
+    --secondary: 232 16% 22%;
+    --secondary-foreground: 226 64% 88%;
+    --muted: 232 16% 20%;
+    --muted-foreground: 230 10% 60%;
+    --accent: 217 92% 76%;
+    --accent-foreground: 232 19% 12%;
+    --destructive: 343 81% 75%;
+    --destructive-foreground: 232 19% 12%;
+    --success: 115 54% 76%;
+    --success-foreground: 232 19% 12%;
+    --warning: 41 86% 83%;
+    --warning-foreground: 232 19% 12%;
+    --border: 234 13% 23%;
+    --input: 234 13% 23%;
+    --ring: 217 92% 76%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Soft corporate card shadow (heavier in dark mode). */
+  .shadow-elevated {
+    box-shadow:
+      0 10px 32px -8px hsl(206 35% 25% / 0.18),
+      0 2px 8px hsl(206 35% 25% / 0.08);
+  }
+  .dark .shadow-elevated {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes typing {
+  0%,
+  80%,
+  100% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+.animate-slide-up {
+  animation: slide-up 0.25s ease-out;
+}
+.animate-typing > span {
+  animation: typing 1.2s infinite;
+  display: inline-block;
+}
+.animate-typing > span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.animate-typing > span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+/* General-purpose workspace refinements */
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+.workspace-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(68px, 1fr));
+  flex-shrink: 0;
+  gap: 2px;
+}
+.workspace-tabs > button {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 7px 4px;
+}
+
+/* The same mounted workspace adapts to touch devices without resetting video. */
+.workspace-shell {
+  height: 100dvh;
+  overflow: hidden;
+  padding-top: env(safe-area-inset-top);
+}
+.sources-toggle,
+.compact-controls,
+.source-drawer-header,
+.source-backdrop {
+  display: none;
+}
+.workspace-video,
+.workspace-guidance {
+  min-width: 0;
+}
+@media (max-width: 1279px) {
+  .desktop-controls {
+    display: none !important;
+  }
+  .sources-toggle,
+  .source-drawer-header {
+    display: flex;
+  }
+  .compact-controls {
+    display: block;
+  }
+  .workspace-header {
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+  .responsive-workspace {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 38%);
+    overflow: hidden;
+  }
+  .workspace-divider {
+    display: none;
+  }
+  .workspace-video,
+  .workspace-guidance {
+    flex: none !important;
+    width: auto !important;
+    min-width: 0;
+  }
+  .workspace-sources {
+    display: none;
+  }
+  [data-sources-open="true"] > .workspace-sources {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: var(--app-visible-top, 0px);
+    height: var(--app-visible-height, 100dvh);
+    bottom: auto;
+    z-index: 45;
+    width: min(380px, 92vw) !important;
+    background: hsl(var(--card));
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    box-shadow: 12px 0 50px #0005;
+  }
+  .workspace-sources > div > div > aside > div:first-child {
+    display: none;
+  }
+  .source-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 44;
+    background: #0008;
+  }
+  .workspace-sources button,
+  .workspace-sources [role="combobox"] {
+    min-height: 40px;
+  }
+  .guardian-overlay {
+    top: 48px;
+  }
+  .analyze-button {
+    top: 8px;
+  }
+  .chat-panel {
+    max-width: calc(100vw - 24px);
+    max-height: calc(100dvh - 24px);
+  }
+}
+@media (max-width: 767px) {
+  .workspace-header {
+    padding: 6px 8px;
+  }
+  .workspace-header > div:first-of-type > div:last-child > div:last-child {
+    display: none;
+  }
+  .workspace-header [aria-label="Help"] {
+    display: none;
+  }
+  .workspace-header [aria-label="Record session"],
+  .workspace-header [aria-label="Stop recording"] {
+    padding: 0 8px;
+  }
+  .responsive-workspace {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(350px, 52%) minmax(220px, 1fr);
+    overflow-y: auto !important;
+  }
+  .workspace-guidance {
+    border-top: 1px solid hsl(var(--border));
+    min-height: 220px;
+  }
+  .workspace-guidance > aside {
+    border-left: 0;
+  }
+  .video-stage {
+    min-height: 350px;
+  }
+  .video-stage > div:first-child:not(.video-canvas) {
+    font-size: 10px;
+  }
+  .video-canvas {
+    min-height: 140px;
+  }
+  .video-canvas > video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .guidance-mobile {
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    padding: 8px 10px;
+    gap: 6px;
+    box-shadow: none;
+  }
+  .guidance-mobile > .guidance-copy {
+    flex-basis: calc(100% - 90px);
+  }
+  .guidance-mobile > .guidance-copy > p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .guidance-mobile > button,
+  .guidance-mobile > button[aria-haspopup] {
+    height: 40px;
+  }
+  .guardian-overlay {
+    top: 48px;
+  }
+  .guardian-overlay [data-guardian-message] {
+    max-width: 100%;
+  }
+  .player-controls {
+    gap: 6px;
+    padding: 4px 8px;
+    flex-wrap: wrap;
+  }
+  .player-controls .video-timeline {
+    flex-basis: 100%;
+    order: -1;
+    min-height: 44px;
+  }
+  .player-controls .frame-badge {
+    display: none;
+  }
+  .player-controls > div:not(.video-timeline) {
+    width: auto;
+    flex: 1;
+  }
+  .workspace-tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 6px;
+  }
+  .workspace-tabs > button {
+    min-height: 40px;
+    font-size: 12px;
+  }
+  .chat-panel[data-embedded="false"] {
+    inset: 8px !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: none;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .chat-panel > div:first-child > .text-sm {
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  .chat-panel > div:first-child > [class*="text-\\[10px\\]"] {
+    max-width: 80px;
+    overflow: hidden;
+  }
+  .chat-panel textarea {
+    font-size: 16px;
+  }
+  .chat-panel .chat-scope {
+    gap: 6px;
+  }
+  .chat-launcher {
+    bottom: max(14px, env(safe-area-inset-bottom));
+    right: 14px;
+  }
+  .intro-page header {
+    padding: 14px 16px;
+  }
+  .intro-page header > span {
+    display: none;
+  }
+  .intro-page main {
+    padding: 28px 16px;
+  }
+  .intro-page h1 {
+    font-size: 32px;
+  }
+  .intro-page [aria-label="Choose a source"] {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .intro-page [aria-label="Choose a source"] > button {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: 12px;
+    padding: 14px;
+  }
+  .intro-page [aria-label="Choose a source"] > button > span {
+    grid-row: span 2;
+    margin: 0;
+  }
+  .intro-page [aria-label="Choose a source"] > button > p {
+    margin-top: 4px;
+  }
+  .intro-page button,
+  .intro-page [role="combobox"] {
+    min-height: 44px;
+  }
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+@media (max-width: 767px) and (orientation: landscape) {
+  .responsive-workspace {
+    grid-template-columns: minmax(0, 55%) minmax(0, 45%);
+    grid-template-rows: minmax(350px, 1fr);
+  }
+  .workspace-guidance {
+    border-top: 0;
+    border-left: 1px solid hsl(var(--border));
+  }
+  .workspace-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (pointer: coarse) {
+  button,
+  [role="combobox"] {
+    touch-action: manipulation;
+  }
+  .workspace-header button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  .workspace-sources button,
+  .workspace-sources [role="combobox"],
+  .workspace-guidance button {
+    min-height: 44px;
+  }
+  .player-controls button,
+  .chat-panel button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  .guardian-resize-handle {
+    width: 44px;
+    height: 44px;
+    touch-action: none;
+  }
+  .guardian-overlay button:not(.guardian-resize-handle) {
+    min-height: 44px;
+  }
+  [role="slider"] {
+    min-width: 18px;
+    min-height: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Informational notifications never steal pointer input from the workspace. */
+[data-sonner-toast] {
+  pointer-events: none;
+}
+[data-sonner-toast] button {
+  pointer-events: auto;
+}
+@media (max-width: 767px) {
+  [data-sonner-toaster] {
+    bottom: 78px !important;
+  }
+  .guidance-mobile .observation-time {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .workspace-tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (pointer: coarse) {
+  .zoom-controls-inline button {
+    min-width: 40px;
+    min-height: 44px;
+  }
+  [data-radix-menu-content] [role="menuitem"] {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  .chat-panel[data-embedded="false"] {
+    top: calc(var(--app-visible-top, 0px) + 8px) !important;
+    bottom: auto !important;
+    height: calc(var(--app-visible-height, 100dvh) - 16px) !important;
+  }
+  input:not([type="range"]),
+  textarea {
+    font-size: max(16px, 1rem) !important;
+  }
+}
+
+/* Floating tools follow the visible screen, including tablet software keyboards. */
+.app-dialog {
+  top: calc(var(--app-visible-top, 0px) + var(--app-visible-height, 100dvh) / 2);
+  max-height: calc(var(--app-visible-height, 100dvh) - 24px);
+  overscroll-behavior: contain;
+  scroll-padding-block: 16px;
+}
+.app-dialog > div:first-child { padding-inline-end: 24px; }
+.chat-panel[data-embedded="false"] {
+  bottom: auto;
+  max-height: calc(var(--app-visible-height, 100dvh) - 16px);
+}
+.chat-panel[data-chat-size="dock"][data-embedded="false"] {
+  top: calc(var(--app-visible-top, 0px) + max(8px, var(--app-visible-height, 100dvh) - 580px));
+}
+.chat-panel[data-chat-size="drawer"][data-embedded="false"] {
+  top: calc(var(--app-visible-top, 0px) + 8px);
+  height: calc(var(--app-visible-height, 100dvh) - 16px);
+}
+.chat-panel[data-chat-size="full"][data-embedded="false"] {
+  top: calc(var(--app-visible-top, 0px) + 16px);
+  height: calc(var(--app-visible-height, 100dvh) - 32px);
+}
+.chat-composer {
+  max-height: calc(100% - 56px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-padding-block: 12px;
+}
+.chat-options-toggle { display: none; }
+.chat-panel .chat-header > * { flex-shrink: 0; }
+.chat-history { overscroll-behavior: contain; }
+/* Only history/composer scroll. Focus must never scroll the header off screen. */
+.chat-panel { overflow: clip; }
+.workspace-sources [class*="overflow-y-auto"],
+.workspace-guidance [class*="overflow-y-auto"] { overscroll-behavior-y: contain; }
+@media (max-width: 1279px), (pointer: coarse) {
+  .chat-extra { display: none; }
+  .chat-options-toggle { display: inline-flex; }
+  .chat-panel[data-options-open="true"] .chat-extra { display: flex; }
+  .chat-header { min-height: 56px; }
+  .chat-header > .text-sm { font-size: 12px; }
+  .chat-header > [class*="text-\[10px\]"] { display: none; }
+  .chat-input-row textarea { min-height: 72px; font-size: 16px; }
+  .chat-scope > div { min-width: 160px; }
+  .app-dialog { padding: 20px; }
+}
+:root[data-compact-viewport="true"] .chat-extra { display: none; }
+:root[data-compact-viewport="true"] .chat-panel[data-options-open="true"] .chat-extra { display: flex; }
+:root[data-compact-viewport="true"] .chat-options-toggle { display: inline-flex; }
+:root[data-compact-viewport="true"] .chat-listener { padding: 6px 8px; }
+:root[data-compact-viewport="true"] .chat-listener > div:last-child { margin-top: 4px; }
+@media (pointer: coarse) {
+  .app-dialog button, .app-dialog [role="combobox"],
+  .guidance-mobile > button, .guidance-mobile > button[aria-haspopup],
+  .guidance-mobile button, .guidance-mobile [role="combobox"],
+  [data-radix-popper-content-wrapper] button,
+  [data-radix-popper-content-wrapper] [role="combobox"] { min-height: 44px; }
+  .touch-slider { min-height: 44px; }
+  button[role="switch"] {
+    height: 44px;
+    width: 64px;
+    border: 11px solid transparent;
+    background-clip: padding-box;
+  }
+}
+@media (max-width: 767px) {
+  .chat-panel[data-embedded="false"] { padding-bottom: env(safe-area-inset-bottom); }
+  .chat-header { padding-inline: 8px; gap: 6px; }
+  .chat-header > div:first-child { display: none; }
+  .chat-composer { padding-inline: 10px; }
+  .chat-actions { gap: 6px; }
+}
+
+.workspace-guidance { overflow-wrap: anywhere; }
+.chat-actions { flex-wrap: wrap; }
+@media (max-width: 767px) {
+  .workspace-header .brand { min-width: 0; flex-shrink: 1; }
+  .workspace-header .brand-mark { height: 36px; width: 36px; flex-shrink: 0; }
+  .workspace-header .brand-copy { overflow: hidden; }
+  .workspace-header > .flex-1 { display: none; }
+  .workspace-header > button,
+  .workspace-header > [data-state] > button { width: 44px; height: 44px; padding: 0; flex-shrink: 0; }
+  .workspace-header .record-label { display: none; }
+  .workspace-header svg { width: 20px; height: 20px; }
+}
+
+@keyframes touch-dialog-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (pointer: coarse) {
+  .app-dialog[data-state="open"] {
+    animation-name: touch-dialog-appear !important;
+    animation-duration: 120ms;
+  }
+}
+
+.share-page {
+  position: fixed;
+  top: var(--app-visible-top, 0px);
+  left: 0;
+  right: 0;
+  height: var(--app-visible-height, 100dvh);
+  display: flex;
+  flex-direction: column;
+}
+.chat-panel[data-embedded="true"] { height: 100%; max-height: none; }
+
+@media (pointer: coarse) {
+  .chat-header button,
+  .chat-actions button[aria-label],
+  .chat-input-row > button {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    flex-shrink: 0;
+  }
+  .chat-actions > button { height: 44px; padding-inline: 10px; }
+  .chat-header button svg, .chat-actions button svg, .chat-input-row > button svg { width: 20px; height: 20px; }
+  .chat-input-row textarea {
+    height: 72px;
+    min-height: 72px;
+    padding: 8px 10px;
+    font-size: max(16px, 1rem) !important;
+  }
+}
+
+/* The guidance box has its own touch/keyboard resize control; only its content scrolls. */
+.guidance-resize-handle { touch-action: none; }
+.resizable-guidance[data-resized="true"] .guidance-copy p,
+.resizable-guidance[data-resized="true"] .guidance-copy .line-clamp-2 {
+  display: block; -webkit-line-clamp: unset; overflow: visible;
+}
+.resizable-guidance .guidance-banner { scroll-padding-block: 12px; }
+@media (max-width: 767px) {
+  .resizable-guidance .guidance-mobile { padding-right: 44px; }
+}
+
+/* Workspace dialogs own their padding and show feedback beside the action. */
+.app-dialog.workspace-account-dialog { padding: 0; }
+body:has(.workspace-professional-dialog[data-state="open"]) [data-sonner-toaster] {
+  z-index: 40 !important;
+}

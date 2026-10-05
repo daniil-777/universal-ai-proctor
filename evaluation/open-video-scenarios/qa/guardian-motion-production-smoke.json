@@ -1,0 +1,27 @@
+{
+  "validated_at": "2026-10-05T10:43:33.659Z",
+  "status": "passed",
+  "surface": "http://127.0.0.1:8101",
+  "viewport": 320,
+  "analysis_requests_mocked": 2,
+  "paid_analysis_requests": 0,
+  "overflow": false,
+  "guardian": [
+    {
+      "text": "“Visible bar position provides partial evidence.”at 0:37800ms",
+      "rect": {
+        "x": 12,
+        "y": 105,
+        "width": 296,
+        "height": 50,
+        "top": 105,
+        "right": 308,
+        "bottom": 155,
+        "left": 12
+      },
+      "overflow": false
+    }
+  ],
+  "highlightedSteps": 0,
+  "errors": []
+}

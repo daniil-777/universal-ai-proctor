@@ -1,0 +1,2010 @@
+{
+  "model": "gpt-6-astra",
+  "provider": "openai",
+  "mock": false,
+  "bank_sha256": "a910cf9087bff97e83434e35b3564164840979f9def5c98c2ce7f06c4ddd8a5a",
+  "frame_pack_sha256": "38abc64d0a3771438b9662bf7474872db7f3b5ed36a0153a56c011b742fc55b8",
+  "results": [
+    {
+      "id": "real-surgery-stage-1",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "expected_step_id": "S1",
+      "timestamp_s": 11,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "Introductory cross-sectional grayscale imaging is shown before the endoscopic working view. It does not establish a diagnosis or operative action.",
+      "expected_concepts": [
+        [
+          "grayscale",
+          "gray",
+          "grey",
+          "cross-sectional",
+          "ct",
+          "imaging"
+        ],
+        [
+          "introduction",
+          "introductory",
+          "before",
+          "pre-procedure",
+          "presentation"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "e75dcf15071180350f9f2e6a7f886369b5ea2546df9b79c4531fc0db72d71cb8",
+        "2203a5d6c8f71871e0f27ff98645cf9c833f4d5ce371572c6d8119594c3b1d8b",
+        "b67a5232c6f6709aa6ff47d0b568809ed4500eb40fd78c93b6e5d8b41a9dc9b1",
+        "d2fd817174d92d3e8b1d0e0c8842725b3061835b5fbef54298c59946b73a03bb",
+        "ab2d5f9ee67bd66a859b2738259fbb38ed21b5424c7d82563ba637c26ad90fe6",
+        "82d876b5fc6cbc5cb07740360748439bff4e8ed3aed1ae1b9950a8ef34ad433a",
+        "82d876b5fc6cbc5cb07740360748439bff4e8ed3aed1ae1b9950a8ef34ad433a",
+        "82d876b5fc6cbc5cb07740360748439bff4e8ed3aed1ae1b9950a8ef34ad433a",
+        "0ef7ed63c999b9abfb43b788718b652147689d10e45aead3ec1e9ee944587686"
+      ],
+      "question_latency_ms": 4793,
+      "answer": "The latest frame (10.96 s) shows a grayscale cross-sectional image on a black background, with bright and dark internal regions and small edge annotations. No working instruments or colored endoscopic field are visible. Earlier frames show a different cross-section; some carry the caption “CT scan on arrival.”\n\nThis supports **S1 — Recognize the introduction and pre-procedure images**, specifically its imaging-presentation portion.\n\n**Completion remains unconfirmed:** the supplied frames establish a sequence of grayscale images, but do not show the opening title card or the subsequent transition to the first operative scene. The caption alone does not establish a diagnosis, and these slides provide no evidence of an operative action or its completion.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 4857
+    },
+    {
+      "id": "real-dancing-stage-1",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "expected_step_id": "S1",
+      "timestamp_s": 7,
+      "question": "In this tight side-on shoe crop, which guidance phase is most consistent with the visible lift? Describe what is visible and do not assume a floor return outside the supplied frames.",
+      "reference_answer": "The tight side-on opening shoe-lift example is most consistent with S1. The supporting shoe is visible at the floor; the other shoe is cropped or raised out of the anchor frame. This frame does not establish the opening two-shoe stance or a later return.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "side",
+          "cropped",
+          "crop",
+          "support"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "aafdbf7546f2016a17a4c47393bc10aa14cf60c825c83276023693cda521b63c",
+        "5764282f3070b1d59f9c05c26989978b546655ffd30be756b82693dd9956f151",
+        "2d3d56718151593923ea759dec71561560207bf30d9d59cc5c9a57e34885d170",
+        "5f0ae65d3351a7d89b6803b7de5eb7817c93876de7482ddaec012a86ac6d4aa3",
+        "41a79ce4278185e675cbbf9dc64183c52a51a4e2c6b58977bd2c9126aca62503",
+        "203141d07e97b7abbe71caa9fd7438577df8f0689f5442746927403774eca66d",
+        "eee4e24ad207f99325880e7f123abd1e90a077401ae28b77314cd731884f279d",
+        "5c6bfc3443a906ea877368b68c241608e55ff9292fc85163b0879c9f738cbb06",
+        "0eb2437d40610585e1261ab18f8222ac658ce38c640fdeb2e6b6ecc55dd7f622"
+      ],
+      "question_latency_ms": 4953,
+      "answer": "The latest frame (6.97 s) shows cropped lower legs and overlapping tan shoes at a light-colored floor; the nearer shoe appears flat, while the other shoe’s contact is obscured. Earlier, at 2.47 s, one shoe is steeply angled with its heel raised beside the other, which remains at the floor.\n\nThis is most consistent with **S1: Observe the opening shoe contact and lift**, supported by the tight side-on view and near-floor tilt beside the supporting shoe.\n\nThe later frames show a close, overlapping stance, but do not clearly resolve both shoes’ contacts. I would not confirm a complete lift-and-return cycle or assume any return beyond the supplied frames.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 5012
+    },
+    {
+      "id": "real-sport-stage-1",
+      "scenario_id": "real-sport",
+      "channel": "stage",
+      "expected_step_id": "S1",
+      "timestamp_s": 35,
+      "question": "Which guidance phase is most consistent with this overhead view of hands contacting the bar near the floor? Identify the visible bar shape and explain which starting-position criteria are not yet shown.",
+      "reference_answer": "The beginning of S1, starting grip and pickup, is most consistent: both hands contact an angled EZ bar near the floor in an overhead view. The anchor does not show an upright low hold, a complete pickup, or a curl repetition.",
+      "expected_concepts": [
+        [
+          "bar",
+          "ez"
+        ],
+        [
+          "floor",
+          "pickup",
+          "pick up",
+          "grip",
+          "hands"
+        ]
+      ],
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "loaded_steps": 5,
+      "frame_sha256s": [
+        "d713dd60c7887d1063d5095db10e19c9444f1829994254c468fb6aa55abde777",
+        "41c42c2a622238896f35efd9caa8505f08a7bef89ee23c755cbb4bff75a031d8",
+        "35accb9366bd8f93f8a51f0f9a5b02fda739c3b2ab95f5c211f0e2d1dd28d838",
+        "b6851d25bbec71c908a95b529ece6a90bf12078c7ed5501614f719a4e641d215",
+        "3a8d02a35887774ca62c0c4e8fdca9c25cfb52cf6ee3de3360b1946ee25b2156",
+        "333a75b7cde9aef98ecf5e67434eb4828b575464689b39d8cdfaa8d1877951b2",
+        "a1468e78880d3a3194f638946c489d94c21edfb2e137397a4f2390d4bf939158",
+        "b4b6d6e5e57ff254f21337aa8f81c2bde90a39010e3d9b18b6f59568705326f3"
+      ],
+      "question_latency_ms": 6251,
+      "answer": "The latest overhead frame shows the demonstrator bent over, with both hands contacting a silver bar near the speckled gym floor. Black plates are visible at both ends, and the exposed shaft has angled sections characteristic of an **EZ bar**, although the head obscures its center.\n\nThis best matches **S1: Identify the EZ bar and visible starting grip**, specifically the reaching/grasping portion—not a curl.\n\nNot yet shown:\n- Rising to an upright position while holding the bar.\n- The bar held low in front of the thighs with arms extended downward.\n- A clearly established underhand grip in that upright close view; the current angle and occlusion limit confirmation.\n\nBoth-hand contact and the angled, plated bar are visible, but the full starting position—and therefore S1 completion—are not established.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6306
+    },
+    {
+      "id": "real-house-construction-stage-1",
+      "scenario_id": "real-house-construction",
+      "channel": "stage",
+      "expected_step_id": "S1",
+      "timestamp_s": 10,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "Panel-edge preparation and presented fasteners are shown. Hardware in a gloved hand is observable, but fastening quality is unverified.",
+      "expected_concepts": [
+        [
+          "fastener",
+          "screw",
+          "hardware"
+        ],
+        [
+          "hand",
+          "glove"
+        ]
+      ],
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "b02f6d3bea289de77647a9073895b039d53328827ad9455435bd09da0764f546",
+        "aba1b4a48cb4633eec234667908324a5ddc299bd36f893b8a4ebffb6239ab8d9",
+        "137f65d715b13c3de5882e5e96a4a5a529d22327eeb6c248b115d9729392a549",
+        "daa73757f9a5fb044231e97149162a9c1fd65e5eab319d458c954922d7a9802f",
+        "c6dbc9b23f5f66aa4175d1445e0a2b11c15dc701077abf35729d12b751b83f53",
+        "af18af679a5119f7401b269432a1eab01c8e1f4fbb5e4bc9e9325fdc1415c6b0",
+        "3378e5a72f3afea5bef2f95a6f04c582606359e17b2afc4bc39d3aa7dcd5ed68",
+        "8176c8ea18039a12f2e2199c34460a7a9c763a4aeb93e17b01139dbbb7cb7944",
+        "88e3f864eab6fc6555523f1891620510d818345bf4e45d0112b389d14ffac3c3"
+      ],
+      "question_latency_ms": 6835,
+      "answer": "The latest frame (9.96 s) shows a pile of metal screws presented in a white glove with blue grip dots. This identifies **S1: panel-edge preparation and hardware presentation**, specifically its hardware-presentation portion.\n\n- **Currently confirmed:** Fasteners visibly presented in a gloved hand (S1C2). The caption says “Galvanized hardware,” but the coating specification cannot be verified visually.\n- **Earlier evidence:** At 2–3.44 s, an applicator nozzle and exposed insulated panel edge appear together (S1C1). Later close-ups show timber above the white core between wood-chip facings.\n- **Completion limit:** The timber/panel detail is visible, but the actual joining operation is not clearly established across the edited views (S1C3). Therefore, do not declare the whole phase complete. Neither the hardware presentation nor the edge close-up proves correct fastening, sealing, or connection strength.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6842
+    },
+    {
+      "id": "real-manufacturing-stage-1",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "expected_step_id": "S1",
+      "timestamp_s": 27,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "An operator interacting with a machine controller is shown. The console interaction is visible, while program correctness remains unverified.",
+      "expected_concepts": [
+        [
+          "controller",
+          "console",
+          "control panel"
+        ],
+        [
+          "operator",
+          "person",
+          "worker"
+        ]
+      ],
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "2997a23aa3dfabb86fd0db880c6e05caa7225ce445043f6472a5236c57a2c3a4",
+        "21de488927ddf027145f73487b2b07920b1a6f492b72cda989d9e48c981d52ac",
+        "1c45fa6e589bb9f957b2a7b4fd29411028eaef1ea1def36ba9ba53ec1611554d",
+        "5ddbace7c05938599e49b352e255ebff4980d832de4226f04734c46a00fc3f09",
+        "bf93db967ee66a0d92c47222610710740debeaac4b3d812211478856b7bf26e9",
+        "6990290e794a820fb4112bd50e92e9cbec3b783a4d9447755a194c18c931e979",
+        "e36d8d77c680ea78996ec53fb16461489b1ad71d92bf230f50be05cda3e5215f",
+        "0f33cfc576defc9c3080c3e4288149fa99bc0f1996a58d022e3b6c5afaad9663",
+        "1881b6eeade982f9e66322ed6e6c7b66111bebd18520fb0abbd0fffd1efa8e47"
+      ],
+      "question_latency_ms": 7289,
+      "answer": "The latest frame (26.96 s) shows a machine controller with a screen, keypad and rotary controls. An operator faces the display with a thumb contacting a key below it; the displayed panel changes between 26.56 and 26.96 s.\n\nThis matches **S1 — Observe machining context and controller interaction**.\n\n- **Machine context observed earlier:** Frames at 19–24.68 s show a spindle/tool above mounted metal blocks and fixtures inside a machine enclosure. That work area is no longer directly visible in the current controller shot.\n- **Controller interaction observed now:** The operator’s contact with the key and the changing display support visible control interaction.\n\n**Completion limit:** Both S1 viewing criteria are supported across these shots, so this observation checkpoint can be marked complete. That does not establish which command was executed, whether cutting occurred, or whether any part or production cycle is complete. The crossfade also prevents treating the two scenes as proof of one continuous operation.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7322
+    },
+    {
+      "id": "real-surgery-stage-2",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "expected_step_id": "S2",
+      "timestamp_s": 27,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The first colored endoscopic instrument scene is shown. Instrument tips are visible in the field, without enough evidence to identify hidden contact or success.",
+      "expected_concepts": [
+        [
+          "endoscopic",
+          "laparoscopic",
+          "operative"
+        ],
+        [
+          "instrument",
+          "tip",
+          "field"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "4260d2bf04b7b4948c75db4deba9c3491145f73fe293d0912cd135d6ef048393",
+        "0eca1d05d1a74f7b890911b6ade5d2e613d149064b823fb9ade5072789b94ed1",
+        "5c54d12cba38b36194e208460ff5147a6b88ad598f631bdf1049154e3e769478",
+        "2615629dc049a57ab0b5cba3286cc011bb4b695a4e3af3b481d0c26a07c5e74d",
+        "508c585af2e184fed4ed6250174f76061fb8a387b6c4c6b70b5fb88e4b876baa",
+        "96cbd57ae23c3ff9e22cd6f8c9bccce2cee524d2ca9a4e8f9f66a0080067a80e",
+        "acde5589f5c4471ec400d731c4336123dbd266a8bcaa052d3236dbc0c30ed90e",
+        "3878d00d8ed5659fc9293f97cb8669c04fb33772122fd5e5497d1ce1203ee4b7",
+        "e60b3d55766047b9ff3d32821d4af23bf4368753edd8ccc0b15a1a98008cc28e"
+      ],
+      "question_latency_ms": 5437,
+      "answer": "The latest frame (26.96 s) shows a colored endoscopic field with glossy orange-brown surfaces and a broad gray instrument entering from the left. Its tip is near the central-right surface, but glare and partial obstruction make exact contact unclear. Across 26.12–26.96 s, the instrument’s position and orientation visibly change.\n\nThis supports **S2 — Observe the first endoscopic instrument scene**, specifically the criterion for visible instrument-tip movement.\n\n**Completion limits:** The supplied frames already show an endoscopic view at 19 s, so they do not establish the required transition from introductory grayscale imaging. S2 is therefore supported in part, not fully confirmed. The tool’s exact type, function, tissue identity, and treatment result cannot be determined from these images.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 5444
+    },
+    {
+      "id": "real-dancing-stage-2",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "expected_step_id": "S2",
+      "timestamp_s": 23,
+      "question": "In this oblique close view, which phase is most consistent with the free shoe raised behind the supporting leg? Use the motion window to separate it from later similar shoe-lift examples.",
+      "reference_answer": "The oblique lifted-shoe example S2 is most consistent with the anchor: a free shoe is visibly raised behind the grounded supporting leg. A return to the floor should only be reported if it appears in the supplied sequence.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "behind",
+          "back",
+          "rear",
+          "raised",
+          "lift"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "5f81c85a1340a84566f037707d4f3c984553f7c42ad1a3349ee9c73a3d4638f7",
+        "b80cfd2e3520eccc317e9c07f89a4d14d775bc0fc224c619f106100df37daa6d",
+        "a0ba75bab163fc1c06256b57dbb965e5ea96c970baf9a0f09e3e2af018423f87",
+        "9914efeda4ed0c68b0838c9c82c1485dc818ad80df9d31211ee816c530a479f9",
+        "3f2778afa59c8bf8305ee55021eeb741b9bf17d06ba64ee61c8426a820c47d19",
+        "8f299ec2abe30306217afad0cc275bb14501c1c904ec76c316ca9a978c60c3dd",
+        "e4c4a95073e0e48128a648835b5723660e8644ea4b4e5be17f74c8c218315a4d",
+        "40b28846727b4ba5d7d81f7b9818aac6b3ee01a10ad3c75dd6f4475573676d8c"
+      ],
+      "question_latency_ms": 5861,
+      "answer": "The latest frame (22.97s) shows one brown shoe at the floor and the other raised behind the supporting leg, partly cropped at the upper left. The lower legs, pale floor and purple wall remain visible.\n\nThis is most consistent with **S2 — “Observe the lifted shoe in the oblique view.”** In this same close-view window, both shoes are together at the floor at 19.27s; the free shoe is raised at 22.14–22.17s and is higher behind the supporting leg by 22.97s.\n\nThe close oblique framing and rearward lift distinguish this from the later forward/across-shoe examples and S7’s wider rear-foot-lift view. The timing supports that match but is not its sole basis.\n\n**Completion remains unconfirmed:** no clear return to both shoes on the floor after this lift is shown. Blur around 22.57s prevents confirming a brief floor contact.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 5868
+    },
+    {
+      "id": "real-sport-stage-2",
+      "scenario_id": "real-sport",
+      "channel": "stage",
+      "expected_step_id": "S2",
+      "timestamp_s": 41,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The close-view EZ-bar raise/lower demonstration is shown. The raised bar is near the torso with increased elbow bend; a full repetition needs a subsequent lowering in the same shot.",
+      "expected_concepts": [
+        [
+          "ez",
+          "angled",
+          "bent"
+        ],
+        [
+          "raise",
+          "raised",
+          "torso",
+          "curl",
+          "elbow"
+        ]
+      ],
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "loaded_steps": 5,
+      "frame_sha256s": [
+        "ce3bddcf87a71bc53c74a50874afa812f6722f8051b90d5f7df34b93d93bb946",
+        "b68434678bbc210c228cd99f776e689c871582691d88540bbe3de21b7a8a176d",
+        "252367722686de47b60b7e2dd1ea3286fe8b430dd14132606c4345eea72122c0",
+        "de0fa83860d96d9ddf20afcf2b69f741d7e327f1ac4cf61fbda343939ca2bccb",
+        "560e9bfd8f361486abf4feb38aa1174eeca6854ad378a31e9a3b2da6143f7fdf",
+        "dc007c3779f5bb74bc1e9f70e5457742aafc796c95cdfe1ad808f9366b35a726",
+        "524eb1018c87dd91e40d518a970a8c055a23c08d03affd037e53d8b7b63d0d35",
+        "aff0d543c2dfe290498c8a33049afd563ecfa9a2c333c2da659e9beff5aac7cc"
+      ],
+      "question_latency_ms": 6505,
+      "answer": "The latest frame shows both hands holding a metal bar with black plates low in front of the thighs, with the arms extended downward. Its angled shaft is clearer in the preceding frames, identifying it as an **EZ bar**.\n\nThis matches **S2: the close-view EZ-bar raise and lowering**, currently at the low position after lowering. Earlier, at 37.27s, the bar is near the upper torso with both elbows bent and both hands gripping it; by 38.71s and again at 40.97s, it is low with less elbow bend.\n\nThose images support raised and subsequent lowered states. However, the supplied frames do not clearly establish an uninterrupted low–raise–return cycle, so I would not declare the full phase complete or assign a repetition count. The head and feet are cropped in the latest view, and blur limits precise angle assessment; load and equipment security remain unverified.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6530
+    },
+    {
+      "id": "real-house-construction-stage-2",
+      "scenario_id": "real-house-construction",
+      "channel": "stage",
+      "expected_step_id": "S2",
+      "timestamp_s": 40,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The lower-storey wall enclosure is developing: upright wall panels and openings are visible. Hidden connections remain unverified.",
+      "expected_concepts": [
+        [
+          "wall",
+          "panel"
+        ],
+        [
+          "ground",
+          "lower",
+          "first floor"
+        ]
+      ],
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "061d401976734044ef5e862de99110f355b99b9960bcf8e1edcb5a2fd04fbaea",
+        "c54508da5584ec607c1e1a7cefaca84eb30ce3097a8b72b479b3a6251ae92ac2",
+        "562061b77a0d13d5fe27f0675a283c4575d99392f46a866f22de76df15d29e9f",
+        "0060996ecd810df6ba509e3d048f040abcb1a4ecf247a453a9792bd34270d68a",
+        "6fe1a38a290dfd094dd78ec4d18c25c923a613cb7075bb483344e4cf40fedb87",
+        "cc704d81d660f9972170c5d3cb852e7358774d3d24f69d39c8d8d5caa3bc0562",
+        "02694b39b45ba147aa450793075db8278568a4f1656462e1598065dcd90c3ac9",
+        "a2fff67f2428039d079068013541220f433e83ef4a7b9ea9e9d73a5937851a47",
+        "5e74230c2bd141c108b0f8a47ba06e6f7375b51675fd34343519fb0943359b26"
+      ],
+      "question_latency_ms": 8103,
+      "answer": "The latest frame (39.96s) shows upright wood-faced wall panels surrounding the ground-floor deck, rectangular wall openings, a ladder behind the rear wall, and exposed floor-level timber members projecting across the front.\n\nThis matches **S2 — Observe the ground-floor wall enclosure**:\n- Upright panels surround the deck.\n- Compared with 33.44s, the front and right wall perimeter is visibly more developed.\n- Window-sized and doorway-sized openings are visible.\n\n**All three S2 visual observation criteria are supported**, so the guidance step can be recorded as observed. That does **not** establish that the physical enclosure is finished or correctly constructed: panel connections, fastening, sealing and alignment are not assessable from this distant view. The front walls now also obscure much of the deck and interior previously visible. No upper-floor framing is shown; the exposed timbers at the front are at deck level.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 8112
+    },
+    {
+      "id": "real-manufacturing-stage-2",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "expected_step_id": "S2",
+      "timestamp_s": 35,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "Machine-tool activity is the phase: a mounted workpiece or tooling appears in the machine work area. Parameters and acceptance are unverified.",
+      "expected_concepts": [
+        [
+          "machine",
+          "machining",
+          "tool"
+        ],
+        [
+          "workpiece",
+          "mould",
+          "mold",
+          "fixture"
+        ]
+      ],
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "af168590987b57e5311815a909d8257549155fdfb44c0af7e5e6b28a4f11d466",
+        "cb4d1c4399989cb7535276e0969dba44677f868dff8fd2fadf2e23a99e7fdbae",
+        "37314c73a2143cc266e8d486ef8ff6b6e813fb93163d85303b945e724e9cc055",
+        "6a8bf548d33de29f93a3703f0df1b36cccc454c2709f1d10c4413a4521123137",
+        "fc76273ebd34a79b72677200862fce34be459eed4ed3f559cd36f7f4e33bdcc5",
+        "bb9a2ff6d2c5f3085c849f7b227eb353600ae8358ddb8aa48f16766d2bc89f10",
+        "e2e9880ed51d901c8038cebb36093293bb730f9fe318275e613dcd48de96cf34",
+        "0272875fe4ac8ef9fa94d6e3a2f0410f64afe90ede6d6f2566dbce680cb936e9",
+        "850298ff2f885ee09ba35a96efdb17fe94a98d7ddb384bca263e58e53cb9fe47"
+      ],
+      "question_latency_ms": 7954,
+      "answer": "The latest frame shows a silver fixture plate carrying clamped metal pieces inside a machine enclosure, with a dark vertical machine-head assembly above and behind it. Between 34.16 and 34.96 seconds, the plate visibly changes orientation and position relative to that assembly.\n\nThis supports **S2 — Observe machine-tool activity**, specifically movement in the mounted tooling/workpiece region—not confirmed cutting.\n\n**Completion remains unconfirmed:**\n- The exact tool tip and tool–workpiece contact are not clearly visible.\n- The metal pieces’ precise roles—workpieces versus fixture components—are uncertain.\n- No later close-up from a distinct viewpoint is yet shown; the changing orientation within this shot does not establish that criterion.\n\nThe earlier controller interaction and aerial exterior insert are historical context, not evidence of current machining. The exterior insert overlaps the workflow’s approximate S2 time window, illustrating why visible activity, rather than timing alone, determines the phase.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7966
+    },
+    {
+      "id": "real-dancing-stage-3",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "expected_step_id": "S3",
+      "timestamp_s": 35,
+      "question": "In this front/oblique close-foot view, identify the phase best supported by the sequence and describe the working shoe direction. Do not infer a forward-and-back cycle solely from one raised-shoe frame.",
+      "reference_answer": "S3 is the guide phase for this front/oblique forward-and-back example. The reviewed anchor shows a raised working shoe beside or behind the supporting leg. Forward movement and a return require the surrounding frames; the anchor alone cannot distinguish every similar close-foot example.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "raised",
+          "lift",
+          "behind",
+          "back"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "6e348ecfe9f09165dbbef71f49c4e9178dada1d2afa16e724e4c613f93ba859b",
+        "f3b312e68cdcd9f821893238d28bdfbb30d0e4db08e2e0cc157ad4dda7430335",
+        "39d533c81acdfca0fa921a7f824719827a5de12020124cfa7200eab45f91ec49",
+        "474f9938262af0112b26d18f11de5c271a337493405b427dc8dccf0bda7e4749",
+        "a04376d3a11a0d822214c3a0d3c09ea29df57f6b6f34b2dbde07bff18fa43955",
+        "9defec09be90e63a28c15d2dbf71e8cae3de02394c17a73a25f41ab9f6cc6eb9",
+        "1471a6a01b1222dd01ae579721cb9a9e6dba157a1bc7383b74b1b8972c25ef83",
+        "4ec5981e2eacb06c2184df749a5e773d504f1fff3ee4b24450a3f1849703c64a"
+      ],
+      "question_latency_ms": 5381,
+      "answer": "The latest frame shows two tan shoes and cropped lower legs: one shoe is at the floor, while the working shoe is raised behind it toward screen-left.\n\nThe sequence best supports **S3, forward and backward shoe movement**:\n- **32.71s:** shoes are close together at the floor.\n- **34.14–34.17s:** the working shoe extends forward toward screen-right, visibly airborne.\n- **34.57–34.97s:** it moves back past the supporting leg toward screen-left and remains raised.\n\nThus, the current phase is the **backward swing/rear raised position**, supported by several ordered frames—not just one lifted pose. Brief floor contact during the blurred pass is unclear, and a final return to the starting stance after this swing is not shown; a completed cycle remains unconfirmed.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 5387
+    },
+    {
+      "id": "real-surgery-stage-3",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "expected_step_id": "S3",
+      "timestamp_s": 82,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The visible thread or loop and instrument-handling phase is shown. Movement can be described without declaring a secure knot or successful repair.",
+      "expected_concepts": [
+        [
+          "thread",
+          "loop",
+          "suture"
+        ],
+        [
+          "instrument",
+          "tip",
+          "handling"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "24e5229644fa3718d3f4fcb6300efbb5949b6da504ac6a00e883c174d20d6c5f",
+        "55b5b9e76d1385cf1ea2b4edeccf73476c3d7d887aed08a73f0dc5e9cd19d091",
+        "637ecb3019a206fe6182b9170df14150e3bd653ef8ad3af6878d310cbd17b476",
+        "ce15d718d15c5190404bdb1cb3dabe5b72ab9c7783fb150241662a099311f235",
+        "ddefaabb595dfbd08e81ff5ee605e4f39f0e86cba65f257301547a08dd843980",
+        "74dcb92f7bf88fcc72f30d0ef616bff9c79a7fbde1ce0179c01b46ad5e42d16f",
+        "6b913d83f9286370e4eddf7dfd3a725a45de204bf6433fa9f42ada12e1ff3cd9",
+        "08fcd3022fbc22f7ef0f8f44dd489a0ecfd8a790069021f5619f645f9a3112c1",
+        "356c01fa2a9bb6d04d4f9978856fbaf9368ae498faa2efc0d7a8765e54360421"
+      ],
+      "question_latency_ms": 6484,
+      "answer": "The latest frame (81.96 s) shows a colored endoscopic field, metallic instrument jaws entering from the lower left, and a purple thread/loop beside a pale orange-pink tissue band. The jaws partly obscure the contact area.\n\nThis supports **S3: “Follow the visible thread and instrument sequence.”** Across 74–81.96 s, the thread changes from a longer hanging curve to a smaller visible loop near the tissue as instrument tips approach and reposition.\n\n**Completion limits:** Thread presence, position changes, and repeated instrument movements are visible in this excerpt. However, glare and partial occlusion prevent confirming every contact or continuous handling action, and these frames do not establish completion of the whole phase. A visible loop or pull does **not** establish a secure knot, adequate repair, or absence of injury; tissue identity and exact tool function also remain uncertain.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6488
+    },
+    {
+      "id": "real-sport-stage-3",
+      "scenario_id": "real-sport",
+      "channel": "stage",
+      "expected_step_id": "S3",
+      "timestamp_s": 50,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The later, wider EZ-bar demonstration is shown. Bar position and hand contact are visible, but edits do not establish a completed set.",
+      "expected_concepts": [
+        [
+          "ez",
+          "angled",
+          "bent"
+        ],
+        [
+          "wider",
+          "demonstration",
+          "bar",
+          "raise",
+          "lower"
+        ]
+      ],
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "loaded_steps": 5,
+      "frame_sha256s": [
+        "94ef7ea84c7dd0857afed5f083819291e26f8aaa92311821d464d11f408be00d",
+        "5f03b58b2bdae0814fd4e666515103ddb1c8728947bd4b13a312a96fa258be6d",
+        "aa1859403ad2fbd3a5a30091ad49de0455f2cb0083e1573c5b873511f792838c",
+        "0933524db9e6f2cb7d0888a01fd41101409be29f940d96edf8b519aa8666b2e9",
+        "50970667e4f5aadb88c7f0dc5b6e0059543cbf6fc6a2f745c8069edef9449903",
+        "189d66b5a7390e9b155079998d4cbbb2c0fce299410983daccf743107efab254",
+        "6b322c9f405c05f77d899666c2a36e09ee9ebd0b1b2a6303287db94646099a3b",
+        "79fa86814753508675a1e06b899a7ad975b93040da26f58a49fae9fe2a332db5"
+      ],
+      "question_latency_ms": 7235,
+      "answer": "The latest frame shows both hands holding a plated metal bar low in front of the thighs, with arms extended downward. The view has tightened to the torso and legs; the head and feet are cropped. The shaft’s bends are less distinct from this low angle, but are clearly visible in the earlier raised view.\n\nThis matches **S3 — Observe the later EZ-bar demonstration views**:\n- **44.87s:** low bar position in the wider framing.\n- **46.27s:** visibly angled shaft near the upper torso, both hands gripping it and elbows bent.\n- **47.71s:** bar back near the thighs with less elbow bend.\n\nThose wider-view observations support S3’s raised-and-lowered position criteria. However, the latest closer view alone does not establish another complete curl. Re-establish positions after the framing change rather than combine views into a repetition count. Completion of the entire later-view review, a set, or earlier workflow steps is not established; exact load, joint angles and whole-body posture remain unverified.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7246
+    },
+    {
+      "id": "real-dancing-stage-4",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "expected_step_id": "S4",
+      "timestamp_s": 53,
+      "question": "In this front/oblique close-foot view, which phase is most consistent with the visible angled shoe or raised heel near the floor? Explain whether the supplied frames actually show a change in orientation.",
+      "reference_answer": "S4 is most consistent with the near-floor shoe-orientation example. The reviewed anchor shows an angled working shoe or raised heel beside the other shoe. An orientation change or return should only be claimed when visible across the supplied frames.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "angled",
+          "angle",
+          "heel",
+          "orientation",
+          "turn"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "17df8821df34e558a02818163524652e343f869767d933d9f5228dfdb9b47fcd",
+        "5d3a11a0305c561da9dc7802db796bcaccff5bf29b53caf7d3534886cdf02bc4",
+        "0f8614d97d1dbc56f2143a942b08aa1926ff4d30400d099ce47f7832ea532a80",
+        "e665843a73f0fafd143bf545d0e8e1052517ab50d94bb9db096b2fec2a201374",
+        "d76f4a5cfeee4c18e5f9813ec10c2a98f98d2ebb83f48a5926521255f1758542",
+        "85495465b623045dd861be9db5f64518c420f18173bd766d44ede118ee5201fe",
+        "8c9a6bc96f2121584fb604208b5deddaa60a770ea2bf731c59a1b3f6eb40abe9",
+        "fbb65abdbe77f8346794fb0c25b7260283140910444bb5fdddeb375abbc3c808"
+      ],
+      "question_latency_ms": 6283,
+      "answer": "The latest frame (52.97s) shows two tan shoes and cropped lower legs on a light floor. The foreground shoe is extended toward the camera and angled; the other shoe points screen-right at floor level. Blur obscures the foreground shoe’s exact heel/toe contact.\n\nThis is most consistent with **S4: Observe changing shoe orientation near the floor**. The frames do show an orientation change, not merely a held angled pose: at 52.14–52.17s the shoes are close together and point mostly screen-right; by 52.97s the foreground shoe points more toward the camera.\n\nThat supports a visible orientation change, but does not establish a precise raised-heel contact or a completed final movement cycle—the return after the latest extension is not shown.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6289
+    },
+    {
+      "id": "real-house-construction-stage-3",
+      "scenario_id": "real-house-construction",
+      "channel": "stage",
+      "expected_step_id": "S3",
+      "timestamp_s": 90,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "Upper-floor or upper-storey assembly is visible above the lower enclosure. This identifies a construction phase, not a structural result.",
+      "expected_concepts": [
+        [
+          "upper",
+          "second",
+          "next storey",
+          "next story"
+        ],
+        [
+          "wall",
+          "panel",
+          "floor"
+        ]
+      ],
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "cb2ddb40098cd25b2b7eef169c647b17820d3dfb5c500760913417bcc8769d3f",
+        "d2fecebdebd5b4079c5eecfdcbd688d7d4f928f4cb7278062cda1d6c8ee897d3",
+        "4113867d5a9d3c87b41ead71c1625ccd0ef05b686608cb4785b0a896aad59c04",
+        "b9256651d09169ac447dd07ea8e3282cf3786907b2faaa8754e9bcb9addf989d",
+        "f0323f944c95db60172a7cca946898895b6a07e9ca0500e55752fe66bd96b1e8",
+        "c78f828b96e33fb3cb7c293001c94219c11987ec080dfc4015a4fb49363de854",
+        "a0f91b8e80f92cfcef4e8151e813976698447ff6eeb696b406507ec86729539a",
+        "d44f7a795ca20afdd245cb431fbb14299c8ada90bc2ce8d40e77ac3d0ecb3ed6",
+        "810953de4b4ec6fa8ee1612764916e0e7ea3017c27d3df8374205cffaca1ea50"
+      ],
+      "question_latency_ms": 7312,
+      "answer": "The latest frame (89.96s) shows upright wood-faced panels forming an upper storey, with rectangular openings, exposed horizontal timber members along the front, and timber posts and diagonal braces below. No pitched roof framing is visible.\n\nThis matches **S3 — Observe upper-floor framing and the next wall level**. From 82s to 89.96s, the upper-wall outline becomes more developed. The earlier view exposes much of the upper deck; the newer walls now obscure much of it.\n\n**Completion limit:** Both S3 visual criteria are supported across these frames: decking/timber members above the lower enclosure and later upright next-storey panels. Thus S3 can be recorded as **observed**, not as construction certified complete. Hidden connections, fastening, alignment and the full wall perimeter cannot be verified from this distant view. Earlier workflow steps are not proved by this later-stage scene.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7338
+    },
+    {
+      "id": "real-surgery-stage-4",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "expected_step_id": "S4",
+      "timestamp_s": 117.6,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "A brief circular monochrome imaging view interrupts the operative sequence. This is a change of displayed view, not a diagnostic conclusion.",
+      "expected_concepts": [
+        [
+          "circular",
+          "round",
+          "monochrome",
+          "grayscale",
+          "gray",
+          "grey"
+        ],
+        [
+          "image",
+          "imaging",
+          "view"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "75a66b18598cfe7cfe7c0ceeda1b0f997f9295a438ce035e59e0d43fe0df0b94",
+        "4541467a7311d4d900d4e722019f30b68272d6a322fff7dbd2cb2b850c466425",
+        "42f9d785cbfa56755ca4d3f79c4c47096153a5ee281b27040454d26cc7c1bf1f",
+        "7370ac801abd7e37c878dff355be0ca7c9d8aae338671d8fbf32befc2d35caa7",
+        "7a103e775684f9d6fd1bceea2aade87171f35cf316bccc91e5be41f33a16c0b7",
+        "8ef30aea2707389fbda8612b89f129e120f32d81469d2ad652d2c38eed9175f3",
+        "8ef30aea2707389fbda8612b89f129e120f32d81469d2ad652d2c38eed9175f3",
+        "8ef30aea2707389fbda8612b89f129e120f32d81469d2ad652d2c38eed9175f3",
+        "8cc0199f8943b571b0a7009f07d24c216be3d2926484af23fe96a51ceb69a257"
+      ],
+      "question_latency_ms": 5942,
+      "answer": "The latest frame shows a **circular monochrome imaging view** on a black background, with branching dark outlines and a straight diagonal line entering from the lower left. Their precise anatomical or device identities cannot be confirmed here.\n\nThis matches **S4 — Recognize the intervening change of imaging view**. The colored endoscopic field with visible instruments at 115.28s changes to this circular view by 116.72s and remains there through 117.56s.\n\n**Completion limit:** The change to circular imaging is confirmed, but the required return to a colored endoscopic field has not yet been shown. S4 therefore is **not yet confirmed complete**. This transition alone establishes no imaging result, clinical decision, or completion of earlier operative actions.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 5945
+    },
+    {
+      "id": "real-manufacturing-stage-3",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "expected_step_id": "S3",
+      "timestamp_s": 60,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The tool-presentation and manual-tooling section includes a digital indicator with a probe above a metal block. This is not a calibrated acceptance result.",
+      "expected_concepts": [
+        [
+          "indicator",
+          "gauge",
+          "gage",
+          "probe"
+        ],
+        [
+          "display",
+          "metal",
+          "block",
+          "measurement"
+        ]
+      ],
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "238b4b9c401c2d339c01e9e7f06aa166be6c480ec9eaeaebda7989cf1bed6410",
+        "e746b2c431322f5b3f0d77b7e7fee5445f7ca228bad358a1166177201e45773c",
+        "35b49b540551cb64cfe589d9c3ec38902ff6661cdb91e621238659dab9ae711a",
+        "a337645d8b972c894d83b9cea4ada84082e2df88a8d2d25bb0412d0ea0dade88",
+        "4b9168ea7c2994c181c6ce049a782c8550b1568f2d625b87f1e716a70828d23c",
+        "3023c9263f8e487f94ef237d2d0ce3de452a1128dc9a0983f3a8bad76ff1571f",
+        "5e0baf8abaac477e7d3a351268901e80a8bc1c4669136f5cadeea057adf03c70",
+        "40a329e2b6f358e1b9a6c883b9db160aff58ba1338cb57395ed0ddf929eb471d",
+        "5f0cf4290f9c11cd149c135b04ee099c3f613329c9ec75c3ec140ca3fa4c8b43"
+      ],
+      "question_latency_ms": 7738,
+      "answer": "The latest frame (59.96 s) shows a digital indicator with a downward probe at the top edge of a copper-coloured metal block. Its display reads **2.95 mm**. Across 57.68–59.96 s, the visible gap closes; the tip appears to meet the edge in the latest frame, though probe compression is not established.\n\nThis matches **S3 — Observe tool presentation and manual tooling work**, specifically **S3C2: digital indicator and probe above a metal block**.\n\n**Completion limits:**\n- Earlier frames (53.44–56.28 s) show a control/display unit above a row of cylindrical components with hoses. Their identity as the workflow’s “tools in a rack” is unclear, so S3C1 should remain uncertain.\n- No hands working on an exposed tooling assembly are shown, leaving S3C3 unconfirmed.\n- The displayed number alone does not establish a measured part dimension, calibration, or passing inspection.\n\nThus, the indicator checkpoint is visible, but **S3 is not established as complete**.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7751
+    },
+    {
+      "id": "real-sport-stage-4",
+      "scenario_id": "real-sport",
+      "channel": "stage",
+      "expected_step_id": "S4",
+      "timestamp_s": 93,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The straight-bar starting position is shown. Both hands hold a straight-shaft bar low before the curl demonstration, without verified plate load or equipment checks.",
+      "expected_concepts": [
+        [
+          "straight"
+        ],
+        [
+          "bar",
+          "grip",
+          "hands",
+          "low",
+          "starting"
+        ]
+      ],
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "loaded_steps": 5,
+      "frame_sha256s": [
+        "0dab70d842fae575b8ef4ebcb18768fcca75bb6bcdf01e563f664924022d345f",
+        "9d1c9ee7a79cce393d293e4523d7a45674d831e0ac0a852e64d3b4ecae2e862d",
+        "71ac03f7f608a16f47bcf80a5ad5da613378e466fbc3847fd0e834657b054760",
+        "ec3a226ffbe7e4a3ee754a06f3d977b945f60b7001055d0f163cb8a1e071933b",
+        "62b38e489bf2a77ccb20c2768c43a5e2da6a60a87a56f69368c1bf085e15c3cd",
+        "f6961cbcd284b42fc5ffced149628f535d6794655b2f3ff958458ebbb0129d70",
+        "827b07db4937104f521c32455dc81b3bf7363cfa99a7638b4340d0cc027a8843",
+        "fbefd5b45da5e1a0a9ef8da90707ded56cfee5d3f889afc28d207287412dd4d0"
+      ],
+      "question_latency_ms": 6293,
+      "answer": "The latest frame shows the demonstrator upright with arms down, holding a straight metal shaft low in front of his thighs; a black circular weight is visible at the right end. The lower crop partly hides the other hand and bar end.\n\nThis matches **S4 — Identify the straight bar and visible starting position**, rather than the curl phase. Earlier frames at 90.71–92.17s more clearly show both hands holding the straight shaft low while standing, supporting S4’s three visible-state criteria.\n\n**Completion limits:** The reach downward is visible around 89.27s, but initial hand contact near the floor is cropped, so the full pickup sequence is not verified. The latest crop alone cannot reconfirm both hands. No raise toward the torso followed by a return is shown, so S5 and any completed curl remain unconfirmed. Load and equipment security are also unverified.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6319
+    },
+    {
+      "id": "real-surgery-stage-5",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "expected_step_id": "S5",
+      "timestamp_s": 133,
+      "question": "Which visible descriptive phase is most consistent with the clearly woven light material near the instrument? Describe its texture and acknowledge any separate tube visible; do not prescribe surgical action.",
+      "reference_answer": "S5 is most consistent with the clearly exposed woven light material near an instrument. Its mesh/weave texture is visible, while a separate reddish/orange tube is also in the scene. This is retrospective image description and does not establish clinical outcome or recommend an instrument action.",
+      "expected_concepts": [
+        [
+          "woven",
+          "weave",
+          "mesh",
+          "gauze",
+          "cloth"
+        ],
+        [
+          "instrument",
+          "grasper",
+          "tool"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "557d6fe67944f6ea1d10a7bb4250ea7c69ac4979cb2b8531a995553db6c75b55",
+        "0b7e570be47799a13aa9cad37ee74b5cdefd56320af18fb1d1c994cd01ed705a",
+        "8858dcbea66a3e880003cf541a3d80cee3fb5e4d4dbf3454dcde63007861f5b1",
+        "071336a6bb36d2cb72e2b9ecdd31f0ce00a3d5f08162be780f21db06726a8add",
+        "b75781a4b810c93d2b6b8cd9bebd642a97061a84ae107dcf40cc65c20288dab9",
+        "c9d0edbdc366fd4abdc9de4e05ac60b6f8670a7444585da0ac384233037ba030",
+        "368d6f19c5deabad2a9be82f6215a5d2b30c64a4527841780443f7e81ad7da0f",
+        "592efeb9278361e299fb81b1eed84fa1bfd165fd011017807dad0a0b003f64f2",
+        "295f11bb2e8d0d6c1f7ea86c9bd1fe61a7dc682422b8f4a005a522017f7e4ab8"
+      ],
+      "question_latency_ms": 4961,
+      "answer": "The latest frame shows light yellow-white material beside a metal instrument at the top of the field. It has a clear open, crosshatched weave, loose/frayed edges, and a small blue strand or marking.\n\nThis best matches **S5: the visible woven-material sequence**, based on that distinctive texture—not just the timestamp. A separate smooth, orange-toned curved tube is also visible crossing from the left toward the lower center; its exact type and function are unclear, and it does not by itself establish the later S6 phase.\n\nThe view supports identifying the material’s appearance, not its exact composition, purpose, or completion of the phase.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 4969
+    },
+    {
+      "id": "real-dancing-stage-5",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "expected_step_id": "S5",
+      "timestamp_s": 70,
+      "question": "In this later front/oblique close-foot sequence, which phase is most consistent with the working shoe passing forward or across the supporting foot? State the visible direction and any ambiguity with earlier examples.",
+      "reference_answer": "S5 is the later forward/across shoe-lift series. The anchor shows a moving working shoe forward or across the other with motion blur. The return and exact edited example need temporal context; similar close-foot phases cannot be separated from a generic lift alone.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "forward",
+          "across",
+          "blur",
+          "moving",
+          "move"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "4617dd67632823709895499e9897d4bcc87ecf881031707f1c6188c53364e686",
+        "6a792e82fb4779f75909d40eded830a5af0f21d79581fc4ac84d077266cb94f7",
+        "fd0232fa5c0b1adfc8e149828c641f2d39bafab30d454808a88984a464efc342",
+        "900dfb6d73a0e942d2164ac3c5e0c4748bd5e12e089165ec03cc34112a881457",
+        "b459ecdf23c088ab8abb8fc941b197142d17ea1295aa6c7bce22303ee98e620b",
+        "9ea46a8b9686b8d218e04f5133b6c1cecd186d55805c632229401e32b641597a",
+        "b27b42259f729b6b4afee43332e5ac52b4fbf8d905719a7ad59508100e9234a7",
+        "572785bca3fa8874c943a9a43e9581247fe3201a3c080395ed98c4a795e9d410"
+      ],
+      "question_latency_ms": 5552,
+      "answer": "The latest frame shows two tan shoes close together on a pale floor, with cropped lower legs; motion blur obscures exact sole contact.\n\nThis is most consistent with **S5, “later forward shoe lifts and returns.”** At 69.14–69.17s, the screen-left shoe projects toward the camera and slightly inward in front of the other shoe, then is visibly raised while the other remains at the floor. A definite crossing past the supporting foot is less clear.\n\nThe forward movement resembles S3, and the angled shoe also resembles S4; those cues alone are not unique to S5. The later front/oblique context supports the S5 match, but these samples do not establish a complete lift-and-return cycle or exact tap contacts.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 5559
+    },
+    {
+      "id": "real-house-construction-stage-4",
+      "scenario_id": "real-house-construction",
+      "channel": "stage",
+      "expected_step_id": "S4",
+      "timestamp_s": 115,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The upper storey has a developing pitched roof frame. Roof members are visible, but completion and correct bracing are unverified.",
+      "expected_concepts": [
+        [
+          "roof",
+          "pitched",
+          "rafter"
+        ],
+        [
+          "frame",
+          "timber",
+          "member"
+        ]
+      ],
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "9c25952ee845f180028478753aeffab0cfb6375b6c05a5e6670591d6afb9684a",
+        "ae4bad224cecc2ce885ca1b400b04353b48008907707e9b8d0d28794b35534a2",
+        "1b4291d87b3943ca7e04a0613b454b7efd1bb3430fcc2f0fa5aac286b38246b7",
+        "ff01632fa3f3acc80fa7d3b10102e8b0b48c0d6359e006042297cb9fa880541d",
+        "2e4b1e226b0a34e8c145b744a96eb5ac2aeb718c3f930208443162ea231758fe",
+        "3fdf95c99bf534fac2d2a0b671175f168dd25f87fb153192cd1383b06160d2ec",
+        "643c4b520b077187b82a82e4aebb093c54512308915151f74381ad2089065293",
+        "0e6511b22421a97a95ddb658bdeaf94ed21215d18483852c7807bcf7f0a6ba02",
+        "d1193b0d142bf404063b1bc51836f6a6684654a49693a9573b1fb1a5c23fbf98"
+      ],
+      "question_latency_ms": 7347,
+      "answer": "The latest frame (114.96 s) shows a two-storey panel enclosure with window and doorway openings, exposed perimeter timber framing, and sloping roof timbers meeting at a high ridge. A worker is visible on the upper level; stacks of panels and lumber remain in the foreground.\n\n**This matches S4 — “Observe upper-wall edge work and roof-outline growth,” specifically the roof-outline portion.** Compared with 107 s, the later views show additional sloping members establishing a clear pitched roof above the upper-storey walls, supporting criterion **S4C2**.\n\n**S4 cannot be declared fully observed:** these supplied frames do not show the required close-up of an applicator along the exposed upper panel edge (**S4C1**). The distant view also cannot establish connection details, fastening quality, dimensions, or structural adequacy. The developing roof outline does not prove the roof assembly—or earlier workflow steps—is complete.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7358
+    },
+    {
+      "id": "real-manufacturing-stage-4",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "expected_step_id": "S4",
+      "timestamp_s": 90,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "Further tooling operations are shown, with a spindle or tool positioned over mounted metal blocks. The film does not establish one continuous tracked part.",
+      "expected_concepts": [
+        [
+          "tool",
+          "spindle",
+          "machine"
+        ],
+        [
+          "block",
+          "tooling",
+          "metal",
+          "workpiece"
+        ]
+      ],
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "3506b4896c52c2b51f9ad2dd37d654c349e691f57c69d562ead7b7afefae0155",
+        "56088ffa6fa1491545af6a43eb4f220509ebf201f7081af9a9fa544ef4deac1a",
+        "dead719830935b7ee3c9316ab4941d7a99af522335637a4713a4a09d2204d975",
+        "8154f88e8ab4ba28dafd4a3db813b732f08f78c4f3bffd8074786aed178872e3",
+        "a5a414a5ffd386a750f639682fcd9948d2f9c3402fc25e526a29e7e271caee9b",
+        "fcb488e07ef9779bdc67ee49a30833247bba66089373ef62033c3660b2c9a86a",
+        "2468bfd47307e48f7d88e08709e1690dc376e531b259ad03b374c1ce58b6024c",
+        "85b7e8a87be615bd80905d222b986e77b3b4750d6519359bac1fc396feee8e36",
+        "c06af92ba182c9db793edbea4cc180ee3ffd32bd268786ebd81f52eee0567284"
+      ],
+      "question_latency_ms": 7963,
+      "answer": "The latest frame (89.96 s) shows a spindle-mounted head with a slender, ball-tipped stylus above a hole in a metal table, surrounded by copper-coloured rectangular blocks held in circular fixtures. The exact stylus contact and any measurement result are unclear; this is not clear evidence of cutting.\n\nThis matches **S4 — “Observe product presentation and further tooling operations,”** specifically its machine-tool portion. The distinguishing sequence is:\n- **82–84.84 s:** separate product displays against a light background.\n- **86.28–89.96 s:** a machine-mounted tool above the fixture/tooling area.\n\nBoth S4 viewing criteria are supported by these supplied views. That permits recording the **observation checkpoints as met**, not declaring a manufacturing or inspection operation complete. No full operating cycle, verified dimensions, acceptance result, or connection between the displayed products and these mounted blocks is established. Earlier workflow steps remain unconfirmed.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7971
+    },
+    {
+      "id": "real-dancing-stage-6",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "expected_step_id": "S6",
+      "timestamp_s": 96,
+      "question": "Which phase is most consistent with this lower-camera view of a raised shoe with its sole facing the camera? Describe the camera cue and avoid inferring whole-body balance.",
+      "reference_answer": "S6 is supported by the distinct lower-camera view: a raised working shoe and its sole are visible toward the camera. The cropped body prevents whole-body balance assessment. A return or the preceding faster view requires separate temporal evidence.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "sole",
+          "lower",
+          "low",
+          "camera"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "fb2158b35b541ae42b03c711869bfdcdb9ce59b19ed322b042679c1a9a4337f2",
+        "783a552e44a841845488f29aa0677f1ce878345a1db2b35d1239abc4f482ecbc",
+        "ddcfebd2657a5251f2c7635cfb0452873201e6b895e24f52b989b587b628d5cb",
+        "4a1267a427ffdb390d8531d342dd918f0fa38630866b949e9eba601a6edbfbdd",
+        "6f1aba92709b6a6311e7933a49b59556dda265f240ddab7d25fca3e6fd26e0ff",
+        "74483723a7c9353035081bc9ce4607d07649057464d34e2c7614ba4bc2838a2c",
+        "8e313f52218081899aa9359038a372715e3482847f2cffc5a502a38e87801fc6",
+        "3e279489989294bfc18d6506536bb2928f000955b2c509d85fea52d9f02b92e6"
+      ],
+      "question_latency_ms": 4388,
+      "answer": "The latest frame shows two tan shoes and cropped lower legs: one shoe is raised and angled toward the camera, with its underside partly visible but motion-blurred; the other is at the floor.\n\nThis is most consistent with **S6, the lower-camera footwork example**. The distinctive cue is the near-floor viewpoint, looking across the floor toward the shoes and wall baseboard, rather than the earlier higher, downward-looking view.\n\nThis supports a raised-shoe observation, not completion of the phase. Exact heel/toe contact is unclear, and the cropped upper body prevents assessment of whole-body balance.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 4398
+    },
+    {
+      "id": "real-sport-stage-5",
+      "scenario_id": "real-sport",
+      "channel": "stage",
+      "expected_step_id": "S5",
+      "timestamp_s": 107,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The straight-bar raise/lower demonstration is shown. The bar moves toward the torso with increased elbow bend, while exact angles, load, and suitability remain unverified.",
+      "expected_concepts": [
+        [
+          "straight"
+        ],
+        [
+          "raise",
+          "raised",
+          "torso",
+          "curl",
+          "elbow",
+          "lower"
+        ]
+      ],
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "loaded_steps": 5,
+      "frame_sha256s": [
+        "e56c0a35d579c992d911e251756f34ef41ccc9a0e854febd524ad3d59a870359",
+        "90fc84f72289b98989cd227e2fccafa0a9de7413d085e8495f2088aafac3c50f",
+        "b416a01e4ae8f651d936d1cdeabd68ba8b6f83387bc75a43914f760f281476a8",
+        "b1e0257c46243f7d05e8edba1cdfff3e54a1faeb15a7fe3e2d6f555746ef6acf",
+        "a8c57044006e3d511fe136fe9f964269ceb613c43e7c8c9593284f598bd23dbe",
+        "810ecd2d4106aae01ffafd1f6e9e6ae484c5966b7b63f4cd20220842be4d945d",
+        "3f06c74713bac338072bdd743e26925f36e9fc819c20ffa9654fb3de3e379094",
+        "7901f38b189d4aa2298f97a7dc45adf3ac744ba9f155d9c1e5cbf3843c723b12"
+      ],
+      "question_latency_ms": 6878,
+      "answer": "The latest frame shows a **straight metal bar with black end weights**, held in both hands near the upper torso with the elbows bent. This matches **S5: Observe the straight-bar raise and lowering**, rather than the angled EZ-bar phases.\n\n- From **106.17 to 106.57 s**, the bar rises toward the chest; at **106.97 s**, it is slightly lower but still raised.\n- The raised-bar position and both-hand contact are visible, supporting **S5C1 and S5C2**.\n- **Completion is not established:** a subsequent clear return to the low position in the same shot is missing. At 104.71 s the arms were straighter, but the bar and hands were cropped below the image, so that does not confirm the required low-bar position.\n\nThe feet are outside the frame, and load and equipment security are unverified. These images do not establish a completed repetition count or completion of earlier workflow steps.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6887
+    },
+    {
+      "id": "real-surgery-stage-6",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "expected_step_id": "S6",
+      "timestamp_s": 162,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The later tube-and-instrument phase is shown. A clear curved tube is visible, without evidence establishing correct placement or drainage effectiveness.",
+      "expected_concepts": [
+        [
+          "tube",
+          "curved",
+          "clear"
+        ],
+        [
+          "instrument",
+          "handling",
+          "field"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "21364a93fe0a5213c37b8fddd46b40992b0e61440806d1bd0bc91c8272780ca2",
+        "593f93453c82924d6598b7598fa4616f405686e714af8dc75c920ea83707129a",
+        "fedce555e3ad59385e71375b842ca87bc28fce50965bcdb215ecfd11a95a3c7b",
+        "3ac70b64aa2b959eee5878391eb73b6906b515a31f7bfda5527e6b6be235158c",
+        "99b4f8edd1a67f5350bb17216d95307be2758af3f3baf2c795285498aac3bc90",
+        "5f8660ae698a10b3995a5072d8186bc32fe2bd3c008d0b39a71ae0279ae8f32b",
+        "3850a770321d4db452981c09e5421c17680db44abfb78efd7302c883f329ac1e",
+        "c9927b948bbd0fc94dd3bb83167ee766e14a9ea899269e27268e655e5b38fac7",
+        "e14c970d384e85802f7a45d31f80d4b5799dc0f27316ccac6e6fcb43beee809b"
+      ],
+      "question_latency_ms": 6770,
+      "answer": "The latest frame shows a **clear curved tube** extending from the left and bending downward, beside a metal working tip on a dark shaft entering from above. Tissue surrounds it; glare and cropping limit inspection of the tube’s lower extent and exact tip contact.\n\nThis supports **S6 — “Observe the later tube and instrument views.”** The tube and tip change position across 158.28–161.96 seconds. Earlier frames at 154–156.84 seconds show pale woven material with instruments; a view change then introduces the tube scene, so continuous action across that transition cannot be assumed.\n\nBoth S6 visual criteria are supported: the clear curved tube is visible, and later instrument/tube handling is shown after the woven-material sequence. This establishes the observation checkpoint—not that the phase has ended or that tube placement, patency, drainage, securing, or the operation is complete.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6783
+    },
+    {
+      "id": "real-manufacturing-stage-5",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "expected_step_id": "S5",
+      "timestamp_s": 135,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The sample-and-design-review section shows a group reviewing or pointing toward a drawing on a board. Review activity is visible, approval is unverified.",
+      "expected_concepts": [
+        [
+          "drawing",
+          "plan",
+          "board"
+        ],
+        [
+          "people",
+          "group",
+          "review",
+          "point"
+        ]
+      ],
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "8c3e098756dcdb6a5c056fa3b2252226f0c873f383a448c8517f599a729dda51",
+        "2406cf849eb0a5d7d51fc503bb1d0268d92304a5d65de7cae0c22c3b682a11e8",
+        "b4bda9b8f7b5b14922da5db98547ca2ec8fd70032e88852299902c45f5802c4b",
+        "3641771f23624d52f8b8a20629edafee24d11aa6680e54a26f2947c16ee0af3d",
+        "66cbf3504d3434cf0a5dce587397dcceefa076f06215ba9da99e390dd765275c",
+        "e5efac28e3d3865b1ae64244871c16f11ef720e8d4aa07dcbef419d766c57962",
+        "c29f9e78cf9da983d7692a36f2833ec0ec33697e0f388e3f670e88cab46884c3",
+        "bad37902447accbc889817947df167cb0230ff2d91e57aeaf5d16a7067cb5051",
+        "697610f045de146b289318cdb82a1ce0db689e6eab536e8567a778c306219597"
+      ],
+      "question_latency_ms": 5649,
+      "answer": "The latest frame (134.96 s) shows **three people beside a large technical drawing**, with one person directing a pen toward a feature on its left-hand view. Faint machine imagery remains superimposed during the crossfade from the preceding tooling shot.\n\nThis supports **S5 — “Observe sample parts and collaborative drawing review,” specifically the drawing-review portion (S5C2)**. The group and pointing gesture are the distinguishing cues—not simply the playback time.\n\n**Completion limits:** Multiple coloured sample parts (S5C1) are not clearly established in these supplied frames, so the whole phase cannot be declared complete. Drawing dimensions, revision, discussion content, and any approval or inspection result are also unconfirmed. The preceding machine shots do not establish those missing criteria.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 5655
+    },
+    {
+      "id": "real-house-construction-stage-5",
+      "scenario_id": "real-house-construction",
+      "channel": "stage",
+      "expected_step_id": "S5",
+      "timestamp_s": 130,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The close-up shows roof timber meeting its support beam or connection region. Actual dimensions and load capacity are unverified.",
+      "expected_concepts": [
+        [
+          "support",
+          "beam",
+          "bearing",
+          "connection",
+          "joint"
+        ],
+        [
+          "roof",
+          "rafter",
+          "timber"
+        ]
+      ],
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "c6bb17d51f38aa66ba849e7458afaefb8be7dcac70d271240f23a0b229846a3c",
+        "a352453f60010438e3ad83a31df49b508c55669d6705774442458da2d15913e7",
+        "e9f24e0a1653ac21f46204640384cec2dee9bad94ec1b6bf7b92bc882fb99968",
+        "19d419dbd7433e2393b9c6d64100866358e7d877628e592cf6de59acf32e5a67",
+        "dbde0483f112a0a58a7a808f6bc45d4a27e12d5077c139c2724f873b1542bc40",
+        "45d51a091fb7c5d847c2b1aefdbcde23d59730856b0ade0d6b97cf85a40b4f6a",
+        "59c80be1ed4a558729eba93f2c497ff5fb3978d68caf42c6b4e7a89a074aff0c",
+        "827338eba411c1f855f299f7dd986c5514d8e989ce73beb7f5985cb56fa713bf",
+        "edc67222d07d41c6cdcd883a1f0714b4ae3bfffa074460dd7cd50876be9b514c"
+      ],
+      "question_latency_ms": 6941,
+      "answer": "The latest frame (129.96s) shows two sloping timber roof members meeting a horizontal timber support, perforated metal angle brackets at the connection region, wood-chip sheathing below, and a pale foam-like bead behind the support. No worker or tool is visible.\n\nThis matches **S5 — Observe roof support and connection details**: the distinctive cue is the close-up of the roof members’ bearing/support region, rather than a wide roof outline or roof-covering activity.\n\nBoth listed visual criteria, **S5C1 and S5C2**, are observable here, so they can be marked observed. However:\n- The workflow’s worker-related action is not shown in these supplied frames.\n- The caption’s “100 × 150 mm” is a source claim, not a verified measurement.\n- Fastener specifications, hidden contact surfaces, connection strength, and inspection status cannot be confirmed.\n\nThus, the **support-detail observation is established**, not completion or approval of the physical roof assembly.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6964
+    },
+    {
+      "id": "real-surgery-stage-7",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "expected_step_id": "S7",
+      "timestamp_s": 178,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "A final grayscale cross-sectional image is displayed at the end of the supplied excerpt. It does not prove recovery or completion of the actual operation.",
+      "expected_concepts": [
+        [
+          "cross-sectional",
+          "ct",
+          "grayscale",
+          "gray",
+          "grey"
+        ],
+        [
+          "final",
+          "end",
+          "ending",
+          "last"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "490854d22430816c62fb5f0e2956b2c05634c7453ab38d21e0c30278729ac6b8",
+        "cb78e3fbb209f9dbed049b383107003831168378bca0274502a8463326af4b7d",
+        "a6cdfb3a45a16899932b9966f6847d08d9389c87edd24cbe23f14cf55f4c908f",
+        "cac7ffc9bc076456f6b40bbb372f9180a2ae7dfb733aef14b902de8d396a91c5",
+        "6ddfb65a80f71a0007c22d7d78fe70f28aef4e6274a459fd6f1184409c7298d1",
+        "98ffbe924e1fbf9540a18b1c03489de13f8aedf0ad0ea16a784f78861b00b7ae",
+        "656c6d07cf7493c9689025b7eedf17edb813b3818e48d589c0d297a57f83530d",
+        "7f3848e17e3d2e4c820d8d0bf7166c1f7ed3d27e0bc13d0c67e54cdde210f621",
+        "b674be3e3602880041c125134c7bc4e842642261c7c58fefec9c35bd4d87778c"
+      ],
+      "question_latency_ms": 4817,
+      "answer": "The latest frame (177.96 s) shows a grayscale cross-sectional image labeled **“Postoperative CT scan,”** rather than an endoscopic working field. Earlier frames show colored tissue, a metallic instrument shaft, and translucent tubing; the view transitions to the scan around 177.12–177.56 s.\n\nThis supports **S7 — Recognize the final displayed image**:\n- **S7C1 is observed:** the grayscale image follows the later operative footage.\n- **S7C2 remains unconfirmed:** these frames do not show playback ending, so the phase cannot yet be declared complete.\n\nThe label does not establish a diagnosis, recovery, or successful operative completion. Nor does this later phase confirm that earlier workflow criteria were completed.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 4831
+    },
+    {
+      "id": "real-sport-uncertainty-1",
+      "scenario_id": "real-sport",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 50,
+      "question": "Can this edited demonstration confirm an exact completed repetition set, plate weight, or precise joint angles?",
+      "reference_answer": "No. Edits and crops prevent establishing an exact completed set, and the guide provides no independent load or joint-angle measurement.",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ],
+        [
+          "edit",
+          "repetition",
+          "weight",
+          "angle",
+          "load"
+        ]
+      ],
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "loaded_steps": 5,
+      "frame_sha256s": [
+        "94ef7ea84c7dd0857afed5f083819291e26f8aaa92311821d464d11f408be00d",
+        "5f03b58b2bdae0814fd4e666515103ddb1c8728947bd4b13a312a96fa258be6d",
+        "aa1859403ad2fbd3a5a30091ad49de0455f2cb0083e1573c5b873511f792838c",
+        "0933524db9e6f2cb7d0888a01fd41101409be29f940d96edf8b519aa8666b2e9",
+        "50970667e4f5aadb88c7f0dc5b6e0059543cbf6fc6a2f745c8069edef9449903",
+        "189d66b5a7390e9b155079998d4cbbb2c0fce299410983daccf743107efab254",
+        "6b322c9f405c05f77d899666c2a36e09ee9ebd0b1b2a6303287db94646099a3b",
+        "79fa86814753508675a1e06b899a7ad975b93040da26f58a49fae9fe2a332db5"
+      ],
+      "question_latency_ms": 7088,
+      "answer": "No—this edited demonstration cannot confirm any of those exactly.\n\nThe latest frame (49.97s) shows both hands holding a metal bar with black plates low in front of the thighs, with arms extended downward; the head and feet are cropped. Earlier, at 46.27s, the angled EZ-bar shaft is clearly visible near the upper torso with bent elbows. These views support the later EZ-bar demonstration phase (S3), not proof of a completed set.\n\n- **Exact completed set:** Cuts, changing framing and potentially repeated footage prevent establishing an exact total. Count a cycle only from an ordered low–raised–low sequence within one uninterrupted view.\n- **Plate weight:** Markings are not sufficiently clear to verify weight and units; appearance alone does not establish load.\n- **Precise joint angles:** Perspective, motion blur and cropping permit only qualitative observations—more or less elbow bend—not accurate angle measurements.\n\nReview each camera view independently rather than joining movements across edits.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7126
+    },
+    {
+      "id": "real-dancing-stage-7",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "expected_step_id": "S7",
+      "timestamp_s": 106,
+      "question": "In this wider body crop, which phase is most consistent with the free shoe lifting behind the supporting leg? Distinguish the camera and rearward motion from the later travelling sequence.",
+      "reference_answer": "S7 is most consistent with the wider rear-foot lift. The anchor clearly shows a free shoe raised behind the supporting leg, whose shoe is at the floor. A return is not proved by this frame; lateral travel belongs to a separate sequence and must be observed.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot"
+        ],
+        [
+          "rear",
+          "behind",
+          "back",
+          "raised"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "f15c976c51bf1c239e46607c9af06dac390c7151c8ed507e5cc501864b52fc74",
+        "9436c809ccc18a3e1d43f4b38e1bd9073c3bc6d4a7295af6b5e6601d6870e2b3",
+        "89c05201340ba7a259bb644c2bab7b1abb20ea2e10dec045d76e125a3673e519",
+        "b85918bd8d3072f1b5ac1fccdde6aa0d50de2563d1a72feb208dbd55ea814a33",
+        "649c071835e4de98e0f160f915814289d0a76dd18fa5bb43a600560f32174302",
+        "ddec0882e7e52dd7833f328ff1e9dedf408b146f97fc6e09d895d77014a406a5",
+        "cb8c0890193b1fcf5a5646b2c84050ff2f512e7e04fefca443d884b81fed002a",
+        "34741affbff206ec956a8337aa07d15c4d82a7145b040b2c79a657d449577b4d"
+      ],
+      "question_latency_ms": 7939,
+      "answer": "The latest frame (105.97 s) shows tan shoes, black cropped trousers, the studio floor, and a wall barre in a wider, partial-body view. One knee is bent with its shoe visibly raised behind the supporting leg; the other shoe remains at the floor.\n\nThis is most consistent with **S7: the wider rear-foot lift**. After the tiled transition at 100.87 s, the camera includes more of the body and room than the earlier low shoe-level view. From 105.57 to 105.97 s, the free shoe changes from near the floor to a clear rearward raised position.\n\nUnlike **S8**, the distinctive cue here is the bent-leg lift behind the support, not a travelling crossed-foot sequence across the floor. The raised shoe’s subsequent return is not yet shown, so this lift cycle’s completion remains unconfirmed. Exact heel/toe contact and whole-body balance are also unclear.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7971
+    },
+    {
+      "id": "real-surgery-uncertainty-1",
+      "scenario_id": "real-surgery",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 82,
+      "question": "Does this visible thread pull establish a secure knot, successful repair, or absence of tissue injury?",
+      "reference_answer": "No. A visible thread pull cannot establish knot security, repair adequacy, or absence of injury. Qualified surgeon review and the full case context are required.",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not establish",
+          "not prove",
+          "no"
+        ],
+        [
+          "knot",
+          "repair",
+          "injury",
+          "qualified",
+          "surgeon"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "24e5229644fa3718d3f4fcb6300efbb5949b6da504ac6a00e883c174d20d6c5f",
+        "55b5b9e76d1385cf1ea2b4edeccf73476c3d7d887aed08a73f0dc5e9cd19d091",
+        "637ecb3019a206fe6182b9170df14150e3bd653ef8ad3af6878d310cbd17b476",
+        "ce15d718d15c5190404bdb1cb3dabe5b72ab9c7783fb150241662a099311f235",
+        "ddefaabb595dfbd08e81ff5ee605e4f39f0e86cba65f257301547a08dd843980",
+        "74dcb92f7bf88fcc72f30d0ef616bff9c79a7fbde1ce0179c01b46ad5e42d16f",
+        "6b913d83f9286370e4eddf7dfd3a725a45de204bf6433fa9f42ada12e1ff3cd9",
+        "08fcd3022fbc22f7ef0f8f44dd489a0ecfd8a790069021f5619f645f9a3112c1",
+        "356c01fa2a9bb6d04d4f9978856fbaf9368ae498faa2efc0d7a8765e54360421"
+      ],
+      "question_latency_ms": 4509,
+      "answer": "No. A visible thread pull does **not** establish a secure knot, successful repair, or absence of tissue injury.\n\nAt 81.96 s, metallic instrument jaws are beside a pink-orange tissue structure, with a short dark thread segment near the contact area. Glare and the jaws obscure the exact thread–tissue contact and knot configuration. Earlier frames show a more exposed purple thread loop and changes in its position alongside instrument movements.\n\nThis supports **S3: thread and instrument handling**, not a confirmed outcome. Knot security, repair integrity, and tissue condition cannot be determined from this close-up sequence; they require qualified surgeon assessment and the original case context.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 4514
+    },
+    {
+      "id": "real-manufacturing-stage-6",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "expected_step_id": "S6",
+      "timestamp_s": 160,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The final tooling montage shows an exposed mould or tooling assembly with internal detail. Its appearance does not establish an accepted finished product.",
+      "expected_concepts": [
+        [
+          "mould",
+          "mold",
+          "tooling"
+        ],
+        [
+          "detail",
+          "assembly",
+          "cavity",
+          "internal",
+          "open"
+        ]
+      ],
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "57aeec02281acc3d51e354c55a11a1e352d7f19d77b091b8371a0bba17397e89",
+        "ab50767eb7f197d997fb1107d059966235cd673e2c28e100b82fe62f5421fd3c",
+        "c5cbf421dab7ddca5755b168813888327773ad7e3c2ce3a5bdf04a4062a812e0",
+        "25a7da6678423023bda14d6d2fe91120ba723fdc86c38a663512afdefe306a61",
+        "3f494ff779342590084197b0bf342b7440d929d24dd384636c58bf4712762dae",
+        "59f0493283c06bd6d47219d2594e537ce342f067c28784e13529bb22a6bcb699",
+        "2da98d8a7bc3ddd5d0ff2bb960f97b9b05782716e073c0a4cfe40e94df6c986c",
+        "b8758b13a2fe8f26f064c0b36d41908577877d4771f2dd1c3f14031d3efdfef2",
+        "fa22bdce544b4f16519e9df85b793ab91ab69e832954e74309729a1f8e65eb7b"
+      ],
+      "question_latency_ms": 7711,
+      "answer": "The latest frame (159.96s) shows a large upright metal mould/tooling face with two rounded rectangular recessed regions, projecting rods, and bolted inserts. A horizontal machine bar and mesh fencing are also visible. Reflections obscure some surface detail.\n\nThis matches **S6 — Observe final machine and mould-detail views**:\n- **Exposed tooling detail (S6C2): observed.** Internal features are visible in the latest frame; earlier frames at 152–153.44s show a separate detailed tooling view.\n- **Machine movement (S6C1): observed.** Between 157.68s and 159.96s, the assembly with yellow hoses moves away from the tooling face and clears the view. Its exact function and any part contact remain uncertain.\n\nBoth listed visual criteria are supported, but the film’s closing views have not yet been shown here. This does **not** establish a complete machine cycle, finished production, successful inspection, or completion of earlier workflow steps.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7720
+    },
+    {
+      "id": "real-house-construction-stage-6",
+      "scenario_id": "real-house-construction",
+      "channel": "stage",
+      "expected_step_id": "S6",
+      "timestamp_s": 170,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "Roof-covering and external-sheet work are the later visible phase. A worker and covering rows identify the activity, without proving weather-tightness.",
+      "expected_concepts": [
+        [
+          "roof",
+          "covering",
+          "sheet",
+          "exterior"
+        ],
+        [
+          "worker",
+          "handling",
+          "installation",
+          "rows"
+        ]
+      ],
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "3c56b80c5d9bdebb0ffb65a939712645f1cc51fda3819797c9a395ba5d063818",
+        "ecd590b6ed8d000b5135a88281488032cee679c92926d6953c8fc38960e91bd2",
+        "f7ec730d77c14278e9669f30ce45dac2686483d2a26ab8858c6369ae5a522bfe",
+        "e039331da3c89a16760d18def39a21583fa4f229eefa276998116643a722718f",
+        "061abae5234675df21531f8dea814c89dab2ff202948cb2b85c58b8ff0e54c19",
+        "03b0b2b0bc9efc14ac72f9653bdf9c955f01eb24248b5ed0381d5f4cf724d297",
+        "1d18c49d2afec3a8a7aebdc54b37ee2c91d6ffc4f54729aba33a043ad6379bef",
+        "cc5bd4d9c52a5416f36050f531693501be78f9c08711633505bd2cc39d6c51e7",
+        "6ecf110641fe67e45831f138f74febc342bd69f1d14aefaad682ebff0c722e24"
+      ],
+      "question_latency_ms": 8231,
+      "answer": "The latest frame (169.96s) shows a worker beside the sloping roof edge holding a dark, flexible, tabbed strip. Timber fascia, exposed roof undersides, projecting platform boards, and dark roof-edge trim are visible. The roof surface itself is mostly hidden by the low viewing angle.\n\nThis matches **S6 — Observe external sheet and roof-covering work**, specifically roof-covering material handling, rather than the earlier roof-support detail phase.\n\n- **S6C1 observed in earlier frames:** workers handle dark sheet material beside the building (163.44s), then hold it against the exterior wall with a handheld tool (164.84s).\n- **S6C3 observed in earlier wide views:** the roof and upper-wall outline appear together (167.68–169.16s).\n- **S6C2 not fully confirmed:** a worker is visible at the roof, but installed roof-covering **rows** are not clearly distinguishable. The latest strip is being held; its completed placement or fastening is not shown.\n\nTherefore, **S6 is identifiable but cannot yet be declared fully observed under its criteria**. These views also do not establish fastening quality, weather-tightness, or completion of earlier phases.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 8239
+    },
+    {
+      "id": "real-sport-uncertainty-2",
+      "scenario_id": "real-sport",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 107,
+      "question": "Does seeing this straight-bar curl prove it is medically suitable or comfortable for this person or another viewer?",
+      "reference_answer": "No. Visible bar motion cannot establish medical suitability, comfort, or pain. These individual factors are not measured by the footage.",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ],
+        [
+          "suitability",
+          "medical",
+          "comfortable",
+          "comfort",
+          "pain",
+          "individual"
+        ]
+      ],
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "loaded_steps": 5,
+      "frame_sha256s": [
+        "e56c0a35d579c992d911e251756f34ef41ccc9a0e854febd524ad3d59a870359",
+        "90fc84f72289b98989cd227e2fccafa0a9de7413d085e8495f2088aafac3c50f",
+        "b416a01e4ae8f651d936d1cdeabd68ba8b6f83387bc75a43914f760f281476a8",
+        "b1e0257c46243f7d05e8edba1cdfff3e54a1faeb15a7fe3e2d6f555746ef6acf",
+        "a8c57044006e3d511fe136fe9f964269ceb613c43e7c8c9593284f598bd23dbe",
+        "810ecd2d4106aae01ffafd1f6e9e6ae484c5966b7b63f4cd20220842be4d945d",
+        "3f06c74713bac338072bdd743e26925f36e9fc819c20ffa9654fb3de3e379094",
+        "7901f38b189d4aa2298f97a7dc45adf3ac744ba9f155d9c1e5cbf3843c723b12"
+      ],
+      "question_latency_ms": 5565,
+      "answer": "No. The latest frame shows a straight metal bar with black end weights held near the upper torso, both hands gripping it and elbows bent—visible evidence consistent with the raised position in Step S5.\n\nThat establishes a pose, not comfort or medical suitability. Pain, injury history, individual tolerance and the actual load are not established by these images; facial expression cannot reliably confirm comfort either. The workflow explicitly treats this as demonstration review, not a medical recommendation or safety certification.\n\nSuitability for this person—or another viewer—requires individual information and, where medical concerns exist, assessment by a qualified healthcare professional.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 5574
+    },
+    {
+      "id": "real-dancing-stage-8",
+      "scenario_id": "real-dancing",
+      "channel": "stage",
+      "expected_step_id": "S8",
+      "timestamp_s": 115,
+      "question": "In this wider final sequence, which phase is best supported by crossed-foot positions and movement across the floor? Distinguish observed lateral travel from an isolated rear-foot lift.",
+      "reference_answer": "S8 is the final travelling/crossed-foot sequence. The anchor shows a crossed or lifted shoe relationship in the wider crop. Travel across the floor and a later separated position require the supplied multi-frame context; an isolated rear lift is not sufficient to prove them.",
+      "expected_concepts": [
+        [
+          "shoe",
+          "foot",
+          "feet"
+        ],
+        [
+          "cross",
+          "travel",
+          "across",
+          "wider"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "161f1225627e713ce1f45a87b28bc081615aedf4f8825da896d8d2344f59d930",
+        "99b741fba3f0a133828ec3ecf77e1cc8ca75e409df89872d034d51831886700c",
+        "71169941383f1de2074f97247607cffd9e00c87a3cfec35fc8a76af6fad545a5",
+        "3da02c00d41b69c2f30c22b390017317b494b32f78830ec39137bbd469c0b601",
+        "5b30ce2f820631db80fa1af6e6b1d96f3cef54018ee3903b202ac9b763c84618",
+        "0ee65b83e5e8395ca236f58c9093c268ffc5460818469f75d43f19cfc56bc3c6",
+        "fab89df4b33dd9c16645939a8047c59cd19eca99231969406f84446b2a400db2",
+        "49cf10ba36ab178a324700360f59262f0dd30ee42cba7f91d709d9e7a46fe50c"
+      ],
+      "question_latency_ms": 7096,
+      "answer": "The latest frame shows tan shoes and crossed lower legs over a light wooden floor, with a wall-mounted barre behind the performer. One shoe is angled and motion-blurred, so its exact floor contact is unclear.\n\n**S8 — the final travelling and crossed-foot sequence — is best supported.** Around 114.14–114.17 s, the feet overlap/cross; by 114.57 s they are separated, and at 114.97 s they cross again. The performer also shifts toward screen-right across the earlier frames, rather than simply lifting a shoe behind a fixed stance.\n\nA rearward raised shoe appears in this sequence, but that pose alone would not distinguish S7. The combination of **crossing, subsequent separation, and travel across the floor** supports S8. These samples do not establish exact tap contacts, repetition counts, or completion of the whole phase.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7098
+    },
+    {
+      "id": "real-surgery-uncertainty-2",
+      "scenario_id": "real-surgery",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 162,
+      "question": "Can the visible tube or final imaging certify drainage effectiveness or a successful patient outcome?",
+      "reference_answer": "No. Tube visibility and final imaging do not establish drainage effectiveness or a patient outcome. Those require the case record and qualified review.",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not establish",
+          "not prove",
+          "no"
+        ],
+        [
+          "drainage",
+          "outcome",
+          "patient",
+          "case record",
+          "qualified"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "21364a93fe0a5213c37b8fddd46b40992b0e61440806d1bd0bc91c8272780ca2",
+        "593f93453c82924d6598b7598fa4616f405686e714af8dc75c920ea83707129a",
+        "fedce555e3ad59385e71375b842ca87bc28fce50965bcdb215ecfd11a95a3c7b",
+        "3ac70b64aa2b959eee5878391eb73b6906b515a31f7bfda5527e6b6be235158c",
+        "99b4f8edd1a67f5350bb17216d95307be2758af3f3baf2c795285498aac3bc90",
+        "5f8660ae698a10b3995a5072d8186bc32fe2bd3c008d0b39a71ae0279ae8f32b",
+        "3850a770321d4db452981c09e5421c17680db44abfb78efd7302c883f329ac1e",
+        "c9927b948bbd0fc94dd3bb83167ee766e14a9ea899269e27268e655e5b38fac7",
+        "e14c970d384e85802f7a45d31f80d4b5799dc0f27316ccac6e6fcb43beee809b"
+      ],
+      "question_latency_ms": 5113,
+      "answer": "No. Neither a visible tube nor final imaging alone certifies effective drainage or a successful patient outcome.\n\nAt 161.96 s, a clear curved tube and a metal instrument tip are visible in the colored endoscopic field, consistent with **S6: later tube and instrument views**. The tube’s position changes across the supplied frames, but its full route, patency, fluid flow and off-camera fixation cannot be confirmed.\n\nThe final grayscale image described in **S7 is not shown here**. Even when displayed, it establishes a view transition—not recovery, operative completion or clinical success. Those conclusions require the case record and qualified clinical review.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 5120
+    },
+    {
+      "id": "real-manufacturing-uncertainty-1",
+      "scenario_id": "real-manufacturing",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 60,
+      "question": "Does the displayed indicator prove this part passed its dimensional tolerance or that the instrument is calibrated?",
+      "reference_answer": "No. A displayed indicator alone cannot establish calibration, a specified tolerance, or acceptance. Traceable measurements and the actual specification are missing.",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ],
+        [
+          "tolerance",
+          "calibration",
+          "calibrated",
+          "acceptance"
+        ]
+      ],
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "238b4b9c401c2d339c01e9e7f06aa166be6c480ec9eaeaebda7989cf1bed6410",
+        "e746b2c431322f5b3f0d77b7e7fee5445f7ca228bad358a1166177201e45773c",
+        "35b49b540551cb64cfe589d9c3ec38902ff6661cdb91e621238659dab9ae711a",
+        "a337645d8b972c894d83b9cea4ada84082e2df88a8d2d25bb0412d0ea0dade88",
+        "4b9168ea7c2994c181c6ce049a782c8550b1568f2d625b87f1e716a70828d23c",
+        "3023c9263f8e487f94ef237d2d0ce3de452a1128dc9a0983f3a8bad76ff1571f",
+        "5e0baf8abaac477e7d3a351268901e80a8bc1c4669136f5cadeea057adf03c70",
+        "40a329e2b6f358e1b9a6c883b9db160aff58ba1338cb57395ed0ddf929eb471d",
+        "5f0cf4290f9c11cd149c135b04ee099c3f613329c9ec75c3ec140ca3fa4c8b43"
+      ],
+      "question_latency_ms": 6856,
+      "answer": "No—neither tolerance compliance nor calibration is proved.\n\nThe latest frame (59.96 s) shows a digital indicator reading **2.95 mm**, with its probe appearing to meet the top edge of a copper-coloured metal block. Earlier frames show a visible gap. This supports workflow **S3C2: an indicator and probe shown above a metal block**, not a completed inspection.\n\nUnconfirmed details include the measurement datum/zero, which dimension is being checked, the specified tolerance, and the instrument’s calibration status. The displayed number alone is not a verified part dimension or pass result.\n\nTo establish acceptance, obtain traceable measurements linked to the part and drawing revision, compare them with the applicable tolerances, and have the responsible reviewer approve them. Calibration requires a valid record linked to this instrument—not merely an active display.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6865
+    },
+    {
+      "id": "real-house-construction-uncertainty-1",
+      "scenario_id": "real-house-construction",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 130,
+      "question": "Can this view confirm fastening torque, hidden joint strength, or structural approval?",
+      "reference_answer": "No. Visible timber and hardware cannot establish torque, hidden strength, or approval. Those require the responsible inspection process.",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "not enough"
+        ],
+        [
+          "torque",
+          "strength",
+          "approval",
+          "hidden"
+        ]
+      ],
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "c6bb17d51f38aa66ba849e7458afaefb8be7dcac70d271240f23a0b229846a3c",
+        "a352453f60010438e3ad83a31df49b508c55669d6705774442458da2d15913e7",
+        "e9f24e0a1653ac21f46204640384cec2dee9bad94ec1b6bf7b92bc882fb99968",
+        "19d419dbd7433e2393b9c6d64100866358e7d877628e592cf6de59acf32e5a67",
+        "dbde0483f112a0a58a7a808f6bc45d4a27e12d5077c139c2724f873b1542bc40",
+        "45d51a091fb7c5d847c2b1aefdbcde23d59730856b0ade0d6b97cf85a40b4f6a",
+        "59c80be1ed4a558729eba93f2c497ff5fb3978d68caf42c6b4e7a89a074aff0c",
+        "827338eba411c1f855f299f7dd986c5514d8e989ce73beb7f5985cb56fa713bf",
+        "edc67222d07d41c6cdcd883a1f0714b4ae3bfffa074460dd7cd50876be9b514c"
+      ],
+      "question_latency_ms": 6636,
+      "answer": "No. This view cannot confirm fastening torque, hidden joint strength, or structural approval.\n\nThe latest frame (129.96 s) shows two sloping roof timbers meeting a horizontal timber support, perforated metal brackets, wood-panel sheathing, and a pale foam-like bead along the rear seam. These visible bearing and connection details match **S5: roof support and connection details**.\n\n- **Torque:** No tightening operation or torque measurement is shown.\n- **Joint strength:** Fastener penetration, concealed connections, timber grade, and load capacity cannot be established from this surface view.\n- **Approval:** No inspection or approval documentation is visible.\n\nThe caption “Supporting bar 100×150 mm” is a source claim, not a verified measurement. Visible supports and brackets show the connection arrangement—not its adequacy. Verification requires the project specifications, relevant installation records, and assessment by the responsible construction professionals.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6646
+    },
+    {
+      "id": "real-dancing-uncertainty-1",
+      "scenario_id": "real-dancing",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 19,
+      "question": "Can this cropped view establish the performer’s whole-body balance, a precise ankle angle, or safe technique?",
+      "reference_answer": "No. The head and much of the upper body are cropped, and the video does not measure a precise ankle angle or establish whole-body balance or safety.",
+      "expected_concepts": [
+        [
+          "crop",
+          "cropped",
+          "upper body",
+          "head"
+        ],
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "7227fa6928f407de74f55945a6149b4578bf49d9b14a3bac735722babbf28195",
+        "054718ba61b6618ecfd99ba6f9d0db52078eb1556ba19d4956600316eb872b3d",
+        "4e5c66a7077eb39aab335311f305d80c9538ef8bafe9e0df9b233801d5ec5618",
+        "f305ed55a1ae16dee5026f641c459c3b54bceb956d1b089bdf99fdeabc072c23",
+        "0dde4fca4152ebb9664f0fb57ca0602d67bad64fd5522950c0565e2a52b5abbf",
+        "73728a656160354a85b47c3a2054ebeee1b6deb87b8db1e1a34ec8a42b0385b0",
+        "e2a7ae303a1128919bddb4eb9b3eab478312b37af670bd37e4da33971166d6f9",
+        "de1e89f8d7b6aa214040bfaeb2b46fadd935a0ebf2f5cf3c6870db89998da472"
+      ],
+      "question_latency_ms": 5225,
+      "answer": "No. The latest frame (18.97 s) shows lower legs and two tan shoes close together at the studio floor; the upper body is cropped out.\n\n- **Whole-body balance:** Cannot be established without seeing the torso, hips and overall posture.\n- **Precise ankle angle:** Cannot be measured reliably from this oblique, low-resolution view; the shoes also obscure anatomical landmarks.\n- **Safe technique:** Cannot be certified from visible foot positions alone. This view does not establish forces, weight distribution or whole-body control.\n\nConsistent with the workflow, use this footage to describe visible shoe positions and clear floor contacts—not to infer exact joint angles or certify safety. These limits also do not prove the technique is unsafe.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 5234
+    },
+    {
+      "id": "real-dancing-uncertainty-2",
+      "scenario_id": "real-dancing",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 96,
+      "question": "Can we join movements across the tiled wipe to claim one continuous repetition or an exact tap count?",
+      "reference_answer": "No. The wipe separates examples, and blur or missing contacts prevent reconstructing a continuous repetition or exact tap count across the edit.",
+      "expected_concepts": [
+        [
+          "cut",
+          "wipe",
+          "transition",
+          "edited",
+          "separate"
+        ],
+        [
+          "cannot",
+          "not",
+          "no",
+          "unverified"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "fb2158b35b541ae42b03c711869bfdcdb9ce59b19ed322b042679c1a9a4337f2",
+        "783a552e44a841845488f29aa0677f1ce878345a1db2b35d1239abc4f482ecbc",
+        "ddcfebd2657a5251f2c7635cfb0452873201e6b895e24f52b989b587b628d5cb",
+        "4a1267a427ffdb390d8531d342dd918f0fa38630866b949e9eba601a6edbfbdd",
+        "6f1aba92709b6a6311e7933a49b59556dda265f240ddab7d25fca3e6fd26e0ff",
+        "74483723a7c9353035081bc9ce4607d07649057464d34e2c7614ba4bc2838a2c",
+        "8e313f52218081899aa9359038a372715e3482847f2cffc5a502a38e87801fc6",
+        "3e279489989294bfc18d6506536bb2928f000955b2c509d85fea52d9f02b92e6"
+      ],
+      "question_latency_ms": 4578,
+      "answer": "No. The tiled wipe separates examples; movements on either side cannot establish one continuous repetition or an exact tap count.\n\nAt 95.97s, the low view shows lower legs and two tan shoes on a wooden floor: one shoe is motion-blurred in front of the other, obscuring its precise floor contact. This supports the lower-camera portion of **S6**, not a verified tap count.\n\nRe-establish both shoes after the transition and assess each shot separately. A complete repetition requires a visible start, change and return within the same uninterrupted view. Exact taps also require clearly resolved contacts; sampled poses and blur do not establish them.",
+      "used_frames": 8,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 4582
+    },
+    {
+      "id": "real-house-construction-uncertainty-2",
+      "scenario_id": "real-house-construction",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 90,
+      "question": "Does the three-minute construction playback show the house was built in three minutes?",
+      "reference_answer": "No. The original includes edited time-lapse footage, so playback duration does not represent site-work duration.",
+      "expected_concepts": [
+        [
+          "time-lapse",
+          "timelapse",
+          "edited"
+        ],
+        [
+          "cannot",
+          "does not",
+          "not represent",
+          "not indicate"
+        ]
+      ],
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "cb2ddb40098cd25b2b7eef169c647b17820d3dfb5c500760913417bcc8769d3f",
+        "d2fecebdebd5b4079c5eecfdcbd688d7d4f928f4cb7278062cda1d6c8ee897d3",
+        "4113867d5a9d3c87b41ead71c1625ccd0ef05b686608cb4785b0a896aad59c04",
+        "b9256651d09169ac447dd07ea8e3282cf3786907b2faaa8754e9bcb9addf989d",
+        "f0323f944c95db60172a7cca946898895b6a07e9ca0500e55752fe66bd96b1e8",
+        "c78f828b96e33fb3cb7c293001c94219c11987ec080dfc4015a4fb49363de854",
+        "a0f91b8e80f92cfcef4e8151e813976698447ff6eeb696b406507ec86729539a",
+        "d44f7a795ca20afdd245cb431fbb14299c8ada90bc2ce8d40e77ac3d0ecb3ed6",
+        "810953de4b4ec6fa8ee1612764916e0e7ea3017c27d3df8374205cffaca1ea50"
+      ],
+      "question_latency_ms": 6047,
+      "answer": "No. **Three minutes of playback does not mean three minutes of construction.** The reference identifies this as edited footage containing time-lapse sequences and close-up inserts.\n\nThe latest frame shows upright upper-storey panels with openings, exposed horizontal timber members, a leaning ladder, and stacked panels and lumber—consistent with S3, upper-floor framing and the next wall level. From 82 to 89.96 seconds, the upper-wall outline becomes more enclosed and lighting changes markedly.\n\nThese images show assembly progress, not the actual elapsed site time. The construction duration, hidden connection work, and completion of the house cannot be established from this playback.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6054
+    },
+    {
+      "id": "real-manufacturing-uncertainty-2",
+      "scenario_id": "real-manufacturing",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 90,
+      "question": "Can we confirm all these machine and product shots follow one identified workpiece continuously?",
+      "reference_answer": "No. This is an edited promotional montage of several jobs and products, without a verified genealogy for one workpiece.",
+      "expected_concepts": [
+        [
+          "montage",
+          "edited",
+          "multiple",
+          "several"
+        ],
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ]
+      ],
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "3506b4896c52c2b51f9ad2dd37d654c349e691f57c69d562ead7b7afefae0155",
+        "56088ffa6fa1491545af6a43eb4f220509ebf201f7081af9a9fa544ef4deac1a",
+        "dead719830935b7ee3c9316ab4941d7a99af522335637a4713a4a09d2204d975",
+        "8154f88e8ab4ba28dafd4a3db813b732f08f78c4f3bffd8074786aed178872e3",
+        "a5a414a5ffd386a750f639682fcd9948d2f9c3402fc25e526a29e7e271caee9b",
+        "fcb488e07ef9779bdc67ee49a30833247bba66089373ef62033c3660b2c9a86a",
+        "2468bfd47307e48f7d88e08709e1690dc376e531b259ad03b374c1ce58b6024c",
+        "85b7e8a87be615bd80905d222b986e77b3b4750d6519359bac1fc396feee8e36",
+        "c06af92ba182c9db793edbea4cc180ee3ffd32bd268786ebd81f52eee0567284"
+      ],
+      "question_latency_ms": 6683,
+      "answer": "No—we cannot confirm continuous tracking of one identified workpiece.\n\n- **Latest frame (89.96s):** A spindle-mounted slender tool sits among copper-coloured metal blocks held on round fixtures. Its exact contact and the workpieces’ identities are unclear.\n- **Earlier frames:** At 82s, teal components joined by rails are displayed against white. A crossfade at 83.44s introduces a white-and-black housing with tubular outlets, followed by a separate machine view at 86.28s. No visible transfer or traceable identifier links these objects.\n\nThis fits **S4: product presentation followed by further tooling views**, not a continuous production record. The workflow explicitly describes a promotional montage of several products and machines. Confirming a shared workpiece history would require traceable part identification and linked production records or uninterrupted tracking.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6691
+    }
+  ]
+}

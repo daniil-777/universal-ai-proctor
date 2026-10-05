@@ -1,0 +1,18 @@
+PROCESS GUIDE — MODEL RECOGNITION COMPARISON
+Stages loaded measures successful reference parsing, not visual recognition or completion.
+Strict recognition uses the exact raw Guardian current_step_id. A null ID is uncertain; a different ID is wrong; request failures and missing observations are separate.
+Independent visual correctness is a separate reviewed judgment. Exact stage agreement alone does not verify the explanation or any claimed movement. Missing reviews remain pending.
+Guardian latency uses the recorded request duration, with server analyze time as a fallback. Q&A latency is separate. Combined case duration sums recorded Guardian and question durations when both exist; otherwise recorded case time is used. Percentiles use the nearest-rank method over recorded observations, not missing values.
+End-to-end latency also depends on concurrent requests, queues and shared inference slots. Compare controlled solo probes for model speed; these run percentiles alone do not establish which model is inherently fastest.
+Identical frozen manifest hashes are required. Submitted image hashes are checked against the frozen manifest and across models when supplied. Cases not yet submitted are counted separately.
+Guardian-only runs intentionally leave Q&A not run. Later Q&A may be added to the same unique case rows without changing frozen inputs.
+Prepared anchors do not assess every moment, sustained completion, clinical validity or all future footage. No automatic model selection is made.
+GPT-4o ran alone; Luna and Sol shared four inference slots; Astra partly overlapped an unchanged-bank Sol run. These latency percentiles do not isolate model speed. Original unchanged-bank tests improved from18/32 (GPT-4o,3frames/1s) to25/32 (Sol,3frames/1s) and28/32 (Astra,9frames/8s). The frozen comparison below uses revisedv2 anchors and identical images. All42 Astra questions were tested separately and manually reviewed; questions supply context and do not replace blind Guardian recognition.
+
+openai/gpt-4o: loaded 32/32; strict IDs 22 exact, 8 wrong, 2 uncertain, 0 errors, 0 pending. Visual reviews 2 correct, 10 wrong, 5 uncertain, 15 pending. Run conditions: not recorded. Guardian p50/p95 6.23s/9.48s; whole-case p50/p95 6.24s/9.49s.
+openai/gpt-6-luna: loaded 32/32; strict IDs 28 exact, 3 wrong, 1 uncertain, 0 errors, 0 pending. Visual reviews 13 correct, 3 wrong, 1 uncertain, 15 pending. Run conditions: not recorded. Guardian p50/p95 21.82s/28.79s; whole-case p50/p95 21.87s/28.80s.
+openai/gpt-6.1-sol: loaded 32/32; strict IDs 30 exact, 0 wrong, 2 uncertain, 0 errors, 0 pending. Visual reviews 16 correct, 0 wrong, 1 uncertain, 15 pending. Run conditions: not recorded. Guardian p50/p95 24.14s/31.11s; whole-case p50/p95 24.21s/31.16s.
+openai/gpt-6-astra: loaded 32/32; strict IDs 31 exact, 0 wrong, 1 uncertain, 0 errors, 0 pending. Visual reviews 16 correct, 0 wrong, 1 uncertain, 15 pending. Run conditions: Guardian run partly overlapped an unchanged-bank Sol run. Questions ran separately. Original Guardian and Q&A raw files are preserved; combined durations sum separate requests.. Guardian p50/p95 15.17s/22.76s; whole-case p50/p95 20.69s/29.70s.
+
+Bank SHA256: a910cf9087bff97e83434e35b3564164840979f9def5c98c2ce7f06c4ddd8a5a
+Frame-pack SHA256: 38abc64d0a3771438b9662bf7474872db7f3b5ed36a0153a56c011b742fc55b8

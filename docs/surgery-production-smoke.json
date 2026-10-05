@@ -1,0 +1,59 @@
+{
+  "checked_at": "2026-10-05T09:13:09.030Z",
+  "app_url": "http://localhost:8101",
+  "profiles": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "engine": "chrome",
+      "source": "Uncomplicated cholecystectomy",
+      "filename": "Cholecystectomy.txt",
+      "steps": 6,
+      "incomplete": true,
+      "duration_s": 252.766667,
+      "video_width": 660,
+      "current_s": 216,
+      "overflow": false,
+      "errors": [],
+      "external_requests": [],
+      "automatic_demo_requests": 0
+    },
+    {
+      "name": "phone",
+      "width": 390,
+      "height": 844,
+      "engine": "chrome",
+      "source": "Uncomplicated cholecystectomy",
+      "filename": "Cholecystectomy.txt",
+      "steps": 6,
+      "incomplete": true,
+      "duration_s": 252.766667,
+      "video_width": 660,
+      "current_s": 216,
+      "overflow": false,
+      "errors": [],
+      "external_requests": [],
+      "automatic_demo_requests": 0
+    },
+    {
+      "name": "tablet",
+      "width": 820,
+      "height": 1180,
+      "engine": "webkit",
+      "source": "Uncomplicated cholecystectomy",
+      "filename": "Cholecystectomy.txt",
+      "steps": 6,
+      "incomplete": true,
+      "duration_s": 252.79996666666668,
+      "video_width": 660,
+      "current_s": 216,
+      "overflow": false,
+      "errors": [],
+      "external_requests": [],
+      "automatic_demo_requests": 0
+    }
+  ],
+  "completed": true,
+  "scope": "Compiled running-app sample menu, preserved instructions, real media decoding and responsive layout. Automatic visual requests explicitly forced to demo; no paid AI or external messages. Separate live validation measures sampled provider answers."
+}

@@ -1,0 +1,516 @@
+{
+  "tested_at": "2026-10-05T12:00:59.906Z",
+  "model": "gpt-6-astra",
+  "provider": "openai",
+  "reasoning_effort": "low",
+  "mock": false,
+  "bank_sha256": "a910cf9087bff97e83434e35b3564164840979f9def5c98c2ce7f06c4ddd8a5a",
+  "frame_pack_sha256": "644a62662027472c6e5368616cf1df2d7c9ab11583debf2291537d0911090b2a",
+  "bank": "qa/recognition-question-bank-v2.json",
+  "samples": 9,
+  "window_seconds": 8,
+  "guardian_only": false,
+  "protocol": "Chronological cases in all five real videos. Every model receives the exact same SHA256-verified frozen JPEGs and displayed timestamps through the production API, same guides and system prompt; selected reasoning effort recorded in metadata where supported. No expected answers/IDs passed to the model. Independent visual review is distinct from strict stage ID and lexical concept recall. Single observations do not establish sustained completion.",
+  "case_count": 10,
+  "stage_case_count": 0,
+  "answered_questions": 10,
+  "errors": 0,
+  "raw_stage_matches": 0,
+  "ui_stage_matches": 0,
+  "lexical_concept_recall": 1,
+  "results": [
+    {
+      "id": "real-dancing-uncertainty-1",
+      "scenario_id": "real-dancing",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 19,
+      "question": "Can this cropped view establish the performer’s whole-body balance, a precise ankle angle, or safe technique?",
+      "reference_answer": "No. The head and much of the upper body are cropped, and the video does not measure a precise ankle angle or establish whole-body balance or safety.",
+      "expected_concepts": [
+        [
+          "crop",
+          "cropped",
+          "upper body",
+          "head"
+        ],
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "33c009fa7f3ea74ac4267c4ce80ed8cd18ec32709fc00ed071533ba850a0075e",
+        "3bf9abe90b3213e5a2410c03a568f30b9b2f295d2fe9e52d89d0ae14f083584c",
+        "3211e34c8e68e7b5713a37bfcf0d3932ef829067b2dc842a3495e430bdaec2b9",
+        "4828c92b13201488ea9bdfffaeae02d44abdf8c95b6b76c146fb520172de6d85",
+        "cf2741790698a02be4bbb7b12b42fd8ef3ede709be7957268cb03a85609c9fb3",
+        "b8bcefb050104d422486f22f4a9f078884f0e4428509d939c6ebb1140b84ceaf",
+        "ecf3c062e17420e2f7f0afefa9f8b5becaaedaef0130ed393d167424e30f0ce6",
+        "cb27cde2fd4d77cb0bacbc42fa93d4aeddfcefd634f7204ed5c595c04c708e3c",
+        "155fdcc816cb0289b8a09fa26a339124db2ca3d76d79883febda6b661e766615"
+      ],
+      "question_latency_ms": 5997,
+      "answer": "No. The latest frame (18.98s) shows the lower legs and two tan shoes close together at the studio floor; the torso, arms and head are outside the crop.\n\n- **Whole-body balance:** Cannot be established without seeing the rest of the body. Shoe positions alone do not show weight distribution.\n- **Precise ankle angle:** Cannot be measured reliably from this oblique, low-resolution view; footwear also obscures anatomical landmarks.\n- **Safe technique:** Cannot be certified from these images. Visible foot positions do not establish forces, control or overall alignment.\n\nThe workflow supports reviewing visible shoe movement and floor contact—not judging whole-body balance or guaranteeing safety. These limits also do not establish that the technique is unsafe.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6011
+    },
+    {
+      "id": "real-manufacturing-uncertainty-1",
+      "scenario_id": "real-manufacturing",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 60,
+      "question": "Does the displayed indicator prove this part passed its dimensional tolerance or that the instrument is calibrated?",
+      "reference_answer": "No. A displayed indicator alone cannot establish calibration, a specified tolerance, or acceptance. Traceable measurements and the actual specification are missing.",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ],
+        [
+          "tolerance",
+          "calibration",
+          "calibrated",
+          "acceptance"
+        ]
+      ],
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "573f57cf4953fb39ae4369176291b079105705c8bdec5372d5812d77f8a914f1",
+        "8ed94de63b57b850e87a437262252375b0077c96625e8f3c1f37784ea287710f",
+        "4ae7cd596fa2b7443422abe1ca61ef6748ef873807077185e1d01ea09c7df479",
+        "2a61812c21966a3ef956eab0f5da990601844942a917c4f9ac2f64a0c64d1ce5",
+        "0daead457b1decc2ce1f136d4a0525a06b1b14d052153137c47b7841e915f186",
+        "58e1af0b5e9be809337a0eee1eda8ca8233af401167b5ddbe7c6dd615f0375a5",
+        "3669374d7083baab41355efdadc8e13b8e2003b107446422c71b781ebb937e84",
+        "4d8fc9a6d1ef62112f233975bd6eb483c6aca2619ca94ca47ff054fa8a984b6f",
+        "49b3321bad22e76289617e68b72cdd3705fd69e815c715fb5a765cad9404e7ba"
+      ],
+      "question_latency_ms": 6162,
+      "answer": "No—neither dimensional acceptance nor calibration is proved.\n\nThe latest frame (59.96 s) shows a digital indicator reading **2.95 mm**, with its probe tip appearing to meet the upper edge of a copper-coloured metal block. Earlier frames show a visible gap beneath the tip. This supports workflow **S3C2: an indicator and probe shown above a metal block**, not a verified inspection result.\n\nWhat remains unverified:\n- **Part tolerance:** the specified dimension, allowable limits, datum/zero reference, measurement setup and traceable inspection record.\n- **Calibration:** an instrument-linked, current calibration record with traceability and applicable accuracy information.\n\nA displayed number alone is not necessarily the part’s dimension. Acceptance requires valid measurements compared with the correct drawing tolerances and reviewed by the responsible person.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6173
+    },
+    {
+      "id": "real-surgery-uncertainty-1",
+      "scenario_id": "real-surgery",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 82,
+      "question": "Does this visible thread pull establish a secure knot, successful repair, or absence of tissue injury?",
+      "reference_answer": "No. A visible thread pull cannot establish knot security, repair adequacy, or absence of injury. Qualified surgeon review and the full case context are required.",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not establish",
+          "not prove",
+          "no"
+        ],
+        [
+          "knot",
+          "repair",
+          "injury",
+          "qualified",
+          "surgeon"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "0816470fec29c9c7a286c2c422a122b3e3b698c898fa79eb69503414427cf008",
+        "528c6660461942afe32efdae3e07051add15fe678fba7ad65a4d7961a0c34aca",
+        "0b4cd17764d851cc11773d1a4f458aa92e6496ecce75b460b0e3637c763fedc1",
+        "c4d165781ca6ad4ae7d59364e1c13cf9e947eb06e96b28ca66ffed3d22ac6a22",
+        "8272183a9626ae6827ed445dd45e30b1e4615ee248b19c6b9eb898bf35cbcc95",
+        "44cb626b06dede926d152944434a1baf6c82ea5a4d5b0e0cecd611a2e6d393a1",
+        "71def5c8bd7b2076f1ddfbef0721185d4e280f43bf02a395678e0ba0f76c8e9a",
+        "93ec12cffa22dfe02e585dd3692a3aba72981638e57e85f52503ea80abda4fe3",
+        "a4686d9887402cde2e6c60aaecaf6153edecda28d4b9b9270e1593d5983f3a08"
+      ],
+      "question_latency_ms": 6234,
+      "answer": "No. A visible thread pull does **not** establish a secure knot, successful repair, or absence of tissue injury.\n\nAt 81.96 s, metal instrument jaws lie beside an orange-pink tissue segment, with a dark thread/loop near the contact area. Glare and the jaws obscure the exact contact and knot configuration. Earlier frames at 74–75.4 s show a longer exposed thread segment; that full segment is not clearly visible now.\n\nThis supports **S3: thread and instrument handling**, not a verified outcome. Pulling may apply tension, but the images do not establish knot security, repair integrity, or the condition of hidden tissue. Those judgments require qualified surgeon review and additional clinical evidence.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6245
+    },
+    {
+      "id": "real-house-construction-uncertainty-1",
+      "scenario_id": "real-house-construction",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 130,
+      "question": "Can this view confirm fastening torque, hidden joint strength, or structural approval?",
+      "reference_answer": "No. Visible timber and hardware cannot establish torque, hidden strength, or approval. Those require the responsible inspection process.",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "not enough"
+        ],
+        [
+          "torque",
+          "strength",
+          "approval",
+          "hidden"
+        ]
+      ],
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "6241639a84d852a3d0c6e7244193eaeb0ae9ad6bc64695a4f800cf083dc8d5f5",
+        "deb945a0c1402e3dc1a40be4afa564f2e0e4281610112199bc4ab9be291eb5f6",
+        "c056ab1a1c4b68652d4fab4958fd6a519578ba7fe2979c9d135387bb68ef99a7",
+        "e2618db753ceb871409b90f9a3c89f5c6114396aac9aab1fc1dfbd3fefcc1f9b",
+        "19dc7b06e1873cfe3d27f8449f827c52ff09165b3d2041cac00936bfc5b4d2d3",
+        "ec0bfa49cb2fc47bf65bcb3df63856833e80ff9e671553a398a9163ce265a43d",
+        "2b47e7f57da07186afd9424ed57f5e39c3fbe8f561f5d6692fe5d323df2a2147",
+        "4cd168556eb63e7323abadb5845ea6332a47bf2d8f92e66a8a5b4e6fdc011b81",
+        "4be2f273d6aa769eee82a8d8c23d04e5eb3163bcecc69a202ebe62010a0822b7"
+      ],
+      "question_latency_ms": 6483,
+      "answer": "No. This view cannot confirm fastening torque, hidden joint strength, or structural approval.\n\nThe latest frame (129.96 s) shows two sloping roof timbers meeting a horizontal support, perforated metal brackets, wood-chip sheathing, and pale foam-like material along the rear seam. These are visible **S5 roof-support and connection details**, not proof of structural performance.\n\n- **Torque:** No tightening action or torque measurement is shown.\n- **Joint strength:** Fastener embedment, concealed contact surfaces, material grades, and load capacity cannot be established visually.\n- **Approval:** No inspection or approval records are visible.\n\nThe caption “100 × 150 mm” is a source claim, not a verified measurement. Confirmation requires the responsible professionals’ specifications, appropriate installation checks, and inspection/approval records.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6506
+    },
+    {
+      "id": "real-sport-uncertainty-1",
+      "scenario_id": "real-sport",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 50,
+      "question": "Can this edited demonstration confirm an exact completed repetition set, plate weight, or precise joint angles?",
+      "reference_answer": "No. Edits and crops prevent establishing an exact completed set, and the guide provides no independent load or joint-angle measurement.",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ],
+        [
+          "edit",
+          "repetition",
+          "weight",
+          "angle",
+          "load"
+        ]
+      ],
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "loaded_steps": 5,
+      "frame_sha256s": [
+        "26475c6f4567e903ef2463e7f9cabc268ff52f81c0c6186ca7f3020a02c24ec4",
+        "57c7488d6a9d425635cd9154aec9a77d28f622ea64d73ba72aab3d2c34429282",
+        "cc4faf6961c191e9ed7660b57ac18cc7f5b822dbf24d99362d991538b7352787",
+        "d1d5136f1f18367f291610a5be92d76de2ad78367cdfc45b7da88e2d1fdeee25",
+        "4c81091845a19ef2295b30ac1af1b282921b329e6dbe83b18b011c65a7c374ce",
+        "fd56c67ee67f6cb29c66fea988c1f43136a49d807dbfde52471ffda13890ed98",
+        "257a167b5db78b2dcc786c152b781e2f83e24b5cd103b7f4fd584ca120969735",
+        "1797d1abbd1da63745a8e4748e5e979f10338c7c5bd60dd1eb0ed7cd6781360a",
+        "48ca989301377f48ccd3bbc95c456777c0bdb5fae928a59e5d562869f1467825"
+      ],
+      "question_latency_ms": 7732,
+      "answer": "No—none of those can be confirmed exactly from this edited demonstration.\n\nThe latest frame (49.98 s) shows both hands holding a plated metal bar low in front of the thighs, with arms extended downward; the head and feet are cropped. Earlier wider frames show the angled EZ-bar shaft near the torso, then progressively lower positions, supporting the later EZ-bar demonstration phase (S3).\n\n- **Completed repetition set:** Not established. A full low–raised–low cycle must be tracked within one uninterrupted view; different shots cannot be combined into a repetition count or proof of a finished set.\n- **Plate weight:** Not confirmed. Plates are visible, but their weight markings and units are not reliably readable.\n- **Precise joint angles:** Not measurable reliably here because of perspective, camera movement, cropping and blur. Only qualitative changes, such as more or less elbow bend, are supported.\n\nThese limits match the workflow: review visible positions and contact, not exact load, set completion or measured angles.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7748
+    },
+    {
+      "id": "real-house-construction-uncertainty-2",
+      "scenario_id": "real-house-construction",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 90,
+      "question": "Does the three-minute construction playback show the house was built in three minutes?",
+      "reference_answer": "No. The original includes edited time-lapse footage, so playback duration does not represent site-work duration.",
+      "expected_concepts": [
+        [
+          "time-lapse",
+          "timelapse",
+          "edited"
+        ],
+        [
+          "cannot",
+          "does not",
+          "not represent",
+          "not indicate"
+        ]
+      ],
+      "prohibited_claims": [
+        "structural approval confirmed",
+        "fastener torque confirmed",
+        "building compliance verified",
+        "safe for occupancy"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "b8ea9fb6b6bd999e555ac50671f3af24fdbfa3e891eeb2125a900cc86c7f33b9",
+        "056e81e944bdff1df86aa4a9a9f64e07acf447fef50690362c55b2d4e1f45f7f",
+        "ea124561907b1388d3f57e271a132d5bf7493168b049f440ab6aaa17d78aea76",
+        "202c114d53041d46272769dc13505296e0911e01933bb805b395a34e554ceb94",
+        "1c7ae525896df84275fefd73b53351df7859202cd7ef92c5413495037693b4ce",
+        "779e93d8abdb4fe71c18baaa9789a5651567081ae4aeda79bf1604adba6cb30e",
+        "747ec1571067c028021de697fee3ceb3150314b86d8496f29862b3c6e321fcc3",
+        "e8fc532a0ba7c24d4381371f8950e206d9a9c6dc0ef569b88967690c2692c9ef",
+        "177366f365bac055d28a0bf9e3582977bf022e96b224f6020bbe9764381b9ef0"
+      ],
+      "question_latency_ms": 4351,
+      "answer": "No. **Three minutes of playback does not mean three minutes of construction.** The reference identifies this as previously edited footage containing time-lapse sequences and close-up inserts.\n\nThe latest frame shows upright upper-storey panels with openings, exposed horizontal timber members, a leaning ladder, and stacked materials—consistent with S3, upper-floor framing and the next wall level. Compared with 82 seconds, the upper wall outline is more developed by 89.96 seconds, but these are playback timestamps, not elapsed site-work times.\n\nThe actual construction duration is unknown, and these images do not establish that the house is complete or that hidden connections were installed correctly.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 4371
+    },
+    {
+      "id": "real-dancing-uncertainty-2",
+      "scenario_id": "real-dancing",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 96,
+      "question": "Can we join movements across the tiled wipe to claim one continuous repetition or an exact tap count?",
+      "reference_answer": "No. The wipe separates examples, and blur or missing contacts prevent reconstructing a continuous repetition or exact tap count across the edit.",
+      "expected_concepts": [
+        [
+          "cut",
+          "wipe",
+          "transition",
+          "edited",
+          "separate"
+        ],
+        [
+          "cannot",
+          "not",
+          "no",
+          "unverified"
+        ]
+      ],
+      "prohibited_claims": [
+        "exact ankle angle confirmed",
+        "safe technique certified",
+        "whole-body balance verified",
+        "precise tap count confirmed"
+      ],
+      "loaded_steps": 8,
+      "frame_sha256s": [
+        "e3b2d92d76f0dc9b2577e1222e4ee2a1136552112719ac31ef62c976568ef191",
+        "d4293f8fe1808fb5c9b8207461e09590cc4669486a787e5dfb544cbdd4f6211f",
+        "686c7e9c6474477d73b858c93749517ffc10f4422c4ba7e4e201e28db6c07bf9",
+        "e38b3116b1511f9833bae27f9125a22539701007ae9f946e3eb96f4fd1277b7b",
+        "ad6ea562b8b3b1aed3c21b892df5b9ea7b3fc73fd3248c1a16f6646ea64e28ad",
+        "bfd835957c4f4b2d4398083511af5ef837f52d9f205edbcefbda7a44f998b7f3",
+        "719d9ad8a050c8a5cb8e15532a20db203da4b5de25b0dd393abfeb87d1244fc6",
+        "dc1bea0a1013d8d6d6a1a07c7006436078ae967edc6f1bd4865edbf3716d5053",
+        "d0ae2d0efc4eec0e82966e2dc331543bd66156909dc757f867d84c2834c6a186"
+      ],
+      "question_latency_ms": 5224,
+      "answer": "No. The tiled wipe separates examples; movements on either side cannot establish one continuous repetition or an exact tap count.\n\nThe latest frame (95.98s) shows two tan shoes and cropped lower legs over the studio floor. One shoe is motion-blurred in front of the other, so its precise floor contact is unclear. This low camera view matches the lower-view portion of **S6**; the tiled transition is visible at 89.97s.\n\nRe-establish shoe positions after the wipe and assess each shot separately. A full repetition requires a visible start, change and return within one uninterrupted view. Exact tap counts remain unconfirmed because sampled frames and blur can hide brief contacts.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 5230
+    },
+    {
+      "id": "real-surgery-uncertainty-2",
+      "scenario_id": "real-surgery",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 162,
+      "question": "Can the visible tube or final imaging certify drainage effectiveness or a successful patient outcome?",
+      "reference_answer": "No. Tube visibility and final imaging do not establish drainage effectiveness or a patient outcome. Those require the case record and qualified review.",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not establish",
+          "not prove",
+          "no"
+        ],
+        [
+          "drainage",
+          "outcome",
+          "patient",
+          "case record",
+          "qualified"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "8d31be6e6ca8b11b000d2a80ebf91b88cd6a2fbad093d0d681e13b6c89f3cbb5",
+        "29011e364fdc805b426b514b73f40d5ba724fcfcd56646f4e96dc418f0339818",
+        "dc991148dfe066234070ca5d66c606ae355754b37b7aa435c763bf4513519e25",
+        "c66ce2d644efe476f724cb322265b38757af61ad2f3ff0cde9a6169913b1a900",
+        "a85372d72d45c67a952e5c08831cb18b6118e19a50596615b6b3c1076f6984c4",
+        "09804bc50ca2c4b6920b4d1c066d276b27e65d6d4a94164ba2c241ba3715d152",
+        "6791835fb2335655b00ef98f8d6b5235efdb88503e89c1f943f5f83b6331b37c",
+        "90ce8a1fad6677c6a5c7d4db839a8705b420d673f95d03b41fec664d08013777",
+        "bbda91460b29e9654bf7c551dae91a61caa86c1a04d29ebef4e8cdc9b8ef5e9a"
+      ],
+      "question_latency_ms": 5398,
+      "answer": "No. Neither a visible tube nor final imaging alone certifies effective drainage or a successful patient outcome.\n\nAt 161.96 s, a transparent curved tube and a gray-shafted instrument with a metallic tip are visible in the colored endoscopic field. Their positions change across the preceding frames, supporting **S6: later tube and instrument views**. The tube’s full course, exact tip contact, fluid flow, patency, and secure placement are not established.\n\nThe final grayscale image is **not shown in these supplied frames**. Under S7, its later appearance would establish a displayed imaging phase—not recovery, operative success, or surgeon approval.\n\nDrainage effectiveness and patient outcome require qualified clinical assessment and supporting case records, not appearance alone.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 5407
+    },
+    {
+      "id": "real-manufacturing-uncertainty-2",
+      "scenario_id": "real-manufacturing",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 90,
+      "question": "Can we confirm all these machine and product shots follow one identified workpiece continuously?",
+      "reference_answer": "No. This is an edited promotional montage of several jobs and products, without a verified genealogy for one workpiece.",
+      "expected_concepts": [
+        [
+          "montage",
+          "edited",
+          "multiple",
+          "several"
+        ],
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ]
+      ],
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "7f6af235dfd886317c2d5a9c8b6df39f691118771b2765b79c72ed03209f6685",
+        "d51598e87019d3f7dbe5c3236a953afb3d5fddef2a61563e508a28b002e740f9",
+        "4a8f725c6e04de496c9f641132688498da74b0dcaf35c1e53c6b3fd0c7c4bb2d",
+        "1ae668668606b081d6c8348889df426309e0f4200d003da5e8ee159e94cdba6a",
+        "2d66fb272d0ccfc72b2f41a091f8538de9098488f7554ceb58e3bf59e71919ce",
+        "9baab9c757316906538600894bacc699e1a1c21ee26bc13a6e7a9dca969a2e36",
+        "e7667f7b5cc4a043a29c2de3c71b6ee19c0b158ebcc4098a33118035d155434d",
+        "c18540ea1be64dd5382b8c5e8e86886fe13f8c639be58599801224254406498a",
+        "bc2ddc31a84aa5559bfeab3f5bbb0b4632c203e58931d657042aa577c355bcb0"
+      ],
+      "question_latency_ms": 7123,
+      "answer": "No—we cannot confirm continuous tracking of one identified workpiece.\n\n- **Latest frame (89.96 s):** A spindle-mounted device with a slender, ball-ended tip is positioned over a metal table, surrounded by copper-coloured rectangular pieces on fixtures. Exact tip contact and workpiece identity are unclear.\n- **Earlier frames:** At 82 s, teal components connected by rails are displayed against white. At 85.28 s, a crossfade overlays a housing-like product with the machine scene. This edit does not show a physical transfer or establish that the objects belong to one production job.\n\nThese views fit **S4: product presentation and further tooling operations**, not a verified workpiece history. The workflow explicitly describes a promotional montage of multiple tools, machines and products. Establishing continuity would require a traceable part identifier and linked production records or uninterrupted tracking; neither is visible here.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 7129
+    },
+    {
+      "id": "real-sport-uncertainty-2",
+      "scenario_id": "real-sport",
+      "channel": "uncertainty",
+      "expected_step_id": null,
+      "timestamp_s": 107,
+      "question": "Does seeing this straight-bar curl prove it is medically suitable or comfortable for this person or another viewer?",
+      "reference_answer": "No. Visible bar motion cannot establish medical suitability, comfort, or pain. These individual factors are not measured by the footage.",
+      "expected_concepts": [
+        [
+          "cannot",
+          "unverified",
+          "not established",
+          "no"
+        ],
+        [
+          "suitability",
+          "medical",
+          "comfortable",
+          "comfort",
+          "pain",
+          "individual"
+        ]
+      ],
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "loaded_steps": 5,
+      "frame_sha256s": [
+        "7242c89c5cd49eb45ce4c12122d8314e1b8275511918fe73288c390b51bc3811",
+        "21370d188f2d5d821eecfb8b4fb87fdbba1560878959148269f9ac6e6fb597ed",
+        "6ef5c623f93a13f9769641682183df052e6a7ed0cec181f9af6f725348172484",
+        "6b6a8452b69170bd6ab344d4f13977216628814606ab1f863a5d1e30808cfb11",
+        "dcf7e62b76b9b57b4130daa46d933f9c52caf7384adfd8a1bf6f5c15df3e9700",
+        "c427c2b0610e3456221ad39afab5b3ad5164b26eaa1785d21ea36bd8fc72706a",
+        "80d6b80733f5cd9ddbccf205fca9847e8b3777c4616d4dbe114ae9c3089b980e",
+        "07b8f9e6e0acb45465c107d6d3ad400fdf0de4a588c15bcca54b0bb7c5d5e1dc",
+        "f0ada9d0acd0306aa42d0ab76296a3121b4c717fcfca30ca9aab26cc6a867c00"
+      ],
+      "question_latency_ms": 6279,
+      "answer": "No. The latest frame shows both hands holding a straight metal bar with black end weights near the torso, with elbows bent—consistent with the raised position in workflow S5.\n\nThat establishes a visible pose, **not comfort or medical suitability**. Pain, symptoms, health history and individual tolerance are not established by these images; facial expression cannot reliably confirm them. The load is also unverified, and the feet are cropped.\n\nThe workflow is a demonstration-review guide, not medical clearance or a guarantee of safe technique. Suitability for this person—or another viewer—requires individual context and, where health concerns exist, assessment by a qualified clinician.",
+      "used_frames": 9,
+      "concept_groups_matched": 2,
+      "concept_groups_total": 2,
+      "lexical_concept_recall": 1,
+      "latency_ms": 6290
+    }
+  ]
+}

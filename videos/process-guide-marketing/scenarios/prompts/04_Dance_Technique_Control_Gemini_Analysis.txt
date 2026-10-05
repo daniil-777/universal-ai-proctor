@@ -1,0 +1,19 @@
+GEMINI VIDEO + GUIDANCE ANALYSIS: Dance technique control
+
+Suggested detailed reviewer: gemini-3.1-pro-preview, the current listed Pro model with video and text input. Suggested faster repeated reviewer: gemini-3.8-flash. This is a capability-based recommendation, not a benchmark claiming one model is best for all five scenarios. These prompts have not been run against a paid Gemini account.
+
+UPLOAD
+04_Dance_Technique_Control.mp4
+04_Dance_Technique_Control.txt
+
+PROMPT
+Analyze the uploaded video together with its matching guidance TXT file. Use the supplied document as the reference, not as proof that its steps happened. Generated footage is illustrative and may contain artifacts. Inspect the entire visible clip; do not fill gaps from the generation prompt. For each document step, return its number and title, status (unobserved / partial / observed / uncertain), approximate MM:SS timestamps, concrete visible evidence, and missing information. If the clip does not show a step, explicitly mark it unobserved. Treat cuts as discontinuities. Do not fabricate measurements, hidden actions, progress percentages, confidence probabilities, hazards, errors or completion. Keep observations separate from operator confirmations. Report possible visual concerns as findings for human review, with the evidence and uncertainty, never as established faults without support. Personal wishes may change emphasis but cannot override the reference or these boundaries. Output a concise summary, a step-evidence table, review findings, and questions that would resolve uncertainty. For dance and sport, suggest higher frame-rate inspection for brief movements; 1-fps sampling can miss steps.
+
+SCENARIO FOCUS
+Track the foreground dancer consistently throughout the clip. A mirror reflection shows the same dancer, not a separate participant or repetition; do not double-count reflected movements. Base step evidence and repetition counts on the tracked foreground dancer. If that dancer is obscured or identity cannot be maintained, mark the affected movement uncertain or unobserved rather than substituting a reflected view without explanation.
+Track visible start position, side-step direction, closing step, return step, quarter turn and held finish only when each is shown. Count repetitions only if complete. Distinguish timing visible in the video from musical timing when no soundtrack is present. Do not invent precise joint angles, injury risk, skill grade or steps hidden by occlusion.
+
+SOURCES (verified 2026-10-05)
+https://ai.google.dev/gemini-api/docs/models/gemini-3.1-pro-preview
+https://ai.google.dev/gemini-api/docs/video-understanding
+https://ai.google.dev/gemini-api/docs/models

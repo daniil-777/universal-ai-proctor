@@ -1,0 +1,87 @@
+SOURCE PROVENANCE
+Author: Colossus Fitness
+Source: https://commons.wikimedia.org/wiki/File:Video_of_EZ_Bar_Curl_and_Straight_Bar_Curl.webm
+License: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/
+Changes: Full official Wikimedia Commons 1080p derivative converted to H.264/AAC; source timing and image size preserved.
+
+DEMO: Reviewing EZ-bar and straight-bar curl demonstrations
+This real gym video mixes explanations, edited demonstrations and promotional ending cards. The guide covers visible equipment and movement, not the speaker's unverified claims about benefits, comfort or suitability. Approximate timestamps refer to real-05-sport.mp4.
+
+Principles:
+- Source: https://commons.wikimedia.org/wiki/File:Video_of_EZ_Bar_Curl_and_Straight_Bar_Curl.webm
+- Author: Colossus Fitness. Video license: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/
+- Identify the bar and performer again after every cut or camera change.
+- Use a clear sequence within the same shot to observe a raise and a subsequent lowering; never reconstruct a repetition across edits.
+- A spoken explanation or a gesturing speaker is not evidence that a curl occurred.
+- The EZ bar has visible angled sections; the later bar has a visibly straight shaft. Compare visible equipment rather than infer which is better.
+- Judge only bar position, visible hand contact and changes in elbow bend. Exact joint angles, muscle recruitment, force and load are not measured.
+- Weight markings, repetition targets, comfort, pain and medical suitability are not independently established by this video and are not completion criteria.
+- Crops sometimes omit the feet, head or bar ends. Leave posture, balance and equipment details unobserved when outside the frame.
+- A bent elbow or a single still image does not establish a complete curl.
+- Stop movement assessment during talking-only shots, logos and the promotional ending after approximately 02:32.
+- This is a demonstration-review guide, not a prescribed exercise programme, a medical recommendation or a certification of correct or safe technique.
+
+Step 1: Identify the EZ bar and visible starting grip
+Objective: Approximate anchor 00:35-00:38. Observe the first demonstrator preparing the bent-shaft bar.
+Tools: EZ bar with visible plates; gym floor.
+Actions:
+- Locate the angled bar as the performer reaches down toward it.
+- Observe both hands contacting the bar and the performer rising to an upright position.
+- Identify the visible underhand grip and the bar held low in front of the thighs in the close view.
+Criteria:
+- A bar with angled shaft sections and plates is visible.
+- Both hands visibly hold the bar in the starting close view.
+- The bar is visibly below the torso with the arms extended downward in that view.
+Warnings: The footage does not establish plate weight or whether clips are fitted. Do not infer equipment checks from a completed pickup.
+
+Step 2: Observe an EZ-bar raise and lowering in the close view
+Objective: Approximate anchor 00:39-00:43. Review the close-view motion before the wider camera framing.
+Tools: Visible EZ bar and plates.
+Actions:
+- Track the bar from its low position toward the upper torso while both hands hold it.
+- Observe the increase in elbow bend in the raised position.
+- Follow the bar back toward the low position within this view.
+Criteria:
+- The bar is visibly closer to the upper torso in a raised position.
+- Both hands remain visibly on the bar in the raised position.
+- A subsequent low bar position is visible with less elbow bend in the same view.
+Warnings: The head and feet are cropped. Camera movement and blur prevent precise angle, tempo, load or whole-body posture measurement.
+
+Step 3: Observe the later EZ-bar demonstration views
+Objective: Approximate anchor 00:44-01:03. The camera widens, then moves closer, then widens again; treat each view independently.
+Tools: Visible EZ bar and plates; gym space.
+Actions:
+- Re-establish the bar, hands and low starting position in the wider view.
+- Follow a visible raise toward the torso and the subsequent lowering within one uninterrupted view.
+- Re-establish positions after the close-up and wider camera changes rather than combine the edits into a repetition count.
+Criteria:
+- Both hands visibly hold the angled bar in the wider demonstration view.
+- A raised bar position near the torso is visible within that view.
+- A later low bar position is visible within the same demonstration view.
+Warnings: Repeated footage and framing changes do not establish a completed set, a target repetition count or the merits of one grip. Feet are outside some close crops.
+
+Step 4: Identify the straight bar and visible starting position
+Objective: Approximate anchor 01:29-01:36. Observe the second demonstrator reaching for the straight-shaft bar, then standing with it held low.
+Tools: Straight bar with visible plates; gym floor.
+Actions:
+- Locate the straight bar as the performer bends and reaches down.
+- Observe both hands contacting the bar before the performer stands.
+- Identify the visible low bar position and the hands holding the straight shaft in front of the thighs.
+Criteria:
+- A visibly straight bar with plates is present in this example.
+- Both hands visibly hold the bar while the performer stands upright.
+- The bar is visibly held low in front of the thighs before the curl demonstration.
+Warnings: Plate weight, equipment security and preparation checks are unverified. Do not infer those checks from the pickup, or compare this person's comfort with the earlier performer.
+
+Step 5: Observe the straight-bar raise and lowering
+Objective: Approximate anchor 01:37-01:53. The camera moves from a front view toward a closer side view. A lowering out of the main frame follows around 01:54-01:55.
+Tools: Visible straight bar and plates.
+Actions:
+- Follow the straight bar as it moves from the low position toward the torso.
+- Observe the increased elbow bend while both hands remain on the bar.
+- Follow a subsequent return to the low position within the same clear shot; re-establish positions after any framing change.
+Criteria:
+- A raised straight-bar position close to the torso is visible.
+- Both hands visibly hold the straight shaft in that raised position.
+- A subsequent low bar position is visible with less elbow bend in the same shot.
+Warnings: Do not use the later out-of-frame lowering as proof that the bar was safely placed or released on the floor. No repetition target, joint angle, muscle effect or safety claim is established by these views.

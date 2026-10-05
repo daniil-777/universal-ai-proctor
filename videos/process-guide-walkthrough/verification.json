@@ -1,0 +1,50 @@
+{
+  "verified_at": "2026-10-05T06:18:31.980Z",
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "pixel_format": "yuv420p",
+    "frames": 2700,
+    "duration_s": 90
+  },
+  "audio": {
+    "codec": "aac",
+    "channels": 2,
+    "sample_rate": 48000,
+    "duration_s": 90,
+    "mean_volume_db": -21.2,
+    "max_volume_db": -1.9
+  },
+  "bytes": 18394918,
+  "sha256": "3a7c07a1cc17268e69df9f3e34dd2604bb652e103a76351d1d8a04f4ec9eff48",
+  "fast_start": true,
+  "rendered_proof_frames": [
+    2.5,
+    8.2,
+    14.7,
+    20.7,
+    24.8,
+    27.4,
+    30.7,
+    33.7,
+    38.2,
+    44.4,
+    50.6,
+    56.4,
+    60.8,
+    63.4,
+    67.6,
+    73.9,
+    78.5,
+    81,
+    86.1,
+    89.966
+  ],
+  "contact_sheet": "docs/walkthrough-rendered-contact-sheet.jpg",
+  "hyperframes_check": true,
+  "caption_windows": "Measured complete TTS chunk windows, already burned in; optional WebVTT default off",
+  "captured_fixture_calls": 0,
+  "paid_visual_provider_calls": 0
+}

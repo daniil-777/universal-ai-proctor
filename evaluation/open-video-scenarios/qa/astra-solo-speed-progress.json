@@ -1,0 +1,678 @@
+{
+  "model": "gpt-6-astra",
+  "provider": "openai",
+  "mock": false,
+  "bank_sha256": "a910cf9087bff97e83434e35b3564164840979f9def5c98c2ce7f06c4ddd8a5a",
+  "frame_pack_sha256": "38abc64d0a3771438b9662bf7474872db7f3b5ed36a0153a56c011b742fc55b8",
+  "results": [
+    {
+      "id": "real-manufacturing-stage-4",
+      "scenario_id": "real-manufacturing",
+      "channel": "stage",
+      "expected_step_id": "S4",
+      "timestamp_s": 90,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "Further tooling operations are shown, with a spindle or tool positioned over mounted metal blocks. The film does not establish one continuous tracked part.",
+      "expected_concepts": [
+        [
+          "tool",
+          "spindle",
+          "machine"
+        ],
+        [
+          "block",
+          "tooling",
+          "metal",
+          "workpiece"
+        ]
+      ],
+      "prohibited_claims": [
+        "calibration verified",
+        "within tolerance confirmed",
+        "quality inspection passed",
+        "same part tracked throughout"
+      ],
+      "loaded_steps": 6,
+      "frame_sha256s": [
+        "3506b4896c52c2b51f9ad2dd37d654c349e691f57c69d562ead7b7afefae0155",
+        "56088ffa6fa1491545af6a43eb4f220509ebf201f7081af9a9fa544ef4deac1a",
+        "dead719830935b7ee3c9316ab4941d7a99af522335637a4713a4a09d2204d975",
+        "8154f88e8ab4ba28dafd4a3db813b732f08f78c4f3bffd8074786aed178872e3",
+        "a5a414a5ffd386a750f639682fcd9948d2f9c3402fc25e526a29e7e271caee9b",
+        "fcb488e07ef9779bdc67ee49a30833247bba66089373ef62033c3660b2c9a86a",
+        "2468bfd47307e48f7d88e08709e1690dc376e531b259ad03b374c1ce58b6024c",
+        "85b7e8a87be615bd80905d222b986e77b3b4750d6519359bac1fc396feee8e36",
+        "c06af92ba182c9db793edbea4cc180ee3ffd32bd268786ebd81f52eee0567284"
+      ],
+      "guardian_latency_ms": 10421,
+      "guardian": {
+        "observation": {
+          "summary": "The latest view shows a vertical machine head with a slender, ball-ended probe above a circular opening, surrounded by copper-coloured blocks held on round metal fixtures. Small curled fragments are visible along block edges; the separately displayed products appeared only in earlier shots.",
+          "guidance": "Record the tool-over-mounted-tooling view under S4, keeping probe contact and measurement results unconfirmed. Distinguish visible positioning from verified inspection to reduce the risk of treating promotional footage as quality evidence.",
+          "principle": "A visible tool position supports an observation checkpoint, not instrument accuracy, part acceptance, or continuity of production across edited shots.",
+          "current_step_id": "S4",
+          "status": "ok",
+          "concern": "No clear operational hazard is established; the probe's exact contact with the opening is not distinguishable in this view.",
+          "steps": [
+            {
+              "id": "S4",
+              "confidence": 0.97,
+              "criteria": [
+                {
+                  "key": "S4C1",
+                  "status": "unknown",
+                  "evidence": "Historical frames show a teal connected component array and a white-and-black housing with tubular outlets displayed against light backgrounds; neither product is visible in the current machine shot.",
+                  "frame_indices": [
+                    0,
+                    2,
+                    8
+                  ]
+                },
+                {
+                  "key": "S4C2",
+                  "status": "met",
+                  "evidence": "The current machine view shows a vertical head and slender ball-ended tool over the fixture plate, between copper-coloured rectangular blocks mounted on circular holders.",
+                  "frame_indices": [
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                }
+              ]
+            }
+          ],
+          "discovered_steps": []
+        },
+        "current_stage_id": "S4",
+        "used_frames": 9,
+        "frame_times_s": [
+          82,
+          83.44,
+          84.84,
+          86.28,
+          87.68,
+          89.12,
+          89.16,
+          89.56,
+          89.96
+        ],
+        "ms": 10403,
+        "image_quality": "available",
+        "criteria": [
+          {
+            "id": "S1",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "Visual observation: A machine work area with a mounted tool or workpiece is visible.",
+                "status": "unknown"
+              },
+              {
+                "key": "S1C2",
+                "label": "Visual observation: An operator is visibly present at a controller console and interacts with its controls.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "Visual observation: The mounted workpiece and tool region appear together in the machine view.",
+                "status": "unknown"
+              },
+              {
+                "key": "S2C2",
+                "label": "Visual observation: Visible motion occurs in the tool or workpiece region.",
+                "status": "unknown"
+              },
+              {
+                "key": "S2C3",
+                "label": "Visual observation: A later close-up shows a machining or tool region from a different viewpoint.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "Visual observation: Several tools are presented in a rack with a display or control unit nearby.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C2",
+                "label": "Visual observation: A digital indicator with a probe is shown above a metal block.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C3",
+                "label": "Visual observation: Hands and an exposed tooling assembly appear together during manual work.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S4",
+            "complete": false,
+            "progress": 25,
+            "criteria": [
+              {
+                "key": "S4C1",
+                "label": "Visual observation: A manufactured component is visibly presented separately from the machine footage.",
+                "status": "unknown"
+              },
+              {
+                "key": "S4C2",
+                "label": "Visual observation: A later machine view shows a tool positioned over mounted metal blocks or tooling.",
+                "status": "partial",
+                "evidence": "The current machine view shows a vertical head and slender ball-ended tool over the fixture plate, between copper-coloured rectangular blocks mounted on circular holders.",
+                "confidence": 0.97
+              }
+            ]
+          },
+          {
+            "id": "S5",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S5C1",
+                "label": "Visual observation: Multiple coloured sample parts are shown together.",
+                "status": "unknown"
+              },
+              {
+                "key": "S5C2",
+                "label": "Visual observation: A group stands beside a drawing or plan, with a visible pointing gesture toward it.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S6",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S6C1",
+                "label": "Visual observation: A machine component visibly moves or rotates in close-up.",
+                "status": "unknown"
+              },
+              {
+                "key": "S6C2",
+                "label": "Visual observation: An exposed mould or tooling assembly is shown with its cavities or internal features visible.",
+                "status": "unknown"
+              }
+            ]
+          }
+        ]
+      },
+      "raw_stage_match": true,
+      "ui_stage_match": true,
+      "latency_ms": 10432
+    },
+    {
+      "id": "real-surgery-stage-4",
+      "scenario_id": "real-surgery",
+      "channel": "stage",
+      "expected_step_id": "S4",
+      "timestamp_s": 117.6,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "A brief circular monochrome imaging view interrupts the operative sequence. This is a change of displayed view, not a diagnostic conclusion.",
+      "expected_concepts": [
+        [
+          "circular",
+          "round",
+          "monochrome",
+          "grayscale",
+          "gray",
+          "grey"
+        ],
+        [
+          "image",
+          "imaging",
+          "view"
+        ]
+      ],
+      "prohibited_claims": [
+        "repair successful",
+        "secure knot confirmed",
+        "drain placement correct",
+        "patient recovered",
+        "clinically safe confirmed",
+        "sterility verified"
+      ],
+      "loaded_steps": 7,
+      "frame_sha256s": [
+        "75a66b18598cfe7cfe7c0ceeda1b0f997f9295a438ce035e59e0d43fe0df0b94",
+        "4541467a7311d4d900d4e722019f30b68272d6a322fff7dbd2cb2b850c466425",
+        "42f9d785cbfa56755ca4d3f79c4c47096153a5ee281b27040454d26cc7c1bf1f",
+        "7370ac801abd7e37c878dff355be0ca7c9d8aae338671d8fbf32befc2d35caa7",
+        "7a103e775684f9d6fd1bceea2aade87171f35cf316bccc91e5be41f33a16c0b7",
+        "8ef30aea2707389fbda8612b89f129e120f32d81469d2ad652d2c38eed9175f3",
+        "8ef30aea2707389fbda8612b89f129e120f32d81469d2ad652d2c38eed9175f3",
+        "8ef30aea2707389fbda8612b89f129e120f32d81469d2ad652d2c38eed9175f3",
+        "8cc0199f8943b571b0a7009f07d24c216be3d2926484af23fe96a51ceb69a257"
+      ],
+      "guardian_latency_ms": 11363,
+      "guardian": {
+        "observation": {
+          "summary": "The latest image shows a circular monochrome imaging field on a black background, with dark branching lines and a thin diagonal linear object entering from the lower left. This replaces the historically visible colored endoscopic field; operative tissue and working tips are no longer currently visible.",
+          "guidance": "Record the switch to circular imaging as the current visual phase, and watch for an actual return to the colored endoscopic field. Treat the cut as a break in evidence rather than proof of continuous instrument handling or a clinical result.",
+          "principle": "Recognizing an imaging-view change reduces the risk of conflating edited scenes; it does not establish a diagnostic interpretation or procedural success.",
+          "current_step_id": "S4",
+          "status": "ok",
+          "concern": "No specific visible potential issue is established; the monochrome view does not support assessment of the previously shown operative contacts.",
+          "steps": [
+            {
+              "id": "S4",
+              "confidence": 0.98,
+              "criteria": [
+                {
+                  "key": "S4C1",
+                  "status": "met",
+                  "evidence": "Frame 4 historically shows a colored endoscopic field with a metallic tip and an orange elongated object. Frames 5–8 show the replacement circular monochrome imaging view, including dark branching lines; frame 8 is the latest view.",
+                  "frame_indices": [
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
+                },
+                {
+                  "key": "S4C2",
+                  "status": "unknown",
+                  "evidence": "The latest frame remains a circular monochrome image; no subsequent return to a colored endoscopic field is shown.",
+                  "frame_indices": [
+                    8
+                  ]
+                }
+              ]
+            }
+          ],
+          "discovered_steps": []
+        },
+        "current_stage_id": "S4",
+        "used_frames": 9,
+        "frame_times_s": [
+          109.6,
+          111.03999999999999,
+          112.44,
+          113.88,
+          115.28,
+          116.72,
+          116.75999999999999,
+          117.16,
+          117.56
+        ],
+        "ms": 11356,
+        "image_quality": "available",
+        "criteria": [
+          {
+            "id": "S1",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "The opening title card is visible before the operative footage.",
+                "status": "unknown"
+              },
+              {
+                "key": "S1C2",
+                "label": "A sequence of grayscale cross-sectional images is visible before the first endoscopic scene.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "A colored endoscopic field replaces the introductory imaging.",
+                "status": "unknown"
+              },
+              {
+                "key": "S2C2",
+                "label": "Visible instrument tips move in the operative field during this section.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "A thread or loop is visible together with working instrument tips.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C2",
+                "label": "The thread position changes while a visible tip handles or approaches it.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C3",
+                "label": "Repeated instrument movements are visible in the close-up sequence.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S4",
+            "complete": false,
+            "progress": 25,
+            "criteria": [
+              {
+                "key": "S4C1",
+                "label": "A circular grayscale imaging view appears between operative scenes.",
+                "status": "partial",
+                "evidence": "Frame 4 historically shows a colored endoscopic field with a metallic tip and an orange elongated object. Frames 5–8 show the replacement circular monochrome imaging view, including dark branching lines; frame 8 is the latest view.",
+                "confidence": 0.98
+              },
+              {
+                "key": "S4C2",
+                "label": "The displayed video returns to a colored endoscopic field after that view.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S5",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S5C1",
+                "label": "White woven material is visibly present in the operative field.",
+                "status": "unknown"
+              },
+              {
+                "key": "S5C2",
+                "label": "Its position or exposed portion changes during visible instrument handling.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S6",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S6C1",
+                "label": "A clear curved tube is visible in a later endoscopic scene.",
+                "status": "unknown"
+              },
+              {
+                "key": "S6C2",
+                "label": "Visible tube or instrument handling occurs after the woven-material sequence.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S7",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S7C1",
+                "label": "A final grayscale cross-sectional image is displayed after the later operative scenes.",
+                "status": "unknown"
+              },
+              {
+                "key": "S7C2",
+                "label": "The supplied clip ends after the final displayed image.",
+                "status": "unknown"
+              }
+            ]
+          }
+        ]
+      },
+      "raw_stage_match": true,
+      "ui_stage_match": true,
+      "latency_ms": 11375
+    },
+    {
+      "id": "real-sport-stage-4",
+      "scenario_id": "real-sport",
+      "channel": "stage",
+      "expected_step_id": "S4",
+      "timestamp_s": 93,
+      "question": "Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.",
+      "reference_answer": "The straight-bar starting position is shown. Both hands hold a straight-shaft bar low before the curl demonstration, without verified plate load or equipment checks.",
+      "expected_concepts": [
+        [
+          "straight"
+        ],
+        [
+          "bar",
+          "grip",
+          "hands",
+          "low",
+          "starting"
+        ]
+      ],
+      "prohibited_claims": [
+        "plate weight verified",
+        "medically suitable confirmed",
+        "safe technique certified",
+        "completed set confirmed",
+        "exact joint angle confirmed"
+      ],
+      "loaded_steps": 5,
+      "frame_sha256s": [
+        "0dab70d842fae575b8ef4ebcb18768fcca75bb6bcdf01e563f664924022d345f",
+        "9d1c9ee7a79cce393d293e4523d7a45674d831e0ac0a852e64d3b4ecae2e862d",
+        "71ac03f7f608a16f47bcf80a5ad5da613378e466fbc3847fd0e834657b054760",
+        "ec3a226ffbe7e4a3ee754a06f3d977b945f60b7001055d0f163cb8a1e071933b",
+        "62b38e489bf2a77ccb20c2768c43a5e2da6a60a87a56f69368c1bf085e15c3cd",
+        "f6961cbcd284b42fc5ffced149628f535d6794655b2f3ff958458ebbb0129d70",
+        "827b07db4937104f521c32455dc81b3bf7363cfa99a7638b4340d0cc027a8843",
+        "fbefd5b45da5e1a0a9ef8da90707ded56cfee5d3f889afc28d207287412dd4d0"
+      ],
+      "guardian_latency_ms": 12328,
+      "guardian": {
+        "observation": {
+          "summary": "The demonstrator stands with arms lowered; a straight metal bar and its right black weight are visible at the bottom of the latest image, with the left hand and opposite end cropped. Recent frames within one second show both hands holding the shaft low in front of the thighs.",
+          "guidance": "Record the visible straight-bar starting position, but do not count a curl yet. Assess a raise and return only when both positions can be followed in the same uninterrupted shot.",
+          "principle": "Separating visible starting states from complete movement cycles reduces unsupported repetition and technique judgments; it does not establish equipment security or exercise safety.",
+          "current_step_id": "S4",
+          "status": "ok",
+          "concern": "The bottom crop limits current inspection of the left grip and opposite bar end; no specific equipment problem is established.",
+          "steps": [
+            {
+              "id": "S4",
+              "confidence": 0.96,
+              "criteria": [
+                {
+                  "key": "S4C1",
+                  "status": "met",
+                  "evidence": "A straight silver shaft extends to a black circular weight on the right; the opposite end is outside the crop.",
+                  "frame_indices": [
+                    4,
+                    5,
+                    6,
+                    7
+                  ]
+                },
+                {
+                  "key": "S4C2",
+                  "status": "met",
+                  "evidence": "Frames 4 and 5 show both hands contacting the straight shaft while the demonstrator's torso is upright; the latest frame crops the left grip.",
+                  "frame_indices": [
+                    4,
+                    5,
+                    7
+                  ]
+                },
+                {
+                  "key": "S4C3",
+                  "status": "met",
+                  "evidence": "The bar is held across the front of the upper thighs with arms extended downward in frames 4 and 5, with no raised curl position shown.",
+                  "frame_indices": [
+                    4,
+                    5
+                  ]
+                }
+              ]
+            }
+          ],
+          "discovered_steps": []
+        },
+        "current_stage_id": "S4",
+        "used_frames": 8,
+        "frame_times_s": [
+          86.434767,
+          87.869533,
+          89.270933,
+          90.70570000000001,
+          92.140467,
+          92.173833,
+          92.574233,
+          92.974633
+        ],
+        "ms": 12305,
+        "image_quality": "available",
+        "criteria": [
+          {
+            "id": "S1",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "label": "A bar with angled shaft sections and plates is visible.",
+                "status": "unknown"
+              },
+              {
+                "key": "S1C2",
+                "label": "Both hands visibly hold the bar in the starting close view.",
+                "status": "unknown"
+              },
+              {
+                "key": "S1C3",
+                "label": "The bar is visibly below the torso with the arms extended downward in that view.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S2",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S2C1",
+                "label": "The bar is visibly closer to the upper torso in a raised position.",
+                "status": "unknown"
+              },
+              {
+                "key": "S2C2",
+                "label": "Both hands remain visibly on the bar in the raised position.",
+                "status": "unknown"
+              },
+              {
+                "key": "S2C3",
+                "label": "A subsequent low bar position is visible with less elbow bend in the same view.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S3",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S3C1",
+                "label": "Both hands visibly hold the angled bar in the wider demonstration view.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C2",
+                "label": "A raised bar position near the torso is visible within that view.",
+                "status": "unknown"
+              },
+              {
+                "key": "S3C3",
+                "label": "A later low bar position is visible within the same demonstration view.",
+                "status": "unknown"
+              }
+            ]
+          },
+          {
+            "id": "S4",
+            "complete": false,
+            "progress": 50,
+            "criteria": [
+              {
+                "key": "S4C1",
+                "label": "A visibly straight bar with plates is present in this example.",
+                "status": "partial",
+                "evidence": "A straight silver shaft extends to a black circular weight on the right; the opposite end is outside the crop.",
+                "confidence": 0.96
+              },
+              {
+                "key": "S4C2",
+                "label": "Both hands visibly hold the bar while the performer stands upright.",
+                "status": "partial",
+                "evidence": "Frames 4 and 5 show both hands contacting the straight shaft while the demonstrator's torso is upright; the latest frame crops the left grip.",
+                "confidence": 0.96
+              },
+              {
+                "key": "S4C3",
+                "label": "The bar is visibly held low in front of the thighs before the curl demonstration.",
+                "status": "partial",
+                "evidence": "The bar is held across the front of the upper thighs with arms extended downward in frames 4 and 5, with no raised curl position shown.",
+                "confidence": 0.96
+              }
+            ]
+          },
+          {
+            "id": "S5",
+            "complete": false,
+            "progress": 0,
+            "criteria": [
+              {
+                "key": "S5C1",
+                "label": "A raised straight-bar position close to the torso is visible.",
+                "status": "unknown"
+              },
+              {
+                "key": "S5C2",
+                "label": "Both hands visibly hold the straight shaft in that raised position.",
+                "status": "unknown"
+              },
+              {
+                "key": "S5C3",
+                "label": "A subsequent low bar position is visible with less elbow bend in the same shot.",
+                "status": "unknown"
+              }
+            ]
+          }
+        ]
+      },
+      "raw_stage_match": true,
+      "ui_stage_match": true,
+      "latency_ms": 12341
+    }
+  ]
+}

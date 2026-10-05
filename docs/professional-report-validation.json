@@ -1,0 +1,211 @@
+{
+  "checked_at": "2026-10-05T08:54:57.706Z",
+  "renderer": "review-priorities-complete-reference-scope-and-guardian-static-index",
+  "sample": {
+    "fixture": "Illustrative assembly training, not a live session",
+    "file": "output/pdf/process-guide-analysis-sample.pdf",
+    "bytes": 53283,
+    "sha256": "22a210a07bd04ad27e0f504c424fd25e026d7fb2ca7dea60db3c03323dbdd062",
+    "pages": 8,
+    "render_ms": 330,
+    "html_bytes": 48373
+  },
+  "visual": {
+    "native_pdf_pages_inspected": 8,
+    "offline_html_print_pages_inspected": 8,
+    "all_pages_free_of_clipping_and_overlap": true,
+    "fixes": [
+      "Keep workflow heading/introduction with first criterion",
+      "Keep exception decision notes with author",
+      "Keep preparation cards intact when printing",
+      "Keep session context heading with first metadata row",
+      "Separate printed review-priority cards with complete borders",
+      "Keep Guardian index heading, description and first finding together"
+    ]
+  },
+  "browser": {
+    "checked_at": "2026-10-05T08:52:51.909Z",
+    "checks": [
+      {
+        "profile": "desktop",
+        "overflow": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 480
+          },
+          {
+            "complete": true,
+            "width": 480
+          },
+          {
+            "complete": true,
+            "width": 480
+          }
+        ],
+        "headingCount": 8,
+        "linksResolve": true,
+        "scripts": 0,
+        "pageErrors": [],
+        "externalRequests": []
+      },
+      {
+        "profile": "phone",
+        "overflow": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 480
+          },
+          {
+            "complete": true,
+            "width": 480
+          },
+          {
+            "complete": true,
+            "width": 480
+          }
+        ],
+        "headingCount": 8,
+        "linksResolve": true,
+        "scripts": 0,
+        "pageErrors": [],
+        "externalRequests": []
+      },
+      {
+        "profile": "tablet",
+        "overflow": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 480
+          },
+          {
+            "complete": true,
+            "width": 480
+          },
+          {
+            "complete": true,
+            "width": 480
+          }
+        ],
+        "headingCount": 8,
+        "linksResolve": true,
+        "scripts": 0,
+        "pageErrors": [],
+        "externalRequests": []
+      },
+      {
+        "profile": "empty-camera",
+        "overflow": false,
+        "images": [],
+        "headingCount": 8,
+        "linksResolve": true,
+        "scripts": 0,
+        "pageErrors": [],
+        "externalRequests": []
+      },
+      {
+        "profile": "long-title",
+        "overflow": false,
+        "images": [
+          {
+            "complete": true,
+            "width": 480
+          },
+          {
+            "complete": true,
+            "width": 480
+          },
+          {
+            "complete": true,
+            "width": 480
+          }
+        ],
+        "headingCount": 8,
+        "linksResolve": true,
+        "scripts": 0,
+        "pageErrors": [],
+        "externalRequests": []
+      }
+    ]
+  },
+  "edge_cases": {
+    "long_title": {
+      "pages": 10,
+      "bytes": 60922,
+      "full_title_marker_occurrences": 2,
+      "preserved_markers": [
+        "DESCRIPTION_FINAL_MARKER",
+        "ACTION_FINAL_MARKER",
+        "INSTRUMENT_FINAL_MARKER",
+        "PRINCIPLE_FINAL_MARKER",
+        "WARNING_FINAL_MARKER"
+      ]
+    },
+    "empty_camera": {
+      "pages": 3,
+      "no_false_zero_of_zero_completion": true,
+      "not_extracted_reference_label": true,
+      "bytes": 28204
+    }
+  },
+  "tests": {
+    "renderer_cases": 15,
+    "scheduler_cases": 9,
+    "guardian_clip_cases": 12,
+    "total": 36,
+    "last_combined_duration_s": 4.88,
+    "last_guardian_duration_s": 1.55,
+    "typecheck_passed": true
+  },
+  "stress": {
+    "realistic": {
+      "criteria": 3000,
+      "evidence": 150,
+      "photos": 24,
+      "principles": 40,
+      "pages": 752,
+      "pdf_mib": 1.333582878112793,
+      "pdf_ms": 1833,
+      "main_return_ms": 15,
+      "timer_delay_ms": 36,
+      "whole_process_peak_rss_mib": 401.25
+    },
+    "maximum": {
+      "criteria": 3000,
+      "evidence": 150,
+      "photos": 24,
+      "principles": 40,
+      "exceptions": 80,
+      "history_per_exception": 20,
+      "pages": 2512,
+      "pdf_mib": 3.951470375061035,
+      "pdf_ms": 6396,
+      "main_return_ms": 14,
+      "timer_delay_ms": 28,
+      "whole_process_peak_rss_mib": 768.484375,
+      "retained_final_markers": [
+        "FINAL_CRITERION_MARKER_9999",
+        "Evidence record 150",
+        "Preparation check 80",
+        "Principle 40:",
+        "Reference digest:"
+      ]
+    }
+  },
+  "limits": [
+    "The 384 MiB worker quota limits V8 heap, not total process RSS",
+    "PDF remains untagged; offline HTML provides semantic headings, lists, accessible distribution descriptions and local section links",
+    "Native fonts reject unsupported printed characters with existing422 HTML fallback; newly printed action/reference fields follow the same rule"
+  ],
+  "guardian_runtime_evidence": "tmp/pdfs/report-upgrade/guardian-validation.json",
+  "runtime": "Node 24.18.0 on this Mac",
+  "scope": "Illustrative nativePDF and offlineHTML report layouts, bounded clip preparation and event-loop responsiveness. No provider calls. Not clinical accuracy or hosted capacity validation.",
+  "reproduce": {
+    "sample": "cd backend && fnm exec --using=24.18.0 node --import tsx scripts/report-preview.mts",
+    "realistic": "cd backend && fnm exec --using=24.18.0 node --import tsx scripts/report-stress.mts realistic",
+    "maximum": "cd backend && fnm exec --using=24.18.0 node --import tsx scripts/report-stress.mts maximum",
+    "targeted_tests": "cd backend && fnm exec --using=24.18.0 npm exec vitest run tests/analysisReport.test.ts tests/reportScheduling.test.ts"
+  }
+}

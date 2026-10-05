@@ -1,0 +1,103 @@
+DEMO: Real surgery video - observation of a published laparoscopic procedure
+
+Principles:
+- Reference video: real-03-surgery.mp4. This is a published, edited educational recording, not a live procedure or an instruction to perform treatment.
+- Source: https://commons.wikimedia.org/wiki/File:Laparoscopic-treatment-of-biliary-peritonitis-following-nonoperative-management-of-blunt-liver-1749-7922-5-26-S1.ogv
+- Authors: Marzano E, Rosso E, Oussoultzoglou E, Collange O, Bachellier P, Pessaux P. Published in World Journal of Emergency Surgery in 2010.
+- Video license: Creative Commons Attribution 2.0, https://creativecommons.org/licenses/by/2.0/. Credit the authors and source when sharing.
+- Changes: first 180 seconds of the 180.687528-second source, converted to H.264/AAC for browser playback. Original image size is 480 by 272; playback speed and aspect ratio are preserved.
+- Timestamps below are approximate anchors in the delivered clip, not clinical deadlines or proof that an action occurred.
+- Track the displayed view and visible working tips. Keep anything obscured, out of frame or too small to resolve uncertain.
+- Distinguish a visible endoscopic image from the title, cross-sectional imaging and brief circular grayscale imaging. A cut does not establish continuous progress.
+- Report visible instrument, thread, material and tube motion without inferring instrument settings, applied force, tissue identity or purpose that the view cannot establish.
+- Progress means that a described visual phase has been observed. It does not establish clinical success, safety, proficiency or completion of the actual operation.
+- Clinical interpretation, anatomical identification and any technique critique require qualified surgeon review and the original case context.
+- There is no audible narration in this source. Do not invent spoken explanations or instructions.
+- Use human review questions for uncertain contact, occlusion or abrupt changes in view. Do not present them as proven mistakes.
+
+Step 1: Recognize the introduction and pre-procedure images
+Objective: Around 00:00-00:20, identify the source introduction and imaging before the operative view begins.
+Tools: Video player; playback timeline; published source.
+Actions:
+- Observe the opening title card.
+- Recognize that the following grayscale cross-sectional images are presentation material rather than an endoscopic working view.
+Criteria:
+- The opening title card is visible before the operative footage.
+- A sequence of grayscale cross-sectional images is visible before the first endoscopic scene.
+Warnings:
+- Reading an image label does not validate a diagnosis or identify anatomy. Do not mark an operative action complete from an imaging slide.
+
+Step 2: Observe the first endoscopic instrument scene
+Objective: Around 00:20-00:40, establish the first visible operative field and instrument movements.
+Tools: Endoscopic video view; visible instrument tips; playback controls.
+Actions:
+- Follow the change from presentation images to the colored endoscopic view.
+- Observe the instrument tips moving within the visible field, noting any moment when glare or occlusion prevents inspection.
+Criteria:
+- A colored endoscopic field replaces the introductory imaging.
+- Visible instrument tips move in the operative field during this section.
+Warnings:
+- Only visible tips and motion are established. Tool function, tissue identity, force and a successful treatment result are not determined from this scene.
+
+Step 3: Follow the visible thread and instrument sequence
+Objective: Around 00:40-01:55, observe thread or loop handling and repeated instrument movements in the edited close-up sequence.
+Tools: Endoscopic view; visible thread or loop; visible working tips.
+Actions:
+- Identify the visible thread or loop when it enters the view.
+- Follow the shown working tips and changes in thread position through the sequence.
+- Treat each cut or obscured interval as a break in evidence.
+Criteria:
+- A thread or loop is visible together with working instrument tips.
+- The thread position changes while a visible tip handles or approaches it.
+- Repeated instrument movements are visible in the close-up sequence.
+Warnings:
+- A visible loop or pull is not proof of a completed secure knot, an adequate repair or absence of tissue injury. Do not prescribe a suture method or infer hidden contacts.
+
+Step 4: Recognize the intervening change of imaging view
+Objective: Around 01:55-02:05, distinguish the brief circular grayscale image and the subsequent return to the colored field.
+Tools: Video player; playback timeline; visible imaging views.
+Actions:
+- Note the brief change away from the colored operative view.
+- Identify the return to a colored endoscopic view without assuming continuous action across the cut.
+Criteria:
+- A circular grayscale imaging view appears between operative scenes.
+- The displayed video returns to a colored endoscopic field after that view.
+Warnings:
+- This checkpoint establishes a view change, not a diagnostic interpretation, imaging result or completed clinical decision.
+
+Step 5: Observe the visible woven-material sequence
+Objective: Around 02:10-02:38, follow the white woven material and instrument handling in the visible field.
+Tools: Endoscopic view; visible woven material; visible instrument tips.
+Actions:
+- Identify the white woven material when it is clearly in view.
+- Follow its shown position changes and the adjacent instrument movements.
+Criteria:
+- White woven material is visibly present in the operative field.
+- Its position or exposed portion changes during visible instrument handling.
+Warnings:
+- Appearance alone does not establish sterility, material identity, absorption, a completed count or effective fluid removal. Confirm any clinical interpretation with the surgeon.
+
+Step 6: Observe the later tube and instrument views
+Objective: Around 02:38-02:55, follow the visible tube and working tips in the later endoscopic scenes.
+Tools: Endoscopic view; visible tube; working tips; playback controls.
+Actions:
+- Observe the clear curved tube when it is visible.
+- Follow the later visible tube or instrument position changes without filling in occluded motion.
+Criteria:
+- A clear curved tube is visible in a later endoscopic scene.
+- Visible tube or instrument handling occurs after the woven-material sequence.
+Warnings:
+- A tube being visible is not evidence of correct placement, patency, drainage effectiveness or an off-camera secured condition.
+
+Step 7: Recognize the final displayed image
+Objective: Around 02:55-03:00, identify the final cross-sectional image as the end of the supplied clip.
+Tools: Video player; final displayed image; playback timeline.
+Actions:
+- Recognize the transition from operative footage to the final grayscale cross-sectional image.
+- Record that this ends the supplied excerpt; do not infer events outside it.
+Criteria:
+- A final grayscale cross-sectional image is displayed after the later operative scenes.
+- The supplied clip ends after the final displayed image.
+Warnings:
+- A final image or the end of playback does not prove recovery, a clinical outcome, operative completion or surgeon approval. Those require the case record and qualified review.
+

@@ -1,0 +1,29 @@
+Process Guide turns a video or live view into a guided workflow.
+
+Choose a video file, camera, or shared screen. Here, we use the parts sorting example.
+
+Upload a text guide, or choose a sample. Without a document, inferred steps remain provisional.
+
+Set your guidance preferences and personal wishes, then open the workspace.
+
+Your source stays on the left. Drag the divider to give either side more room.
+
+Steps and principles explain the action and its purpose. Evidence shows what the system observed.
+
+Review each result. Manual confirmations remain clearly separate from AI observations.
+
+Ask a typed question, or use voice controls. Speech and microphone access require your action.
+
+Guardian adds ongoing observation. Pause guidance whenever you need to inspect the source.
+
+In Readiness, record the job context and complete your preparation checks before work.
+
+Review lets you bookmark a frame and raise an exception when evidence needs attention.
+
+Open the analysis report to review the workflow, observations, and unresolved issues.
+
+Prepare a PDF, export offline HTML, or share the file. Reports can include session details.
+
+Create or sign in to a private local account, then save the current result.
+
+Saved results remain available for review on this deployment. The simulator connection is planned, and inactive.

@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-04T12:40:37.926Z",
+  "runtime": "v24.18.0",
+  "document": {
+    "status": 200,
+    "steps": 2
+  },
+  "observations": [
+    {
+      "status": 200,
+      "ms": 4373,
+      "cached": false,
+      "summary": "Observation of the workflow indicates the initial step regarding label reading is currently active.",
+      "steps": [
+        {
+          "name": "Read the label",
+          "progress": 50,
+          "complete": false
+        },
+        {
+          "name": "Seal the package",
+          "progress": 0,
+          "complete": false
+        }
+      ]
+    },
+    {
+      "status": 200,
+      "ms": 4,
+      "cached": true,
+      "summary": "Observation of the workflow indicates the initial step regarding label reading is currently active.",
+      "steps": [
+        {
+          "name": "Read the label",
+          "progress": 50,
+          "complete": false
+        },
+        {
+          "name": "Seal the package",
+          "progress": 0,
+          "complete": false
+        }
+      ]
+    },
+    {
+      "status": 200,
+      "ms": 3940,
+      "cached": false,
+      "summary": "The workflow of reading the label is currently in progress. The label 'BOX A' is partially visible.",
+      "steps": [
+        {
+          "name": "Read the label",
+          "progress": 50,
+          "complete": false
+        },
+        {
+          "name": "Seal the package",
+          "progress": 0,
+          "complete": false
+        }
+      ]
+    }
+  ]
+}

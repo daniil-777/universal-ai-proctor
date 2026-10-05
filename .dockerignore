@@ -1,0 +1,45 @@
+# Dependencies/build output must be installed for the Linux deployment platform.
+**/node_modules
+**/node_modules*
+**/dist
+.git
+**/.git
+**/.DS_Store
+**/._*
+**/.icloud*
+
+# Never send local credentials, account databases, recordings or backups to a builder.
+**/.env
+**/.env.*
+**/.data
+**/.data*
+**/*.sqlite
+**/*.sqlite-*
+**/*.db
+**/*.db-*
+**/*.pem
+**/*.key
+**/credentials*
+**/backups
+**/uploads
+**/playwright-report
+**/test-results
+**/coverage
+**/*.log
+
+# Release media is fetched by the verified deployment manifest during the build.
+**/*.mp4
+**/*.webm
+**/*.mov
+**/*.ogv
+**/*.zip
+videos
+evaluation/open-video-scenarios
+evaluation/results/*
+!evaluation/results/latest.json
+!evaluation/results/latest.html
+!evaluation/results/latest.csv
+docs
+backend/tests
+frontend/e2e
+frontend/tests

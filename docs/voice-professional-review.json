@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-10-05T12:11:24.822Z",
+  "model": "gpt-4o-mini-tts",
+  "voice": "cedar",
+  "delivery": "Professional, composed, precise articulation, steady efficient pace; preserve numbers, cautions and uncertainty.",
+  "unit_tests": {
+    "speech": 8,
+    "passed": 8
+  },
+  "backend_build": "passed on Node 24.18.0",
+  "live_browser": {
+    "status": 200,
+    "bytes": 61056,
+    "content_type": "audio/mpeg",
+    "duration_s": 3.816,
+    "playback_started": true,
+    "request_and_decode_ms": 2428,
+    "model": "gpt-4o-mini-tts",
+    "voice": "cedar",
+    "server_default": true,
+    "protocol": "Explicit speech endpoint request in the running application origin, nonempty response, native browser metadata decoding and real play() start."
+  },
+  "sample": "voice-professional-cedar.mp3",
+  "limitations": "Microphone input and subjective voice quality were not measured. This check isolates voice output; it does not measure queue arbitration.",
+  "official_guide": "https://developers.openai.com/api/docs/guides/text-to-speech",
+  "tts_retirement_notice": "https://developers.openai.com/api/docs/deprecations"
+}

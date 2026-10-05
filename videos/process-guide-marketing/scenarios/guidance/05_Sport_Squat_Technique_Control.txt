@@ -1,0 +1,70 @@
+DEMO: Sport technique control - adult unloaded bodyweight squat
+
+Principles:
+- This guide describes an adult demonstration of an unloaded bodyweight squat. It is not a ground-truth label set, a medical assessment, a prescription or a performance score.
+- Visual observation records the movement that is in view. The participant or coach verifies comfort, the intended movement and the practice context.
+- Use the participant's comfortable range and the coach's previously demonstrated cue. No heavy weights, forced depth or diagnosis is part of this demonstration.
+- Keep the full body and both feet visible from a useful side or three-quarter view; an obscured body segment remains unknown.
+- Do not infer pain, fatigue, joint loading, exact joint angles or injury risk from the image or facial expression.
+- A short clip may omit stages or contain only part of a repetition. Do not invent additional repetitions or mark an unshown stage complete.
+- Completion of these visual movement steps does not complete a comfort check, coaching review or review record; the participant and coach confirm those separately.
+
+Step 1: Show the starting stance
+Objective: Establish the visible starting position and view used for the movement review.
+Tools: Clear practice area; full-body side or three-quarter camera view; no external exercise load.
+Actions:
+- Stand in the starting stance demonstrated by the coach.
+- Show the full body and both feet before beginning the movement.
+Criteria:
+- Visual observation: The participant is visibly upright before the descent.
+- Visual observation: The full body and both feet are in frame.
+Warnings:
+- Step 1 operator verification: Confirm adult participation, an unloaded exercise setup, usable floor space and personal comfort. A video frame cannot rule out an unseen load or establish physical readiness.
+
+Step 2: Show the visible descent
+Objective: Show the lowering phase of the demonstrated bodyweight movement.
+Tools: Practice area; participant's previously demonstrated movement cue.
+Actions:
+- Begin the comfortable unloaded descent using the coach's cue.
+- Keep the torso and both feet in view during the lowering movement.
+Criteria:
+- Visual observation: The hips visibly lower from the starting stance while the knees bend.
+- Visual observation: The torso and both feet remain in frame during the observed descent.
+Warnings:
+- Step 2 operator verification: Stop for review if the participant requests it or visibility is lost. The coach and participant review the intended movement and comfort separately; video appearance does not establish load distribution, correct joint angles or a medical conclusion.
+
+Step 3: Show the lower-position pause
+Objective: Show the lower position chosen for the demonstration without imposing a depth target.
+Tools: Practice area; participant's comfortable range; coach's review cue.
+Actions:
+- Pause briefly at the lower position chosen for this demonstration.
+- Keep the lower body and both feet visible during that pause.
+Criteria:
+- Visual observation: The participant visibly pauses in a lower position after the descent.
+- Visual observation: The lower-body position and both feet are visible during that pause.
+Warnings:
+- Step 3 operator verification: Only the participant can report comfort, and the coach reviews the intended range. Avoid forcing additional depth to satisfy the camera view. Do not infer a numerical knee angle, a mandatory depth or an injury diagnosis from pixels.
+
+Step 4: Return to the upright position
+Objective: Show the visible rising phase and the end of the demonstrated repetition.
+Tools: Practice area; coach's return cue.
+Actions:
+- Return toward the upright starting position at a comfortable pace.
+- Pause upright with the full body and both feet still visible.
+Criteria:
+- Visual observation: The hips and torso visibly rise after the lower-position pause.
+- Visual observation: The participant returns to an upright stance within the same observed sequence.
+Warnings:
+- Step 4 operator verification: Confirm the intended movement with the coach. A visible return does not prove ideal technique, symmetrical loading or completion of phases outside the recorded view.
+
+Step 5: Finish with a visible resting pause
+Objective: End the visible sequence with a full-body resting pause.
+Tools: Recorded full-body view; practice area.
+Actions:
+- Stop in a comfortable resting stance after the observed return.
+- Hold the finishing pause with the full body in frame.
+Criteria:
+- Visual observation: The participant visibly stops the movement after the return.
+- Visual observation: A finishing pause is visible with the full body in frame.
+Warnings:
+- Step 5 operator verification: Obtain the participant's comfort report and review any technique question with the coach separately. A finishing pause does not prove that a review or record was completed. Do not produce a hidden repetition count, fitness score, calorie estimate or diagnostic judgment.

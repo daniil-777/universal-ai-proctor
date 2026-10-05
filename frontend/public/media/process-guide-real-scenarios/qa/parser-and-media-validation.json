@@ -1,0 +1,129 @@
+{
+  "validated_at": "2026-10-05T10:29:52.107Z",
+  "documents": [
+    {
+      "id": "real-house-construction",
+      "file": "Real_01_House_Construction.txt",
+      "steps": 6,
+      "criteria": 15,
+      "principles": 11,
+      "warnings": [],
+      "step_names": [
+        "Observe panel-edge preparation and hardware presentation",
+        "Observe the ground-floor wall enclosure",
+        "Observe upper-floor framing and the next wall level",
+        "Observe upper-wall edge work and roof-outline growth",
+        "Observe roof support and connection details",
+        "Observe external sheet and roof-covering work"
+      ],
+      "all_initial_steps_incomplete": true,
+      "all_initial_criteria_unknown": true,
+      "duration_s": 180,
+      "native_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "video_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124"
+    },
+    {
+      "id": "real-manufacturing",
+      "file": "Real_02_Manufacturing.txt",
+      "steps": 6,
+      "criteria": 14,
+      "principles": 11,
+      "warnings": [],
+      "step_names": [
+        "Observe machining context and controller interaction",
+        "Observe machine-tool activity",
+        "Observe tool presentation and manual tooling work",
+        "Observe product presentation and further tooling operations",
+        "Observe sample parts and collaborative drawing review",
+        "Observe final machine and mould-detail views"
+      ],
+      "all_initial_steps_incomplete": true,
+      "all_initial_criteria_unknown": true,
+      "duration_s": 175.124921,
+      "native_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "video_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d"
+    },
+    {
+      "id": "real-surgery",
+      "file": "Real_03_Surgery.txt",
+      "steps": 7,
+      "criteria": 15,
+      "principles": 21,
+      "warnings": [],
+      "step_names": [
+        "Recognize the introduction and pre-procedure images",
+        "Observe the first endoscopic instrument scene",
+        "Follow the visible thread and instrument sequence",
+        "Recognize the intervening change of imaging view",
+        "Observe the visible woven-material sequence",
+        "Observe the later tube and instrument views",
+        "Recognize the final displayed image"
+      ],
+      "all_initial_steps_incomplete": true,
+      "all_initial_criteria_unknown": true,
+      "duration_s": 180,
+      "native_dimensions": {
+        "width": 480,
+        "height": 272
+      },
+      "video_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd"
+    },
+    {
+      "id": "real-dancing",
+      "file": "Real_04_Dancing.txt",
+      "steps": 8,
+      "criteria": 24,
+      "principles": 17,
+      "warnings": [],
+      "step_names": [
+        "Observe the opening shoe contact and lift",
+        "Observe the lifted shoe in the oblique view",
+        "Observe the forward and backward shoe movement",
+        "Observe changing shoe orientation near the floor",
+        "Observe the later forward shoe lifts and returns",
+        "Observe the faster and lower-camera footwork examples",
+        "Observe the wider rear-foot lift",
+        "Observe the final travelling and crossed-foot sequence"
+      ],
+      "all_initial_steps_incomplete": true,
+      "all_initial_criteria_unknown": true,
+      "duration_s": 123.415533,
+      "native_dimensions": {
+        "width": 428,
+        "height": 240
+      },
+      "video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852"
+    },
+    {
+      "id": "real-sport",
+      "file": "Real_05_Sport.txt",
+      "steps": 5,
+      "criteria": 15,
+      "principles": 17,
+      "warnings": [],
+      "step_names": [
+        "Identify the EZ bar and visible starting grip",
+        "Observe an EZ-bar raise and lowering in the close view",
+        "Observe the later EZ-bar demonstration views",
+        "Identify the straight bar and visible starting position",
+        "Observe the straight-bar raise and lowering"
+      ],
+      "all_initial_steps_incomplete": true,
+      "all_initial_criteria_unknown": true,
+      "duration_s": 173.221875,
+      "native_dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "video_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3"
+    }
+  ],
+  "total_steps": 32,
+  "total_criteria": 83
+}

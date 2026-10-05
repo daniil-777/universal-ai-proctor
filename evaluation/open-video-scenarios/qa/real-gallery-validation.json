@@ -1,0 +1,521 @@
+{
+  "validated_at": "2026-10-05T10:30:32.271Z",
+  "gallery": "http://127.0.0.1:8101/media/process-guide-real-scenarios/index.html",
+  "status": "passed",
+  "results": [
+    {
+      "download_headers": [
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/process-guide-real-scenarios.zip",
+          "status": 200,
+          "type": "application/zip",
+          "expected": "application/zip",
+          "bytes": 323102535
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-01-house.mp4",
+          "status": 200,
+          "type": "video/mp4",
+          "expected": "video/mp4",
+          "bytes": 99506681
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/guidance/Real_01_House_Construction.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8",
+          "expected": "text/plain",
+          "bytes": 6251
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/prompts/Real_01_House_Construction_Gemini_Analysis.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8",
+          "expected": "text/plain",
+          "bytes": 1934
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-02-manufacturing.mp4",
+          "status": 200,
+          "type": "video/mp4",
+          "expected": "video/mp4",
+          "bytes": 86059091
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/guidance/Real_02_Manufacturing.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8",
+          "expected": "text/plain",
+          "bytes": 6158
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/prompts/Real_02_Manufacturing_Gemini_Analysis.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8",
+          "expected": "text/plain",
+          "bytes": 1918
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-03-surgery.mp4",
+          "status": 200,
+          "type": "video/mp4",
+          "expected": "video/mp4",
+          "bytes": 14724822
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/guidance/Real_03_Surgery.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8",
+          "expected": "text/plain",
+          "bytes": 7233
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/prompts/Real_03_Surgery_Gemini_Analysis.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8",
+          "expected": "text/plain",
+          "bytes": 2025
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-04-dancing.mp4",
+          "status": 200,
+          "type": "video/mp4",
+          "expected": "video/mp4",
+          "bytes": 5434324
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/guidance/Real_04_Dancing.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8",
+          "expected": "text/plain",
+          "bytes": 7821
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/prompts/Real_04_Dancing_Gemini_Analysis.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8",
+          "expected": "text/plain",
+          "bytes": 1972
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-05-sport.mp4",
+          "status": 200,
+          "type": "video/mp4",
+          "expected": "video/mp4",
+          "bytes": 113075870
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/guidance/Real_05_Sport.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8",
+          "expected": "text/plain",
+          "bytes": 6335
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/prompts/Real_05_Sport_Gemini_Analysis.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8",
+          "expected": "text/plain",
+          "bytes": 1915
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/SOURCE_LICENSES.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8",
+          "expected": "text/plain",
+          "bytes": 3094
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/README.txt",
+          "status": 200,
+          "type": "text/plain; charset=utf-8",
+          "expected": "text/plain",
+          "bytes": 2457
+        },
+        {
+          "url": "http://127.0.0.1:8101/media/process-guide-real-scenarios/manifest.json",
+          "status": 200,
+          "type": "application/json; charset=utf-8",
+          "expected": "application/json",
+          "bytes": 7221
+        }
+      ]
+    },
+    {
+      "surface": "live",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow": false,
+      "videos": [
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-01-house.mp4",
+          "width": 1920,
+          "height": 1080,
+          "duration": 180,
+          "error": null
+        },
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-02-manufacturing.mp4",
+          "width": 1920,
+          "height": 1080,
+          "duration": 175.124921,
+          "error": null
+        },
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-03-surgery.mp4",
+          "width": 480,
+          "height": 272,
+          "duration": 180,
+          "error": null
+        },
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-04-dancing.mp4",
+          "width": 428,
+          "height": 240,
+          "duration": 123.415533,
+          "error": null
+        },
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-05-sport.mp4",
+          "width": 1920,
+          "height": 1080,
+          "duration": 173.221875,
+          "error": null
+        }
+      ],
+      "played": [
+        {
+          "id": "real-house-construction",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-manufacturing",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-surgery",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-dancing",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-sport",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "surface": "live",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "overflow": false,
+      "videos": [
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-01-house.mp4",
+          "width": 1920,
+          "height": 1080,
+          "duration": 180,
+          "error": null
+        },
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-02-manufacturing.mp4",
+          "width": 1920,
+          "height": 1080,
+          "duration": 175.124921,
+          "error": null
+        },
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-03-surgery.mp4",
+          "width": 480,
+          "height": 272,
+          "duration": 180,
+          "error": null
+        },
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-04-dancing.mp4",
+          "width": 428,
+          "height": 240,
+          "duration": 123.415533,
+          "error": null
+        },
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-05-sport.mp4",
+          "width": 1920,
+          "height": 1080,
+          "duration": 173.221875,
+          "error": null
+        }
+      ],
+      "played": [
+        {
+          "id": "real-house-construction",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-manufacturing",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-surgery",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-dancing",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-sport",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "surface": "live",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "overflow": false,
+      "videos": [
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-01-house.mp4",
+          "width": 1920,
+          "height": 1080,
+          "duration": 180,
+          "error": null
+        },
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-02-manufacturing.mp4",
+          "width": 1920,
+          "height": 1080,
+          "duration": 175.124921,
+          "error": null
+        },
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-03-surgery.mp4",
+          "width": 480,
+          "height": 272,
+          "duration": 180,
+          "error": null
+        },
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-04-dancing.mp4",
+          "width": 428,
+          "height": 240,
+          "duration": 123.415533,
+          "error": null
+        },
+        {
+          "source": "http://127.0.0.1:8101/media/process-guide-real-scenarios/videos/real-05-sport.mp4",
+          "width": 1920,
+          "height": 1080,
+          "duration": 173.221875,
+          "error": null
+        }
+      ],
+      "played": [
+        {
+          "id": "real-house-construction",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-manufacturing",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-surgery",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-dancing",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-sport",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "range_streaming": [
+        {
+          "id": "real-house-construction",
+          "status": 206,
+          "type": "video/mp4",
+          "content_range": "bytes 0-1023/99506681",
+          "bytes": 1024
+        },
+        {
+          "id": "real-manufacturing",
+          "status": 206,
+          "type": "video/mp4",
+          "content_range": "bytes 0-1023/86059091",
+          "bytes": 1024
+        },
+        {
+          "id": "real-surgery",
+          "status": 206,
+          "type": "video/mp4",
+          "content_range": "bytes 0-1023/14724822",
+          "bytes": 1024
+        },
+        {
+          "id": "real-dancing",
+          "status": 206,
+          "type": "video/mp4",
+          "content_range": "bytes 0-1023/5434324",
+          "bytes": 1024
+        },
+        {
+          "id": "real-sport",
+          "status": 206,
+          "type": "video/mp4",
+          "content_range": "bytes 0-1023/113075870",
+          "bytes": 1024
+        }
+      ]
+    },
+    {
+      "surface": "offline_zip",
+      "zip": "/Users/daniil.emtsev/Documents/Documents - Daniil\u2019s MacBook Pro/me/Arbeit/portfolio/ai-proctor-VirtaMed/guidance-app/output/scenarios/process-guide-real-scenarios.zip",
+      "integrity": "passed",
+      "hashes": [
+        {
+          "id": "real-house-construction",
+          "bytes": 99506681,
+          "sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124"
+        },
+        {
+          "id": "real-manufacturing",
+          "bytes": 86059091,
+          "sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d"
+        },
+        {
+          "id": "real-surgery",
+          "bytes": 14724822,
+          "sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd"
+        },
+        {
+          "id": "real-dancing",
+          "bytes": 5434324,
+          "sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852"
+        },
+        {
+          "id": "real-sport",
+          "bytes": 113075870,
+          "sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3"
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "overflow": false,
+      "working_downloads": 18,
+      "navigation": {
+        "pack_link": false,
+        "app_link": "http://localhost:8101/",
+        "archive_link": false
+      },
+      "videos": [
+        {
+          "source": "file:///var/folders/tn/ny9vhqpj44j50l9xkwp0cphm0000gn/T/process-guide-real-gallery-qyYf60/videos/real-01-house.mp4",
+          "width": 1920,
+          "height": 1080,
+          "duration": 180,
+          "error": null
+        },
+        {
+          "source": "file:///var/folders/tn/ny9vhqpj44j50l9xkwp0cphm0000gn/T/process-guide-real-gallery-qyYf60/videos/real-02-manufacturing.mp4",
+          "width": 1920,
+          "height": 1080,
+          "duration": 175.124921,
+          "error": null
+        },
+        {
+          "source": "file:///var/folders/tn/ny9vhqpj44j50l9xkwp0cphm0000gn/T/process-guide-real-gallery-qyYf60/videos/real-03-surgery.mp4",
+          "width": 480,
+          "height": 272,
+          "duration": 180,
+          "error": null
+        },
+        {
+          "source": "file:///var/folders/tn/ny9vhqpj44j50l9xkwp0cphm0000gn/T/process-guide-real-gallery-qyYf60/videos/real-04-dancing.mp4",
+          "width": 428,
+          "height": 240,
+          "duration": 123.415533,
+          "error": null
+        },
+        {
+          "source": "file:///var/folders/tn/ny9vhqpj44j50l9xkwp0cphm0000gn/T/process-guide-real-gallery-qyYf60/videos/real-05-sport.mp4",
+          "width": 1920,
+          "height": 1080,
+          "duration": 173.221875,
+          "error": null
+        }
+      ],
+      "played": [
+        {
+          "id": "real-house-construction",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-manufacturing",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-surgery",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-dancing",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        },
+        {
+          "id": "real-sport",
+          "initial_playback": "passed",
+          "midpoint_seek": "passed"
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "manual_visual_review": {
+    "reviewed_at": "2026-10-05T10:31:05.841411+00:00",
+    "status": "passed",
+    "screenshots": [
+      "real-gallery-1440.png",
+      "real-gallery-768.png",
+      "real-gallery-320-panels.png",
+      "real-gallery-offline-320-panels.png"
+    ],
+    "findings": "Readable text, visible native video controls, credits and download buttons; no clipping, overlapping elements or layout overflow observed. Phone panel sheets preserve the full screenshot as sequential 1400px sections for inspection."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "duration": 90,
+  "voice_duration": 83.925936,
+  "padding": 0.40493760000000045,
+  "scenes": 19,
+  "chapters": [
+    {
+      "title": "Start and choose a source",
+      "start": 0,
+      "end": 11.7860622
+    },
+    {
+      "title": "Instructions and wishes",
+      "start": 11.7860622,
+      "end": 23.612999400000003
+    },
+    {
+      "title": "Workspace, steps and confirmation",
+      "start": 23.612999400000003,
+      "end": 41.11958320000001
+    },
+    {
+      "title": "Questions and Guardian",
+      "start": 41.11958320000001,
+      "end": 53.30666640000001
+    },
+    {
+      "title": "Readiness",
+      "start": 53.30666640000001,
+      "end": 59.49520800000001
+    },
+    {
+      "title": "Evidence and exceptions",
+      "start": 59.49520800000001,
+      "end": 64.72356260000001
+    },
+    {
+      "title": "Reports, PDF and sharing",
+      "start": 64.72356260000001,
+      "end": 77.18302080000001
+    },
+    {
+      "title": "Private account and saved results",
+      "start": 77.18302080000001,
+      "end": 90
+    }
+  ]
+}

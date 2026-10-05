@@ -1,0 +1,58 @@
+{
+  "tested_at": "2026-10-05T11:30:45.038Z",
+  "actual_saved_runs": true,
+  "html_sha256": "87b725e09b9e10026336603d629e6f0266fd5bebaa2a02f1853b98bc57aa2bfd",
+  "models": [
+    {
+      "model": "gpt-4o",
+      "exact": 22,
+      "loaded": 32,
+      "qa_status": "not_run"
+    },
+    {
+      "model": "gpt-6-luna",
+      "exact": 28,
+      "loaded": 32,
+      "qa_status": "not_run"
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "exact": 30,
+      "loaded": 32,
+      "qa_status": "not_run"
+    },
+    {
+      "model": "gpt-6-astra",
+      "exact": 31,
+      "loaded": 32,
+      "qa_status": "complete"
+    }
+  ],
+  "profiles": [
+    {
+      "width": 320,
+      "overflow": false,
+      "cards": 4,
+      "cases": 42,
+      "hasSoloProbeCaveat": true,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "cards": 4,
+      "cases": 42,
+      "hasSoloProbeCaveat": true,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "cards": 4,
+      "cases": 42,
+      "hasSoloProbeCaveat": true,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

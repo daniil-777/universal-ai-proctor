@@ -1,0 +1,48 @@
+{
+  "validated_at": "2026-10-05T09:56:21.630Z",
+  "gallery": "http://127.0.0.1:8101/media/process-guide-scenarios/index.html",
+  "results": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow": false,
+      "video_count": 5,
+      "working_downloads": 27,
+      "playback": "passed for all five",
+      "errors": []
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "overflow": false,
+      "video_count": 5,
+      "playback": "passed for all five",
+      "errors": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow": false,
+      "video_count": 5,
+      "playback": "passed for all five",
+      "errors": []
+    },
+    {
+      "offline_pack": "passed",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "video_count": 5,
+      "working_downloads": 26,
+      "playback": "passed for all five"
+    }
+  ],
+  "range_streaming": "passed for all five MP4s"
+}

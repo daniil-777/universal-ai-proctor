@@ -1,0 +1,88 @@
+{
+  "validated_at": "2026-10-05T10:20:32.302Z",
+  "steps": 8,
+  "principles": 15,
+  "warnings": [],
+  "criteria": [
+    {
+      "name": "Observe the opening shoe contact and lift",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "name": "Observe the lifted shoe in the oblique view",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "name": "Observe the forward and backward shoe movement",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "name": "Observe changing shoe orientation near the floor",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "name": "Observe the later forward shoe lifts and returns",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "name": "Observe the faster and lower-camera footwork examples",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "name": "Observe the wider rear-foot lift",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "name": "Observe the final travelling and crossed-foot sequence",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    }
+  ]
+}

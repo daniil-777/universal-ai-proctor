@@ -1,0 +1,346 @@
+{
+  "date": "2026-10-04T15:47:23.571Z",
+  "note": "Exploratory real-provider integration checks on simulator/demo footage. Expert-annotated process accuracy has not been measured.",
+  "cases": [
+    {
+      "file": "../../AI-Proctor/data/s1_stage.mp4",
+      "document": "Cholecystectomy.txt",
+      "name": "Original simulator video with matching procedure reference",
+      "elapsed_ms": 6191,
+      "info": {
+        "fps": 30,
+        "totalFrames": 966,
+        "duration": 32.2,
+        "width": 1920,
+        "height": 1080
+      },
+      "frame_times_s": [
+        3,
+        4.966667
+      ],
+      "observation": {
+        "summary": "The images depict an ongoing surgical procedure focused on the hepatocystic triangle with visible instruments like fenestrated bipolar and monopolar hook. Currently, the instruments do not show any active dissection or tissue manipulation.",
+        "guidance": "Ensure visibility of the hepatocystic triangle remains clear and instruments are properly positioned to avoid any obstruction. Confirm the readiness to progress to the next steps in the expected workflow after ensuring safe anatomy.",
+        "principle": "If any doubt → do not proceed. Avoid entering liver parenchyma.",
+        "current_step_id": "S1",
+        "status": "watch",
+        "concern": "The view may be obstructed by surrounding anatomical structures or insufficient tension applied on the gallbladder, which could hinder visibility and safety of the procedure.",
+        "steps": [
+          {
+            "id": "S1",
+            "confidence": 0.8,
+            "criteria": [
+              {
+                "key": "S1C1",
+                "status": "unknown",
+                "evidence": "The fundus position is unclear due to the view angle.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "key": "S1C2",
+                "status": "unknown",
+                "evidence": "Infundibulum position is not directly observable.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "key": "S1C3",
+                "status": "met",
+                "evidence": "Hepatocystic triangle appears exposed, albeit potentially obscured by surrounding tissue.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "key": "S1C4",
+                "status": "unknown",
+                "evidence": "Potential for small bowel or omentum obstruction is present but not visible.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "key": "S1C5",
+                "status": "unknown",
+                "evidence": "The triangulation is not observable from the current angle.",
+                "frame_indices": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "discovered_steps": []
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "name": "Exposure of the Gallbladder",
+          "progress": 10,
+          "complete": false
+        },
+        {
+          "id": "S2",
+          "name": "Dissection of the Hepatocystic Triangle",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S3",
+          "name": "Achieve Critical View of Safety (CVS)",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S4",
+          "name": "Control of Cystic Duct and Cystic Artery",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S5",
+          "name": "Gallbladder Detachment from Liver Bed",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S6",
+          "name": "Specimen Retrieval and Final Inspection",
+          "progress": 0,
+          "complete": false
+        }
+      ],
+      "checks": {
+        "single_observation_cannot_confirm": true
+      }
+    },
+    {
+      "file": "../../AI-Proctor/data/s1_stage.mp4",
+      "document": "Coffee_Brewing.txt",
+      "name": "Original simulator video with unrelated coffee reference",
+      "mismatch": true,
+      "elapsed_ms": 2706,
+      "info": {
+        "fps": 30,
+        "totalFrames": 966,
+        "duration": 32.2,
+        "width": 1920,
+        "height": 1080
+      },
+      "frame_times_s": [
+        3,
+        4.966667
+      ],
+      "observation": {
+        "summary": "The images depict a surgical simulation with multiple tools visible, including a fenestrated bipolar instrument and a monopolar hook. There are no clear ongoing actions or identifiable criteria being met in the current frame of the workflow.",
+        "guidance": "Focus on identifying specific actions related to the surgical tools present. Look for visible evidence of interaction, such as movement or engagement with the tissue being examined.",
+        "principle": "Ensure that all instruments are used safely and effectively during the procedure.",
+        "current_step_id": null,
+        "status": "watch",
+        "concern": "No identifiable actions are occurring in the current view; the tools are in a static position without visible engagement with tissues.",
+        "steps": [],
+        "discovered_steps": []
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "name": "Prepare the filter",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S2",
+          "name": "Add ground coffee",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S3",
+          "name": "Bloom and pour",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S4",
+          "name": "Finish and serve",
+          "progress": 0,
+          "complete": false
+        }
+      ],
+      "checks": {
+        "single_observation_cannot_confirm": true,
+        "unrelated_reference_remains_unknown": true
+      }
+    },
+    {
+      "file": "../../brag-output/composition/assets/video/sim.mp4",
+      "document": null,
+      "name": "Second simulator clip without a document",
+      "elapsed_ms": 6010,
+      "info": {
+        "fps": 30,
+        "totalFrames": 480,
+        "duration": 16,
+        "width": 1320,
+        "height": 800
+      },
+      "frame_times_s": [
+        3,
+        4.966667
+      ],
+      "observation": {
+        "summary": "The current view shows surgical instruments positioned near a mass within a biological structure, likely the liver, with visible anatomical details. The apparent actions involve manipulation of the mass with the surgical tools.",
+        "guidance": "Monitor the techniques being used for safe extraction or manipulation of the mass. Ensure hemostasis and careful handling of surrounding tissues to minimize trauma.",
+        "principle": "Observe all visible actions and instruments in the surgical process to identify best practices and any potential risks.",
+        "current_step_id": null,
+        "status": "ok",
+        "concern": "",
+        "steps": [],
+        "discovered_steps": [
+          {
+            "step": "Use surgical instrument to grasp the mass.",
+            "objective": "Extract or manipulate the mass safely.",
+            "instruments": "Surgical graspers.",
+            "actions": "Carefully engage with the mass, ensuring control and precision.",
+            "criteria": "Visible movement of surgical instruments around the mass.",
+            "duration": "Immediate."
+          },
+          {
+            "step": "Assess the surrounding tissue for hemostasis.",
+            "objective": "Ensure minimal bleeding during manipulation.",
+            "instruments": "Suction or cautery device (if visible).",
+            "actions": "Evaluate and manage any bleeding vessels immediately.",
+            "criteria": "Observation of any bleeding or the use of hemostatic techniques nearby.",
+            "duration": "Immediate."
+          },
+          {
+            "step": "Prepare for potential excision of the mass.",
+            "objective": "Plan for the removal or further evaluation of the mass.",
+            "instruments": "Scissors or scalpel (if visible).",
+            "actions": "Position the necessary instruments for quick access during excision.",
+            "criteria": "Visibility of additional surgical instruments ready for action.",
+            "duration": "Immediate."
+          },
+          {
+            "step": "Monitor for signs of tissue damage or complications.",
+            "objective": "Ensure patient safety during the procedure.",
+            "instruments": "N/A",
+            "actions": "Observe and evaluate surrounding tissue integrity.",
+            "criteria": "Visible signs of trauma, bleeding, or unexpected anatomical changes.",
+            "duration": "Ongoing."
+          },
+          {
+            "step": "Document the process and findings.",
+            "objective": "Maintain accurate surgical records.",
+            "instruments": "Camera or surgical log.",
+            "actions": "Take notes or images as the procedure progresses.",
+            "criteria": "No direct visualization required, but must ensure documentation is happening.",
+            "duration": "Ongoing."
+          }
+        ]
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "name": "Use surgical instrument to grasp the mass.",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S2",
+          "name": "Assess the surrounding tissue for hemostasis.",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S3",
+          "name": "Prepare for potential excision of the mass.",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S4",
+          "name": "Monitor for signs of tissue damage or complications.",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S5",
+          "name": "Document the process and findings.",
+          "progress": 0,
+          "complete": false
+        }
+      ],
+      "checks": {
+        "single_observation_cannot_confirm": true,
+        "workflow_is_provisional": true
+      }
+    },
+    {
+      "file": "../../brag-output/brag.mp4",
+      "document": "Coffee_Brewing.txt",
+      "name": "App demonstration video with unrelated coffee reference",
+      "mismatch": true,
+      "elapsed_ms": 2396,
+      "info": {
+        "fps": 30,
+        "totalFrames": 750,
+        "duration": 25,
+        "width": 1920,
+        "height": 1080
+      },
+      "frame_times_s": [
+        3,
+        4.966667
+      ],
+      "observation": {
+        "summary": "The visible content does not align with the coffee brewing workflow, showing surgical processes instead. No criteria related to coffee preparation have been met based on the available images.",
+        "guidance": "Reassess the current workflow observations as the visible processes reflect a different context. Check for relevant images relating to coffee brewing steps (filter preparation, coffee addition, etc.).",
+        "principle": "Use clean equipment.",
+        "current_step_id": null,
+        "status": "alert",
+        "concern": "The observed content is unrelated to coffee preparation, potentially indicating a mismatch in workflow context.",
+        "steps": [],
+        "discovered_steps": []
+      },
+      "steps": [
+        {
+          "id": "S1",
+          "name": "Prepare the filter",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S2",
+          "name": "Add ground coffee",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S3",
+          "name": "Bloom and pour",
+          "progress": 0,
+          "complete": false
+        },
+        {
+          "id": "S4",
+          "name": "Finish and serve",
+          "progress": 0,
+          "complete": false
+        }
+      ],
+      "checks": {
+        "single_observation_cannot_confirm": true,
+        "unrelated_reference_remains_unknown": true
+      }
+    }
+  ]
+}

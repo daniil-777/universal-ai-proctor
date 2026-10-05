@@ -1,0 +1,9 @@
+Tap Dance Technique
+Author:Dbuetow
+Source:https://commons.wikimedia.org/wiki/File:Tap_Dance_Technique.webm
+Original media:https://upload.wikimedia.org/wikipedia/commons/a/a1/Tap_Dance_Technique.webm
+License:Creative Commons Attribution-ShareAlike4.0 International
+https://creativecommons.org/licenses/by-sa/4.0
+
+Changes:Full source converted fromWebM VP8/Vorbis toMP4 H264/AAC; faststart enabled. Native428x240 size and timeline retained. No trim, crop, upscale, loop or speed change. The source container duration tag overstates the actual media by about1second; the delivery preserves all source videoframes and audio content.
+The derived MP4 is provided underCC BY-SA4.0. No endorsement implied.

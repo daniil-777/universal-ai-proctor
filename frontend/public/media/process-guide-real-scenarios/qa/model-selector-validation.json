@@ -1,0 +1,188 @@
+{
+  "checked_at": "2026-10-05T11:29:42.205Z",
+  "base_url": "http://127.0.0.1:8102",
+  "isolated_fixture": true,
+  "provider_requests_forwarded": 0,
+  "blocked_inference_requests": [],
+  "profiles": [
+    {
+      "width": 320,
+      "chat_default": "GPT-6 Astra",
+      "chat_selected": "GPT-6.1 Sol",
+      "guardian_selected": "GPT-6 Luna",
+      "guardian_frames": 9,
+      "guardian_window_s": 8,
+      "coarse_pointer": true,
+      "chat_choices": {
+        "GPT-6.1 Sol": {
+          "x": 38,
+          "y": 290,
+          "width": 244,
+          "height": 44
+        },
+        "GPT-6 Astra": {
+          "x": 38,
+          "y": 246,
+          "width": 244,
+          "height": 44
+        },
+        "GPT-6 Luna": {
+          "x": 38,
+          "y": 334,
+          "width": 244,
+          "height": 44
+        }
+      },
+      "guardian_choices": {
+        "GPT-6.1 Sol": {
+          "x": 22,
+          "y": 517,
+          "width": 265.84375,
+          "height": 44
+        },
+        "GPT-6 Astra": {
+          "x": 22,
+          "y": 561,
+          "width": 265.84375,
+          "height": 44
+        },
+        "GPT-6 Luna": {
+          "x": 22,
+          "y": 605,
+          "width": 265.84375,
+          "height": 44
+        }
+      },
+      "popover_bounds": {
+        "x": 0,
+        "y": 389,
+        "width": 288,
+        "height": 556
+      },
+      "no_document_overflow": true,
+      "page_errors": []
+    },
+    {
+      "width": 768,
+      "chat_default": "GPT-6 Astra",
+      "chat_selected": "GPT-6.1 Sol",
+      "guardian_selected": "GPT-6 Luna",
+      "guardian_frames": 9,
+      "guardian_window_s": 8,
+      "coarse_pointer": true,
+      "chat_choices": {
+        "GPT-6.1 Sol": {
+          "x": 154,
+          "y": 273,
+          "width": 460,
+          "height": 44
+        },
+        "GPT-6 Astra": {
+          "x": 154,
+          "y": 229,
+          "width": 460,
+          "height": 44
+        },
+        "GPT-6 Luna": {
+          "x": 154,
+          "y": 317,
+          "width": 460,
+          "height": 44
+        }
+      },
+      "guardian_choices": {
+        "GPT-6.1 Sol": {
+          "x": 22,
+          "y": 448,
+          "width": 265.84375,
+          "height": 44
+        },
+        "GPT-6 Astra": {
+          "x": 22,
+          "y": 492,
+          "width": 265.84375,
+          "height": 44
+        },
+        "GPT-6 Luna": {
+          "x": 22,
+          "y": 536,
+          "width": 265.84375,
+          "height": 44
+        }
+      },
+      "popover_bounds": {
+        "x": 0,
+        "y": 320,
+        "width": 288,
+        "height": 556
+      },
+      "no_document_overflow": true,
+      "page_errors": []
+    },
+    {
+      "width": 1440,
+      "chat_default": "GPT-6 Astra",
+      "chat_selected": "GPT-6.1 Sol",
+      "guardian_selected": "GPT-6 Luna",
+      "guardian_frames": 9,
+      "guardian_window_s": 8,
+      "coarse_pointer": false,
+      "chat_choices": {
+        "GPT-6.1 Sol": {
+          "x": 751,
+          "y": 95,
+          "width": 249.96875,
+          "height": 32
+        },
+        "GPT-6 Astra": {
+          "x": 751,
+          "y": 63,
+          "width": 249.96875,
+          "height": 32
+        },
+        "GPT-6 Luna": {
+          "x": 751,
+          "y": 127,
+          "width": 249.96875,
+          "height": 32
+        }
+      },
+      "guardian_choices": {
+        "GPT-6.1 Sol": {
+          "x": 274,
+          "y": 616,
+          "width": 265.84375,
+          "height": 32
+        },
+        "GPT-6 Astra": {
+          "x": 274,
+          "y": 648,
+          "width": 265.84375,
+          "height": 32
+        },
+        "GPT-6 Luna": {
+          "x": 274,
+          "y": 680,
+          "width": 265.84375,
+          "height": 32
+        }
+      },
+      "popover_bounds": {
+        "x": 252,
+        "y": 500,
+        "width": 288,
+        "height": 384
+      },
+      "no_document_overflow": true,
+      "page_errors": []
+    }
+  ],
+  "late_catalog": {
+    "width": 320,
+    "catalog_first": "gpt-4o",
+    "chat_preserved": "gpt-6-astra",
+    "independent_guardian_preserved": "gpt-6-luna",
+    "passed": true
+  },
+  "passed": true
+}

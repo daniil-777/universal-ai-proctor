@@ -1,0 +1,16 @@
+SEEDANCE SCENE: Dance technique control
+
+SHORT PREVIEW: 4 seconds, 16:9, 1080p output, silent
+
+Photorealistic premium enterprise commercial. Landscape 16:9, 1920 by 1080 output, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. An adult beginner dancer in comfortable fitted rehearsal clothes and flat dance shoes practices in a bright premium dance studio with a clear wooden floor. Full body from head to shoes remains in frame throughout, no mirror reflections creating extra people. During four seconds the dancer begins upright, performs one calm rightward side step followed by bringing the other foot beside it, then holds a comfortable stable pose. Natural anatomy, clear foot contact and consistent limb identity. Locked eye-level camera, ample floor space, no acrobatics or extreme flexibility.
+
+EXPANDED VERSION: 12 seconds, 16:9, 1080p
+
+Photorealistic premium enterprise commercial. Landscape 16:9, 1920 by 1080 output, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. An adult beginner dancer performs a slow simple practice phrase: neutral start, side step to the right and close, return step to the left and close, a gentle quarter turn and a held finish. Keep the full body and both feet visible, with natural balance and ordinary rehearsal pace. Stable camera, clear floor, no mirrors, no acrobatics or forced stretching. Preserve the order so an observer can review the phrase.
+
+MODEL OPTIONS
+Seedance 1.5 Pro: the affordable preview model quoted through Higgsfield.
+Seedance 2.5: newer premium option for the expanded version, subject to available credits.
+Do not generate an app interface or fake AI results inside the footage. Add actual app captures in a separate approved edit.
+
+Output dimensions will be measured from the MP4. This does not establish the provider's internal rendering or upscaling method.

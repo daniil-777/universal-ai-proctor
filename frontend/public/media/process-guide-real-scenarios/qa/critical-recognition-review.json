@@ -1,0 +1,18 @@
+{
+  "review": "critical manual review of sampled actual frames",
+  "confirmed_model_errors": [
+    "Sport S2@41 and S3@50: visible EZ bar misclassified as straight bar.",
+    "Dance S1 Q&A claims a return to floor not supported by its sampled short window."
+  ],
+  "test_anchor_limitations": [
+    "Sport S1@37 has already entered a raised-bar phase; S2 is defensible. This reference anchor needs correction before treating exact-ID scores as accuracy."
+  ],
+  "ambiguity": [
+    "Dance stages share shoe-lift cues; a one-second window may not distinguish the edited example."
+  ],
+  "metric_limitations": [
+    "Lexical matching does not check semantic correctness or prohibited-claim compliance. Do not use lexical recall as safety or equipment accuracy.",
+    "Exact stage matches are reported as reference-check agreement, not a validated general accuracy estimate."
+  ],
+  "app_state_review": "Raw Guardian and merged UI IDs agree in inspected mismatches; no state rewrite defect found."
+}

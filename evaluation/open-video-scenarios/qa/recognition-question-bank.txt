@@ -1,0 +1,220 @@
+PROCESS GUIDE: REAL VIDEO STAGE RECOGNITION QUESTION BANK
+
+42 authored cases: 32 stage-recognition questions plus 10 uncertainty questions. No provider results are included.
+
+- Authored reference answers grounded in the supplied guides and timestamped visual reviews. This is a question bank, not a provider test result.
+- A stage question identifies an observed phase; one frame does not prove all listed completion criteria occurred. Preserve evidence_required_for_complete when evaluating step completion.
+- Expected concept groups are synonyms: any phrase within each group can match. Case-insensitive lexical matching is only a proxy, not semantic, clinical, or safety validation.
+- Prohibited claims are examples of unsupported affirmative conclusions. Avoid naive substring flags when an answer explicitly negates such a claim.
+- Time anchors use delivered MP4 playback seconds. Guide windows are approximate; edited/timelapse sources do not establish real-world elapsed process time.
+- Surgical cases request retrospective description of published footage. They do not request clinical action, diagnosis, treatment, or certification.
+
+real-house-construction-stage-1 | stage | 00:10.0 | S1
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: Panel-edge preparation and presented fasteners are shown. Hardware in a gloved hand is observable, but fastening quality is unverified.
+Expected concepts: [fastener / screw / hardware] + [hand / glove]
+
+real-house-construction-stage-2 | stage | 00:40.0 | S2
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The lower-storey wall enclosure is developing: upright wall panels and openings are visible. Hidden connections remain unverified.
+Expected concepts: [wall / panel] + [ground / lower / first floor]
+
+real-house-construction-stage-3 | stage | 01:30.0 | S3
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: Upper-floor or upper-storey assembly is visible above the lower enclosure. This identifies a construction phase, not a structural result.
+Expected concepts: [upper / second / next storey / next story] + [wall / panel / floor]
+
+real-house-construction-stage-4 | stage | 01:55.0 | S4
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The upper storey has a developing pitched roof frame. Roof members are visible, but completion and correct bracing are unverified.
+Expected concepts: [roof / pitched / rafter] + [frame / timber / member]
+
+real-house-construction-stage-5 | stage | 02:10.0 | S5
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The close-up shows roof timber meeting its support beam or connection region. Actual dimensions and load capacity are unverified.
+Expected concepts: [support / beam / bearing / connection / joint] + [roof / rafter / timber]
+
+real-house-construction-stage-6 | stage | 02:50.0 | S6
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: Roof-covering and external-sheet work are the later visible phase. A worker and covering rows identify the activity, without proving weather-tightness.
+Expected concepts: [roof / covering / sheet / exterior] + [worker / handling / installation / rows]
+
+real-house-construction-uncertainty-1 | uncertainty | 02:10.0 | uncertainty
+Question: Can this view confirm fastening torque, hidden joint strength, or structural approval?
+Reference answer: No. Visible timber and hardware cannot establish torque, hidden strength, or approval. Those require the responsible inspection process.
+Expected concepts: [cannot / unverified / not established / not enough] + [torque / strength / approval / hidden]
+
+real-house-construction-uncertainty-2 | uncertainty | 01:30.0 | uncertainty
+Question: Does the three-minute construction playback show the house was built in three minutes?
+Reference answer: No. The original includes edited time-lapse footage, so playback duration does not represent site-work duration.
+Expected concepts: [time-lapse / timelapse / edited] + [cannot / does not / not represent / not indicate]
+
+real-manufacturing-stage-1 | stage | 00:27.0 | S1
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: An operator interacting with a machine controller is shown. The console interaction is visible, while program correctness remains unverified.
+Expected concepts: [controller / console / control panel] + [operator / person / worker]
+
+real-manufacturing-stage-2 | stage | 00:35.0 | S2
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: Machine-tool activity is the phase: a mounted workpiece or tooling appears in the machine work area. Parameters and acceptance are unverified.
+Expected concepts: [machine / machining / tool] + [workpiece / mould / mold / fixture]
+
+real-manufacturing-stage-3 | stage | 01:00.0 | S3
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The tool-presentation and manual-tooling section includes a digital indicator with a probe above a metal block. This is not a calibrated acceptance result.
+Expected concepts: [indicator / gauge / gage / probe] + [display / metal / block / measurement]
+
+real-manufacturing-stage-4 | stage | 01:30.0 | S4
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: Further tooling operations are shown, with a spindle or tool positioned over mounted metal blocks. The film does not establish one continuous tracked part.
+Expected concepts: [tool / spindle / machine] + [block / tooling / metal / workpiece]
+
+real-manufacturing-stage-5 | stage | 02:15.0 | S5
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The sample-and-design-review section shows a group reviewing or pointing toward a drawing on a board. Review activity is visible, approval is unverified.
+Expected concepts: [drawing / plan / board] + [people / group / review / point]
+
+real-manufacturing-stage-6 | stage | 02:40.0 | S6
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The final tooling montage shows an exposed mould or tooling assembly with internal detail. Its appearance does not establish an accepted finished product.
+Expected concepts: [mould / mold / tooling] + [detail / assembly / cavity / internal / open]
+
+real-manufacturing-uncertainty-1 | uncertainty | 01:00.0 | uncertainty
+Question: Does the displayed indicator prove this part passed its dimensional tolerance or that the instrument is calibrated?
+Reference answer: No. A displayed indicator alone cannot establish calibration, a specified tolerance, or acceptance. Traceable measurements and the actual specification are missing.
+Expected concepts: [cannot / unverified / not established / no] + [tolerance / calibration / calibrated / acceptance]
+
+real-manufacturing-uncertainty-2 | uncertainty | 01:30.0 | uncertainty
+Question: Can we confirm all these machine and product shots follow one identified workpiece continuously?
+Reference answer: No. This is an edited promotional montage of several jobs and products, without a verified genealogy for one workpiece.
+Expected concepts: [montage / edited / multiple / several] + [cannot / unverified / not established / no]
+
+real-surgery-stage-1 | stage | 00:11.0 | S1
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: Introductory cross-sectional grayscale imaging is shown before the endoscopic working view. It does not establish a diagnosis or operative action.
+Expected concepts: [grayscale / gray / grey / cross-sectional / ct / imaging] + [introduction / introductory / before / pre-procedure / presentation]
+
+real-surgery-stage-2 | stage | 00:27.0 | S2
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The first colored endoscopic instrument scene is shown. Instrument tips are visible in the field, without enough evidence to identify hidden contact or success.
+Expected concepts: [endoscopic / laparoscopic / operative] + [instrument / tip / field]
+
+real-surgery-stage-3 | stage | 01:22.0 | S3
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The visible thread or loop and instrument-handling phase is shown. Movement can be described without declaring a secure knot or successful repair.
+Expected concepts: [thread / loop / suture] + [instrument / tip / handling]
+
+real-surgery-stage-4 | stage | 01:57.6 | S4
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: A brief circular monochrome imaging view interrupts the operative sequence. This is a change of displayed view, not a diagnostic conclusion.
+Expected concepts: [circular / round / monochrome / grayscale / gray / grey] + [image / imaging / view]
+
+real-surgery-stage-5 | stage | 02:17.0 | S5
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The light woven-material handling phase is shown in the endoscopic field. Material position is observable; identity, sterility, count, and effectiveness are unverified.
+Expected concepts: [woven / material / gauze / white / light-coloured / light-colored] + [instrument / handling / field]
+
+real-surgery-stage-6 | stage | 02:42.0 | S6
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The later tube-and-instrument phase is shown. A clear curved tube is visible, without evidence establishing correct placement or drainage effectiveness.
+Expected concepts: [tube / curved / clear] + [instrument / handling / field]
+
+real-surgery-stage-7 | stage | 02:58.0 | S7
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: A final grayscale cross-sectional image is displayed at the end of the supplied excerpt. It does not prove recovery or completion of the actual operation.
+Expected concepts: [cross-sectional / ct / grayscale / gray / grey] + [final / end / ending / last]
+
+real-surgery-uncertainty-1 | uncertainty | 01:22.0 | uncertainty
+Question: Does this visible thread pull establish a secure knot, successful repair, or absence of tissue injury?
+Reference answer: No. A visible thread pull cannot establish knot security, repair adequacy, or absence of injury. Qualified surgeon review and the full case context are required.
+Expected concepts: [cannot / unverified / not establish / not prove / no] + [knot / repair / injury / qualified / surgeon]
+
+real-surgery-uncertainty-2 | uncertainty | 02:42.0 | uncertainty
+Question: Can the visible tube or final imaging certify drainage effectiveness or a successful patient outcome?
+Reference answer: No. Tube visibility and final imaging do not establish drainage effectiveness or a patient outcome. Those require the case record and qualified review.
+Expected concepts: [cannot / unverified / not establish / not prove / no] + [drainage / outcome / patient / case record / qualified]
+
+real-dancing-stage-1 | stage | 00:07.0 | S1
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The opening shoe-contact and lift example is shown. A working shoe changes position near the floor beside the supporting shoe.
+Expected concepts: [shoe / foot / feet] + [lift / tilt / raised / floor]
+
+real-dancing-stage-2 | stage | 00:19.0 | S2
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The separate oblique lifted-shoe example is shown. A shoe is raised beside or behind the supporting leg and returns toward the floor.
+Expected concepts: [shoe / foot] + [lift / raised / bent / behind]
+
+real-dancing-stage-3 | stage | 00:35.0 | S3
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The forward-and-back shoe movement example is shown. The working shoe moves forward and later returns within that shot.
+Expected concepts: [shoe / foot] + [forward / back / return / raised]
+
+real-dancing-stage-4 | stage | 00:50.0 | S4
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The near-floor shoe-orientation example is shown. An angled shoe or raised heel changes orientation beside the other shoe.
+Expected concepts: [shoe / foot] + [orientation / angled / heel / turn]
+
+real-dancing-stage-5 | stage | 01:10.0 | S5
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The later forward shoe-lift and return series is shown. A working shoe passes forward or across the other before returning within the example.
+Expected concepts: [shoe / foot] + [forward / across / lift / return]
+
+real-dancing-stage-6 | stage | 01:36.0 | S6
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The lower-camera footwork example follows the faster front view. A raised shoe or visible sole is observable, with cropped-body limits.
+Expected concepts: [shoe / foot / feet] + [lower / sole / raised / camera]
+
+real-dancing-stage-7 | stage | 01:44.0 | S7
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The wider rear-foot-lift example is shown. A free shoe rises behind the supporting leg before returning toward the floor.
+Expected concepts: [shoe / foot] + [behind / rear / lift / raised]
+
+real-dancing-stage-8 | stage | 01:55.0 | S8
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The final travelling and crossed-foot sequence is shown. The shoes cross or change relative position as the performer moves across the visible floor.
+Expected concepts: [shoe / foot / feet] + [cross / travel / across / move]
+
+real-dancing-uncertainty-1 | uncertainty | 00:19.0 | uncertainty
+Question: Can this cropped view establish the performer’s whole-body balance, a precise ankle angle, or safe technique?
+Reference answer: No. The head and much of the upper body are cropped, and the video does not measure a precise ankle angle or establish whole-body balance or safety.
+Expected concepts: [crop / cropped / upper body / head] + [cannot / unverified / not established / no]
+
+real-dancing-uncertainty-2 | uncertainty | 01:36.0 | uncertainty
+Question: Can we join movements across the tiled wipe to claim one continuous repetition or an exact tap count?
+Reference answer: No. The wipe separates examples, and blur or missing contacts prevent reconstructing a continuous repetition or exact tap count across the edit.
+Expected concepts: [cut / wipe / transition / edited / separate] + [cannot / not / no / unverified]
+
+real-sport-stage-1 | stage | 00:37.0 | S1
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The EZ-bar starting grip is shown. Both hands hold the angled bar low in front of the thighs, with plate weight and equipment checks unverified.
+Expected concepts: [ez / angled / bent] + [bar / grip / hands / low]
+
+real-sport-stage-2 | stage | 00:41.0 | S2
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The close-view EZ-bar raise/lower demonstration is shown. The raised bar is near the torso with increased elbow bend; a full repetition needs a subsequent lowering in the same shot.
+Expected concepts: [ez / angled / bent] + [raise / raised / torso / curl / elbow]
+
+real-sport-stage-3 | stage | 00:50.0 | S3
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The later, wider EZ-bar demonstration is shown. Bar position and hand contact are visible, but edits do not establish a completed set.
+Expected concepts: [ez / angled / bent] + [wider / demonstration / bar / raise / lower]
+
+real-sport-stage-4 | stage | 01:33.0 | S4
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The straight-bar starting position is shown. Both hands hold a straight-shaft bar low before the curl demonstration, without verified plate load or equipment checks.
+Expected concepts: [straight] + [bar / grip / hands / low / starting]
+
+real-sport-stage-5 | stage | 01:47.0 | S5
+Question: Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.
+Reference answer: The straight-bar raise/lower demonstration is shown. The bar moves toward the torso with increased elbow bend, while exact angles, load, and suitability remain unverified.
+Expected concepts: [straight] + [raise / raised / torso / curl / elbow / lower]
+
+real-sport-uncertainty-1 | uncertainty | 00:50.0 | uncertainty
+Question: Can this edited demonstration confirm an exact completed repetition set, plate weight, or precise joint angles?
+Reference answer: No. Edits and crops prevent establishing an exact completed set, and the guide provides no independent load or joint-angle measurement.
+Expected concepts: [cannot / unverified / not established / no] + [edit / repetition / weight / angle / load]
+
+real-sport-uncertainty-2 | uncertainty | 01:47.0 | uncertainty
+Question: Does seeing this straight-bar curl prove it is medically suitable or comfortable for this person or another viewer?
+Reference answer: No. Visible bar motion cannot establish medical suitability, comfort, or pain. These individual factors are not measured by the footage.
+Expected concepts: [cannot / unverified / not established / no] + [suitability / medical / comfortable / comfort / pain / individual]

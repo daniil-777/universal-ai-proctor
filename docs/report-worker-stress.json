@@ -1,0 +1,19 @@
+{
+  "verified_at": "2026-10-05",
+  "runtime": "Node 24.18.0 on this Mac",
+  "scope": "Synthetic near-maximum workflow report, after missing-glyph protection. No model calls or external network. Not an account snapshot or a hosted capacity benchmark.",
+  "reproduce": "cd backend && node --import tsx scripts/report-stress.mts maximum",
+  "input_mb": 10.8715,
+  "event_metadata_kb": 440.8721,
+  "pages": 1533,
+  "html_ms": 32,
+  "pdf_ms": 5893,
+  "html_mb": 7.5665,
+  "pdf_mb": 2.4275,
+  "main_heap_mb_after": 41.7516,
+  "peak_process_rss_mb": 653.1406,
+  "timer_ran_during_render": true,
+  "timer_delay_ms": 61,
+  "synchronous_return_ms": 21,
+  "limits": "One active PDF worker, two waiting snapshots, 30-second overall deadline. The 384 MB V8 worker-heap limit does not cap native buffers or whole-process RSS. Saved account snapshots have a separate 2 MB limit. Single-run latency and memory vary with hardware and load."
+}

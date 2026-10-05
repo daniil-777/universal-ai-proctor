@@ -1,0 +1,31 @@
+{
+  "baseline": {
+    "correct": 17,
+    "stages": 32
+  },
+  "same_protocol": {
+    "correct": 18,
+    "stages": 32,
+    "questions_run": false
+  },
+  "revised_diagnostic": {
+    "correct": 19,
+    "stages": 32,
+    "answered_questions": 42
+  },
+  "improvements": [
+    "High detail preserves1280px instead of640px under compression.",
+    "Same image budget includes recent motion context.",
+    "Variable cadence samples actual displayed time and fixed JPEG quality prevents held-frame encoding changes from creating new hashes.",
+    "No visually supported current phase means no active-stage highlight.",
+    "Guardian shows observation timestamp.",
+    "Main-page Videos & instructions link.",
+    "Gemini review downloads removed."
+  ],
+  "limitations": [
+    "Same-protocol result is one run, not a robust statistical accuracy estimate.",
+    "Revised diagnostic changes anchors, questions and sampling; its score cannot isolate code changes.",
+    "Incorrect shoe-grounding/return claims persist; clinical reliability is not established.",
+    "The later variable-cadence fix was verified separately, not by repeating the entire42-question suite."
+  ]
+}

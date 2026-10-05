@@ -1,0 +1,15 @@
+REAL VIDEO + MATCHING GUIDANCE REVIEW
+
+Upload real-04-dancing.mp4 and Real_04_Dancing.txt.
+Select your best available video-capable Gemini model and provide both video and text inputs. This prompt has not been run as a paid Gemini analysis.
+
+Analyze the actual supplied footage against the matching TXT. Treat the TXT as a reference, not proof that its steps happened. Read the approximate time anchors as review aids, not completion triggers. For every step provide: title, unobserved/partial/observed/uncertain, approximate clip timestamps, visible evidence and missing information. Do not invent measurements, hidden actions, exact forces, calibrated confidence, faults, clinical results or approvals. Separate presentation, narration and overlays from independently visible action. Source videos may be edited or accelerated: cuts and timelapse are evidence gaps, and playback minutes do not measure process duration. Inspect brief movements at a suitable frame rate. Personal wishes can change emphasis but cannot override the reference or evidence. Answer with a concise overview, step-evidence table, review findings and questions for the responsible human. Surgical output is educational observation and surgeon-review questions only; no clinical directives or performance certification. Do not compare these videos to the earlier generated previews as if they showed the same task.
+
+SCENARIO
+Real edited tap-footwork demonstrations: visible lifts, forward/backward shoe movements, floor contact and wider leg views. Upper-body movement is largely outside the frame.
+
+SOURCE
+https://commons.wikimedia.org/wiki/File:Tap_Dance_Technique.webm
+Author: Dbuetow
+Video license: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+Changes: Full actual packet timeline converted to H.264/AAC; native 428×240 and all source frames retained. Source container tag says 124.393 seconds; playable source ends near 123.416 seconds. Adaptation retains CC BY-SA 4.0.

@@ -1,0 +1,279 @@
+{
+  "rows": [
+    {
+      "step": "Step 1: Observe machining context and controller interaction",
+      "objective": "Around 00:00-00:30, identify the tooling context and an operator at a machine controller.",
+      "instruments": "Visible tooling or workpiece; machining enclosure; controller console.",
+      "actions": "Observe the early close-up tooling views and the machine work area.\nObserve the operator interacting with the controller console.",
+      "criteria": "Visual observation: A machine work area with a mounted tool or workpiece is visible.\nVisual observation: An operator is visibly present at a controller console and interacts with its controls.",
+      "duration": ""
+    },
+    {
+      "step": "Step 2: Observe machine-tool activity",
+      "objective": "Around 00:30-00:52, recognize a visible tool-and-workpiece operation in the machine views.",
+      "instruments": "Machine spindle or cutting tool; mounted workpiece; visible fixture.",
+      "actions": "Observe the relative movement of the tool and the mounted workpiece.\nIdentify only the contact region visible in the current shot; keep obscured contact uncertain.",
+      "criteria": "Visual observation: The mounted workpiece and tool region appear together in the machine view.\nVisual observation: Visible motion occurs in the tool or workpiece region.\nVisual observation: A later close-up shows a machining or tool region from a different viewpoint.",
+      "duration": ""
+    },
+    {
+      "step": "Step 3: Observe tool presentation and manual tooling work",
+      "objective": "Around 00:52-01:15, recognize the displayed tools, digital indicator, and hands-on mould or tooling activity.",
+      "instruments": "Displayed tool rack and control unit; digital indicator with a probe; tooling assembly; handheld implement where visible.",
+      "actions": "Observe the row of tools and the adjacent display/control unit.\nObserve the digital indicator and its probe shown above a metal block.\nObserve hands working at the exposed tooling assembly.",
+      "criteria": "Visual observation: Several tools are presented in a rack with a display or control unit nearby.\nVisual observation: A digital indicator with a probe is shown above a metal block.\nVisual observation: Hands and an exposed tooling assembly appear together during manual work.",
+      "duration": ""
+    },
+    {
+      "step": "Step 4: Observe product presentation and further tooling operations",
+      "objective": "Around 01:15-01:55, distinguish the presented product from subsequent machine-tool footage.",
+      "instruments": "Displayed manufactured component; metal blocks or tooling; machine-tool work area.",
+      "actions": "Observe the isolated product shown against the light background.\nObserve the subsequent close-up tool-and-metal-block views and later tooling-machine shots.",
+      "criteria": "Visual observation: A manufactured component is visibly presented separately from the machine footage.\nVisual observation: A later machine view shows a tool positioned over mounted metal blocks or tooling.",
+      "duration": ""
+    },
+    {
+      "step": "Step 5: Observe sample parts and collaborative drawing review",
+      "objective": "Around 01:55-02:20, identify the sample-part display and the group reviewing a drawing.",
+      "instruments": "Displayed coloured sample parts; drawing or plan board.",
+      "actions": "Observe the group of coloured sample parts.\nObserve people pointing to or discussing a drawing displayed on a board.",
+      "criteria": "Visual observation: Multiple coloured sample parts are shown together.\nVisual observation: A group stands beside a drawing or plan, with a visible pointing gesture toward it.",
+      "duration": ""
+    },
+    {
+      "step": "Step 6: Observe final machine and mould-detail views",
+      "objective": "Around 02:20-02:55, identify the finishing montage's machine motion and exposed mould detail.",
+      "instruments": "Visible machine component; open mould or tooling assembly.",
+      "actions": "Observe the moving machine component in the close-up shot.\nObserve the subsequent exposed mould or tooling detail and the film's closing views.",
+      "criteria": "Visual observation: A machine component visibly moves or rotates in close-up.\nVisual observation: An exposed mould or tooling assembly is shown with its cavities or internal features visible.",
+      "duration": ""
+    }
+  ],
+  "workflow": {
+    "title": "Real 02 Manufacturing",
+    "steps": [
+      {
+        "id": "S1",
+        "index": 1,
+        "name": "Observe machining context and controller interaction",
+        "description": "Around 00:00-00:30, identify the tooling context and an operator at a machine controller.",
+        "objective": "Around 00:00-00:30, identify the tooling context and an operator at a machine controller.",
+        "expectedInstruments": [
+          "Visible tooling or workpiece",
+          "machining enclosure",
+          "controller console."
+        ],
+        "actions": [
+          "Observe the early close-up tooling views and the machine work area.",
+          "Observe the operator interacting with the controller console."
+        ],
+        "typicalDurationMin": 0,
+        "criteria": [
+          {
+            "key": "S1C1",
+            "label": "Visual observation: A machine work area with a mounted tool or workpiece is visible.",
+            "status": "unknown"
+          },
+          {
+            "key": "S1C2",
+            "label": "Visual observation: An operator is visibly present at a controller console and interacts with its controls.",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S2",
+        "index": 2,
+        "name": "Observe machine-tool activity",
+        "description": "Around 00:30-00:52, recognize a visible tool-and-workpiece operation in the machine views.",
+        "objective": "Around 00:30-00:52, recognize a visible tool-and-workpiece operation in the machine views.",
+        "expectedInstruments": [
+          "Machine spindle or cutting tool",
+          "mounted workpiece",
+          "visible fixture."
+        ],
+        "actions": [
+          "Observe the relative movement of the tool and the mounted workpiece.",
+          "Identify only the contact region visible in the current shot",
+          "keep obscured contact uncertain."
+        ],
+        "typicalDurationMin": 0,
+        "criteria": [
+          {
+            "key": "S2C1",
+            "label": "Visual observation: The mounted workpiece and tool region appear together in the machine view.",
+            "status": "unknown"
+          },
+          {
+            "key": "S2C2",
+            "label": "Visual observation: Visible motion occurs in the tool or workpiece region.",
+            "status": "unknown"
+          },
+          {
+            "key": "S2C3",
+            "label": "Visual observation: A later close-up shows a machining or tool region from a different viewpoint.",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S3",
+        "index": 3,
+        "name": "Observe tool presentation and manual tooling work",
+        "description": "Around 00:52-01:15, recognize the displayed tools, digital indicator, and hands-on mould or tooling activity.",
+        "objective": "Around 00:52-01:15, recognize the displayed tools, digital indicator, and hands-on mould or tooling activity.",
+        "expectedInstruments": [
+          "Displayed tool rack and control unit",
+          "digital indicator with a probe",
+          "tooling assembly",
+          "handheld implement where visible."
+        ],
+        "actions": [
+          "Observe the row of tools and the adjacent display/control unit.",
+          "Observe the digital indicator and its probe shown above a metal block.",
+          "Observe hands working at the exposed tooling assembly."
+        ],
+        "typicalDurationMin": 0,
+        "criteria": [
+          {
+            "key": "S3C1",
+            "label": "Visual observation: Several tools are presented in a rack with a display or control unit nearby.",
+            "status": "unknown"
+          },
+          {
+            "key": "S3C2",
+            "label": "Visual observation: A digital indicator with a probe is shown above a metal block.",
+            "status": "unknown"
+          },
+          {
+            "key": "S3C3",
+            "label": "Visual observation: Hands and an exposed tooling assembly appear together during manual work.",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S4",
+        "index": 4,
+        "name": "Observe product presentation and further tooling operations",
+        "description": "Around 01:15-01:55, distinguish the presented product from subsequent machine-tool footage.",
+        "objective": "Around 01:15-01:55, distinguish the presented product from subsequent machine-tool footage.",
+        "expectedInstruments": [
+          "Displayed manufactured component",
+          "metal blocks or tooling",
+          "machine-tool work area."
+        ],
+        "actions": [
+          "Observe the isolated product shown against the light background.",
+          "Observe the subsequent close-up tool-and-metal-block views and later tooling-machine shots."
+        ],
+        "typicalDurationMin": 0,
+        "criteria": [
+          {
+            "key": "S4C1",
+            "label": "Visual observation: A manufactured component is visibly presented separately from the machine footage.",
+            "status": "unknown"
+          },
+          {
+            "key": "S4C2",
+            "label": "Visual observation: A later machine view shows a tool positioned over mounted metal blocks or tooling.",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S5",
+        "index": 5,
+        "name": "Observe sample parts and collaborative drawing review",
+        "description": "Around 01:55-02:20, identify the sample-part display and the group reviewing a drawing.",
+        "objective": "Around 01:55-02:20, identify the sample-part display and the group reviewing a drawing.",
+        "expectedInstruments": [
+          "Displayed coloured sample parts",
+          "drawing or plan board."
+        ],
+        "actions": [
+          "Observe the group of coloured sample parts.",
+          "Observe people pointing to or discussing a drawing displayed on a board."
+        ],
+        "typicalDurationMin": 0,
+        "criteria": [
+          {
+            "key": "S5C1",
+            "label": "Visual observation: Multiple coloured sample parts are shown together.",
+            "status": "unknown"
+          },
+          {
+            "key": "S5C2",
+            "label": "Visual observation: A group stands beside a drawing or plan, with a visible pointing gesture toward it.",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S6",
+        "index": 6,
+        "name": "Observe final machine and mould-detail views",
+        "description": "Around 02:20-02:55, identify the finishing montage's machine motion and exposed mould detail.",
+        "objective": "Around 02:20-02:55, identify the finishing montage's machine motion and exposed mould detail.",
+        "expectedInstruments": [
+          "Visible machine component",
+          "open mould or tooling assembly."
+        ],
+        "actions": [
+          "Observe the moving machine component in the close-up shot.",
+          "Observe the subsequent exposed mould or tooling detail and the film's closing views."
+        ],
+        "typicalDurationMin": 0,
+        "criteria": [
+          {
+            "key": "S6C1",
+            "label": "Visual observation: A machine component visibly moves or rotates in close-up.",
+            "status": "unknown"
+          },
+          {
+            "key": "S6C2",
+            "label": "Visual observation: An exposed mould or tooling assembly is shown with its cavities or internal features visible.",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      }
+    ],
+    "principles": [
+      "This is real manufacturing footage in a company promotional film. Shots show several machines, tools, moulds, and products; they do not establish one continuous production job or the history of one tracked workpiece.",
+      "Use the steps as viewing checkpoints in the film's order. Mark visible activities observed; do not treat all checkpoints as proof that a part is completed, inspected, accepted, or ready for use.",
+      "Approximate time windows refer to the playback. Crossfades and short inserts can obscure tool contact or chronology; record uncertainty rather than inferring an operation.",
+      "Names such as mould, controller, and cutting tool describe visible context. Do not infer machine programs, cutting parameters, tool identity, material grade, tolerances, calibration, or metrology results from appearance alone.",
+      "A controller display, tool rack, CAD drawing, polished surface, or finished-looking part is not evidence of a passing quality-control result.",
+      "The guide is an educational observation aid. Production instructions, machine access, safe setup, guarding, energy isolation, and acceptance criteria come from the responsible workplace and manufacturer.",
+      "Preserve the original branding as source context. The source author and featured company do not endorse Process Guide.",
+      "For an actual job, obtain the workplace instruction, part identity, drawing revision, material specification, machine program, relevant measurements, and acceptance criteria.",
+      "Any quality-control conclusion requires traceable measurements and the responsible reviewer. The film provides no verified inspection results, tolerances, calibrated accuracy, or release decision."
+    ],
+    "source": "document",
+    "warnings": []
+  }
+}

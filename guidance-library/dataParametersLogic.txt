@@ -1,0 +1,39 @@
+* Keep the code clean, perfect and well-documented.  Easy to understand and professional. We should clearly see the connection between surgical stages detection, how we implement that. 
+
+* Now implement in a seprate file a feature that would analyze the whole uploaded video, uploads a zip folder of parameters and displays conclusions
+
+
+Implement zip folder uploadin under "Upload Data"
+This zip folder has a structure:
+1 attachments
+2 videos
+Report.pdf
+
+Go to attachments/SimulationData.zip, unzip it, then go to a Data.csv and write the code to read it. o not load it to the memory now, it should happedn in the appears
+
+You should be able to see for every frame with a number N a row in the data parameters file like that:
+
+1445;TaskSystem.GallbladderResectionTask.0.Stopped;System.Boolean
+
+number of a frame 1445 (you should sync it with a video stream), then the name of a parameter TaskSystem.GallbladderResectionTask.0.Stopped and a type of answer: 
+System.Boolean. Then for any moment of a video you take its frame and access the data of parameters by the frame's index. 
+Then you should cook a condition for surgical stage detection or criteria of completion detection. then visualize the result 
+of surgical stage detection or criteria of completion in the real time surgical stage visualisation window next to the right of the video as we have already (Real-time video analysis).
+
+So, in the real time while video playing you can access the Data.csv file, a video, then a frame in the video, find a row in a Data.csv for this frame and then come up with a condition.
+
+Under videos/ find a video and play it in a player
+
+then develop a perfect logic for a surgical stage detection using a Rule Summary Table, 
+
+
+Stage	PRIMARY Trigger (Data.csv param)	Key Warnings
+1 Exposure	Task.Started=True AND DeformationFactor ≤ 1.05 AND TotalDeletedTets = 0	FourthArm inactive, camera misaligned
+2 Dissection	TotalDeletedTets > 0 OR DeformationFactor > 1.05	Bile leak, blood, over-deformation
+3 CVS	IsDissected=True (both) OR LowerThird ≥ 33%	CVS not accepted = block clipping
+4 Clipping	CVS.NumAcceptedPlanes ≥ 1 AND both IsDissected=True	Bile/blood post-clip = CBD injury
+5 Detachment	Both IsDissectedAndClipped=True	Liver bed bleed, GB perforation
+6 Retrieval	Both clipped AND Blood=0 AND Bile=0	Final scorecard output
+
+Keep real time surgical stage prediction and criteria of completion to the right as implemented.
+

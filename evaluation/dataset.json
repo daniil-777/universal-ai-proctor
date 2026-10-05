@@ -1,0 +1,2736 @@
+{
+  "version": 6,
+  "description": "Generated visual ground truth: empty labeled box (0–2s), one blue block in box (2–4s), closed taped box (4–6s), black view (6–8s). The portrait variant uses the same facts with a different viewport. Additional 16s clips show colored-part sorting (including a wrong bin, recovery, and an extra green triangle) and panel inspection (OFF/ON, connection loss, red/green indicator, and a 42 V display). Each has an obstruction at 8–10s. This is a synthetic process benchmark, not clinical validation.",
+  "videos": [
+    "packaging-landscape.mp4",
+    "packaging-portrait.mp4",
+    "parts-sorting.mp4",
+    "control-panel.mp4"
+  ],
+  "cases": [
+    {
+      "id": "packaging-landscape:guardian-label",
+      "channel": "Guardian",
+      "time_s": 0.5,
+      "reference": "Packaging.txt",
+      "expected_answer": "An open box labeled BOX A is visible.",
+      "required_facts": [
+        {
+          "id": "label",
+          "all": [
+            "box\\s*a"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "open",
+          "all": [],
+          "any": [
+            "open",
+            "unsealed"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "expected_step": "S1",
+      "video": "packaging-landscape.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-landscape:guardian-block",
+      "channel": "Guardian",
+      "time_s": 2.5,
+      "reference": "Packaging.txt",
+      "expected_answer": "One blue block is visible in the open box.",
+      "required_facts": [
+        {
+          "id": "blue_block",
+          "all": [
+            "blue",
+            "block"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "expected_step": "S2",
+      "video": "packaging-landscape.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-landscape:guardian-tape",
+      "channel": "Guardian",
+      "time_s": 4.5,
+      "reference": "Packaging.txt",
+      "expected_answer": "Tape is visible across the top of the box.",
+      "required_facts": [
+        {
+          "id": "tape",
+          "all": [
+            "tape"
+          ],
+          "any": [
+            "tape.{0,35}(?:visible|across|top|applied|present)",
+            "(?:visible|applied|present).{0,30}tape"
+          ],
+          "negation_sensitive": true
+        },
+        {
+          "id": "box",
+          "all": [
+            "box|package"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "denied_visible_tape",
+          "patterns": [
+            "no tape",
+            "tape (?:is )?not (?:visible|observed|present)"
+          ]
+        }
+      ],
+      "expected_step": "S3",
+      "video": "packaging-landscape.mp4"
+    },
+    {
+      "id": "packaging-landscape:guardian-covered",
+      "channel": "Guardian",
+      "time_s": 6.5,
+      "reference": "Packaging.txt",
+      "expected_answer": "The view is black and cannot be assessed.",
+      "required_facts": [
+        {
+          "id": "unassessable",
+          "all": [],
+          "any": [
+            "no discernible",
+            "cannot.{0,25}(assess|see|observe)",
+            "black",
+            "covered"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "expected_quality": "unusable",
+      "expected_status": [
+        "watch"
+      ],
+      "video": "packaging-landscape.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-landscape:guardian-mismatch",
+      "channel": "Guardian",
+      "time_s": 2.5,
+      "reference": "Coffee_Brewing.txt",
+      "expected_answer": "The visible packaging process does not match the coffee reference.",
+      "required_facts": [
+        {
+          "id": "mismatch",
+          "all": [
+            "coffee"
+          ],
+          "any": [
+            "not",
+            "unrelated",
+            "mismatch",
+            "no ",
+            "instead",
+            "rather"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "unrelated_progress_must_be_zero": true,
+      "video": "packaging-landscape.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-landscape:guardian-no-document",
+      "channel": "Guardian",
+      "time_s": 2.5,
+      "reference": null,
+      "expected_answer": "A blue block is visible in a box; a provisional packing workflow can be proposed.",
+      "required_facts": [
+        {
+          "id": "box",
+          "all": [
+            "box|package"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "blue",
+          "all": [
+            "blue"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "expect_discovery": true,
+      "video": "packaging-landscape.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-landscape:listener-label",
+      "channel": "Listener",
+      "time_s": 0.5,
+      "reference": "Packaging.txt",
+      "utterance": "Hey, what text is printed on the box?",
+      "question": "what text is printed on the box?",
+      "expected_answer": "The label reads BOX A.",
+      "required_facts": [
+        {
+          "id": "label",
+          "all": [
+            "box\\s*a"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "packaging-landscape.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-landscape:listener-empty",
+      "channel": "Listener",
+      "time_s": 1,
+      "reference": "Packaging.txt",
+      "utterance": "Hi, is a blue block visible inside the box?",
+      "question": "is a blue block visible inside the box?",
+      "expected_answer": "No blue block is visible in the open box.",
+      "required_facts": [
+        {
+          "id": "absence",
+          "all": [
+            "block"
+          ],
+          "any": [
+            "\\bno\\b",
+            "\\bnot\\b",
+            "cannot",
+            "can.t",
+            "unable",
+            "empty"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_visible_block",
+          "patterns": [
+            "\\byes\\b",
+            "blue block (?:is |appears |can be seen )?(?:visible|inside|present)",
+            "there is (?:a|one) blue block"
+          ]
+        }
+      ],
+      "video": "packaging-landscape.mp4"
+    },
+    {
+      "id": "packaging-landscape:listener-color",
+      "channel": "Listener",
+      "time_s": 2.5,
+      "reference": "Packaging.txt",
+      "utterance": "Hello, what color is the visible block?",
+      "question": "what color is the visible block?",
+      "expected_answer": "The visible block is blue.",
+      "required_facts": [
+        {
+          "id": "blue",
+          "all": [
+            "blue"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_color",
+          "patterns": [
+            "block.{0,20}(?:red|green|yellow)",
+            "(?:red|green|yellow) block"
+          ]
+        }
+      ],
+      "video": "packaging-landscape.mp4"
+    },
+    {
+      "id": "packaging-landscape:listener-count",
+      "channel": "Listener",
+      "time_s": 2.8,
+      "reference": "Packaging.txt",
+      "utterance": "Hey, how many blue blocks are visible?",
+      "question": "how many blue blocks are visible?",
+      "expected_answer": "One blue block is visible.",
+      "required_facts": [
+        {
+          "id": "count",
+          "all": [
+            "\\b(?:one|1|single)\\b",
+            "blue"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_count",
+          "patterns": [
+            "\\b(?:two|three|2|3)\\b.{0,15}(?:blocks?|blue)"
+          ]
+        }
+      ],
+      "video": "packaging-landscape.mp4"
+    },
+    {
+      "id": "packaging-landscape:listener-next-action",
+      "channel": "Listener",
+      "time_s": 3,
+      "reference": "Packaging.txt",
+      "utterance": "Hi, what is the next documented action after placing the blue block?",
+      "question": "what is the next documented action after placing the blue block?",
+      "expected_answer": "Close the box and apply tape across its top.",
+      "required_facts": [
+        {
+          "id": "next_tape",
+          "all": [
+            "tape"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "close",
+          "all": [
+            "clos(?:e|ing|ed)"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "packaging-landscape.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-landscape:listener-tape",
+      "channel": "Listener",
+      "time_s": 4.5,
+      "reference": "Packaging.txt",
+      "utterance": "Hey, is tape visibly present on the package?",
+      "question": "is tape visibly present on the package?",
+      "expected_answer": "Yes, tape is visible across the top of the box.",
+      "required_facts": [
+        {
+          "id": "tape",
+          "all": [
+            "tape"
+          ],
+          "any": [
+            "yes",
+            "visible",
+            "present",
+            "across"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "packaging-landscape.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-landscape:listener-hidden",
+      "channel": "Listener",
+      "time_s": 5,
+      "reference": "Packaging.txt",
+      "utterance": "Hello, is the blue block visible now?",
+      "question": "is the blue block visible now?",
+      "expected_answer": "No, the blue block is not visible in the closed box.",
+      "required_facts": [
+        {
+          "id": "hidden",
+          "all": [
+            "block"
+          ],
+          "any": [
+            "\\bno\\b",
+            "not visible",
+            "hidden",
+            "occluded",
+            "cannot",
+            "can.t"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_visible_block",
+          "patterns": [
+            "\\byes\\b",
+            "block is visible",
+            "block is clearly visible"
+          ]
+        }
+      ],
+      "video": "packaging-landscape.mp4"
+    },
+    {
+      "id": "packaging-landscape:listener-temperature",
+      "channel": "Listener",
+      "time_s": 5.3,
+      "reference": "Packaging.txt",
+      "utterance": "Hi, can you confirm the temperature of the box contents?",
+      "question": "can you confirm the temperature of the box contents?",
+      "expected_answer": "The contents temperature cannot be determined from these images.",
+      "required_facts": [
+        {
+          "id": "temperature_unknown",
+          "all": [
+            "temperature"
+          ],
+          "any": [
+            "cannot",
+            "can.t",
+            "unable",
+            "unknown",
+            "not possible",
+            "not visible",
+            "no "
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "invented_temperature",
+          "patterns": [
+            "\\b\\d+(?:\\.\\d+)?\\s*(?:°|degrees|celsius|fahrenheit)"
+          ]
+        }
+      ],
+      "video": "packaging-landscape.mp4"
+    },
+    {
+      "id": "packaging-landscape:listener-covered",
+      "channel": "Listener",
+      "time_s": 6.5,
+      "reference": "Packaging.txt",
+      "utterance": "Hey, what is happening in the current view?",
+      "question": "what is happening in the current view?",
+      "expected_answer": "The view is black; no current action can be observed.",
+      "required_facts": [
+        {
+          "id": "covered",
+          "all": [],
+          "any": [
+            "black",
+            "blank",
+            "covered",
+            "no visible",
+            "cannot.{0,25}(see|observe|determine|assess)",
+            "not visible"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "packaging-landscape.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-landscape:listener-mismatch",
+      "channel": "Listener",
+      "time_s": 2.5,
+      "reference": "Coffee_Brewing.txt",
+      "utterance": "Hi, has coffee been brewed in this video?",
+      "question": "has coffee been brewed in this video?",
+      "expected_answer": "No coffee brewing is visible; this is a packaging scene.",
+      "required_facts": [
+        {
+          "id": "not_coffee",
+          "all": [
+            "coffee"
+          ],
+          "any": [
+            "\\bno\\b",
+            "not ",
+            "cannot",
+            "can.t",
+            "unrelated",
+            "no evidence"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_coffee_completion",
+          "patterns": [
+            "\\byes\\b",
+            "coffee (?:has been|is) brewed",
+            "brewing (?:is|has) completed"
+          ]
+        }
+      ],
+      "video": "packaging-landscape.mp4"
+    },
+    {
+      "id": "packaging-portrait:guardian-label",
+      "channel": "Guardian",
+      "time_s": 0.5,
+      "reference": "Packaging.txt",
+      "expected_answer": "An open box labeled BOX A is visible.",
+      "required_facts": [
+        {
+          "id": "label",
+          "all": [
+            "box\\s*a"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "open",
+          "all": [],
+          "any": [
+            "open",
+            "unsealed"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "expected_step": "S1",
+      "video": "packaging-portrait.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-portrait:guardian-block",
+      "channel": "Guardian",
+      "time_s": 2.5,
+      "reference": "Packaging.txt",
+      "expected_answer": "One blue block is visible in the open box.",
+      "required_facts": [
+        {
+          "id": "blue_block",
+          "all": [
+            "blue",
+            "block"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "expected_step": "S2",
+      "video": "packaging-portrait.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-portrait:guardian-tape",
+      "channel": "Guardian",
+      "time_s": 4.5,
+      "reference": "Packaging.txt",
+      "expected_answer": "Tape is visible across the top of the box.",
+      "required_facts": [
+        {
+          "id": "tape",
+          "all": [
+            "tape"
+          ],
+          "any": [
+            "tape.{0,35}(?:visible|across|top|applied|present)",
+            "(?:visible|applied|present).{0,30}tape"
+          ],
+          "negation_sensitive": true
+        },
+        {
+          "id": "box",
+          "all": [
+            "box|package"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "denied_visible_tape",
+          "patterns": [
+            "no tape",
+            "tape (?:is )?not (?:visible|observed|present)"
+          ]
+        }
+      ],
+      "expected_step": "S3",
+      "video": "packaging-portrait.mp4"
+    },
+    {
+      "id": "packaging-portrait:guardian-covered",
+      "channel": "Guardian",
+      "time_s": 6.5,
+      "reference": "Packaging.txt",
+      "expected_answer": "The view is black and cannot be assessed.",
+      "required_facts": [
+        {
+          "id": "unassessable",
+          "all": [],
+          "any": [
+            "no discernible",
+            "cannot.{0,25}(assess|see|observe)",
+            "black",
+            "covered"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "expected_quality": "unusable",
+      "expected_status": [
+        "watch"
+      ],
+      "video": "packaging-portrait.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-portrait:guardian-mismatch",
+      "channel": "Guardian",
+      "time_s": 2.5,
+      "reference": "Coffee_Brewing.txt",
+      "expected_answer": "The visible packaging process does not match the coffee reference.",
+      "required_facts": [
+        {
+          "id": "mismatch",
+          "all": [
+            "coffee"
+          ],
+          "any": [
+            "not",
+            "unrelated",
+            "mismatch",
+            "no ",
+            "instead",
+            "rather"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "unrelated_progress_must_be_zero": true,
+      "video": "packaging-portrait.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-portrait:guardian-no-document",
+      "channel": "Guardian",
+      "time_s": 2.5,
+      "reference": null,
+      "expected_answer": "A blue block is visible in a box; a provisional packing workflow can be proposed.",
+      "required_facts": [
+        {
+          "id": "box",
+          "all": [
+            "box|package"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "blue",
+          "all": [
+            "blue"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "expect_discovery": true,
+      "video": "packaging-portrait.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-portrait:listener-label",
+      "channel": "Listener",
+      "time_s": 0.5,
+      "reference": "Packaging.txt",
+      "utterance": "Hey, what text is printed on the box?",
+      "question": "what text is printed on the box?",
+      "expected_answer": "The label reads BOX A.",
+      "required_facts": [
+        {
+          "id": "label",
+          "all": [
+            "box\\s*a"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "packaging-portrait.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-portrait:listener-empty",
+      "channel": "Listener",
+      "time_s": 1,
+      "reference": "Packaging.txt",
+      "utterance": "Hi, is a blue block visible inside the box?",
+      "question": "is a blue block visible inside the box?",
+      "expected_answer": "No blue block is visible in the open box.",
+      "required_facts": [
+        {
+          "id": "absence",
+          "all": [
+            "block"
+          ],
+          "any": [
+            "\\bno\\b",
+            "\\bnot\\b",
+            "cannot",
+            "can.t",
+            "unable",
+            "empty"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_visible_block",
+          "patterns": [
+            "\\byes\\b",
+            "blue block (?:is |appears |can be seen )?(?:visible|inside|present)",
+            "there is (?:a|one) blue block"
+          ]
+        }
+      ],
+      "video": "packaging-portrait.mp4"
+    },
+    {
+      "id": "packaging-portrait:listener-color",
+      "channel": "Listener",
+      "time_s": 2.5,
+      "reference": "Packaging.txt",
+      "utterance": "Hello, what color is the visible block?",
+      "question": "what color is the visible block?",
+      "expected_answer": "The visible block is blue.",
+      "required_facts": [
+        {
+          "id": "blue",
+          "all": [
+            "blue"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_color",
+          "patterns": [
+            "block.{0,20}(?:red|green|yellow)",
+            "(?:red|green|yellow) block"
+          ]
+        }
+      ],
+      "video": "packaging-portrait.mp4"
+    },
+    {
+      "id": "packaging-portrait:listener-count",
+      "channel": "Listener",
+      "time_s": 2.8,
+      "reference": "Packaging.txt",
+      "utterance": "Hey, how many blue blocks are visible?",
+      "question": "how many blue blocks are visible?",
+      "expected_answer": "One blue block is visible.",
+      "required_facts": [
+        {
+          "id": "count",
+          "all": [
+            "\\b(?:one|1|single)\\b",
+            "blue"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_count",
+          "patterns": [
+            "\\b(?:two|three|2|3)\\b.{0,15}(?:blocks?|blue)"
+          ]
+        }
+      ],
+      "video": "packaging-portrait.mp4"
+    },
+    {
+      "id": "packaging-portrait:listener-next-action",
+      "channel": "Listener",
+      "time_s": 3,
+      "reference": "Packaging.txt",
+      "utterance": "Hi, what is the next documented action after placing the blue block?",
+      "question": "what is the next documented action after placing the blue block?",
+      "expected_answer": "Close the box and apply tape across its top.",
+      "required_facts": [
+        {
+          "id": "next_tape",
+          "all": [
+            "tape"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "close",
+          "all": [
+            "clos(?:e|ing|ed)"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "packaging-portrait.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-portrait:listener-tape",
+      "channel": "Listener",
+      "time_s": 4.5,
+      "reference": "Packaging.txt",
+      "utterance": "Hey, is tape visibly present on the package?",
+      "question": "is tape visibly present on the package?",
+      "expected_answer": "Yes, tape is visible across the top of the box.",
+      "required_facts": [
+        {
+          "id": "tape",
+          "all": [
+            "tape"
+          ],
+          "any": [
+            "yes",
+            "visible",
+            "present",
+            "across"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "packaging-portrait.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-portrait:listener-hidden",
+      "channel": "Listener",
+      "time_s": 5,
+      "reference": "Packaging.txt",
+      "utterance": "Hello, is the blue block visible now?",
+      "question": "is the blue block visible now?",
+      "expected_answer": "No, the blue block is not visible in the closed box.",
+      "required_facts": [
+        {
+          "id": "hidden",
+          "all": [
+            "block"
+          ],
+          "any": [
+            "\\bno\\b",
+            "not visible",
+            "hidden",
+            "occluded",
+            "cannot",
+            "can.t"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_visible_block",
+          "patterns": [
+            "\\byes\\b",
+            "block is visible",
+            "block is clearly visible"
+          ]
+        }
+      ],
+      "video": "packaging-portrait.mp4"
+    },
+    {
+      "id": "packaging-portrait:listener-temperature",
+      "channel": "Listener",
+      "time_s": 5.3,
+      "reference": "Packaging.txt",
+      "utterance": "Hi, can you confirm the temperature of the box contents?",
+      "question": "can you confirm the temperature of the box contents?",
+      "expected_answer": "The contents temperature cannot be determined from these images.",
+      "required_facts": [
+        {
+          "id": "temperature_unknown",
+          "all": [
+            "temperature"
+          ],
+          "any": [
+            "cannot",
+            "can.t",
+            "unable",
+            "unknown",
+            "not possible",
+            "not visible",
+            "no "
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "invented_temperature",
+          "patterns": [
+            "\\b\\d+(?:\\.\\d+)?\\s*(?:°|degrees|celsius|fahrenheit)"
+          ]
+        }
+      ],
+      "video": "packaging-portrait.mp4"
+    },
+    {
+      "id": "packaging-portrait:listener-covered",
+      "channel": "Listener",
+      "time_s": 6.5,
+      "reference": "Packaging.txt",
+      "utterance": "Hey, what is happening in the current view?",
+      "question": "what is happening in the current view?",
+      "expected_answer": "The view is black; no current action can be observed.",
+      "required_facts": [
+        {
+          "id": "covered",
+          "all": [],
+          "any": [
+            "black",
+            "blank",
+            "covered",
+            "no visible",
+            "cannot.{0,25}(see|observe|determine|assess)",
+            "not visible"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "packaging-portrait.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "packaging-portrait:listener-mismatch",
+      "channel": "Listener",
+      "time_s": 2.5,
+      "reference": "Coffee_Brewing.txt",
+      "utterance": "Hi, has coffee been brewed in this video?",
+      "question": "has coffee been brewed in this video?",
+      "expected_answer": "No coffee brewing is visible; this is a packaging scene.",
+      "required_facts": [
+        {
+          "id": "not_coffee",
+          "all": [
+            "coffee"
+          ],
+          "any": [
+            "\\bno\\b",
+            "not ",
+            "cannot",
+            "can.t",
+            "unrelated",
+            "no evidence"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_coffee_completion",
+          "patterns": [
+            "\\byes\\b",
+            "coffee (?:has been|is) brewed",
+            "brewing (?:is|has) completed"
+          ]
+        }
+      ],
+      "video": "packaging-portrait.mp4"
+    },
+    {
+      "id": "parts-sorting:guardian-loose",
+      "channel": "Guardian",
+      "time_s": 1,
+      "expected_answer": "Two red circles and one blue square are above two empty bins.",
+      "required_facts": [
+        {
+          "id": "two_red",
+          "all": [
+            "red",
+            "(?:two|2)"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "blue",
+          "all": [
+            "blue"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "loose",
+          "all": [],
+          "any": [
+            "above",
+            "outside",
+            "loose"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "expected_step": "S1",
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt",
+      "forbidden_claims": []
+    },
+    {
+      "id": "parts-sorting:guardian-partial-red",
+      "channel": "Guardian",
+      "time_s": 3,
+      "expected_answer": "One red circle is in the left bin; another red circle and the blue square are still outside.",
+      "required_facts": [
+        {
+          "id": "partial",
+          "all": [
+            "red",
+            "left|red only|red bin"
+          ],
+          "any": [
+            "one",
+            "1"
+          ],
+          "negation_sensitive": false
+        },
+        {
+          "id": "outside",
+          "all": [],
+          "any": [
+            "outside",
+            "above",
+            "loose"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt",
+      "forbidden_claims": [
+        {
+          "id": "no_red_inside",
+          "patterns": [
+            "no red (?:circles|parts).{0,30}(?:inside|in the left)",
+            "no actions (?:taken|have been taken)",
+            "two red circles.{0,25}above"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parts-sorting:guardian-wrong-bin",
+      "channel": "Guardian",
+      "time_s": 5,
+      "expected_answer": "The blue square is incorrectly in the left RED ONLY bin with the two red circles.",
+      "required_facts": [
+        {
+          "id": "wrong_blue",
+          "all": [
+            "blue",
+            "left|red only"
+          ],
+          "any": [],
+          "negation_sensitive": true
+        },
+        {
+          "id": "wrong",
+          "all": [],
+          "any": [
+            "incorrect",
+            "wrong",
+            "misplac",
+            "should",
+            "instead",
+            "mistake"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt",
+      "forbidden_claims": [
+        {
+          "id": "empty_bins",
+          "patterns": [
+            "bins.{0,20}(?:remain|are) empty",
+            "no parts have been sorted",
+            "blue square.{0,20}above (?:the )?bins",
+            "blue square (?:is|sits|is visible).{0,20}(?:in (?:the )?right|in (?:the )?blue only)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parts-sorting:guardian-corrected",
+      "channel": "Guardian",
+      "time_s": 7,
+      "expected_answer": "Two red circles are in the left bin and one blue square is in the right bin.",
+      "required_facts": [
+        {
+          "id": "two_red",
+          "all": [
+            "red",
+            "(?:two|2)"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "blue_right",
+          "all": [
+            "blue",
+            "right|blue only|blue bin"
+          ],
+          "any": [],
+          "negation_sensitive": true
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt",
+      "forbidden_claims": []
+    },
+    {
+      "id": "parts-sorting:guardian-covered",
+      "channel": "Guardian",
+      "time_s": 9,
+      "expected_answer": "The view is black and cannot be assessed.",
+      "required_facts": [
+        {
+          "id": "covered",
+          "all": [],
+          "any": [
+            "black",
+            "blank",
+            "covered",
+            "(?:cannot|can.t).{0,35}(?:see|assess|observe|determine)",
+            "no visible",
+            "no discernible"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "expected_quality": "unusable",
+      "expected_status": [
+        "watch"
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt",
+      "forbidden_claims": []
+    },
+    {
+      "id": "parts-sorting:guardian-recovered",
+      "channel": "Guardian",
+      "time_s": 11,
+      "expected_answer": "The view has returned: two red circles in the left bin, and the blue square in the right bin.",
+      "required_facts": [
+        {
+          "id": "two_red",
+          "all": [
+            "red",
+            "(?:two|2)"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "blue_right",
+          "all": [
+            "blue",
+            "right|blue only|blue bin"
+          ],
+          "any": [],
+          "negation_sensitive": true
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt",
+      "forbidden_claims": []
+    },
+    {
+      "id": "parts-sorting:guardian-unexpected",
+      "channel": "Guardian",
+      "time_s": 13,
+      "expected_answer": "A green triangular part is outside the bins, while the red circles and blue square remain sorted.",
+      "required_facts": [
+        {
+          "id": "green",
+          "all": [
+            "green",
+            "triangle|triangular"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "loose",
+          "all": [],
+          "any": [
+            "outside",
+            "above",
+            "loose"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt",
+      "forbidden_claims": [
+        {
+          "id": "missing_green",
+          "patterns": [
+            "no (?:extra|unexpected|green).{0,25}(?:part|triangle)",
+            "no parts (?:visible )?above",
+            "only (?:three|3) parts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parts-sorting:guardian-mismatch",
+      "channel": "Guardian",
+      "time_s": 7,
+      "expected_answer": "The sorting scene does not match the coffee reference.",
+      "required_facts": [
+        {
+          "id": "mismatch",
+          "all": [],
+          "any": [
+            "does not match",
+            "not match",
+            "unrelated",
+            "mismatch",
+            "not coffee",
+            "not (?:relate|represent|relevant|shown|show).{0,70}coffee",
+            "not.{0,45}coffee",
+            "no.{0,45}coffee",
+            "no coffee",
+            "different"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "reference": "Coffee_Brewing.txt",
+      "unrelated_progress_must_be_zero": true,
+      "video": "parts-sorting.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "parts-sorting:guardian-no-document",
+      "channel": "Guardian",
+      "time_s": 7,
+      "expected_answer": "Red circles and a blue square are being sorted into separate bins.",
+      "required_facts": [
+        {
+          "id": "parts",
+          "all": [
+            "red",
+            "blue"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "bins",
+          "all": [
+            "bin|container|tray"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "reference": null,
+      "expect_discovery": true,
+      "video": "parts-sorting.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "parts-sorting:listener-initial-total",
+      "channel": "Listener",
+      "time_s": 1,
+      "question": "How many loose parts are visible above the bins?",
+      "utterance": "Hi, How many loose parts are visible above the bins?",
+      "expected_answer": "Three loose parts are visible: two red circles and one blue square.",
+      "required_facts": [
+        {
+          "id": "three",
+          "all": [
+            "three|3"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "two_red",
+          "all": [
+            "red",
+            "(?:two|2)"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "blue",
+          "all": [
+            "blue"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_count",
+          "patterns": [
+            "(?:four|five|4|5) (?:parts|objects)"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-initial-blue-shape",
+      "channel": "Listener",
+      "time_s": 1,
+      "question": "What shape and color is the loose blue part?",
+      "utterance": "Hey, What shape and color is the loose blue part?",
+      "expected_answer": "The blue part is a square.",
+      "required_facts": [
+        {
+          "id": "blue_square",
+          "all": [
+            "blue",
+            "square"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_shape",
+          "patterns": [
+            "blue (?:circle|triangle)"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-bin-label",
+      "channel": "Listener",
+      "time_s": 1,
+      "question": "What does the right bin label say?",
+      "utterance": "Hey, What does the right bin label say?",
+      "expected_answer": "The right bin label reads BLUE ONLY.",
+      "required_facts": [
+        {
+          "id": "label",
+          "all": [
+            "blue only"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_label",
+          "patterns": [
+            "reads? red only"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-partial-count",
+      "channel": "Listener",
+      "time_s": 3,
+      "question": "How many red circles are currently inside the left bin?",
+      "utterance": "Hi, How many red circles are currently inside the left bin?",
+      "expected_answer": "One red circle is inside the left bin; the other remains above it.",
+      "required_facts": [
+        {
+          "id": "one",
+          "all": [
+            "one|1",
+            "red"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_two",
+          "patterns": [
+            "(?:two|2) red (?:circles|parts).{0,25}(?:inside|in the left)"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-partial-next",
+      "channel": "Listener",
+      "time_s": 3,
+      "question": "What should I do with the remaining loose red circle?",
+      "utterance": "Hey, What should I do with the remaining loose red circle?",
+      "expected_answer": "Put the remaining red circle into the left RED ONLY bin.",
+      "required_facts": [
+        {
+          "id": "next",
+          "all": [
+            "red",
+            "left|red only"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-wrong-color",
+      "channel": "Listener",
+      "time_s": 5,
+      "question": "Which part is in the wrong bin?",
+      "utterance": "Hello, Which part is in the wrong bin?",
+      "expected_answer": "The blue square is in the left RED ONLY bin, which is the wrong bin for it.",
+      "required_facts": [
+        {
+          "id": "wrong_part",
+          "all": [
+            "blue",
+            "left|red only"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_correct",
+          "patterns": [
+            "everything is correct",
+            "all parts are correctly"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-wrong-fix",
+      "channel": "Listener",
+      "time_s": 5,
+      "question": "Where should the blue square go according to the document?",
+      "utterance": "Hey, Where should the blue square go according to the document?",
+      "expected_answer": "Move the blue square to the right BLUE ONLY bin.",
+      "required_facts": [
+        {
+          "id": "blue_right",
+          "all": [
+            "blue",
+            "right|blue only|blue bin"
+          ],
+          "any": [],
+          "negation_sensitive": true
+        }
+      ],
+      "forbidden_claims": [],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-empty-right",
+      "channel": "Listener",
+      "time_s": 5,
+      "question": "Is there currently a blue square inside the right bin?",
+      "utterance": "Hello, Is there currently a blue square inside the right bin?",
+      "expected_answer": "No. The blue square is in the left bin; the right bin is empty.",
+      "required_facts": [
+        {
+          "id": "absence",
+          "all": [],
+          "any": [
+            "\\bno\\b",
+            "empty",
+            "not "
+          ],
+          "negation_sensitive": false
+        },
+        {
+          "id": "location",
+          "all": [
+            "left|red only|red bin"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "invented_blue_right",
+          "patterns": [
+            "blue square (?:is|sits) (?:inside|in) the right",
+            "\\byes\\b"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-correct-count",
+      "channel": "Listener",
+      "time_s": 7,
+      "question": "How many parts are in the left bin and the right bin now?",
+      "utterance": "Hi, How many parts are in the left bin and the right bin now?",
+      "expected_answer": "The left bin contains two red circles, and the right bin contains one blue square.",
+      "required_facts": [
+        {
+          "id": "left",
+          "all": [
+            "left",
+            "two|2",
+            "red"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "right",
+          "all": [
+            "right",
+            "one|1",
+            "blue"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-correct-color",
+      "channel": "Listener",
+      "time_s": 7,
+      "question": "What color is the part in the right bin?",
+      "utterance": "Hi, What color is the part in the right bin?",
+      "expected_answer": "The part in the right bin is blue.",
+      "required_facts": [
+        {
+          "id": "blue",
+          "all": [
+            "blue"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_color",
+          "patterns": [
+            "(?:part|square) is red",
+            "(?:part|square) is green"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-temperature",
+      "channel": "Listener",
+      "time_s": 7,
+      "question": "What is the exact temperature of the blue part?",
+      "utterance": "Hello, What is the exact temperature of the blue part?",
+      "expected_answer": "The exact temperature cannot be determined visually.",
+      "required_facts": [
+        {
+          "id": "cannot_verify",
+          "all": [],
+          "any": [
+            "cannot",
+            "does not (?:prove|guarantee|establish|confirm)",
+            "can.t",
+            "unable",
+            "not (?:possible|visible|available|shown|determin|visibly seated)",
+            "no (?:evidence|reading|visible)",
+            "unknown",
+            "uncertain"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "invented_temperature",
+          "patterns": [
+            "\\b\\d+(?:\\.\\d+)?\\s*(?:°|degrees|celsius|fahrenheit)"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-weight",
+      "channel": "Listener",
+      "time_s": 7,
+      "question": "What is the exact weight of the red circles?",
+      "utterance": "Hey, What is the exact weight of the red circles?",
+      "expected_answer": "Their exact weight cannot be determined from the video.",
+      "required_facts": [
+        {
+          "id": "cannot_verify",
+          "all": [],
+          "any": [
+            "cannot",
+            "does not (?:prove|guarantee|establish|confirm)",
+            "can.t",
+            "unable",
+            "not (?:possible|visible|available|shown|determin|visibly seated)",
+            "no (?:evidence|reading|visible)",
+            "unknown",
+            "uncertain"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "invented_weight",
+          "patterns": [
+            "\\b\\d+(?:\\.\\d+)?\\s*(?:grams|kilograms|kg|g)\\b"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-covered-current",
+      "channel": "Listener",
+      "time_s": 9,
+      "question": "Can you tell whether the parts are sorted correctly in the current frame?",
+      "utterance": "Hey, Can you tell whether the parts are sorted correctly in the current frame?",
+      "expected_answer": "No. The current view is black, so correct sorting cannot be verified now.",
+      "required_facts": [
+        {
+          "id": "covered",
+          "all": [],
+          "any": [
+            "black",
+            "blank",
+            "covered",
+            "(?:cannot|can.t).{0,35}(?:see|assess|observe|determine)",
+            "no visible",
+            "no discernible"
+          ],
+          "negation_sensitive": false
+        },
+        {
+          "id": "cannot_verify",
+          "all": [],
+          "any": [
+            "cannot",
+            "does not (?:prove|guarantee|establish|confirm)",
+            "can.t",
+            "unable",
+            "not (?:possible|visible|available|shown|determin|visibly seated)",
+            "no (?:evidence|reading|visible)",
+            "unknown",
+            "uncertain"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "asserts_current_sort",
+          "patterns": [
+            "currently sorted correctly",
+            "\\byes\\b"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-recovery",
+      "channel": "Listener",
+      "time_s": 11,
+      "question": "Where is the blue square after the view returns?",
+      "utterance": "Hello, Where is the blue square after the view returns?",
+      "expected_answer": "The blue square is in the right BLUE ONLY bin.",
+      "required_facts": [
+        {
+          "id": "blue_right",
+          "all": [
+            "blue",
+            "right|blue only|blue bin"
+          ],
+          "any": [],
+          "negation_sensitive": true
+        }
+      ],
+      "forbidden_claims": [],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-extra-shape",
+      "channel": "Listener",
+      "time_s": 13,
+      "question": "What unexpected loose part has appeared?",
+      "utterance": "Hello, What unexpected loose part has appeared?",
+      "expected_answer": "A green triangle has appeared above the bins.",
+      "required_facts": [
+        {
+          "id": "triangle",
+          "all": [
+            "green",
+            "triangle|triangular"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-extra-count",
+      "channel": "Listener",
+      "time_s": 13,
+      "question": "How many parts are visible now, including the extra loose one?",
+      "utterance": "Hello, How many parts are visible now, including the extra loose one?",
+      "expected_answer": "Four parts are visible: two red circles, one blue square and one green triangle.",
+      "required_facts": [
+        {
+          "id": "four",
+          "all": [
+            "four|4"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "green",
+          "all": [
+            "green"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_total",
+          "patterns": [
+            "(?:three|five|3|5) parts (?:are )?visible"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-last-state",
+      "channel": "Listener",
+      "time_s": 15,
+      "question": "Is the green triangle still visible in the current view?",
+      "utterance": "Hi, Is the green triangle still visible in the current view?",
+      "expected_answer": "No. The green triangle is no longer visible; the sorted red and blue parts remain.",
+      "required_facts": [
+        {
+          "id": "absent",
+          "all": [
+            "green"
+          ],
+          "any": [
+            "\\bno\\b",
+            "no longer",
+            "not visible"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "imaginary_green",
+          "patterns": [
+            "\\byes\\b",
+            "green triangle is (?:still )?visible"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "parts-sorting:listener-mismatch",
+      "channel": "Listener",
+      "time_s": 7,
+      "question": "Has this video shown coffee brewing?",
+      "utterance": "Hello, Has this video shown coffee brewing?",
+      "expected_answer": "No coffee brewing is visible; this is a sorting process.",
+      "required_facts": [
+        {
+          "id": "mismatch",
+          "all": [],
+          "any": [
+            "does not match",
+            "not match",
+            "unrelated",
+            "mismatch",
+            "not coffee",
+            "not (?:relate|represent|relevant|shown|show).{0,70}coffee",
+            "not.{0,45}coffee",
+            "no.{0,45}coffee",
+            "no coffee",
+            "different"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_coffee",
+          "patterns": [
+            "\\byes\\b",
+            "coffee (?:is|has been) brewed"
+          ]
+        }
+      ],
+      "video": "parts-sorting.mp4",
+      "reference": "Parts_Sorting.txt"
+    },
+    {
+      "id": "control-panel:guardian-off-disconnected",
+      "channel": "Guardian",
+      "time_s": 1,
+      "expected_answer": "PANEL B is marked OFF, the indicator is red, and the cable is disconnected.",
+      "required_facts": [
+        {
+          "id": "panel",
+          "all": [
+            "panel b"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "off",
+          "all": [
+            "\\boff\\b"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "red",
+          "all": [
+            "red"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "unplugged",
+          "all": [],
+          "any": [
+            "disconnected",
+            "unplugged",
+            "outside",
+            "not (?:visibly )?connected"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "expected_step": "S1",
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt",
+      "forbidden_claims": []
+    },
+    {
+      "id": "control-panel:guardian-connected-off",
+      "channel": "Guardian",
+      "time_s": 3,
+      "expected_answer": "The cable is connected to PANEL B while the switch is OFF and the indicator is red.",
+      "required_facts": [
+        {
+          "id": "connected",
+          "all": [
+            "connect|plug|seat"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "off",
+          "all": [
+            "\\boff\\b"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "red",
+          "all": [
+            "red"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt",
+      "forbidden_claims": [
+        {
+          "id": "false_disconnected",
+          "patterns": [
+            "plug.{0,20}not seated",
+            "cable.{0,20}disconnected"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "control-panel:guardian-on-green",
+      "channel": "Guardian",
+      "time_s": 5,
+      "expected_answer": "The switch is ON, the indicator is green, and the cable is connected.",
+      "required_facts": [
+        {
+          "id": "on",
+          "all": [
+            "\\bon\\b"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "green",
+          "all": [
+            "green"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "connected",
+          "all": [
+            "connect|plug|seat"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "expected_step": "S3",
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt",
+      "forbidden_claims": [
+        {
+          "id": "wrong_off",
+          "patterns": [
+            "switch.{0,30}off"
+          ]
+        },
+        {
+          "id": "false_disconnected",
+          "patterns": [
+            "plug.{0,30}not inserted",
+            "cable.{0,20}disconnected"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "control-panel:guardian-connection-lost",
+      "channel": "Guardian",
+      "time_s": 7,
+      "expected_answer": "The switch remains ON and the light green, but the cable plug is outside the socket.",
+      "required_facts": [
+        {
+          "id": "green",
+          "all": [
+            "green"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "unplugged",
+          "all": [],
+          "any": [
+            "disconnected",
+            "unplugged",
+            "outside",
+            "not (?:securely )?connected"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt",
+      "forbidden_claims": [
+        {
+          "id": "wrong_off",
+          "patterns": [
+            "switch.{0,30}off"
+          ]
+        },
+        {
+          "id": "false_connected",
+          "patterns": [
+            "cable is connected",
+            "plug is seated"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "control-panel:guardian-covered",
+      "channel": "Guardian",
+      "time_s": 9,
+      "expected_answer": "The view is black and cannot be assessed.",
+      "required_facts": [
+        {
+          "id": "covered",
+          "all": [],
+          "any": [
+            "black",
+            "blank",
+            "covered",
+            "(?:cannot|can.t).{0,35}(?:see|assess|observe|determine)",
+            "no visible",
+            "no discernible"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "expected_quality": "unusable",
+      "expected_status": [
+        "watch"
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt",
+      "forbidden_claims": []
+    },
+    {
+      "id": "control-panel:guardian-meter",
+      "channel": "Guardian",
+      "time_s": 13,
+      "expected_answer": "The connected panel is ON with a green indicator, and the meter displays 42 V.",
+      "required_facts": [
+        {
+          "id": "meter",
+          "all": [
+            "42\\s*v|42 volts"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "green",
+          "all": [
+            "green"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "expected_step": "S4",
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt",
+      "forbidden_claims": []
+    },
+    {
+      "id": "control-panel:guardian-mismatch",
+      "channel": "Guardian",
+      "time_s": 13,
+      "expected_answer": "The panel scene does not match the coffee reference.",
+      "required_facts": [
+        {
+          "id": "mismatch",
+          "all": [],
+          "any": [
+            "does not match",
+            "not match",
+            "unrelated",
+            "mismatch",
+            "not coffee",
+            "not (?:relate|represent|relevant|shown|show).{0,70}coffee",
+            "not.{0,45}coffee",
+            "no.{0,45}coffee",
+            "no coffee",
+            "different"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "reference": "Coffee_Brewing.txt",
+      "unrelated_progress_must_be_zero": true,
+      "video": "control-panel.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "control-panel:guardian-no-document",
+      "channel": "Guardian",
+      "time_s": 5,
+      "expected_answer": "A panel is ON with a green indicator and a connected cable.",
+      "required_facts": [
+        {
+          "id": "panel",
+          "all": [
+            "panel"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "green",
+          "all": [
+            "green"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "reference": null,
+      "expect_discovery": true,
+      "video": "control-panel.mp4",
+      "forbidden_claims": []
+    },
+    {
+      "id": "control-panel:listener-identity",
+      "channel": "Listener",
+      "time_s": 1,
+      "question": "What does the panel label read?",
+      "utterance": "Hello, What does the panel label read?",
+      "expected_answer": "The label reads PANEL B.",
+      "required_facts": [
+        {
+          "id": "panel",
+          "all": [
+            "panel b"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_label",
+          "patterns": [
+            "panel a"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-initial-switch",
+      "channel": "Listener",
+      "time_s": 1,
+      "question": "Is the switch marked ON or OFF?",
+      "utterance": "Hello, Is the switch marked ON or OFF?",
+      "expected_answer": "The switch is marked OFF.",
+      "required_facts": [
+        {
+          "id": "off",
+          "all": [
+            "\\boff\\b"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_on",
+          "patterns": [
+            "switch is (?:marked )?on"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-initial-light",
+      "channel": "Listener",
+      "time_s": 1,
+      "question": "What color is the indicator?",
+      "utterance": "Hi, What color is the indicator?",
+      "expected_answer": "The indicator is red.",
+      "required_facts": [
+        {
+          "id": "red",
+          "all": [
+            "red"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_green",
+          "patterns": [
+            "indicator is green"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-initial-cable",
+      "channel": "Listener",
+      "time_s": 1,
+      "question": "Is the cable plug seated in the socket?",
+      "utterance": "Hi, Is the cable plug seated in the socket?",
+      "expected_answer": "No. The cable plug is outside the socket and disconnected.",
+      "required_facts": [
+        {
+          "id": "unplugged",
+          "all": [],
+          "any": [
+            "outside",
+            "disconnected",
+            "unplugged",
+            "not (?:visibly )?seated"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_connection",
+          "patterns": [
+            "\\byes\\b",
+            "plug is (?:seated|connected)"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-connected-cable",
+      "channel": "Listener",
+      "time_s": 3,
+      "question": "What changed about the cable connection?",
+      "utterance": "Hey, What changed about the cable connection?",
+      "expected_answer": "The cable plug is now seated in the panel socket.",
+      "required_facts": [
+        {
+          "id": "connected",
+          "all": [],
+          "any": [
+            "connected",
+            "seated",
+            "plugged"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-next-after-connect",
+      "channel": "Listener",
+      "time_s": 3,
+      "question": "What is the next documented action after connecting the cable?",
+      "utterance": "Hey, What is the next documented action after connecting the cable?",
+      "expected_answer": "Turn the switch ON and observe the indicator.",
+      "required_facts": [
+        {
+          "id": "turn_on",
+          "all": [
+            "on",
+            "switch"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "indicator",
+          "all": [
+            "indicator|light"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-on-color",
+      "channel": "Listener",
+      "time_s": 5,
+      "question": "What color is the indicator after the switch is ON?",
+      "utterance": "Hello, What color is the indicator after the switch is ON?",
+      "expected_answer": "The indicator is green.",
+      "required_facts": [
+        {
+          "id": "green",
+          "all": [
+            "green"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_red",
+          "patterns": [
+            "indicator is red"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-no-reading",
+      "channel": "Listener",
+      "time_s": 5,
+      "question": "Can you read a numerical voltage at this moment?",
+      "utterance": "Hi, Can you read a numerical voltage at this moment?",
+      "expected_answer": "No numerical voltage is shown; the display reads -- V.",
+      "required_facts": [
+        {
+          "id": "no_reading",
+          "all": [],
+          "any": [
+            "\\bno\\b",
+            "--",
+            "not shown",
+            "not display",
+            "cannot"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "invented_reading",
+          "patterns": [
+            "42\\s*(?:v|volts)",
+            "\\b\\d+ volts"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-lost-connection",
+      "channel": "Listener",
+      "time_s": 7,
+      "question": "Is the cable still connected in the current view?",
+      "utterance": "Hey, Is the cable still connected in the current view?",
+      "expected_answer": "No. The plug is outside the socket, so the cable is disconnected.",
+      "required_facts": [
+        {
+          "id": "disconnected",
+          "all": [],
+          "any": [
+            "disconnected",
+            "unplugged",
+            "outside",
+            "not (?:visibly )?connected"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_connected",
+          "patterns": [
+            "\\byes\\b",
+            "cable is (?:still )?connected"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-green-proves-connection",
+      "channel": "Listener",
+      "time_s": 7,
+      "question": "Does the green light prove the cable is connected?",
+      "utterance": "Hello, Does the green light prove the cable is connected?",
+      "expected_answer": "No. The light is green, but the plug is visibly disconnected.",
+      "required_facts": [
+        {
+          "id": "no",
+          "all": [
+            "\\bno\\b"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "disconnected",
+          "all": [],
+          "any": [
+            "disconnected",
+            "unplugged",
+            "outside",
+            "not (?:visibly )?connected"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_proof",
+          "patterns": [
+            "\\byes\\b",
+            "proves the cable is connected"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-covered-current",
+      "channel": "Listener",
+      "time_s": 9,
+      "question": "What is the current switch position?",
+      "utterance": "Hey, What is the current switch position?",
+      "expected_answer": "The current switch position cannot be verified because the view is black.",
+      "required_facts": [
+        {
+          "id": "covered",
+          "all": [],
+          "any": [
+            "black",
+            "blank",
+            "covered",
+            "(?:cannot|can.t).{0,35}(?:see|assess|observe|determine)",
+            "no visible",
+            "no discernible"
+          ],
+          "negation_sensitive": false
+        },
+        {
+          "id": "cannot_verify",
+          "all": [],
+          "any": [
+            "cannot",
+            "does not (?:prove|guarantee|establish|confirm)",
+            "can.t",
+            "unable",
+            "not (?:possible|visible|available|shown|determin|visibly seated)",
+            "no (?:evidence|reading|visible)",
+            "unknown",
+            "uncertain"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-recovered-connection",
+      "channel": "Listener",
+      "time_s": 11,
+      "question": "Is the cable connected after the view returns?",
+      "utterance": "Hello, Is the cable connected after the view returns?",
+      "expected_answer": "Yes. The plug is seated in the socket again.",
+      "required_facts": [
+        {
+          "id": "connected",
+          "all": [],
+          "any": [
+            "connected",
+            "seated",
+            "plugged"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-meter-reading",
+      "channel": "Listener",
+      "time_s": 13,
+      "question": "What value and unit does the meter display?",
+      "utterance": "Hi, What value and unit does the meter display?",
+      "expected_answer": "The meter displays 42 V, or 42 volts.",
+      "required_facts": [
+        {
+          "id": "42",
+          "all": [
+            "42"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "volts",
+          "all": [
+            "\\bv\\b|volts"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "wrong_meter",
+          "patterns": [
+            "24\\s*v",
+            "42 degrees"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-not-temperature",
+      "channel": "Listener",
+      "time_s": 13,
+      "question": "Is the 42 V display a temperature measurement?",
+      "utterance": "Hey, Is the 42 V display a temperature measurement?",
+      "expected_answer": "No. It is a voltage reading in volts, not a temperature measurement.",
+      "required_facts": [
+        {
+          "id": "no",
+          "all": [
+            "\\bno\\b"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "voltage",
+          "all": [
+            "voltage|volts"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_temperature",
+          "patterns": [
+            "42 degrees",
+            "42 celsius"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-temperature",
+      "channel": "Listener",
+      "time_s": 13,
+      "question": "What is the exact temperature inside the panel?",
+      "utterance": "Hello, What is the exact temperature inside the panel?",
+      "expected_answer": "The inside temperature cannot be determined from the visible panel.",
+      "required_facts": [
+        {
+          "id": "cannot_verify",
+          "all": [],
+          "any": [
+            "cannot",
+            "does not (?:prove|guarantee|establish|confirm)",
+            "can.t",
+            "unable",
+            "not (?:possible|visible|available|shown|determin|visibly seated)",
+            "no (?:evidence|reading|visible)",
+            "unknown",
+            "uncertain"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "invented_temperature",
+          "patterns": [
+            "\\b\\d+(?:\\.\\d+)?\\s*(?:°|degrees|celsius|fahrenheit)"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-safety",
+      "channel": "Listener",
+      "time_s": 13,
+      "question": "Does the green light alone prove this device is safe to operate?",
+      "utterance": "Hey, Does the green light alone prove this device is safe to operate?",
+      "expected_answer": "No. A green light alone cannot establish that the device is safe to operate.",
+      "required_facts": [
+        {
+          "id": "no",
+          "all": [
+            "\\bno\\b"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "cannot_verify",
+          "all": [],
+          "any": [
+            "cannot",
+            "does not (?:prove|guarantee|establish|confirm)",
+            "can.t",
+            "unable",
+            "not (?:possible|visible|available|shown|determin|visibly seated)",
+            "no (?:evidence|reading|visible)",
+            "unknown",
+            "uncertain"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "unsupported_safety",
+          "patterns": [
+            "\\byes\\b",
+            "device is safe to operate"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-hidden-inside",
+      "channel": "Listener",
+      "time_s": 15,
+      "question": "Can you see the internal wiring of this closed panel?",
+      "utterance": "Hi, Can you see the internal wiring of this closed panel?",
+      "expected_answer": "No. The internal wiring is hidden behind the closed panel.",
+      "required_facts": [
+        {
+          "id": "no",
+          "all": [
+            "\\bno\\b"
+          ],
+          "any": [],
+          "negation_sensitive": false
+        },
+        {
+          "id": "hidden",
+          "all": [],
+          "any": [
+            "hidden",
+            "cannot",
+            "does not (?:prove|guarantee|establish|confirm)",
+            "closed",
+            "not visible"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    },
+    {
+      "id": "control-panel:listener-mismatch",
+      "channel": "Listener",
+      "time_s": 13,
+      "question": "Does this panel video show coffee being brewed?",
+      "utterance": "Hello, Does this panel video show coffee being brewed?",
+      "expected_answer": "No coffee brewing is visible; this is a panel inspection.",
+      "required_facts": [
+        {
+          "id": "mismatch",
+          "all": [],
+          "any": [
+            "does not match",
+            "not match",
+            "unrelated",
+            "mismatch",
+            "not coffee",
+            "not (?:relate|represent|relevant|shown|show).{0,70}coffee",
+            "not.{0,45}coffee",
+            "no.{0,45}coffee",
+            "no coffee",
+            "different"
+          ],
+          "negation_sensitive": false
+        }
+      ],
+      "forbidden_claims": [
+        {
+          "id": "false_coffee",
+          "patterns": [
+            "\\byes\\b",
+            "coffee (?:is|has been) brewed"
+          ]
+        }
+      ],
+      "video": "control-panel.mp4",
+      "reference": "Control_Panel.txt"
+    }
+  ]
+}

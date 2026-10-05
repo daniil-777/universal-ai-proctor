@@ -1,0 +1,102 @@
+{
+  "model": "seedance1_5",
+  "model_name": "Seedance 1.5 Pro",
+  "resolution": "1080p",
+  "duration_per_clip": 4,
+  "quoted_credits_per_clip": 12,
+  "planned_total_credits": 60,
+  "starting_balance": 88.59,
+  "requests": [
+    {
+      "index": 0,
+      "params": {
+        "model": "seedance1_5",
+        "prompt": "Photorealistic premium enterprise commercial. Landscape 16:9, native 1920 by 1080, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. A large beautiful contemporary two-storey house under construction stands behind an adult construction supervisor wearing a hard hat, high-visibility vest, safety glasses and work boots. Safe daylight work area, no moving crane or heavy machinery, no one working at height. Medium-wide eye-level framing shows the house structure, supervisor and full vertical timber wall post. During four seconds the supervisor calmly places a spirit level against the timber post, looks toward the level, then holds still to inspect it. The level and post remain clearly visible. Smooth subtle lateral camera move. No magical building transformation or instant construction.",
+        "duration": 4,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9",
+        "generate_audio": false,
+        "use_unlim": false
+      }
+    },
+    {
+      "index": 1,
+      "params": {
+        "model": "seedance1_5",
+        "prompt": "Photorealistic premium enterprise commercial. Landscape 16:9, native 1920 by 1080, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. In a spotless modern precision-assembly cell, an adult technician wearing close-fitting light-grey protective gloves carefully lowers one small machined aluminium component into a clearly matching dark fixture on a charcoal bench. In four seconds the component approaches the fixture, seats gently, and the hands pause so its visible alignment can be inspected. Macro three-quarter view retains both hands, the complete component and the fixture. Soft diffuse light with restrained teal reflections. No powered machine moving, sparks, invented numerical measurement or readable screen.",
+        "duration": 4,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9",
+        "generate_audio": false,
+        "use_unlim": false
+      }
+    },
+    {
+      "index": 2,
+      "params": {
+        "model": "seedance1_5",
+        "prompt": "Photorealistic premium enterprise commercial. Landscape 16:9, native 1920 by 1080, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. A pristine surgical-skills simulation laboratory, no patient. Macro close-up inside a clearly artificial dry-lab laparoscopic box trainer shows a blunt practice instrument approaching a coloured silicone target, stopping just before contact, then moving away gently. An adult trainee in scrubs and light-blue gloves is partially visible outside the trainer. Four seconds of slow deliberate coherent motion; stable silicone target and realistic instrument geometry. Balanced clinical lighting. No real anatomy, blood, cutting, puncture, dissection, medication, operation on a person or claims of clinical success.",
+        "duration": 4,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9",
+        "generate_audio": false,
+        "use_unlim": false
+      }
+    },
+    {
+      "index": 3,
+      "params": {
+        "model": "seedance1_5",
+        "prompt": "Photorealistic premium enterprise commercial. Landscape 16:9, native 1920 by 1080, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. An adult beginner dancer in comfortable fitted rehearsal clothes and flat dance shoes practices in a bright premium dance studio with a clear wooden floor. Full body from head to shoes remains in frame throughout, no mirror reflections creating extra people. During four seconds the dancer begins upright, performs one calm rightward side step followed by bringing the other foot beside it, then holds a comfortable stable pose. Natural anatomy, clear foot contact and consistent limb identity. Locked eye-level camera, ample floor space, no acrobatics or extreme flexibility.",
+        "duration": 4,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9",
+        "generate_audio": false,
+        "use_unlim": false
+      }
+    },
+    {
+      "index": 4,
+      "params": {
+        "model": "seedance1_5",
+        "prompt": "Photorealistic premium enterprise commercial. Landscape 16:9, native 1920 by 1080, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. An adult recreational athlete in ordinary training clothes and flat athletic shoes performs one comfortable shallow-to-moderate bodyweight squat in a clean daylight fitness studio. Entire body and both feet stay clearly visible in a stable three-quarter view. Over four seconds the athlete begins standing, lowers slowly to a self-selected comfortable depth, pauses briefly, then returns to standing. Natural controlled movement and coherent knees, hands and feet; no barbell, heavy weights, maximal effort, jumps or exaggerated range. Camera remains fixed; clear uncluttered floor.",
+        "duration": 4,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9",
+        "generate_audio": false,
+        "use_unlim": false
+      }
+    }
+  ],
+  "submission": {
+    "jobs": [
+      {
+        "index": 0,
+        "job_id": "413450ad-cd79-4684-92f1-4142971fa363",
+        "status": "pending"
+      },
+      {
+        "index": 1,
+        "job_id": "421cf138-b00b-4b77-846c-0cfbd440d226",
+        "status": "pending"
+      },
+      {
+        "index": 2,
+        "job_id": "19c5aa68-68a0-46f3-bf7e-af88f2e706cb",
+        "status": "pending"
+      },
+      {
+        "index": 3,
+        "job_id": "c3c9d7e3-c9c8-43a6-8ac5-97eeb5eba320",
+        "status": "pending"
+      },
+      {
+        "index": 4,
+        "job_id": "9321619e-a545-4412-b18a-f11bdd02ea9b",
+        "status": "pending"
+      }
+    ],
+    "submitted_count": 5,
+    "failed_count": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "process-guide",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "setup": "node scripts/tasks.mjs setup",
+    "build": "node scripts/tasks.mjs build",
+    "check": "node scripts/tasks.mjs check",
+    "test": "node scripts/tasks.mjs test",
+    "test:e2e": "node scripts/tasks.mjs e2e",
+    "verify:voice": "node scripts/voice-smoke.mjs",
+    "verify:accounts": "node scripts/account-smoke.mjs",
+    "evaluate:prepare": "node evaluation/prepare.mjs",
+    "evaluate:live": "node evaluation/run.mjs --live",
+    "start": "node scripts/start.mjs",
+    "evaluate:render-videos": "node evaluation/render-extra.mjs",
+    "assets:download": "node scripts/download-assets.mjs",
+    "build:pages": "node scripts/build-pages.mjs",
+    "test:deployment": "node --test scripts/download-assets.test.mjs"
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "rows": [
+    {
+      "step": "Step 1: Observe panel-edge preparation and hardware presentation",
+      "objective": "Around 00:00-00:34, recognize the close-up panel-edge work before the wall-assembly sequence.",
+      "instruments": "Applicator gun; insulated panels; presented metal fasteners; gloves.",
+      "actions": "Observe the applicator held over the exposed panel edge and the close-up of metal fasteners in a gloved hand.\nRecord the visible panel edge and timber-facing detail without deciding that the joint is sealed or fastened correctly.",
+      "criteria": "Visual observation: An applicator and exposed insulated panel edge appear together in a close-up.\nVisual observation: Metal fasteners are visibly presented in a gloved hand.\nVisual observation: A close-up shows the panel or timber edge being joined.",
+      "duration": ""
+    },
+    {
+      "step": "Step 2: Observe the ground-floor wall enclosure",
+      "objective": "Around 00:34-01:05, identify a visible change from the deck and partial wall layout to a more enclosed ground-floor outline.",
+      "instruments": "Installed deck; wall panels; timber supports; ladders shown in the work area.",
+      "actions": "Compare consecutive wide views of the same building area.\nObserve workers moving or positioning wall sections and the resulting visible wall outline.",
+      "criteria": "Visual observation: Wide views show upright wall panels around the ground-floor deck.\nVisual observation: Later views show a more developed wall perimeter than earlier views in this excerpt.\nVisual observation: At least one opening or interior partition is visible in the ground-floor enclosure.",
+      "duration": ""
+    },
+    {
+      "step": "Step 3: Observe upper-floor framing and the next wall level",
+      "objective": "Around 01:05-01:35, identify the upper-floor framing and the emerging upper-storey wall outline.",
+      "instruments": "Timber floor members; installed panels; visible building openings.",
+      "actions": "Observe the upper level from the fixed wide camera position.\nCompare the exposed upper-floor members with the later upright wall panels.",
+      "criteria": "Visual observation: Timber members or decking span the top of the lower wall enclosure.\nVisual observation: A later wide view shows upright panels forming the next storey.",
+      "duration": ""
+    },
+    {
+      "step": "Step 4: Observe upper-wall edge work and roof-outline growth",
+      "objective": "Around 01:35-02:06, recognize a close-up of upper-wall edge work followed by the developing roof shape.",
+      "instruments": "Applicator gun; upper wall panel; timber roof members.",
+      "actions": "Observe the close-up applicator work at an upper wall edge.\nCompare the following wide views as timber members form a pitched roof outline.",
+      "criteria": "Visual observation: The applicator is held along the exposed upper panel edge.\nVisual observation: Wide views show pitched roof members above the upper-storey walls.",
+      "duration": ""
+    },
+    {
+      "step": "Step 5: Observe roof support and connection details",
+      "objective": "Around 02:06-02:32, distinguish the exposed roof timber and support details shown in close-ups.",
+      "instruments": "Roof timbers; support beam; visible metal connection hardware.",
+      "actions": "Observe the close-up of roof members meeting a support beam.\nObserve the worker and the subsequent close-up of exposed timber joints or support points.",
+      "criteria": "Visual observation: Two or more roof members and their support region are visible together.\nVisual observation: A close-up exposes a timber connection or bearing region.",
+      "duration": ""
+    },
+    {
+      "step": "Step 6: Observe external sheet and roof-covering work",
+      "objective": "Around 02:32-03:00, identify visible external sheeting and the roof-covering activity near the end of the excerpt.",
+      "instruments": "Dark external sheet material; roof covering; installed house frame.",
+      "actions": "Observe workers presenting or handling a dark sheet beside the building.\nObserve the wide exterior frame, the sheet-handling activity, and the close-up roof-covering activity.",
+      "criteria": "Visual observation: Dark sheet material is handled or visible on an exterior surface.\nVisual observation: A worker and installed roof-covering rows are visible in the roof view.\nVisual observation: An exterior view shows the roof and upper wall outline together.",
+      "duration": ""
+    }
+  ],
+  "workflow": {
+    "title": "Real 01 House Construction",
+    "steps": [
+      {
+        "id": "S1",
+        "index": 1,
+        "name": "Observe panel-edge preparation and hardware presentation",
+        "description": "Around 00:00-00:34, recognize the close-up panel-edge work before the wall-assembly sequence.",
+        "objective": "Around 00:00-00:34, recognize the close-up panel-edge work before the wall-assembly sequence.",
+        "expectedInstruments": [
+          "Applicator gun",
+          "insulated panels",
+          "presented metal fasteners",
+          "gloves."
+        ],
+        "actions": [
+          "Observe the applicator held over the exposed panel edge and the close-up of metal fasteners in a gloved hand.",
+          "Record the visible panel edge and timber-facing detail without deciding that the joint is sealed or fastened correctly."
+        ],
+        "typicalDurationMin": 0,
+        "criteria": [
+          {
+            "key": "S1C1",
+            "label": "Visual observation: An applicator and exposed insulated panel edge appear together in a close-up.",
+            "status": "unknown"
+          },
+          {
+            "key": "S1C2",
+            "label": "Visual observation: Metal fasteners are visibly presented in a gloved hand.",
+            "status": "unknown"
+          },
+          {
+            "key": "S1C3",
+            "label": "Visual observation: A close-up shows the panel or timber edge being joined.",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S2",
+        "index": 2,
+        "name": "Observe the ground-floor wall enclosure",
+        "description": "Around 00:34-01:05, identify a visible change from the deck and partial wall layout to a more enclosed ground-floor outline.",
+        "objective": "Around 00:34-01:05, identify a visible change from the deck and partial wall layout to a more enclosed ground-floor outline.",
+        "expectedInstruments": [
+          "Installed deck",
+          "wall panels",
+          "timber supports",
+          "ladders shown in the work area."
+        ],
+        "actions": [
+          "Compare consecutive wide views of the same building area.",
+          "Observe workers moving or positioning wall sections and the resulting visible wall outline."
+        ],
+        "typicalDurationMin": 0,
+        "criteria": [
+          {
+            "key": "S2C1",
+            "label": "Visual observation: Wide views show upright wall panels around the ground-floor deck.",
+            "status": "unknown"
+          },
+          {
+            "key": "S2C2",
+            "label": "Visual observation: Later views show a more developed wall perimeter than earlier views in this excerpt.",
+            "status": "unknown"
+          },
+          {
+            "key": "S2C3",
+            "label": "Visual observation: At least one opening or interior partition is visible in the ground-floor enclosure.",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S3",
+        "index": 3,
+        "name": "Observe upper-floor framing and the next wall level",
+        "description": "Around 01:05-01:35, identify the upper-floor framing and the emerging upper-storey wall outline.",
+        "objective": "Around 01:05-01:35, identify the upper-floor framing and the emerging upper-storey wall outline.",
+        "expectedInstruments": [
+          "Timber floor members",
+          "installed panels",
+          "visible building openings."
+        ],
+        "actions": [
+          "Observe the upper level from the fixed wide camera position.",
+          "Compare the exposed upper-floor members with the later upright wall panels."
+        ],
+        "typicalDurationMin": 0,
+        "criteria": [
+          {
+            "key": "S3C1",
+            "label": "Visual observation: Timber members or decking span the top of the lower wall enclosure.",
+            "status": "unknown"
+          },
+          {
+            "key": "S3C2",
+            "label": "Visual observation: A later wide view shows upright panels forming the next storey.",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S4",
+        "index": 4,
+        "name": "Observe upper-wall edge work and roof-outline growth",
+        "description": "Around 01:35-02:06, recognize a close-up of upper-wall edge work followed by the developing roof shape.",
+        "objective": "Around 01:35-02:06, recognize a close-up of upper-wall edge work followed by the developing roof shape.",
+        "expectedInstruments": [
+          "Applicator gun",
+          "upper wall panel",
+          "timber roof members."
+        ],
+        "actions": [
+          "Observe the close-up applicator work at an upper wall edge.",
+          "Compare the following wide views as timber members form a pitched roof outline."
+        ],
+        "typicalDurationMin": 0,
+        "criteria": [
+          {
+            "key": "S4C1",
+            "label": "Visual observation: The applicator is held along the exposed upper panel edge.",
+            "status": "unknown"
+          },
+          {
+            "key": "S4C2",
+            "label": "Visual observation: Wide views show pitched roof members above the upper-storey walls.",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S5",
+        "index": 5,
+        "name": "Observe roof support and connection details",
+        "description": "Around 02:06-02:32, distinguish the exposed roof timber and support details shown in close-ups.",
+        "objective": "Around 02:06-02:32, distinguish the exposed roof timber and support details shown in close-ups.",
+        "expectedInstruments": [
+          "Roof timbers",
+          "support beam",
+          "visible metal connection hardware."
+        ],
+        "actions": [
+          "Observe the close-up of roof members meeting a support beam.",
+          "Observe the worker and the subsequent close-up of exposed timber joints or support points."
+        ],
+        "typicalDurationMin": 0,
+        "criteria": [
+          {
+            "key": "S5C1",
+            "label": "Visual observation: Two or more roof members and their support region are visible together.",
+            "status": "unknown"
+          },
+          {
+            "key": "S5C2",
+            "label": "Visual observation: A close-up exposes a timber connection or bearing region.",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S6",
+        "index": 6,
+        "name": "Observe external sheet and roof-covering work",
+        "description": "Around 02:32-03:00, identify visible external sheeting and the roof-covering activity near the end of the excerpt.",
+        "objective": "Around 02:32-03:00, identify visible external sheeting and the roof-covering activity near the end of the excerpt.",
+        "expectedInstruments": [
+          "Dark external sheet material",
+          "roof covering",
+          "installed house frame."
+        ],
+        "actions": [
+          "Observe workers presenting or handling a dark sheet beside the building.",
+          "Observe the wide exterior frame, the sheet-handling activity, and the close-up roof-covering activity."
+        ],
+        "typicalDurationMin": 0,
+        "criteria": [
+          {
+            "key": "S6C1",
+            "label": "Visual observation: Dark sheet material is handled or visible on an exterior surface.",
+            "status": "unknown"
+          },
+          {
+            "key": "S6C2",
+            "label": "Visual observation: A worker and installed roof-covering rows are visible in the roof view.",
+            "status": "unknown"
+          },
+          {
+            "key": "S6C3",
+            "label": "Visual observation: An exterior view shows the roof and upper wall outline together.",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      }
+    ],
+    "principles": [
+      "This is real, previously edited construction footage. The original includes time-lapse sequences and close-up inserts; three minutes of playback do not represent three minutes of site work.",
+      "Observe visible assembly phases. This guide is an educational viewing aid, not an approved construction method, building inspection, or site instruction.",
+      "Source captions identify some materials and dimensions. Treat those as source claims; they do not establish measurements, specifications, suitability, or compliance in the observed building.",
+      "Approximate time windows refer to this excerpt, not the original full video. A camera cut, completed-looking surface, or later construction phase does not prove that hidden operations were performed correctly.",
+      "Mark a step observed only when its listed visual evidence appears. Keep obscured, missing, or ambiguous details unobserved. Do not infer fastening strength, alignment tolerance, structural capacity, inspection, or approval.",
+      "The tools and materials below identify items shown in the footage. They are not a purchasing list or instructions to reproduce hazardous site activity.",
+      "Protect people and property. Do not copy work-at-height, access, lifting, or tool-use practices from this film; the responsible site supplies its own safe method, competent supervision, and inspections.",
+      "Record the observed phase, location, and any obscured connection separately.",
+      "Actual drawings, material grades, dimensions, fastener requirements, access controls, site safety, inspections, and approval require the responsible construction professionals. None are supplied or certified by this footage."
+    ],
+    "source": "document",
+    "warnings": []
+  }
+}

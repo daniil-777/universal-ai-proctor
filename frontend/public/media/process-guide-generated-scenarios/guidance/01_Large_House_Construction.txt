@@ -1,0 +1,70 @@
+DEMO: Large house construction - work-zone and framing review
+
+Principles:
+- This guide describes a generated demonstration clip. It is not a ground-truth label set or an approved construction method.
+- Visual observation records visible actions and accessible surfaces. Operator verification establishes site permissions, drawings, measurements and checkpoint decisions.
+- A short clip may show only part of this sequence. Keep missing, obscured or ambiguous actions unobserved rather than assuming completion.
+- Appearance cannot establish structural capacity, fastening strength, hidden services or compliance with a building specification.
+- Use only an operator-authorized accessible demonstration area. Do not enter restricted zones or climb framing to obtain a camera view.
+- Compare against a reference that the operator supplies. Perspective alone does not establish plumb, level or dimensional tolerance.
+- Completion of these visual checkpoints does not establish that records, authorization or required inspections are complete; the responsible operator verifies those obligations separately.
+
+Step 1: Show the work zone and observation area
+Objective: Establish the area being reviewed beside the large house under construction.
+Tools: Work-zone boundary markers; operator-selected checkpoint sheet or tablet.
+Actions:
+- Show the work-zone boundary and the accessible framing section in the same view.
+- Point out the intended observation area from the designated access position.
+Criteria:
+- Visual observation: The reviewed house framing and a work-zone boundary marker are visible.
+- Visual observation: The operator gestures toward the accessible section being reviewed.
+Warnings:
+- Step 1 operator verification: Site access, protective equipment and the suitability of the observation position require the responsible site's review; a camera image is not permission to enter.
+
+Step 2: Show the visible access route and materials
+Objective: Review the visible route to the checkpoint before approaching it.
+Tools: Marked access route; staged demonstration materials.
+Actions:
+- Point along the marked access route with staged materials in view.
+- Pause at the designated observation position while showing that route.
+Criteria:
+- Visual observation: The relevant access route and staged materials are in view.
+- Visual observation: The operator visibly points along the access route and pauses at the observation position.
+Warnings:
+- Step 2 operator verification: Hidden trip hazards, overhead activity, material stability and exclusion-zone controls cannot be cleared from one video view.
+
+Step 3: Compare accessible framing with a visible reference
+Objective: Record a visual alignment comparison without issuing a structural conclusion.
+Tools: Operator-selected level or straightedge; accessible framing member; drawing or reference supplied by the operator.
+Actions:
+- Place the visible reference alongside the accessible framing member without moving the structure.
+- Hold the reference beside the adjacent edge with the comparison area in view.
+Criteria:
+- Visual observation: A level or straightedge is visibly held alongside the framing member.
+- Visual observation: The comparison area remains visible while the operator inspects it.
+Warnings:
+- Step 3 operator verification: Check instrument suitability, calibration, drawing requirements and actual readings, then document any unclear comparison separately. Do not infer an angle, measurement or passing alignment from the presence of a level.
+
+Step 4: Show an accessible connection area
+Objective: Review the visible connection region and identify what still needs examination.
+Tools: Accessible connection area; operator-selected inspection reference.
+Actions:
+- Point to the accessible joint or fastening area.
+- Hold the view of that connection region during an inspection pause.
+Criteria:
+- Visual observation: The operator visibly points to an accessible connection region.
+- Visual observation: The connection region being discussed is shown in the camera view.
+Warnings:
+- Step 4 operator verification: Keep this demonstration non-manipulative and record any obscured region separately. Hidden fasteners, torque, embedment, material properties and load paths require the appropriate inspection process; a visible joint is not a certified joint.
+
+Step 5: Present a checkpoint for follow-up
+Objective: Show the checkpoint medium and the reviewed location together.
+Tools: Checkpoint sheet or tablet; reviewed framing section.
+Actions:
+- Bring the checkpoint sheet or tablet into view beside the reviewed section.
+- Pause with the checkpoint medium in view and the reviewed section still identifiable.
+Criteria:
+- Visual observation: The operator visibly presents a checkpoint sheet or tablet after the inspection.
+- Visual observation: The operator pauses the inspection sequence with the reviewed section still identifiable.
+Warnings:
+- Step 5 operator verification: Record the actual reviewed location and unresolved questions, and obtain the responsible review separately. Document contents, reviewer authority and the decision require a readable record and human confirmation. Presenting a clipboard does not establish completed documentation, approval or structural certification.

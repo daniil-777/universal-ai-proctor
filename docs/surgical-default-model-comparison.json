@@ -1,0 +1,77 @@
+{
+  "scope": "Consecutive sampled surgical software checks, not expert-rated anatomy/clinical accuracy or a complete video benchmark. All raw replies retained; no best-of selection. A preliminary harness run made two additional model calls before failing on a wrong test endpoint, then was replaced by the first complete run.",
+  "sample_video_sha256": "41eff5c46aec953cbabe7861213fb7d7c30a6f0c702066034623630b61a0e1fd",
+  "windows_s": [
+    12,
+    105,
+    216
+  ],
+  "runs": [
+    {
+      "file": "surgical-default-live-validation-before-grounding-fix.json",
+      "date": "2026-10-05T08:44:18.955Z",
+      "model": "gpt-4o-mini",
+      "requests": 9,
+      "guardian_median_ms": 6279.5,
+      "question_median_ms": 3633,
+      "late_scene_step_ids": [
+        "S2",
+        "S2"
+      ],
+      "smoke_in_last_guardian_summary": false
+    },
+    {
+      "file": "surgical-default-mini-validation.json",
+      "date": "2026-10-05T08:49:53.058Z",
+      "model": "gpt-4o-mini",
+      "requests": 9,
+      "guardian_median_ms": 6514.5,
+      "question_median_ms": 5115,
+      "late_scene_step_ids": [
+        "S2",
+        "S2"
+      ],
+      "smoke_in_last_guardian_summary": true
+    },
+    {
+      "file": "surgical-default-gpt4o-before-evidence-guard.json",
+      "date": "2026-10-05T08:51:29.420Z",
+      "model": "gpt-4o",
+      "requests": 9,
+      "guardian_median_ms": 4484.0,
+      "question_median_ms": 3496,
+      "late_scene_step_ids": [
+        "S4",
+        "S4"
+      ],
+      "smoke_in_last_guardian_summary": true
+    },
+    {
+      "file": "surgical-default-live-validation.json",
+      "date": "2026-10-05T08:55:25.176Z",
+      "model": "gpt-4o",
+      "requests": 9,
+      "guardian_median_ms": 4868.5,
+      "question_median_ms": 5317,
+      "late_scene_step_ids": [
+        "S4",
+        "S4"
+      ],
+      "smoke_in_last_guardian_summary": true
+    }
+  ],
+  "total_provider_function_invocations_including_initial_harness_failure": 38,
+  "changes": [
+    "Full source-owned sampling window after seek for Guardian and Q&A",
+    "Fresh-scene observations instead of distant earlier AI summaries",
+    "Explicit expected-tool versus visible-tool distinction and cause/visibility rules",
+    "Conservative rejection of speculative or self-contradictory positive criterion evidence",
+    "GPT-4o default, alternative models remain selectable"
+  ],
+  "remaining_limits": [
+    "Some anatomy/tool-mode wording remains more specific than these images establish",
+    "Generic cautionary guidance still requires expert review",
+    "The complete prior85-case synthetic benchmark was not rerun for these new prompts",
+    "No expert-labelled full surgical timeline, clinical validation or physical microphone tests"
+  ]
+}

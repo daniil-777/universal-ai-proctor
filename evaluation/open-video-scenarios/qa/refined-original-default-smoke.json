@@ -1,0 +1,497 @@
+{
+  "tested_at": "2026-10-05T11:57:30.279Z",
+  "mock": false,
+  "model_override_supplied": false,
+  "original_sample_id": "original-cholecystectomy",
+  "guide_steps": [
+    {
+      "id": "S1",
+      "name": "Exposure of the Gallbladder"
+    },
+    {
+      "id": "S2",
+      "name": "Dissection of the Hepatocystic Triangle"
+    },
+    {
+      "id": "S3",
+      "name": "Achieve Critical View of Safety (CVS)"
+    },
+    {
+      "id": "S4",
+      "name": "Control of Cystic Duct and Cystic Artery"
+    },
+    {
+      "id": "S5",
+      "name": "Gallbladder Detachment from Liver Bed"
+    },
+    {
+      "id": "S6",
+      "name": "Specimen Retrieval and Final Inspection"
+    }
+  ],
+  "wall_ms": 23250,
+  "frame_times_s": [
+    117,
+    118.3,
+    122.966667,
+    123.3,
+    123.633333,
+    124.133333,
+    124.166667,
+    124.566667,
+    124.966667
+  ],
+  "observation": {
+    "summary": "The latest view shows a left-sided grasper holding tissue under tension and a curved-tip instrument contacting tissue beside an open window beneath the liver. Earlier central haze has cleared, revealing pale tissue bands with residual yellow and fibrous tissue around them.",
+    "guidance": "Confirm the identities of the exposed bands and the required critical-view landmarks before clipping or division; this view alone does not verify them. If anatomy remains uncertain, pause rather than proceed.",
+    "principle": "Clear identification before division reduces the risk of mistaking adjacent ducts or vessels; an exposed window alone does not establish the critical view of safety.",
+    "current_step_id": "S2",
+    "phase_evidence": {
+      "confidence": 0.86,
+      "evidence": "A curved-tip instrument contacts residual tissue at the edge of a window near the retracted gallbladder neck, while the left grasper maintains traction. This supports ongoing triangle dissection rather than clipping, retrieval, or a completed inspection.",
+      "frame_indices": [
+        8
+      ],
+      "continuity": false
+    },
+    "status": "watch",
+    "concern": "Residual tissue surrounds the exposed bands, whose duct or artery identities cannot be confidently verified from this angle; the instrument tip is immediately adjacent to them.",
+    "steps": [
+      {
+        "id": "S2",
+        "confidence": 0.86,
+        "criteria": [
+          {
+            "key": "S2C1",
+            "status": "partial",
+            "evidence": "An open window is visible between pale bands, but yellow and fibrous tissue remains along its margins.",
+            "frame_indices": [
+              8
+            ]
+          },
+          {
+            "key": "S2C2",
+            "status": "unknown",
+            "evidence": "A thicker pale band is exposed below the window, but its identity and full course as the cystic duct are not established in this view.",
+            "frame_indices": [
+              8
+            ]
+          },
+          {
+            "key": "S2C3",
+            "status": "unknown",
+            "evidence": "A thinner band borders the upper window, but residual tissue prevents confident identification as the cystic artery.",
+            "frame_indices": [
+              8
+            ]
+          }
+        ]
+      }
+    ],
+    "discovered_steps": []
+  },
+  "current_stage_id": "S2",
+  "workflow": {
+    "title": "Cholecystectomy",
+    "steps": [
+      {
+        "id": "S1",
+        "index": 1,
+        "name": "Exposure of the Gallbladder",
+        "description": "Create optimal tension to open the hepatocystic triangle.",
+        "objective": "Create optimal tension to open the hepatocystic triangle.",
+        "expectedInstruments": [
+          "Arm 1 (Left hand): Fenestrated bipolar",
+          "Arm 2 (Right hand): Monopolar curved scissors or hook",
+          "Arm 3 (Right lateral): Cadiere or ProGrasp (fundus retraction)",
+          "30° down camera",
+          "± Assistant grasper (if used)"
+        ],
+        "actions": [
+          "Grasp fundus with Cadiere/ProGrasp → retract cephalad toward right shoulder.",
+          "Grasp infundibulum (Hartmann’s pouch) with fenestrated bipolar → retract laterally and slightly caudally.",
+          "Adjust tension until:",
+          "Cystic plate is flattened.",
+          "Hepatocystic triangle is fully visualized.",
+          "Duodenum and colon are displaced inferiorly."
+        ],
+        "typicalDurationMin": 2,
+        "criteria": [
+          {
+            "key": "S1C1",
+            "label": "Fundus under steady cephalad tension",
+            "status": "unknown"
+          },
+          {
+            "key": "S1C2",
+            "label": "Infundibulum under lateral tension",
+            "status": "unknown"
+          },
+          {
+            "key": "S1C3",
+            "label": "Hepatocystic triangle clearly exposed",
+            "status": "unknown"
+          },
+          {
+            "key": "S1C4",
+            "label": "No small bowel or omentum obscuring view",
+            "status": "unknown"
+          },
+          {
+            "key": "S1C5",
+            "label": "Adequate triangulation without arm collision",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S2",
+        "index": 2,
+        "name": "Dissection of the Hepatocystic Triangle",
+        "description": "Clear fat and fibrofatty tissue from the hepatocystic triangle to isolate and skeletonize the cystic duct and cystic artery while initiating exposure of the cystic plate to prepare for Critical View of Safety (CVS).",
+        "objective": "Clear fat and fibrofatty tissue from the hepatocystic triangle to isolate and skeletonize the cystic duct and cystic artery while initiating exposure of the cystic plate to prepare for Critical View of Safety (CVS).",
+        "expectedInstruments": [
+          "Fenestrated bipolar (grasp + bipolar coagulation)",
+          "Monopolar hook or curved scissors (sharp/energy dissection)",
+          "Retraction grasper on fundus",
+          "Camera"
+        ],
+        "actions": [
+          "Incise anterior peritoneum over the infundibulum.",
+          "Extend the incision laterally and medially along the gallbladder neck to open the anterior hepatocystic triangle.",
+          "Rotate the infundibulum medially to expose the posterior peritoneum.",
+          "Incise posterior peritoneum overlying the gallbladder neck.",
+          "Blunt sweep and bipolar coagulation to remove fibrofatty tissue and begin skeletonizing:",
+          "Cystic duct",
+          "Cystic artery",
+          "Develop a window between the cystic duct and cystic artery.",
+          "Initiate partial mobilization of the lower gallbladder from the liver bed:",
+          "Identify the gallbladder–liver interface (cystic plate).",
+          "Incise the serosa at this junction.",
+          "Dissect in the subserosal plane directly on the gallbladder wall.",
+          "Elevate the lower 25–33% of the gallbladder (infundibulum + proximal body) off the liver.",
+          "Continue until the white cystic plate is clearly visible and a posterior window is established.",
+          "Dissection must remain:",
+          "Close to gallbladder wall.",
+          "Above Rouvière’s sulcus plane."
+        ],
+        "typicalDurationMin": 5,
+        "criteria": [
+          {
+            "key": "S2C1",
+            "label": "Fat and fibrous tissue cleared from hepatocystic triangle",
+            "status": "partial",
+            "evidence": "An open window is visible between pale bands, but yellow and fibrous tissue remains along its margins.",
+            "confidence": 0.86
+          },
+          {
+            "key": "S2C2",
+            "label": "Cystic duct visually distinct",
+            "status": "unknown"
+          },
+          {
+            "key": "S2C3",
+            "label": "Cystic artery visually distinct",
+            "status": "unknown"
+          },
+          {
+            "key": "S2C4",
+            "label": "No structure divided",
+            "status": "unknown"
+          },
+          {
+            "key": "S2C5",
+            "label": "Lower 25–33% of gallbladder mobilized from liver bed",
+            "status": "unknown"
+          },
+          {
+            "key": "S2C6",
+            "label": "Common bile duct not encroached upon",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0.86,
+        "progress": 8,
+        "complete": false,
+        "source": "document",
+        "lastObservedS": 125
+      },
+      {
+        "id": "S3",
+        "index": 3,
+        "name": "Achieve Critical View of Safety (CVS)",
+        "description": "Confirm safe anatomy before division.",
+        "objective": "Confirm safe anatomy before division.",
+        "expectedInstruments": [
+          "Fenestrated bipolar (retraction)",
+          "Monopolar hook/scissors",
+          "Fundus grasper",
+          "Camera",
+          "± Firefly fluorescence mode"
+        ],
+        "actions": [
+          "Pause.",
+          "Reduce bleeding if present.",
+          "Visually inspect from multiple angles.",
+          "Confirm posterior window.",
+          "Confirm absence of additional ducts."
+        ],
+        "typicalDurationMin": 2,
+        "criteria": [
+          {
+            "key": "S3C1",
+            "label": "Hepatocystic triangle cleared of fat and fibrous tissue.",
+            "status": "unknown"
+          },
+          {
+            "key": "S3C2",
+            "label": "Lower 1/3 of gallbladder separated from liver bed (cystic plate exposed).",
+            "status": "unknown"
+          },
+          {
+            "key": "S3C3",
+            "label": "Only two tubular structures entering gallbladder.",
+            "status": "unknown"
+          },
+          {
+            "key": "S3C4",
+            "label": "Two and only two structures entering gallbladder",
+            "status": "unknown"
+          },
+          {
+            "key": "S3C5",
+            "label": "Posterior window visible behind cystic duct",
+            "status": "unknown"
+          },
+          {
+            "key": "S3C6",
+            "label": "Cystic plate exposed",
+            "status": "unknown"
+          },
+          {
+            "key": "S3C7",
+            "label": "No structure entering liver directly mistaken for duct",
+            "status": "unknown"
+          },
+          {
+            "key": "S3C8",
+            "label": "No clip placed yet",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S4",
+        "index": 4,
+        "name": "Control of Cystic Duct and Cystic Artery",
+        "description": "7A — Cystic Duct Division",
+        "objective": "",
+        "expectedInstruments": [
+          "Robotic clip applier or assistant-applied Hem-o-lok",
+          "Fenestrated bipolar (stabilization)",
+          "Monopolar scissors (division)",
+          "Camera",
+          "Clip applier OR bipolar energy device",
+          "Fenestrated bipolar",
+          "Scissors"
+        ],
+        "actions": [
+          "7A — Cystic Duct Division",
+          "Circumferentially clear duct.",
+          "Confirm adequate length.",
+          "Place:",
+          "2 clips proximally (toward CBD)",
+          "1 clip distally (toward gallbladder)",
+          "Divide between clips.",
+          "7B — Cystic Artery Division",
+          "Isolate artery clearly.",
+          "Apply 2 proximal clips + 1 distal (or bipolar seal if appropriate size).",
+          "Divide."
+        ],
+        "typicalDurationMin": 2,
+        "criteria": [
+          {
+            "key": "S4C1",
+            "label": "Clips fully seated and locked",
+            "status": "unknown"
+          },
+          {
+            "key": "S4C2",
+            "label": "No duct slippage",
+            "status": "unknown"
+          },
+          {
+            "key": "S4C3",
+            "label": "No bile leakage",
+            "status": "unknown"
+          },
+          {
+            "key": "S4C4",
+            "label": "Adequate proximal stump length",
+            "status": "unknown"
+          },
+          {
+            "key": "S4C5",
+            "label": "Clean transection",
+            "status": "unknown"
+          },
+          {
+            "key": "S4C6",
+            "label": "No pulsatile bleeding",
+            "status": "unknown"
+          },
+          {
+            "key": "S4C7",
+            "label": "Clips secure",
+            "status": "unknown"
+          },
+          {
+            "key": "S4C8",
+            "label": "No thermal injury to adjacent duct",
+            "status": "unknown"
+          },
+          {
+            "key": "S4C9",
+            "label": "Clear separation from liver bed",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S5",
+        "index": 5,
+        "name": "Gallbladder Detachment from Liver Bed",
+        "description": "Remove gallbladder from cystic plate.",
+        "objective": "Remove gallbladder from cystic plate.",
+        "expectedInstruments": [
+          "Monopolar hook or curved scissors",
+          "Fenestrated bipolar (countertraction + hemostasis)",
+          "Fundus grasper",
+          "Camera"
+        ],
+        "actions": [
+          "Maintain cephalad traction.",
+          "Dissect in subserosal plane.",
+          "Progress from infundibulum → fundus.",
+          "Coagulate small vessels with bipolar.",
+          "Avoid entering liver parenchyma.",
+          "If perforation occurs:",
+          "Suction immediately.",
+          "Irrigate.",
+          "Retrieve stones."
+        ],
+        "typicalDurationMin": 4,
+        "criteria": [
+          {
+            "key": "S5C1",
+            "label": "Gallbladder fully separated",
+            "status": "unknown"
+          },
+          {
+            "key": "S5C2",
+            "label": "Liver bed hemostatic",
+            "status": "unknown"
+          },
+          {
+            "key": "S5C3",
+            "label": "No bile leakage",
+            "status": "unknown"
+          },
+          {
+            "key": "S5C4",
+            "label": "No active oozing",
+            "status": "unknown"
+          },
+          {
+            "key": "S5C5",
+            "label": "Cystic duct stump intact",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      },
+      {
+        "id": "S6",
+        "index": 6,
+        "name": "Specimen Retrieval and Final Inspection",
+        "description": "Insert retrieval bag.",
+        "objective": "",
+        "expectedInstruments": [
+          "Endoscopic retrieval bag (assistant port)",
+          "Fenestrated bipolar",
+          "Suction/irrigator",
+          "Camera"
+        ],
+        "actions": [
+          "Insert retrieval bag.",
+          "Place gallbladder inside.",
+          "Inspect:",
+          "Cystic duct stump",
+          "Cystic artery stump",
+          "Liver bed",
+          "Irrigate and suction.",
+          "Remove specimen via umbilical/assistant port."
+        ],
+        "typicalDurationMin": 3,
+        "criteria": [
+          {
+            "key": "S6C1",
+            "label": "Specimen fully contained",
+            "status": "unknown"
+          },
+          {
+            "key": "S6C2",
+            "label": "No stone spillage",
+            "status": "unknown"
+          },
+          {
+            "key": "S6C3",
+            "label": "No bile pooling",
+            "status": "unknown"
+          },
+          {
+            "key": "S6C4",
+            "label": "Hemostasis confirmed",
+            "status": "unknown"
+          },
+          {
+            "key": "S6C5",
+            "label": "Clips secure",
+            "status": "unknown"
+          },
+          {
+            "key": "S6C6",
+            "label": "Clear operative field",
+            "status": "unknown"
+          }
+        ],
+        "confidence": 0,
+        "progress": 0,
+        "complete": false,
+        "source": "document"
+      }
+    ],
+    "principles": [
+      "Dissection must remain: Close to gallbladder wall. Above Rouvière’s sulcus plane.",
+      "If any doubt → do not proceed.",
+      "Avoid entering liver parenchyma."
+    ],
+    "source": "document",
+    "warnings": []
+  }
+}

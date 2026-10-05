@@ -1,0 +1,16 @@
+SEEDANCE SCENE: Manufacturing quality control
+
+SHORT PREVIEW: 4 seconds, 16:9, 1080p output, silent
+
+Photorealistic premium enterprise commercial. Landscape 16:9, 1920 by 1080 output, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. In a spotless modern precision-assembly cell, an adult technician wearing close-fitting light-grey protective gloves carefully lowers one small machined aluminium component into a clearly matching dark fixture on a charcoal bench. In four seconds the component approaches the fixture, seats gently, and the hands pause so its visible alignment can be inspected. Macro three-quarter view retains both hands, the complete component and the fixture. Soft diffuse light with restrained teal reflections. No powered machine moving, sparks, invented numerical measurement or readable screen.
+
+EXPANDED VERSION: 12 seconds, 16:9, 1080p
+
+Photorealistic premium enterprise commercial. Landscape 16:9, 1920 by 1080 output, crisp natural detail, realistic lighting and physically coherent motion. One uninterrupted real-time shot, stable props and identity. Clearly visible working hands or full body as appropriate. No logos, captions, on-screen text, AI overlays, interface graphics, speech, music, fast cuts or slow-motion. The footage is illustrative, not evidence that an actual inspection passed. At the same precision-assembly cell, show one technician checking a clear fixture, gently seating a small machined component, making a visible alignment check with a passive inspection tool, then parking the component for human review. Preserve the exact part and fixture throughout. A deliberate pause must separate placement from inspection. Do not imply that invisible tolerances have been measured or that the part automatically passed.
+
+MODEL OPTIONS
+Seedance 1.5 Pro: the affordable preview model quoted through Higgsfield.
+Seedance 2.5: newer premium option for the expanded version, subject to available credits.
+Do not generate an app interface or fake AI results inside the footage. Add actual app captures in a separate approved edit.
+
+Output dimensions will be measured from the MP4. This does not establish the provider's internal rendering or upscaling method.

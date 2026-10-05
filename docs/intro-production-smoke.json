@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-04T18:38:20.583Z",
+  "app_url": "http://localhost:8101",
+  "screens": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "intro_ready_ms": 100,
+      "initial_mp4_requests": 0,
+      "overflow": false,
+      "poster_bytes": 31959,
+      "media": {
+        "duration": 20,
+        "width": 960,
+        "height": 600,
+        "muted": true,
+        "inline": true
+      }
+    },
+    {
+      "name": "phone",
+      "width": 390,
+      "height": 844,
+      "intro_ready_ms": 105,
+      "initial_mp4_requests": 0,
+      "overflow": false,
+      "poster_bytes": 31959,
+      "media": {
+        "duration": 20,
+        "width": 960,
+        "height": 600,
+        "muted": true,
+        "inline": true
+      }
+    },
+    {
+      "name": "tablet",
+      "width": 820,
+      "height": 1180,
+      "intro_ready_ms": 98,
+      "initial_mp4_requests": 0,
+      "overflow": false,
+      "poster_bytes": 31959,
+      "media": {
+        "duration": 20,
+        "width": 960,
+        "height": 600,
+        "muted": true,
+        "inline": true
+      }
+    }
+  ],
+  "errors": [],
+  "range": {
+    "status": 206,
+    "content_range": "bytes 0-1023/181957",
+    "bytes": 1024
+  }
+}

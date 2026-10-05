@@ -1,0 +1,25 @@
+PROCESS GUIDE — GENERATED CLIP REVIEW
+
+Reviewed 2026-10-05 using eight frames per clip at 2 fps. Approximate visual observations are review notes, not calibrated ground-truth labels or an accuracy benchmark. All MP4s also pass full-frame decoding and browser playback checks.
+
+01
+VISIBLE: Supervisor raises a spirit level and holds it vertically against the accessible timber wall element beside a two-storey building.
+LIMITS: Bubble reading, structural capacity, hidden connections and code compliance are not established. Plans, a separate access inspection and written checkpoint record are not shown.
+
+02
+VISIBLE: Two gloved hands lower a cylindrical metal component onto the fixture and then release or pause around it.
+LIMITS: Whether the intended fixture seat is correctly engaged is uncertain from this view. No tolerance reading, part identifier, calibration check, release decision or separate parking event is established.
+
+03
+VISIBLE: Gloved hand moves a practice instrument toward coloured artificial targets in a tray or trainer-like setting; movement pauses near a target.
+LIMITS: Instrument geometry is generated and must not be treated as a faithful model of a real laparoscopic tool. Contact is ambiguous, and a clear withdrawal is not shown. The requested approach-pause-withdrawal sequence is incomplete; withdrawal and final-after-withdrawal steps remain unobserved. Context and instrument suitability need instructor confirmation.
+
+04
+VISIBLE: Foreground dancer takes a short lateral/diagonal step and changes facing direction, ending in a pause. A mirror reflection is visible behind the foreground performer.
+LIMITS: Track the foreground dancer only. Do not count the reflection as another participant or repetition. A return to the initial spot is not clearly shown, and the exact coach cue and quarter-turn angle cannot be established.
+
+05
+VISIBLE: Athlete begins upright, lowers, briefly occupies a lower position, and rises to upright; the body and feet remain visible.
+LIMITS: Only one visible cycle is represented. Do not infer pain, loading symmetry, precise joint angles, readiness or ideal technique; the lowered position is not a prescribed depth target.
+
+The matching TXT describes the reference process. A generated preview may omit or depart from it; unshown steps stay unobserved. These videos are short scene previews, not complete end-to-end processes.

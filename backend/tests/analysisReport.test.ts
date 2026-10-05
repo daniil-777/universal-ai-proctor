@@ -1,0 +1,128 @@
+import { describe, expect, it } from "vitest";
+import { SessionStore } from "../src/domain/session.js";
+import { parseDocument } from "../src/domain/guidance.js";
+import { appendReviewEvent, structuredHandoff, syncReview } from "../src/domain/review.js";
+import { renderAnalysisHtml, renderAnalysisPdf } from "../src/media/analysisReport.js";
+import { fixtureDocument, texturedFrame } from "./fixtures.js";
+import { reportOverview } from "../src/media/reportOverview.js";
+import { guardianReportFindings } from "../src/media/guardianFindings.js";
+
+async function example() {
+  const session = new SessionStore().get("analysis-report-fixture");
+  session.sourceId = "source-one"; session.sourceKind = "video"; session.sourceName = "Inspection video";
+  session.text = fixtureDocument; session.filename = "inspection.txt"; session.workflow = parseDocument("inspection.txt", fixtureDocument).workflow;
+  session.workflow.steps[0].confirmation = "manual"; session.workflow.steps[0].complete = true;
+  session.workflow.steps[0].criteria[0].evidence = "Operator confirmed: Größe geprüft. Проверено. Ελληνικά.";
+  const review = syncReview(session); review.job.operator = "Zoë <Engineer>";
+  appendReviewEvent(review, { id: "bookmark", source_id: session.sourceId, reference_key: review.reference_key, kind: "bookmark", provenance: "operator", occurred_at: 1760000000000, video_time_s: 7.5, summary: "<script>alert('bad')</script>", concern: "", guidance: "Check <the> frame & compare", status: "ok", step_ids: [], thumbnail_b64: `data:image/jpeg;base64,${await texturedFrame()}` });
+  return structuredHandoff(session);
+}
+
+describe("shareable analysis reports", () => {
+  it("escapes all operator content in a standalone responsive document", async () => {
+    const data = await example(), html = renderAnalysisHtml(data);
+    expect(html).toContain("&lt;script&gt;alert(&#39;bad&#39;)&lt;/script&gt;");
+    expect(html).toContain("Zoë &lt;Engineer&gt;"); expect(html).not.toContain("<script>");
+    expect(html).toContain('name="viewport"'); expect(html).toContain("@media(max-width:650px)");
+    expect(html).not.toMatch(/(?:src|href)=["']https?:/); expect(html).toContain("default-src 'none'");
+    expect(html).toContain("Manually confirmed"); expect(html).toContain("Operator record");
+    expect(html).toContain("not a continuous assessment");
+  });
+  it("rejects active or oversized evidence image URLs even in forged handoff data", async () => {
+    const data = await example(); data.evidence[0].thumbnail_b64 = 'data:image/svg+xml,<svg onload="alert(1)"/>';
+    expect(renderAnalysisHtml(data)).not.toContain("onload");
+    data.evidence[0].thumbnail_b64 = "https://example.com/tracking.jpg";
+    expect(renderAnalysisHtml(data)).not.toContain("tracking.jpg");
+  });
+  it("builds a real portable PDF with local embedded fonts and evidence", async () => {
+    const buffer = await renderAnalysisPdf(await example());
+    expect(buffer.subarray(0, 5).toString()).toBe("%PDF-");
+    expect(buffer.length).toBeGreaterThan(10_000); expect(buffer.length).toBeLessThan(2_000_000);
+    expect(buffer.toString("latin1")).toContain("/FontFile2");
+    expect(buffer.subarray(-8).toString()).toContain("%%EOF");
+  });
+  it("preserves a large workflow and long unbroken notes without losing the last criterion", async () => {
+    const data = await example();
+    const template = data.progress[0];
+    data.progress = Array.from({ length: 35 }, (_, index) => ({ ...template, id: `S${index}`, name: `Step ${index}`, criteria: [{ ...template.criteria[0], label: `Criterion-${index}`, evidence: index === 34 ? "LAST_CRITERION_" + "x".repeat(1400) : template.criteria[0].evidence }] }));
+    expect(renderAnalysisHtml(data)).toContain("LAST_CRITERION_");
+    const buffer = await renderAnalysisPdf(data); expect(buffer.length).toBeGreaterThan(20_000);
+    expect(buffer.toString("latin1").match(/\/Type \/Page\b/g)!.length).toBeGreaterThan(4);
+  });
+  it("keeps main-thread timers responsive while rendering 3000 criteria in a real worker", async () => {
+    const data = await example(), template = data.progress[0];
+    data.progress = Array.from({ length: 100 }, (_, index) => ({ ...template, id: `S${index}`, name: `Stress step ${index}`, criteria: Array.from({ length: 30 }, (_, criterion) => ({ ...template.criteria[0], label: `Criterion ${index}.${criterion}: ${"Inspect the component and record the visible result. ".repeat(3)}`, evidence: "Check the measurement against the approved reference. ".repeat(4) })) }));
+    const started = performance.now();
+    const timer = new Promise<number>(resolve => setTimeout(() => resolve(performance.now() - started), 10));
+    const rendering = renderAnalysisPdf(data);
+    const delay = await timer;
+    const pdf = await rendering;
+    expect(delay).toBeLessThan(300);
+    expect(pdf.toString("latin1").match(/\/Type \/Page\b/g)!.length).toBeGreaterThan(100);
+  }, 15000);
+  it.each(["工序检查", "مرحلة"])("rejects unsupported printed glyphs (%s) with an actionable HTML fallback", async label => {
+    const data = await example(); data.progress[0].criteria[0].label = label;
+    await expect(renderAnalysisPdf(data)).rejects.toMatchObject({ statusCode: 422, code: "unsupported_report_characters", message: expect.stringContaining("offline HTML report") });
+  });
+  it("preserves Chinese and Arabic text in the offline HTML report", async () => {
+    const data = await example(); data.progress[0].name = "工序检查"; data.operator_goals = "مرحلة";
+    const html = renderAnalysisHtml(data); expect(html).toContain("工序检查"); expect(html).toContain("مرحلة");
+  });
+  it("checks printed text instead of raw metadata and permits line controls", async () => {
+    const data = await example(); data.progress[0].id = "工序检查";
+    data.operator_goals = "Größe geprüft.\n\tПроверено.\r\n Ελληνικά.";
+    const pdf = await renderAnalysisPdf(data); expect(pdf.subarray(0, 5).toString()).toBe("%PDF-");
+  });
+  it("summarizes real completion and verification counts without inventing a quality score", async () => {
+    const data = await example(), html = renderAnalysisHtml(data);
+    expect(html).toContain("Executive summary"); expect(html).toContain("1 of 2 steps are complete at this snapshot.");
+    expect(html).toContain("1 manually confirmed completion(s)"); expect(html).toContain("0 AI-confirmed completion(s)");
+    expect(html).toContain(`${data.unresolved_criteria.length} criteria need review`);
+    expect(html).not.toContain("Every step."); expect(html).toContain("not an accuracy or quality score");
+  });
+  it("retains decision notes, source identity and omissions in the editorial composition", async () => {
+    const data = await example();
+    data.exception_history = [{ id: "issue", title: "Check measurement", description: "Keep the criterion unverified", reference_key: data.reference.reference_key, provenance: "operator", status: "acknowledged", created_at: 1760000000000, updated_at: 1760000000001, old_reference: true, history_omitted: 4, history: [{ status: "open", at: 1760000000000, operator: "Alex", note: "Request instrument record" }, { status: "acknowledged", at: 1760000000001, operator: "Jamie", note: "Waiting for measurement" }] }];
+    const html = renderAnalysisHtml(data);
+    for (const required of ["Request instrument record", "Waiting for measurement", "Alex", "Jamie", "Earlier reference", "4 older decision(s) omitted", data.source.id, data.reference.reference_key]) expect(html).toContain(required);
+    expect(html).toContain("Retained 1 events and 1 thumbnails");
+  });
+  it("orders review priorities by recorded status and counts every provenance exactly once", async () => {
+    const data = await example(), criterion = data.unresolved_criteria[0], event = data.evidence[0];
+    data.unresolved_criteria = [{ ...criterion, label: "Unknown item", status: "unknown" }, { ...criterion, label: "Partial item", status: "partial" }, { ...criterion, label: "Not met item", status: "not_met" }];
+    data.evidence = [{ ...event, provenance: "ai" }, { ...event, provenance: "operator" }, { ...event, provenance: "system" }, { ...event, provenance: "ai", simulated: true }];
+    const before = JSON.stringify(data), overview = reportOverview(data);
+    expect(overview.priorities.find(item => item.kind === "Criterion review")).toMatchObject({ title: "Not met item", count: 3, target: "workflow" });
+    expect(overview.evidenceGroups.map(item => item.count)).toEqual([1, 1, 1, 1]);
+    expect(overview.criteriaGroups.reduce((sum, item) => sum + item.count, 0)).toBe(data.progress.flatMap(step => step.criteria).length);
+    expect(JSON.stringify(data)).toBe(before);
+  });
+  it("exports actions, instruments, principles and extraction notes with escaped content", async () => {
+    const data = await example(); data.progress[0].description = "Description record"; data.progress[0].actions = ["Action <one>"]; data.progress[0].expected_instruments = ["Gauge & ruler"];
+    data.reference.principles = ["Keep <reference> available"]; data.reference.warnings = ["Workflow needs operator review"];
+    const html = renderAnalysisHtml(data);
+    for (const item of ["Description record", "Action &lt;one&gt;", "Gauge &amp; ruler", "Keep &lt;reference&gt; available", "Workflow needs operator review", "Reference scope", 'href="#workflow"']) expect(html).toContain(item);
+    expect((await renderAnalysisPdf(data)).subarray(0, 5).toString()).toBe("%PDF-");
+    data.progress[0].actions = ["工序检查"];
+    await expect(renderAnalysisPdf(data)).rejects.toMatchObject({ statusCode: 422, code: "unsupported_report_characters" });
+  });
+  it("shows unavailable data truthfully and keeps a long workflow title in full", async () => {
+    const data = await example(); data.progress = []; data.unresolved_criteria = []; data.operator_checks = []; data.evidence = []; data.open_exceptions = [];
+    data.reference.filename = ""; data.reference.workflow_source = "none";
+    data.reference.title = "Very long workflow title ".repeat(90) + "FULL_TITLE_FINAL_MARKER";
+    const html = renderAnalysisHtml(data);
+    expect(html).toContain("No workflow"); expect(html).toContain("No checks"); expect(html).not.toContain("0/0");
+    expect(html).toContain("No follow-up items are listed"); expect(html).toContain("FULL_TITLE_FINAL_MARKER");
+    expect(html).toContain("No guidance document - workflow not extracted"); expect(html).not.toContain("inferred workflow");
+    const pdf = await renderAnalysisPdf(data); expect(pdf.toString("latin1").match(/\/Type \/Page\b/g)!.length).toBeGreaterThan(3);
+    expect(pdf.toString("latin1")).toContain("/Outlines");
+  });
+  it("includes a static Guardian concern index with exact windows and linked review decisions", async () => {
+    const data = await example(), event = { ...data.evidence[0], id: "guardian-one", kind: "observation" as const, provenance: "ai" as const, status: "alert" as const, video_time_s: 8, concern: "Measured value not visible", old_reference: true };
+    data.source.duration_s = 20; data.evidence = [event, { ...event, id: "demo", simulated: true }, { ...event, id: "overview", observation_scope: "overview" }, { ...event, id: "other-source", source_id: "earlier-video" }];
+    data.exception_history = [{ id: "decision", event_id: event.id, title: event.concern, description: event.concern, reference_key: event.reference_key, provenance: "operator", status: "acknowledged", created_at: 1, updated_at: 2, old_reference: true, history: [{ status: "acknowledged", note: "Waiting for the instrument record", at: 2, operator: "Alex" }] }];
+    const index = guardianReportFindings(data); expect(index).toHaveLength(1); expect(index[0].window).toEqual({ start_s: 2, end_s: 11 }); expect(index[0].decisions[0].status).toBe("acknowledged");
+    const html = renderAnalysisHtml(data); expect(html).toContain("Guardian findings <span>1 retained"); expect(html).toContain("Suggested video window 00:02 - 00:11"); expect(html).toContain("Waiting for the instrument record"); expect(html).toContain("Earlier reference"); expect(html).not.toContain("/api/review/incidents/");
+    data.source.kind = "camera"; expect(guardianReportFindings(data)[0].window).toBeNull(); expect(renderAnalysisHtml(data)).toContain("Recorded sample only - no playable video window");
+  });
+});

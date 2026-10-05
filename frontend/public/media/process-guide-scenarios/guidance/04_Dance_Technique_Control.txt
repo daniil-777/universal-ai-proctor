@@ -1,0 +1,61 @@
+DEMO: Dance technique control - adult beginner side step and quarter turn
+
+Principles:
+- This guide describes an adult beginner demonstration clip. It is not a ground-truth label set, a performance grade or an assessment of health or balance.
+- Visual observation records the visible sequence. The dancer or coach verifies comfort, practice conditions and the intended cue.
+- Track the foreground dancer consistently throughout the clip. A mirror reflection is another view of the same dancer, not a separate participant or repetition. Do not double-count reflected movements; if the foreground dancer is obscured, keep the affected movement unknown.
+- Show the full body, including both feet, whenever judging a visible movement sequence. Obscured feet or a cropped body remain unknown.
+- Follow the coach's simple side-step and quarter-turn cue at a comfortable pace; no extreme range, acrobatics or forced movement is part of this demonstration.
+- Do not infer exact joint angles, weight distribution, balance quality or unseen foot contacts from a single camera view.
+- A short clip may show only one movement. Do not assume that preparation, repetitions or a final review took place off camera.
+- Completion of these visual movement steps does not establish that a coach review or participant comfort check occurred; confirm those separately.
+
+Step 1: Establish a visible starting position
+Objective: Show the adult dancer and the space used for the sequence.
+Tools: Clear practice area; optional floor marker; full-body camera view.
+Actions:
+- Stand at the starting spot with both feet visible and enough room for the planned side step.
+- Face the instructor-defined starting direction and wait for the cue.
+Criteria:
+- Visual observation: The dancer's head, torso and both feet are in view.
+- Visual observation: The dancer visibly pauses in a starting stance before the sequence.
+Warnings:
+- Step 1 operator verification: Adult participation, usable floor space, footwear and personal comfort require the dancer's or coach's confirmation; they are not established by appearance alone.
+
+Step 2: Perform the visible side-step sequence
+Objective: Demonstrate a simple lateral step and return using the coach's cue.
+Tools: Practice area; optional starting marker; coach's side-step cue.
+Actions:
+- Take a comfortable side step in the cued direction and bring the other foot toward it.
+- Return toward the starting spot with the same simple sequence.
+Criteria:
+- Visual observation: A foot visibly moves sideways and the other foot follows toward it.
+- Visual observation: A return step toward the starting area is visible.
+- Visual observation: Both feet remain in frame during the observed side-step sequence.
+Warnings:
+- Step 2 operator verification: Rhythm, intended footwork and comfort require the coach's or dancer's review; occlusion cannot support a claim about weight transfer or balance control.
+
+Step 3: Show the cued change in facing direction
+Objective: Show the direction change used for the beginner quarter-turn cue without assigning an angle score.
+Tools: Practice area; coach-defined turn cue; visible starting direction.
+Actions:
+- Make the beginner change in facing direction previously demonstrated by the coach.
+- Pause facing the new direction with the body and feet still visible.
+Criteria:
+- Visual observation: The dancer visibly changes facing direction from the starting orientation.
+- Visual observation: A pause in the new facing direction is shown after the turn.
+- Visual observation: Both feet remain visible during the observed turning movement.
+Warnings:
+- Step 3 operator verification: The coach confirms whether the change matches the intended quarter-turn cue and the dancer confirms comfort. Completion of this visible direction-change step does not establish an exact ninety-degree rotation or a balance score.
+
+Step 4: Finish in a visible resting stance
+Objective: End the visible demonstration with a full-body resting pause.
+Tools: Practice area; full-body camera view.
+Actions:
+- Return to a comfortable resting stance and stop the sequence.
+- Hold the finishing pause with the full body and both feet in view.
+Criteria:
+- Visual observation: The dancer visibly ends movement in a resting stance.
+- Visual observation: The full body and both feet remain visible during the finishing pause.
+Warnings:
+- Step 4 operator verification: Obtain the dancer's comfort report and review the intended sequence with the coach separately. A resting pose does not prove that a debrief occurred. Do not invent a technique grade, completed repetition count or successful correction from an incomplete clip.

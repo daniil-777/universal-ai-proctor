@@ -1,0 +1,129 @@
+# TASK BREAKDOWN — implement one module at a time
+
+## MODULE 1 — ZIP Upload & File Extraction
+INPUT:  User uploads a .zip file
+STRUCTURE INSIDE ZIP:
+    attachments/SimulationData.zip  → unzip this inner zip too
+        → Data.csv                  → DO NOT load into memory yet
+    videos/
+        → *.mp4 (find first video)
+    Report.pdf                      → ignore for now
+
+OUTPUT:
+    - path to Data.csv on disk
+    - path to video file on disk
+
+## MODULE 2 — Data.csv Frame Index Builder
+INPUT:  path to Data.csv (chunked read, never full load)
+FORMAT: Frame;Id;Value  (semicolon-separated)
+        1445;TaskSystem.GallbladderResectionTask.0.Stopped;System.Boolean
+
+TASK:
+    - Scan file once in chunks
+    - Build a dict:  frame_index = { frame_number: byte_offset }
+    - So we can seek(offset) and read only rows for frame N on demand
+    - Never load full file into RAM
+
+OUTPUT:
+    - frame_index dict (frame → file offset)
+    - list of unique parameter names found
+
+## MODULE 3 — Video Player with Frame Sync
+INPUT:  path to video file
+TASK:
+    - Play video in UI panel (left side)
+    - At each rendered video frame:
+        * get current video timestamp (seconds)
+        * compute simulation frame N = timestamp * fps_ratio
+        * fetch frame N data from Data.csv using byte offset index
+    - Expose current_frame_data dict to stage classifier
+
+OUTPUT:
+    - current video timestamp
+    - current simulation frame number
+    - current frame parameter dict  { param_name: value }
+
+## MODULE 4 — Stage Classifier (rules only, no UI)
+INPUT:  frame_data dict for current frame N
+RULES:
+
+    Stage 1 – Exposure
+        ENTER WHEN:
+            TaskSystem.GallbladderResectionTask.0.Started == True
+            AND Anatomy.CysticDuct.DeformationFactor <= 1.05
+            AND Anatomy.CysticArtery.DeformationFactor <= 1.05
+            AND TotalDeletedTets == 0  (or absent)
+        WARN IF:
+            RobosSystem.FourthArm.IsArmActive == False
+            RobosSystem.Camera.IsHorizonMisaligned == True
+
+    Stage 2 – Dissection
+        ENTER WHEN:
+            TotalDeletedTets > 0
+            OR Anatomy.CysticDuct.DeformationFactor > 1.05
+            OR Anatomy.CysticArtery.DeformationFactor > 1.05
+        WARN IF:
+            Fluid.Bile.Emitted > 0
+            Fluid.Blood.Emitted > 0
+            Anatomy.CysticDuct.DeformationFactor > 2.0
+
+    Stage 3 – Critical View of Safety
+        ENTER WHEN:
+            Anatomy.CysticDuct.IsDissected == True
+            AND Anatomy.CysticArtery.IsDissected == True
+            OR ReportMetrics.CriticalViewOfSafety.VisualizedLowerThird.Percent >= 0.33
+        BLOCK clipping if:
+            ReportMetrics.CriticalViewOfSafety.NumAcceptedPlanes == 0
+        WARN IF:
+            Fluid.Blood.Emitted > 0
+            RobosSystem.Camera.IsHorizonMisaligned == True
+
+    Stage 4 – Clipping
+        ENTER WHEN:
+            ReportMetrics.CriticalViewOfSafety.NumAcceptedPlanes >= 1
+            AND Anatomy.CysticDuct.IsDissected == True
+            AND Anatomy.CysticArtery.IsDissected == True
+        WARN IF:
+            Fluid.Bile.Emitted > 0   → possible CBD injury
+            Fluid.Blood.Emitted > 0  → clip may have slipped
+
+    Stage 5 – Detachment
+        ENTER WHEN:
+            Anatomy.CysticDuct.IsDissectedAndClipped == True
+            AND Anatomy.CysticArtery.IsDissectedAndClipped == True
+        WARN IF:
+            Fluid.Blood.Emitted > 0  → liver bed bleed
+            Fluid.Bile.Emitted > 0   → gallbladder perforation
+
+    Stage 6 – Retrieval
+        ENTER WHEN:
+            Anatomy.CysticDuct.IsDissectedAndClipped == True
+            AND Anatomy.CysticArtery.IsDissectedAndClipped == True
+            AND Fluid.Blood.Emitted == 0
+            AND Fluid.Bile.Emitted == 0
+        OUTPUT:
+            Final scorecard from ReportMetrics.*
+
+OUTPUT:
+    - current_stage (int 1-6)
+    - stage_name (string)
+    - warnings (list of strings)
+    - completion_criteria_met (dict per stage)
+
+## MODULE 5 — Real-time Visualization Panel (right side)
+INPUT:  output from Module 4 (updates every video frame)
+DISPLAY:
+    - Current stage highlighted (1-6) as vertical stepper
+    - Stage name + description
+    - Completion criteria checklist (green tick / red cross)
+      mapped from Data.csv params per stage
+    - Active warnings in red banner
+    - Key metrics bar:
+        ExerciseDuration | Blood | Bile | CVS planes | EOM
+
+## INTEGRATION ORDER
+    1. Upload ZIP → Module 1
+    2. Build index → Module 2  (runs once after upload)
+    3. Play video  → Module 3  (runs continuously)
+    4. Per frame   → Module 4  (runs on each video frame)
+    5. Update UI   → Module 5  (runs on classifier output)

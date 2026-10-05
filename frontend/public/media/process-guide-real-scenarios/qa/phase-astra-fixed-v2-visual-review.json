@@ -1,0 +1,841 @@
+{
+  "schema_version": 1,
+  "prepared_at": "2026-10-05T11:49:33.628252+00:00",
+  "review_method": "Independent visual inspection of 66 actual frozen-image slots by a separate agent, with original guide criteria read directly; no model calls, source edits or expected-ID changes.",
+  "source_results_file": "qa/phase-astra-fixed-v2-results.json",
+  "source_results_sha256": "0031a09b2bc6757845399afd0559a02de32f8fbb7a89365b687de38ed98dd0c3",
+  "frame_pack_sha256": "38abc64d0a3771438b9662bf7474872db7f3b5ed36a0153a56c011b742fc55b8",
+  "source_bank_sha256": "a910cf9087bff97e83434e35b3564164840979f9def5c98c2ce7f06c4ddd8a5a",
+  "source_row_hash_scheme": "SHA256 of each parsed result row encoded as UTF-8 JSON with recursively sorted keys, no whitespace, ensure_ascii=False.",
+  "scope_limits": [
+    "This is a visual evidence review, not specialist clinical, industrial or dance validation.",
+    "A compatible phase cue does not prove uniqueness among all possible repeated process episodes.",
+    "Sparse identical-camera images do not establish uninterrupted action between samples; no exact repetition counts or full-process completions are verified.",
+    "A met raw model criterion can still be withheld by production freshness and independent-vote safeguards; this review judges the raw assertion separately."
+  ],
+  "summary": {
+    "reviewed_cases": 12,
+    "reviewed_image_slots": 66,
+    "all_input_frame_hashes_verified": 100,
+    "phase_verdict_counts": {
+      "supported_distinctive_cue": 6,
+      "supported_compatible_episode": 4,
+      "appropriate_abstention": 2
+    },
+    "unsupported_phase_assertions": 0,
+    "unsupported_full_temporal_criterion_assertions": 1,
+    "unsupported_repetition_assertions": 0,
+    "unsupported_clinical_or_safety_certifications": 0,
+    "full_process_completions_verified": 0
+  },
+  "cases": [
+    {
+      "case_id": "real-surgery-stage-4",
+      "source_row_sha256": "4605debc61d9b90a65cb186c9a3e486ed2b5eda1f333729b820f0bcf908a129b",
+      "source_video_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "frame_sha256s": [
+        "75a66b18598cfe7cfe7c0ceeda1b0f997f9295a438ce035e59e0d43fe0df0b94",
+        "4541467a7311d4d900d4e722019f30b68272d6a322fff7dbd2cb2b850c466425",
+        "42f9d785cbfa56755ca4d3f79c4c47096153a5ee281b27040454d26cc7c1bf1f",
+        "7370ac801abd7e37c878dff355be0ca7c9d8aae338671d8fbf32befc2d35caa7",
+        "7a103e775684f9d6fd1bceea2aade87171f35cf316bccc91e5be41f33a16c0b7",
+        "8ef30aea2707389fbda8612b89f129e120f32d81469d2ad652d2c38eed9175f3",
+        "8ef30aea2707389fbda8612b89f129e120f32d81469d2ad652d2c38eed9175f3",
+        "8ef30aea2707389fbda8612b89f129e120f32d81469d2ad652d2c38eed9175f3",
+        "8cc0199f8943b571b0a7009f07d24c216be3d2926484af23fe96a51ceb69a257"
+      ],
+      "reviewed_frame_indices": [
+        3,
+        4,
+        5,
+        8
+      ],
+      "reviewed_frame_timestamps_s": [
+        113.88,
+        115.28,
+        116.72,
+        117.56
+      ],
+      "expected_step_id_unchanged": "S4",
+      "reported_step_id": "S4",
+      "phase_verdict": "supported_distinctive_cue",
+      "phase_visual_cue": "Latest frame is a circular monochrome imaging field, following colored endoscopic images. The incoming view change is visible; later return is not.",
+      "completion_verdict": "S4C1 is overasserted: the full criterion says the grayscale view appears between operative scenes, but no following operative scene exists in this frame pack. S4C2 correctly stays unknown.",
+      "criteria_reviews": [
+        {
+          "step_id": "S4",
+          "key": "S4C1",
+          "reported_status": "met",
+          "frame_indices": [
+            4,
+            5,
+            8
+          ],
+          "verdict": "unsupported_full_temporal_relation",
+          "recommended_status": "partial"
+        },
+        {
+          "step_id": "S4",
+          "key": "S4C2",
+          "reported_status": "unknown",
+          "frame_indices": [
+            8
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "unknown"
+        }
+      ],
+      "unsupported_claims": [
+        {
+          "key": "S4C1",
+          "kind": "compound_temporal_criterion",
+          "claim": "Criterion marked met although following operative scene is not visible.",
+          "criterion_text": "A circular grayscale imaging view appears between operative scenes.",
+          "missing_evidence": "A later colored operative scene following the grayscale view.",
+          "recommended_status": "partial",
+          "clinical_claim": false
+        }
+      ],
+      "unsupported_repetition_claims": [],
+      "unsupported_clinical_or_safety_certification_claims": [],
+      "full_process_completion_verified": false
+    },
+    {
+      "case_id": "real-sport-stage-1",
+      "source_row_sha256": "4f93b62e070469089d8daecd6fafea87ed7018108891955a48a042f30360e3f9",
+      "source_video_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "frame_sha256s": [
+        "d713dd60c7887d1063d5095db10e19c9444f1829994254c468fb6aa55abde777",
+        "41c42c2a622238896f35efd9caa8505f08a7bef89ee23c755cbb4bff75a031d8",
+        "35accb9366bd8f93f8a51f0f9a5b02fda739c3b2ab95f5c211f0e2d1dd28d838",
+        "b6851d25bbec71c908a95b529ece6a90bf12078c7ed5501614f719a4e641d215",
+        "3a8d02a35887774ca62c0c4e8fdca9c25cfb52cf6ee3de3360b1946ee25b2156",
+        "333a75b7cde9aef98ecf5e67434eb4828b575464689b39d8cdfaa8d1877951b2",
+        "a1468e78880d3a3194f638946c489d94c21edfb2e137397a4f2390d4bf939158",
+        "b4b6d6e5e57ff254f21337aa8f81c2bde90a39010e3d9b18b6f59568705326f3"
+      ],
+      "reviewed_frame_indices": [
+        4,
+        7
+      ],
+      "reviewed_frame_timestamps_s": [
+        34.140467,
+        34.974633
+      ],
+      "expected_step_id_unchanged": "S1",
+      "reported_step_id": "S1",
+      "phase_verdict": "supported_distinctive_cue",
+      "phase_visual_cue": "Latest overhead frame clearly shows hands gripping angled bar sections near the floor; the bent demonstrator partly obscures the shaft.",
+      "completion_verdict": "The output correctly separates observed angled shaft/hand contact from an unseen upright low starting position. No repetition claim.",
+      "criteria_reviews": [
+        {
+          "step_id": "S1",
+          "key": "S1C1",
+          "reported_status": "met",
+          "frame_indices": [
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S1",
+          "key": "S1C2",
+          "reported_status": "partial",
+          "frame_indices": [
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "partial"
+        },
+        {
+          "step_id": "S1",
+          "key": "S1C3",
+          "reported_status": "unknown",
+          "frame_indices": [
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "unknown"
+        }
+      ],
+      "unsupported_claims": [],
+      "unsupported_repetition_claims": [],
+      "unsupported_clinical_or_safety_certification_claims": [],
+      "full_process_completion_verified": false
+    },
+    {
+      "case_id": "real-manufacturing-stage-4",
+      "source_row_sha256": "20126c42795a61858612e76661f429e1af11966193a4f248ca10209bab30168b",
+      "source_video_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "frame_sha256s": [
+        "3506b4896c52c2b51f9ad2dd37d654c349e691f57c69d562ead7b7afefae0155",
+        "56088ffa6fa1491545af6a43eb4f220509ebf201f7081af9a9fa544ef4deac1a",
+        "dead719830935b7ee3c9316ab4941d7a99af522335637a4713a4a09d2204d975",
+        "8154f88e8ab4ba28dafd4a3db813b732f08f78c4f3bffd8074786aed178872e3",
+        "a5a414a5ffd386a750f639682fcd9948d2f9c3402fc25e526a29e7e271caee9b",
+        "fcb488e07ef9779bdc67ee49a30833247bba66089373ef62033c3660b2c9a86a",
+        "2468bfd47307e48f7d88e08709e1690dc376e531b259ad03b374c1ce58b6024c",
+        "85b7e8a87be615bd80905d222b986e77b3b4750d6519359bac1fc396feee8e36",
+        "c06af92ba182c9db793edbea4cc180ee3ffd32bd268786ebd81f52eee0567284"
+      ],
+      "reviewed_frame_indices": [
+        2,
+        8
+      ],
+      "reviewed_frame_timestamps_s": [
+        84.84,
+        89.96
+      ],
+      "expected_step_id_unchanged": "S4",
+      "reported_step_id": "S4",
+      "phase_verdict": "supported_distinctive_cue",
+      "phase_visual_cue": "Latest frame shows a slender ball-tipped spindle implement among mounted copper-colored rectangular tooling. Frame2 separately shows the outlet component.",
+      "completion_verdict": "Historical component display is explicitly separated from the current tooling shot. Neither tool contact, measurements nor product correctness is claimed.",
+      "criteria_reviews": [
+        {
+          "step_id": "S4",
+          "key": "S4C1",
+          "reported_status": "met",
+          "frame_indices": [
+            2
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S4",
+          "key": "S4C2",
+          "reported_status": "met",
+          "frame_indices": [
+            8
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        }
+      ],
+      "unsupported_claims": [],
+      "unsupported_repetition_claims": [],
+      "unsupported_clinical_or_safety_certification_claims": [],
+      "full_process_completion_verified": false
+    },
+    {
+      "case_id": "real-dancing-stage-1",
+      "source_row_sha256": "f91208a57be4a6cae55f1b0dcf68c5c3294f41aa276803ace7190f86fa368ed1",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frame_sha256s": [
+        "aafdbf7546f2016a17a4c47393bc10aa14cf60c825c83276023693cda521b63c",
+        "5764282f3070b1d59f9c05c26989978b546655ffd30be756b82693dd9956f151",
+        "2d3d56718151593923ea759dec71561560207bf30d9d59cc5c9a57e34885d170",
+        "5f0ae65d3351a7d89b6803b7de5eb7817c93876de7482ddaec012a86ac6d4aa3",
+        "41a79ce4278185e675cbbf9dc64183c52a51a4e2c6b58977bd2c9126aca62503",
+        "203141d07e97b7abbe71caa9fd7438577df8f0689f5442746927403774eca66d",
+        "eee4e24ad207f99325880e7f123abd1e90a077401ae28b77314cd731884f279d",
+        "5c6bfc3443a906ea877368b68c241608e55ff9292fc85163b0879c9f738cbb06",
+        "0eb2437d40610585e1261ab18f8222ac658ce38c640fdeb2e6b6ecc55dd7f622"
+      ],
+      "reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reviewed_frame_timestamps_s": [
+        0.0,
+        1.234567,
+        2.469133,
+        3.670333,
+        4.9049,
+        6.139467,
+        6.172833,
+        6.573233,
+        6.973633
+      ],
+      "expected_step_id_unchanged": "S1",
+      "reported_step_id": "S1",
+      "phase_verdict": "supported_compatible_episode",
+      "phase_visual_cue": "Side-on camera composition is consistent across the sampled opening window; tilted shoe positions are visible before renewed shoe overlap. Exact independent contacts remain occluded.",
+      "completion_verdict": "S1C1 and S1C3 remain partial. S1C2 only asserts the visibly tilted working shoe. No verified floor-return cycle or repetition count is claimed. Episode continuity is plausible, but sparse images cannot exclude an unseen cut.",
+      "criteria_reviews": [
+        {
+          "step_id": "S1",
+          "key": "S1C1",
+          "reported_status": "partial",
+          "frame_indices": [
+            0,
+            1
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "partial"
+        },
+        {
+          "step_id": "S1",
+          "key": "S1C2",
+          "reported_status": "met",
+          "frame_indices": [
+            5,
+            6
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S1",
+          "key": "S1C3",
+          "reported_status": "partial",
+          "frame_indices": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "partial"
+        }
+      ],
+      "unsupported_claims": [],
+      "unsupported_repetition_claims": [],
+      "unsupported_clinical_or_safety_certification_claims": [],
+      "full_process_completion_verified": false
+    },
+    {
+      "case_id": "real-house-construction-stage-4",
+      "source_row_sha256": "5a6838720422eec31cfba6d2c4d69fb466cd0c497febca8625b6d82fbc3f7b50",
+      "source_video_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "frame_sha256s": [
+        "9c25952ee845f180028478753aeffab0cfb6375b6c05a5e6670591d6afb9684a",
+        "ae4bad224cecc2ce885ca1b400b04353b48008907707e9b8d0d28794b35534a2",
+        "1b4291d87b3943ca7e04a0613b454b7efd1bb3430fcc2f0fa5aac286b38246b7",
+        "ff01632fa3f3acc80fa7d3b10102e8b0b48c0d6359e006042297cb9fa880541d",
+        "2e4b1e226b0a34e8c145b744a96eb5ac2aeb718c3f930208443162ea231758fe",
+        "3fdf95c99bf534fac2d2a0b671175f168dd25f87fb153192cd1383b06160d2ec",
+        "643c4b520b077187b82a82e4aebb093c54512308915151f74381ad2089065293",
+        "0e6511b22421a97a95ddb658bdeaf94ed21215d18483852c7807bcf7f0a6ba02",
+        "d1193b0d142bf404063b1bc51836f6a6684654a49693a9573b1fb1a5c23fbf98"
+      ],
+      "reviewed_frame_indices": [
+        8
+      ],
+      "reviewed_frame_timestamps_s": [
+        114.96
+      ],
+      "expected_step_id_unchanged": "S4",
+      "reported_step_id": "S4",
+      "phase_verdict": "supported_distinctive_cue",
+      "phase_visual_cue": "Latest wide exterior view shows uncovered pitched roof timbers above upper panel walls; roof covering work is absent.",
+      "completion_verdict": "Met criteria refer only to visible roof outline, wall openings and panel walls. The static S6C3 exterior-outline criterion is visually true here and is not proof of roof-covering activity or S6 completion.",
+      "criteria_reviews": [
+        {
+          "step_id": "S2",
+          "key": "S2C1",
+          "reported_status": "met",
+          "frame_indices": [
+            8
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C3",
+          "reported_status": "met",
+          "frame_indices": [
+            8
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S4",
+          "key": "S4C2",
+          "reported_status": "met",
+          "frame_indices": [
+            8
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S6",
+          "key": "S6C3",
+          "reported_status": "met",
+          "frame_indices": [
+            8
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        }
+      ],
+      "unsupported_claims": [],
+      "unsupported_repetition_claims": [],
+      "unsupported_clinical_or_safety_certification_claims": [],
+      "full_process_completion_verified": false
+    },
+    {
+      "case_id": "real-dancing-stage-2",
+      "source_row_sha256": "779e28d3bc482cbed13154dc170acc5b3ffbe48caae09446e6fa15610c79347c",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frame_sha256s": [
+        "5f81c85a1340a84566f037707d4f3c984553f7c42ad1a3349ee9c73a3d4638f7",
+        "b80cfd2e3520eccc317e9c07f89a4d14d775bc0fc224c619f106100df37daa6d",
+        "a0ba75bab163fc1c06256b57dbb965e5ea96c970baf9a0f09e3e2af018423f87",
+        "9914efeda4ed0c68b0838c9c82c1485dc818ad80df9d31211ee816c530a479f9",
+        "3f2778afa59c8bf8305ee55021eeb741b9bf17d06ba64ee61c8426a820c47d19",
+        "8f299ec2abe30306217afad0cc275bb14501c1c904ec76c316ca9a978c60c3dd",
+        "e4c4a95073e0e48128a648835b5723660e8644ea4b4e5be17f74c8c218315a4d",
+        "40b28846727b4ba5d7d81f7b9818aac6b3ee01a10ad3c75dd6f4475573676d8c"
+      ],
+      "reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reviewed_frame_timestamps_s": [
+        16.434767,
+        17.869533,
+        19.270933,
+        20.7057,
+        22.140467,
+        22.173833000000002,
+        22.574233,
+        22.974633
+      ],
+      "expected_step_id_unchanged": "S2",
+      "reported_step_id": "S2",
+      "phase_verdict": "supported_compatible_episode",
+      "phase_visual_cue": "Oblique view clearly shows a raised rear/beside-leg shoe and another shoe at the floor.",
+      "completion_verdict": "S2C1/C2 are supported visible states. Earlier two-shoe floor stances precede the latest lift, so S2C3 correctly remains unknown.",
+      "criteria_reviews": [
+        {
+          "step_id": "S2",
+          "key": "S2C1",
+          "reported_status": "met",
+          "frame_indices": [
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C2",
+          "reported_status": "met",
+          "frame_indices": [
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C3",
+          "reported_status": "unknown",
+          "frame_indices": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "unknown"
+        }
+      ],
+      "unsupported_claims": [],
+      "unsupported_repetition_claims": [],
+      "unsupported_clinical_or_safety_certification_claims": [],
+      "full_process_completion_verified": false
+    },
+    {
+      "case_id": "real-dancing-stage-3",
+      "source_row_sha256": "838e5a1b9725a7d3b718dbf8b8d08d362db7184c7aaeaff9c8a94cb4174742ae",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frame_sha256s": [
+        "6e348ecfe9f09165dbbef71f49c4e9178dada1d2afa16e724e4c613f93ba859b",
+        "f3b312e68cdcd9f821893238d28bdfbb30d0e4db08e2e0cc157ad4dda7430335",
+        "39d533c81acdfca0fa921a7f824719827a5de12020124cfa7200eab45f91ec49",
+        "474f9938262af0112b26d18f11de5c271a337493405b427dc8dccf0bda7e4749",
+        "a04376d3a11a0d822214c3a0d3c09ea29df57f6b6f34b2dbde07bff18fa43955",
+        "9defec09be90e63a28c15d2dbf71e8cae3de02394c17a73a25f41ab9f6cc6eb9",
+        "1471a6a01b1222dd01ae579721cb9a9e6dba157a1bc7383b74b1b8972c25ef83",
+        "4ec5981e2eacb06c2184df749a5e773d504f1fff3ee4b24450a3f1849703c64a"
+      ],
+      "reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reviewed_frame_timestamps_s": [
+        28.434767,
+        29.869533,
+        31.270933,
+        32.7057,
+        34.140467,
+        34.173833,
+        34.574233,
+        34.974633
+      ],
+      "expected_step_id_unchanged": "S3",
+      "reported_step_id": null,
+      "phase_verdict": "appropriate_abstention",
+      "phase_visual_cue": "Observed forward extension and subsequent rearward airborne position are compatible with repeated guide examples and do not uniquely identify S3.",
+      "completion_verdict": "The model assigns no phase and no criterion updates rather than inventing a unique episode or completed cycle.",
+      "criteria_reviews": [],
+      "unsupported_claims": [],
+      "unsupported_repetition_claims": [],
+      "unsupported_clinical_or_safety_certification_claims": [],
+      "full_process_completion_verified": false
+    },
+    {
+      "case_id": "real-dancing-stage-4",
+      "source_row_sha256": "2a0ac3b7cfd75f2ea8750898cffad8bb29addbd37152fe180062031d0e3e5c0f",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frame_sha256s": [
+        "17df8821df34e558a02818163524652e343f869767d933d9f5228dfdb9b47fcd",
+        "5d3a11a0305c561da9dc7802db796bcaccff5bf29b53caf7d3534886cdf02bc4",
+        "0f8614d97d1dbc56f2143a942b08aa1926ff4d30400d099ce47f7832ea532a80",
+        "e665843a73f0fafd143bf545d0e8e1052517ab50d94bb9db096b2fec2a201374",
+        "d76f4a5cfeee4c18e5f9813ec10c2a98f98d2ebb83f48a5926521255f1758542",
+        "85495465b623045dd861be9db5f64518c420f18173bd766d44ede118ee5201fe",
+        "8c9a6bc96f2121584fb604208b5deddaa60a770ea2bf731c59a1b3f6eb40abe9",
+        "fbb65abdbe77f8346794fb0c25b7260283140910444bb5fdddeb375abbc3c808"
+      ],
+      "reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reviewed_frame_timestamps_s": [
+        46.434767,
+        47.869533,
+        49.270933,
+        50.7057,
+        52.140467,
+        52.173833,
+        52.574233,
+        52.974633
+      ],
+      "expected_step_id_unchanged": "S4",
+      "reported_step_id": "S4",
+      "phase_verdict": "supported_compatible_episode",
+      "phase_visual_cue": "Frames5/6 show close side-facing shoes and frame7 shows the foreground shoe turned toward the camera and extended.",
+      "completion_verdict": "S4C1 orientation change is supported. S4C2 stays partial due blur; S4C3 latest return remains unknown because earlier close positions precede renewed extension.",
+      "criteria_reviews": [
+        {
+          "step_id": "S4",
+          "key": "S4C1",
+          "reported_status": "met",
+          "frame_indices": [
+            5,
+            6,
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S4",
+          "key": "S4C2",
+          "reported_status": "partial",
+          "frame_indices": [
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "partial"
+        },
+        {
+          "step_id": "S4",
+          "key": "S4C3",
+          "reported_status": "unknown",
+          "frame_indices": [
+            4,
+            5,
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "unknown"
+        }
+      ],
+      "unsupported_claims": [],
+      "unsupported_repetition_claims": [],
+      "unsupported_clinical_or_safety_certification_claims": [],
+      "full_process_completion_verified": false
+    },
+    {
+      "case_id": "real-dancing-stage-5",
+      "source_row_sha256": "577b61bb92a6d39488eba1fbd68024ec34f259a96ee859fc78f8b059fb183414",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frame_sha256s": [
+        "4617dd67632823709895499e9897d4bcc87ecf881031707f1c6188c53364e686",
+        "6a792e82fb4779f75909d40eded830a5af0f21d79581fc4ac84d077266cb94f7",
+        "fd0232fa5c0b1adfc8e149828c641f2d39bafab30d454808a88984a464efc342",
+        "900dfb6d73a0e942d2164ac3c5e0c4748bd5e12e089165ec03cc34112a881457",
+        "b459ecdf23c088ab8abb8fc941b197142d17ea1295aa6c7bce22303ee98e620b",
+        "9ea46a8b9686b8d218e04f5133b6c1cecd186d55805c632229401e32b641597a",
+        "b27b42259f729b6b4afee43332e5ac52b4fbf8d905719a7ad59508100e9234a7",
+        "572785bca3fa8874c943a9a43e9581247fe3201a3c080395ed98c4a795e9d410"
+      ],
+      "reviewed_frame_indices": [
+        0,
+        2,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reviewed_frame_timestamps_s": [
+        63.434767,
+        66.270933,
+        69.140467,
+        69.173833,
+        69.574233,
+        69.974633
+      ],
+      "expected_step_id_unchanged": "S5",
+      "reported_step_id": null,
+      "phase_verdict": "appropriate_abstention",
+      "phase_visual_cue": "Close oblique repeated shoe movement and blurred near-floor poses are not uniquely discriminative among guide examples.",
+      "completion_verdict": "No criterion updates or claimed completed cycles; abstention is appropriate for the supplied repeated poses.",
+      "criteria_reviews": [],
+      "unsupported_claims": [],
+      "unsupported_repetition_claims": [],
+      "unsupported_clinical_or_safety_certification_claims": [],
+      "full_process_completion_verified": false
+    },
+    {
+      "case_id": "real-dancing-stage-6",
+      "source_row_sha256": "af552595bdf040f6353cc6208978268a18f8918c66150aaa3e462936e26118dd",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frame_sha256s": [
+        "fb2158b35b541ae42b03c711869bfdcdb9ce59b19ed322b042679c1a9a4337f2",
+        "783a552e44a841845488f29aa0677f1ce878345a1db2b35d1239abc4f482ecbc",
+        "ddcfebd2657a5251f2c7635cfb0452873201e6b895e24f52b989b587b628d5cb",
+        "4a1267a427ffdb390d8531d342dd918f0fa38630866b949e9eba601a6edbfbdd",
+        "6f1aba92709b6a6311e7933a49b59556dda265f240ddab7d25fca3e6fd26e0ff",
+        "74483723a7c9353035081bc9ce4607d07649057464d34e2c7614ba4bc2838a2c",
+        "8e313f52218081899aa9359038a372715e3482847f2cffc5a502a38e87801fc6",
+        "3e279489989294bfc18d6506536bb2928f000955b2c509d85fea52d9f02b92e6"
+      ],
+      "reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reviewed_frame_timestamps_s": [
+        89.434767,
+        90.869533,
+        92.270933,
+        93.70570000000001,
+        95.140467,
+        95.173833,
+        95.574233,
+        95.974633
+      ],
+      "expected_step_id_unchanged": "S6",
+      "reported_step_id": "S6",
+      "phase_verdict": "supported_distinctive_cue",
+      "phase_visual_cue": "Floor-level camera framing after the prior front view is distinct, with wall baseboard aligned near shoe height.",
+      "completion_verdict": "S6C3 near-floor return is supported by tilted/sole-exposed positions in frames4/5 followed by lowered shoes in frame6. The criterion says near the floor, not independently verified two-shoe sole contact. Exact latest clearance and repetition counts stay unconfirmed.",
+      "criteria_reviews": [
+        {
+          "step_id": "S6",
+          "key": "S6C2",
+          "reported_status": "unknown",
+          "frame_indices": [
+            4,
+            5,
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "unknown"
+        },
+        {
+          "step_id": "S6",
+          "key": "S6C3",
+          "reported_status": "met",
+          "frame_indices": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        }
+      ],
+      "unsupported_claims": [],
+      "unsupported_repetition_claims": [],
+      "unsupported_clinical_or_safety_certification_claims": [],
+      "full_process_completion_verified": false
+    },
+    {
+      "case_id": "real-dancing-stage-7",
+      "source_row_sha256": "394369d4884a24a673dcdf340edadef145449af13adc4f725f715e02d1cc8452",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frame_sha256s": [
+        "f15c976c51bf1c239e46607c9af06dac390c7151c8ed507e5cc501864b52fc74",
+        "9436c809ccc18a3e1d43f4b38e1bd9073c3bc6d4a7295af6b5e6601d6870e2b3",
+        "89c05201340ba7a259bb644c2bab7b1abb20ea2e10dec045d76e125a3673e519",
+        "b85918bd8d3072f1b5ac1fccdde6aa0d50de2563d1a72feb208dbd55ea814a33",
+        "649c071835e4de98e0f160f915814289d0a76dd18fa5bb43a600560f32174302",
+        "ddec0882e7e52dd7833f328ff1e9dedf408b146f97fc6e09d895d77014a406a5",
+        "cb8c0890193b1fcf5a5646b2c84050ff2f512e7e04fefca443d884b81fed002a",
+        "34741affbff206ec956a8337aa07d15c4d82a7145b040b2c79a657d449577b4d"
+      ],
+      "reviewed_frame_indices": [
+        0,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reviewed_frame_timestamps_s": [
+        99.434767,
+        105.140467,
+        105.173833,
+        105.574233,
+        105.974633
+      ],
+      "expected_step_id_unchanged": "S7",
+      "reported_step_id": "S7",
+      "phase_verdict": "supported_distinctive_cue",
+      "phase_visual_cue": "Latest wider frame shows a rear-raised free shoe, bent free leg, supporting shoe at floor and wall barre.",
+      "completion_verdict": "S7C1/C2 are visibly supported. Frame6 is grounded before frame7 lift, so S7C3 correctly stays unknown; no subsequent return is invented.",
+      "criteria_reviews": [
+        {
+          "step_id": "S7",
+          "key": "S7C1",
+          "reported_status": "met",
+          "frame_indices": [
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S7",
+          "key": "S7C2",
+          "reported_status": "met",
+          "frame_indices": [
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S7",
+          "key": "S7C3",
+          "reported_status": "unknown",
+          "frame_indices": [
+            6,
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "unknown"
+        }
+      ],
+      "unsupported_claims": [],
+      "unsupported_repetition_claims": [],
+      "unsupported_clinical_or_safety_certification_claims": [],
+      "full_process_completion_verified": false
+    },
+    {
+      "case_id": "real-dancing-stage-8",
+      "source_row_sha256": "c2b27094df51ef2798e09cde66b0110eb9e86d6cdb00fe882df2e996be75b627",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "frame_sha256s": [
+        "161f1225627e713ce1f45a87b28bc081615aedf4f8825da896d8d2344f59d930",
+        "99b741fba3f0a133828ec3ecf77e1cc8ca75e409df89872d034d51831886700c",
+        "71169941383f1de2074f97247607cffd9e00c87a3cfec35fc8a76af6fad545a5",
+        "3da02c00d41b69c2f30c22b390017317b494b32f78830ec39137bbd469c0b601",
+        "5b30ce2f820631db80fa1af6e6b1d96f3cef54018ee3903b202ac9b763c84618",
+        "0ee65b83e5e8395ca236f58c9093c268ffc5460818469f75d43f19cfc56bc3c6",
+        "fab89df4b33dd9c16645939a8047c59cd19eca99231969406f84446b2a400db2",
+        "49cf10ba36ab178a324700360f59262f0dd30ee42cba7f91d709d9e7a46fe50c"
+      ],
+      "reviewed_frame_indices": [
+        0,
+        4,
+        5,
+        6,
+        7
+      ],
+      "reviewed_frame_timestamps_s": [
+        108.434767,
+        114.140467,
+        114.173833,
+        114.574233,
+        114.974633
+      ],
+      "expected_step_id_unchanged": "S8",
+      "reported_step_id": "S8",
+      "phase_verdict": "supported_compatible_episode",
+      "phase_visual_cue": "Wider crossed-leg/shoe positions and separated stance, with fixed barre and floor landmarks, support the travelling/crossed-foot example.",
+      "completion_verdict": "S8C2 is supported by overlapping/crossed ankle/shoe positions in frames4/5 followed by separated shoes in frame6. S8C3 leftward movement is supported relative to fixed wall/floor landmarks. This verifies a sampled local position change, not an exact repetition count, landing quality or whole task completion.",
+      "criteria_reviews": [
+        {
+          "step_id": "S8",
+          "key": "S8C1",
+          "reported_status": "met",
+          "frame_indices": [
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S8",
+          "key": "S8C2",
+          "reported_status": "met",
+          "frame_indices": [
+            4,
+            5,
+            6
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        },
+        {
+          "step_id": "S8",
+          "key": "S8C3",
+          "reported_status": "met",
+          "frame_indices": [
+            4,
+            6,
+            7
+          ],
+          "verdict": "supported_or_appropriately_limited",
+          "recommended_status": "met"
+        }
+      ],
+      "unsupported_claims": [],
+      "unsupported_repetition_claims": [],
+      "unsupported_clinical_or_safety_certification_claims": [],
+      "full_process_completion_verified": false
+    }
+  ]
+}

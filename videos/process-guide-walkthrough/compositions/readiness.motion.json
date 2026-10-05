@@ -1,0 +1,14 @@
+{
+  "duration": 6.188541600000001,
+  "assertions": [
+    {
+      "kind": "appearsBy",
+      "selector": "#tour-readiness .tour-title",
+      "bySec": 0.5
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#tour-readiness .tour-copy"
+    }
+  ]
+}

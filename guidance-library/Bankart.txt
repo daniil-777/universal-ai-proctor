@@ -1,0 +1,881 @@
+Description of a Scene
+Arthroscopic intra-articular shoulder scene during Bankart repair, viewed mainly from a posterior portal. Visible structures include the humeral head, glenoid, anterior-inferior labrum, capsule, and glenoid neck. Instruments enter through anterior portals to assess instability, mobilize the capsulolabral tissue, prepare bone, insert suture anchors, pass sutures, tie or secure fixation, and confirm a stable restored labral bumper.
+
+Step 1: Portals
+Objective:
+Establish posterior, mid-anterior, and anterosuperior portals to enable visualization and instrument access to the glenohumeral joint, including assessment of the posterior humeral head and anteroinferior glenoid/labrum.
+
+Expected_instruments:
+
+Arthroscope
+
+Posterior cannula
+
+Mid-anterior cannula
+
+Anterosuperior cannula / arthroscopic sheath / switching stick
+
+Spinal needles
+
+Trocar
+
+Actions:
+
+Establish posterior portal
+
+Insert posterior cannula and arthroscope
+
+Obtain initial intra-articular view
+
+Visualize posterior humeral head
+
+Inspect posterior humeral head
+
+Assess for Hill-Sachs lesion
+
+Introduce mid-anterior spinal needle
+
+Insert needle superior to subscapularis
+
+Direct toward anteroinferior glenoid/labrum
+
+Establish mid-anterior cannula
+
+Advance trocar through capsule
+
+Position cannula adjacent to subscapularis
+
+Demonstrate instrument access
+
+Introduce instrument via mid-anterior portal
+
+Confirm reach to anteroinferior glenoid/labrum
+
+Introduce anterosuperior spinal needle
+
+Insert at rotator interval
+
+Direct toward anterior glenoid
+
+Establish anterosuperior cannula
+
+Advance trocar through capsule
+
+Position cannula intra-articularly
+
+Completion_criteria:
+
+Clear posterior intra-articular view obtained
+
+Posterior humeral head visualized
+
+Hill-Sachs lesion identified or ruled out
+
+Mid-anterior spinal needle correctly positioned
+
+Mid-anterior cannula properly placed
+
+Instrument access to anteroinferior glenoid/labrum confirmed
+
+Anterosuperior spinal needle correctly positioned
+
+Anterosuperior cannula properly placed
+
+Errors:
+
+Posterior portal malposition
+
+Inadequate visualization from posterior portal
+
+Failure to visualize posterior humeral head
+
+Missed Hill-Sachs lesion
+
+Incorrect spinal needle trajectory
+
+Needle not placed superior to subscapularis
+
+Cannula not abutting subscapularis
+
+Poor mid-anterior cannula positioning
+
+Inadequate instrument access to anteroinferior glenoid/labrum
+
+Incorrect anterosuperior needle entry point
+
+Poor needle direction toward anterior glenoid
+
+Improper anterosuperior cannula placement
+
+Limited access through anterosuperior portal
+
+Typical_duration:
+2–4 minutes
+
+ 
+
+ 
+
+Step 2: Arthroscopic Instability Assessment
+Objective:
+Systematically assess intra-articular structures for instability-related pathology, including labrum, rotator cuff, glenoid, and capsuloligamentous structures.
+
+Expected_instruments:
+
+Arthroscope
+
+Probe
+
+Arthroscopic sheath
+
+Cannula
+
+Actions:
+
+Assess superior labrum
+
+Visualize superior labral attachment onto glenoid
+
+Direct probe toward superior labrum if needed
+
+Assess articular surface of rotator cuff
+
+Visualize articular side of superior cuff
+
+Direct probe toward cuff if needed
+
+Assess anteroinferior glenoid / Bankart pathology
+
+Direct probe toward anteroinferior glenoid
+
+Evaluate for Bankart lesion, rim fracture, or articular defect
+
+Assess anterior-inferior glenohumeral ligaments (mid-substance)
+
+Visualize mid-substance of ligaments
+
+Direct probe toward capsular tissue if needed
+
+Assess humeral insertion of anterior glenohumeral ligaments (HAGL)
+
+Visualize ligament insertion on anterior humeral neck
+
+Evaluate for HAGL lesion
+
+Completion_criteria:
+
+Superior labrum visualized or probed; labral tear ruled out or identified
+
+Articular surface of rotator cuff visualized or probed; cuff tear ruled out or identified
+
+Anteroinferior glenoid probed; Bankart pathology evaluated
+
+Anterior-inferior glenohumeral ligaments visualized or probed; capsular integrity assessed
+
+Humeral insertion visualized; HAGL ruled out or confirmed
+
+Errors:
+
+Loss of intra-articular position of scope, sheath, or cannula during superior labral assessment
+
+Loss of intra-articular position during rotator cuff assessment
+
+Loss of intra-articular position during Bankart pathology assessment
+
+Loss of intra-articular position during capsuloligamentous assessment
+
+Loss of intra-articular position during HAGL assessment
+
+Typical_duration:
+2–3 minutes
+
+ 
+
+Step 3: Capsulolabral Mobilization / Glenoid Preparation
+Objective:
+Mobilize the capsulolabral tissue, restore capsular tension, and prepare the anterior glenoid neck for repair.
+
+Expected_instruments:
+
+Elevator
+
+Grasper
+
+Mechanical abrasion instrument
+
+Arthroscope
+
+Cannula
+
+Actions:
+
+Mobilize capsulolabral tissue
+
+Elevate capsulolabral tissue from the glenoid neck and articular margin
+
+Maintain controlled tissue elevation during mobilization
+
+Confirm adequate mobilization
+
+Visualize subscapularis muscle superficial to the mobilized capsule
+
+Confirm sufficient capsular release and excursion
+
+Perform inferior-to-superior capsular shift
+
+Grasp capsulolabral tissue
+
+Shift tissue superiorly to restore tension
+
+Visualize anterior glenoid neck
+
+Obtain clear view of anterior glenoid neck
+
+Maintain exposure for preparation
+
+Prepare glenoid neck
+
+Mechanically abrade anterior glenoid neck
+
+Prepare bone surface in a controlled manner
+
+Completion_criteria:
+
+Capsulolabral tissue elevated from glenoid neck and articular margin
+
+Subscapularis visualized superficial to mobilized capsule, confirming adequate mobilization
+
+Capsulolabral tissue shifted inferior to superior
+
+Anterior glenoid neck clearly visualized
+
+Glenoid neck mechanically prepared for repair
+
+Errors:
+
+Laceration of intact tissue (SENTINEL)
+
+Loss of control during capsulolabral mobilization
+
+Failure to mobilize capsulolabral tissue adequately
+
+Poor inferior-to-superior shift
+
+Inadequate capsular tension restoration
+
+Inadequate exposure of anterior glenoid neck
+
+Over-preparation of glenoid neck
+
+Under-preparation of glenoid neck
+
+Loss of control during glenoid preparation (SENTINEL)
+
+Typical_duration:
+2–4 minutes
+
+ 
+
+Step 4: Inferior Anchor Preparation / Insertion
+Objective:
+Prepare, place, and test the most inferior suture anchor for capsulolabral repair.
+
+Expected_instruments:
+
+Drill guide
+
+Drill
+
+Suture anchor
+
+Anchor inserter
+
+Arthroscope
+
+Cannula
+
+Actions:
+
+Position drill guide for inferior anchor
+
+Seat the guide for the most inferior anchor hole
+
+Confirm guide position at the intended inferior anchor site
+
+Drill anchor hole
+
+Drill obliquely to the glenoid articular face
+
+Withdraw drill after completing tunnel
+
+Insert suture anchor
+
+Advance anchor into prepared tunnel
+
+Withdraw inserter after anchor placement
+
+Test anchor fixation
+
+Apply visible tension to anchor sutures
+
+Confirm anchor stability under tension
+
+Completion_criteria:
+
+Drill guide seated at the intended inferior anchor position
+
+Anchor tunnel created oblique to glenoid articular face
+
+Suture anchor inserted at appropriate depth
+
+Anchor remains stable during suture tensioning
+
+Errors:
+
+Guide not positioned in inferior quadrant
+
+Tunnel entry outside 0-3 mm safe zone (SENTINEL)
+
+Cartilage damage during drilling
+
+Implant remains proud (SENTINEL)
+
+Implant breakage
+
+Poor anchor depth
+
+Anchor instability during testing
+
+Typical_duration:
+1–2 minutes
+
+Step 5: Suture Delivery / Management (Inferior Anchor)
+Objective:
+Pass and shuttle the anchor suture limb through the capsular tissue for the inferior repair construct.
+
+Expected_instruments:
+
+Cannulated suture hook or retriever
+
+Shuttle suture device
+
+Suture limb
+
+Arthroscope
+
+Cannula
+
+Actions:
+
+Penetrate capsular tissue
+
+Pass a cannulated suture hook or retriever through capsular tissue
+
+Withdraw the device after tissue penetration
+
+Shuttle suture limb
+
+Pass anchor suture limb through capsular tissue
+
+Deliver the suture limb out the cannula
+
+Completion_criteria:
+
+Suturing device passes through capsular tissue and is withdrawn successfully
+
+Anchor suture limb passes through capsular tissue
+
+Suture limb is fully delivered out the cannula
+
+Errors:
+
+Instrument breakage
+
+Tissue damage during capsular penetration
+
+Capsular penetration at or superior to anchor (SENTINEL)
+
+Penetration not at capsulolabral junction
+
+Tissue tearing
+
+Suture or device entanglement
+
+Off-loading anchor
+
+Typical_duration:
+1–2 minutes
+
+Step 6: Knot-Tying / Knotless Construct (Inferior Anchor)
+Objective:
+Secure the inferior repair construct and finalize fixation.
+
+Expected_instruments:
+
+Knot pusher or knotless fixation device
+
+Suture cutter
+
+Arthroscope
+
+Cannula
+
+Actions:
+
+Secure repair construct
+
+Deliver arthroscopic knot or knotless construct
+
+Tension loop to secure tissue
+
+Reinforce construct if tying knots
+
+Back up repair with 3 or 4 half hitches
+
+Advance and seat each half hitch sequentially
+
+Cut suture tails
+
+Introduce suture cutter
+
+Cut suture tails completely
+
+Completion_criteria:
+
+Arthroscopic knot or knotless construct delivered successfully
+
+Loop tensioning completed
+
+Third half hitch completed when knot tying is used
+
+Suture tails completely cut
+
+Errors:
+
+Failure to create tissue indentation (SENTINEL)
+
+Loose construct
+
+Visible gaps between throws
+
+Knot abuts cartilage (SENTINEL)
+
+Suture breakage during cutting
+
+Typical_duration:
+1–2 minutes
+
+Step 7: Second Anchor Preparation / Insertion
+Objective:
+Prepare, place, and test the second suture anchor for continued capsulolabral repair.
+
+Expected_instruments:
+
+Drill guide
+
+Drill
+
+Suture anchor
+
+Anchor inserter
+
+Arthroscope
+
+Cannula
+
+Actions:
+
+Position drill guide for second anchor
+
+Seat the drill guide for the second anchor
+
+Confirm appropriate superior position relative to first anchor
+
+Drill second anchor hole
+
+Drill obliquely to the glenoid face
+
+Withdraw drill after tunnel completion
+
+Insert second suture anchor
+
+Advance anchor into second tunnel
+
+Withdraw inserter after placement
+
+Test second anchor fixation
+
+Apply visible tension to sutures
+
+Confirm anchor security
+
+Completion_criteria:
+
+Drill guide seated at intended second anchor position
+
+Second anchor tunnel created oblique to glenoid face
+
+Second anchor inserted appropriately
+
+Second anchor remains secure during testing
+
+Errors:
+
+Incorrect superior positioning of guide
+
+Tunnel outside safe zone (SENTINEL)
+
+Cartilage damage during drilling
+
+Implant remains proud
+
+Implant breakage
+
+Anchor not secure during testing
+
+Typical_duration:
+1–2 minutes
+
+Step 8: Suture Delivery / Management (Second Anchor)
+Objective:
+Pass and shuttle the second anchor suture limb through the capsular tissue.
+
+Expected_instruments:
+
+Suture hook or retriever
+
+Shuttle suture device
+
+Suture limb
+
+Arthroscope
+
+Cannula
+
+Actions:
+
+Penetrate capsular tissue for second anchor
+
+Pass suture hook or retriever through capsular tissue
+
+Withdraw device after tissue penetration
+
+Shuttle second suture limb
+
+Pass anchor suture limb through capsular tissue
+
+Deliver suture limb out the cannula
+
+Completion_criteria:
+
+Device passes through capsular tissue and is withdrawn successfully
+
+Second anchor suture limb passes through capsular tissue
+
+Suture limb is delivered out the cannula
+
+Errors:
+
+Tissue damage
+
+Loss of control
+
+Penetration superior to anchor (SENTINEL)
+
+Penetration not at capsulolabral junction
+
+Tissue tearing
+
+Entanglement
+
+Off-loading anchor
+
+Typical_duration:
+1–2 minutes
+
+Step 9: Knot-Tying / Knotless Construct (Second Anchor)
+Objective:
+Secure the second repair construct and finalize fixation.
+
+Expected_instruments:
+
+Knot pusher or knotless fixation device
+
+Suture cutter
+
+Arthroscope
+
+Cannula
+
+Actions:
+
+Secure second repair construct
+
+Deliver arthroscopic knot or knotless construct
+
+Tension loop to secure tissue
+
+Reinforce construct if tying knots
+
+Back up repair with 3 or 4 half hitches
+
+Advance and seat each half hitch sequentially
+
+Cut suture tails
+
+Introduce suture cutter
+
+Cut suture tails completely
+
+Completion_criteria:
+
+Arthroscopic knot or knotless construct delivered successfully
+
+Loop tensioning completed
+
+Third half hitch completed when knot tying is used
+
+Suture tails completely cut
+
+Errors:
+
+Failure to create tissue indentation (SENTINEL)
+
+Loose construct
+
+Gaps between throws
+
+Knot abuts cartilage (SENTINEL)
+
+Suture breakage
+
+Typical_duration:
+1–2 minutes
+
+Step 10: Third Anchor Preparation / Insertion
+Objective:
+Prepare, place, and test the third suture anchor.
+
+Expected_instruments:
+
+Drill guide
+
+Drill
+
+Suture anchor
+
+Anchor inserter
+
+Arthroscope
+
+Cannula
+
+Actions:
+
+Position drill guide for third anchor
+
+Seat the drill guide for the third anchor
+
+Confirm placement superior to the glenoid equator
+
+Drill third anchor hole
+
+Drill obliquely to the glenoid articular face
+
+Withdraw drill from the field after tunnel creation
+
+Insert third suture anchor
+
+Advance anchor into the tunnel
+
+Withdraw inserter after placement
+
+Test third anchor security
+
+Pull on suture tails to visibly tension the construct
+
+Confirm fixation remains secure
+
+Completion_criteria:
+
+Drill guide seated appropriately for third anchor
+
+Third anchor tunnel created in safe position
+
+Third anchor inserted to appropriate depth
+
+Third anchor remains secure during suture tensioning
+
+Errors:
+
+Guide positioned inferior to glenoid equator
+
+Loss of intra-articular position of scope, sheath, or operating cannula
+
+Tunnel entry outside 0-3 mm safe zone (SENTINEL)
+
+Shallow undermining or deformation of articular cartilage (SENTINEL)
+
+Implant breakage
+
+Implant remains visibly proud (SENTINEL)
+
+Failure to insert anchor to or beyond inserter laser line when present
+
+Anchor not securely fixed at appropriate depth
+
+Typical_duration:
+1–2 minutes
+
+Step 11: Suture Delivery / Management (Third Anchor)
+Objective:
+Pass and shuttle the third anchor suture limb through the capsular tissue and deliver it out the anterior cannula.
+
+Expected_instruments:
+
+Cannulated suture hook or suture retriever
+
+Shuttle suture device
+
+Suture limb
+
+Arthroscope
+
+Anterior cannula
+
+Actions:
+
+Penetrate capsular tissue for third anchor
+
+Pass a cannulated suture hook or suture retriever through the capsular tissue
+
+Withdraw the device from the field
+
+Shuttle third anchor suture limb
+
+Pass anchor suture limb through the capsular tissue
+
+Deliver the passed suture completely out the anterior cannula
+
+Completion_criteria:
+
+Suturing device passes through capsular tissue and is withdrawn successfully
+
+Third anchor suture limb passes through capsular tissue
+
+Passed suture is completely delivered out the anterior cannula
+
+Errors:
+
+Loss of intra-articular position of scope, sheath, or operating cannula
+
+Capsular penetration superior to anchor hole (SENTINEL)
+
+Capsular penetration not at or peripheral to capsulolabral junction
+
+Tearing of capsulolabral tissue
+
+Instrument breakage
+
+Uncorrected entanglement of shuttling device or suture
+
+Off-loading the suture anchor
+
+Breakage of shuttling device
+
+Typical_duration:
+1–2 minutes
+
+Step 12: Knot-Tying / Knotless Construct (Third Anchor)
+Objective:
+Secure the third repair construct and finalize fixation.
+
+Expected_instruments:
+
+Knot pusher or knotless fixation device
+
+Suture-cutting device
+
+Arthroscope
+
+Cannula
+
+Actions:
+
+Deliver third repair construct
+
+Deliver an arthroscopic knot or knotless construct
+
+Begin loop tensioning to secure the repair
+
+Reinforce construct if tying knots
+
+Back up with 3 or 4 half hitches
+
+Complete at least the third half hitch
+
+Cut suture tails
+
+Introduce suture-cutting device
+
+Cut suture tails completely
+
+Completion_criteria:
+
+Arthroscopic knot or knotless construct delivered successfully
+
+Onset of loop tensioning achieved
+
+Third half hitch completed when knot tying is used
+
+Suture tails completely cut
+
+Errors:
+
+Failure to create and maintain indentation of capsule or labral tissue (SENTINEL)
+
+Visible void between throws of completed primary knot, if tying knots (SENTINEL)
+
+Completed knot abuts articular cartilage, if tying knots
+
+Visible void between throws of completed half hitches, if tying knots
+
+Suture breakage
+
+Loss of intra-articular position of scope, sheath, or operating cannula
+
+Typical_duration:
+1–2 minutes
+
+Step 13: Procedure Review
+Objective:
+Assess the final completed repair by visualization and/or probing.
+
+Expected_instruments:
+
+Arthroscope
+
+Probe
+
+Cannula
+
+Actions:
+
+Review final repair
+
+Visualize the completed repair construct
+
+Probe the repair if needed to assess stability and position
+
+Completion_criteria:
+
+Completed repair is visualized and/or probed
+
+Final construct appears stable and appropriately positioned
+
+Errors:
+
+Loss of intra-articular position of scope, sheath, or operating cannula
+
+Typical_duration:
+30–60 seconds

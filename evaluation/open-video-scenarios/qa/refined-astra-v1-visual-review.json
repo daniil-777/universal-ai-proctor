@@ -1,0 +1,3256 @@
+{
+  "version": 1,
+  "reviewed_at_utc": "2026-10-05T12:05:55.154982+00:00",
+  "reviewer": "Independent motion-sampling/visual-evidence reviewer",
+  "scope": "Final gpt-6-astra guardian-only run: all 32 latest-stage images, eight complete input windows, and recorded additional historical images. All 286 stage input file hashes verified. Text/criteria inspected for all 32 responses. This is an evidence audit, not a new clinical or industrial qualification and not an assertion that every temporal relation was independently viewed.",
+  "method": "Inspect the actual frozen JPEG inputs at their native source resolution; distinguish visible phase cues, historical episode compatibility and complete temporal criteria. Do not infer unseen future frames, independent evidence from repeated held images, repetition counts or clinical/industrial suitability. Preserve banks and scores.",
+  "hash_scheme": "File SHA256 uses exact bytes. source_row_sha256 uses parsed row JSON sorted keys, compact separators, ensure_ascii=False, encoded UTF-8.",
+  "source_results_file": "qa/refined-astra-v1-results.json",
+  "source_results_sha256": "e559590bf6e1f09f282661a803f07a0fbc3b67da31c2af3cf448473dc03946c3",
+  "source_frame_pack_file": "qa/refined-v1-frame-pack.json",
+  "source_frame_pack_sha256": "3038c81f631afd200f52140374bf180c1dc4871398a8054e27b56961565c9803",
+  "original_bank_sha256": "b249bf6fa988b2b8efdd6a7b61f38abc78e08876f5e26f8dda72896f8c9d0e4a",
+  "v2_bank_sha256": "a910cf9087bff97e83434e35b3564164840979f9def5c98c2ce7f06c4ddd8a5a",
+  "model": "gpt-6-astra",
+  "mock": false,
+  "summary": {
+    "reviewed_cases": 32,
+    "latest_images_visually_reviewed": 32,
+    "input_images_hash_verified": 286,
+    "input_image_hash_failures": 0,
+    "images_visually_reviewed": 124,
+    "full_input_windows_visually_reviewed": 8,
+    "phase_verdict_counts": {
+      "supported_compatible_episode": 10,
+      "supported_distinctive_cue": 19,
+      "appropriate_abstention": 2,
+      "conservative_abstention": 1
+    },
+    "source_raw_exact_stage_matches": 29,
+    "source_ui_exact_stage_matches": 28,
+    "exact_stage_match_is_independent_visual_accuracy_metric": false,
+    "abstention_case_ids": [
+      "real-sport-stage-1",
+      "real-manufacturing-stage-2",
+      "real-dancing-stage-2"
+    ],
+    "admitted_complete_steps": 0,
+    "whole_process_completion_verified": false,
+    "unsupported_clinical_or_safety_certification_observed": 0,
+    "unsupported_exact_repetition_count_observed": 0,
+    "ambiguous_historical_clearance_cases": 1,
+    "ambiguous_raw_clearance_claims_admitted_as_met": 0,
+    "previous_surgical_compound_temporal_claim_corrected": true
+  },
+  "priority_findings": [
+    {
+      "id": "real-surgery-stage-4",
+      "finding": "Final raw S4C1/S4C2 are unknown, correctly preserving missing future-scene evidence. Raw phase identity can be compatible with the current monochrome view while completion stays unknown; the displayed stage is withheld."
+    },
+    {
+      "id": "real-dancing-stage-7",
+      "finding": "Historical frame 2 does not independently resolve whole-shoe floor clearance at native 428×240. Raw S7C1/S7C2 met should be treated as limited/ambiguous. Both remain unknown in admitted workflow progress; no completed step is reported."
+    },
+    {
+      "id": "motion-and-return-cases",
+      "finding": "Sport S2/S3 raised→low is not a full low→raise→low repetition. Dance S8 separation precedes the newest cross. Absent future transitions and obscured floor contacts remain unknown/partial."
+    }
+  ],
+  "reviews": [
+    {
+      "id": "real-surgery-stage-1",
+      "source_row_sha256": "3a5f96b2129a5f0f47e7acf9ec166a3ff028d979608b4b5f4af5cb36ea461d07",
+      "source_video_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "current_timestamp_s": 11,
+      "expected_step_id_unchanged": "S1",
+      "reported_raw_step_id": "S1",
+      "displayed_step_id": "S1",
+      "phase_verdict": "supported_compatible_episode",
+      "visible_cues": "The latest image is grayscale cross-sectional imaging with bone outlines; no coloured endoscopic action is present.",
+      "completion_and_accuracy_limits": "The scan is compatible with an introductory presentation. The before-first-operative-scene relation is partial because the later scene is not yet supplied; no diagnosis or treatment success is established.",
+      "input_frames_sha256": [
+        "0c1cbfa9a673f1b817da404adaf551889f54215873deecc4d0fe9fba3b540a3b",
+        "773112af13332ad63cea3278d955fc38f93c8ad61a8619b71db09199ba011ba9",
+        "03e81e9d740443a691bcd0e0558d8a8f31a9eeae6115791366d6cba04ff12a08",
+        "d1c0f940e20f4326e4b3e4543ae408c99328da6daa25669a563f4e4fe7c5536d",
+        "d1c0f940e20f4326e4b3e4543ae408c99328da6daa25669a563f4e4fe7c5536d",
+        "d1c0f940e20f4326e4b3e4543ae408c99328da6daa25669a563f4e4fe7c5536d",
+        "dbb0c2b794f86c5e65d738328034fc942c0d4a3eb85e581166bf9e253d22bc35"
+      ],
+      "visually_reviewed_frame_indices": [
+        6
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-1-6.jpg",
+          "sha256": "dbb0c2b794f86c5e65d738328034fc942c0d4a3eb85e581166bf9e253d22bc35",
+          "timestamp_s": 10.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S1",
+          "key": "S1C2",
+          "raw_status": "partial",
+          "admitted_status": "partial",
+          "evidence": "Earlier frames show one grayscale cross-sectional view, followed by a different view that remains displayed in the latest frame. The first endoscopic scene is not included, so the complete required before-and-after relation is not yet verified.",
+          "referenced_frame_indices": [
+            0,
+            1,
+            2,
+            6
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-manufacturing-stage-1",
+      "source_row_sha256": "4d4ff78c08dce5593746bb77f2b028a18ea90c886f6fcae53f1b8bd32ddf8dab",
+      "source_video_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "current_timestamp_s": 27,
+      "expected_step_id_unchanged": "S1",
+      "reported_raw_step_id": "S1",
+      "displayed_step_id": "S1",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "The operator holds a handheld controller, with a thumb by its buttons and visible display content.",
+      "completion_and_accuracy_limits": "Controller interaction can be described; correct program selection and machine readiness cannot be certified.",
+      "input_frames_sha256": [
+        "96e0eb8ae6a652cd5e35eb9df0fac90ee780bc9c1ad7af6660540d85c528d23c",
+        "27e4bc12e688b9fb1f286d2c28772ef81059f4361e66fa074c5747d83c2e17ea",
+        "c978f3a23c9a4f7e43f92da10509d3693f64ce19a1e68c585837a88bf6de522b",
+        "866613ef30188699feff56658d42196e02ce2ca0c5ff3ded0e2f3d22cd511255",
+        "7bb047de693717f6a8dd8e9e9d0fcfe7dce9847685687939fff5dce7f44f17d9",
+        "3e40c65f7117ca7aab9ae6afc8f7e173ce7106993498543757557f39f9ac9e53",
+        "7295ebc8f0b608b28ed0bc159504d5138bd1d511e6abaf85e05811cc0bc68bea",
+        "b0cd81da9b6360bba149cf289803ac331ed64c9129b53000c213f6129bb8b5d1",
+        "95c98c5dfae4b47aa77454e8b7e6f8f5ec847d075c48c739692342909ef7273c"
+      ],
+      "visually_reviewed_frame_indices": [
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-1-8.jpg",
+          "sha256": "95c98c5dfae4b47aa77454e8b7e6f8f5ec847d075c48c739692342909ef7273c",
+          "timestamp_s": 26.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S1",
+          "key": "S1C1",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "Historical views show a machine enclosure with a vertical spindle/tool above copper-coloured blocks secured on circular fixtures; this work area is not currently shown in detail.",
+          "referenced_frame_indices": [
+            0,
+            1,
+            2
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S1",
+          "key": "S1C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The operator faces the controller with a thumb contacting a button beneath the screen; the right-hand screen panel changes between these views.",
+          "referenced_frame_indices": [
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-house-construction-stage-1",
+      "source_row_sha256": "a5dbe093edcd3386872bf38f769bf4051a289c6bdd300a33d9ead5371f15713d",
+      "source_video_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "current_timestamp_s": 10,
+      "expected_step_id_unchanged": "S1",
+      "reported_raw_step_id": "S1",
+      "displayed_step_id": "S1",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "Metal screws in a white glove and green sleeve identify the hardware presentation. The caption does not independently verify coating or specifications.",
+      "completion_and_accuracy_limits": "Visible glove/hardware cues support partial criterion evidence; connection suitability and unseen earlier application remain unverified.",
+      "input_frames_sha256": [
+        "012a83574b408963aa63501ba85715200735cedc67af7af1a7e5a73fc04749c6",
+        "d6007a437f2d105dce55ca1c7b9fa87291b12df0b8088d497739fde0d8b20461",
+        "e2bf0b37400b3bb64c13b560ba89250fd4d4c406a48fa4eb60b0f7b49e6ccc34",
+        "a0e6058da89f7b6bee879d5a3edc310ef5d5585c0510418e7f55f480ff45d282",
+        "30caf6111799e6f5da19f9d7cbfbfbc7c65a3417274c28d5fb3fb3c2ac2a173d",
+        "57a1da2f79f8a77ab04ef5f1d3330bd3cb6b8c8586ae219e9c3c522ea63736aa",
+        "8f9a3f7ec89300f726f49659821311228c85dd6cc592e767d91bfa9750de4518",
+        "146c47228703949a5470367d1b5c6d7b2dfbbc0f03f98f1b8c547f35fc5cd5e1",
+        "d5dad33a7b0ddb102a40e9b4059e72ef795f9fe22d3d33a8d32caa30d42d8ba3"
+      ],
+      "visually_reviewed_frame_indices": [
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-1-8.jpg",
+          "sha256": "d5dad33a7b0ddb102a40e9b4059e72ef795f9fe22d3d33a8d32caa30d42d8ba3",
+          "timestamp_s": 9.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S1",
+          "key": "S1C1",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "Historical observation only: frame 0 shows a canister-mounted applicator with its long nozzle over the exposed white core between wood-based panel faces; this equipment and edge are not currently visible.",
+          "referenced_frame_indices": [
+            0
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S1",
+          "key": "S1C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The latest image clearly shows multiple metal screws resting in an open white glove with blue grip dots.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S1",
+          "key": "S1C3",
+          "raw_status": "partial",
+          "admitted_status": "unknown",
+          "evidence": "Historical frame 1 shows a timber piece seated between panel faces above the white core, exposing the timber-to-panel interface, but does not show the edge being joined.",
+          "referenced_frame_indices": [
+            1
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-dancing-stage-1",
+      "source_row_sha256": "9761fc2b1c19f1543d504d9a3a5d3c096d0440ab4c3c15dd0cb403999aae737a",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "current_timestamp_s": 7,
+      "expected_step_id_unchanged": "S1",
+      "reported_raw_step_id": "S1",
+      "displayed_step_id": "S1",
+      "phase_verdict": "supported_compatible_episode",
+      "visible_cues": "Reviewed recent frames include a toe-up shoe in a side-on floor-level view; the latest shoes overlap.",
+      "completion_and_accuracy_limits": "Visible tilt supports limited movement evidence. Initial both-shoe contact and the exact return contact are partial; no completed repetition is inferred.",
+      "input_frames_sha256": [
+        "5912816de46e48e87d9bfbf45ca05ce8fbf03687e048d2fa0b88901a4ad38247",
+        "4dc162edca2215c5e5768c114568cb4d37b81033dafa1ff182b3dc3a5f886b36",
+        "3e9cea79e8e1e875b07d5a4366603bd814a2309369ec08c23729e720d06522dd",
+        "395a9b7f856c1d2a99046e1f0e1d9b683c866b2d8dbb609547e1ef5550e13905",
+        "7c3762e0e2b242c6feab2f4f4d3e4ab7bb599f8546863860c1d1ddc136df45cb",
+        "25ce3a41605f623667e74f4e1f941f6025b43364fe5408deec4a1a66892dc034",
+        "675d31f93fabc3723f6e731c597a7ae3e32347efcf1ee98419d6d6847ab72650",
+        "606191135e6f5a7239a4358d154dbb06fe54a8caf10a5ed78131425635a9a722",
+        "964b01c6db3023b9cba007f2d1fbe7f8c8f98fe88a5266b6f275c239cd1c5a8f"
+      ],
+      "visually_reviewed_frame_indices": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 3,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-3.jpg",
+          "sha256": "395a9b7f856c1d2a99046e1f0e1d9b683c866b2d8dbb609547e1ef5550e13905",
+          "timestamp_s": 5.972633
+        },
+        {
+          "index": 4,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-4.jpg",
+          "sha256": "7c3762e0e2b242c6feab2f4f4d3e4ab7bb599f8546863860c1d1ddc136df45cb",
+          "timestamp_s": 6.139467
+        },
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-5.jpg",
+          "sha256": "25ce3a41605f623667e74f4e1f941f6025b43364fe5408deec4a1a66892dc034",
+          "timestamp_s": 6.172833
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-6.jpg",
+          "sha256": "675d31f93fabc3723f6e731c597a7ae3e32347efcf1ee98419d6d6847ab72650",
+          "timestamp_s": 6.3063
+        },
+        {
+          "index": 7,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-7.jpg",
+          "sha256": "606191135e6f5a7239a4358d154dbb06fe54a8caf10a5ed78131425635a9a722",
+          "timestamp_s": 6.573233
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-1-8.jpg",
+          "sha256": "964b01c6db3023b9cba007f2d1fbe7f8c8f98fe88a5266b6f275c239cd1c5a8f",
+          "timestamp_s": 6.973633
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S1",
+          "key": "S1C1",
+          "raw_status": "partial",
+          "admitted_status": "unknown",
+          "evidence": "Historically, the opening image shows a grounded tan shoe with the legs aligned, but overlap prevents independently confirming both shoe contacts.",
+          "referenced_frame_indices": [
+            0
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S1",
+          "key": "S1C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The nearer shoe is angled toe-up while the other remains at floor level in approximately the same position across these adjacent views.",
+          "referenced_frame_indices": [
+            3,
+            4
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S1",
+          "key": "S1C3",
+          "raw_status": "partial",
+          "admitted_status": "partial",
+          "evidence": "Following the angled position, the shoe outlines move into close overlap at floor level in the same shot. In the latest view only one outline is clearly distinguishable, limiting confirmation of the working shoe's return beside the other.",
+          "referenced_frame_indices": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-surgery-stage-2",
+      "source_row_sha256": "2f2f1085151d4fc08e41eab898777052afc8373b1c31c89cd5f1e5a2b9e8cf41",
+      "source_video_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "current_timestamp_s": 27,
+      "expected_step_id_unchanged": "S2",
+      "reported_raw_step_id": "S2",
+      "displayed_step_id": "S2",
+      "phase_verdict": "supported_compatible_episode",
+      "visible_cues": "A broad gray instrument tip approaches an orange/red operative field. Reviewed frames 5–8 show tip position/orientation changing.",
+      "completion_and_accuracy_limits": "The broad instrument episode is compatible with the selected phase. Exact tool function, contact, procedure identity and clinical outcome remain unverified; introductory replacement is partial.",
+      "input_frames_sha256": [
+        "82d8fa04c4b54f8a56d35cf4656006f5c4b101b1492ceb0dc43bc31716f53250",
+        "258e365a2b5d975582fcc961d3ea80e3ea86d310d1115abe2053dd6bf589d6cb",
+        "beaef148698389194a8064eaa7e346176be205c8f8e2628cabdbeac36e9d2da9",
+        "bfb281a5a48e564f4dc9ff33fc9c3494c892b8643d9246ae0a74d335db55d9c8",
+        "0397485be8e91be0f1e508118641eb856000c272b574c6417e5ee3a08ceee3c0",
+        "4f1ab9afa8883a4b29cffa73d5c68b0b683438bb83aff58a54caa0aba2576c65",
+        "94bb7f2ad6dfe685746e690714a75f061ee50ed03faac26855704d3c3b49c67f",
+        "6e40a280c9ea2c26168e237b0b583f3a5522e0f55547fb6b0a3fdd49fe539d0b",
+        "69dbc059e49d813fab906b89d53ee8afce6e2454a4e6af1e9db7631ae8b56411"
+      ],
+      "visually_reviewed_frame_indices": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-5.jpg",
+          "sha256": "4f1ab9afa8883a4b29cffa73d5c68b0b683438bb83aff58a54caa0aba2576c65",
+          "timestamp_s": 26.119999999999997
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-6.jpg",
+          "sha256": "94bb7f2ad6dfe685746e690714a75f061ee50ed03faac26855704d3c3b49c67f",
+          "timestamp_s": 26.16
+        },
+        {
+          "index": 7,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-7.jpg",
+          "sha256": "6e40a280c9ea2c26168e237b0b583f3a5522e0f55547fb6b0a3fdd49fe539d0b",
+          "timestamp_s": 26.560000000000002
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-2-8.jpg",
+          "sha256": "69dbc059e49d813fab906b89d53ee8afce6e2454a4e6af1e9db7631ae8b56411",
+          "timestamp_s": 26.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S2",
+          "key": "S2C1",
+          "raw_status": "partial",
+          "admitted_status": "partial",
+          "evidence": "A colored endoscopic field is visible, but the supplied images do not show introductory imaging or its replacement.",
+          "referenced_frame_indices": [
+            0,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Across the recent views, the broad gray instrument end shifts from the upper-left region toward the center-right and adopts a more horizontal orientation within the visible field.",
+          "referenced_frame_indices": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-sport-stage-1",
+      "source_row_sha256": "88d7668a1f9a09f1ca4b0b086305f91e68160ea9a693775337c9602d2c071c5f",
+      "source_video_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "current_timestamp_s": 37,
+      "expected_step_id_unchanged": "S1",
+      "reported_raw_step_id": null,
+      "displayed_step_id": "",
+      "phase_verdict": "appropriate_abstention",
+      "visible_cues": "The latest crop shows bent elbows and blurred hands while the shaft is out of view. Earlier inspected frames 2/3 show an angled bar overhead or during pickup.",
+      "completion_and_accuracy_limits": "The historic pickup does not establish the current phase. The model appropriately leaves phase identity and current criteria unset.",
+      "input_frames_sha256": [
+        "a16c83c670acf141b00b282d8b77d23859415b0a4d62b749df6206a2b2bbc149",
+        "9246325c51396f609c0a8cccc9a014679e29bddf08da1acbecd663c1c2d0f177",
+        "4a73ebb9db10e6f23d953ab97bab9226afd3a2cca0727505cb28450218504840",
+        "7a76237d55857f5391b328655a628b01cf0784e0dfe7f4c051f34e1d5dff2ded",
+        "cbb703b9b3e00260b6bba590ff22e23ccd69ce30deabbeda7224655e156e9e03",
+        "004e7dc32e9868d05a9203e9c7fbb1f8b1d18e1fdd3140b522a244c2b34a4cbd",
+        "4ff6026ae611812627679dee998cee82ce13b3d958f34e6afeedf55abf85f8aa",
+        "4aa75d77a60522aac276702ce10a0905d1930f183f23af6be38c54a77baac89e",
+        "1dac3901b1811fc292066b7f8cf50fcdb7108e16e948598affb1133a28145cde"
+      ],
+      "visually_reviewed_frame_indices": [
+        2,
+        3,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 2,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-1-2.jpg",
+          "sha256": "4a73ebb9db10e6f23d953ab97bab9226afd3a2cca0727505cb28450218504840",
+          "timestamp_s": 35.3073
+        },
+        {
+          "index": 3,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-1-3.jpg",
+          "sha256": "7a76237d55857f5391b328655a628b01cf0784e0dfe7f4c051f34e1d5dff2ded",
+          "timestamp_s": 35.640967
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-1-8.jpg",
+          "sha256": "1dac3901b1811fc292066b7f8cf50fcdb7108e16e948598affb1133a28145cde",
+          "timestamp_s": 36.975633
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S1",
+          "key": "S1C1",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "Historically, frames 2–3 clearly show angled metal shaft sections and black plates. The shaft is not distinguishable in the latest crop, so its current state is unverified.",
+          "referenced_frame_indices": [
+            2,
+            3,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S1",
+          "key": "S1C2",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "Both hands visibly grasp the shaft in historical frames 2–3; the blurred hands at the lower edge of frame 8 do not establish current contact.",
+          "referenced_frame_indices": [
+            2,
+            3,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S1",
+          "key": "S1C3",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "The recent close views crop out the bar and thighs. Frame 8 shows elbow bend but does not clearly show a low bar position with arms extended downward.",
+          "referenced_frame_indices": [
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-manufacturing-stage-2",
+      "source_row_sha256": "fba9dd58b62a7ca452853012e3ffc43b3d12cb535aac064a26081f22b0f44487",
+      "source_video_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "current_timestamp_s": 35,
+      "expected_step_id_unchanged": "S2",
+      "reported_raw_step_id": null,
+      "displayed_step_id": "",
+      "phase_verdict": "conservative_abstention",
+      "visible_cues": "The dark machine interior contains a fixture/carrier and two clamp-like forms. Reviewed frames 5–8 show changing orientation, but cutting-tool/workpiece identity is indistinct.",
+      "completion_and_accuracy_limits": "Machine movement is visible, but the model conservatively leaves phase identity unset. The expected phase remains plausible rather than visually unique.",
+      "input_frames_sha256": [
+        "cbea0aa6c0580fc1fdd0c42d47728dc1e4c713bbd9e899caf417e8024bdefc94",
+        "9c3efb5eda57dc15f5507d8aa241954c8bcbf982d2d37a0243d82de74053f52a",
+        "a79ecd0d0b8d97ad0e0e60cda44892f206af4083577d798a4bf5d81d4f97ad66",
+        "849e927ac5b658ba123de640d53422b84238826286fa99dc602b4ac12d3da5c2",
+        "49821edd933810f64c97cb98da5f780e548659bd6368e4f189ad21abe2323889",
+        "a10c69563b205cdde18b38e160d3a61ec42f065facb9b51a8dd442cff8939c17",
+        "c75df60475227e1b907f78506cb00a00c7cc30f3f90a92675c2999c3cbd89ed1",
+        "e1c6cf8a5a3d215b5107015865b87f5bb47844a9bd2b026b2db83fd1169422d3",
+        "5ea04d9d19971d114d19bbeb37e3edf22c368adaf28e85adc8364be325376312"
+      ],
+      "visually_reviewed_frame_indices": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-5.jpg",
+          "sha256": "a10c69563b205cdde18b38e160d3a61ec42f065facb9b51a8dd442cff8939c17",
+          "timestamp_s": 34.16
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-6.jpg",
+          "sha256": "c75df60475227e1b907f78506cb00a00c7cc30f3f90a92675c2999c3cbd89ed1",
+          "timestamp_s": 34.28
+        },
+        {
+          "index": 7,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-7.jpg",
+          "sha256": "e1c6cf8a5a3d215b5107015865b87f5bb47844a9bd2b026b2db83fd1169422d3",
+          "timestamp_s": 34.56
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-2-8.jpg",
+          "sha256": "5ea04d9d19971d114d19bbeb37e3edf22c368adaf28e85adc8364be325376312",
+          "timestamp_s": 34.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S1",
+          "key": "S1C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The machine interior contains a mounted silver carrier with two metal fixture assemblies.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S1",
+          "key": "S1C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Historically, an operator stands at the controller with a thumb contacting a button below the screen; the operator and console are not present in the latest view.",
+          "referenced_frame_indices": [
+            0
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C1",
+          "raw_status": "partial",
+          "admitted_status": "partial",
+          "evidence": "A mounted carrier and metal fixtures appear beneath and beside a dark machine-head region, but a distinct workpiece and cutting tool cannot be identified.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The carrier and its attached fixtures change orientation relative to the vertical mechanism across the uninterrupted machine views.",
+          "referenced_frame_indices": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-dancing-stage-2",
+      "source_row_sha256": "4d4393cf761c206ed286717872d49202b694a72fbcc6777bed2d466f13f0c314",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "current_timestamp_s": 19,
+      "expected_step_id_unchanged": "S2",
+      "reported_raw_step_id": null,
+      "displayed_step_id": "",
+      "phase_verdict": "appropriate_abstention",
+      "visible_cues": "The full window includes a tiled wipe, an oblique shot with blur and grounded/overlapping shoes in the latest images. A distinct rear-raised shoe is not clear.",
+      "completion_and_accuracy_limits": "Leaving phase identity and criteria unset is appropriate rather than identifying a lift from elapsed video time.",
+      "input_frames_sha256": [
+        "33c009fa7f3ea74ac4267c4ce80ed8cd18ec32709fc00ed071533ba850a0075e",
+        "3bf9abe90b3213e5a2410c03a568f30b9b2f295d2fe9e52d89d0ae14f083584c",
+        "3211e34c8e68e7b5713a37bfcf0d3932ef829067b2dc842a3495e430bdaec2b9",
+        "4828c92b13201488ea9bdfffaeae02d44abdf8c95b6b76c146fb520172de6d85",
+        "cf2741790698a02be4bbb7b12b42fd8ef3ede709be7957268cb03a85609c9fb3",
+        "b8bcefb050104d422486f22f4a9f078884f0e4428509d939c6ebb1140b84ceaf",
+        "ecf3c062e17420e2f7f0afefa9f8b5becaaedaef0130ed393d167424e30f0ce6",
+        "cb27cde2fd4d77cb0bacbc42fa93d4aeddfcefd634f7204ed5c595c04c708e3c",
+        "155fdcc816cb0289b8a09fa26a339124db2ca3d76d79883febda6b661e766615"
+      ],
+      "visually_reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 0,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-0.jpg",
+          "sha256": "33c009fa7f3ea74ac4267c4ce80ed8cd18ec32709fc00ed071533ba850a0075e",
+          "timestamp_s": 11.001
+        },
+        {
+          "index": 1,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-1.jpg",
+          "sha256": "3bf9abe90b3213e5a2410c03a568f30b9b2f295d2fe9e52d89d0ae14f083584c",
+          "timestamp_s": 13.636967
+        },
+        {
+          "index": 2,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-2.jpg",
+          "sha256": "3211e34c8e68e7b5713a37bfcf0d3932ef829067b2dc842a3495e430bdaec2b9",
+          "timestamp_s": 17.307299999999998
+        },
+        {
+          "index": 3,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-3.jpg",
+          "sha256": "4828c92b13201488ea9bdfffaeae02d44abdf8c95b6b76c146fb520172de6d85",
+          "timestamp_s": 17.974633
+        },
+        {
+          "index": 4,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-4.jpg",
+          "sha256": "cf2741790698a02be4bbb7b12b42fd8ef3ede709be7957268cb03a85609c9fb3",
+          "timestamp_s": 18.141467
+        },
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-5.jpg",
+          "sha256": "b8bcefb050104d422486f22f4a9f078884f0e4428509d939c6ebb1140b84ceaf",
+          "timestamp_s": 18.174833
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-6.jpg",
+          "sha256": "ecf3c062e17420e2f7f0afefa9f8b5becaaedaef0130ed393d167424e30f0ce6",
+          "timestamp_s": 18.3083
+        },
+        {
+          "index": 7,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-7.jpg",
+          "sha256": "cb27cde2fd4d77cb0bacbc42fa93d4aeddfcefd634f7204ed5c595c04c708e3c",
+          "timestamp_s": 18.575233
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-2-8.jpg",
+          "sha256": "155fdcc816cb0289b8a09fa26a339124db2ca3d76d79883febda6b661e766615",
+          "timestamp_s": 18.975633000000002
+        }
+      ],
+      "full_input_window_visually_reviewed": true,
+      "criteria": [],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-house-construction-stage-2",
+      "source_row_sha256": "bc3b19136c6b0d8dc34d145d416f0cae024153dc05d6e8d560127d4e67d51e4e",
+      "source_video_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "current_timestamp_s": 40,
+      "expected_step_id_unchanged": "S2",
+      "reported_raw_step_id": "S2",
+      "displayed_step_id": "S2",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "A single-level timber-panel perimeter with window/door apertures and open front joists is visible; reviewed earlier frame 1 has less developed walls.",
+      "completion_and_accuracy_limits": "Visible panel development is supported. Fastening quality, access safety and structural approval are not established.",
+      "input_frames_sha256": [
+        "80e8fa63ce08df806f5a6ece2323c9fe8b19bd48515dcc26db116f094329cd4a",
+        "fefac898dfe1f38b645df37fed99277ab61a0503aff99d3e477f17331d248e0d",
+        "1d2b4d02024b02d6da3062447461689dd8a0f8f6701b712f48179debc8bc0785",
+        "4f72d624bfb10602ef8efc0ee3c0acc720a5d9699458039fe0f63cfa4f13ef15",
+        "02ef28701727617dbbb5ea3fd417eaeda087709a724c20d49021e421242ff768",
+        "93ce0f85c5b59335a736063561c0af41b617c992e52a6b28cb6b7d60163a24f1",
+        "f7cc033fc4de3cbdf9f400726fff1c6833f8f5e75bb35c89b6c61a83406ca193",
+        "4c044e289c04c41e5b8e5d0fd36369e25177056a6678a53067b22b33e40f1db1",
+        "480e9c9efc2630bbc99d2fb24e0fdf1cfe78805252cd209091182513741867c6"
+      ],
+      "visually_reviewed_frame_indices": [
+        1,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 1,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-2-1.jpg",
+          "sha256": "fefac898dfe1f38b645df37fed99277ab61a0503aff99d3e477f17331d248e0d",
+          "timestamp_s": 32.32
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-2-8.jpg",
+          "sha256": "480e9c9efc2630bbc99d2fb24e0fdf1cfe78805252cd209091182513741867c6",
+          "timestamp_s": 39.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S1",
+          "key": "S1C3",
+          "raw_status": "partial",
+          "admitted_status": "unknown",
+          "evidence": "Historical close-up shows a gloved worker holding a powered hand tool against the panel beside a vertical timber edge; the hands obscure the precise fastening contact and completed joint.",
+          "referenced_frame_indices": [
+            0
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Upright wood-faced walls surround the ground-floor deck in the latest wide view.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Historical frame 1 shows an open deck with a small rear wall grouping; frame 8 shows substantially extended front, rear and side walls forming a more developed perimeter.",
+          "referenced_frame_indices": [
+            1,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C3",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "A tall front opening at the right and a rectangular opening in the rear wall are visible within the ground-floor enclosure.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-surgery-stage-3",
+      "source_row_sha256": "521ba42452a2be202dd05c6b20644a82e80c782e51d45d8538b5e360efa28e09",
+      "source_video_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "current_timestamp_s": 82,
+      "expected_step_id_unchanged": "S3",
+      "reported_raw_step_id": "S3",
+      "displayed_step_id": "S3",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "The full input window shows dark thread/loop material together with instrument jaws/tips in orange/pink tissue.",
+      "completion_and_accuracy_limits": "Visible thread/instrument presence and successive instrument movements are supported. Thread/tissue displacement remains partial; knot security, exact repetitions and clinical repair cannot be inferred.",
+      "input_frames_sha256": [
+        "0816470fec29c9c7a286c2c422a122b3e3b698c898fa79eb69503414427cf008",
+        "528c6660461942afe32efdae3e07051add15fe678fba7ad65a4d7961a0c34aca",
+        "0b4cd17764d851cc11773d1a4f458aa92e6496ecce75b460b0e3637c763fedc1",
+        "c4d165781ca6ad4ae7d59364e1c13cf9e947eb06e96b28ca66ffed3d22ac6a22",
+        "8272183a9626ae6827ed445dd45e30b1e4615ee248b19c6b9eb898bf35cbcc95",
+        "44cb626b06dede926d152944434a1baf6c82ea5a4d5b0e0cecd611a2e6d393a1",
+        "71def5c8bd7b2076f1ddfbef0721185d4e280f43bf02a395678e0ba0f76c8e9a",
+        "93ec12cffa22dfe02e585dd3692a3aba72981638e57e85f52503ea80abda4fe3",
+        "a4686d9887402cde2e6c60aaecaf6153edecda28d4b9b9270e1593d5983f3a08"
+      ],
+      "visually_reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 0,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-0.jpg",
+          "sha256": "0816470fec29c9c7a286c2c422a122b3e3b698c898fa79eb69503414427cf008",
+          "timestamp_s": 74
+        },
+        {
+          "index": 1,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-1.jpg",
+          "sha256": "528c6660461942afe32efdae3e07051add15fe678fba7ad65a4d7961a0c34aca",
+          "timestamp_s": 75.4
+        },
+        {
+          "index": 2,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-2.jpg",
+          "sha256": "0b4cd17764d851cc11773d1a4f458aa92e6496ecce75b460b0e3637c763fedc1",
+          "timestamp_s": 79.96000000000001
+        },
+        {
+          "index": 3,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-3.jpg",
+          "sha256": "c4d165781ca6ad4ae7d59364e1c13cf9e947eb06e96b28ca66ffed3d22ac6a22",
+          "timestamp_s": 80.28
+        },
+        {
+          "index": 4,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-4.jpg",
+          "sha256": "8272183a9626ae6827ed445dd45e30b1e4615ee248b19c6b9eb898bf35cbcc95",
+          "timestamp_s": 80.96000000000001
+        },
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-5.jpg",
+          "sha256": "44cb626b06dede926d152944434a1baf6c82ea5a4d5b0e0cecd611a2e6d393a1",
+          "timestamp_s": 81.12
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-6.jpg",
+          "sha256": "71def5c8bd7b2076f1ddfbef0721185d4e280f43bf02a395678e0ba0f76c8e9a",
+          "timestamp_s": 81.16
+        },
+        {
+          "index": 7,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-7.jpg",
+          "sha256": "93ec12cffa22dfe02e585dd3692a3aba72981638e57e85f52503ea80abda4fe3",
+          "timestamp_s": 81.56
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-3-8.jpg",
+          "sha256": "a4686d9887402cde2e6c60aaecaf6153edecda28d4b9b9270e1593d5983f3a08",
+          "timestamp_s": 81.96000000000001
+        }
+      ],
+      "full_input_window_visually_reviewed": true,
+      "criteria": [
+        {
+          "step_id": "S3",
+          "key": "S3C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The latest view contains a dark loop around the orange-pink strip together with metallic working jaws approaching from the lower left.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S3",
+          "key": "S3C2",
+          "raw_status": "partial",
+          "admitted_status": "partial",
+          "evidence": "The jaws change position beside the loop and tissue strip across these views, but overlap and glare prevent clearly separating thread displacement from tissue and camera movement.",
+          "referenced_frame_indices": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S3",
+          "key": "S3C3",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The jaws shift upward across the contact region and then lower and reopen alongside the strip in the subsequent views, showing successive instrument movements in the close-up.",
+          "referenced_frame_indices": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-sport-stage-2",
+      "source_row_sha256": "bde33a6e5bbf0c764d05232efc1838900fe34d6ff497473aa7cdd0cbdb28cb39",
+      "source_video_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "current_timestamp_s": 41,
+      "expected_step_id_unchanged": "S2",
+      "reported_raw_step_id": "S2",
+      "displayed_step_id": "S2",
+      "phase_verdict": "supported_compatible_episode",
+      "visible_cues": "Reviewed historical frame 3 shows the angled bar raised near the chest; frame 6 and the latest frame show it low, with arms extended.",
+      "completion_and_accuracy_limits": "A raised-to-lowered relation is supported. It is not a complete low→raise→low repetition because the initial low position is absent; historical raised cues are withheld from current admitted progress.",
+      "input_frames_sha256": [
+        "37a4417262d35860b920fc71f10884ae0eda3692c21d6a863b7b450ce314d803",
+        "8a7c3783f1fbc146d380ba7bded652ec2d6803ce3052b383fc5cbf1049d2bd9b",
+        "561ecbacf7f4b82d1ac49830940e23ec7838c6d8f344bc75315e2e51e509d6fd",
+        "11876c3017cbab5825175969103c1cae2c510b905ea131bd3e93bc6dff9a03e0",
+        "b927e1dda2b797595511e663825b1e294efe0425a52057e98293312d63c88be4",
+        "21b7db4306d0ba5bd8199310f6d7fbb93167ff274280ad7a89c60bac24730993",
+        "de49062981123ff6ae9babe8b3865016731efe6f3074fdf16df8f1653badf2b4",
+        "9052d7bd3c6bc8bc8b89d88f04ee689e160a88fd6371be4521aa1f6258697ccd",
+        "713eb405fdc18fc786a10a6f59e52633ba335ea18e35a4c0f9f3864c7b211128"
+      ],
+      "visually_reviewed_frame_indices": [
+        3,
+        6,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 3,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-2-3.jpg",
+          "sha256": "11876c3017cbab5825175969103c1cae2c510b905ea131bd3e93bc6dff9a03e0",
+          "timestamp_s": 39.640967
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-2-6.jpg",
+          "sha256": "de49062981123ff6ae9babe8b3865016731efe6f3074fdf16df8f1653badf2b4",
+          "timestamp_s": 40.174833
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-2-8.jpg",
+          "sha256": "713eb405fdc18fc786a10a6f59e52633ba335ea18e35a4c0f9f3864c7b211128",
+          "timestamp_s": 40.975633
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S2",
+          "key": "S2C1",
+          "raw_status": "met",
+          "admitted_status": "unknown",
+          "evidence": "Historical frame 3 directly shows the angled bar raised in front of the upper torso with both elbows bent; this is not its current position.",
+          "referenced_frame_indices": [
+            3
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C2",
+          "raw_status": "met",
+          "admitted_status": "unknown",
+          "evidence": "Both hands visibly encircle the angled shaft in the historical raised position.",
+          "referenced_frame_indices": [
+            3
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C3",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Following the raised position in frame 3, the bar descends through frames 5–6 and is visibly low in front of the thighs with less elbow bend in frames 7–8, within the same shot.",
+          "referenced_frame_indices": [
+            3,
+            5,
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-manufacturing-stage-3",
+      "source_row_sha256": "7ac7cd7b0d3e154f832ecbb56a93f989834ead1fdcdc85ed2d7e41dff092033b",
+      "source_video_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "current_timestamp_s": 60,
+      "expected_step_id_unchanged": "S3",
+      "reported_raw_step_id": "S3",
+      "displayed_step_id": "S3",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "A digital indicator and probe are above a copper-coloured block; the display reads 2.95 mm.",
+      "completion_and_accuracy_limits": "The reading is visually supported. Contact is tentative; calibration, acceptance and metrology validity are not established.",
+      "input_frames_sha256": [
+        "573f57cf4953fb39ae4369176291b079105705c8bdec5372d5812d77f8a914f1",
+        "8ed94de63b57b850e87a437262252375b0077c96625e8f3c1f37784ea287710f",
+        "4ae7cd596fa2b7443422abe1ca61ef6748ef873807077185e1d01ea09c7df479",
+        "2a61812c21966a3ef956eab0f5da990601844942a917c4f9ac2f64a0c64d1ce5",
+        "0daead457b1decc2ce1f136d4a0525a06b1b14d052153137c47b7841e915f186",
+        "58e1af0b5e9be809337a0eee1eda8ca8233af401167b5ddbe7c6dd615f0375a5",
+        "3669374d7083baab41355efdadc8e13b8e2003b107446422c71b781ebb937e84",
+        "4d8fc9a6d1ef62112f233975bd6eb483c6aca2619ca94ca47ff054fa8a984b6f",
+        "49b3321bad22e76289617e68b72cdd3705fd69e815c715fb5a765cad9404e7ba"
+      ],
+      "visually_reviewed_frame_indices": [
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-3-8.jpg",
+          "sha256": "49b3321bad22e76289617e68b72cdd3705fd69e815c715fb5a765cad9404e7ba",
+          "timestamp_s": 59.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S3",
+          "key": "S3C1",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "Historical frame 1 shows a row of metallic cylindrical components in a divided holder beneath a display and controls; their identity as tools is not clear. This equipment is not visible in the latest shot.",
+          "referenced_frame_indices": [
+            1
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S3",
+          "key": "S3C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "A digital indicator with a readable 2.95 mm display and a downward probe is directly visible above the foreground metal block.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-dancing-stage-3",
+      "source_row_sha256": "352557b69dfdce1dc140dfdbb6576f531f57cdb8353116a3ffff13a09a0f550e",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "current_timestamp_s": 35,
+      "expected_step_id_unchanged": "S3",
+      "reported_raw_step_id": "S3",
+      "displayed_step_id": "S3",
+      "phase_verdict": "supported_compatible_episode",
+      "visible_cues": "The full window shows a forward airborne shoe, a backward pass, and a rear-raised shoe with the other shoe by the floor.",
+      "completion_and_accuracy_limits": "Forward/back movement is supported; this resembles other repeated exercises, so unique episode identity is less certain. Restored stance is unknown and no repetition count is inferred.",
+      "input_frames_sha256": [
+        "d6d774ae9063ef6708ba50a418ccaa8a73df8df41be578a61b21e9f38fe391f5",
+        "a31a6071b82ce8b7bbb3ed662dd78b6e7e8ae9ed2ef9b0aafc77586d359c23e0",
+        "458ce62ba2ce0b36135d638dc764953f80f7459cec00852a4eaff348d34905b3",
+        "c050c847cfbb9f5295bdfdb9710b3c58cc98b42fbc3ea8f9c987b00d75218a12",
+        "fad213065d99efc8eb870e5de0d40cee6dd34c348dac2874ca88bfe57e2b3b2b",
+        "d414c89e58be9d7fb0eedc0e43439574e6f326c71dbca196ce4cba9b0b1ab513",
+        "ccbd91f1c447f67b85e49c95c4551d8a2943093e60e8021f19b4a7f3032be2f2",
+        "a84d519dabd4971a0deff9b865ad0065424e8eec429a1e8a32a25d647d6306d2",
+        "86dd05db589e93ec5eb6c4186edf95c2096927cc854ea7b11d5d282a84ea70ce"
+      ],
+      "visually_reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 0,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-0.jpg",
+          "sha256": "d6d774ae9063ef6708ba50a418ccaa8a73df8df41be578a61b21e9f38fe391f5",
+          "timestamp_s": 27.001
+        },
+        {
+          "index": 1,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-1.jpg",
+          "sha256": "a31a6071b82ce8b7bbb3ed662dd78b6e7e8ae9ed2ef9b0aafc77586d359c23e0",
+          "timestamp_s": 28.635967
+        },
+        {
+          "index": 2,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-2.jpg",
+          "sha256": "458ce62ba2ce0b36135d638dc764953f80f7459cec00852a4eaff348d34905b3",
+          "timestamp_s": 33.3073
+        },
+        {
+          "index": 3,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-3.jpg",
+          "sha256": "c050c847cfbb9f5295bdfdb9710b3c58cc98b42fbc3ea8f9c987b00d75218a12",
+          "timestamp_s": 33.974633
+        },
+        {
+          "index": 4,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-4.jpg",
+          "sha256": "fad213065d99efc8eb870e5de0d40cee6dd34c348dac2874ca88bfe57e2b3b2b",
+          "timestamp_s": 34.141467
+        },
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-5.jpg",
+          "sha256": "d414c89e58be9d7fb0eedc0e43439574e6f326c71dbca196ce4cba9b0b1ab513",
+          "timestamp_s": 34.174833
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-6.jpg",
+          "sha256": "ccbd91f1c447f67b85e49c95c4551d8a2943093e60e8021f19b4a7f3032be2f2",
+          "timestamp_s": 34.575233
+        },
+        {
+          "index": 7,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-7.jpg",
+          "sha256": "a84d519dabd4971a0deff9b865ad0065424e8eec429a1e8a32a25d647d6306d2",
+          "timestamp_s": 34.641967
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-3-8.jpg",
+          "sha256": "86dd05db589e93ec5eb6c4186edf95c2096927cc854ea7b11d5d282a84ea70ce",
+          "timestamp_s": 34.975633
+        }
+      ],
+      "full_input_window_visually_reviewed": true,
+      "criteria": [
+        {
+          "step_id": "S3",
+          "key": "S3C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The working shoe extends visibly forward of the supporting shoe, with its toe pointing toward the right.",
+          "referenced_frame_indices": [
+            4,
+            5
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S3",
+          "key": "S3C2",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "After the forward extension, the blurred working shoe passes close to the supporting shoe before rising behind it. A clear restoration of the starting stance is not shown.",
+          "referenced_frame_indices": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S3",
+          "key": "S3C3",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Following the forward extension, the working shoe is visibly suspended behind the supporting leg with a gap above the floor; the supporting shoe remains visible at the floor.",
+          "referenced_frame_indices": [
+            4,
+            5,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-house-construction-stage-3",
+      "source_row_sha256": "24def9a80e3f05dba0367970586268fcf5e94110cd80fddc3ea26429d1e9f59e",
+      "source_video_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "current_timestamp_s": 90,
+      "expected_step_id_unchanged": "S3",
+      "reported_raw_step_id": "S3",
+      "displayed_step_id": "S3",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "Upper-level wall panels and apertures stand above the first level, with roof framing not yet present; earlier frame 0 is less developed.",
+      "completion_and_accuracy_limits": "Visible development is supported; engineering adequacy and unshown access/fall protection cannot be certified.",
+      "input_frames_sha256": [
+        "b8ea9fb6b6bd999e555ac50671f3af24fdbfa3e891eeb2125a900cc86c7f33b9",
+        "056e81e944bdff1df86aa4a9a9f64e07acf447fef50690362c55b2d4e1f45f7f",
+        "ea124561907b1388d3f57e271a132d5bf7493168b049f440ab6aaa17d78aea76",
+        "202c114d53041d46272769dc13505296e0911e01933bb805b395a34e554ceb94",
+        "1c7ae525896df84275fefd73b53351df7859202cd7ef92c5413495037693b4ce",
+        "779e93d8abdb4fe71c18baaa9789a5651567081ae4aeda79bf1604adba6cb30e",
+        "747ec1571067c028021de697fee3ceb3150314b86d8496f29862b3c6e321fcc3",
+        "e8fc532a0ba7c24d4381371f8950e206d9a9c6dc0ef569b88967690c2692c9ef",
+        "177366f365bac055d28a0bf9e3582977bf022e96b224f6020bbe9764381b9ef0"
+      ],
+      "visually_reviewed_frame_indices": [
+        0,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 0,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-3-0.jpg",
+          "sha256": "b8ea9fb6b6bd999e555ac50671f3af24fdbfa3e891eeb2125a900cc86c7f33b9",
+          "timestamp_s": 82
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-3-8.jpg",
+          "sha256": "177366f365bac055d28a0bf9e3582977bf022e96b224f6020bbe9764381b9ef0",
+          "timestamp_s": 89.96000000000001
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S2",
+          "key": "S2C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Upright lower-storey wall panels surround the visible lower building area behind the open front timber frame.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C3",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Rectangular window and doorway openings are visible in the ground-floor wall.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S3",
+          "key": "S3C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Horizontal timber members span the front at the top of the lower enclosure, and an upper-floor surface is visible through the central upper opening.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S3",
+          "key": "S3C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The historical wide view shows a largely open upper deck with sparse upright panels; the latest view shows a developed second-storey panel wall with window and doorway openings.",
+          "referenced_frame_indices": [
+            0,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-surgery-stage-4",
+      "source_row_sha256": "7b4d10294cf18fc858180f979b8d9e5fdd66d804bce5747a0f06c806b9bbd35a",
+      "source_video_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "current_timestamp_s": 117.6,
+      "expected_step_id_unchanged": "S4",
+      "reported_raw_step_id": "S4",
+      "displayed_step_id": "",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "The current image is a circular monochrome field with branched internal lines, distinct from coloured endoscopic imagery.",
+      "completion_and_accuracy_limits": "Both compound criteria are unknown in the final raw output: a following operative scene is required to assert between-scenes or return-after-imaging. The UI appropriately withholds the stage here; clinical interpretation remains unverified.",
+      "input_frames_sha256": [
+        "9630efacd3e015da3f64af5929312731b0919c828468d9e6c41090d97484c16c",
+        "16dbb5bfb3e983e284ded04e072088cbff839f1b15168b367e8181b1b42c7b1a",
+        "78bf6341818eac1bf0831cd9d9d73d4f98537341d4f9103765c32cd10005ec44",
+        "febb9d270900aa0e462d867fa4ce193c546561552f480a5c45c88674fd5277c6",
+        "5edba2f4aee5f8053fac5d17445806fc4ebe0f1fa0eee7961958fca5ec34c4a2",
+        "de6f86edc985cdbd17124113dba90a53592f1502d3e91fe5c3920539ec0c5851",
+        "de6f86edc985cdbd17124113dba90a53592f1502d3e91fe5c3920539ec0c5851",
+        "de6f86edc985cdbd17124113dba90a53592f1502d3e91fe5c3920539ec0c5851",
+        "26725a81f6b39689933e12d719d37bb7f5701ec0e9a5b39cb516633b3d9c7678"
+      ],
+      "visually_reviewed_frame_indices": [
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-4-8.jpg",
+          "sha256": "26725a81f6b39689933e12d719d37bb7f5701ec0e9a5b39cb516633b3d9c7678",
+          "timestamp_s": 117.56
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S4",
+          "key": "S4C1",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "A colored operative scene in frame 4 is followed by circular monochrome imaging in frames 5–8. The subsequent operative scene needed to establish that this view lies between operative scenes has not been shown.",
+          "referenced_frame_indices": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S4",
+          "key": "S4C2",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "The latest frame remains a circular monochrome imaging view; no return to a colored endoscopic field is visible after it.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-manufacturing-stage-4",
+      "source_row_sha256": "518f01b0d479ecb3cd0e839dd2a87c4f894771ce137fbaa947bcd6651b990420",
+      "source_video_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "current_timestamp_s": 90,
+      "expected_step_id_unchanged": "S4",
+      "reported_raw_step_id": "S4",
+      "displayed_step_id": "S4",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "A large silver/blue head with a small ball-tipped stylus is above copper-coloured blocks/fixtures; earlier frame 0 has a different machine-region view.",
+      "completion_and_accuracy_limits": "Visible tool/head positioning is supported. Probe contact, measurement results and acceptance are not inferred.",
+      "input_frames_sha256": [
+        "7f6af235dfd886317c2d5a9c8b6df39f691118771b2765b79c72ed03209f6685",
+        "d51598e87019d3f7dbe5c3236a953afb3d5fddef2a61563e508a28b002e740f9",
+        "4a8f725c6e04de496c9f641132688498da74b0dcaf35c1e53c6b3fd0c7c4bb2d",
+        "1ae668668606b081d6c8348889df426309e0f4200d003da5e8ee159e94cdba6a",
+        "2d66fb272d0ccfc72b2f41a091f8538de9098488f7554ceb58e3bf59e71919ce",
+        "9baab9c757316906538600894bacc699e1a1c21ee26bc13a6e7a9dca969a2e36",
+        "e7667f7b5cc4a043a29c2de3c71b6ee19c0b158ebcc4098a33118035d155434d",
+        "c18540ea1be64dd5382b8c5e8e86886fe13f8c639be58599801224254406498a",
+        "bc2ddc31a84aa5559bfeab3f5bbb0b4632c203e58931d657042aa577c355bcb0"
+      ],
+      "visually_reviewed_frame_indices": [
+        0,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 0,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-4-0.jpg",
+          "sha256": "7f6af235dfd886317c2d5a9c8b6df39f691118771b2765b79c72ed03209f6685",
+          "timestamp_s": 82
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-4-8.jpg",
+          "sha256": "bc2ddc31a84aa5559bfeab3f5bbb0b4632c203e58931d657042aa577c355bcb0",
+          "timestamp_s": 89.96000000000001
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S4",
+          "key": "S4C1",
+          "raw_status": "met",
+          "admitted_status": "unknown",
+          "evidence": "Historical frame 0 shows a teal manufactured assembly with repeated upright forms connected by rails, isolated against a light background rather than inside a machine.",
+          "referenced_frame_indices": [
+            0
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S4",
+          "key": "S4C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Following the isolated presentation in frame 0, frame 8 shows a spindle-mounted head and slender stylus positioned over the tooling table among metal blocks secured on circular fixtures.",
+          "referenced_frame_indices": [
+            0,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-sport-stage-3",
+      "source_row_sha256": "7811a5d4f33a6dbdf75060b041fceb039740ddb942df7afcf09155004b8ca73a",
+      "source_video_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "current_timestamp_s": 50,
+      "expected_step_id_unchanged": "S3",
+      "reported_raw_step_id": "S3",
+      "displayed_step_id": "S3",
+      "phase_verdict": "supported_compatible_episode",
+      "visible_cues": "Reviewed historical frame 2 shows an angled weighted bar raised; frame 6 and the latest frame show it lowered, with changed camera framing.",
+      "completion_and_accuracy_limits": "Lowering is supported, but full repetitions and whole-body form cannot be certified. The broad close-view episode is compatible rather than unique from a low static pose.",
+      "input_frames_sha256": [
+        "26475c6f4567e903ef2463e7f9cabc268ff52f81c0c6186ca7f3020a02c24ec4",
+        "57c7488d6a9d425635cd9154aec9a77d28f622ea64d73ba72aab3d2c34429282",
+        "cc4faf6961c191e9ed7660b57ac18cc7f5b822dbf24d99362d991538b7352787",
+        "d1d5136f1f18367f291610a5be92d76de2ad78367cdfc45b7da88e2d1fdeee25",
+        "4c81091845a19ef2295b30ac1af1b282921b329e6dbe83b18b011c65a7c374ce",
+        "fd56c67ee67f6cb29c66fea988c1f43136a49d807dbfde52471ffda13890ed98",
+        "257a167b5db78b2dcc786c152b781e2f83e24b5cd103b7f4fd584ca120969735",
+        "1797d1abbd1da63745a8e4748e5e979f10338c7c5bd60dd1eb0ed7cd6781360a",
+        "48ca989301377f48ccd3bbc95c456777c0bdb5fae928a59e5d562869f1467825"
+      ],
+      "visually_reviewed_frame_indices": [
+        2,
+        6,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 2,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-3-2.jpg",
+          "sha256": "cc4faf6961c191e9ed7660b57ac18cc7f5b822dbf24d99362d991538b7352787",
+          "timestamp_s": 48.3073
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-3-6.jpg",
+          "sha256": "257a167b5db78b2dcc786c152b781e2f83e24b5cd103b7f4fd584ca120969735",
+          "timestamp_s": 49.3083
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-3-8.jpg",
+          "sha256": "48ca989301377f48ccd3bbc95c456777c0bdb5fae928a59e5d562869f1467825",
+          "timestamp_s": 49.975633
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S2",
+          "key": "S2C1",
+          "raw_status": "met",
+          "admitted_status": "unknown",
+          "evidence": "Historical close-view frame shows the angled bar near the upper torso with bent elbows; this is not the current position.",
+          "referenced_frame_indices": [
+            0
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C2",
+          "raw_status": "met",
+          "admitted_status": "unknown",
+          "evidence": "Both hands visibly grasp the raised angled bar in the historical close view.",
+          "referenced_frame_indices": [
+            0
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C3",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Historical close-view sequence shows the raised bar followed by a low bar at the bottom of the frame with substantially straighter arms.",
+          "referenced_frame_indices": [
+            0,
+            1
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S3",
+          "key": "S3C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Both hands visibly grasp angled shaft sections in the wider demonstration framing, including the recent lowering view.",
+          "referenced_frame_indices": [
+            4,
+            6
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S3",
+          "key": "S3C2",
+          "raw_status": "met",
+          "admitted_status": "unknown",
+          "evidence": "Historical wider frames show the angled bar raised in front of the torso with both elbows bent; the latest frame instead shows it low.",
+          "referenced_frame_indices": [
+            2,
+            3
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S3",
+          "key": "S3C3",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Following the historical raised position, the continuous demonstration shows decreasing elbow bend and a low bar in front of the thighs, still visible in the latest closer framing.",
+          "referenced_frame_indices": [
+            2,
+            3,
+            4,
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-dancing-stage-4",
+      "source_row_sha256": "f9e9a70a032ad86e099372a545db8e7492a83b6429b8fd6da7b0d72327940422",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "current_timestamp_s": 50,
+      "expected_step_id_unchanged": "S4",
+      "reported_raw_step_id": "S4",
+      "displayed_step_id": "S4",
+      "phase_verdict": "supported_compatible_episode",
+      "visible_cues": "The latest front-facing view has one shoe flat and the other heel-raised/angled near the floor.",
+      "completion_and_accuracy_limits": "The latest orientation/heel state is supported. The complete return-plus-following-transition relation is unknown; earlier movement references were not all independently viewed.",
+      "input_frames_sha256": [
+        "26886e0ffb89d70fd049acb425d402c36f58f7de0269ebbd2db91d433691c846",
+        "0daf42c9b6797553ce80d08caeab220a7c6bcbcb63f8c1793d55534ff17dba0a",
+        "b90ebc3667ee481a7ca3a433b3a153d2323587ecc2b41a1fd74157806667ff00",
+        "9fcd9e9a5e75d0a527ccbb82db9c68b237d69a93dbd18ea2d3641fec6d27bdbb",
+        "b9c7b6253578d4028964fb2d52acded0dd46327c38f3b80c4aaa287a8471f6c1",
+        "81e4d157c2bcbb20108833f8bec17134c5facf3ef8ac4257a81e0ca93ca276c6",
+        "7d24acdc461c7fe46ef7a058b06200866275f6f0004246c8ada7a90fc43a0719",
+        "54e33ac7a2e9faa6cc68783ff26dcd84d888b17e89fa296c12f3ab8896cfe6f0",
+        "9db306bf4b867eee8b949234d2c1da30facd883e80a5601d87ff298e9293ca61"
+      ],
+      "visually_reviewed_frame_indices": [
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-4-8.jpg",
+          "sha256": "9db306bf4b867eee8b949234d2c1da30facd883e80a5601d87ff298e9293ca61",
+          "timestamp_s": 49.975633
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S4",
+          "key": "S4C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Across the uninterrupted recent views, the screen-right shoe changes from a flatter side-facing position to a heel-raised, toe-down angle relative to the forward-facing screen-left shoe.",
+          "referenced_frame_indices": [
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S4",
+          "key": "S4C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The screen-right shoe visibly slopes down toward its toe with the heel elevated above the floor.",
+          "referenced_frame_indices": [
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S4",
+          "key": "S4C3",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "The latest shoes remain separated and the screen-right heel is raised; a close-together return at the floor followed by the next transition is not shown.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-house-construction-stage-4",
+      "source_row_sha256": "833060cf45120de56b985054759e98013fa38a0754dd288a53dff2767b1e39a9",
+      "source_video_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "current_timestamp_s": 115,
+      "expected_step_id_unchanged": "S4",
+      "reported_raw_step_id": "S4",
+      "displayed_step_id": "S4",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "Exposed pitched roof timbers above wall framing identify the roof-framing view. A worker is elevated near open framing.",
+      "completion_and_accuracy_limits": "Literal visible wall/opening/outline criteria may also apply to other steps, but do not establish installed roof covering. Potential fall exposure is framed as visible uncertainty.",
+      "input_frames_sha256": [
+        "5fda1effc3fa3f6f00a710edec1d2ce123993358a518a972c14679463f9dd2d8",
+        "7400657e95f9d171a22204918b04e3980563c4d36dd404b7cf9cf66313a7e174",
+        "3b424287e8400cc336dc7073513f8537cda4c7fc15ad639499e817ad828dc543",
+        "7f9d8727ed4aa828be4b68ecc013096cae0bc8c34a31a8d4b3f29392dcbf9a08",
+        "45577feb42879986b4dafda25df28445534dae5f8afac978d85c8f7c5a471499",
+        "2e92293e8199c9d6793b1ea36813b8f7df0e7260c02da7b4da2fcd98291ccbd5",
+        "630be536ebbca1399f1dd4257afd07d9fd5b2da2803fc4a081a834a594427b6b",
+        "d6dce89bf1c4327e4520b3fca1aa87a18f6773ffc5fa5583f8d1d96ebf8885d3",
+        "4b337174948be7b0071ad7705c86bddbfa305703dec055b2e68f5a4152fcf6cb"
+      ],
+      "visually_reviewed_frame_indices": [
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-4-8.jpg",
+          "sha256": "4b337174948be7b0071ad7705c86bddbfa305703dec055b2e68f5a4152fcf6cb",
+          "timestamp_s": 114.96000000000001
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S2",
+          "key": "S2C1",
+          "raw_status": "met",
+          "admitted_status": "met",
+          "evidence": "The wide view shows upright lower-storey wall panels around the building base and deck framing.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S2",
+          "key": "S2C3",
+          "raw_status": "met",
+          "admitted_status": "met",
+          "evidence": "Rectangular window and doorway openings are visible in the ground-floor panel walls.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S4",
+          "key": "S4C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Several exposed sloping roof timbers meet near the ridge above the upper-storey walls in the wide exterior view.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S6",
+          "key": "S6C3",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The exterior view includes the exposed pitched roof outline and the upper wall outline together; the roof remains uncovered.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-surgery-stage-5",
+      "source_row_sha256": "58cce057d61552221af3f6026300d6e93faa858fa2fb2f059be1beb0496bb95a",
+      "source_video_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "current_timestamp_s": 137,
+      "expected_step_id_unchanged": "S5",
+      "reported_raw_step_id": "S5",
+      "displayed_step_id": "S5",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "The full window shows pale/yellow woven material, working tips and orange tissue; material exposure/position changes in the later frames.",
+      "completion_and_accuracy_limits": "Visible material handling is supported. An orange curved tube can coexist in the field; contact beneath the material, clinical purpose and treatment success are not established.",
+      "input_frames_sha256": [
+        "38b0627592bc3b08f9ca8a66b29679063b1b6d4ad462e7b3d7c010e7bae373df",
+        "204bebbeab33cc8ddf9c80227a0730394718379cec108ae1c4c97100c4f5a624",
+        "bffe0b8de8f30b9c697cdaf49c33becc3f6f93eefaf04e7c9657de7456e2b82e",
+        "f7511f506851730990fdfb30db2775ee0feece4df436ce310d84d6bc9aa4fb98",
+        "2c351e975f6c8b27d398696474871982a2f78acb926685c79fcc681fbd3d15fd",
+        "7d867aba66fa2376c08a726a37e975d8679e7450b669c7d6c407591071606314",
+        "5d8ce7ad26dbb0cdc924424494dc05e643961381e45839fcf803a38dff327a2a",
+        "eedebeeec97bd997a30c9a2f83732ea7a2ccc75d31a056a971f60758e6ba8976",
+        "0cbb1ad555f38d51bfb9e11572d7bfbfa49594ec791707b006f2266a4d43fba3"
+      ],
+      "visually_reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 0,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-0.jpg",
+          "sha256": "38b0627592bc3b08f9ca8a66b29679063b1b6d4ad462e7b3d7c010e7bae373df",
+          "timestamp_s": 129
+        },
+        {
+          "index": 1,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-1.jpg",
+          "sha256": "204bebbeab33cc8ddf9c80227a0730394718379cec108ae1c4c97100c4f5a624",
+          "timestamp_s": 131.32
+        },
+        {
+          "index": 2,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-2.jpg",
+          "sha256": "bffe0b8de8f30b9c697cdaf49c33becc3f6f93eefaf04e7c9657de7456e2b82e",
+          "timestamp_s": 134.96
+        },
+        {
+          "index": 3,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-3.jpg",
+          "sha256": "f7511f506851730990fdfb30db2775ee0feece4df436ce310d84d6bc9aa4fb98",
+          "timestamp_s": 135.28
+        },
+        {
+          "index": 4,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-4.jpg",
+          "sha256": "2c351e975f6c8b27d398696474871982a2f78acb926685c79fcc681fbd3d15fd",
+          "timestamp_s": 135.96
+        },
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-5.jpg",
+          "sha256": "7d867aba66fa2376c08a726a37e975d8679e7450b669c7d6c407591071606314",
+          "timestamp_s": 136.12
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-6.jpg",
+          "sha256": "5d8ce7ad26dbb0cdc924424494dc05e643961381e45839fcf803a38dff327a2a",
+          "timestamp_s": 136.16
+        },
+        {
+          "index": 7,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-7.jpg",
+          "sha256": "eedebeeec97bd997a30c9a2f83732ea7a2ccc75d31a056a971f60758e6ba8976",
+          "timestamp_s": 136.56
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-5-8.jpg",
+          "sha256": "0cbb1ad555f38d51bfb9e11572d7bfbfa49594ec791707b006f2266a4d43fba3",
+          "timestamp_s": 136.96
+        }
+      ],
+      "full_input_window_visually_reviewed": true,
+      "criteria": [
+        {
+          "step_id": "S5",
+          "key": "S5C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Pale white-to-yellow woven material is visible across the upper-left field, with its mesh texture apparent along the lower edge.",
+          "referenced_frame_indices": [
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S5",
+          "key": "S5C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "A metal working tip contacts the folded material at the left in frames 5 and 6; the material then extends across the upper-left field with a broader exposed woven edge in frames 7 and 8.",
+          "referenced_frame_indices": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-manufacturing-stage-5",
+      "source_row_sha256": "a8cb3705104040604e96ff9a0dbc62d7172d989a635f8c12d99065890c2b87eb",
+      "source_video_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "current_timestamp_s": 135,
+      "expected_step_id_unchanged": "S5",
+      "reported_raw_step_id": "S5",
+      "displayed_step_id": "S5",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "Three people review a technical drawing, with one pen pointing at it. A preceding machine image is still superimposed during a crossfade.",
+      "completion_and_accuracy_limits": "Pointing/review cues are visible. Fine print, revision identity, agreement and approval remain unverified.",
+      "input_frames_sha256": [
+        "6e76f7abad0acd34f686eba2409ed93e8d04d257192b72213d0d3aed60486c03",
+        "b45d59f31c1412fad6e55b77c7b52f1e106a69060abc9c9d281bfe895ebeff86",
+        "63b08306b6fa1ffe6dae54ccdb99e4d57d68945780c2101a5feab6d623da3f80",
+        "015337bccc824cb318c15674486a1874714185cd4e11d2fc48593def460385a1",
+        "80eb716f10643cffba3f4b31a4f0f4c79ea5704c9711f0825c64002abeb6a185",
+        "aeb90e03bb82c93bc18c86427439ae80b486ad5d5e34dae580baa17c104560ec",
+        "78f197e192ad04be857f7b9dd4da2a18e084b6a0ee5a038b16fa0023a137194b",
+        "f24d6906a4bd18c10c0918b38e52604b7bf9934599c285f93e1315a6e17c0102",
+        "bd18852a1a57f5ccd704109422f40d3a4ebbe09aeb318b2360cb11ab420e4a86"
+      ],
+      "visually_reviewed_frame_indices": [
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-5-8.jpg",
+          "sha256": "bd18852a1a57f5ccd704109422f40d3a4ebbe09aeb318b2360cb11ab420e4a86",
+          "timestamp_s": 134.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S5",
+          "key": "S5C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Three people are beside the displayed technical drawing, and the central participant extends a pen toward its left-hand diagram.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-sport-stage-4",
+      "source_row_sha256": "8cbb267cb54f9bbfdb6c358fc441bbeafa2df970ba1b6220044fd150aacd66a2",
+      "source_video_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "current_timestamp_s": 93,
+      "expected_step_id_unchanged": "S4",
+      "reported_raw_step_id": "S4",
+      "displayed_step_id": "S4",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "The latest view shows a straight shaft near the thighs with a right black weight and partially cropped hand/end.",
+      "completion_and_accuracy_limits": "The straight-bar preparation cue is supported; fully visible weighted ends are partial. The before-first-curl criterion is unknown because later action is not supplied.",
+      "input_frames_sha256": [
+        "2e8be0a83efca3ddcb192b2933b821c0757be5019c9b4a1eedccc4a448f24773",
+        "d9122496330243974d3ee1f93ad16069e2d6431fbdcce2346b37b7cc9666e9ed",
+        "90d389899ce5a1b8a0fee471330215c90d25916be14e2455246cc3372ed8d8aa",
+        "eec74d38263d2d60867fb9be1d5b6011c8472725acd9ea0fe2d24bbb93239e00",
+        "8d83facd66591a198fefc088e816c9365cde8e260fd4cac9e8a133fc244e1829",
+        "3cafed91d5d9ddf5007f43a1a8ec7fb784d8156ee3fca9d4e302f5011b379530",
+        "40ecbf78e1dd9d51bda26769cfa21f807755f53da6a45cfbd25d0761acfb7d55",
+        "fd4d9671505e4aa046d9c439d2b6c9fd9534e5477a09a69720ff181918205195",
+        "45a80cddd0de706e231372a428d2dede9bc897769f98cba4a03ae9c23543b6ae"
+      ],
+      "visually_reviewed_frame_indices": [
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-4-8.jpg",
+          "sha256": "45a80cddd0de706e231372a428d2dede9bc897769f98cba4a03ae9c23543b6ae",
+          "timestamp_s": 92.975633
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S4",
+          "key": "S4C1",
+          "raw_status": "partial",
+          "admitted_status": "partial",
+          "evidence": "A straight shaft and right black weight are visible, but the opposite weighted end is outside the crop.",
+          "referenced_frame_indices": [
+            5,
+            6,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S4",
+          "key": "S4C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Both hands visibly grip the straight shaft while the torso is upright in recent frames; the latest frame crops the left contact.",
+          "referenced_frame_indices": [
+            5,
+            6
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S4",
+          "key": "S4C3",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "The bar is held low in front of the thighs with arms lowered; a following curl is not shown, so the full before-curl relation remains unverified.",
+          "referenced_frame_indices": [
+            5,
+            6,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-dancing-stage-5",
+      "source_row_sha256": "6d32effeaab5ef71daa6c7548ba7ebf237de894aed061f0a0aeb91fe2c01acb5",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "current_timestamp_s": 70,
+      "expected_step_id_unchanged": "S5",
+      "reported_raw_step_id": "S5",
+      "displayed_step_id": "S5",
+      "phase_verdict": "supported_compatible_episode",
+      "visible_cues": "The full window shows a foreground shoe raised and extended forward, then closing toward the other shoe in blur.",
+      "completion_and_accuracy_limits": "Visible raise/extension is supported, while exact final floor contact remains partial. Similar episodes limit unique phase identity; no repetition count is established.",
+      "input_frames_sha256": [
+        "112821903e06d79438ca88a59295f7e104a33ef1ceca46c34ccbb82f020b0f83",
+        "06f572d866ec39e72cd39d8fe5fa741da90067b7e4ce8d07f9a58b795b9f0903",
+        "52ca5db9a6082c1328ad65931f310b91f8eb9768f5e85d265ffe477f8d8be4fb",
+        "3f417c052efdb21c77f5f695062b636e406efaf68e580c3b67f2ed2d8b6446a0",
+        "c931c7758d66abd46d36054bf0bc20e231c08a8c7cb21377ac74b7e24e232425",
+        "14ebef602d26bacf759e44e3077b683d1a63c01cf1411e60c43ae2ccee8d66f5",
+        "aa6af4a5387f021ddf458472a3b8e4f5c93be6057a8b2952946b6257a65e039e",
+        "491fbabeb65fc9a2d00f81509df085b252e8d182733aaa0b6e1cee16d944ac9c",
+        "5f551bfb1c064a54fb82c016634f97999c5c9cf285dfea7f18da0a4207759db2"
+      ],
+      "visually_reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 0,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-0.jpg",
+          "sha256": "112821903e06d79438ca88a59295f7e104a33ef1ceca46c34ccbb82f020b0f83",
+          "timestamp_s": 62.001
+        },
+        {
+          "index": 1,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-1.jpg",
+          "sha256": "06f572d866ec39e72cd39d8fe5fa741da90067b7e4ce8d07f9a58b795b9f0903",
+          "timestamp_s": 65.637967
+        },
+        {
+          "index": 2,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-2.jpg",
+          "sha256": "52ca5db9a6082c1328ad65931f310b91f8eb9768f5e85d265ffe477f8d8be4fb",
+          "timestamp_s": 68.640967
+        },
+        {
+          "index": 3,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-3.jpg",
+          "sha256": "3f417c052efdb21c77f5f695062b636e406efaf68e580c3b67f2ed2d8b6446a0",
+          "timestamp_s": 68.974633
+        },
+        {
+          "index": 4,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-4.jpg",
+          "sha256": "c931c7758d66abd46d36054bf0bc20e231c08a8c7cb21377ac74b7e24e232425",
+          "timestamp_s": 69.141467
+        },
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-5.jpg",
+          "sha256": "14ebef602d26bacf759e44e3077b683d1a63c01cf1411e60c43ae2ccee8d66f5",
+          "timestamp_s": 69.174833
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-6.jpg",
+          "sha256": "aa6af4a5387f021ddf458472a3b8e4f5c93be6057a8b2952946b6257a65e039e",
+          "timestamp_s": 69.3083
+        },
+        {
+          "index": 7,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-7.jpg",
+          "sha256": "491fbabeb65fc9a2d00f81509df085b252e8d182733aaa0b6e1cee16d944ac9c",
+          "timestamp_s": 69.575233
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-5-8.jpg",
+          "sha256": "5f551bfb1c064a54fb82c016634f97999c5c9cf285dfea7f18da0a4207759db2",
+          "timestamp_s": 69.975633
+        }
+      ],
+      "full_input_window_visually_reviewed": true,
+      "criteria": [
+        {
+          "step_id": "S5",
+          "key": "S5C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "In frame 6, the moving shoe extends visibly toward the foreground, ahead of the other shoe.",
+          "referenced_frame_indices": [
+            6
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S5",
+          "key": "S5C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Frame 5 shows the screen-left shoe raised with a visible gap beneath it while the other shoe remains fully in view near the floor.",
+          "referenced_frame_indices": [
+            5
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S5",
+          "key": "S5C3",
+          "raw_status": "partial",
+          "admitted_status": "partial",
+          "evidence": "Following the foreground extension in frame 6, the shoes are close together near floor level in frames 7–8, but blur prevents confirming the moving shoe's floor contact.",
+          "referenced_frame_indices": [
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-house-construction-stage-5",
+      "source_row_sha256": "6daf42972e9224186c8ae0c8393cab9906e6dd72fb665f480686bc47b99db23e",
+      "source_video_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "current_timestamp_s": 130,
+      "expected_step_id_unchanged": "S5",
+      "reported_raw_step_id": "S5",
+      "displayed_step_id": "S5",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "Close-up timber bearing regions, perforated angle brackets and a foam-like bead are visible.",
+      "completion_and_accuracy_limits": "Visible supports/hardware are supported. No worker fastening action, connection rating or installation approval is established.",
+      "input_frames_sha256": [
+        "6241639a84d852a3d0c6e7244193eaeb0ae9ad6bc64695a4f800cf083dc8d5f5",
+        "deb945a0c1402e3dc1a40be4afa564f2e0e4281610112199bc4ab9be291eb5f6",
+        "c056ab1a1c4b68652d4fab4958fd6a519578ba7fe2979c9d135387bb68ef99a7",
+        "e2618db753ceb871409b90f9a3c89f5c6114396aac9aab1fc1dfbd3fefcc1f9b",
+        "19dc7b06e1873cfe3d27f8449f827c52ff09165b3d2041cac00936bfc5b4d2d3",
+        "ec0bfa49cb2fc47bf65bcb3df63856833e80ff9e671553a398a9163ce265a43d",
+        "2b47e7f57da07186afd9424ed57f5e39c3fbe8f561f5d6692fe5d323df2a2147",
+        "4cd168556eb63e7323abadb5845ea6332a47bf2d8f92e66a8a5b4e6fdc011b81",
+        "4be2f273d6aa769eee82a8d8c23d04e5eb3163bcecc69a202ebe62010a0822b7"
+      ],
+      "visually_reviewed_frame_indices": [
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-5-8.jpg",
+          "sha256": "4be2f273d6aa769eee82a8d8c23d04e5eb3163bcecc69a202ebe62010a0822b7",
+          "timestamp_s": 129.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S5",
+          "key": "S5C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Two roof timbers and the horizontal timber supporting their ends are visible together.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S5",
+          "key": "S5C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The close-up exposes timber bearing regions and perforated metal angle brackets beside the timber ends and on the support face.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-surgery-stage-6",
+      "source_row_sha256": "d4aaf20ebe88e84fa266316d6932d02323a390a51aef946c138e84473d6942ec",
+      "source_video_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "current_timestamp_s": 162,
+      "expected_step_id_unchanged": "S6",
+      "reported_raw_step_id": "S6",
+      "displayed_step_id": "S6",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "A clear curved tube with parallel walls and a metal tip is visible in the endoscopic field; tissue obscures part of the course.",
+      "completion_and_accuracy_limits": "Current tube presence is supported. The transition/continuity criterion is unknown, and placement, patency or appropriateness is not certified.",
+      "input_frames_sha256": [
+        "8d31be6e6ca8b11b000d2a80ebf91b88cd6a2fbad093d0d681e13b6c89f3cbb5",
+        "29011e364fdc805b426b514b73f40d5ba724fcfcd56646f4e96dc418f0339818",
+        "dc991148dfe066234070ca5d66c606ae355754b37b7aa435c763bf4513519e25",
+        "c66ce2d644efe476f724cb322265b38757af61ad2f3ff0cde9a6169913b1a900",
+        "a85372d72d45c67a952e5c08831cb18b6118e19a50596615b6b3c1076f6984c4",
+        "09804bc50ca2c4b6920b4d1c066d276b27e65d6d4a94164ba2c241ba3715d152",
+        "6791835fb2335655b00ef98f8d6b5235efdb88503e89c1f943f5f83b6331b37c",
+        "90ce8a1fad6677c6a5c7d4db839a8705b420d673f95d03b41fec664d08013777",
+        "bbda91460b29e9654bf7c551dae91a61caa86c1a04d29ebef4e8cdc9b8ef5e9a"
+      ],
+      "visually_reviewed_frame_indices": [
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-6-8.jpg",
+          "sha256": "bbda91460b29e9654bf7c551dae91a61caa86c1a04d29ebef4e8cdc9b8ef5e9a",
+          "timestamp_s": 161.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S5",
+          "key": "S5C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Historically, white textured woven material is visible at center-right beside instrument shafts; this is not confirmation of its current presence.",
+          "referenced_frame_indices": [
+            0
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S6",
+          "key": "S6C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "A clear tube with reflective parallel walls curves from the left toward the lower center beside the metal tip.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S6",
+          "key": "S6C2",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "The historical woven-material view precedes a dark transition and then tube-and-tip views. In the recent tube episode, the downward tip and adjacent tube bend visibly shift between frames; no continuous action is inferred across the earlier transition.",
+          "referenced_frame_indices": [
+            0,
+            1,
+            2,
+            5,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-manufacturing-stage-6",
+      "source_row_sha256": "15538adebc014f6d9d60be7901cf34090ae2e2aa20516610a5a8f16433cf6dde",
+      "source_video_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+      "current_timestamp_s": 160,
+      "expected_step_id_unchanged": "S6",
+      "reported_raw_step_id": "S6",
+      "displayed_step_id": "S6",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "A large tooling face has paired recesses, pins, inserts and fasteners. Reviewed frames 4–8 show the yellow-hose mechanism moving out to reveal the face.",
+      "completion_and_accuracy_limits": "The component motion and exposed tooling are supported. No full production cycle, product release or production-quality certification is inferred.",
+      "input_frames_sha256": [
+        "51a212068db379ca5088e2bf446b8850faf870fefd900980118910775b0ce88c",
+        "9907d551dc64d693dde3f31c20e8f08933789d964d7eb6a3ec03ae9366ef5cf7",
+        "85c3362a4f5007494c3a3845d10786e0a895a8590d335509d2f4d8525bb1b0d6",
+        "dbd8578512e6d74546443ae018d7cd2977bf7a809272dc05d5a0058c7f81c852",
+        "9542723ef499f511b5a8f38c5c84bd2fe2c7a4c3f4b7aa4bd05645614d22a599",
+        "6391c64f7e4d7f398f49a1f374b41ab8436464537c7c34b92a2a7f3389367d15",
+        "ac57f7fea0195f86c6a012a68593ca5ec6d0b39d5f430f4f88d485115559303e",
+        "218ea201a20a21e825fe36b462937fc21feac56085719007dc8c4a72d8a5520d",
+        "f6dc2543e9d34fbdd03b556332840181e9ee2d6557a06e688fb7d34b5569e271"
+      ],
+      "visually_reviewed_frame_indices": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 4,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-4.jpg",
+          "sha256": "9542723ef499f511b5a8f38c5c84bd2fe2c7a4c3f4b7aa4bd05645614d22a599",
+          "timestamp_s": 159.12
+        },
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-5.jpg",
+          "sha256": "6391c64f7e4d7f398f49a1f374b41ab8436464537c7c34b92a2a7f3389367d15",
+          "timestamp_s": 159.16
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-6.jpg",
+          "sha256": "ac57f7fea0195f86c6a012a68593ca5ec6d0b39d5f430f4f88d485115559303e",
+          "timestamp_s": 159.56
+        },
+        {
+          "index": 7,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-7.jpg",
+          "sha256": "218ea201a20a21e825fe36b462937fc21feac56085719007dc8c4a72d8a5520d",
+          "timestamp_s": 159.6
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-manufacturing-stage-6-8.jpg",
+          "sha256": "f6dc2543e9d34fbdd03b556332840181e9ee2d6557a06e688fb7d34b5569e271",
+          "timestamp_s": 159.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S6",
+          "key": "S6C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Across these consecutive views, the right-hand mechanism with yellow hoses changes position and becomes motion-blurred before clearing the foreground, while the tooling face remains in place.",
+          "referenced_frame_indices": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S6",
+          "key": "S6C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The exposed metal tooling face shows paired recessed internal regions, projecting pins, rectangular inserts and circular fasteners.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-sport-stage-5",
+      "source_row_sha256": "ab56988b2661f8bdf6673b1b1762db45eb0fdba050ea0f072af8e9d1921986b2",
+      "source_video_sha256": "97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3",
+      "current_timestamp_s": 107,
+      "expected_step_id_unchanged": "S5",
+      "reported_raw_step_id": "S5",
+      "displayed_step_id": "S5",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "The latest image shows a straight weighted bar raised near the chest, both hands gripping and elbows flexed.",
+      "completion_and_accuracy_limits": "Current raised position is supported. Slight downward motion that remains high cannot establish the required low return; no complete repetition or form certification is inferred.",
+      "input_frames_sha256": [
+        "7242c89c5cd49eb45ce4c12122d8314e1b8275511918fe73288c390b51bc3811",
+        "21370d188f2d5d821eecfb8b4fb87fdbba1560878959148269f9ac6e6fb597ed",
+        "6ef5c623f93a13f9769641682183df052e6a7ed0cec181f9af6f725348172484",
+        "6b6a8452b69170bd6ab344d4f13977216628814606ab1f863a5d1e30808cfb11",
+        "dcf7e62b76b9b57b4130daa46d933f9c52caf7384adfd8a1bf6f5c15df3e9700",
+        "c427c2b0610e3456221ad39afab5b3ad5164b26eaa1785d21ea36bd8fc72706a",
+        "80d6b80733f5cd9ddbccf205fca9847e8b3777c4616d4dbe114ae9c3089b980e",
+        "07b8f9e6e0acb45465c107d6d3ad400fdf0de4a588c15bcca54b0bb7c5d5e1dc",
+        "f0ada9d0acd0306aa42d0ab76296a3121b4c717fcfca30ca9aab26cc6a867c00"
+      ],
+      "visually_reviewed_frame_indices": [
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-sport-stage-5-8.jpg",
+          "sha256": "f0ada9d0acd0306aa42d0ab76296a3121b4c717fcfca30ca9aab26cc6a867c00",
+          "timestamp_s": 106.975633
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S5",
+          "key": "S5C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The straight bar is visibly raised close to the chest in the latest view.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S5",
+          "key": "S5C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Both hands visibly encircle the straight shaft while the bar is raised and the elbows are bent.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S5",
+          "key": "S5C3",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "The bar moves slightly downward from the chest-high position in frame 7 to frame 8, but remains raised with bent elbows; a subsequent low position is not visible.",
+          "referenced_frame_indices": [
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-dancing-stage-6",
+      "source_row_sha256": "19a81ca55a6d4cf9d567930e8621c90683a4bb806e19fdeea67bd372fbcb38ad",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "current_timestamp_s": 96,
+      "expected_step_id_unchanged": "S6",
+      "reported_raw_step_id": "S6",
+      "displayed_step_id": "S6",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "After a tiled wipe, the full window changes to a low camera angle with soles visible. One shoe is airborne and later near the floor.",
+      "completion_and_accuracy_limits": "The guide asks for near-floor return, which is supported by reviewed frames; this does not certify exact sole contact, landing quality or a completed exercise set.",
+      "input_frames_sha256": [
+        "e3b2d92d76f0dc9b2577e1222e4ee2a1136552112719ac31ef62c976568ef191",
+        "d4293f8fe1808fb5c9b8207461e09590cc4669486a787e5dfb544cbdd4f6211f",
+        "686c7e9c6474477d73b858c93749517ffc10f4422c4ba7e4e201e28db6c07bf9",
+        "e38b3116b1511f9833bae27f9125a22539701007ae9f946e3eb96f4fd1277b7b",
+        "ad6ea562b8b3b1aed3c21b892df5b9ea7b3fc73fd3248c1a16f6646ea64e28ad",
+        "bfd835957c4f4b2d4398083511af5ef837f52d9f205edbcefbda7a44f998b7f3",
+        "719d9ad8a050c8a5cb8e15532a20db203da4b5de25b0dd393abfeb87d1244fc6",
+        "dc1bea0a1013d8d6d6a1a07c7006436078ae967edc6f1bd4865edbf3716d5053",
+        "d0ae2d0efc4eec0e82966e2dc331543bd66156909dc757f867d84c2834c6a186"
+      ],
+      "visually_reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 0,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-0.jpg",
+          "sha256": "e3b2d92d76f0dc9b2577e1222e4ee2a1136552112719ac31ef62c976568ef191",
+          "timestamp_s": 88.001
+        },
+        {
+          "index": 1,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-1.jpg",
+          "sha256": "d4293f8fe1808fb5c9b8207461e09590cc4669486a787e5dfb544cbdd4f6211f",
+          "timestamp_s": 89.969633
+        },
+        {
+          "index": 2,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-2.jpg",
+          "sha256": "686c7e9c6474477d73b858c93749517ffc10f4422c4ba7e4e201e28db6c07bf9",
+          "timestamp_s": 94.3073
+        },
+        {
+          "index": 3,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-3.jpg",
+          "sha256": "e38b3116b1511f9833bae27f9125a22539701007ae9f946e3eb96f4fd1277b7b",
+          "timestamp_s": 94.640967
+        },
+        {
+          "index": 4,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-4.jpg",
+          "sha256": "ad6ea562b8b3b1aed3c21b892df5b9ea7b3fc73fd3248c1a16f6646ea64e28ad",
+          "timestamp_s": 95.141467
+        },
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-5.jpg",
+          "sha256": "bfd835957c4f4b2d4398083511af5ef837f52d9f205edbcefbda7a44f998b7f3",
+          "timestamp_s": 95.174833
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-6.jpg",
+          "sha256": "719d9ad8a050c8a5cb8e15532a20db203da4b5de25b0dd393abfeb87d1244fc6",
+          "timestamp_s": 95.575233
+        },
+        {
+          "index": 7,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-7.jpg",
+          "sha256": "dc1bea0a1013d8d6d6a1a07c7006436078ae967edc6f1bd4865edbf3716d5053",
+          "timestamp_s": 95.641967
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-6-8.jpg",
+          "sha256": "d0ae2d0efc4eec0e82966e2dc331543bd66156909dc757f867d84c2834c6a186",
+          "timestamp_s": 95.975633
+        }
+      ],
+      "full_input_window_visually_reviewed": true,
+      "criteria": [
+        {
+          "step_id": "S6",
+          "key": "S6C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Following the historical tiled transition, the lower view shows a shoe clearly raised on the left while the other shoe remains visible at the floor; this raised position is especially clear in frame 7.",
+          "referenced_frame_indices": [
+            1,
+            2,
+            7
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S6",
+          "key": "S6C3",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Within the same uninterrupted lower view, the angled raised positions in frames 4–5 are followed by both shoes visibly near the floor in frame 6. This is a sampled return, not evidence of a precise contact pattern or repetition count.",
+          "referenced_frame_indices": [
+            4,
+            5,
+            6
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-house-construction-stage-6",
+      "source_row_sha256": "a435242600e280d91b2312ebded14ba234e9b7bc11fe7dd2cdfd548cd990f1ae",
+      "source_video_sha256": "01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124",
+      "current_timestamp_s": 170,
+      "expected_step_id_unchanged": "S6",
+      "reported_raw_step_id": "S6",
+      "displayed_step_id": "S6",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "A worker handles a flexible dark tabbed strip at the roof edge; earlier reviewed frames 4/5 show a wider house outline.",
+      "completion_and_accuracy_limits": "The worker/material cue is visible, but installed rows of roof covering remain partial because the roof surface is hidden. Similar held frames do not provide independent verification.",
+      "input_frames_sha256": [
+        "8df4afae8608502f9d6e7ff21c5698a00078a2a3202aa6476e00ea052461fa27",
+        "51a2cdc7c20a11fd36594a6f9294b085e843e93107b9fedc2fc39b1735d6e7d4",
+        "ea1131eab94891e7d2134fd77b20844bea5852fe7291cd6bbc4c94749b1b6ed2",
+        "362391e630c04e4b018d7277d8e88e8759af1550a45d7b1bd6b6d6609f254283",
+        "bfd29577e3dd7b3b07036c224535fe2acc49c27c48efd9f9ec005fda70323db4",
+        "5244e1ac56c694dc2c6a666d2783e15ed802e9568e60d24f534d8e5206f8224f",
+        "89172dd0e4b4962133a9e2666d3d93ecfda68554bc2b1c1c177da5e1dc3beaef",
+        "c55738efbb71e0bd11b770c0129fd11edc0d153b9521516f46352066916d3f3d",
+        "3182b31df94d8adff3dfdd82ec4b41adb992bce35a1623d16156fe57c74bfa52"
+      ],
+      "visually_reviewed_frame_indices": [
+        4,
+        5,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 4,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-6-4.jpg",
+          "sha256": "bfd29577e3dd7b3b07036c224535fe2acc49c27c48efd9f9ec005fda70323db4",
+          "timestamp_s": 169.12
+        },
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-6-5.jpg",
+          "sha256": "5244e1ac56c694dc2c6a666d2783e15ed802e9568e60d24f534d8e5206f8224f",
+          "timestamp_s": 169.16
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-house-construction-stage-6-8.jpg",
+          "sha256": "3182b31df94d8adff3dfdd82ec4b41adb992bce35a1623d16156fe57c74bfa52",
+          "timestamp_s": 169.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S5",
+          "key": "S5C2",
+          "raw_status": "met",
+          "admitted_status": "met",
+          "evidence": "The close-up exposes a timber support junction beneath the roof with a small metal bracket at the upright-to-horizontal connection; fastening adequacy is not discernible.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S6",
+          "key": "S6C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The worker visibly holds a dark flexible strip outside beside the roof edge.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S6",
+          "key": "S6C2",
+          "raw_status": "partial",
+          "admitted_status": "partial",
+          "evidence": "A worker and dark roof-edge trim are visible, but the low viewing angle hides most of the roof surface and does not reveal installed covering rows.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S6",
+          "key": "S6C3",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The recent wide exterior view shows the pitched roof outline together with the upper wall panels and window openings; the latest close-up crops most of that outline.",
+          "referenced_frame_indices": [
+            4,
+            5
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-surgery-stage-7",
+      "source_row_sha256": "4c146adbc0cb56a497a5a0a76cd312beebf3d3a3eb66349e2265acb04ed322d3",
+      "source_video_sha256": "b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd",
+      "current_timestamp_s": 178,
+      "expected_step_id_unchanged": "S7",
+      "reported_raw_step_id": "S7",
+      "displayed_step_id": "S7",
+      "phase_verdict": "supported_compatible_episode",
+      "visible_cues": "Reviewed frame 2 is endoscopic tubing/tissue; frame 6 and the latest frame show grayscale cross-sectional imaging.",
+      "completion_and_accuracy_limits": "A coloured-operative-to-imaging transition is supported. End-of-video completion is unknown because the supplied window is before the end. The postoperative caption is not clinical outcome evidence.",
+      "input_frames_sha256": [
+        "a1d0c1ff045a15f59f2006f8b3345b22fefb96b91d25ef9142d3cc2344f80208",
+        "b44fc8285ab89d704752b0bc5b2cebc7c32999df7444c98d29b5587a08db1892",
+        "989e1df4d600c69e24fdc25e49cf7b1c362b37effc351aa4150c6d8cb28458f8",
+        "11d29a03a5514332d30629a631c42a5998ee90d304004301d380123f82ad187c",
+        "0b761df96c5275ca0ed25e0f6c4f9872100efdb5aa418569c78e3768c59217f7",
+        "00f870499ef7a8bb9f6cc35feeb5387b07c6c6138bfdcee9486a6019747b1a71",
+        "f371d405dd327a6be6d59a8de5405cc26d2526a8dc1312e0aa27fdbee22f97ea",
+        "5d82aa296f7c785e7826def892a18abd8030ffc627340e070671bd212d239757",
+        "cbc3716b5104e5251108598386e6eb6f7b4dfe4c33e80834a7d77446c1b7a196"
+      ],
+      "visually_reviewed_frame_indices": [
+        2,
+        6,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 2,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-7-2.jpg",
+          "sha256": "989e1df4d600c69e24fdc25e49cf7b1c362b37effc351aa4150c6d8cb28458f8",
+          "timestamp_s": 176.28
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-7-6.jpg",
+          "sha256": "f371d405dd327a6be6d59a8de5405cc26d2526a8dc1312e0aa27fdbee22f97ea",
+          "timestamp_s": 177.16
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-surgery-stage-7-8.jpg",
+          "sha256": "cbc3716b5104e5251108598386e6eb6f7b4dfe4c33e80834a7d77446c1b7a196",
+          "timestamp_s": 177.96
+        }
+      ],
+      "full_input_window_visually_reviewed": false,
+      "criteria": [
+        {
+          "step_id": "S6",
+          "key": "S6C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "Historical endoscopic frames show translucent curved tubing along the lower-left field. This is earlier context only, not currently visible tubing.",
+          "referenced_frame_indices": [
+            0,
+            2
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S7",
+          "key": "S7C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The colored operative field in frame 2 dissolves through frames 3–6 into the grayscale cross-sectional image clearly displayed in frames 7–8.",
+          "referenced_frame_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S7",
+          "key": "S7C2",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "Frames 7–8 retain the cross-sectional image, but no visible playback-end state establishes that the supplied clip has ended.",
+          "referenced_frame_indices": [
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": false,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-dancing-stage-7",
+      "source_row_sha256": "35c6f1ad33ddd5160527c78c4d559f75f761b20e3f6749a37ec3bb0b06d03879",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "current_timestamp_s": 104,
+      "expected_step_id_unchanged": "S7",
+      "reported_raw_step_id": "S7",
+      "displayed_step_id": "S7",
+      "phase_verdict": "supported_compatible_episode",
+      "visible_cues": "The full window changes from the low shot through a wipe to a wider barre view. The latest shoes overlap near the floor. Historical frame 2 has a bent/rear foot position, but whole-shoe clearance is not independently clear at native 428×240.",
+      "completion_and_accuracy_limits": "Current-scene episode identity is compatible, but raw historical S7C1/S7C2 met claims have ambiguous shoe clearance. Both are unknown in admitted progress; S7C3 is unknown because overlap and the absent following transition limit return assessment.",
+      "input_frames_sha256": [
+        "385177670087ecc5997fb1422f0e4d8ef2f07e46837105f8dacb907025559633",
+        "3a60cd1e7d81dacb06ec18856b85dc5857b85f32b235f466b399fc2bcdf1e945",
+        "069049da8c1b7d48ec339a5511d41e05f4ff2859e815b68cad9f7cbb25d8158f",
+        "b8cbd4337a0f6747f36fce5024a9d51cd48cde28e3e927dd9617b33f5475e7eb",
+        "e713e60c711e3dab24d7f32524f0052311c288cb70ba5ddde456769c2fd6abcf",
+        "2b3bed4ad92c84297d47afa4b746bdb25312ef5f7756bf43a7668aff9e0e524b",
+        "3ee8dff9e4c5bd644b9f9187c96f393417b587c797d0f515742dda5584fa2e78",
+        "c1ae72f96f774461aada66bad630ca078a34eb74de0b104eb47f2c88c01da1ff",
+        "390df3da4c581310418494cda6845fc9ae2888db32162016d91171919508ab3a"
+      ],
+      "visually_reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 0,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-0.jpg",
+          "sha256": "385177670087ecc5997fb1422f0e4d8ef2f07e46837105f8dacb907025559633",
+          "timestamp_s": 96.001
+        },
+        {
+          "index": 1,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-1.jpg",
+          "sha256": "3a60cd1e7d81dacb06ec18856b85dc5857b85f32b235f466b399fc2bcdf1e945",
+          "timestamp_s": 100.972633
+        },
+        {
+          "index": 2,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-2.jpg",
+          "sha256": "069049da8c1b7d48ec339a5511d41e05f4ff2859e815b68cad9f7cbb25d8158f",
+          "timestamp_s": 102.3073
+        },
+        {
+          "index": 3,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-3.jpg",
+          "sha256": "b8cbd4337a0f6747f36fce5024a9d51cd48cde28e3e927dd9617b33f5475e7eb",
+          "timestamp_s": 102.640967
+        },
+        {
+          "index": 4,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-4.jpg",
+          "sha256": "e713e60c711e3dab24d7f32524f0052311c288cb70ba5ddde456769c2fd6abcf",
+          "timestamp_s": 102.974633
+        },
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-5.jpg",
+          "sha256": "2b3bed4ad92c84297d47afa4b746bdb25312ef5f7756bf43a7668aff9e0e524b",
+          "timestamp_s": 103.141467
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-6.jpg",
+          "sha256": "3ee8dff9e4c5bd644b9f9187c96f393417b587c797d0f515742dda5584fa2e78",
+          "timestamp_s": 103.174833
+        },
+        {
+          "index": 7,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-7.jpg",
+          "sha256": "c1ae72f96f774461aada66bad630ca078a34eb74de0b104eb47f2c88c01da1ff",
+          "timestamp_s": 103.575233
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-7-8.jpg",
+          "sha256": "390df3da4c581310418494cda6845fc9ae2888db32162016d91171919508ab3a",
+          "timestamp_s": 103.975633
+        }
+      ],
+      "full_input_window_visually_reviewed": true,
+      "criteria": [
+        {
+          "step_id": "S7",
+          "key": "S7C1",
+          "raw_status": "met",
+          "admitted_status": "unknown",
+          "evidence": "Historical frame 2 shows a bent free leg with its shoe raised behind the supporting leg; this is not the current pose.",
+          "referenced_frame_indices": [
+            2
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "ambiguous_historical_shoe_clearance_withheld_from_progress",
+          "recommended_raw_status": "unknown_or_partial"
+        },
+        {
+          "step_id": "S7",
+          "key": "S7C2",
+          "raw_status": "met",
+          "admitted_status": "unknown",
+          "evidence": "Historical frame 2 shows the supporting shoe at the floor while the rear shoe is raised.",
+          "referenced_frame_indices": [
+            2
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "ambiguous_historical_shoe_clearance_withheld_from_progress",
+          "recommended_raw_status": "unknown_or_partial"
+        },
+        {
+          "step_id": "S7",
+          "key": "S7C3",
+          "raw_status": "unknown",
+          "admitted_status": "unknown",
+          "evidence": "After the historical raised position, frame 8 shows the shoes overlapping close together near the floor. The following transition is not supplied, so the complete required relation is not established.",
+          "referenced_frame_indices": [
+            2,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    },
+    {
+      "id": "real-dancing-stage-8",
+      "source_row_sha256": "23d76fcb3f3f168fab4caa27637eb95046a1fe41f8e8558f8908d73960bbdeb9",
+      "source_video_sha256": "55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852",
+      "current_timestamp_s": 115,
+      "expected_step_id_unchanged": "S8",
+      "reported_raw_step_id": "S8",
+      "displayed_step_id": "S8",
+      "phase_verdict": "supported_distinctive_cue",
+      "visible_cues": "The full window enters a wider travelling rear view. Earlier crossed/overlapped feet separate, followed by a new cross in the latest frame and leftward motion relative to fixed wall/floor.",
+      "completion_and_accuracy_limits": "Earlier separation can support a return after the earlier cross, but is not a return from the latest cross. Exact contacts, repetitions and training completion are not inferred.",
+      "input_frames_sha256": [
+        "2ced473d59a0c1effb70312096f11578adde221e6dd4a4dcc14480295469160d",
+        "95c6c3f8cfbf6ec46733404024758a4e2deab91a09949974fd055131cf560cd5",
+        "a4a5249b77f22c16ec99fed3b0943c4ca152bc7b47f3881b4eca7b9afdfaaa42",
+        "62a7802ef3927cf45cee9f67002c569a408192473425ec9edcad3088a6dc0eb2",
+        "119d2fbed8977f6043b08005b16b25da1ba80f1f3d041fa47c8de7a96ae62879",
+        "084a4ef99af48e55e21438b68de595758bcb087b18ab8d72dc720d0fb3b0301c",
+        "311db3a82285e88b471f18295055ba6abeb090e9140231a6c6505aad1c6c8608",
+        "f63c00d31be8da15fde6bd573492b85ae4ff8545a9accd837b840c52de4e90a0",
+        "164dbea4afba5c4f132bed45ff3f5a58564dfc9848981888852b94605768eca2"
+      ],
+      "visually_reviewed_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "visually_reviewed_frames": [
+        {
+          "index": 0,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-0.jpg",
+          "sha256": "2ced473d59a0c1effb70312096f11578adde221e6dd4a4dcc14480295469160d",
+          "timestamp_s": 107.001
+        },
+        {
+          "index": 1,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-1.jpg",
+          "sha256": "95c6c3f8cfbf6ec46733404024758a4e2deab91a09949974fd055131cf560cd5",
+          "timestamp_s": 107.968633
+        },
+        {
+          "index": 2,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-2.jpg",
+          "sha256": "a4a5249b77f22c16ec99fed3b0943c4ca152bc7b47f3881b4eca7b9afdfaaa42",
+          "timestamp_s": 113.3073
+        },
+        {
+          "index": 3,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-3.jpg",
+          "sha256": "62a7802ef3927cf45cee9f67002c569a408192473425ec9edcad3088a6dc0eb2",
+          "timestamp_s": 113.640967
+        },
+        {
+          "index": 4,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-4.jpg",
+          "sha256": "119d2fbed8977f6043b08005b16b25da1ba80f1f3d041fa47c8de7a96ae62879",
+          "timestamp_s": 114.141467
+        },
+        {
+          "index": 5,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-5.jpg",
+          "sha256": "084a4ef99af48e55e21438b68de595758bcb087b18ab8d72dc720d0fb3b0301c",
+          "timestamp_s": 114.174833
+        },
+        {
+          "index": 6,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-6.jpg",
+          "sha256": "311db3a82285e88b471f18295055ba6abeb090e9140231a6c6505aad1c6c8608",
+          "timestamp_s": 114.3083
+        },
+        {
+          "index": 7,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-7.jpg",
+          "sha256": "f63c00d31be8da15fde6bd573492b85ae4ff8545a9accd837b840c52de4e90a0",
+          "timestamp_s": 114.575233
+        },
+        {
+          "index": 8,
+          "file": "qa/adaptive-frame-packs/refined-v1/real-dancing-stage-8-8.jpg",
+          "sha256": "164dbea4afba5c4f132bed45ff3f5a58564dfc9848981888852b94605768eca2",
+          "timestamp_s": 114.975633
+        }
+      ],
+      "full_input_window_visually_reviewed": true,
+      "criteria": [
+        {
+          "step_id": "S8",
+          "key": "S8C1",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "In the latest frame, the bent lower leg and raised shoe cross behind the other leg.",
+          "referenced_frame_indices": [
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S8",
+          "key": "S8C2",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The crossed position in frames 4–5 changes to visibly separated shoes in frame 7 within the same wider shot. This supports that earlier transition, not a return from the newest crossed pose.",
+          "referenced_frame_indices": [
+            4,
+            5,
+            7
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        },
+        {
+          "step_id": "S8",
+          "key": "S8C3",
+          "raw_status": "met",
+          "admitted_status": "partial",
+          "evidence": "The performer shifts leftward relative to the fixed wall and floor between the separated stance and the latest crossed-leg position.",
+          "referenced_frame_indices": [
+            7,
+            8
+          ],
+          "all_referenced_images_visually_reviewed": true,
+          "review_verdict": "review_against_case_cues_and_limits",
+          "recommended_raw_status": null
+        }
+      ],
+      "whole_step_completion_verified": false,
+      "admitted_complete_step_ids": [],
+      "unsupported_clinical_or_safety_certification_observed": false,
+      "unsupported_exact_repetition_count_observed": false
+    }
+  ]
+}

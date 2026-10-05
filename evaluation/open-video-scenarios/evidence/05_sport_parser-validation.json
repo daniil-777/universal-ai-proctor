@@ -1,0 +1,58 @@
+{
+  "validated_at": "2026-10-05T10:25:40.138Z",
+  "steps": 5,
+  "principles": 15,
+  "warnings": [],
+  "criteria": [
+    {
+      "name": "Identify the EZ bar and visible starting grip",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "name": "Observe an EZ-bar raise and lowering in the close view",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "name": "Observe the later EZ-bar demonstration views",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "name": "Identify the straight bar and visible starting position",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "name": "Observe the straight-bar raise and lowering",
+      "count": 3,
+      "duration_min": 0,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    }
+  ]
+}

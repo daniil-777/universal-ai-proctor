@@ -1,0 +1,429 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Process Guide — Improvement report</title><style>*{box-sizing:border-box}body{margin:0;background:#eff4f5;color:#163442;font:16px/1.6 system-ui,sans-serif}header{background:#0a1c29;color:white;padding:32px max(20px,calc((100vw - 1000px)/2))}h1{font-size:clamp(28px,5vw,44px);line-height:1.2}main{max-width:1050px;margin:auto;padding:24px 20px}.note{background:#deedee;border-left:4px solid #087989;padding:18px}.wrap{overflow:auto}table{width:100%;border-collapse:collapse;background:white}th,td{padding:14px;text-align:left;vertical-align:top;border-bottom:1px solid #d7e5e8}details{padding:16px;background:white;border:1px solid #d7e5e8;border-radius:10px;margin:12px 0;overflow-wrap:anywhere}summary{cursor:pointer;min-height:44px;font-weight:600}a{color:#087b88;display:inline-block;padding:12px 4px;min-height:44px}header a{color:#9be2dd}li,p{overflow-wrap:anywhere}</style><header><p>PROCESS GUIDE · VERIFIED UPDATES</p><h1>Better sampling. Clearer evidence.</h1><a href="../index.html">Videos and instructions</a></header><main><p>High detail preserves1280px images. Recent-motion sampling keeps the same image budget. Held video frames are sampled at actualdisplaytime without new independent completionvotes. Uncertain currentphase has no active-stagehighlight, and Guardian displays its observationtimestamp. The mainpage nowopens thislibrary directly.</p><p class="note">All32guidance stages stillload. The same-protocol change17→18is one run and is not a statistical accuracy estimate. The revised diagnostic19/32changes anchors and sampling, so it does not isolate code improvement. The last sparse-framefix was verified on synthetic held-frame footage and the two actualsurgicalwindows; it was not followed by anotherfull42questionrun. Incorrect dance-grounding/returnclaims and overlapping phases remain. This is not clinicalvalidation.</p><div class="wrap"><table><thead><tr><th>Check</th><th>Exactstage matches</th><th>Questionsanswered</th><th>Protocol</th></tr></thead><tbody><tr><td>Original check</td><td>17/32</td><td>42/42</td><td>3 frames /1s, original42questions</td></tr><tr><td>Same-protocol rerun</td><td>18/32</td><td>0/32</td><td>Same32Guardiananchors; originalquestionwording. Guardian-only.</td></tr><tr><td>Revised diagnostic</td><td>19/32</td><td>42/42</td><td>Correctedanchors, revisedquestions,6frames/5s; differentprotocol.</td></tr><tr><td>Sparse surgical recheck</td><td>2/2</td><td>0/2</td><td>Two previouslymissedcurrentviews after displayed-timefix; Guardian-only.</td></tr></tbody></table></div><p>All these live provider runs returned without requesterrors. Guardian-only checks did not ask questions.</p><a href="improvement-comparison.json" download>Comparison data</a> · <a href="improved-baseline-results.json" download>Same-protocol results</a> · <a href="improved-v2-results.json" download>Revised results</a> · <a href="vfr-surgical-recheck-results.json" download>Surgical recheck</a><h2>Revised questions and actual answers</h2><details><summary>real-surgery-stage-1 · 11s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> Introductory cross-sectional grayscale imaging is shown before the endoscopic working view. It does not establish a diagnosis or operative action.</p><p><b>Actual:</b> The visible image is a grayscale CT scan with notable anatomical features and no surgical instruments or operative fields. This suggests it corresponds to the introduction and pre-procedure images, potentially aligning with Step 1 of the workflow.
+
+### Limits on Declaring the Phase Complete:
+- The opening title card presence has not been confirmed.
+- A sequence of grayscale cross-sectional images needs to be observed before determining the phase is complete.
+
+Thus, while this image may belong to Step 1, these criteria need to be fully satisfied to confirm completion.</p><p><b>Guardian:</b> The current image displays a grayscale CT scan with notable anatomy and no visible instruments or operative field changes.<br>Expected S1; returned uncertain</p></details><details><summary>real-dancing-stage-1 · 7s</summary><p><b>Question:</b> In this tight side-on shoe crop, which guidance phase is most consistent with the visible lift? Describe what is visible and do not assume a floor return outside the supplied frames.</p><p><b>Reference:</b> The tight side-on opening shoe-lift example is most consistent with S1. The supporting shoe is visible at the floor; the other shoe is cropped or raised out of the anchor frame. This frame does not establish the opening two-shoe stance or a later return.</p><p><b>Actual:</b> In the images provided, the visible evidence shows a side-on view of shoes during a tap dance sequence. Here&#39;s what&#39;s clear:
+
+- **Lifted Shoe**: In frame [6.139467], one shoe is slightly lifted off the ground, indicating motion.
+- **Grounded Stance**: In frames [6.573233] and [6.973633], both shoes appear to be grounded on the studio floor with no visible lift.
+
+This consistency aligns primarily with **Step 1** of the workflow: &quot;Observe the opening shoe contact and lift.&quot;
+
+### Specific Observations:
+- **Visible Lift**: In one frame, the shoe is lifted, which partially meets criterion &quot;A working shoe is visibly tilted or raised while the other shoe remains near its starting position&quot; from Step 1.
+- **Grounded Return**: Later frames show both shoes on the floor, aligning with the expected return stance but without evidence of the entire motion within the shot duration.
+
+### Unclear Details:
+- **Continuous Motion**: The complete motion from lift to return isn&#39;t fully visible in a single frame sequence.
+  
+These images confirm partial criteria of Step 1, particularly the initial lift, but potential for full verification is limited due to cropped movement and frame separation.</p><p><b>Guardian:</b> The images show a sequence of tap dance steps with shoes visible on a studio floor. In the latest frame, both shoes are grounded, with no movement apparent. An earlier frame shows a shoe slightly lifted, indicating motion.<br>Expected S1; returned S1</p></details><details><summary>real-sport-stage-1 · 35s</summary><p><b>Question:</b> Which guidance phase is most consistent with this overhead view of hands contacting the bar near the floor? Identify the visible bar shape and explain which starting-position criteria are not yet shown.</p><p><b>Reference:</b> The beginning of S1, starting grip and pickup, is most consistent: both hands contact an angled EZ bar near the floor in an overhead view. The anchor does not show an upright low hold, a complete pickup, or a curl repetition.</p><p><b>Actual:</b> In the latest image, the person is bent over, gripping an EZ bar with both hands. This scene aligns with Step 1: &quot;Identify the EZ bar and visible starting grip.&quot;
+
+Visible Evidence:
+- The EZ bar with angled shaft sections and plates is present.
+- Both hands are clearly contacting the bar.
+
+Unclear Details:
+- The position of the bar relative to the torso is not visible. We cannot confirm the bar is below the torso with arms extended downward.
+
+For Step 1 completion, confirm the bar&#39;s position below the torso and the arms fully extended in a low position.</p><p><b>Guardian:</b> The latest image shows a person bent over, gripping an EZ bar with both hands, confirming the identification and grip on the bar with angled shaft sections and plates visible.<br>Expected S1; returned S1</p></details><details><summary>real-manufacturing-stage-1 · 27s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> An operator interacting with a machine controller is shown. The console interaction is visible, while program correctness remains unverified.</p><p><b>Actual:</b> The current visible evidence suggests the guidance phase is &quot;Observe machining context and controller interaction&quot; (Step 1). Here&#39;s why:
+
+1. **Machine Work Area**: The images show a machine with a tool mounted above metal components. This satisfies the need for a visible tooling context in the machine work area.
+
+2. **Operator Interaction**: There is visible interaction of an operator with a control console, which partially satisfies the requirement for visibly engaging with controls.
+
+### Unclear or Missing Details:
+
+- **Complete Verification**: While the operator is present at the console, further evidence is needed to fully confirm interaction specifics as required by the workflow.
+  
+Therefore, this phase is partially addressed but not complete due to the specific interaction details not being fully visible.</p><p><b>Guardian:</b> The current image shows a machine with a tool mounted above metal components, and previously an operator interacts with a control console.<br>Expected S1; returned S2</p></details><details><summary>real-house-construction-stage-1 · 10s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> Panel-edge preparation and presented fasteners are shown. Hardware in a gloved hand is observable, but fastening quality is unverified.</p><p><b>Actual:</b> ### Observed Phase:
+
+**Current Step: S1 - Observe panel-edge preparation and hardware presentation.**
+
+### Evidence:
+- **Metal Fasteners:** Multiple views show metal fasteners held in a gloved hand, labeled &quot;Galvanized hardware.&quot; This aligns partially with step S1C2.
+
+- **Panel and Timber Detail:** The other images display the edge of a panel with visible high-density polystyrene and timber, but there is no clear evidence of an applicator gun being used or a close-up of these edges being joined.
+
+### Unclear Details:
+- **Applicator Presence:** The applicator is not visible in conjunction with the panel edge in a close-up as required by S1C1.
+  
+- **Edge Joining Detail:** There is no sufficient close-up observation showing the joining process for the panel or timber edge (S1C3).
+
+### Incomplete Criteria:
+- Without the presence of the applicator or the joining in a close-up, steps S1C1 and S1C3 remain unobserved and thus the phase cannot be declared complete.</p><p><b>Guardian:</b> The latest image shows metal fasteners held in a gloved hand, with a caption &#39;Galvanized hardware.&#39;<br>Expected S1; returned S1</p></details><details><summary>real-surgery-stage-2 · 27s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The first colored endoscopic instrument scene is shown. Instrument tips are visible in the field, without enough evidence to identify hidden contact or success.</p><p><b>Actual:</b> Based on the latest images, the visible evidence includes:
+
+1. **Endoscopic View**: The images show an endoscopic view with visible instrument tips manipulating tissue.
+2. **Instrument Interaction**: The instruments appear to be positioning or moving tissue. However, there is no distinct visibility of a thread, loop, or woven material.
+3. **Image Quality**: The view is clear, showing the instrument tips and tissue interaction, but without additional details like a tube or a change of view.
+
+The primary limitation on declaring a phase complete is the absence of specific elements required for certain workflow steps, such as a visible thread (Step 3) or woven material (Step 5). Without these, it’s uncertain whether a particular step is fully observable.
+
+### Uncertain Details:
+- No visible thread or woven material, making it challenging to definitively align with Steps 3 or 5.
+- No clear view of a tube, which would assist in identifying Step 6.
+
+### Current Phase:
+- The images could potentially align with Step 2, focusing on observing the first endoscopic instrument scene. However, without more context or specific cues, confirming complete alignment with any particular step is uncertain.
+
+Further visual evidence displaying these unique features is needed to proceed confidently.</p><p><b>Guardian:</b> The images show an endoscopic view with visible instruments and tissue handling. Instruments appear to be manipulating or positioning tissue without clear visibility of threads or material changes.<br>Expected S2; returned uncertain</p></details><details><summary>real-dancing-stage-2 · 23s</summary><p><b>Question:</b> In this oblique close view, which phase is most consistent with the free shoe raised behind the supporting leg? Use the motion window to separate it from later similar shoe-lift examples.</p><p><b>Reference:</b> The oblique lifted-shoe example S2 is most consistent with the anchor: a free shoe is visibly raised behind the grounded supporting leg. A return to the floor should only be reported if it appears in the supplied sequence.</p><p><b>Actual:</b> In the provided sequence, the images show a person with tap shoes performing dance moves on a studio floor. The visible evidence indicates:
+
+1. **Shoe Contact (Frames 1 &amp; 6):** Both shoes are initially in contact with the floor, then the supporting shoe remains while the other is raised.
+   
+2. **Raising and Orientation (Frames 2 &amp; 5):** A working shoe is lifted behind or beside the supporting leg, and it returns to the floor in the same frame sequence.
+
+In response to the question about a shoe raised behind the supporting leg, the sequence most closely matches **Step 7: Observe the wider rear-foot lift**. Here:
+
+- **Criteria S7C1:** A free shoe is visibly raised.
+- **Criteria S7C2:** The supporting shoe remains grounded.
+
+These visual cues align with the principles and actions of Step 7. Other steps may involve similar actions but with different camera views or context.</p><p><b>Guardian:</b> The sequence shows a person in tap shoes performing footwork on a studio floor. The latest frame depicts one shoe raised at a slight angle while the other remains grounded.<br>Expected S2; returned S1</p></details><details><summary>real-sport-stage-2 · 41s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The close-view EZ-bar raise/lower demonstration is shown. The raised bar is near the torso with increased elbow bend; a full repetition needs a subsequent lowering in the same shot.</p><p><b>Actual:</b> The current visible evidence shows a person holding an EZ bar with both hands in front of their thighs, indicating they are preparing to perform a curl exercise. The bar&#39;s angled sections and plates are visible, confirming the presence of the EZ bar. 
+
+### Step Identification
+
+**Phase:** Step 1 - &quot;Identify the EZ bar and visible starting grip.&quot; 
+
+#### Visible Evidence:
+- **EZ Bar with Angled Shaft:** Confirmed, visible plates attached.
+- **Both Hands Holding the Bar:** Confirmed, hands are visibly gripping the bar.
+- **Bar Position:** Bar is visibly below the torso, arms extended downward.
+
+### Limits on Completion:
+- **Partial Completion:** Not all criteria for Step 1 are fully met. The current position of the bar confirms some of the required criteria but not all required views to fully complete Step 1.
+  
+The demonstration is still in the process of starting and preparing for the exercise. The principle here is to ensure the correct starting form before moving into the exercise motion for safety and effectiveness. Further motion would be needed to verify subsequent steps.</p><p><b>Guardian:</b> The recent images show a person holding an EZ bar with both hands in front of their thighs, suggesting preparation for a curl exercise. The bar&#39;s angled sections and plates are visible, confirming the presence of the EZ bar as per the workflow.<br>Expected S2; returned S1</p></details><details><summary>real-manufacturing-stage-2 · 35s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> Machine-tool activity is the phase: a mounted workpiece or tooling appears in the machine work area. Parameters and acceptance are unverified.</p><p><b>Actual:</b> The latest images show a close-up view of a machine with a metal fixture inside, which suggests tooling or machining activity. The machine enclosure is visible, which aligns with Step 2: &quot;Observe machine-tool activity.&quot; This step involves recognizing a visible tool-and-workpiece operation in the views.
+
+### Visible Evidence:
+- A metal fixture inside the machine suggests the presence of mounted tooling or workpiece.
+- The machine enclosure is visible, confirming the machine context.
+
+### Limits:
+- The operator interaction or tool motion is not visible, so the full motion and contact cannot be confirmed (criteria S2C2 is uncertain).
+- No operator or controller console interaction is visible (criteria S1C2 is incomplete).
+
+Given these observations, Step 2 is identifiable, but the lack of motion prevents confirming the complete operation phase. The focus should be on identifying any potential movement in subsequent details.</p><p><b>Guardian:</b> The latest image shows a close-up of a machine with a metal fixture inside, suggesting tooling or machining activity. There is no visible operator or interaction with a controller console in the current view.<br>Expected S2; returned S2</p></details><details><summary>real-surgery-stage-3 · 82s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The visible thread or loop and instrument-handling phase is shown. Movement can be described without declaring a secure knot or successful repair.</p><p><b>Actual:</b> The latest images show a surgical scene with visible instrument tips interacting with a thread or loop. This suggests that Step 3, &quot;Follow the visible thread and instrument sequence,&quot; is currently being observed. The visible evidence includes:
+
+- The presence of a thread or loop within the field of view.
+- Instrument tips are interacting with the thread, indicating handling or manipulation.
+- Repeated instrument movements are visible.
+
+However, declaring this step complete requires further verification that:
+
+- The thread position visibly changes while an instrument tip handles or approaches it consistently (partial status is noted).
+- A definitive sequence of working tips and thread movement should be well documented without unclear intervals.
+
+Remaining uncertainties involve verifying continuous handling due to potential cuts or occlusions between frames.</p><p><b>Guardian:</b> The latest images show a surgical scene with visible instrument tips interacting with tissue and a thread or loop in the field of view. There are multiple images of a tool manipulating or positioned near a thread, demonstrating repeated instrument movements.<br>Expected S3; returned S3</p></details><details><summary>real-dancing-stage-3 · 35s</summary><p><b>Question:</b> In this front/oblique close-foot view, identify the phase best supported by the sequence and describe the working shoe direction. Do not infer a forward-and-back cycle solely from one raised-shoe frame.</p><p><b>Reference:</b> S3 is the guide phase for this front/oblique forward-and-back example. The reviewed anchor shows a raised working shoe beside or behind the supporting leg. Forward movement and a return require the surrounding frames; the anchor alone cannot distinguish every similar close-foot example.</p><p><b>Actual:</b> ### Visible Evidence
+
+In the series of frames provided:
+
+1. **Opening View** (Timestamp 30.03s): Both shoes appear grounded, meeting the criteria of a starting stance.
+   
+2. **Shoes Movement** (Timestamps 32.09s, 34.16s, 34.20s, 34.60s): 
+   - A shoe is seen lifted, moving forward and showing moments of tilted and grounded positions.
+   - The movement sequence shows the shoe extending forward, suggesting a forward movement.
+
+3. **Final Stance** (Timestamp 35.00s): The shoe returns toward a position near the other shoe.
+
+### Uncertainty
+
+- Details of precise foot positions and contact with the floor are not entirely clear due to potential blur.
+- Exact movements of the non-working shoe during the sequence remain partially obscured.
+
+### Identified Phase
+
+The sequence most aligns with **Step 3: Observe the forward and backward shoe movement**, evidenced by the visible forward movement of the working shoe and its subsequent return motion close to the starting stance. However, not all criteria (e.g., clear return to floor contact) are fully confirmed due to visibility limitations.
+
+### Principle Note
+
+A frame showing a shoe lifted or forward does not, by itself, prove the completion of a forward-and-back cycle unless further context in additional frames supports the full sequence.</p><p><b>Guardian:</b> The current view shows one shoe raised off the floor, with moments of tilted and grounded positions in previous frames.<br>Expected S3; returned S1</p></details><details><summary>real-house-construction-stage-2 · 40s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The lower-storey wall enclosure is developing: upright wall panels and openings are visible. Hidden connections remain unverified.</p><p><b>Actual:</b> Based on the latest visible evidence, the observed phase corresponds to &quot;Step 2: Observe the ground-floor wall enclosure.&quot;
+
+### Visible Evidence:
+- The images show ground-floor walls being assembled with vertical wall panels around the deck.
+- Workers are visible, indicating active construction.
+- Some panels have openings, possibly for windows or doors.
+
+### Limits on Declaring the Phase Complete:
+- **S2C1 (Wide views show upright wall panels around the ground-floor deck)** is partially visible, as parts of the walls are upright.
+- **S2C2 (Later views show a more developed wall perimeter than earlier views)** is partially complete, as progress on the wall perimeter is visible.
+- **S2C3 (At least one opening or interior partition is visible in the ground-floor enclosure)** is partially visible with some clear openings in the panels.
+
+Completion of Step 2 is not fully confirmed since each criterion is only partially visible, indicating ongoing construction rather than full completion of the ground-floor enclosure.</p><p><b>Guardian:</b> The latest image shows a construction site with partially completed ground-floor walls and open frames. Workers and upright panels are visible, indicating ongoing assembly of the ground floor.<br>Expected S2; returned S2</p></details><details><summary>real-surgery-stage-4 · 117.6s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> A brief circular monochrome imaging view interrupts the operative sequence. This is a change of displayed view, not a diagnostic conclusion.</p><p><b>Actual:</b> The visible guidance phase appears to correspond to Step 3: &quot;Follow the visible thread and instrument sequence.&quot; In both images, there are visible instruments and what seems to be a thread or loop interacting with tissue.
+
+**Visible Evidence:**
+
+1. **First Image:**
+   - Instruments are clearly visible interacting with the tissue.
+   - A thread or loop is apparent in the operative field.
+
+2. **Second Image:**
+   - An instrument is shown in contact with tissue.
+   - A yellowish tube is visible, but the details of its interaction are unclear.
+
+**Limits on Declaring Phase Complete:**
+
+- While the interactions between the instruments and the thread are visible, precise changes in thread positions or secure knot completion are not confirmed. Details about the thread&#39;s handling beyond visible movement are not evident.
+- This phase does not establish the clinical success of an operation or secure knot tying.
+
+The sequence and movements typical of Step 3 are partially observed, but due to incomplete visibility, the phase cannot be definitively declared complete.</p><p><b>Guardian:</b> The images display a surgical scene with visible instruments and what appears to be a thread or loop in contact with tissue. The thread and instruments are interacting within the endoscopic view.<br>Expected S4; returned S3</p></details><details><summary>real-manufacturing-stage-3 · 60s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The tool-presentation and manual-tooling section includes a digital indicator with a probe above a metal block. This is not a calibrated acceptance result.</p><p><b>Actual:</b> The visible guidance phase here corresponds most closely to **Step 3: Observe tool presentation and manual tooling work** based on the following observations:
+
+1. **Digital Indicator and Metal Block**: In several images, a digital indicator with a probe is clearly shown above a metal block, satisfying part of the criteria for Step 3 (S3C2).
+
+2. **Tool Rack and Control Unit**: Although the digital indicator is visible, the row of tools in a rack or a control unit is not seen here, leaving the full criteria for Step 3 (S3C1) unverified.
+
+3. **Hands Working**: There is no evidence of hands working at an exposed tooling assembly, leaving (S3C3) unconfirmed.
+
+**Limits on Completion**: The phase cannot be declared complete because the tool rack and manual work are not visible. Full completion of Step 3 requires all these elements to be observed.</p><p><b>Guardian:</b> The current images show a digital indicator with a probe above a metal block, though the row of tools is not visible.<br>Expected S3; returned S3</p></details><details><summary>real-sport-stage-3 · 50s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The later, wider EZ-bar demonstration is shown. Bar position and hand contact are visible, but edits do not establish a completed set.</p><p><b>Actual:</b> The current visible guidance phase corresponds to &quot;Observe an EZ-bar raise and lowering in the close view&quot; (Step S2).
+
+**Visible Evidence:**
+- The performer is holding the EZ bar with both hands in an underhand grip.
+- The bar is closer to the upper torso, showing a raised position.
+- Elbows are bent, indicating a curl is occurring.
+
+**Unmet Criteria:**
+- The subsequent low bar position with less elbow bend in the same view has not been fully confirmed (S2C3).
+
+The completion of this phase requires observing the full cycle down to the low bar position.</p><p><b>Guardian:</b> The recent frames show a person holding an EZ bar with an underhand grip. The bar is closer to the upper torso, indicating a curl is being performed.<br>Expected S3; returned S2</p></details><details><summary>real-dancing-stage-4 · 53s</summary><p><b>Question:</b> In this front/oblique close-foot view, which phase is most consistent with the visible angled shoe or raised heel near the floor? Explain whether the supplied frames actually show a change in orientation.</p><p><b>Reference:</b> S4 is most consistent with the near-floor shoe-orientation example. The reviewed anchor shows an angled working shoe or raised heel beside the other shoe. An orientation change or return should only be claimed when visible across the supplied frames.</p><p><b>Actual:</b> In the frames provided, the sequence begins with one shoe visibly lifted off the floor while the other maintains contact with the floor. This suggests movement, consistent with steps where a shoe can be observed either lifting or maintaining contact.
+
+- **Principle Observed**: The principle here is to track visible movement and identify when a shoe is lifted or tilted relative to the floor.
+- **Specific Unclear Details**: The exact moment each shoe returns to a unified position next to the other shoe cannot be confirmed due to the limitation in frame transitions.
+
+In terms of the workflow:
+- **Step 2 (S2)** is most relevant because it involves the shoe being lifted clear of the floor in an oblique view while the other remains grounded. However, very few criteria are fully observed, such as the complete return of both shoes to the floor within the same image sequence.
+- **Uncertainty**: Confirmation of both shoes returning to a close proximity position on the floor is unclear given the current frames available.
+
+To conclude, while partial observations align with Step 2, complete confirmation of all criteria requires more continuous evidence.</p><p><b>Guardian:</b> The latest image shows a person wearing tap shoes with one shoe visibly lifted off the floor, indicating movement. The other shoe remains on the floor, maintaining contact.<br>Expected S4; returned S1</p></details><details><summary>real-house-construction-stage-3 · 90s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> Upper-floor or upper-storey assembly is visible above the lower enclosure. This identifies a construction phase, not a structural result.</p><p><b>Actual:</b> The visible evidence suggests that the house construction is currently in the phase corresponding to &quot;Step 3: Observe upper-floor framing and the next wall level&quot; from the workflow. In the images:
+
+- **Timber floor members** are visible spanning the top of the lower wall enclosure, which fits the criteria for the upper-floor framing.
+- There are **upright wall panels forming the next storey**, confirming partial progress in this phase.
+
+However, the absence of further visible details, such as exposed upper-wall edge work or roof-outline development, makes it uncertain to declare the step fully observed. No elements indicating the development of a roof structure are present, so phases related to roof construction are not verified.
+
+In conclusion, the images show evidence of progress in the current phase but lack details to confirm transition to the subsequent steps.</p><p><b>Guardian:</b> The latest image shows completed footing of the house with visible beams and partial wall panels above the ground floor, indicating an emerging two-storey structure.<br>Expected S3; returned S3</p></details><details><summary>real-surgery-stage-5 · 133s</summary><p><b>Question:</b> Which visible descriptive phase is most consistent with the clearly woven light material near the instrument? Describe its texture and acknowledge any separate tube visible; do not prescribe surgical action.</p><p><b>Reference:</b> S5 is most consistent with the clearly exposed woven light material near an instrument. Its mesh/weave texture is visible, while a separate reddish/orange tube is also in the scene. This is retrospective image description and does not establish clinical outcome or recommend an instrument action.</p><p><b>Actual:</b> The visible phase most consistent with the woven light material involves its interaction with the instruments in view. The woven material appears textured and is being handled by the instrument. The presence of a clear curved tube is also visible, indicating its position in the surgical field without suggesting any procedural function.
+
+In this sequence:
+
+- A woven material is present, suggesting a textile-like texture.
+- Instruments are interacting with it, showing handling movements.
+- A clear tube is visible alongside these interactions.
+
+This observation aligns with Step 5 (&quot;Observe the visible woven-material sequence&quot;) of the workflow, focusing on the presence and handling of woven materials with instruments during the procedure.</p><p><b>Guardian:</b> The latest image shows visible woven material and an instrument interacting with it, along with another instrument in the frame.<br>Expected S5; returned S5</p></details><details><summary>real-dancing-stage-5 · 70s</summary><p><b>Question:</b> In this later front/oblique close-foot sequence, which phase is most consistent with the working shoe passing forward or across the supporting foot? State the visible direction and any ambiguity with earlier examples.</p><p><b>Reference:</b> S5 is the later forward/across shoe-lift series. The anchor shows a moving working shoe forward or across the other with motion blur. The return and exact edited example need temporal context; similar close-foot phases cannot be separated from a generic lift alone.</p><p><b>Actual:</b> In the observed sequence, the working shoe is moving forward across the supporting foot. This is visible as the shoe is being lifted and moved across in a swinging motion, consistent with passing a shoe forward.
+
+**Visible Direction:**
+- The working shoe is lifted and moves forward and slightly to the side, crossing the position of the supporting shoe, which remains grounded.
+
+**Uncertainty:**
+- The precise positioning relative to the exact starting point of the other shoe is unclear due to frame transitions.
+- Background and potential motion blur may hinder exact foot position and contact point observation.</p><p><b>Guardian:</b> The sequence shows a dance move with the left shoe visibly lifted in the air. The right shoe remains grounded on the studio floor.<br>Expected S5; returned S1</p></details><details><summary>real-manufacturing-stage-4 · 90s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> Further tooling operations are shown, with a spindle or tool positioned over mounted metal blocks. The film does not establish one continuous tracked part.</p><p><b>Actual:</b> The latest visible phase relates to &quot;Observe product presentation and further tooling operations&quot; (Step 4). The first image shows a manufactured component presented separately against a blue background, aligning with Step 4’s requirement to observe an isolated product.
+
+However, the phase cannot be declared fully complete. The workflow requires both the product presentation and a later machine view showing a tool positioned over mounted metal blocks or tooling. The images provided show the component separately, but without a distinct subsequent tool-machine interaction in the same sequence, completing the phase is uncertain.
+
+Key limits:
+- No visible evidence of tools specifically positioned over mounted blocks or subsequent tooling-machine shots in these images.
+- Motion or contact in Step 2 is partially visible, lacking complete sequence continuity needed to assert completion.
+
+Further images or observation would be necessary to determine completion of this phase fully.</p><p><b>Guardian:</b> The latest image shows a manufactured component presented separately with a blue background, aligning with product presentation. A preceding image indicates machine-tool activity with a machining setup visible, but lacks observable motion.<br>Expected S4; returned S4</p></details><details><summary>real-sport-stage-4 · 93s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The straight-bar starting position is shown. Both hands hold a straight-shaft bar low before the curl demonstration, without verified plate load or equipment checks.</p><p><b>Actual:</b> The visible evidence shows a person handling a straight bar with visible plates. The performer is standing upright with the bar held low in front of his thighs. This aligns with part of **Step 4: Identify the straight bar and visible starting position** of the workflow.
+
+- **Criteria observed:**
+  - A visibly straight bar with plates is present.
+  - The performer holds the bar low in front of the thighs, although full criteria for standing upright are not fully visible due to the angle.
+
+**Limits:**
+- It is unclear if both hands are firmly on the bar, as the angle and crop may obscure this observation.
+- The images do not show the movement of the bar towards the torso or any curling motion yet, which would apply to subsequent steps.
+
+Completion of Step 4 isn&#39;t fully confirmed due to these visibility limits.</p><p><b>Guardian:</b> The latest image sequence shows a person holding a straight bar with visible plates, standing upright with the bar held low in front of his thighs.<br>Expected S4; returned S4</p></details><details><summary>real-surgery-stage-6 · 162s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The later tube-and-instrument phase is shown. A clear curved tube is visible, without evidence establishing correct placement or drainage effectiveness.</p><p><b>Actual:</b> The visible guidance phase corresponds to **Step 6: Observe the later tube and instrument views**. 
+
+### Visible Evidence:
+- **Tube and Instrument Views**: The images show a clear curved tube visible in the endoscopic scene, with instruments actively manipulating it. 
+- **Instrument Movement**: Instruments are interacting with the tube, indicating handling is occurring.
+
+### Limits on Declaring the Phase Complete:
+- **Partial Criteria Met**: While the tube and instrument handling are visible, without the full sequence of position changes throughout the clip, complete observation may be limited.
+- **Handling Confirmation**: The sequence shows handling, but it should not be assumed that the procedure or task involving the tube is complete without further context.
+
+The steps appear to be partially fulfilled, indicating progress within this observational phase.</p><p><b>Guardian:</b> The latest images display a visible tube and instruments actively manipulating it in an endoscopic field.<br>Expected S6; returned S6</p></details><details><summary>real-dancing-stage-6 · 96s</summary><p><b>Question:</b> Which phase is most consistent with this lower-camera view of a raised shoe with its sole facing the camera? Describe the camera cue and avoid inferring whole-body balance.</p><p><b>Reference:</b> S6 is supported by the distinct lower-camera view: a raised working shoe and its sole are visible toward the camera. The cropped body prevents whole-body balance assessment. A return or the preceding faster view requires separate temporal evidence.</p><p><b>Actual:</b> The sequence observed in the current frames aligns most closely with **Step 6: Observe the faster and lower-camera footwork examples**. Here&#39;s why:
+
+- **Camera Cue**: The view is from a lower angle, focusing on the feet, which matches the described lower view in Step 6.
+- **Visible Evidence**: The tap shoes show dynamic movement with a raised shoe, and the sole is visible in the frames, which supports the observation of a raised shoe or visible sole.
+- **Uncertainties**: The exact positions relative to the start and finish, or the timing of floor contact, are slightly unclear, typical with fast movements and frame limitations.
+
+In conclusion, the visible actions and camera angle are consistent with Step 6 from the given workflow.</p><p><b>Guardian:</b> The latest frames display dynamic foot movements with the tap shoes, including stepped and lifted leg sequences. The working shoe is lifted and slightly forward of the other shoe, supporting the observation of footwork.<br>Expected S6; returned S1</p></details><details><summary>real-surgery-stage-7 · 178s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> A final grayscale cross-sectional image is displayed at the end of the supplied excerpt. It does not prove recovery or completion of the actual operation.</p><p><b>Actual:</b> The current phase visible in the images corresponds to Step 7: Recognize the final displayed image. The evidence supporting this includes:
+
+- A postoperative CT scan is displayed, which matches the final cross-sectional image criteria.
+- The presence of a text label &quot;Postoperative CT scan&quot; confirms the context.
+
+Limits on declaring the phase complete:
+- The visible image does not verify any clinical outcome or operative completion beyond its presence as an endpoint in this workflow.
+- Aspects such as recovery, treatment success, or surgeon approval require further context and are not established through this scene alone.</p><p><b>Guardian:</b> The current image shows a postoperative CT scan, indicating the end of the provided video clip.<br>Expected S7; returned S7</p></details><details><summary>real-house-construction-stage-4 · 115s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The upper storey has a developing pitched roof frame. Roof members are visible, but completion and correct bracing are unverified.</p><p><b>Actual:</b> The latest image primarily corresponds to **Step 4: Observe upper-wall edge work and roof-outline growth**. Here&#39;s the visible evidence:
+
+- The upper-story wall framing is complete with upright wall panels.
+- Pitched roof members are visible, indicating progression in the roof-outline growth.
+
+### Limits on Declaring the Phase Complete:
+- There&#39;s no close-up showing an applicator held along the exposed upper panel edge, leaving **Step 4, Criterion S4C1** unfulfilled.
+- Although the pitched roof outline is visible, the completion of this step requires both criteria to be met. 
+
+### Conclusion:
+- The phase is progressing, showing visible evidence of roof development, but it&#39;s not fully complete until all criteria are observed.</p><p><b>Guardian:</b> The latest image shows visible progress on the upper-story wall framing and the pitched roof members above it. The framed wall panels are distinctly upright, and the roof outline appears to have advanced since earlier images.<br>Expected S4; returned S4</p></details><details><summary>real-manufacturing-stage-5 · 135s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The sample-and-design-review section shows a group reviewing or pointing toward a drawing on a board. Review activity is visible, approval is unverified.</p><p><b>Actual:</b> The latest images show individuals gathered around a large technical drawing, with one person pointing to it, indicating a collaborative review session. This aligns with Step 5, &quot;Observe sample parts and collaborative drawing review.&quot;
+
+### Visible Evidence:
+- **Technical Drawing**: A large drawing is visible, and the group is engaged with it.
+- **Pointing Gesture**: One person is pointing to the drawing, which supports the collaborative activity.
+
+### Specific Details:
+- **Sample Parts**: There are no visible colored sample parts, limiting the completeness of Step 5.
+
+### Unclear Details:
+- Without visible sample parts, Step 5 cannot be fully completed, as one criterion remains unobserved.</p><p><b>Guardian:</b> The latest image shows multiple individuals gathered around a large technical drawing, with one person pointing to the drawing as they discuss it. This indicates a collaborative review session.<br>Expected S5; returned S5</p></details><details><summary>real-surgery-uncertainty-1 · 82s</summary><p><b>Question:</b> Does this visible thread pull establish a secure knot, successful repair, or absence of tissue injury?</p><p><b>Reference:</b> No. A visible thread pull cannot establish knot security, repair adequacy, or absence of injury. Qualified surgeon review and the full case context are required.</p><p><b>Actual:</b> The images show a surgical scene where instrument tips are manipulating a thread or loop. 
+
+### Visible Evidence:
+- **Instrument Interaction:** The tool tips are seen approaching and handling the thread.
+- **Thread Movement:** There is a visible change in the thread&#39;s position as tools interact with it.
+
+### Unclear Details:
+- **Secure Knot:** The images do not provide sufficient evidence to confirm if a secure knot is present.
+- **Successful Repair:** There&#39;s no visible indication or confirmation of a completed repair.
+- **Absence of Tissue Injury:** The images do not make it clear if tissue injury is absent.
+
+### Principle:
+The presence of a visible thread pull does not automatically confirm that a secure knot or successful repair has been made, nor does it prove the absence of tissue injury.
+
+It is essential to observe further interactions or seek expert analysis for confirmation of these outcomes.</p></details><details><summary>real-sport-stage-5 · 107s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The straight-bar raise/lower demonstration is shown. The bar moves toward the torso with increased elbow bend, while exact angles, load, and suitability remain unverified.</p><p><b>Actual:</b> The visible phase shown involves the straight-bar raise and lowering. Here&#39;s the specific evidence:
+
+- **Bar Type**: The bar being used is visibly straight.
+- **Position**: The bar is raised close to the torso, indicating a raised position.
+- **Confirmation Details**: Both hands are visibly holding the bar.
+
+**Limits**:
+- The complete movement back to a lowered position is not visible in a single clear shot, which is needed to confirm a full cycle as per the workflow steps.
+  
+**Uncertainty**:
+- Without visible evidence of the bar returning to a low position in the same shot, the phase remains incomplete.</p><p><b>Guardian:</b> The latest image shows a person holding a barbell with a straight shaft, and it is visibly near the person&#39;s torso, indicating a raised position in a gym setting.<br>Expected S5; returned S5</p></details><details><summary>real-dancing-stage-7 · 106s</summary><p><b>Question:</b> In this wider body crop, which phase is most consistent with the free shoe lifting behind the supporting leg? Distinguish the camera and rearward motion from the later travelling sequence.</p><p><b>Reference:</b> S7 is most consistent with the wider rear-foot lift. The anchor clearly shows a free shoe raised behind the supporting leg, whose shoe is at the floor. A return is not proved by this frame; lateral travel belongs to a separate sequence and must be observed.</p><p><b>Actual:</b> The current frames show a person tap dancing with movements involving lifting and moving their feet. The visible tap shoes and studio floor suggest a controlled environment for footwork observation.
+
+In terms of workflow steps, the visible evidence aligns most closely with **Step 7: Observe the wider rear-foot lift**, as it shows a shoe lifted behind the supporting leg. This alignment is supported by visible frames where a shoe is raised with bent leg motion behind the supporting leg.
+
+However, it is unclear whether both shoes return to the floor before the transition. This is crucial to fully confirming this step.
+
+For complete clarity, look for continuous visibility of both shoes and their respective contact with the floor. Check subsequent frames to confirm the shoes return to a grounded position.</p><p><b>Guardian:</b> The images show a person performing tap dance movements with visible tap shoes on a studio floor. The latest frames depict the person lifting and moving their feet in various directions as part of a dance sequence.<br>Expected S7; returned uncertain</p></details><details><summary>real-surgery-uncertainty-2 · 162s</summary><p><b>Question:</b> Can the visible tube or final imaging certify drainage effectiveness or a successful patient outcome?</p><p><b>Reference:</b> No. Tube visibility and final imaging do not establish drainage effectiveness or a patient outcome. Those require the case record and qualified review.</p><p><b>Actual:</b> The visible images show a clear curved tube and instruments interacting with it in an endoscopic view. The tube’s position and handling are evident, but these images cannot certify drainage effectiveness or a successful patient outcome. The functionality, placement accuracy, and clinical results require further context and expert interpretation, beyond what is visible. 
+
+Evidence from images:
+- Instruments are actively manipulating a visible tube.
+- The tube appears clear and curved.
+
+Unclear details:
+- Cannot ascertain drainage effectiveness or verify outcomes from these visuals alone.
+- Tool function and tissue identity remain undetermined from the images.
+
+Principle:
+Visible presence and manipulation do not confirm successful procedure outcomes, which require full clinical evaluation.</p></details><details><summary>real-dancing-stage-8 · 115s</summary><p><b>Question:</b> In this wider final sequence, which phase is best supported by crossed-foot positions and movement across the floor? Distinguish observed lateral travel from an isolated rear-foot lift.</p><p><b>Reference:</b> S8 is the final travelling/crossed-foot sequence. The anchor shows a crossed or lifted shoe relationship in the wider crop. Travel across the floor and a later separated position require the supplied multi-frame context; an isolated rear lift is not sufficient to prove them.</p><p><b>Actual:</b> In the latest images, there is visible evidence supporting the final step of the workflow, &quot;Observe the final travelling and crossed-foot sequence.&quot;
+
+1. **Crossed-Foot Position**: The images show a crossed position where one foot is in front of the other.
+
+2. **Movement Across the Floor**: The performer’s movement indicates lateral travel across the visible floor area.
+
+3. **Shoes&#39; Position Change**: There is a change from a crossed-foot position to a more separated stance, supporting the criteria for step S8.
+
+This phase is distinguished by lateral movement and changes in foot positioning rather than an isolated rear-foot lift.</p><p><b>Guardian:</b> The images show the working shoe raised and positioned forward of the other shoe, consistent with the criteria for step S3.<br>Expected S8; returned S3</p></details><details><summary>real-manufacturing-stage-6 · 160s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The final tooling montage shows an exposed mould or tooling assembly with internal detail. Its appearance does not establish an accepted finished product.</p><p><b>Actual:</b> The visible guidance phase appears to be &quot;Observe final machine and mould-detail views&quot; (Step 6). Here&#39;s the evidence supporting this observation:
+
+- **Visible machine component:** The sequence shows detailed shots of what seems to be mould components with various parts exposed, suggesting inspection or preparation.
+- **Mould detail:** The internal features of the mould are clearly visible and illuminated, fitting the description of an exposed mould or tooling assembly with visible cavities.
+
+However, there is a limit to declaring this phase complete:
+
+- **Machine motion:** There is no clear evidence of active machine motion or rotation in the sequence, which is one of the criteria for fully verifying this step.
+
+Therefore, while the mould details are visible, the absence of visible machine motion means Step 6 cannot be declared fully complete.</p><p><b>Guardian:</b> The latest image sequence shows a detailed view of a metal mould component within a machine, with various parts exposed and illuminated, indicating a close inspection.<br>Expected S6; returned S6</p></details><details><summary>real-house-construction-stage-5 · 130s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> The close-up shows roof timber meeting its support beam or connection region. Actual dimensions and load capacity are unverified.</p><p><b>Actual:</b> The images correspond to **Step 5: Observe roof support and connection details**. Here&#39;s the visible evidence:
+
+1. **Roof Timbers and Connections**: The images clearly show roof timbers with metal connection hardware fixed to a supporting bar, identified as **100x150 mm**.
+
+2. **Support Details**: Close-up views expose the timber connections where they meet the support bar.
+
+3. **Sealant**: There appears to be a sealant applied along the area, but the effectiveness or completeness of sealing cannot be confirmed.
+
+**Limits on Declaring Completion**:
+- While two or more roof members and their support region are visible together, and some details of the timber connections are exposed, the completeness of proper attachment and overall stability isn&#39;t confirmed just by these visuals. The entire connection process and secure fastening are important for safety.
+
+Overall, the visible parts suggest the phase is largely in progress, but final observations or inspections could further confirm or provide context for completeness.</p><p><b>Guardian:</b> The images show roof timbers and metal connection hardware visibly fixed to a supporting bar, indicating roof support structure assembly.<br>Expected S5; returned S5</p></details><details><summary>real-sport-uncertainty-1 · 50s</summary><p><b>Question:</b> Can this edited demonstration confirm an exact completed repetition set, plate weight, or precise joint angles?</p><p><b>Reference:</b> No. Edits and crops prevent establishing an exact completed set, and the guide provides no independent load or joint-angle measurement.</p><p><b>Actual:</b> In the latest images, the performer is holding an EZ bar with an underhand grip. The bar is being held closer to the upper torso, suggesting a curl is taking place as per step S2. However, the complete motion cycle of raising and lowering within the same uninterrupted view is not fully visible, leaving some criteria unconfirmed.
+
+Specifically:
+- The bar appears to be moving closer to the torso, indicating a partial curl.
+- Both hands are visible on the bar, which supports the criteria for hand placement.
+- The full return to the low position is not clearly visible, so the lowering cycle remains uncertain.
+
+This means the demonstration cannot confirm an exact completed repetition set, precise joint angles, or plate weight due to the frames being cropped and possibly edited.</p></details><details><summary>real-dancing-uncertainty-1 · 19s</summary><p><b>Question:</b> Can this cropped view establish the performer’s whole-body balance, a precise ankle angle, or safe technique?</p><p><b>Reference:</b> No. The head and much of the upper body are cropped, and the video does not measure a precise ankle angle or establish whole-body balance or safety.</p><p><b>Actual:</b> Based on the visible evidence in the sequence of images:
+
+1. **Shoe Contact and Movement:**
+   - Both shoes are visible on the floor initially, aligning with the &quot;Observe the opening shoe contact and lift&quot; step.
+   - A shoe lifts from the floor, while the other remains in contact, partially satisfying the criteria for observing the lift and tilt of the working shoe.
+
+2. **Shoe Orientations and Returns:**
+   - The initial shoe returns to a position near the other shoe before the transition, partially meeting criteria for a complete motion.
+
+3. **Shoe Position Changes:**
+   - In one frame, a shoe is visibly forward of the other.
+   - The shoe subsequently appears back beside the other shoe, aligning with the criteria for step three involving forward movement and return.
+
+**Unclear Details:**
+- Due to cropping and the visible area of only the lower legs, the whole-body balance, a precise ankle angle, or the safety of the technique cannot be established. The video does not show full-body posture or balance.  
+- The images do not provide clear evidence of a safe or correct technique since upper body cues are not visible.
+
+These observations are consistent with the workflow’s principles, respecting the lack of evidence for unseen actions or positions.</p></details><details><summary>real-manufacturing-uncertainty-1 · 60s</summary><p><b>Question:</b> Does the displayed indicator prove this part passed its dimensional tolerance or that the instrument is calibrated?</p><p><b>Reference:</b> No. A displayed indicator alone cannot establish calibration, a specified tolerance, or acceptance. Traceable measurements and the actual specification are missing.</p><p><b>Actual:</b> The displayed digital indicator in the images shows a measurement of 2.95 mm. However, it does not inherently prove that the part has passed its dimensional tolerance, nor does it confirm that the instrument is calibrated.
+
+Visible evidence:
+- The digital indicator with a probe is shown above a metal block.
+- The measurement reads 2.95 mm.
+
+Uncertain details:
+- There is no evidence of calibration, as calibration marks or certificates are not visible.
+- There is no context regarding the tolerance limits for the part or any reference to verify if the reading is within acceptable limits.
+
+Principle:
+For accurate conclusions about dimensional tolerance or calibration, additional reference information and documented calibration should be verified.</p></details><details><summary>real-dancing-uncertainty-2 · 96s</summary><p><b>Question:</b> Can we join movements across the tiled wipe to claim one continuous repetition or an exact tap count?</p><p><b>Reference:</b> No. The wipe separates examples, and blur or missing contacts prevent reconstructing a continuous repetition or exact tap count across the edit.</p><p><b>Actual:</b> No, we cannot join movements across a tiled wipe to claim one continuous repetition or count exact taps. Each segment must be observed independently due to editing transitions.
+
+**Visible Evidence:**
+- The images show dynamic foot movements, including forward and lifted leg sequences.
+- The working shoe appears lifted and slightly forward at certain points, but without continuous visibility, connections across edits remain unsupported.
+
+**Unclear Details:**
+- Specific transitions and heel/toe contacts may be obscured by blur or limited by frame visibility.
+
+**Principle:**
+- Treat each clearly observed shot as a distinct evidence window, without inferring continuity or specific counts across edited transitions.</p></details><details><summary>real-sport-uncertainty-2 · 107s</summary><p><b>Question:</b> Does seeing this straight-bar curl prove it is medically suitable or comfortable for this person or another viewer?</p><p><b>Reference:</b> No. Visible bar motion cannot establish medical suitability, comfort, or pain. These individual factors are not measured by the footage.</p><p><b>Actual:</b> The images show a person performing a straight-bar curl, with the bar visibly near the torso, indicating a raised position. Both hands are holding the bar, maintaining the required grip.
+
+However, the images do not provide evidence of medical suitability or comfort for this particular individual or any other viewer. Such evaluations involve personal health assessments and cannot be determined visually from the provided footage.
+
+Uncertainties include:
+
+- **Medical Suitability**: Comfort and safety can vary widely among individuals and are not visible.
+- **Specific Comfort**: Individual comfort levels may differ, which are unobserved and unquantifiable here.
+
+For fitness assessments regarding suitability and comfort, personal medical advice is necessary.</p></details><details><summary>real-manufacturing-uncertainty-2 · 90s</summary><p><b>Question:</b> Can we confirm all these machine and product shots follow one identified workpiece continuously?</p><p><b>Reference:</b> No. This is an edited promotional montage of several jobs and products, without a verified genealogy for one workpiece.</p><p><b>Actual:</b> The latest images show:
+
+1. A manufactured component presented separately against a blue background, which matches the &quot;Observe product presentation&quot; from Step 4. This confirms that a product is being displayed distinctly from the machining activities.
+
+2. A machine-tool setup with visible copper blocks, a mounted cutting tool, and a spindle. While this aligns with &quot;Observe machine-tool activity&quot; from Step 2, there&#39;s no visible motion captured, keeping the contact point uncertain.
+
+From the sequence, it&#39;s unclear if these shots follow a single workpiece continuously, as they may represent different stages or processes. The images show individual steps but do not confirm a continuous flow for one specific workpiece.</p></details><details><summary>real-house-construction-stage-6 · 170s</summary><p><b>Question:</b> Which visible guidance phase is shown here? Describe the visible evidence and any limits on declaring the phase complete.</p><p><b>Reference:</b> Roof-covering and external-sheet work are the later visible phase. A worker and covering rows identify the activity, without proving weather-tightness.</p><p><b>Actual:</b> The visible guidance phase corresponds to **Step 6: Observe external sheet and roof-covering work**. Here&#39;s the evidence and the limits:
+
+### Visible Evidence:
+1. **Dark External Sheet Material**: A person is handling dark sheet material, which appears to be applied to the side of the building. This matches the criteria of observing sheet-handling activity.
+   
+2. **Roof-Covering Activity**: Another person is working on the roof, handling material that aligns with roof-covering tasks. 
+
+### Limits on Completion:
+- **Partial Satisfaction**: While the handling of sheet material and roof work is visible, it&#39;s unclear if the full extent of expected roof-covering rows is completed. The observation criteria are met partially.
+  
+- **Exterior View of Roof and Wall**: A view showing both the roof and upper wall outline is partially visible, supporting the step&#39;s context.
+
+Thus, Step 6 is partially observed. More complete views or actions might confirm the entire step.</p><p><b>Guardian:</b> The latest image shows a person installing external sheet material on a building, indicating work on roof and wall components. The presence of dark sheet material being handled aligns with step 6&#39;s criteria for observing external sheet and roof-covering work.<br>Expected S6; returned S6</p></details><details><summary>real-house-construction-uncertainty-1 · 130s</summary><p><b>Question:</b> Can this view confirm fastening torque, hidden joint strength, or structural approval?</p><p><b>Reference:</b> No. Visible timber and hardware cannot establish torque, hidden strength, or approval. Those require the responsible inspection process.</p><p><b>Actual:</b> The images show roof timbers connected to a supporting bar with metal brackets. There is visible foam sealant applied at the junctions, which might aid in filling gaps and providing some insulation. However, the visible evidence does not confirm the fastening torque, hidden joint strength, or any structural approval. These elements are determined by specific engineering standards and testing, which are not visible or verifiable in the images provided. 
+
+For assurance of safety and compliance, professional inspection and verification according to building codes would be necessary.</p></details><details><summary>real-house-construction-uncertainty-2 · 90s</summary><p><b>Question:</b> Does the three-minute construction playback show the house was built in three minutes?</p><p><b>Reference:</b> No. The original includes edited time-lapse footage, so playback duration does not represent site-work duration.</p><p><b>Actual:</b> The images show the construction of a house at different stages, not in real-time but likely as part of a time-lapse sequence. The visible evidence indicates:
+
+1. **Overall Structure**: There is an emerging two-storey structure with visible beams and partial wall panels above the ground floor.
+
+2. **Upper Floor Progress**: Upper-floor framing is visible, with panels forming part of the upper storey. However, roof framing/covering is not evident.
+
+3. **Construction Equipment and Activity**: Workers and construction materials are present, suggesting ongoing work.
+
+Based on these observations, the house construction is documented in a time-lapse style video, meaning it wasn&#39;t actually built in three minutes. Time-lapse dramatically compresses time to show long processes quickly.</p></details></main></html>

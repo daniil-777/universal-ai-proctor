@@ -1,0 +1,77 @@
+[
+  {
+    "id": "overview",
+    "title": "Overview",
+    "text": "Process Guide turns a video or live view into a guided workflow."
+  },
+  {
+    "id": "source",
+    "title": "Choose a source",
+    "text": "Choose a video file, camera, or shared screen. Here, we use the parts sorting example."
+  },
+  {
+    "id": "guide",
+    "title": "Add instructions",
+    "text": "Upload a text guide, or choose a sample. Without a document, inferred steps remain provisional."
+  },
+  {
+    "id": "wishes",
+    "title": "Set your wishes",
+    "text": "Set your guidance preferences and personal wishes, then open the workspace."
+  },
+  {
+    "id": "resize",
+    "title": "Arrange the workspace",
+    "text": "Your source stays on the left. Drag the divider to give either side more room."
+  },
+  {
+    "id": "steps",
+    "title": "Follow steps and principles",
+    "text": "Steps and principles explain the action and its purpose. Evidence shows what the system observed."
+  },
+  {
+    "id": "manual",
+    "title": "Confirm carefully",
+    "text": "Review each result. Manual confirmations remain clearly separate from AI observations."
+  },
+  {
+    "id": "chat",
+    "title": "Ask for guidance",
+    "text": "Ask a typed question, or use voice controls. Speech and microphone access require your action."
+  },
+  {
+    "id": "guardian",
+    "title": "Guardian observation",
+    "text": "Guardian adds ongoing observation. Pause guidance whenever you need to inspect the source."
+  },
+  {
+    "id": "readiness",
+    "title": "Check readiness",
+    "text": "In Readiness, record the job context and complete your preparation checks before work."
+  },
+  {
+    "id": "review",
+    "title": "Review and exceptions",
+    "text": "Review lets you bookmark a frame and raise an exception when evidence needs attention."
+  },
+  {
+    "id": "report",
+    "title": "Analysis report",
+    "text": "Open the analysis report to review the workflow, observations, and unresolved issues."
+  },
+  {
+    "id": "export",
+    "title": "Export and share",
+    "text": "Prepare a PDF, export offline HTML, or share the file. Reports can include session details."
+  },
+  {
+    "id": "account",
+    "title": "Save a result",
+    "text": "Create or sign in to a private local account, then save the current result."
+  },
+  {
+    "id": "saved",
+    "title": "Return to saved results",
+    "text": "Saved results remain available for review on this deployment. The simulator connection is planned, and inactive."
+  }
+]

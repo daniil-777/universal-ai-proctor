@@ -1,0 +1,45 @@
+PROCESS GUIDE — SOURCE VIDEO CREDITS AND LICENSES
+
+Source authors do not endorse Process Guide. Each video, its transcode, poster and extracted review frames retain the stated source license. This pack is a collection of separate works, not a new exclusive license on the footage. Preserve these credits and links when redistributing.
+
+House construction — SIP assembly
+Author: Эко Сити (Eco-City)
+Source: https://commons.wikimedia.org/wiki/File:Structural_insulated_panel_house_construction_in_7_minutes_-_%D0%AD%D0%BA%D0%BE_%D0%A1%D0%B8%D1%82%D0%B8_-_Russia.webm
+License: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/
+Changes: Contiguous 01:20–04:20 source excerpt, H.264/AAC conversion; native 1920×1080 preserved.
+Delivered file: real-01-house.mp4
+SHA-256: 01e4348ee4604f0e74962299b6e5b5bed668c96c3049b4f3c0e9570b6e114124
+
+Manufacturing — tool and mould production
+Author: handysheriff
+Source: https://commons.wikimedia.org/wiki/File:SCHMELZER_FORMENTECHNIK_Waldershof_Fichtelgebirge_Imagefilm.webm
+License: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/
+Changes: Full source film converted to H.264/AAC; native 1920×1080, original montage timing and shot order preserved.
+Delivered file: real-02-manufacturing.mp4
+SHA-256: 37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d
+
+Surgery — published laparoscopic footage
+Author: Marzano E, Rosso E, Oussoultzoglou E, Collange O, Bachellier P, Pessaux P
+Source: https://commons.wikimedia.org/wiki/File:Laparoscopic-treatment-of-biliary-peritonitis-following-nonoperative-management-of-blunt-liver-1749-7922-5-26-S1.ogv
+License: CC BY 2.0 — https://creativecommons.org/licenses/by/2.0/
+Changes: First 180 seconds converted to H.264/AAC; native 480×272, aspect ratio and source speed preserved.
+Delivered file: real-03-surgery.mp4
+SHA-256: b527f5cc0a381a67a909bcfda8266a98f9b7c89e9e63d1262497ef232c27b1bd
+
+Dancing — tap footwork
+Author: Dbuetow
+Source: https://commons.wikimedia.org/wiki/File:Tap_Dance_Technique.webm
+License: CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/
+Changes: Full actual packet timeline converted to H.264/AAC; native 428×240 and all source frames retained. Source container tag says 124.393 seconds; playable source ends near 123.416 seconds. Adaptation retains CC BY-SA 4.0.
+Delivered file: real-04-dancing.mp4
+SHA-256: 55f58ce1ecb812194a63beef7c57e4861e4ecccdb50a2953131da85bf51c3852
+
+Sport — EZ and straight-bar curls
+Author: Colossus Fitness
+Source: https://commons.wikimedia.org/wiki/File:Video_of_EZ_Bar_Curl_and_Straight_Bar_Curl.webm
+License: CC BY 3.0 — https://creativecommons.org/licenses/by/3.0/
+Changes: Full official Wikimedia Commons 1080p derivative converted to H.264/AAC; source timing and image size preserved.
+Delivered file: real-05-sport.mp4
+SHA-256: 97d1231667608394685f19d9bb892df59c137c0e0764458a9c77b98d5cad84e3
+
+The tap video adaptation and associated extracted frames retain CC BY-SA 4.0. Share derivative versions of that video under the same or compatible license. No source author endorsement is implied.
