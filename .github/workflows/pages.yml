@@ -1,0 +1,64 @@
+name: Deploy public app preview to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out app source
+        uses: actions/checkout@v7.0.1
+      - name: Set up Node.js
+        uses: actions/setup-node@v7.0.0
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: |
+            backend/package-lock.json
+            frontend/package-lock.json
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Install backend dependencies
+        run: npm ci --prefix backend
+      - name: Install frontend dependencies
+        run: npm ci --prefix frontend
+      - name: Check frontend types
+        run: npm run typecheck --prefix frontend
+      - name: Verify preview packaging
+        run: node --test scripts/build-pages.test.mjs
+      - name: Build the public preview
+        env:
+          VITE_BASE_PATH: /universal-ai-proctor/
+          VITE_STATIC_HOSTING: 'true'
+          VITE_FULL_APP_URL: ${{ vars.FULL_APP_URL }}
+        run: node scripts/build-pages.mjs
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5.0.0
+        with:
+          path: .pages-dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy public preview
+        id: deployment
+        uses: actions/deploy-pages@v5.0.1

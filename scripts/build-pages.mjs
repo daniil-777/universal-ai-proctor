@@ -86,6 +86,7 @@ async function main() {
   const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
   const urls = archiveUrls(manifest);
   const temporaryPublic = await mkdtemp(path.join(os.tmpdir(), "process-guide-pages-public-"));
+  const previousWorkingDirectory = process.cwd();
   try {
     await cp(publicRoot, temporaryPublic, {
       recursive: true,
@@ -98,6 +99,8 @@ async function main() {
     // Frontend dependencies have their own lockfile and installation directory.
     const require = createRequire(path.join(root, "frontend/package.json"));
     const { build } = await import(pathToFileURL(require.resolve("vite")).href);
+    // Tailwind's existing config resolves relative to the frontend directory.
+    process.chdir(path.join(root, "frontend"));
     await build({
       root: path.join(root, "frontend"),
       configFile: path.join(root, "frontend/vite.config.ts"),
@@ -114,6 +117,7 @@ async function main() {
       throw new Error(`Pages artifact is ${(bytes / 1024 ** 2).toFixed(1)} MiB, above the 900 MiB deployment budget.`);
     console.log(`Pages build ready: ${path.relative(root, output)} · ${(bytes / 1024 ** 2).toFixed(1)} MiB · ${transformed} archive-link page(s) rewritten.`);
   } finally {
+    process.chdir(previousWorkingDirectory);
     await rm(temporaryPublic, { recursive: true, force: true });
   }
 }

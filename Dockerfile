@@ -8,7 +8,9 @@ RUN apt-get update \
 
 FROM base AS build
 WORKDIR /app
-ENV CI=1
+# ffmpeg-static's installer exits early when its configured binary already exists.
+# The Debian package is installed in the base stage; avoid a duplicate download.
+ENV CI=1 FFMPEG_BIN=/usr/bin/ffmpeg
 COPY backend/package.json backend/package-lock.json ./backend/
 COPY frontend/package.json frontend/package-lock.json ./frontend/
 RUN --mount=type=cache,target=/root/.npm \

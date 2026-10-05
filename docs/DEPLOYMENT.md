@@ -6,7 +6,7 @@ The repository root is `guidance-app`: `Dockerfile`, `render.yaml`, `fly.toml`, 
 
 ## What the image contains
 
-The multi-stage Docker build installs locked Linux dependencies, FFmpeg, ffprobe, DejaVu fonts, a process supervisor and the compiled backend/frontend. Report font sources are copied by the existing backend build script. Media is downloaded from `deployment/media-manifest.json` with `node scripts/download-assets.mjs` before building; the downloader verifies immutable release hashes and retains the exact original paths. Failure to fetch or verify a required asset must fail the build. No runtime media fetch is needed.
+The multi-stage Docker build installs locked Linux dependencies, FFmpeg, ffprobe, DejaVu fonts, a process supervisor and the compiled backend/frontend. Build-only `FFMPEG_BIN=/usr/bin/ffmpeg` directs the installed `ffmpeg-static` package to the existing Debian binary, so its installer skips a duplicate binary download. Report font sources are copied by the existing backend build script. Media is downloaded from `deployment/media-manifest.json` with `node scripts/download-assets.mjs` before building; the downloader verifies immutable release hashes and retains the exact original paths. Failure to fetch or verify a required asset must fail the build. No runtime media fetch is needed.
 
 The build context excludes `.env` files, local dependency backups, SQLite files, uploads and local video bytes. Provider keys belong only in the host's private runtime settings. They must never be supplied as Docker build arguments or `VITE_*` frontend variables. The runtime image copies only compiled code, dependencies and application assets. It starts in `/app/backend`, preserving the existing relative library and frontend paths.
 

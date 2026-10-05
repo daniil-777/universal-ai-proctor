@@ -20,6 +20,6 @@
     "evaluate:render-videos": "node evaluation/render-extra.mjs",
     "assets:download": "node scripts/download-assets.mjs",
     "build:pages": "node scripts/build-pages.mjs",
-    "test:deployment": "node --test scripts/download-assets.test.mjs"
+    "test:deployment": "node --test scripts/download-assets.test.mjs scripts/build-pages.test.mjs"
   }
 }
