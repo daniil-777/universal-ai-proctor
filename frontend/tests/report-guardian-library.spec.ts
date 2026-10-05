@@ -225,7 +225,7 @@ test("original surgery sample opens from onboarding with preserved guidance and 
     ),
   ).toBe(true);
   const originalInstructions = await fs.readFile(
-    path.resolve("../../AI-Proctor/llmDescription/Cholecystectomy.txt"),
+    path.resolve("../guidance-library/Cholecystectomy.txt"),
     "utf8",
   );
   expect((await api(page, "/api/reference/document")).text).toBe(
@@ -298,19 +298,21 @@ test("original surgery sample opens from onboarding with preserved guidance and 
   expect(observationRequest.current_s).toBeCloseTo(30, 1);
   expect(observationRequest.frames_b64).toEqual([]);
   expect(observationRequest.frame_times_s).toEqual([]);
-  expect(observationRequest.n_samples).toBe(4);
-  expect(observationRequest.window_s).toBe(5);
+  // The current recognition defaults retain nine distinct views over eight
+  // seconds. The bundled video must use that same configured guidance path.
+  expect(observationRequest.n_samples).toBe(9);
+  expect(observationRequest.window_s).toBe(8);
   const observation = await observationResponse.json();
   expect(observation.source_id).toBe(session.source_id);
-  expect(observation.used_frames).toBe(4);
+  expect(observation.used_frames).toBe(9);
   const sampledTimes = JSON.parse(
     /Frame timestamps \(seconds, zero-based image order\): (\[[^\n]*?\])/.exec(
       observation.prompt,
     )?.[1] || "[]",
   ) as number[];
-  expect(sampledTimes).toHaveLength(4);
-  expect(sampledTimes[0]).toBeGreaterThanOrEqual(25);
-  expect(sampledTimes[3]).toBeCloseTo(30, 1);
+  expect(sampledTimes).toHaveLength(9);
+  expect(sampledTimes[0]).toBeGreaterThanOrEqual(22);
+  expect(sampledTimes.at(-1)).toBeCloseTo(30, 1);
   expect(
     sampledTimes.every(
       (time, index) => index === 0 || time > sampledTimes[index - 1],
@@ -345,7 +347,7 @@ test("original surgery sample opens from onboarding with preserved guidance and 
   expect(answerRequest.frames_b64 ?? []).toEqual([]);
   expect(answerRequest.frame_times_s ?? []).toEqual([]);
   expect(answerRequest.source_id).toBe(session.source_id);
-  expect(answerRequest.window_s).toBe(4);
+  expect(answerRequest.window_s).toBe(8);
   expect(await answerResponse.text()).toContain("Exposure of the Gallbladder");
   await expect(page.locator(".chat-panel")).toContainText(
     "The visible tool is on the table.",

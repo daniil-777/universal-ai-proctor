@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { apiFetch } from "./api";
+import { parseReviewPayload } from "./reviewPayload";
 import type {
   ReadinessUpdate,
   ReviewResponse,
@@ -38,13 +39,14 @@ export function useSessionReview(
           ...init,
           signal: controller.signal,
         });
-        const data = await response.json();
+        const payload = await response.json();
         if (latest.current.context !== owner || controller.signal.aborted)
           throw new DOMException("Context changed", "AbortError");
-        if (!response.ok || !data.ok)
+        if (!response.ok || !payload?.ok)
           throw new Error(
-            data.error || `Review request failed (${response.status})`,
+            payload?.error || `Review request failed (${response.status})`,
           );
+        const data = parseReviewPayload(payload);
         if (data.source_id !== sourceId)
           throw new Error("The input changed. Refresh the review.");
         setReview((previous) => {

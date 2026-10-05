@@ -182,7 +182,7 @@ for (const device of [
       expect(detailBody.compress).toBe(false);
       expect(detailBody.frames_b64).toEqual([]);
       expect(detailBody.frame_times_s).toEqual([]);
-      expect(detailBody.n_samples).toBe(4);
+      expect(detailBody.n_samples).toBe(9);
       // The complete window comes from the server-owned video. Its empty
       // request image list should not be decoded as a browser JPEG; the actual
       // canvas capture still demonstrates responsive high-detail geometry.

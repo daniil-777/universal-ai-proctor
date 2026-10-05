@@ -52,6 +52,9 @@ const configurations = [
     dark: true,
   },
 ];
+const profile = process.argv.find(argument => argument.startsWith("--profile="))?.slice(10);
+const selectedConfigurations = profile ? configurations.filter(configuration => configuration.name === profile) : configurations;
+if (!selectedConfigurations.length) throw new Error(`Unknown visual QA profile: ${profile}`);
 async function tool(page: any, name: string) {
   const tab = page.getByRole("tab", { name, exact: true });
   if (await tab.isVisible()) await tab.click();
@@ -72,6 +75,7 @@ async function capture(page: any, label: string) {
         '.workspace-professional-dialog[data-state="open"][role="dialog"]',
       ) || document.querySelector('[role="dialog"]');
     const close = dialog?.querySelector(".dialog-close");
+    const reportBody = dialog?.querySelector(".report-body");
     const d = dialog?.getBoundingClientRect(),
       c = close?.getBoundingClientRect();
     const viewport = { width: innerWidth, height: innerHeight };
@@ -81,6 +85,15 @@ async function capture(page: any, label: string) {
       dialogOverflow: dialog
         ? dialog.scrollWidth > dialog.clientWidth + 1
         : false,
+      reportBodyOverflow: reportBody
+        ? reportBody.scrollWidth > reportBody.clientWidth + 1
+        : false,
+      reportBodyBounds: reportBody
+        ? { client: reportBody.clientWidth, scroll: reportBody.scrollWidth }
+        : null,
+      overflowingContent: reportBody && reportBody.scrollWidth > reportBody.clientWidth + 1
+        ? Array.from(reportBody.querySelectorAll("*")).filter(element => element.getBoundingClientRect().right > reportBody.getBoundingClientRect().right + 1).slice(0, 12).map(element => ({ tag: element.tagName, classes: element.className, width: element.getBoundingClientRect().width, text: element.textContent?.slice(0, 60) }))
+        : [],
       dialogBox: d
         ? { x: d.x, y: d.y, width: d.width, height: d.height }
         : null,
@@ -108,6 +121,8 @@ async function capture(page: any, label: string) {
   });
   expect(result.pageOverflow, `${label}: page overflow`).toBe(false);
   expect(result.dialogOverflow, `${label}: dialog overflow`).toBe(false);
+  if (result.reportBodyOverflow) console.log(JSON.stringify({ label, ...result }));
+  expect(result.reportBodyOverflow, `${label}: report body overflow`).toBe(false);
   expect(result.closeVisible, `${label}: close button in viewport`).toBe(true);
   expect(result.clippedButtons, `${label}: clipped controls`).toEqual([]);
   return result;
@@ -132,7 +147,7 @@ try {
       "Professional UI QA setup OK: repository-relative imports, built frontend, video fixture, memory-only accounts, fixture backend, Chrome and WebKit.",
     );
   } else {
-    for (const cfg of configurations) {
+    for (const cfg of selectedConfigurations) {
       console.log("QA " + cfg.name + ": starting");
       browser =
         cfg.browser === "chrome"
@@ -256,8 +271,10 @@ try {
       const extractedToast = page
         .locator("[data-sonner-toast]")
         .filter({ hasText: /Extracted \d+ steps/ });
-      const dismissExtracted = extractedToast.locator("[data-close-button]");
-      if (await dismissExtracted.isVisible()) await dismissExtracted.click();
+      // The temporary extraction toast can expire between locating its close
+      // button and clicking it, especially in WebKit. Let its normal timer finish.
+      await page.mouse.move(0, 0);
+      await expect(extractedToast).toHaveCount(0, { timeout: 8000 });
       await page.getByRole("button", { name: "Account and training" }).click();
       const dialog = page.getByRole("dialog");
       await expect(dialog.getByLabel("Email", { exact: true })).toBeVisible();
@@ -486,8 +503,10 @@ try {
         2,
       ),
     );
+    const verificationPath = profile ? path.join(root, `tmp/pdfs/report-editorial/ui-${profile}.json`) : path.join(root, "docs/professional-ui-validation.json");
+    await fs.mkdir(path.dirname(verificationPath), { recursive: true });
     await fs.writeFile(
-      path.join(root, "docs/professional-ui-validation.json"),
+      verificationPath,
       JSON.stringify(
         {
           validated_at: new Date().toISOString(),

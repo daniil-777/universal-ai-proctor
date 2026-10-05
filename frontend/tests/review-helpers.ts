@@ -53,9 +53,13 @@ export async function setup(page: Page) {
 }
 export async function tool(page: Page, name: string) {
   const tab = page.getByRole("tab", { name, exact: true });
+  const more = page.getByRole("button", { name: "More guidance tools" });
+  // Workspace code can still be loading after the welcome page's button click.
+  // Wait for either layout's actual control before selecting the correct path.
+  await expect.poll(async () => await tab.isVisible() || await more.isVisible()).toBe(true);
   if (await tab.isVisible()) await tab.click();
   else {
-    await page.getByRole("button", { name: "More guidance tools" }).click();
+    await more.click();
     await page.getByRole("menuitem", { name, exact: true }).click();
   }
 }

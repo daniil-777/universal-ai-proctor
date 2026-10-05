@@ -20,6 +20,9 @@ import {
   ReportOverview,
   type ReportSection,
 } from "@/components/report/ReportOverview";
+import "@/components/report/report.css";
+import { ReportTimeline } from "@/components/report/ReportTimeline";
+import { completedConversation, formatReportTime } from "@/lib/reportInsights";
 import { ReportEvidence } from "@/components/report/ReportEvidence";
 import { ReportGuardianLibrary } from "@/components/report/ReportGuardianLibrary";
 import { guardianFindings } from "@/lib/guardianFindings";
@@ -41,6 +44,7 @@ import {
 import { toast } from "sonner";
 import {
   canShareReport,
+  isPdfReport,
   downloadReport,
   reportFilename,
   shareReport,
@@ -53,16 +57,9 @@ interface RecordedDebrief {
   qa_summary: string;
 }
 
-interface QaPair {
-  q: string;
-  a: string;
-  ts: number;
-}
-
 const fmtClock = (ts: number) =>
   new Date(ts).toLocaleTimeString([], { hour12: false });
-const fmtVideo = (s: number) =>
-  `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+const fmtVideo = formatReportTime;
 
 /** Normalized polyline points for a minimal sparkline (single series, 2px line). */
 function sparkPoints(trend: number[], w = 120, h = 26, pad = 2): string {
@@ -135,18 +132,36 @@ export function ReportDialog({
   const [showResolved, setShowResolved] = useState(false);
   const [showClips, setShowClips] = useState(false);
   const body = useRef<HTMLDivElement>(null);
+  const [activeSection, setActiveSection] = useState<ReportSection>("overview");
   const navigate = (section: ReportSection) => {
-    const target = body.current?.querySelector<HTMLElement>(
+    setActiveSection(section);
+    const container = body.current;
+    const target = container?.querySelector<HTMLElement>(
       `[data-report-section="${section}"]`,
     );
-    target?.scrollIntoView({
+    if (container && target) container.scrollTo({
+      top: container.scrollTop + target.getBoundingClientRect().top - container.getBoundingClientRect().top - 12,
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
         ? "instant"
         : "smooth",
-      block: "start",
     });
     target?.focus({ preventScroll: true });
   };
+  useEffect(() => {
+    const root = body.current;
+    if (!open || !root || typeof IntersectionObserver === "undefined") return;
+    const visible = new Map<Element, IntersectionObserverEntry>();
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) visible.set(entry.target, entry);
+        else visible.delete(entry.target);
+      }
+      const first = [...visible.values()].sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (first) setActiveSection((first.target as HTMLElement).dataset.reportSection as ReportSection);
+    }, { root, rootMargin: "0px 0px -65% 0px", threshold: 0 });
+    root.querySelectorAll("[data-report-section]").forEach(section => observer.observe(section));
+    return () => observer.disconnect();
+  }, [open]);
   const [ai, setAi] = useState<RecordedDebrief | null>(null);
   const [aiBusy, setAiBusy] = useState(false);
   const [aiError, setAiError] = useState("");
@@ -214,23 +229,7 @@ export function ReportDialog({
     [currentGuardian],
   );
 
-  const qaPairs = useMemo<QaPair[]>(() => {
-    const out: QaPair[] = [];
-    for (let i = 0; i < a.chat.length; i++) {
-      const m = a.chat[i]!;
-      if (m.role !== "user") continue;
-      const nextUser = a.chat.findIndex(
-        (x, index) => index > i && x.role === "user",
-      );
-      const ans = a.chat
-        .slice(i + 1, nextUser < 0 ? undefined : nextUser)
-        .find((x) => x.role === "assistant" && !x.streaming && !!x.text);
-      if (ans && !ans.text.startsWith("⚠") && !ans.text.startsWith("🛡️")) {
-        out.push({ q: m.text, a: ans.text, ts: m.ts });
-      }
-    }
-    return out;
-  }, [a.chat]);
+  const qaPairs = useMemo(() => completedConversation(a.chat), [a.chat]);
 
   const serverSideVideo = a.sourceKind === "video" && a.serverVideoReady;
   const clipEntries = useMemo(
@@ -330,6 +329,8 @@ export function ReportDialog({
     if (!open) {
       summaryController.current?.abort();
       exportController.current?.abort();
+      setAiBusy(false);
+      setExportBusy(null);
       setShowClips(false);
     }
   }, [open]);
@@ -369,12 +370,18 @@ export function ReportDialog({
           body.error || `Report preparation failed (${response.status})`,
         );
       }
+      const expectedType = format === "pdf" ? "application/pdf" : "text/html";
+      if (!response.headers.get("Content-Type")?.toLowerCase().startsWith(expectedType))
+        throw new Error("The server returned an unexpected report format. Try again or use Offline HTML.");
       const blob = await response.blob();
       if (controller.signal.aborted || latestContext.current !== owner) return;
       if (!blob.size || blob.size > 30 * 1024 * 1024)
         throw new Error(
           "The report is empty or exceeds the download size limit.",
         );
+      if (format === "pdf" && !await isPdfReport(blob))
+        throw new Error("The server returned an invalid PDF. Use Offline HTML or try again.");
+      if (controller.signal.aborted || latestContext.current !== owner) return;
       const file = new File([blob], reportFilename(a.caseName, format), {
         type: format === "pdf" ? "application/pdf" : "text/html",
       });
@@ -544,13 +551,6 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
 </body></html>`;
   };
 
-  const completedSteps = a.stages.filter((step) => step.complete).length;
-  const manualSteps = a.stages.filter(
-    (step) => step.complete && step.confirmation === "manual",
-  ).length;
-  const aiSteps = a.stages.filter(
-    (step) => step.complete && step.confirmation === "AI",
-  ).length;
   const openIssues =
     review?.exceptions.filter((issue) => issue.status !== "resolved") ?? [];
   const resolvedIssues =
@@ -558,8 +558,6 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
   const displayedIssues = showResolved
     ? [...openIssues, ...resolvedIssues]
     : openIssues;
-  const preparedChecks =
-    review?.checks.filter((check) => check.checked).length ?? 0;
   const sourceLabel =
     a.sourceKind === "camera"
       ? "Live camera"
@@ -584,8 +582,8 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="workspace-professional-dialog flex max-h-[90dvh] max-w-5xl flex-col gap-0 overflow-hidden p-4 sm:rounded-2xl sm:p-6">
-        <DialogHeader className="shrink-0 space-y-2 border-b pb-4 text-left">
+      <DialogContent className="workspace-professional-dialog report-dialog flex max-h-[92dvh] flex-col overflow-hidden">
+        <DialogHeader className="report-dialog-header shrink-0 space-y-2 text-left">
           <p className="text-xs font-medium tracking-wide text-primary">
             Process Guide · Analysis &amp; review
           </p>
@@ -613,16 +611,14 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
           </div>
         </DialogHeader>
 
-        <div
-          ref={body}
-          className="min-h-0 flex-1 overflow-y-auto py-4 pr-1 scrollbar-thin [overflow-wrap:anywhere] sm:py-5"
-        >
           <nav
             aria-label="Report sections"
-            className="mb-4 flex gap-1 overflow-x-auto pb-1"
+            className="report-nav"
           >
             {(
               [
+                ["overview", "Overview"],
+                ["timeline", "Timeline"],
                 ["export", "Export"],
                 ["workflow", "Workflow"],
                 ["evidence", "Evidence"],
@@ -638,67 +634,29 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
                 size="sm"
                 variant="ghost"
                 className="min-h-11 shrink-0 px-3 text-xs"
+                aria-current={activeSection === section ? "location" : undefined}
                 onClick={() => navigate(section)}
               >
                 {label}
               </Button>
             ))}
           </nav>
-          <div
-            className="mb-4 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3"
-            aria-label="Report overview"
-          >
-            {[
-              {
-                value: a.stages.length
-                  ? `${completedSteps}/${a.stages.length}`
-                  : "—",
-                label: "Steps confirmed",
-                detail: a.stages.length
-                  ? `${aiSteps} AI · ${manualSteps} manual`
-                  : "No steps extracted",
-              },
-              {
-                value: review ? openIssues.length : "—",
-                label: "Open issues",
-                detail: review ? "Awaiting resolution" : "Review unavailable",
-              },
-              {
-                value: review?.events.length ?? "—",
-                label: "Evidence records",
-                detail: "Retained timeline entries",
-              },
-              {
-                value: review?.checks.length
-                  ? `${preparedChecks}/${review.checks.length}`
-                  : "—",
-                label: "Preparation checks",
-                detail: review?.checks.length
-                  ? "Operator records"
-                  : "No checks derived",
-              },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="min-w-0 rounded-xl border bg-card p-2.5 sm:p-4"
-              >
-                <p className="text-xs font-medium text-muted-foreground">
-                  {item.label}
-                </p>
-                <p className="mt-1 text-xl font-semibold tracking-tight tabular-nums sm:mt-2 sm:text-2xl">
-                  {item.value}
-                </p>
-                <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground sm:mt-1.5 sm:text-xs">
-                  {item.detail}
-                </p>
-              </div>
-            ))}
-          </div>
 
+        <div
+          ref={body}
+          className="report-body min-h-0 flex-1 overflow-y-auto scrollbar-thin [overflow-wrap:anywhere]"
+        >
           <ReportOverview
             stages={a.stages}
             review={review}
             onNavigate={navigate}
+          />
+          <ReportTimeline
+            review={review}
+            onReplay={a.sourceKind === "video" && a.sourceReady ? (event) => {
+              window.dispatchEvent(new CustomEvent("guidance-review-seek", { detail: { sourceId: a.sourceId, timeS: event.video_time_s } }));
+              setOpen(false);
+            } : undefined}
           />
 
           <section
@@ -1464,7 +1422,7 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
           </section>
         </div>
 
-        <div className="flex shrink-0 flex-wrap items-center justify-between gap-2 border-t pt-3">
+        <div className="report-footer flex shrink-0 flex-wrap items-center justify-between gap-2 border-t">
           <p className="max-w-xl text-xs leading-relaxed text-muted-foreground">
             Recorded samples · AI and manual confirmations labeled.
           </p>

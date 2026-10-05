@@ -44,15 +44,24 @@ test("paused frames reuse JPEGs; seek/detail changes refresh; hidden pages stop 
       page.locator("video").evaluate((v) => (v as HTMLVideoElement).paused),
     )
     .toBe(true);
-  // Allow the first capture of the newly paused playback time to settle.
-  await page.waitForTimeout(800);
+  // Set an explicit low-detail baseline. Recognition now defaults to detailed
+  // capture, so choosing high again would not change the pixel geometry.
+  await page.getByRole("button", { name: "Settings", exact: true }).click();
+  await page.getByRole("combobox", { name: "Visual detail", exact: true }).click();
+  await page.getByRole("option", { name: "Fast · broad scene observations", exact: true }).click();
+  await page.locator(".app-dialog").getByRole("button", { name: "Close", exact: true }).click();
+  // Explicitly capture the newly paused frame instead of assuming a sampler
+  // tick at a fixed time: the inactive chat has no background sampling timer.
+  const pausedCapture = page.waitForResponse(r => r.url().endsWith("/api/guidance/analyze"));
+  await page.getByRole("button", { name: "Analyze current view", exact: true }).click();
+  expect((await pausedCapture).ok()).toBe(true);
   const count = () =>
     page.evaluate(
       () => (window as Window & { __jpegCount: number }).__jpegCount,
     );
   const initial = await count();
   expect(initial).toBeGreaterThan(0);
-  // Let multiple 750 ms sampler ticks and paused Guardian retries occur.
+  // Let the paused Guardian's interval elapse; no extra JPEG is needed.
   await page.waitForTimeout(2300);
   expect(await count()).toBe(initial);
   for (let i = 0; i < 2; i++) {

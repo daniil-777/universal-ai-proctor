@@ -10,6 +10,19 @@ export function canShareReport(file: File): boolean {
   }
 }
 
+/** Read only five bytes; FileReader also supports older mobile Blob implementations. */
+export async function isPdfReport(blob: Blob): Promise<boolean> {
+  const prefix = blob.slice(0, 5);
+  const text = typeof prefix.text === "function" ? await prefix.text() :
+    await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result ?? ""));
+      reader.onerror = () => reject(new Error("The PDF could not be read. Try Offline HTML."));
+      reader.readAsText(prefix);
+    });
+  return text === "%PDF-";
+}
+
 /** Call directly from a click after preparing the file, preserving browser user activation. */
 export async function shareReport(
   file: File,

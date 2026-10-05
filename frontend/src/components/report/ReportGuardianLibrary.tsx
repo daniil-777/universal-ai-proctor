@@ -1,15 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Download, Loader2, Play, Share2 } from "lucide-react";
 import { apiFetch } from "@/lib/api";
 import type { ReviewEvent, ReviewResponse } from "@/lib/reviewTypes";
 import { Button } from "@/components/ui/button";
 import { downloadReport, shareReport } from "@/lib/reportShare";
+import { formatReportTime } from "@/lib/reportInsights";
 import { guardianFindings } from "@/lib/guardianFindings";
 
-const clock = (value: number) => {
-  const seconds = Math.max(0, Math.floor(Number.isFinite(value) ? value : 0));
-  return `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
-};
+const clock = formatReportTime;
 
 /** A catalog of recorded concerns, with one explicitly requested video preview. */
 export function ReportGuardianLibrary({
@@ -21,7 +19,7 @@ export function ReportGuardianLibrary({
   apiBase: string;
   videoAvailable: boolean;
 }) {
-  const findings = guardianFindings(review);
+  const findings = useMemo(() => guardianFindings(review), [review]);
   const [filter, setFilter] = useState("all");
   const [limit, setLimit] = useState(12);
   const [busyId, setBusyId] = useState<string | null>(null);

@@ -1,5 +1,5 @@
 {
-  "validated_at": "2026-10-05T08:31:21.400Z",
+  "validated_at": "2026-10-05T21:05:10.339Z",
   "results": [
     {
       "profile": "desktop",
@@ -11,6 +11,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 272,
             "y": 179.8125,
@@ -29,6 +32,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 272,
             "y": 123.8125,
@@ -47,6 +53,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 272,
             "y": 12,
@@ -65,6 +74,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 272,
             "y": 12,
@@ -83,6 +95,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 272,
             "y": 12,
@@ -101,16 +116,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 1078,
+            "scroll": 1078
+          },
+          "overflowingContent": [],
           "dialogBox": {
-            "x": 208,
-            "y": 12,
-            "width": 1024,
-            "height": 976
+            "x": 180,
+            "y": 40,
+            "width": 1080,
+            "height": 920
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "workflow": {
           "viewport": {
@@ -119,16 +140,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 1078,
+            "scroll": 1078
+          },
+          "overflowingContent": [],
           "dialogBox": {
-            "x": 208,
-            "y": 12,
-            "width": 1024,
-            "height": 976
+            "x": 180,
+            "y": 40,
+            "width": 1080,
+            "height": 920
           },
           "closeVisible": true,
           "focusedLabel": "Workflow evidence",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "priority": {
           "viewport": {
@@ -137,16 +164,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 1078,
+            "scroll": 1078
+          },
+          "overflowingContent": [],
           "dialogBox": {
-            "x": 208,
-            "y": 12,
-            "width": 1024,
-            "height": 976
+            "x": 180,
+            "y": 40,
+            "width": 1080,
+            "height": 920
           },
           "closeVisible": true,
           "focusedLabel": "Workflow evidence",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "evidence": {
           "viewport": {
@@ -155,16 +188,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 1078,
+            "scroll": 1078
+          },
+          "overflowingContent": [],
           "dialogBox": {
-            "x": 208,
-            "y": 12,
-            "width": 1024,
-            "height": 976
+            "x": 180,
+            "y": 40,
+            "width": 1080,
+            "height": 920
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "history": {
           "viewport": {
@@ -173,16 +212,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 1078,
+            "scroll": 1078
+          },
+          "overflowingContent": [],
           "dialogBox": {
-            "x": 208,
-            "y": 12,
-            "width": 1024,
-            "height": 976
+            "x": 180,
+            "y": 40,
+            "width": 1080,
+            "height": 920
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "preparation": {
           "viewport": {
@@ -191,16 +236,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 1078,
+            "scroll": 1078
+          },
+          "overflowingContent": [],
           "dialogBox": {
-            "x": 208,
-            "y": 12,
-            "width": 1024,
-            "height": 976
+            "x": 180,
+            "y": 40,
+            "width": 1080,
+            "height": 920
           },
           "closeVisible": true,
           "focusedLabel": "Operator preparation",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "ready": {
           "viewport": {
@@ -209,16 +260,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 1078,
+            "scroll": 1078
+          },
+          "overflowingContent": [],
           "dialogBox": {
-            "x": 208,
-            "y": 12,
-            "width": 1024,
-            "height": 976
+            "x": 180,
+            "y": 40,
+            "width": 1080,
+            "height": 920
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "debrief": {
           "viewport": {
@@ -227,16 +284,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 1078,
+            "scroll": 1078
+          },
+          "overflowingContent": [],
           "dialogBox": {
-            "x": 208,
-            "y": 12,
-            "width": 1024,
-            "height": 976
+            "x": 180,
+            "y": 40,
+            "width": 1080,
+            "height": 920
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         }
       },
       "errors": [],
@@ -254,6 +317,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 92.4375,
@@ -272,6 +338,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 26.6875,
@@ -290,6 +359,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -308,6 +380,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -326,6 +401,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -344,16 +422,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 364,
+            "scroll": 364
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 33.765625,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "workflow": {
           "viewport": {
@@ -362,16 +446,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 364,
+            "scroll": 364
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 33.765625,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": "Workflow evidence",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "priority": {
           "viewport": {
@@ -380,16 +470,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 364,
+            "scroll": 364
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 33.765625,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": "Workflow evidence",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "evidence": {
           "viewport": {
@@ -398,16 +494,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 364,
+            "scroll": 364
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 33.765625,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "history": {
           "viewport": {
@@ -416,16 +518,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 364,
+            "scroll": 364
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 33.765625,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "preparation": {
           "viewport": {
@@ -434,16 +542,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 364,
+            "scroll": 364
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 33.765625,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": "Operator preparation",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "ready": {
           "viewport": {
@@ -452,16 +566,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 364,
+            "scroll": 364
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 33.765625,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "debrief": {
           "viewport": {
@@ -470,16 +590,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 364,
+            "scroll": 364
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 33.765625,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         }
       },
       "errors": [],
@@ -497,6 +623,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 14.25,
@@ -515,6 +644,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -533,6 +665,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -551,6 +686,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -569,6 +707,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -587,16 +728,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 294,
+            "scroll": 294
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 29.6015625,
             "width": 296,
-            "height": 716
+            "height": 680.796875
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "workflow": {
           "viewport": {
@@ -605,16 +752,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 294,
+            "scroll": 294
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 29.6015625,
             "width": 296,
-            "height": 716
+            "height": 680.796875
           },
           "closeVisible": true,
           "focusedLabel": "Workflow evidence",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "priority": {
           "viewport": {
@@ -623,16 +776,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 294,
+            "scroll": 294
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 29.6015625,
             "width": 296,
-            "height": 716
+            "height": 680.796875
           },
           "closeVisible": true,
           "focusedLabel": "Workflow evidence",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "evidence": {
           "viewport": {
@@ -641,16 +800,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 294,
+            "scroll": 294
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 29.6015625,
             "width": 296,
-            "height": 716
+            "height": 680.796875
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "history": {
           "viewport": {
@@ -659,16 +824,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 294,
+            "scroll": 294
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 29.6015625,
             "width": 296,
-            "height": 716
+            "height": 680.796875
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "preparation": {
           "viewport": {
@@ -677,16 +848,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 294,
+            "scroll": 294
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 29.6015625,
             "width": 296,
-            "height": 716
+            "height": 680.796875
           },
           "closeVisible": true,
           "focusedLabel": "Operator preparation",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "ready": {
           "viewport": {
@@ -695,16 +872,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 294,
+            "scroll": 294
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 29.6015625,
             "width": 296,
-            "height": 716
+            "height": 680.796875
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "debrief": {
           "viewport": {
@@ -713,16 +896,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 294,
+            "scroll": 294
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 29.6015625,
             "width": 296,
-            "height": 716
+            "height": 680.796875
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 manu"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         }
       },
       "errors": [],
@@ -740,6 +929,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 261,
@@ -758,6 +950,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 205,
@@ -776,6 +971,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -794,6 +992,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -812,6 +1013,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -830,16 +1034,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 788,
+            "scroll": 788
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 47,
             "width": 796,
-            "height": 1156
+            "height": 1085.59375
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "workflow": {
           "viewport": {
@@ -848,16 +1058,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 788,
+            "scroll": 788
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 47,
             "width": 796,
-            "height": 1156
+            "height": 1085.59375
           },
           "closeVisible": true,
           "focusedLabel": "Workflow evidence",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "priority": {
           "viewport": {
@@ -866,16 +1082,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 788,
+            "scroll": 788
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 47,
             "width": 796,
-            "height": 1156
+            "height": 1085.59375
           },
           "closeVisible": true,
           "focusedLabel": "Workflow evidence",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "evidence": {
           "viewport": {
@@ -884,16 +1106,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 788,
+            "scroll": 788
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 47,
             "width": 796,
-            "height": 1156
+            "height": 1085.59375
           },
           "closeVisible": true,
           "focusedLabel": "Recorded evidence",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "history": {
           "viewport": {
@@ -902,16 +1130,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 788,
+            "scroll": 788
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 47,
             "width": 796,
-            "height": 1156
+            "height": 1085.59375
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "preparation": {
           "viewport": {
@@ -920,16 +1154,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 788,
+            "scroll": 788
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 47,
             "width": 796,
-            "height": 1156
+            "height": 1085.59375
           },
           "closeVisible": true,
           "focusedLabel": "Operator preparation",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "ready": {
           "viewport": {
@@ -938,16 +1178,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 788,
+            "scroll": 788
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 47,
             "width": 796,
-            "height": 1156
+            "height": 1085.59375
           },
           "closeVisible": true,
           "focusedLabel": "Shareable analysis report",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "debrief": {
           "viewport": {
@@ -956,16 +1202,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 788,
+            "scroll": 788
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 47,
             "width": 796,
-            "height": 1156
+            "height": 1085.59375
           },
           "closeVisible": true,
           "focusedLabel": "Guardian debrief",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         }
       },
       "errors": [],
@@ -983,6 +1235,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 92.5,
@@ -1001,6 +1256,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 26.5,
@@ -1019,6 +1277,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -1037,6 +1298,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -1055,6 +1319,9 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": null,
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
             "y": 12,
@@ -1073,16 +1340,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 358,
+            "scroll": 358
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 34,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "workflow": {
           "viewport": {
@@ -1091,16 +1364,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 358,
+            "scroll": 358
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 34,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": "Workflow evidence",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "priority": {
           "viewport": {
@@ -1109,16 +1388,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 358,
+            "scroll": 358
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 34,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": "Workflow evidence",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "evidence": {
           "viewport": {
@@ -1127,16 +1412,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 358,
+            "scroll": 358
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 34,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": "Recorded evidence",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "history": {
           "viewport": {
@@ -1145,16 +1436,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 358,
+            "scroll": 358
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 34,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": null,
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "preparation": {
           "viewport": {
@@ -1163,16 +1460,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 358,
+            "scroll": 358
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 34,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": "Operator preparation",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "ready": {
           "viewport": {
@@ -1181,16 +1484,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 358,
+            "scroll": 358
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 34,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": "Shareable analysis report",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         },
         "debrief": {
           "viewport": {
@@ -1199,16 +1508,22 @@
           },
           "pageOverflow": false,
           "dialogOverflow": false,
+          "reportBodyOverflow": false,
+          "reportBodyBounds": {
+            "client": 358,
+            "scroll": 358
+          },
+          "overflowingContent": [],
           "dialogBox": {
             "x": 12,
-            "y": 12,
+            "y": 34,
             "width": 366,
-            "height": 820
+            "height": 776.46875
           },
           "closeVisible": true,
           "focusedLabel": "Guardian debrief",
           "clippedButtons": [],
-          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 10ExportWorkflowEvidenceIssuesPreparationDebriefConversationSteps confirmed1/20 AI · 1 man"
+          "text": "Process Guide · Analysis & reviewSession reportReadinessUploaded videoReadiness.txtReview 8OverviewTimelineExportWorkflowEvidenceGuardian clipsIssuesPreparationDebriefConversation0"
         }
       },
       "errors": [],
@@ -1217,7 +1532,7 @@
       "report_provider_requests": []
     }
   ],
-  "fixture_calls": 2,
+  "fixture_calls": 0,
   "actual_provider_calls": 0,
   "accounts_in_memory": true
 }

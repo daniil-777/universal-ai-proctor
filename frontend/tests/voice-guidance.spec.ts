@@ -85,6 +85,9 @@ async function workspace(page: Page) {
   await expect(page.getByText("Parts_Sorting.txt · 4 steps extracted")).toBeVisible();
   await page.getByRole("button", { name: "Open workspace" }).click();
   const sources = page.getByRole("button", { name: "Sources and setup" });
+  await expect.poll(async () =>
+    await sources.isVisible() || await page.getByRole("button", { name: /^Pause guidance$/ }).isVisible(),
+  ).toBe(true);
   const compact = await sources.isVisible();
   if (compact) await sources.click();
   await page.getByRole("button", { name: /^Pause guidance$/ }).click();

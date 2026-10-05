@@ -1,8 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Camera, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { apiFetch } from "@/lib/api";
-import type { ReviewEvent, ReviewResponse } from "@/lib/reviewTypes";
+import type { ReviewResponse } from "@/lib/reviewTypes";
+import { formatReportTime, reportProvenance } from "@/lib/reportInsights";
+import { parseReviewPayload } from "@/lib/reviewPayload";
 
 const photo = (value?: string) =>
   value &&
@@ -10,18 +12,8 @@ const photo = (value?: string) =>
   /^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(value)
     ? value
     : undefined;
-const clock = (value: number) => {
-  const seconds = Math.max(0, Math.floor(Number.isFinite(value) ? value : 0));
-  return `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
-};
-const provenance = (event: ReviewEvent) =>
-  event.simulated
-    ? "Demo / simulated"
-    : event.provenance === "ai"
-      ? "AI observation"
-      : event.provenance === "system"
-        ? "System check"
-        : "Operator record";
+const clock = formatReportTime;
+const provenance = reportProvenance;
 
 /** Retained records only; photos use an explicit, bounded, source-checked read. */
 export function ReportEvidence({
@@ -48,9 +40,7 @@ export function ReportEvidence({
     setLimit(12);
     return () => controller.current?.abort();
   }, [context]);
-  const events =
-    review?.events.filter((event) => event.source_id === review.source_id) ??
-    [];
+  const events = useMemo(() => review?.events.filter(event => event.source_id === review.source_id) ?? [], [review]);
   const filtered = events
     .filter((event) => filter === "all" || event.kind === filter)
     .slice()
@@ -83,7 +73,7 @@ export function ReportEvidence({
         throw new Error(
           `Evidence photos could not be loaded (${response.status}).`,
         );
-      const data = (await response.json()) as ReviewResponse;
+      const data = parseReviewPayload(await response.json());
       if (active.signal.aborted || owner.current !== requested) return;
       if (
         !data.ok ||

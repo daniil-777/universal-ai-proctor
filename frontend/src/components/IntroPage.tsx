@@ -59,7 +59,7 @@ export function IntroPage() {
       <header className="intro-header">
         <Brand />
         <div className="intro-header-tools">
-          <span className="text-muted-foreground">Your process, in focus</span>
+          <span className="text-muted-foreground">Video · Camera · Screen</span>
           <Button
             variant="outline"
             size="icon"
@@ -79,13 +79,13 @@ export function IntroPage() {
               <span /> VIDEO & LIVE GUIDANCE
             </div>
             <h1>
-              A clearer view
+              Watch the work.
               <br />
-              of every step.
+              Review the details.
             </h1>
             <p className="intro-description">
-              Bring your process into focus. Watch a video or connect a camera,
-              follow key actions, and ask for guidance as you go.
+              Open a recording or connect a live view. Add instructions to track
+              the process, review evidence and ask questions alongside the video.
             </p>
             <div className="mt-6 flex flex-col items-start gap-3">
               <VideoLibraryLink />
@@ -111,9 +111,9 @@ export function IntroPage() {
           <div className="intro-section-title">
             <div>
               <div className="intro-eyebrow">YOUR WORKSPACE STARTS HERE</div>
-              <h2>Make it your process.</h2>
+              <h2>Start a guidance session.</h2>
             </div>
-            <p>Three simple choices. You can adjust them anytime.</p>
+            <p>Choose a source, instructions and guidance preferences.</p>
           </div>
           <div className="intro-step-heading">
             <span>1</span>
@@ -155,7 +155,7 @@ export function IntroPage() {
                     !navigator.mediaDevices?.getDisplayMedia)
                 }
                 onClick={card.action}
-                className={`text-left rounded-2xl border p-5 transition-colors shadow-sm hover:border-primary/60 hover:bg-primary/5 ${a.sourceKind === card.id ? "border-primary bg-primary/5" : "bg-card border-border"}`}
+                className={`intro-source-card text-left border p-5 transition-colors hover:border-primary/60 hover:bg-primary/5 ${a.sourceKind === card.id ? "border-primary bg-primary/5" : "bg-card border-border"}`}
               >
                 <span className="h-10 w-10 grid place-items-center rounded-xl bg-primary/10 text-primary mb-4">
                   {card.icon}

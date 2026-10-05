@@ -17,8 +17,9 @@ test("tour downloads only on request, plays and seeks without becoming the analy
   expect(poster.headers()["content-type"]).toContain("image/jpeg");
   expect((await poster.body()).length).toBeLessThan(45_000);
   await expect(
-    page.getByRole("heading", { name: "A clearer view of every step." }),
+    page.getByRole("heading", { name: "Watch the work. Review the details." }),
   ).toBeVisible();
+  expect(requests.some(url => /\/assets\/Workspace-[^/]+\.js$/.test(new URL(url).pathname))).toBe(false);
   const video = page.getByTestId("intro-tour-video");
   await expect(video).not.toHaveAttribute("src");
   expect(
@@ -47,6 +48,7 @@ test("tour downloads only on request, plays and seeks without becoming the analy
     .poll(() => video.evaluate((v: HTMLVideoElement) => v.currentTime))
     .toBeCloseTo(12, 0);
   await page.getByRole("button", { name: "Open workspace" }).click();
+  expect(requests.some(url => /\/assets\/Workspace-[^/]+\.js$/.test(new URL(url).pathname))).toBe(true);
   await expect(page.getByTestId("intro-tour-video")).toHaveCount(0);
   await expect(
     page.getByRole("button", { name: "Analyze current view", exact: true }),
@@ -107,8 +109,12 @@ test("failed sample loads have a working retry, with custom uploads still availa
     name: "Choose a sample guidance document",
   });
   await expect(samples).toBeEnabled();
+  const catalog = await (await page.request.get("/api/samples")).json();
   await samples.click();
-  await expect(page.getByRole("option")).toHaveCount(8);
+  await expect(page.getByRole("option")).toHaveCount(catalog.documents.length);
+  expect(await page.getByRole("option").allTextContents()).toEqual(
+    catalog.documents.map((document: { name: string }) => document.name),
+  );
 });
 
 test("tour failure exposes instructions and can be retried", async ({

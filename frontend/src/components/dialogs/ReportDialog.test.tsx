@@ -63,8 +63,8 @@ function view() {
   return rendered;
 }
 const pdfResponse = () =>
-  new Response(new Blob(["%PDF-fixture"], { type: "application/pdf" }), {
-    status: 200,
+  new Response("%PDF-fixture", {
+    status: 200, headers: { "Content-Type": "application/pdf" },
   });
 
 describe("report snapshot ownership", () => {
@@ -329,12 +329,10 @@ describe("report snapshot ownership", () => {
     });
     expect(priorities).toHaveTextContent("Alignment not established");
     expect(priorities).not.toHaveTextContent("Unknown first criterion");
-    expect(priorities).toHaveTextContent(
-      "0 met · 1 partial · 1 not met · 1 unknown",
-    );
+    expect(screen.getByRole("img", { name: /Criterion status counts/ })).toHaveAttribute("aria-label", "Criterion status counts: Met: 0, Partial: 1, Not met: 1, Unknown: 1");
     expect(
       screen.getByRole("img", {
-        name: "AI: 0, Manual: 1, Other confirmation: 0, Unfinished: 1",
+        name: "1 of 2 steps confirmed: 0 AI, 1 manual, 0 other, 1 unfinished",
       }),
     ).toBeInTheDocument();
   });
@@ -348,6 +346,13 @@ describe("report snapshot ownership", () => {
     expect(
       screen.queryByText(/No outstanding items in the recorded review/),
     ).toBeNull();
+  });
+
+  it("does not label unfinished steps without criteria as confirmed", () => {
+    harness.app.stages = [{ id: "S1", name: "Observe", complete: false, progress: 0, criteria: [] }];
+    view();
+    expect(screen.getByRole("heading", { name: "Review in progress." })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "Recorded steps confirmed." })).toBeNull();
   });
 
   it("keeps session telemetry separate and validates a recorded debrief response", async () => {
@@ -378,4 +383,20 @@ describe("report snapshot ownership", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Prepare PDF" })).toBeEnabled();
   });
+});
+
+it("rejects an HTML error page returned with successful status instead of offering a broken PDF", async () => {
+  harness.fetch.mockResolvedValue(new Response("<html>Error</html>", { headers: { "Content-Type": "text/html" } }));
+  view();
+  fireEvent.click(screen.getByRole("button", { name: "Prepare PDF" }));
+  expect(await screen.findByRole("alert")).toHaveTextContent("unexpected report format");
+  expect(screen.queryByRole("button", { name: "Download PDF" })).toBeNull();
+});
+
+it("rejects corrupt bytes even if the response claims to be a PDF", async () => {
+  harness.fetch.mockResolvedValue(new Response("Not a PDF", { headers: { "Content-Type": "application/pdf" } }));
+  view();
+  fireEvent.click(screen.getByRole("button", { name: "Prepare PDF" }));
+  expect(await screen.findByRole("alert")).toHaveTextContent("invalid PDF");
+  expect(screen.queryByRole("button", { name: "Download PDF" })).toBeNull();
 });

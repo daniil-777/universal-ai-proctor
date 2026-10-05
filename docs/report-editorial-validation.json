@@ -1,0 +1,199 @@
+{
+  "checked_at": "2026-10-05T21:06:39.913584+00:00",
+  "scope": "Editorial app/report design, retained-evidence timeline, response/export validation and startup/render efficiency. Existing recognition algorithms and provider prompts are unchanged.",
+  "software_tests": {
+    "backend": 325,
+    "frontend": 163,
+    "browser_distinct": 101,
+    "deployment_packaging": 12,
+    "total_distinct": 601,
+    "browser_runs": [
+      {
+        "scope": "complete suite before the final native-control fix",
+        "passed": 87,
+        "failed": 13,
+        "total": 100
+      },
+      {
+        "scope": "affected scenarios after correcting obsolete assertions and lazy-loading helpers",
+        "passed": 31,
+        "failed": 0
+      },
+      {
+        "scope": "final timeline layout/replay on desktop, 320 px phone, WebKit tablet and dark WebKit phone",
+        "passed": 4,
+        "failed": 0
+      }
+    ],
+    "browser_count_note": "All 101 scenarios verified across runs; repetitions are excluded from the distinct count. The new dark WebKit phone case found native option painting beyond the control width; its fix passed the final four-profile run.",
+    "typescript": "frontend/backend checks passed",
+    "lint_errors": 0,
+    "inherited_lint_warnings": 8,
+    "production_builds": "frontend/backend and Pages packaging passed"
+  },
+  "visual_checks": {
+    "profiles": 5,
+    "states": 65,
+    "record": "professional-ui-validation.json",
+    "page_overflow": false,
+    "dialog_overflow": false,
+    "report_body_overflow": false,
+    "clipped_controls": 0,
+    "page_errors": 0,
+    "external_requests": 0,
+    "actual_provider_calls": 0
+  },
+  "pdf_visual_checks": {
+    "sample_pages_rendered_and_inspected": 8,
+    "long_title_pages_rendered_and_inspected": 10,
+    "empty_camera_pages_rendered_and_inspected": 3,
+    "long_title_and_final_content_markers_preserved": true
+  },
+  "offline_html_checks": [
+    {
+      "profile": "desktop",
+      "overflow": false,
+      "links_resolve": true,
+      "all_images_decoded": true,
+      "scripts": 0,
+      "page_errors": [],
+      "external_requests": [],
+      "timeline_bins": 40,
+      "timeline_bin_heights_valid": true
+    },
+    {
+      "profile": "phone",
+      "overflow": false,
+      "links_resolve": true,
+      "all_images_decoded": true,
+      "scripts": 0,
+      "page_errors": [],
+      "external_requests": [],
+      "timeline_bins": 40,
+      "timeline_bin_heights_valid": true
+    },
+    {
+      "profile": "tablet",
+      "overflow": false,
+      "links_resolve": true,
+      "all_images_decoded": true,
+      "scripts": 0,
+      "page_errors": [],
+      "external_requests": [],
+      "timeline_bins": 40,
+      "timeline_bin_heights_valid": true
+    },
+    {
+      "profile": "empty-camera",
+      "overflow": false,
+      "links_resolve": true,
+      "all_images_decoded": true,
+      "scripts": 0,
+      "page_errors": [],
+      "external_requests": [],
+      "timeline_bins": 0,
+      "timeline_bin_heights_valid": true
+    },
+    {
+      "profile": "long-title",
+      "overflow": false,
+      "links_resolve": true,
+      "all_images_decoded": true,
+      "scripts": 0,
+      "page_errors": [],
+      "external_requests": [],
+      "timeline_bins": 40,
+      "timeline_bin_heights_valid": true
+    }
+  ],
+  "startup_bundle": {
+    "main_js_before_kb": 535.55,
+    "main_js_after_kb": 376.32,
+    "gzip_before_kb": 161.16,
+    "gzip_after_kb": 116.47,
+    "app_and_react_gzip_kb": 176.19,
+    "initial_css_gzip_kb": 18.07,
+    "workbench_loaded_on_demand": true,
+    "source_setup_prefetch": true,
+    "new_dependencies": 0
+  },
+  "pdf_cache_comparison": {
+    "scope": "Synthetic 30-step, 300-criterion report. Same layout, caching on/off; warm-up excluded. Local direct renderer benchmark; not hosted latency.",
+    "pages": 65,
+    "runs_ms": {
+      "cached": [
+        197,
+        165,
+        140
+      ],
+      "uncached": [
+        213,
+        185,
+        168
+      ]
+    },
+    "median_cached_ms": 165,
+    "median_uncached_ms": 185,
+    "extracted_text_identical": true,
+    "cache_entry_limit": 512,
+    "cache_key_character_budget": 500000
+  },
+  "pdf_stress": {
+    "fixture": "Synthetic 100-step workflow with 3000 criteria and 150 retained events",
+    "pages": 752,
+    "render_ms": 2916,
+    "html_render_ms": 16,
+    "main_thread_timer_ms": 27,
+    "admission_ms": 10,
+    "whole_process_peak_rss_mib": 405.5,
+    "final_criterion_marker_preserved": true,
+    "actual_provider_calls": 0,
+    "scope_note": "Local synthetic observation, not hosted capacity. Worker V8 heap quota does not cap whole-process native memory."
+  },
+  "running_app_ui_smoke": {
+    "checked_at": "2026-10-05T21:05:56.789Z",
+    "base": "http://localhost:8101",
+    "health_status": 200,
+    "profiles": [
+      {
+        "profile": "desktop",
+        "overflow": false,
+        "page_errors": [],
+        "provider_calls": 0,
+        "headline": "Watch the work. Review the details."
+      },
+      {
+        "profile": "phone",
+        "overflow": false,
+        "page_errors": [],
+        "provider_calls": 0,
+        "headline": "Watch the work. Review the details."
+      },
+      {
+        "profile": "tablet",
+        "overflow": false,
+        "page_errors": [],
+        "provider_calls": 0,
+        "headline": "Watch the work. Review the details."
+      }
+    ]
+  },
+  "running_app_account_smoke": {
+    "base": "http://localhost:8101",
+    "passed": true,
+    "pdf_bytes": 41407,
+    "pdf_ms": 356,
+    "saved_pdf_bytes": 41408,
+    "unique_saved_runs": 1,
+    "unsupported_pdf_characters_rejected": true,
+    "unicode_html_preserved": true,
+    "provider_calls": 0,
+    "temporary_account_removed": true
+  },
+  "evaluation_limits": [
+    "Browser AI answers are deterministic fixtures; these checks do not measure recognition accuracy.",
+    "Touch and tablet profiles use emulation, not physical-device microphone or keyboard tests.",
+    "The representative report fixtures are illustrative assembly examples.",
+    "GitHub Pages is a static interface preview; the full backend runs locally."
+  ]
+}

@@ -12,7 +12,7 @@ const data = (source = "source-a", version = 1) => ({
   checks: [],
   events: [],
   exceptions: [],
-  retention: {},
+  retention: { events: 150, thumbnails: 24, retained_events: 0, retained_thumbnails: 0, dropped_events: 0, dropped_thumbnails: 0, dropped_exceptions: 0 },
   notice: "",
 });
 const response = (source = "source-a", version = 1) =>
@@ -142,4 +142,14 @@ it("loads images lazily and uses the latest visibility when a pending metadata r
   await act(async () => resolve(response()));
   await flush();
   expect(mock.fetch.mock.calls[1][0]).toContain("include_images=true");
+});
+
+it("retains the last valid snapshot and shows an actionable error for malformed successful responses", async () => {
+  mock.fetch.mockResolvedValueOnce(response()).mockResolvedValueOnce(new Response(JSON.stringify({ ...data("source-a", 2), events: null })));
+  const h = renderHook(() => useSessionReview("", "source-a", true, 1, null));
+  await flush();
+  await act(() => h.result.current.refreshReview());
+  expect(h.result.current.review.review_version).toBe(1);
+  expect(h.result.current.reviewError).toContain("incomplete review records");
+  expect(h.result.current.reviewLoading).toBe(false);
 });

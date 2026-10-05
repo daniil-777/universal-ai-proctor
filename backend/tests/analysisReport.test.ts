@@ -126,3 +126,19 @@ describe("shareable analysis reports", () => {
     data.source.kind = "camera"; expect(guardianReportFindings(data)[0].window).toBeNull(); expect(renderAnalysisHtml(data)).toContain("Recorded sample only - no playable video window");
   });
 });
+
+it("exports an honest chronology while excluding demos, overview samples and unrelated sources from the timeline", async () => {
+  const data = await example(), event = data.evidence[0];
+  data.evidence = [{ ...event, id: "later", video_time_s: 12, status: "watch" }, { ...event, id: "first", video_time_s: 0 },
+    { ...event, id: "demo", simulated: true, video_time_s: 5 }, { ...event, id: "overview", observation_scope: "overview", video_time_s: 40 },
+    { ...event, id: "other", source_id: "source-other", video_time_s: 70 }];
+  const insights = reportOverview(data);
+  expect(insights.moments.map(moment => moment.id)).toEqual(["first", "later"]);
+  expect(insights.lastMoment).toBe(12);
+  expect(insights.timeline.reduce((sum, bin) => sum + bin.count, 0)).toBe(2);
+  expect(insights.timeline.at(-1)?.status).toBe("watch");
+  const html = renderAnalysisHtml(data);
+  expect(html).toContain("Evidence in time"); expect(html).toContain("Gaps are unobserved");
+  expect(html).toContain('href="#timeline"');
+  expect((await renderAnalysisPdf(data)).subarray(0, 5).toString()).toBe("%PDF-");
+});

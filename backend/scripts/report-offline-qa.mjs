@@ -29,12 +29,16 @@ for (const profile of profiles) {
       headingCount: document.querySelectorAll("h2").length,
       linksResolve: [...document.querySelectorAll('a[href^="#"]')].every(anchor => document.querySelector(anchor.getAttribute("href"))),
       scripts: document.scripts.length,
+      timelineBins: [...document.querySelectorAll(".moment-lane>span")].map(bin => ({
+        height: bin.getBoundingClientRect().height,
+        padding: parseFloat(getComputedStyle(bin).paddingTop),
+      })),
     }));
-    if (metrics.overflow || metrics.images.some(image => !image.complete || image.width === 0) || !metrics.linksResolve || metrics.scripts || errors.length || requests.length) throw new Error(JSON.stringify({ profile, metrics, errors, requests }));
+    if (metrics.overflow || metrics.images.some(image => !image.complete || image.width === 0) || !metrics.linksResolve || metrics.scripts || errors.length || requests.length || metrics.timelineBins.some(bin => bin.height > 34 || bin.padding !== 0)) throw new Error(JSON.stringify({ profile, metrics, errors, requests }));
     await page.screenshot({ path: path.join(destination, "html-" + profile.name + "-top.png") });
     await page.screenshot({ path: path.join(destination, "html-" + profile.name + ".png"), fullPage: true });
     if (!profile.fixture) {
-      for (const section of ["workflow", "exceptions", "evidence", "readiness", "reference"]) {
+      for (const section of ["timeline", "workflow", "exceptions", "evidence", "readiness", "reference"]) {
         await page.locator("#" + section).scrollIntoViewIfNeeded();
         await page.screenshot({ path: path.join(destination, "html-" + profile.name + "-" + section + ".png") });
       }

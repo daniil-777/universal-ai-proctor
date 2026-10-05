@@ -50,10 +50,18 @@ export async function renderAnalysisPdfDirect(data: StructuredHandoff): Promise<
     }
     doc.font(font).fontSize(size).fillColor(color).text(normalized, x, position, { ...options, lineBreak: false });
   };
+  // Repeated criteria/notes otherwise ask the font engine to measure the same
+  // paragraphs several times. Keep this cache private and bounded per render.
+  const wrapCache = new Map<string, string[]>();
+  let cachedCharacters = 0;
   const wrap = (value: unknown, size: number, weight: boolean, w: number): string[] => {
+    const normalized = plain(value);
+    const key = JSON.stringify([size, weight, w, normalized]);
+    const cached = wrapCache.get(key);
+    if (cached) return cached;
     doc.font(weight ? "Bold" : "Regular").fontSize(size);
     const result: string[] = [];
-    for (const paragraph of plain(value).split(/\r?\n/)) {
+    for (const paragraph of normalized.split(/\r?\n/)) {
       let current = "";
       for (const word of paragraph.split(/\s+/)) {
         const next = current ? `${current} ${word}` : word;
@@ -64,6 +72,14 @@ export async function renderAnalysisPdfDirect(data: StructuredHandoff): Promise<
         current = segment;
       }
       result.push(current);
+    }
+    if (key.length <= 8192) {
+      while (wrapCache.size >= 512 || cachedCharacters + key.length > 500_000) {
+        const oldest = wrapCache.keys().next().value;
+        if (oldest === undefined) break;
+        wrapCache.delete(oldest); cachedCharacters -= oldest.length;
+      }
+      wrapCache.set(key, result); cachedCharacters += key.length;
     }
     return result;
   };
@@ -95,7 +111,7 @@ export async function renderAnalysisPdfDirect(data: StructuredHandoff): Promise<
   };
   const summaryBox = (value: string) => {
     const boxH = height(value, 9, false, width - 28) + 26; ensure(boxH);
-    doc.roundedRect(48, y, width, boxH, 7).fill("#F0F7F7");
+    doc.rect(48, y, width, boxH).fill("#F0F7F7");
     doc.rect(48, y, 3, boxH).fill(teal);
     const top = y; y += 13; text(value, 9, "#42616D", false, 62, width - 28); y = top + boxH + 16;
   };
@@ -105,7 +121,7 @@ export async function renderAnalysisPdfDirect(data: StructuredHandoff): Promise<
   const titleInHero = titleH <= 150, heroH = titleInHero ? 170 + titleH : 156;
   doc.rect(0, 0, doc.page.width, heroH).fill(ink); doc.rect(0, heroH - 3, doc.page.width, 3).fill(teal);
   drawText("PROCESS GUIDE", 48, 37, 9, "#A4DBD9", true);
-  drawText("SESSION INTELLIGENCE / REVIEW REPORT", 48, 37, 8, "#B4C7D3", false, { width, align: "right" });
+  drawText("DOCUMENTED SESSION / REVIEW REPORT", 48, 37, 8, "#B4C7D3", false, { width, align: "right" });
   y = 73; text("Session analysis", 28, "#FFFFFF", true); space(6);
   if (titleInHero) text(title, 12, "#DFEBEF");
   drawText(`GENERATED ${data.generated_at} / SNAPSHOT ${data.review_version}`, 48, heroH - 28, 8, "#B8CCD7", false);
@@ -115,8 +131,7 @@ export async function renderAnalysisPdfDirect(data: StructuredHandoff): Promise<
   ensure(87);
   [[s.total ? `${s.complete}/${s.total}` : "No workflow", "Steps complete"], [s.exceptions, "Open exceptions"], [s.evidence, "Evidence records"], [s.totalChecks ? `${s.checks}/${s.totalChecks}` : "No checks", "Preparation checks"]].forEach(([value, label], index) => {
     const x = 48 + index * (cardW + 10);
-    doc.roundedRect(x, y, cardW, 65, 7).fillAndStroke("#FAFCFD", line);
-    if (index === 1 && s.exceptions) doc.rect(x + 1, y + 1, cardW - 2, 2).fill("#AF7A34");
+    if (index > 0) doc.moveTo(x - 5, y + 8).lineTo(x - 5, y + 62).strokeColor(line).lineWidth(0.6).stroke();
     drawText(String(value), x + 12, y + 10, typeof value === "string" && value.startsWith("No ") ? 12 : 22, ink, true, { width: cardW - 24 });
     drawText(String(label), x + 12, y + 43, 8.5, muted, false, { width: cardW - 20 });
   }); y += 87;
@@ -134,7 +149,7 @@ export async function renderAnalysisPdfDirect(data: StructuredHandoff): Promise<
   space(16); ensure(166); const chartsTop = y;
   charts.forEach((chart, index) => {
     const x = 48 + index * (chartW + 16), innerW = chartW - 28;
-    doc.roundedRect(x, chartsTop, chartW, 150, 7).fillAndStroke("#FFFFFF", line);
+    doc.moveTo(x + 14, chartsTop + 150).lineTo(x + chartW - 14, chartsTop + 150).strokeColor(line).lineWidth(0.6).stroke();
     drawText(chart.title, x + 14, chartsTop + 14, 10, ink, true);
     drawText(`${chart.total} recorded`, x + 14, chartsTop + 34, 8, muted, false);
     let segmentX = x + 14; doc.rect(segmentX, chartsTop + 53, innerW, 6).fill("#EDF2F5");
@@ -142,13 +157,34 @@ export async function renderAnalysisPdfDirect(data: StructuredHandoff): Promise<
     chart.groups.forEach((group, groupIndex) => { const col = groupIndex % 2, row = Math.floor(groupIndex / 2), gx = x + 14 + col * (innerW / 2 + 2), gy = chartsTop + 68 + row * 18; doc.rect(gx, gy + 2, 5, 5).fill(group.color); drawText(`${group.label} ${group.count}`, gx + 9, gy, 7, muted, false); });
     y = chartsTop + 110; text(chart.note, 7.5, muted, false, x + 14, innerW);
   }); y = chartsTop + 168;
+  currentSection = "Recorded timeline";
+  ensure(120); doc.outline.addItem("Recorded timeline");
+  text("RECORDED MOMENTS", 8, teal, true); space(5);
+  text("Evidence in time", 16, ink, true); space(7);
+  text("Each mark represents retained evidence. Gaps are unobserved; demo and whole-video overview records are excluded.", 8.5, muted); space(14);
+  if (derived.moments.length) {
+    const laneTop = y, binWidth = (width - 39 * 3) / 40;
+    for (const [index, bin] of derived.timeline.entries()) {
+      const h = bin.count ? Math.min(28, 9 + bin.count * 4) : 2;
+      doc.rect(48 + index * (binWidth + 3), laneTop + 28 - h, binWidth, h)
+        .fill(!bin.count ? line : bin.status === "alert" ? "#B9614B" : bin.status === "watch" ? "#B68B46" : teal);
+    }
+    y += 37;
+    drawText("00:00", 48, y, 8, muted, false);
+    drawText(`${clock(derived.lastMoment)} / last retained moment`, 48, y, 8, muted, false, { width, align: "right" });
+    space(20);
+    text(`${derived.moments.length} real, source-scoped moments / Recorded (teal), watch (ochre), alert (rust)`, 8, muted); space(14);
+  } else { text("No real moments have been retained for this source.", 9, muted); space(14); }
   currentSection = "Review priorities";
   ensure(105); doc.outline.addItem("Review priorities"); text("FOLLOW-THROUGH", 8, teal, true); space(5); text("Review priorities", 18, ink, true); space(7);
   text("First listed item per category, with exact remaining counts. Full records follow in the detailed sections.", 9, muted); space(12);
   if (!derived.priorities.length) { text("No follow-up items are listed in this snapshot. This is not a certification of process quality or safety.", 9, muted); space(12); }
   for (const [index, item] of derived.priorities.entries()) {
     const cardH = 40 + height(item.title, 10, true, width - 62) + height(item.detail, 9, false, width - 62);
-    if (cardH <= bottom - 90) { ensure(cardH + 10); doc.roundedRect(48, y, width, cardH, 7).fillAndStroke("#FCFDFE", line); }
+    if (cardH <= bottom - 90) {
+      ensure(cardH + 10);
+      doc.moveTo(48, y + cardH).lineTo(48 + width, y + cardH).strokeColor(line).lineWidth(0.6).stroke();
+    }
     const top = y; drawText(String(index + 1).padStart(2, "0"), 62, top + 15, 8, teal, true); y += 13;
     text(`${item.kind.toUpperCase()} / ${item.count} remaining`, 8, muted, true, 86, width - 62); space(4);
     text(item.title, 10, ink, true, 86, width - 62); space(4); text(item.detail, 9, muted, false, 86, width - 62); space(15);
