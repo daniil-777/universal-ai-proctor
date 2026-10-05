@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "recorded_at_utc": "2026-10-05T13:00:48.304515+00:00",
+  "repository": "https://github.com/daniil-777/universal-ai-proctor",
+  "ci_run_id": 37313028738,
+  "ci_url": "https://github.com/daniil-777/universal-ai-proctor/actions/runs/37313028738",
+  "source_commit": "e3b7236cc925d5f0e373014603369ac714caa244",
+  "workflow": "Verify Oracle ARM container",
+  "event": "workflow_dispatch",
+  "status": "completed",
+  "conclusion": "success",
+  "ci_log_sha256_utf8": "1e36b0263b0e5c603829beeee6047ada79d5847472191f49909fc130e926e419",
+  "ci_log_bytes": 358401,
+  "jobs": [
+    {
+      "name": "arm-container-smoke / container-smoke",
+      "id": 111772847161,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/actions/runs/37313028738/job/111772847161",
+      "conclusion": "success",
+      "started_at": "2026-10-05T12:56:30Z",
+      "completed_at": "2026-10-05T12:58:59Z"
+    },
+    {
+      "name": "arm-container-smoke / source-checks",
+      "id": 111772848578,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/actions/runs/37313028738/job/111772848578",
+      "conclusion": "skipped",
+      "started_at": "2026-10-05T12:56:25Z",
+      "completed_at": "2026-10-05T12:56:24Z"
+    }
+  ],
+  "runner": {
+    "labels": [
+      "ubuntu-24.04-arm"
+    ],
+    "runner_id": 1000000317,
+    "runner_name": "GitHub Actions 1000000317",
+    "host_architecture": "aarch64",
+    "docker_image_architecture": "arm64",
+    "node_architecture": "arm64",
+    "host_node_version": "v24.21.0",
+    "app_node_major": 24,
+    "app_uid": 1000
+  },
+  "native_container_checks": {
+    "docker_build": "passed",
+    "ffmpeg_version": "5.1.9-0+deb12u1",
+    "ffprobe_version": "5.1.9-0+deb12u1",
+    "runtime_assets_sha256_and_size_verified": 21,
+    "runtime_assets_downloaded_bytes": 1006517201,
+    "runtime_destinations_written": 32,
+    "all_six_bundled_videos_and_guides_loaded": true,
+    "sample_range": "HTTP206_exact_100_bytes",
+    "real_ffmpeg_decoding": "passed",
+    "mock_guidance_questions_and_sse": "passed",
+    "pdf_html_zip_exports": "passed",
+    "video_upload_and_report_evidence": "passed",
+    "account_registration_save_login_logout_deletion": "passed",
+    "saved_account_history_and_pdf_after_restart": "passed",
+    "private_application_volume": "/data",
+    "account_smoke": {
+      "base": "http://localhost:8101",
+      "passed": true,
+      "pdf_bytes": 40499,
+      "pdf_ms": 299,
+      "saved_pdf_bytes": 40506,
+      "unique_saved_runs": 1,
+      "unsupported_pdf_characters_rejected": true,
+      "unicode_html_preserved": true,
+      "provider_calls": 0,
+      "temporary_account_removed": true
+    }
+  },
+  "private_caddy_proxy_checks": {
+    "compose_config_validation": "passed",
+    "caddy_config_validation": "passed",
+    "image": "caddy:2.11.6-alpine@sha256:d44355d3c2149dc580ce2cac735955d1c08d3d00882c30489c241aa51a5c10d9",
+    "multiarch_registry_verification": {
+      "tag": "caddy:2.11.6-alpine",
+      "http_status": 200,
+      "registry_manifest_digest": "sha256:d44355d3c2149dc580ce2cac735955d1c08d3d00882c30489c241aa51a5c10d9",
+      "raw_body_sha256": "sha256:d44355d3c2149dc580ce2cac735955d1c08d3d00882c30489c241aa51a5c10d9",
+      "media_type": "application/vnd.oci.image.index.v1+json",
+      "platforms": [
+        {
+          "digest": "sha256:86d4376ad067063d998533bf06e0c78b97cc8d99cd7cc66f84393165a95a65ed",
+          "architecture": "amd64",
+          "os": "linux"
+        },
+        {
+          "digest": "sha256:ed9acd2f75ce6cd125d05a1c9f625fdc47bc979d10a1da1ba9363d0d2c9f9f2c",
+          "architecture": "arm64",
+          "os": "linux",
+          "variant": "v8"
+        }
+      ]
+    },
+    "tls": "passed_with_local_internal_CA",
+    "backend_port_publication": "none_for_proxy_fixture",
+    "trusted_proxy_cidrs": "172.30.250.3/32",
+    "client_forwarding_header_spoof_rejection": "passed",
+    "video_range": "HTTP206_exact_100_bytes_without_content_encoding",
+    "sse_delivery": "first_chunk_more_than_100ms_before_stream_end",
+    "app_sse_without_content_encoding": "passed",
+    "secure_httponly_samesite_strict_account_cookie": "passed",
+    "wrong_origin_account_mutation": "HTTP403",
+    "temporary_containers_network_certificates_and_volumes": "cleanup attempted by the fixture finally block; disposable CI runner"
+  },
+  "mock": true,
+  "paid_ai_calls": 0,
+  "source_checks_in_this_manual_run": "intentionally_skipped; covered by the separate x86 main workflow",
+  "corresponding_x86_source_and_container_run": {
+    "ci_run_id": 37313024004,
+    "ci_url": "https://github.com/daniil-777/universal-ai-proctor/actions/runs/37313024004",
+    "receipt": "deployment-verification-e3b7236.json"
+  },
+  "failed_attempts": [
+    {
+      "ci_run_id": 37312708813,
+      "ci_url": "https://github.com/daniil-777/universal-ai-proctor/actions/runs/37312708813",
+      "source_commit": "fdea21df3ebba4707e6ca463fc6458e64d00fddb",
+      "job_id": 111771791805,
+      "conclusion": "failure",
+      "failed_step": "Validate the Oracle Compose and HTTPS proxy configuration",
+      "exit_code": 125,
+      "reason": "caddy:2.11.7-alpine was not published in DockerRegistry: manifest unknown; corrected to verified 2.11.6-alpine multiarch digest",
+      "app_image_build_and_runtime_checks": "not_executed",
+      "ci_log_sha256_utf8": "f5cecb32807f23762cc6cee49b4184a61be446dec24eedfa591370bd42eb6e38"
+    }
+  ],
+  "selected_actual_log_evidence": [
+    "arm-container-smoke / container-smoke\tUNKNOWN STEP\t2026-10-05T12:56:30.9095438Z Image: ubuntu-24.04-arm",
+    "arm-container-smoke / container-smoke\tUNKNOWN STEP\t2026-10-05T12:56:37.8267947Z node: v24.21.0",
+    "arm-container-smoke / container-smoke\tUNKNOWN STEP\t2026-10-05T12:56:46.4279283Z Digest: sha256:d44355d3c2149dc580ce2cac735955d1c08d3d00882c30489c241aa51a5c10d9",
+    "arm-container-smoke / container-smoke\tUNKNOWN STEP\t2026-10-05T12:57:36.3463696Z #26 6.006 Verified media: 21 assets; 21 downloaded, 0 reused, 32 destinations written (1006517201 downloaded bytes).",
+    "arm-container-smoke / container-smoke\tUNKNOWN STEP\t2026-10-05T12:58:12.3633319Z ffmpeg version 5.1.9-0+deb12u1 Copyright (c) 2000-2026 the FFmpeg developers",
+    "arm-container-smoke / container-smoke\tUNKNOWN STEP\t2026-10-05T12:58:12.4519133Z ffprobe version 5.1.9-0+deb12u1 Copyright (c) 2007-2026 the FFmpeg developers",
+    "arm-container-smoke / container-smoke\tUNKNOWN STEP\t2026-10-05T12:58:12.5098557Z Native arm64 / Node 24 / FFmpeg / unprivileged app process verified.",
+    "arm-container-smoke / container-smoke\tUNKNOWN STEP\t2026-10-05T12:58:16.3215444Z Six bundled videos/guides, FFmpeg range playback, mocked guidance/Q&A/SSE, PDF/HTML/ZIP and account save passed. Paid AI calls: zero.",
+    "arm-container-smoke / container-smoke\tUNKNOWN STEP\t2026-10-05T12:58:50.3187774Z {\"base\":\"http://localhost:8101\",\"passed\":true,\"pdf_bytes\":40499,\"pdf_ms\":299,\"saved_pdf_bytes\":40506,\"unique_saved_runs\":1,\"unsupported_pdf_characters_rejected\":true,\"unicode_html_preserved\":true,\"provider_calls\":0,\"temporary_account_removed\":true}",
+    "arm-container-smoke / container-smoke\tUNKNOWN STEP\t2026-10-05T12:58:53.5377714Z Account and saved PDF survive restart on the retained SQLite disk.",
+    "arm-container-smoke / container-smoke\tUNKNOWN STEP\t2026-10-05T12:58:57.2552428Z Private app/Caddy TLS, forwarding-header spoof rejection, video ranges, SSE, secure account cookies and origin protection passed. Paid AI calls: zero. No cloud VM was used."
+  ],
+  "scope": {
+    "oracle_vm_deployed": false,
+    "public_tls_and_real_device_camera_microphone": "not_tested; required after an actual deployment",
+    "real_provider_accuracy": "not_tested by this mock-only workflow",
+    "description": "Native ARM64 GitHub-hosted Ubuntu CI built and ran the production container, then verified temporary private Caddy HTTPS with a local internal CA. Saved accounts/PDF survived a container restart on a retained SQLite volume. No Oracle resources, public certificates, provider credentials or paid AI calls were used."
+  }
+}

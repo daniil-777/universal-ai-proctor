@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "recorded_at_utc": "2026-10-05T13:00:21.955598+00:00",
+  "repository": "https://github.com/daniil-777/universal-ai-proctor",
+  "ci_run_id": 37313024004,
+  "ci_url": "https://github.com/daniil-777/universal-ai-proctor/actions/runs/37313024004",
+  "source_commit": "e3b7236cc925d5f0e373014603369ac714caa244",
+  "status": "completed",
+  "conclusion": "success",
+  "ci_log_sha256_normalized_utf8": "2267caac9d72acd57f533cd80f563f00f81460985d9cad0331f7a1d2ec23e24f",
+  "jobs": [
+    {
+      "name": "container-smoke",
+      "databaseId": 111772826887,
+      "conclusion": "success",
+      "startedAt": "2026-10-05T12:56:26Z",
+      "completedAt": "2026-10-05T12:59:05Z"
+    },
+    {
+      "name": "source-checks",
+      "databaseId": 111772827322,
+      "conclusion": "success",
+      "startedAt": "2026-10-05T12:56:25Z",
+      "completedAt": "2026-10-05T12:57:53Z"
+    }
+  ],
+  "source_checks": {
+    "backend_tests_passed": 324,
+    "backend_test_files_passed": 26,
+    "frontend_tests_passed": 152,
+    "frontend_test_files_passed": 20,
+    "proxy_cases_added": 19,
+    "downloader_fixture_tests_passed": 8,
+    "type_and_lint_checks": "passed; eight existing non-fatal react-refresh lint warnings",
+    "original_guidance_files_hash_verified": 7
+  },
+  "container_checks": {
+    "architecture": "x64",
+    "node_major": 24,
+    "app_uid": 1000,
+    "real_ffmpeg_and_ffprobe": "passed",
+    "verified_runtime_assets": 21,
+    "all_six_bundled_videos_and_guides": "passed",
+    "real_decoding_and_range_playback": "passed",
+    "mock_guidance_question_answering_sse": "passed",
+    "pdf_html_zip_and_upload_evidence": "passed",
+    "registration_login_save_logout_deletion": "passed",
+    "saved_account_activity_and_pdf_after_restart": "passed",
+    "persistent_data_volume": "/data",
+    "account_smoke": {
+      "base": "http://localhost:8101",
+      "passed": true,
+      "pdf_bytes": 40483,
+      "pdf_ms": 344,
+      "saved_pdf_bytes": 40480,
+      "unique_saved_runs": 1,
+      "unsupported_pdf_characters_rejected": true,
+      "unicode_html_preserved": true,
+      "provider_calls": 0,
+      "temporary_account_removed": true
+    },
+    "paid_ai_calls": 0
+  },
+  "private_caddy_proxy_checks": {
+    "local_ca_tls_verified": "passed; certificate validation enabled with temporary local CA",
+    "secure_httponly_samesite_strict_account_cookie": "passed",
+    "wrong_origin_mutation": "403",
+    "spoofed_forwarded_ip_host_protocol": "overwritten by Caddy",
+    "byte_range_playback": "206 with exactly 100 bytes; no content encoding",
+    "delayed_sse": "first chunk arrives over 100 ms before stream end",
+    "mock_question_answering_sse": "passed; no content encoding",
+    "published_image": "caddy:2.11.6-alpine@sha256:d44355d3c2149dc580ce2cac735955d1c08d3d00882c30489c241aa51a5c10d9"
+  },
+  "scope": "Native GitHub-hosted x86 Linux container and private Docker-network HTTPS proxy only. Oracle/Render resources were not created; public TLS, camera/microphone browser permissions and real-provider inference remain deployment checks.",
+  "previous_verification": "deployment-verification.json preserves the earlier successful 0464fa6 run.",
+  "source_file_sha256": {
+    "Dockerfile": "c276174a4218a5e5b4d43fba381fe1e8be58cbbae9cc039b686afba6d756819e",
+    ".dockerignore": "a6a357f0991509777c9c0b39236011743ea02e93df790896b9b42601fbd638e7",
+    ".github/workflows/test-deploy.yml": "3725644e8db2b946564208352b8d1aab047d7596e9f7e69537e38aaaefa67c73",
+    ".github/workflows/test-oracle-arm.yml": "6698bf9ec80d3c459a47160a1d1735ce4aedd51cebaf265604e46d84c7885d9a",
+    "deployment/oracle/docker-compose.yml": "2e90ecb1e96f0ce835700d361a0047a8062f730c2bc20678bf9a20b8b0312000",
+    "deployment/oracle/Caddyfile": "0155d9e01aee470410c665712bb77856174801da9fb7940acdd02b26514515d1",
+    "deployment/oracle/smoke-proxy.mjs": "7fbe32ef58065341d03ee4a3e76ab49cfa3adde1db6ee1266753c6b62ac2caba",
+    "backend/src/proxyTrust.ts": "87f78e54639162cb956bd49efff82608d53913460d48449cfeaa310d7defb595",
+    "backend/src/config.ts": "155b5eaaf843e0a37a1fcfee886be4e3f8fd4c91085669948bc1f8b5daeed4c5",
+    "backend/src/app.ts": "4891f6dbfb337b74ba16841824bdf0a6dc088d31119db4d0d4a7476aa0db6265",
+    "backend/tests/proxyTrust.test.ts": "e5e7c97c26b72a0a8825ef21545514f4e9fae31e9b33cb40aa94c4349e19bd2d",
+    "deployment/media-manifest.json": "562bc140eb3446739568e08ac87ea1ce18b9566ab2eaeb1fa9220e700d3cb74c"
+  }
+}

@@ -56,6 +56,8 @@ The private provider file uses `NAME=value` lines such as `OPENAI_API_KEY=...`; 
 
 ## Local container verification
 
+Native x86 and ARM Linux container checks passed for commit `e3b7236`: real FFmpeg decoding, all six examples, mocked guidance/Q&A, uploads, report exports, saved accounts after restart and the private Caddy HTTPS proxy. The x86 source run passed 324 backend and 152 frontend tests. [x86 verification](deployment-verification-e3b7236.json), [ARM verification](oracle-arm-verification.json). These runs use no provider keys or paid AI calls; public cloud deployment and real-provider checks remain separate.
+
 Docker must be installed and running to execute this check. Run from the repository root after the released media manifest and downloader are present:
 
 ```sh
