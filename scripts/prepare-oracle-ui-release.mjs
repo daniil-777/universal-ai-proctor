@@ -17,11 +17,18 @@ const files = [
   "frontend/dist/media/cueveris-manufacturing-demo.jpg",
   "frontend/dist/media/cueveris-manufacturing-demo.json",
   "frontend/dist/media/cueveris-manufacturing-demo.txt",
+  "frontend/dist/media/cueveris-leica-workflow-demo.mp4",
+  "frontend/dist/media/cueveris-leica-workflow-demo.jpg",
+  "frontend/dist/media/cueveris-leica-workflow-demo.json",
+  "frontend/dist/media/cueveris-leica-workflow-demo.txt",
+  "frontend/dist/media/cueveris-leica-workflow-demo.vtt",
+  "frontend/dist/media/leica-m10-guidance.txt",
   "frontend/dist/media/process-guide-real-scenarios/index.html",
   "frontend/dist/INTER-LICENSE.txt",
   "backend/dist/app.js",
   "backend/dist/media/analysisPdf.js",
   "backend/dist/media/analysisReport.js",
+  "backend/dist/llm/questionContract.js",
 ];
 async function addAssets(relative) {
   for (const entry of await readdir(path.join(root, relative), { withFileTypes: true })) {

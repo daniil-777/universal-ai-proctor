@@ -1,9 +1,17 @@
 import { useIsMobile } from "@/hooks/use-mobile";
 import { apiFetch } from "@/lib/api";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { useApp } from "@/lib/store";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
+import { Input } from "@/components/ui/input";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import {
   Pause,
   Play,
@@ -27,6 +35,7 @@ import {
   Maximize,
   Monitor,
   MoreHorizontal,
+  RotateCcw,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
@@ -51,6 +60,17 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { ResizableGuidance } from "./ResizableGuidance";
 import { GuardianMessageResize } from "@/components/GuardianMessageResize";
+import {
+  clampVideoZoom,
+  DEFAULT_VIDEO_VIEW,
+  MAX_VIDEO_ZOOM,
+  MIN_VIDEO_ZOOM,
+  readVideoView,
+  saveVideoView,
+  videoViewStyle,
+  type VideoEditorSizing,
+} from "@/lib/videoSizing";
+import "./video-sizing.css";
 
 // Guardian and chat can use independent models for their different latency needs.
 const MONITOR_MODELS: {
@@ -94,7 +114,7 @@ const MONITOR_MODELS: {
   },
 ];
 
-export function VideoStage() {
+export function VideoStage({ editorSizing }: { editorSizing?: VideoEditorSizing } = {}) {
   const a = useApp();
   const mobile = useIsMobile();
   const vref = useRef<HTMLVideoElement>(null);
@@ -102,8 +122,14 @@ export function VideoStage() {
   const [current, setCurrent] = useState(0);
   const [duration, setDuration] = useState(0);
   const [aiOverlay, setAiOverlay] = useState<string | null>(null);
-  // Manual video zoom (1 = native size capped to the panel; >1 magnifies, clipped centrally).
-  const [zoom, setZoom] = useState(1);
+  const [view, setView] = useState(readVideoView);
+  const zoom = view.zoom;
+  const [zoomDraft, setZoomDraft] = useState(() => String(Math.round(view.zoom * 100)));
+  const editorHeight = editorSizing?.heightPx;
+  const [heightDraft, setHeightDraft] = useState(() => String(Math.round(editorSizing?.heightPx ?? 0)));
+  const zoomId = useId();
+  const heightId = useId();
+  const [fullScreen, setFullScreen] = useState(!!document.fullscreenElement);
   const stageRef = useRef<HTMLDivElement>(null);
   const guidanceBoundsRef = useRef<HTMLDivElement>(null);
   const [recordingVoice, setRecordingVoice] = useState(false);
@@ -113,6 +139,42 @@ export function VideoStage() {
   useGeneralGuidance(); // "Process Guardian" passive safety loop (runs while monitor.active)
   useSessionMemory(); // session memory: stage milestones + rolling AI digest → Logs + prompts
   const guard = a.monitor;
+
+  useEffect(() => { saveVideoView(view); }, [view]);
+  useEffect(() => {
+    if (editorHeight !== undefined) setHeightDraft(String(Math.round(editorHeight)));
+  }, [editorHeight]);
+  useEffect(() => {
+    const changed = () => setFullScreen(!!document.fullscreenElement);
+    document.addEventListener("fullscreenchange", changed);
+    return () => document.removeEventListener("fullscreenchange", changed);
+  }, []);
+
+  const setZoom = (value: number) => {
+    const next = clampVideoZoom(value);
+    setView(previous => ({ ...previous, zoom: next }));
+    setZoomDraft(String(Math.round(next * 100)));
+  };
+  const commitZoom = () => setZoom(zoomDraft.trim() ? Number(zoomDraft) / 100 : zoom);
+  const setFit = (fit: "fill" | "fit") => {
+    setView({ fit, zoom: 1 });
+    setZoomDraft("100");
+  };
+  const commitHeight = () => {
+    if (!editorSizing) return;
+    const value = heightDraft.trim() ? Number(heightDraft) : editorSizing.heightPx;
+    const next = Number.isFinite(value)
+      ? Math.max(editorSizing.minHeightPx, Math.min(editorSizing.maxHeightPx, value))
+      : editorSizing.heightPx;
+    editorSizing.onHeightChange(next);
+    setHeightDraft(String(Math.round(next)));
+  };
+  const toggleFullScreen = async () => {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else await document.documentElement.requestFullscreen();
+    } catch { toast.error("Full screen could not open. Use your browser’s full-screen command."); }
+  };
 
   const appRef = useRef(a);
   appRef.current = a;
@@ -279,9 +341,9 @@ export function VideoStage() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (
+      if (e.defaultPrevented ||
         (e.target as HTMLElement)?.closest(
-          "input, textarea, button, [role=combobox], [contenteditable=true]",
+          "input, textarea, select, button, [role=combobox], [role=slider], [role=separator], [contenteditable=true]",
         )
       )
         return;
@@ -331,21 +393,6 @@ export function VideoStage() {
     speak(a.apiBase, text);
   };
 
-  // "Fit" = scale the (aspect-preserved) video until it fills the stage on one axis.
-  const fitZoom = () => {
-    const v = vref.current,
-      c = stageRef.current;
-    if (!v || !c || !v.videoWidth || !v.videoHeight) return;
-    const scale0 = Math.min(
-      1,
-      c.clientWidth / v.videoWidth,
-      c.clientHeight / v.videoHeight,
-    );
-    const dispW = v.videoWidth * scale0,
-      dispH = v.videoHeight * scale0;
-    setZoom(Math.min(c.clientWidth / dispW, c.clientHeight / dispH));
-  };
-
   const showAi = () => {
     a.requestAnalysis();
   };
@@ -355,47 +402,59 @@ export function VideoStage() {
   const frame = Math.floor(current * (a.videoFps || 30));
 
   const viewControls = (a.videoUrl || a.liveStream) && (
-    <div className="zoom-controls-inline flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1.5 shadow-elevated backdrop-blur">
-      <button
-        onClick={() => setZoom((z) => Math.max(0.5, +(z - 0.15).toFixed(2)))}
-        className="grid h-6 w-6 place-items-center rounded-full text-muted-foreground hover:bg-muted/60 hover:text-foreground"
-        title="Zoom out"
-      >
-        <ZoomOut className="h-3.5 w-3.5" />
-      </button>
-      <Slider
-        value={[zoom]}
-        min={0.5}
-        max={2.5}
-        step={0.05}
-        onValueChange={([v]) => setZoom(v)}
-        className="w-24"
-      />
-      <button
-        onClick={() => setZoom((z) => Math.min(2.5, +(z + 0.15).toFixed(2)))}
-        className="grid h-6 w-6 place-items-center rounded-full text-muted-foreground hover:bg-muted/60 hover:text-foreground"
-        title="Zoom in"
-      >
-        <ZoomIn className="h-3.5 w-3.5" />
-      </button>
-      <span className="w-10 text-center font-mono text-[10px] tabular-nums text-muted-foreground">
-        {Math.round(zoom * 100)}%
-      </span>
-      <div className="h-4 w-px bg-border" />
-      <button
-        onClick={fitZoom}
-        className="grid h-6 w-6 place-items-center rounded-full text-muted-foreground hover:bg-muted/60 hover:text-foreground"
-        title="Fit to panel"
-      >
-        <Maximize className="h-3.5 w-3.5" />
-      </button>
-      <button
-        onClick={() => setZoom(1)}
-        className="rounded-full px-1.5 text-[10px] font-semibold text-muted-foreground hover:bg-muted/60 hover:text-foreground"
-        title="Reset to 100%"
-      >
-        1:1
-      </button>
+    <div>
+      <DialogTitle className="video-size-heading">Video size</DialogTitle>
+      <div className="video-size-modes" aria-label="Video fit">
+        <Button type="button" variant={view.fit === "fill" ? "default" : "outline"} aria-pressed={view.fit === "fill"} onClick={() => setFit("fill")}>Fill</Button>
+        <Button type="button" variant={view.fit === "fit" ? "default" : "outline"} aria-pressed={view.fit === "fit"} onClick={() => setFit("fit")}>Full frame</Button>
+      </div>
+      <DialogDescription className="video-size-note">Fill crops edges. Full frame shows the complete picture at 100%. Sizing changes the display only; analysis uses the original frame and your chosen analysis region.</DialogDescription>
+      <div className="video-size-section">
+        <div className="video-size-label-row">
+          <Label htmlFor={zoomId}>Zoom</Label>
+          <div className="video-size-value">
+            <Input id={zoomId} aria-label="Zoom percent" type="number" inputMode="decimal" min={MIN_VIDEO_ZOOM * 100} max={MAX_VIDEO_ZOOM * 100} step="any" value={zoomDraft}
+              onChange={event => {
+                const text = event.target.value;
+                setZoomDraft(text);
+                const value = Number(text) / 100;
+                if (text.trim() && Number.isFinite(value) && value >= MIN_VIDEO_ZOOM && value <= MAX_VIDEO_ZOOM)
+                  setView(previous => ({ ...previous, zoom: value }));
+              }}
+              onBlur={commitZoom}
+              onKeyDown={event => { if (event.key === "Enter") { event.preventDefault(); commitZoom(); event.currentTarget.blur(); } }} />
+            <span className="video-size-percent" aria-hidden="true">%</span>
+          </div>
+        </div>
+        <div className="video-size-zoom-row">
+          <Button type="button" variant="outline" size="icon" aria-label="Zoom out" disabled={zoom <= MIN_VIDEO_ZOOM} onClick={() => setZoom(zoom - 0.25)}><ZoomOut className="h-4 w-4" aria-hidden="true" /></Button>
+          <Slider aria-label="Video zoom" value={[zoom * 100]} min={MIN_VIDEO_ZOOM * 100} max={MAX_VIDEO_ZOOM * 100} step={1} onValueChange={([value]) => setZoom(value / 100)} />
+          <Button type="button" variant="outline" size="icon" aria-label="Zoom in" disabled={zoom >= MAX_VIDEO_ZOOM} onClick={() => setZoom(zoom + 0.25)}><ZoomIn className="h-4 w-4" aria-hidden="true" /></Button>
+        </div>
+      </div>
+      <div className="video-size-actions">
+        <Button type="button" variant="outline" onClick={() => { setView({ ...DEFAULT_VIDEO_VIEW }); setZoomDraft("100"); }}><RotateCcw className="h-4 w-4 mr-2" aria-hidden="true" />Reset video view</Button>
+        {document.fullscreenEnabled && <Button type="button" variant="outline" onClick={() => void toggleFullScreen()}><Maximize className="h-4 w-4 mr-2" aria-hidden="true" />{fullScreen ? "Exit full screen" : "Full screen"}</Button>}
+      </div>
+      {editorSizing && <div className="video-size-section video-size-editor-height">
+        <div className="video-size-label-row">
+          <Label htmlFor={heightId}>Editor height</Label>
+          <div className="video-size-value">
+            <Input id={heightId} aria-label="Video editor height (px)" type="number" inputMode="numeric" min={editorSizing.minHeightPx} max={editorSizing.maxHeightPx} step={1} value={heightDraft}
+              onChange={event => {
+                const text = event.target.value;
+                setHeightDraft(text);
+                const value = Number(text);
+                if (text.trim() && Number.isFinite(value) && value >= editorSizing.minHeightPx && value <= editorSizing.maxHeightPx) editorSizing.onHeightChange(value);
+              }}
+              onBlur={commitHeight}
+              onKeyDown={event => { if (event.key === "Enter") { event.preventDefault(); commitHeight(); event.currentTarget.blur(); } }} />
+            <span className="video-size-percent" aria-hidden="true">px</span>
+          </div>
+        </div>
+        <Slider aria-label="Video editor height" min={editorSizing.minHeightPx} max={editorSizing.maxHeightPx} step={1} value={[editorSizing.heightPx]} onValueChange={([height]) => { editorSizing.onHeightChange(height); setHeightDraft(String(Math.round(height))); }} />
+        <Button type="button" variant="outline" onClick={editorSizing.onReset}>Use available height</Button>
+      </div>}
     </div>
   );
 
@@ -770,14 +829,17 @@ export function VideoStage() {
       <div
         ref={stageRef}
         className="video-canvas flex-1 min-h-0 relative bg-black grid place-items-center overflow-hidden"
+        data-video-fit={view.fit}
+        data-video-zoom={zoom}
       >
         {a.videoUrl || a.liveStream ? (
           <video
             ref={vref}
             src={a.liveStream ? undefined : (a.videoUrl ?? undefined)}
             crossOrigin="anonymous"
-            className="max-h-full max-w-full"
-            style={{ transform: `scale(${zoom})`, transformOrigin: "center" }}
+            className="video-source"
+            aria-label="Process video"
+            style={videoViewStyle(view)}
             controls={false}
             muted={!!a.liveStream}
             playsInline
@@ -1120,22 +1182,22 @@ export function VideoStage() {
           </>
         )}
         {(a.videoUrl || a.liveStream) && (
-          <Popover>
-            <PopoverTrigger asChild>
+          <Dialog modal={false}>
+            <DialogTrigger asChild>
               <Button
                 variant="ghost"
-                size="icon"
-                aria-label="Video view controls"
-                className="h-9 w-9 shrink-0"
+                aria-label="Video size"
+                className="video-size-trigger"
               >
-                <Maximize className="h-4 w-4" />
+                <SlidersHorizontal className="h-4 w-4 shrink-0" aria-hidden="true" />
+                <span>Video size</span>
+                <span className="video-size-percent">{Math.round(zoom * 100)}%</span>
               </Button>
-            </PopoverTrigger>
-            <PopoverContent align="end" className="w-80 p-2">
-              <p className="text-xs font-medium p-2">Video zoom</p>
+            </DialogTrigger>
+            <DialogContent className="video-size-dialog" aria-label="Video size controls" aria-labelledby={undefined}>
               {viewControls}
-            </PopoverContent>
-          </Popover>
+            </DialogContent>
+          </Dialog>
         )}
       </div>
     </div>

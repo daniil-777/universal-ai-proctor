@@ -1,15 +1,18 @@
-# Cueveris design release — 6 October 2026
+# Cueveris editor and guidance release — 6 October 2026
 
 This release updates the existing Oracle application. It does not change the
 private environment, provider settings, ingress, account volume or Caddy volumes.
 The base is the currently running `process-guide:oracle-cueveris-20261006` image,
 with its Linux dependencies, report-font patch and verified media library.
 
-The patch contains only the rebuilt frontend index and hashed assets, the four
-manufacturing demo assets, the matching Cueveris favicon, the public Inter license, the updated real-scenario
-library index, and the rebuilt backend
-`app.js`, `media/analysisPdf.js` and `media/analysisReport.js`. The three backend
-modules matched production byte for byte before the visible branding edits.
+The patch contains the rebuilt frontend index and hashed assets, the four
+manufacturing demo assets, the six Leica walkthrough and guidance assets,
+the matching Cueveris favicon, the public Inter license, the updated real-scenario
+library index, and the rebuilt backend `app.js`, `media/analysisPdf.js`,
+`media/analysisReport.js` and `llm/questionContract.js`. The question contract
+supports guide-based questions without claiming that unseen video has been
+verified. The frontend includes adjustable video view, guidance panel and text
+sizes. Leica's original film remains in its official YouTube player.
 Existing media and older hashed assets remain available. `Dockerfile.ui-style`
 retains the base entrypoint and health check. The entrypoint starts the Node
 server as UID 1000; static/compiled files remain root-owned and readable.
