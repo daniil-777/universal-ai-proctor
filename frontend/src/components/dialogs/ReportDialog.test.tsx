@@ -400,3 +400,41 @@ it("rejects corrupt bytes even if the response claims to be a PDF", async () => 
   expect(await screen.findByRole("alert")).toHaveTextContent("invalid PDF");
   expect(screen.queryByRole("button", { name: "Download PDF" })).toBeNull();
 });
+
+it("opens the exact queued workflow step and follows a retained issue reference without mutations or requests", async () => {
+  const stages = Array.from({ length: 5 }, (_, index) => ({ id: `step-${index}`, name: `Step ${index}`, complete: false,
+    criteria: [{ key: "criterion", label: `Check ${index}`, status: "unknown" }], actions: [] }));
+  const event = { id: "event-linked", source_id: "source-A", reference_key: "digest-A", occurred_at: 1000, video_time_s: 3,
+    provenance: "operator", kind: "bookmark", status: "watch", summary: "Retained concern", concern: "", guidance: "", step_ids: ["step-4"], old_reference: false };
+  const review = { ...(harness.app.review as object), events: [event], exceptions: [{ id: "issue", title: "Follow up", description: "Review", provenance: "operator", status: "open", event_id: event.id, history: [] }] };
+  harness.app = { ...harness.app, stages, review };
+  const before = JSON.stringify({ stages, review });
+  view();
+  Object.defineProperty(document.querySelector(".report-body"), "scrollTo", { value: vi.fn() });
+  const target = document.querySelector<HTMLDetailsElement>('[data-report-step="step-4"]')!;
+  expect(target.open).toBe(false);
+  fireEvent.click(screen.getByRole("button", { name: "Review step Step 4" }));
+  expect(target.open).toBe(true);
+  expect(target).toHaveFocus();
+  fireEvent.click(screen.getAllByRole("button", { name: "View evidence E01" }).at(-1)!);
+  await waitFor(() => expect(screen.getByRole("article", { name: "E01 · Retained concern" })).toHaveFocus());
+  expect(JSON.stringify({ stages, review })).toBe(before);
+  expect(harness.fetch).not.toHaveBeenCalled();
+});
+
+it("keeps escaped evidence cross-references consistent in detailed print and marks missing retained records", () => {
+  const write = vi.fn();
+  vi.spyOn(window, "open").mockReturnValue({ document: { write, close: vi.fn() }, opener: {} } as unknown as Window);
+  harness.app.review = { ...(harness.app.review as object), events: [{ id: "event-1", source_id: "source-A", reference_key: "digest-A",
+    occurred_at: 1000, video_time_s: 1, provenance: "operator", kind: "bookmark", status: "ok", summary: "<script>unsafe</script>", concern: "", guidance: "", step_ids: [], old_reference: false }],
+    exceptions: [{ id: "linked", title: "Linked", status: "open", description: "", provenance: "operator", event_id: "event-1", history: [] },
+      { id: "missing", title: "Missing", status: "open", description: "", provenance: "operator", event_id: "gone", history: [] }] };
+  view();
+  fireEvent.click(screen.getByRole("button", { name: "Detailed session print" }));
+  const html = write.mock.calls[0][0] as string;
+  expect(html).toContain('href="#evidence-event-1">View evidence E01');
+  expect(html).toContain("&lt;script&gt;unsafe&lt;/script&gt;");
+  expect(html).toContain("Linked evidence is not retained in this snapshot.");
+  expect(html).not.toContain("<script>unsafe</script>");
+  expect(harness.fetch).not.toHaveBeenCalled();
+});

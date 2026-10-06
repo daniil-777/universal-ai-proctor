@@ -35,6 +35,22 @@ function guard(id: string) {
 const observe = (id: string, time = 10) => request(id, "POST", "/api/guidance/analyze", { source_id: "test-video", current_s: time, frames_b64: [frame], frame_times_s: [time] });
 
 describe("industry review transactions", () => {
+  it("reports duration only for the current uploaded video, without changing review state", async () => {
+    const { s } = await fresh();
+    s.videoInfo = { duration: 120.75, fps: 30, width: 640, height: 360 };
+    const before = JSON.stringify(syncReview(s));
+    expect(reviewSnapshot(s).source_duration_s).toBe(120.75);
+    expect(JSON.stringify(s.review)).toBe(before);
+    s.sourceKind = "camera";
+    expect(reviewSnapshot(s).source_duration_s).toBeNull();
+    s.sourceKind = "video"; s.videoInfo = undefined;
+    expect(reviewSnapshot(s).source_duration_s).toBeNull();
+  });
+  it.each([0, -1, NaN, Infinity])("leaves invalid video duration %s unknown", async duration => {
+    const { s } = await fresh();
+    s.videoInfo = { duration, fps: 30, width: 640, height: 360 };
+    expect(reviewSnapshot(s).source_duration_s).toBeNull();
+  });
   it("derives distinct preparation suggestions from document tools and principles", async () => {
     const { id } = await fresh();
     const review = (await request(id, "GET", "/api/review")).json();

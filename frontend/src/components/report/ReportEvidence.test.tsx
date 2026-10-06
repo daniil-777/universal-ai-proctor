@@ -7,6 +7,7 @@ import {
 } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { ReviewResponse } from "@/lib/reviewTypes";
+import type { Stage } from "@/lib/types";
 import { ReportEvidence } from "./ReportEvidence";
 
 const fetch = vi.hoisted(() => vi.fn());
@@ -218,5 +219,40 @@ describe("report evidence ownership and bounded reads", () => {
     const signal = fetch.mock.calls[0][1].signal as AbortSignal;
     rendered.unmount();
     expect(signal.aborted).toBe(true);
+  });
+  it("retains snapshot references through filtering and reveals an older paginated target on explicit navigation", async () => {
+    const data = review(30);
+    const rendered = render(<ReportEvidence apiBase="" review={data} />);
+    fireEvent.change(screen.getByLabelText("Evidence type"), { target: { value: "observation" } });
+    expect(screen.queryByRole("article", { name: "E01 · Moment 0" })).toBeNull();
+    rendered.rerender(<ReportEvidence apiBase="" review={data} requestedEvent={{ id: "event-0", sourceId: "source-A", request: 1 }} />);
+    const target = await screen.findByRole("article", { name: "E01 · Moment 0" });
+    await waitFor(() => expect(target).toHaveFocus());
+    expect(screen.getByLabelText("Evidence type")).toHaveValue("all");
+    expect(fetch).not.toHaveBeenCalled();
+  });
+  it("never links earlier instructions to current steps even when their identifiers match", () => {
+    const data = review(2);
+    data.events[0] = { ...data.events[0], step_ids: ["step"], reference_key: "old-digest", old_reference: false };
+    data.events[1] = { ...data.events[1], step_ids: ["step"] };
+    const onStep = vi.fn();
+    render(<ReportEvidence apiBase="" review={data} stages={[{ id: "step", name: "Current step" }] as Stage[]} onStep={onStep} />);
+    expect(screen.getByText("Step links belong to earlier instructions.")).toBeVisible();
+    expect(screen.getAllByRole("button", { name: "View workflow step Current step" })).toHaveLength(1);
+    fireEvent.click(screen.getByRole("button", { name: "View workflow step Current step" }));
+    expect(onStep).toHaveBeenCalledWith("step");
+    expect(fetch).not.toHaveBeenCalled();
+  });
+  it("keeps anomalous records readable with explicit timeline exclusions and does not invent an unknown duration", () => {
+    const data = review(2);
+    data.events[0].video_time_s = -1;
+    data.events[1].video_time_s = 90;
+    data.source_duration_s = 60;
+    const rendered = render(<ReportEvidence apiBase="" review={data} />);
+    expect(screen.getByRole("article", { name: "E01 · Moment 0" })).toHaveTextContent("Excluded from timeline: no valid source timestamp.");
+    expect(screen.getByRole("article", { name: "E02 · Moment 1" })).toHaveTextContent("Excluded from timeline: timestamp is outside the known source duration.");
+    rendered.rerender(<ReportEvidence apiBase="" review={{ ...data, source_duration_s: null }} />);
+    expect(screen.getByRole("article", { name: "E02 · Moment 1" })).not.toHaveTextContent("Excluded from timeline");
+    expect(fetch).not.toHaveBeenCalled();
   });
 });

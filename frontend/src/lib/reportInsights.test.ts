@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { ReviewEvent, ReviewResponse } from "./reviewTypes";
 import type { ChatMessage, Stage } from "./types";
-import { completedConversation, formatReportTime, reportCounts, reportMoments } from "./reportInsights";
+import { completedConversation, currentReportReference, formatReportTime, reportCounts, reportEventTime, reportMoments, reportReferences, reportReviewQueue, reportScope, reportTimelineData } from "./reportInsights";
 
 const event = (id: string, time: number, patch: Partial<ReviewEvent> = {}): ReviewEvent => ({
   id, source_id: "video-A", reference_key: "guide-A", kind: "observation", provenance: "ai",
@@ -49,5 +49,38 @@ describe("report insights retain the meaning of recorded evidence", () => {
     expect(formatReportTime(3601.9)).toBe("60:01");
     expect(formatReportTime(NaN)).toBe("00:00");
     expect(formatReportTime(-1)).toBe("00:00");
+  });
+  it("numbers source-scoped records once in recorded-time/id order and classifies exclusive scope without hiding invalid timestamps", () => {
+    const records = [event("z", 50, { occurred_at: 2 }), event("a", -1, { occurred_at: 2, reference_key: "older" }),
+      event("demo", 3, { occurred_at: 1, simulated: true, observation_scope: "overview", old_reference: true }),
+      event("overview", 4, { occurred_at: 3, observation_scope: "overview" }), event("other", 0, { source_id: "other" })];
+    const data = { ...review(records), reference_key: "guide-A" };
+    expect([...reportReferences(data)].map(([id, reference]) => [id, reference.label])).toEqual([["demo", "E01"], ["a", "E02"], ["z", "E03"], ["overview", "E04"]]);
+    expect(reportScope(data)).toEqual({ current: 1, earlier: 1, overview: 1, simulated: 1 });
+    expect(currentReportReference(records[1], data)).toBe(false);
+    expect(reportEventTime(records[1])).toBe("Timestamp unavailable");
+    expect(records.map(record => record.id)).toEqual(["z", "a", "demo", "overview", "other"]);
+  });
+  it("prioritizes recorded not-met and partial criteria while keeping manual completion and original workflow order intact", () => {
+    const stages = [{ id: "unknown", complete: true, confirmation: "manual", criteria: [{ status: "unknown" }] },
+      { id: "partial", criteria: [{ status: "partial" }] }, { id: "notmet", criteria: [{ status: "met" }, { status: "not_met" }] },
+      { id: "unknown2", criteria: [{ status: "unknown" }] }] as Stage[];
+    const queue = reportReviewQueue(stages);
+    expect(queue.map(item => item.step.id)).toEqual(["notmet", "partial", "unknown", "unknown2"]);
+    expect(queue[2].step.complete).toBe(true);
+    expect(queue[2].counts.unknown).toBe(1);
+    expect(stages.map(step => step.id)).toEqual(["unknown", "partial", "notmet", "unknown2"]);
+  });
+  it("keeps a known-duration tail empty and excludes invalid/out-of-range moments without dropping source evidence", () => {
+    const data = { ...review([event("zero", 0), event("last", 20), event("outside", 121), event("negative", -1)]), source_duration_s: 120 };
+    const timeline = reportTimelineData(data);
+    expect(timeline.end).toBe(120);
+    expect(timeline.durationKnown).toBe(true);
+    expect(timeline.moments.map(item => item.id)).toEqual(["zero", "last"]);
+    expect(timeline.outOfRangeCount).toBe(1);
+    expect(timeline.invalidTimestampCount).toBe(1);
+    expect(data.events).toHaveLength(4);
+    expect(reportTimelineData({ ...data, source_duration_s: undefined }).end).toBe(121);
+    expect(reportTimelineData({ ...data, source_duration_s: null }).durationKnown).toBe(false);
   });
 });

@@ -22,8 +22,10 @@ import {
 } from "@/components/report/ReportOverview";
 import "@/components/report/report.css";
 import { ReportTimeline } from "@/components/report/ReportTimeline";
-import { completedConversation, formatReportTime } from "@/lib/reportInsights";
+import { completedConversation, currentReportReference, formatReportTime, reportEventTime, reportReferences } from "@/lib/reportInsights";
 import { ReportEvidence } from "@/components/report/ReportEvidence";
+import { ReportScope } from "@/components/report/ReportScope";
+import { ReportReviewQueue } from "@/components/report/ReportReviewQueue";
 import { ReportGuardianLibrary } from "@/components/report/ReportGuardianLibrary";
 import { guardianFindings } from "@/lib/guardianFindings";
 import {
@@ -133,6 +135,8 @@ export function ReportDialog({
   const [showClips, setShowClips] = useState(false);
   const body = useRef<HTMLDivElement>(null);
   const [activeSection, setActiveSection] = useState<ReportSection>("overview");
+  const [requestedEvent, setRequestedEvent] = useState<{ id: string; request: number; sourceId: string }>();
+  const references = useMemo(() => reportReferences(review), [review]);
   const navigate = (section: ReportSection) => {
     setActiveSection(section);
     const container = body.current;
@@ -146,6 +150,21 @@ export function ReportDialog({
         : "smooth",
     });
     target?.focus({ preventScroll: true });
+  };
+  const viewEvidence = (id: string) => {
+    if (!references.has(id)) return;
+    setRequestedEvent(previous => ({ id, request: (previous?.request ?? 0) + 1, sourceId: a.sourceId }));
+    navigate("evidence");
+  };
+  const viewStep = (id: string) => {
+    const container = body.current;
+    const target = [...(container?.querySelectorAll<HTMLDetailsElement>("[data-report-step]") ?? [])]
+      .find(element => element.dataset.reportStep === id);
+    if (!target || !container) return;
+    setActiveSection("workflow");
+    target.open = true;
+    container.scrollTo({ top: container.scrollTop + target.getBoundingClientRect().top - container.getBoundingClientRect().top - 12, behavior: "instant" });
+    target.focus({ preventScroll: true });
   };
   useEffect(() => {
     const root = body.current;
@@ -192,6 +211,7 @@ export function ReportDialog({
     setPrintError("");
     setShowResolved(false);
     setShowClips(false);
+    setRequestedEvent(undefined);
     return () => {
       summaryController.current?.abort();
       exportController.current?.abort();
@@ -493,6 +513,13 @@ export function ReportDialog({
             )
             .join("")
         : `<p class="muted">${alerts.length ? "Video shorts require an uploaded video on the backend." : "No alerts were recorded — no clips."}</p>`;
+    const evidenceHtml = [...references.values()].map(({ event, label }) => {
+      const steps = review && currentReportReference(event, review)
+        ? event.step_ids.map(id => a.stages.find(step => step.id === id)).filter(Boolean).map(step => step!.name).join(", ")
+        : "Step links belong to earlier instructions";
+      return `<article id="evidence-${encodeURIComponent(event.id)}"><h3>${label} · ${escapeHtml(event.summary || "Evidence record")}</h3><p>${reportEventTime(event)} · ${escapeHtml(event.simulated ? "Demo / simulated" : event.provenance)} · ${escapeHtml(event.status)}</p>${event.concern ? `<p>${escapeHtml(event.concern)}</p>` : ""}${steps ? `<p>Linked workflow: ${escapeHtml(steps)}</p>` : ""}<p class="mono">Record identifier: ${escapeHtml(event.id)} · Reference: ${escapeHtml(event.reference_key)}</p></article>`;
+    }).join("");
+    const issuesHtml = (review?.exceptions ?? []).map(issue => `<article><h3>${escapeHtml(issue.title)} · ${escapeHtml(issue.status)}</h3><p>${escapeHtml(issue.description)}</p>${issue.event_id ? references.has(issue.event_id) ? `<a href="#evidence-${encodeURIComponent(issue.event_id)}">View evidence ${references.get(issue.event_id)!.label}</a>` : "<p>Linked evidence is not retained in this snapshot.</p>" : ""}<ul>${li(issue.history.map(item => `${item.status} · ${item.operator || "Operator"} · ${new Date(item.at).toLocaleString()} — ${item.note || "No note recorded"}`))}</ul></article>`).join("");
 
     return `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Process Session Report — ${escapeHtml(a.caseName)}</title>
 <style>
@@ -527,6 +554,8 @@ export function ReportDialog({
 <div class="sub">${currentGuardian.length} Guardian checks · ${alerts.length} alert(s) · ${watches.length} watch(es) · ${qaPairs.length} Q&amp;A exchange(s)</div>
 
 <h2>Workflow evidence</h2><table><tr><th>Step</th><th>Progress</th><th>Confirmation</th><th>Evidence</th></tr>${a.stages.map((s) => `<tr><td>${escapeHtml(s.name)}</td><td>${s.progress || 0}%</td><td>${escapeHtml(s.confirmation || "Unconfirmed")}</td><td>${li(s.criteria.map((c) => `${c.label}: ${c.status}${c.evidence ? ` — ${c.evidence}` : ""}`))}</td></tr>`).join("")}</table>
+<h2>Current-source retained evidence</h2><p class="muted">E01… report references apply to this snapshot only. Retained samples do not establish continuous observation. Earlier-instruction step links do not refer to the current workflow.</p>${evidenceHtml || '<p class="muted">No evidence records retained.</p>'}
+<h2>Recorded review decisions</h2>${issuesHtml || '<p class="muted">No review issues retained.</p>'}
 <h2>1 · Guardian — Process Observer</h2>
 <p>${escapeHtml(ai?.overall ?? "(Recorded debrief has not been prepared)")}</p>
 <div class="cols">
@@ -646,13 +675,16 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
           ref={body}
           className="report-body min-h-0 flex-1 overflow-y-auto scrollbar-thin [overflow-wrap:anywhere]"
         >
+          <ReportScope review={review} identity={reportIdentity} sourceName={a.sourceName || ""} referenceName={a.referenceName || ""} />
           <ReportOverview
             stages={a.stages}
             review={review}
             onNavigate={navigate}
           />
+          <ReportReviewQueue stages={a.stages} onReview={viewStep} />
           <ReportTimeline
             review={review}
+            onEvidence={viewEvidence}
             onReplay={a.sourceKind === "video" && a.sourceReady ? (event) => {
               window.dispatchEvent(new CustomEvent("guidance-review-seek", { detail: { sourceId: a.sourceId, timeS: event.video_time_s } }));
               setOpen(false);
@@ -905,14 +937,16 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
                 return (
                   <details
                     key={step.id}
+                    data-report-step={step.id}
+                    tabIndex={-1}
                     open={a.stages.length <= 3 || step.id === a.currentStageId}
                     className="group overflow-hidden rounded-xl border bg-card"
                   >
-                    <summary className="grid cursor-pointer list-none grid-cols-[2rem_minmax(0,1fr)_1rem] items-center gap-x-3 gap-y-2 p-4 marker:hidden sm:grid-cols-[2rem_minmax(0,1fr)_auto_1rem] [&::-webkit-details-marker]:hidden">
+                    <summary className="report-step-summary grid cursor-pointer list-none grid-cols-[2rem_minmax(0,1fr)_1rem] items-center gap-x-3 gap-y-2 p-4 marker:hidden sm:grid-cols-[2rem_minmax(0,1fr)_auto_1rem] [&::-webkit-details-marker]:hidden">
                       <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-muted text-xs font-semibold text-muted-foreground tabular-nums">
                         {String(index + 1).padStart(2, "0")}
                       </span>
-                      <div className="col-start-2 row-start-1 min-w-0">
+                      <div className="report-step-heading col-start-2 row-start-1 min-w-0">
                         <h4 className="break-words text-sm font-semibold">
                           {step.name}
                         </h4>
@@ -926,7 +960,7 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
                       </div>
                       <Badge
                         variant="outline"
-                        className={`col-start-2 row-start-2 justify-self-start text-xs sm:col-start-3 sm:row-start-1 ${step.complete ? "border-primary/25 bg-primary/5 text-primary" : "text-muted-foreground"}`}
+                        className={`report-step-confirmation col-start-2 row-start-2 justify-self-start text-xs sm:col-start-3 sm:row-start-1 ${step.complete ? "border-primary/25 bg-primary/5 text-primary" : "text-muted-foreground"}`}
                       >
                         {step.complete
                           ? step.confirmation === "manual"
@@ -944,6 +978,11 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
                           {step.objective}
                         </p>
                       )}
+                      {review && (() => {
+                        const linked = [...references.values()].filter(({ event }) => currentReportReference(event, review) && event.step_ids.includes(step.id));
+                        return linked.length ? <details className="report-workflow-links"><summary>Linked evidence ({linked.length})</summary><div className="report-evidence-links">{linked.map(({ event, label }) =>
+                          <button key={event.id} type="button" onClick={() => viewEvidence(event.id)}>View evidence {label}</button>)}</div></details> : null;
+                      })()}
                       {step.actions?.length > 0 && (
                         <details className="mb-3 rounded-lg bg-muted/25 px-3">
                           <summary className="flex min-h-11 cursor-pointer items-center text-xs font-medium">
@@ -981,7 +1020,7 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
                             className="py-3 first:pt-0 last:pb-0"
                           >
                             <div className="flex flex-wrap items-start justify-between gap-2">
-                              <p className="min-w-0 flex-1 text-sm leading-relaxed">
+                              <p className="min-w-0 flex-[1_1_180px] text-sm leading-relaxed">
                                 {criterion.label}
                               </p>
                               <span className="rounded-md bg-muted px-2 py-1 text-xs capitalize text-muted-foreground">
@@ -1023,7 +1062,7 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
               title="Recorded evidence"
               description="Captured moments and their observation origin, retained for the current source."
             />
-            <ReportEvidence review={review} apiBase={a.apiBase} />
+            <ReportEvidence review={review} apiBase={a.apiBase} stages={a.stages} onStep={viewStep} requestedEvent={requestedEvent} />
           </section>
 
           <section
@@ -1068,7 +1107,7 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
             )}
             <div className="space-y-3">
               {displayedIssues.map((issue) => (
-                <div key={issue.id} className="rounded-xl border bg-card p-4">
+                <article key={issue.id} data-report-issue={issue.id} aria-label={`Review issue · ${issue.title}`} className="rounded-xl border bg-card p-4">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <h4 className="min-w-0 flex-1 text-sm font-semibold">
                       {issue.title}
@@ -1082,7 +1121,7 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
                       {issue.description}
                     </p>
                   )}
-                  {issue.old_reference && (
+                  {(issue.old_reference || (review && issue.reference_key && issue.reference_key !== review.reference_key)) && (
                     <p className="mt-2 text-xs text-warning">
                       Recorded against earlier instructions
                     </p>
@@ -1094,6 +1133,9 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
                         ? "System check"
                         : "Operator record"}
                   </p>
+                  {issue.event_id && <div className="report-evidence-links">{references.has(issue.event_id)
+                    ? <button type="button" onClick={() => viewEvidence(issue.event_id!)}>View evidence {references.get(issue.event_id)!.label}</button>
+                    : <p>Linked evidence is not retained in this snapshot.</p>}</div>}
                   <details className="mt-2 text-sm">
                     <summary className="flex min-h-11 cursor-pointer items-center text-primary">
                       Decision history ({issue.history.length})
@@ -1118,7 +1160,7 @@ ${(a.liveMetrics ?? []).length ? `<div class="tiles">${metricCards}</div>` : '<p
                       </p>
                     )}
                   </details>
-                </div>
+                </article>
               ))}
             </div>
             {!displayedIssues.length &&

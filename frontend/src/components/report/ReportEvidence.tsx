@@ -3,7 +3,8 @@ import { Camera, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { apiFetch } from "@/lib/api";
 import type { ReviewResponse } from "@/lib/reviewTypes";
-import { formatReportTime, reportProvenance } from "@/lib/reportInsights";
+import type { Stage } from "@/lib/types";
+import { currentReportReference, reportEventTime, reportProvenance, reportReferences } from "@/lib/reportInsights";
 import { parseReviewPayload } from "@/lib/reviewPayload";
 
 const photo = (value?: string) =>
@@ -12,16 +13,21 @@ const photo = (value?: string) =>
   /^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(value)
     ? value
     : undefined;
-const clock = formatReportTime;
 const provenance = reportProvenance;
 
 /** Retained records only; photos use an explicit, bounded, source-checked read. */
 export function ReportEvidence({
   review,
   apiBase,
+  stages = [],
+  onStep,
+  requestedEvent,
 }: {
   review: ReviewResponse | null;
   apiBase: string;
+  stages?: Stage[];
+  onStep?: (stepId: string) => void;
+  requestedEvent?: { id: string; request: number; sourceId: string };
 }) {
   const [filter, setFilter] = useState("all");
   const [limit, setLimit] = useState(12);
@@ -29,6 +35,8 @@ export function ReportEvidence({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const controller = useRef<AbortController>();
+  const records = useRef<HTMLDivElement>(null);
+  const completedRequest = useRef<string>();
   const context = `${apiBase}|${review?.source_id}|${review?.reference_key}`;
   const owner = useRef(context);
   owner.current = context;
@@ -41,6 +49,26 @@ export function ReportEvidence({
     return () => controller.current?.abort();
   }, [context]);
   const events = useMemo(() => review?.events.filter(event => event.source_id === review.source_id) ?? [], [review]);
+  const references = useMemo(() => reportReferences(review), [review]);
+  useEffect(() => {
+    if (!requestedEvent || requestedEvent.sourceId !== review?.source_id || !events.some(event => event.id === requestedEvent.id)) return;
+    const requestKey = `${context}|${requestedEvent.request}`;
+    if (completedRequest.current === requestKey) return;
+    completedRequest.current = requestKey;
+    setFilter("all");
+    const index = events.slice().reverse().findIndex(event => event.id === requestedEvent.id);
+    setLimit(value => Math.max(value, Math.ceil((index + 1) / 12) * 12));
+  }, [requestedEvent, events, context, review?.source_id]);
+  useEffect(() => {
+    if (!requestedEvent || requestedEvent.sourceId !== review?.source_id) return;
+    const frame = requestAnimationFrame(() => {
+      const target = [...(records.current?.querySelectorAll<HTMLElement>("[data-report-event]") ?? [])]
+        .find(element => element.dataset.reportEvent === requestedEvent.id);
+      target?.scrollIntoView?.({ block: "nearest", behavior: "instant" });
+      target?.focus({ preventScroll: true });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [requestedEvent, limit, filter, review?.source_id]);
   const filtered = events
     .filter((event) => filter === "all" || event.kind === filter)
     .slice()
@@ -159,21 +187,27 @@ export function ReportEvidence({
         continuous video coverage.
       </p>
       {filtered.length ? (
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div ref={records} className="grid gap-3 sm:grid-cols-2">
           {filtered.slice(0, limit).map((event) => {
+            const duration = review?.source_duration_s;
+            const invalidTimestamp = !Number.isFinite(event.video_time_s) || event.video_time_s < 0;
+            const outsideDuration = typeof duration === "number" && Number.isFinite(duration) && duration > 0 && event.video_time_s > duration;
             const image =
               photo(event.thumbnail_b64) ||
               (event.thumbnail_available ? photos[event.id] : undefined);
             return (
               <article
                 key={event.id}
-                className="overflow-hidden rounded-xl border bg-card"
+                className={`report-evidence-card overflow-hidden rounded-xl border bg-card ${requestedEvent?.sourceId === review?.source_id && requestedEvent?.id === event.id ? "report-record-selected" : ""}`}
+                data-report-event={event.id}
+                tabIndex={-1}
+                aria-label={`${references.get(event.id)?.label} · ${event.summary || "Evidence record"}`}
               >
                 {image && (
                   <figure className="border-b bg-muted/20">
                     <img
                       src={image}
-                      alt={`Captured evidence at ${clock(event.video_time_s)}: ${event.summary}`}
+                      alt={`Captured evidence at ${reportEventTime(event)}: ${event.summary}`}
                       className="aspect-video w-full object-contain"
                       loading="lazy"
                       decoding="async"
@@ -182,14 +216,15 @@ export function ReportEvidence({
                       {event.observation_scope === "overview"
                         ? "Overview sample"
                         : "Captured frame"}{" "}
-                      · {clock(event.video_time_s)}
+                      · {reportEventTime(event)}
                     </figcaption>
                   </figure>
                 )}
                 <div className="p-4">
                   <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
+                    <b className="report-reference-label">{references.get(event.id)?.label}</b>
                     <span className="font-mono">
-                      {clock(event.video_time_s)}
+                      {reportEventTime(event)}
                     </span>
                     <span>{provenance(event)}</span>
                     <span
@@ -201,6 +236,7 @@ export function ReportEvidence({
                   <h4 className="text-sm font-medium leading-relaxed">
                     {event.summary || "Evidence record"}
                   </h4>
+                  {(invalidTimestamp || outsideDuration) && <p className="report-retention-note">Excluded from timeline: {invalidTimestamp ? "no valid source timestamp." : "timestamp is outside the known source duration."}</p>}
                   {event.concern && (
                     <p className="mt-2 text-sm leading-relaxed text-warning">
                       {event.concern}
@@ -223,10 +259,21 @@ export function ReportEvidence({
                     {event.observation_scope === "overview" && (
                       <span>Whole-video overview</span>
                     )}
-                    {event.old_reference && (
+                    {review && !currentReportReference(event, review) && (
                       <span className="text-warning">Earlier instructions</span>
                     )}
                   </div>
+                  {!!event.step_ids.length && <div className="report-evidence-links">
+                    {review && currentReportReference(event, review) ? [...new Set(event.step_ids)].map(id => {
+                      const step = stages.find(item => item.id === id);
+                      return step && onStep ? <button key={id} type="button" onClick={() => onStep(id)} aria-label={`View workflow step ${step.name}`}>{step.name}</button>
+                        : <span key={id}>Linked step is not available in this workflow.</span>;
+                    }) : <p>Step links belong to earlier instructions.</p>}
+                  </div>}
+                  <details className="report-record-details"><summary>Record details</summary>
+                    <dl><div><dt>Record identifier</dt><dd>{event.id}</dd></div><div><dt>Recorded at</dt><dd>{new Date(event.occurred_at).toLocaleString()}</dd></div>
+                      <div><dt>Reference digest</dt><dd>{event.reference_key}</dd></div></dl>
+                  </details>
                   {!image && event.thumbnail_available && (
                     <p className="mt-2 text-xs text-muted-foreground">
                       Photo retained; load evidence photos to view it.

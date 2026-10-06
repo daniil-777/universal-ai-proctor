@@ -132,6 +132,7 @@
 .intro-cue-rail b { font-size: 14px; font-weight: 550; }
 .intro-cue-rail p { margin-top: 4px; font-size: 12px; line-height: 1.6; color: hsl(var(--muted-foreground)); }
 .intro-sample, .intro-document, .intro-goals { border-radius: var(--radius-surface); }
+.intro-loaded-name { overflow-wrap: anywhere; }
 .intro-source-card p, .intro-document p, .intro-preferences, .intro-goals p { font-size: 13px; }
 .intro-source-card > span:first-child svg { stroke-width: 1.5; }
 .intro-tour-actions > p { font-size: 12px; }

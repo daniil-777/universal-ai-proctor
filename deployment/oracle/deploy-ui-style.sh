@@ -144,7 +144,7 @@ for video in cueveris-manufacturing-demo.mp4 cueveris-leica-workflow-demo.mp4; d
   range_status=$(curl --silent --show-error --max-time 20 --range 0-0 -o /dev/null -w '%{http_code}' "$public_origin/media/$video")
   test "$range_status" = 206
 done
-for asset in favicon.svg media/cueveris-manufacturing-demo.jpg media/cueveris-manufacturing-demo.json media/cueveris-manufacturing-demo.txt media/cueveris-leica-workflow-demo.jpg media/cueveris-leica-workflow-demo.json media/cueveris-leica-workflow-demo.txt media/cueveris-leica-workflow-demo.vtt media/leica-m10-guidance.txt media/process-guide-real-scenarios/index.html INTER-LICENSE.txt; do
+for asset in favicon.svg media/cueveris-manufacturing-demo.jpg media/cueveris-manufacturing-demo.json media/cueveris-manufacturing-demo.txt media/cueveris-leica-workflow-demo.jpg media/cueveris-leica-workflow-demo.json media/cueveris-leica-workflow-demo.txt media/cueveris-leica-workflow-demo.vtt media/leica-m10-guidance.txt media/cueveris-report-preview.html media/process-guide-real-scenarios/index.html INTER-LICENSE.txt; do
   curl --fail --silent --show-error --max-time 20 "$public_origin/$asset" >/dev/null
 done
 activation_attempted=0

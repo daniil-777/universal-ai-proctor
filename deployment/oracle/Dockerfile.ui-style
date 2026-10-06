@@ -9,8 +9,10 @@ COPY --chmod=0644 frontend/dist/media/cueveris-manufacturing-demo.mp4 frontend/d
 COPY --chmod=0644 frontend/dist/media/cueveris-leica-workflow-demo.mp4 frontend/dist/media/cueveris-leica-workflow-demo.jpg frontend/dist/media/cueveris-leica-workflow-demo.json frontend/dist/media/cueveris-leica-workflow-demo.txt frontend/dist/media/cueveris-leica-workflow-demo.vtt frontend/dist/media/leica-m10-guidance.txt /app/frontend/dist/media/
 COPY --chmod=0644 frontend/dist/INTER-LICENSE.txt /app/frontend/dist/INTER-LICENSE.txt
 COPY --chmod=0644 frontend/dist/media/process-guide-real-scenarios/index.html /app/frontend/dist/media/process-guide-real-scenarios/index.html
+COPY --chmod=0644 frontend/dist/media/cueveris-report-preview.html /app/frontend/dist/media/cueveris-report-preview.html
 COPY --chmod=0644 backend/dist/app.js /app/backend/dist/app.js
-COPY --chmod=0644 backend/dist/media/analysisPdf.js backend/dist/media/analysisReport.js /app/backend/dist/media/
+COPY --chmod=0644 backend/dist/domain/review.js /app/backend/dist/domain/review.js
+COPY --chmod=0644 backend/dist/media/analysisPdf.js backend/dist/media/analysisReport.js backend/dist/media/reportOverview.js /app/backend/dist/media/
 COPY --chmod=0644 backend/dist/llm/questionContract.js /app/backend/dist/llm/questionContract.js
 
 # COPY's file mode must not make an asset subdirectory untraversable.

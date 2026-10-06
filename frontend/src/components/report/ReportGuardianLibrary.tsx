@@ -178,7 +178,7 @@ export function ReportGuardianLibrary({
     (event) => filter === "all" || event.status === filter,
   );
   return (
-    <div>
+    <div className="report-guardian-library min-w-0">
       <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
         Unusual observations and potential mistakes flagged by Guardian. These
         are findings for review, not confirmed errors. Each clip includes up to
@@ -279,14 +279,14 @@ export function ReportGuardianLibrary({
         </p>
       )}
       {filtered.length ? (
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2">
           {filtered.slice(0, limit).map((event) => {
             const issues =
               review?.exceptions.filter(
                 (issue) => issue.event_id === event.id,
               ) ?? [];
             return (
-              <article key={event.id} className="rounded-xl border bg-card p-4">
+              <article key={event.id} className="min-w-0 rounded-xl border bg-card p-4">
                 <div className="mb-2 flex flex-wrap gap-2 text-xs text-muted-foreground">
                   <span className="font-mono">{clock(event.video_time_s)}</span>
                   <span

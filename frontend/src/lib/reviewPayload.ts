@@ -9,6 +9,7 @@ const provenance = z.enum(["ai", "operator", "system"]);
 const reviewSchema = z.object({
   ok: z.literal(true),
   source_id: text.min(1),
+  source_duration_s: z.number().finite().positive().nullable().optional(),
   reference_key: text,
   review_version: count,
   job: z.object({ work_order: text, asset: text, operator: text }),

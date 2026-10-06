@@ -212,14 +212,16 @@ export function IntroPage() {
             }}
           />
           {a.sourceName && (
-            <div className="mt-3 text-xs text-primary flex items-center gap-2">
-              <Check className="h-3.5 w-3.5" />
-              {a.sourceName}
-              {a.uploading && (
-                <span className="text-muted-foreground">
-                  · preparing server copy for clips
-                </span>
-              )}
+            <div className="mt-3 text-xs text-primary flex items-start gap-2 min-w-0">
+              <Check className="h-3.5 w-3.5 shrink-0" />
+              <span className="intro-loaded-name min-w-0">
+                {a.sourceName}
+                {a.uploading && (
+                  <span className="text-muted-foreground">
+                    {" "}· preparing server copy for clips
+                  </span>
+                )}
+              </span>
             </div>
           )}
           <div className="intro-step-heading mt-7">
@@ -229,11 +231,11 @@ export function IntroPage() {
             </h3>
           </div>
           <section className="intro-document border bg-card p-5 flex flex-col md:flex-row gap-5 items-start md:items-center">
-            <div className="flex gap-3 flex-1">
+            <div className="flex gap-3 flex-1 min-w-0 w-full">
               <div className="h-10 w-10 shrink-0 grid place-items-center bg-muted rounded-xl text-primary">
                 <FileText className="h-5 w-5" />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <h2 className="font-semibold text-sm">
                   Add a guidance document{" "}
                   <span className="font-normal text-muted-foreground">
@@ -245,7 +247,7 @@ export function IntroPage() {
                   criteria and principles stay alongside your video.
                 </p>
                 {a.referenceName && (
-                  <p className="mt-2 text-xs font-medium text-primary">
+                  <p className="intro-loaded-name mt-2 text-xs font-medium text-primary">
                     {a.referenceName} · {a.stages.length} steps extracted
                   </p>
                 )}

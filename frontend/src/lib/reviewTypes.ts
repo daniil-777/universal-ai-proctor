@@ -42,6 +42,8 @@ export interface ReviewException {
 export interface ReviewResponse {
   ok: true;
   source_id: string;
+  /** Optional for older backends; null means no finite uploaded-video duration. */
+  source_duration_s?: number | null;
   reference_key: string;
   review_version: number;
   job: { work_order: string; asset: string; operator: string };

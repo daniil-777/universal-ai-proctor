@@ -37,4 +37,25 @@ describe("recorded timeline", () => {
     expect(screen.queryByLabelText("Choose recorded moment")).toBeNull();
     expect(screen.getByText(/No real moments retained yet/)).toBeVisible();
   });
+  it("shows a whole-source axis including the empty tail and links the selected snapshot reference without replay", () => {
+    const evidence = vi.fn();
+    render(<ReportTimeline review={{ ...review([event("last", 12)]), source_duration_s: 120 }} onEvidence={evidence} />);
+    expect(screen.getByRole("img")).toHaveAttribute("aria-label", expect.stringContaining("known source duration 00:00 to 02:00"));
+    expect(screen.getByText("02:00 · source duration")).toBeVisible();
+    expect(screen.getByText(/Gaps have no retained record/)).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "View evidence E01" }));
+    expect(evidence).toHaveBeenCalledWith("last");
+  });
+  it("keeps known-duration empty timelines visible without manufacturing a selected record", () => {
+    render(<ReportTimeline review={{ ...review([]), source_duration_s: 90 }} />);
+    expect(screen.getByRole("img")).toHaveAttribute("aria-label", expect.stringContaining("0 retained moments"));
+    expect(screen.getByText("01:30 · source duration")).toBeVisible();
+    expect(screen.queryByLabelText("Choose recorded moment")).toBeNull();
+  });
+  it("places a retained moment at the actual end of a subsecond source instead of treating duration as one second", () => {
+    const { container } = render(<ReportTimeline review={{ ...review([event("end", .5)]), source_duration_s: .5 }} />);
+    expect(container.querySelector<HTMLElement>(".report-time-cursor")!.style.left).toBe("100%");
+    expect(container.querySelectorAll(".report-time-bin")[39]).not.toHaveClass("empty");
+    expect(container.querySelectorAll(".report-time-bin")[20]).toHaveClass("empty");
+  });
 });

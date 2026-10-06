@@ -69,8 +69,10 @@ export function ensureReview(s: Session, guard: ReviewGuard): ReviewState {
 }
 export function reviewSnapshot(s: Session) {
   const review = syncReview(s);
+  const duration = s.sourceKind === "video" ? s.videoInfo?.duration : undefined;
   return {
     ok: true, source_id: review.source_id, reference_key: review.reference_key, review_version: review.version,
+    source_duration_s: typeof duration === "number" && Number.isFinite(duration) && duration > 0 ? duration : null,
     job: { ...review.job }, checks: review.checks.map(check => ({ ...check })),
     events: review.events.map(event => ({ ...event, step_ids: [...event.step_ids], thumbnail_available: !!event.thumbnail_b64, old_reference: event.reference_key !== review.reference_key })),
     exceptions: review.exceptions.map(issue => ({ ...issue, history: issue.history.map(item => ({ ...item })), old_reference: issue.reference_key !== review.reference_key })),

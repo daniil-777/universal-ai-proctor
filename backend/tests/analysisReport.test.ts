@@ -19,6 +19,11 @@ async function example() {
   return structuredHandoff(session);
 }
 
+function syncUnresolved(data: Awaited<ReturnType<typeof example>>) {
+  data.unresolved_criteria = data.progress.flatMap(step => step.criteria.filter(criterion => criterion.status !== "met")
+    .map(criterion => ({ step_id: step.id, step_name: step.name, key: criterion.key, label: criterion.label, status: criterion.status })));
+}
+
 describe("shareable analysis reports", () => {
   it("exports the unchanged default surgical reference with arrows and checkmarks", async () => {
     const session = new SessionStore().get("default-surgical-pdf");
@@ -60,6 +65,7 @@ describe("shareable analysis reports", () => {
     const data = await example();
     const template = data.progress[0];
     data.progress = Array.from({ length: 35 }, (_, index) => ({ ...template, id: `S${index}`, name: `Step ${index}`, criteria: [{ ...template.criteria[0], label: `Criterion-${index}`, evidence: index === 34 ? "LAST_CRITERION_" + "x".repeat(1400) : template.criteria[0].evidence }] }));
+    syncUnresolved(data);
     expect(renderAnalysisHtml(data)).toContain("LAST_CRITERION_");
     const buffer = await renderAnalysisPdf(data); expect(buffer.length).toBeGreaterThan(20_000);
     expect(buffer.toString("latin1").match(/\/Type \/Page\b/g)!.length).toBeGreaterThan(4);
@@ -67,6 +73,7 @@ describe("shareable analysis reports", () => {
   it("keeps main-thread timers responsive while rendering 3000 criteria in a real worker", async () => {
     const data = await example(), template = data.progress[0];
     data.progress = Array.from({ length: 100 }, (_, index) => ({ ...template, id: `S${index}`, name: `Stress step ${index}`, criteria: Array.from({ length: 30 }, (_, criterion) => ({ ...template.criteria[0], label: `Criterion ${index}.${criterion}: ${"Inspect the component and record the visible result. ".repeat(3)}`, evidence: "Check the measurement against the approved reference. ".repeat(4) })) }));
+    syncUnresolved(data);
     const started = performance.now();
     const timer = new Promise<number>(resolve => setTimeout(() => resolve(performance.now() - started), 10));
     const rendering = renderAnalysisPdf(data);
@@ -140,6 +147,54 @@ describe("shareable analysis reports", () => {
     const html = renderAnalysisHtml(data); expect(html).toContain("Guardian findings <span>1 retained"); expect(html).toContain("Suggested video window 00:02 - 00:11"); expect(html).toContain("Waiting for the instrument record"); expect(html).toContain("Earlier reference"); expect(html).not.toContain("/api/review/incidents/");
     data.source.kind = "camera"; expect(guardianReportFindings(data)[0].window).toBeNull(); expect(renderAnalysisHtml(data)).toContain("Recorded sample only - no playable video window");
   });
+
+  it("connects exact issue/evidence/workflow records and keeps earlier instructions separate", async () => {
+    const data = await example(), current = { ...data.evidence[0], step_ids: [data.progress[0].id] };
+    data.source.duration_s = 60;
+    data.evidence = [current, { ...current, id: "old-record", reference_key: "earlier-reference", old_reference: false }];
+    data.exception_history = [
+      { id: "linked", event_id: current.id, title: "Review this exact record", description: "Recorded concern", reference_key: data.reference.reference_key, provenance: "operator", status: "open", created_at: 1, updated_at: 1, history: [], old_reference: false },
+      { id: "orphan", event_id: "not-retained", title: "Missing retained record", description: "Keep original decision", reference_key: data.reference.reference_key, provenance: "operator", status: "open", created_at: 1, updated_at: 1, history: [], old_reference: false },
+    ];
+    data.open_exceptions = data.exception_history;
+    const before = JSON.stringify(data), html = renderAnalysisHtml(data);
+    expect(html).toContain('href="#evidence-E01"'); expect(html).toContain('id="evidence-E01"');
+    expect(html).toContain('href="#workflow-step-1"'); expect(html).toContain('id="workflow-step-1"');
+    expect(html).toContain("Linked evidence is not retained in this snapshot.");
+    const oldCard = html.match(/<article class="evidence[^>]*id="evidence-E02">([\s\S]*?)<\/article>/)![1];
+    expect(oldCard).toContain("Earlier instructions; recorded step references are not mapped to the current workflow.");
+    expect(oldCard).not.toContain('href="#workflow-step-');
+    expect(html).toContain("01:00 / video duration");
+    expect(html).toContain("Steps needing criterion review");
+    const pdf = await renderAnalysisPdf(data), bytes = pdf.toString("latin1");
+    expect(bytes).toContain("/GoTo"); expect(bytes).toContain("(evidence-E01)"); expect(bytes).toContain("(workflow-step-1)");
+    expect(JSON.stringify(data)).toBe(before);
+  });
+
+  it("excludes other-source and out-of-range records from summary scope without discarding their detail", async () => {
+    const data = await example(), event = data.evidence[0]; data.source.duration_s = 20;
+    data.evidence = [{ ...event, id: "current", summary: "CURRENT_RECORD" },
+      { ...event, id: "outside", video_time_s: 21, summary: "OUTSIDE_DURATION_RETAINED" },
+      { ...event, id: "other", source_id: "another-source", summary: "OTHER_SOURCE_RETAINED" }];
+    const html = renderAnalysisHtml(data);
+    expect(html).toContain("2 retained records for this source; 1 timestamped moments");
+    expect(html).toContain("1 record(s) from other sources are excluded from these counts and the timeline; they remain in the full evidence section.");
+    expect(html).toContain("Timeline excludes 1 out-of-range and 0 invalid timestamp record(s)");
+    expect(html).toContain("OUTSIDE_DURATION_RETAINED"); expect(html).toContain("OTHER_SOURCE_RETAINED");
+    expect(html).not.toContain("Gaps are unobserved");
+    expect(reportOverview(data).evidenceGroups.reduce((sum, group) => sum + group.count, 0)).toBe(2);
+  });
+
+  it("shows the entire known-duration axis even when no moment is retained", async () => {
+    const data = await example(); data.evidence = []; data.source.duration_s = 20;
+    const html = renderAnalysisHtml(data);
+    expect(html).toContain('class="moment-lane"'); expect(html).toContain("00:20 / video duration");
+    expect(html).toContain("No real moments have been retained for this source.");
+    expect(html).toContain("0 retained source-scoped moments on the timeline from 00:00 to 00:20");
+    expect((await renderAnalysisPdf(data)).subarray(0, 5).toString()).toBe("%PDF-");
+    data.source.duration_s = null;
+    expect(renderAnalysisHtml(data)).not.toContain('class="moment-lane"');
+  });
 });
 
 it("exports an honest chronology while excluding demos, overview samples and unrelated sources from the timeline", async () => {
@@ -153,7 +208,7 @@ it("exports an honest chronology while excluding demos, overview samples and unr
   expect(insights.timeline.reduce((sum, bin) => sum + bin.count, 0)).toBe(2);
   expect(insights.timeline.at(-1)?.status).toBe("watch");
   const html = renderAnalysisHtml(data);
-  expect(html).toContain("Evidence in time"); expect(html).toContain("Gaps are unobserved");
+  expect(html).toContain("Evidence in time"); expect(html).toContain("Gaps mean no retained records");
   expect(html).toContain('href="#timeline"');
   expect((await renderAnalysisPdf(data)).subarray(0, 5).toString()).toBe("%PDF-");
 });

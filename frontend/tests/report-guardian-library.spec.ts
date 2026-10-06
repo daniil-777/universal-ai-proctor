@@ -161,7 +161,7 @@ async function seedFindings(page: Page) {
 }
 
 async function capture(page: Page, name: string) {
-  const directory = path.resolve("../docs/screenshots");
+  const directory = path.resolve(process.env.REPORT_QA_SCREENSHOTS || "../docs/screenshots");
   await fs.mkdir(directory, { recursive: true });
   await expect(
     page
@@ -449,9 +449,9 @@ test.describe("original surgery sample on 320 px phone", () => {
         () => document.documentElement.scrollWidth <= innerWidth + 1,
       ),
     ).toBe(true);
-    await page.screenshot({
-      path: path.resolve("../docs/screenshots/surgery-sample-small-phone.png"),
-    });
+    const directory = path.resolve(process.env.REPORT_QA_SCREENSHOTS || "../docs/screenshots");
+    await fs.mkdir(directory, { recursive: true });
+    await page.screenshot({ path: path.join(directory, "surgery-sample-small-phone.png") });
   });
 });
 
