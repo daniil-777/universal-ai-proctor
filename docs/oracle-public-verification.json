@@ -1,0 +1,154 @@
+{
+  "checked_at": "2026-10-06T13:06:13.684047+00:00",
+  "entry_url": "https://guide.demtsev.com/",
+  "full_app_origin": "https://process-guide.140-238-175-209.sslip.io",
+  "host": {
+    "provider": "Oracle",
+    "region": "eu-zurich-1",
+    "shape": "VM.Standard.E2.1.Micro",
+    "always_free": true,
+    "ram_gb": 1,
+    "boot_disk_gb": 50,
+    "host_swap_gb": 2,
+    "paid_host_activated": false
+  },
+  "runtime": {
+    "node_major": 24,
+    "architecture": "amd64",
+    "mock": false,
+    "provider": "OpenAI",
+    "private_backend_port": 8101,
+    "app_uid": 1000,
+    "base_revision": "d9437267c9c0ceeda51d7d2e6f3c9adfceb8dcbb",
+    "base_archive_sha256": "645cac39142bbd5309b8d946b2753268a21f660bf92c240373aefcc56e939b40",
+    "patched_image_id": "sha256:baeda4b2a1fe453079b06a31f9866fa0dd06f93cff987ffd2dae5d34198c9a70",
+    "renderer_source_sha256": "d4d9dbb77981abf6beb3c5c1b0c0a3f0dd2db7391501c7d2c0691b651ef43ad2",
+    "renderer_compiled_sha256": "8c110bae9a4945c0e8fb8e1a0fe8742b3d2baf279ff01876e45a5037f1dba38f",
+    "provider_keys_in_source_or_image": false
+  },
+  "source_checks": {
+    "backend_tests_passed": 326,
+    "frontend_tests_passed": 163,
+    "typechecks_passed": true,
+    "lint_errors": 0,
+    "existing_fast_refresh_warnings": 8,
+    "default_surgical_font_regression_passed": true
+  },
+  "browser": {
+    "completed": true,
+    "profiles": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000,
+        "engine": "chrome",
+        "source": "Uncomplicated cholecystectomy",
+        "filename": "Cholecystectomy.txt",
+        "steps": 6,
+        "incomplete": true,
+        "duration_s": 252.766667,
+        "video_width": 660,
+        "current_s": 216,
+        "overflow": false,
+        "errors": [],
+        "external_requests": [],
+        "automatic_demo_requests": 1
+      },
+      {
+        "name": "phone",
+        "width": 390,
+        "height": 844,
+        "engine": "chrome",
+        "source": "Uncomplicated cholecystectomy",
+        "filename": "Cholecystectomy.txt",
+        "steps": 6,
+        "incomplete": true,
+        "duration_s": 252.766667,
+        "video_width": 660,
+        "current_s": 216,
+        "overflow": false,
+        "errors": [],
+        "external_requests": [],
+        "automatic_demo_requests": 1
+      },
+      {
+        "name": "tablet",
+        "width": 820,
+        "height": 1180,
+        "engine": "webkit",
+        "source": "Uncomplicated cholecystectomy",
+        "filename": "Cholecystectomy.txt",
+        "steps": 6,
+        "incomplete": true,
+        "duration_s": 252.79996666666668,
+        "video_width": 660,
+        "current_s": 216,
+        "overflow": false,
+        "errors": [],
+        "external_requests": [],
+        "automatic_demo_requests": 1
+      }
+    ],
+    "physical_camera_microphone_verified": false
+  },
+  "live_provider_smoke": {
+    "completed": true,
+    "provider_requests": 3,
+    "used_frames": 3,
+    "guidance_ms": 7100,
+    "first_stream_token_ms": 2363,
+    "stream_complete_ms": 2801,
+    "voice": {
+      "bytes": 37632,
+      "synthesis_ms": 2445,
+      "format": "mp3",
+      "validated_by_ffprobe": true
+    },
+    "exports": {
+      "pdf_bytes": 46179,
+      "html_bytes": 44275,
+      "dataset_bytes": 12424
+    },
+    "latency_scope": "Single smoke request per operation; not a performance guarantee.",
+    "accuracy_scope": "Smoke checks, not clinical or whole-workflow validation."
+  },
+  "persistent_account_smoke": {
+    "checked_at": "2026-10-06T13:03:06.964Z",
+    "origin": "https://process-guide.140-238-175-209.sslip.io",
+    "completed": true,
+    "account_and_saved_pdf_survive_restart": true,
+    "saved_pdf_bytes": 63139,
+    "server_video_decode_ms": 871,
+    "secure_http_only_strict_cookie": true,
+    "wrong_origin_rejected": true,
+    "temporary_account_removed": true,
+    "provider_calls": 0
+  },
+  "surgical_report": {
+    "pages": 11,
+    "bytes": 63139,
+    "pdf_signature_verified": true,
+    "embedded_symbol_fonts": true,
+    "arrow_text_extraction_verified": true,
+    "all_pages_visually_reviewed": true
+  },
+  "sample_check": {
+    "video_guide_pairs_loaded": 6,
+    "original_document_unchanged": true,
+    "range_response_status": 206,
+    "step_counts": [
+      6,
+      6,
+      6,
+      7,
+      8,
+      5
+    ]
+  },
+  "limitations": [
+    "One initial server-decoded analysis connection reset under parallel checks; browser-frame retry and later server decode passed.",
+    "Free micro host is intended for light traffic; load capacity is not established.",
+    "Live unsaved sessions end on restart.",
+    "Physical camera/microphone behavior requires real-device testing."
+  ]
+}

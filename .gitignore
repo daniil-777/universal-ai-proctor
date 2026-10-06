@@ -15,6 +15,7 @@
 **/.hyperframes/
 .pages-dist/
 .media-cache/
+.wrangler/
 **/playwright-report/
 **/test-results/
 **/coverage/

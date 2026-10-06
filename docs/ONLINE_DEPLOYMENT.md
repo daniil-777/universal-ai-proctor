@@ -1,6 +1,6 @@
 # Online deployment
 
-The full app runs locally at `http://localhost:8101`. Its [source](https://github.com/daniil-777/universal-ai-proctor) and [GitHub Pages interface](https://daniil-777.github.io/universal-ai-proctor/) are public. Pages does not run the backend; accounts and saved reports remain on the server where they were created. A public full-feature backend has not yet been activated. This document prepares a provider-neutral deployment of the existing code. See [Oracle Always Free](ORACLE_FREE_DEPLOYMENT.md) for the free VM option and [production deployment](DEPLOYMENT.md) for the shared container and paid alternatives.
+The [public full app](https://guide.demtsev.com/) is active on an Oracle Always Free VM with HTTPS and persistent storage. It works independently of the owner's computer. The branded entry redirects to `https://process-guide.140-238-175-209.sslip.io`, where the frontend and backend share one origin. Accounts belong to that server; local accounts are separate. The [GitHub Pages interface](https://daniil-777.github.io/universal-ai-proctor/) remains a preview with a link to the full app. See [Oracle deployment](ORACLE_FREE_DEPLOYMENT.md) for the activated configuration and checks, and [production deployment](DEPLOYMENT.md) for alternatives.
 
 ## Supported deployment shape
 
@@ -81,7 +81,7 @@ Serve the whole app at the origin root and use HTTPS. Frontend and backend share
 
 For a protected pilot, put an access gateway in front of the entire application and its API. Account sign-in protects account-owned training history, reports and deletion. It does not require sign-in for anonymous video/camera analysis, upload or speech synthesis. Publicly exposing those routes also exposes provider usage; gateway access and request limits should apply to them.
 
-Authentication includes SQLite-backed login/registration limits and bounded expensive password work. The current Fastify configuration does not trust arbitrary forwarded IP headers. Behind a proxy its IP limit may apply to the proxy address, so the gateway should also apply appropriate per-client limits. Add proxy trust only for explicitly configured trusted hops if the deployment needs real-client-IP behavior; that is a future deployment-specific code change, not a setting implemented by this guide.
+Authentication includes SQLite-backed login/registration limits and bounded expensive password work. `TRUST_PROXY_CIDRS` enables only explicitly configured immediate proxy addresses; Oracle pins this to Caddy's private `/32`. Without it, forwarded IP headers are ignored. Keep the backend port private and have the proxy replace client-supplied forwarding headers.
 
 Email is the account identifier. This release has no email-verification/delivery service, self-service password reset, enterprise SSO, invitation-only registration or administrator role management. Select the pilot's access policy accordingly. Passwords are stored as salted scrypt hashes; the implementation uses the asynchronous Node API. [Node scrypt documentation](https://nodejs.org/docs/latest-v24.x/api/crypto.html#cryptoscryptpassword-salt-keylen-options-callback)
 

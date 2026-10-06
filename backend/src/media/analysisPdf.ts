@@ -8,10 +8,32 @@ import { guardianReportFindings } from "./guardianFindings.js";
 const ink = "#14283B", teal = "#007D7A", muted = "#586879", line = "#DCE5EC";
 const regular = readFileSync(new URL("./fonts/NotoSans-Regular.ttf", import.meta.url));
 const bold = readFileSync(new URL("./fonts/NotoSans-Bold.ttf", import.meta.url));
+const symbolRegular = readFileSync(new URL("./fonts/DejaVuSans.ttf", import.meta.url));
+const symbolBold = readFileSync(new URL("./fonts/DejaVuSans-Bold.ttf", import.meta.url));
 // Reuse the font engine shipped by PDFKit; do not introduce another font dependency.
 const fontEngine = await import(import.meta.resolve("fontkit")) as { create: (source: Buffer) => { hasGlyphForCodePoint: (point: number) => boolean } };
 const coverage = { Regular: fontEngine.create(regular), Bold: fontEngine.create(bold) };
 const checked = { Regular: new Set<number>(), Bold: new Set<number>() };
+const symbolCoverage = { Regular: fontEngine.create(symbolRegular), Bold: fontEngine.create(symbolBold) };
+// The bundled surgical reference uses arrows and checkmarks. Preserve their
+// meaning with a local symbol font, without pretending to support RTL shaping.
+const fontFor = (value: string, weight: boolean) => {
+  const primary = weight ? "Bold" : "Regular";
+  let needsSymbols = false;
+  for (const character of value) {
+    if (/\s/u.test(character)) continue;
+    const point = character.codePointAt(0)!;
+    if (checked[primary].has(point)) continue;
+    if (coverage[primary].hasGlyphForCodePoint(point)) { checked[primary].add(point); continue; }
+    if (point < 0x2190 || point > 0x2BFF || !symbolCoverage[primary].hasGlyphForCodePoint(point)) throw unsupportedReportCharacters();
+    needsSymbols = true;
+  }
+  if (!needsSymbols) return primary;
+  for (const character of value) {
+    if (!/\s/u.test(character) && !symbolCoverage[primary].hasGlyphForCodePoint(character.codePointAt(0)!)) throw unsupportedReportCharacters();
+  }
+  return weight ? "SymbolBold" : "SymbolRegular";
+};
 const plain = (value: unknown) => String(value ?? "").replace(/[\u2010-\u2015]/g, "-");
 const escape = (value: unknown) => plain(value).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
 const clock = (value: number) => {
@@ -36,18 +58,12 @@ const scopeNotice = "This is a snapshot of recorded samples and operator records
 export async function renderAnalysisPdfDirect(data: StructuredHandoff): Promise<Buffer> {
   const doc = new PDFDocument({ size: "A4", margin: 48, bufferPages: true, info: { Title: `Process Guide - ${snapshotLabel(data)}`, Author: "Process Guide", Subject: "Recorded workflow evidence and operator review", CreationDate: new Date(data.generated_at) } });
   doc.registerFont("Regular", regular); doc.registerFont("Bold", bold);
+  doc.registerFont("SymbolRegular", symbolRegular); doc.registerFont("SymbolBold", symbolBold);
   const output = new Promise<Buffer>((resolve, reject) => { const chunks: Buffer[] = []; doc.on("data", chunk => chunks.push(chunk)); doc.on("end", () => resolve(Buffer.concat(chunks))); doc.on("error", reject); });
   const width = doc.page.width - 96, bottom = doc.page.height - 62;
   let y = 48, currentSection = "Executive overview";
   const drawText = (value: string, x: number, position: number, size: number, color: string, weight: boolean, options: PDFKit.Mixins.TextOptions = {}) => {
-    const normalized = plain(value), font = weight ? "Bold" : "Regular";
-    for (const character of normalized) {
-      if (/\s/u.test(character)) continue;
-      const point = character.codePointAt(0)!;
-      if (checked[font].has(point)) continue;
-      if (!coverage[font].hasGlyphForCodePoint(point)) throw unsupportedReportCharacters();
-      checked[font].add(point);
-    }
+    const normalized = plain(value), font = fontFor(normalized, weight);
     doc.font(font).fontSize(size).fillColor(color).text(normalized, x, position, { ...options, lineBreak: false });
   };
   // Repeated criteria/notes otherwise ask the font engine to measure the same
@@ -59,16 +75,16 @@ export async function renderAnalysisPdfDirect(data: StructuredHandoff): Promise<
     const key = JSON.stringify([size, weight, w, normalized]);
     const cached = wrapCache.get(key);
     if (cached) return cached;
-    doc.font(weight ? "Bold" : "Regular").fontSize(size);
+    const measure = (content: string) => doc.font(fontFor(content, weight)).fontSize(size).widthOfString(content);
     const result: string[] = [];
     for (const paragraph of normalized.split(/\r?\n/)) {
       let current = "";
       for (const word of paragraph.split(/\s+/)) {
         const next = current ? `${current} ${word}` : word;
-        if (doc.widthOfString(next) <= w) { current = next; continue; }
+        if (measure(next) <= w) { current = next; continue; }
         if (current) { result.push(current); current = ""; }
         let segment = "";
-        for (const char of word) { if (segment && doc.widthOfString(segment + char) > w) { result.push(segment); segment = ""; } segment += char; }
+        for (const char of word) { if (segment && measure(segment + char) > w) { result.push(segment); segment = ""; } segment += char; }
         current = segment;
       }
       result.push(current);

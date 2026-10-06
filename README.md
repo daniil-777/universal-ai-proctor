@@ -2,11 +2,13 @@
 
 An independent general process guidance app, adapted from the original AI Proctor interface. This repository contains its own frontend, backend, configuration and tests; the original surgical guidance files and default video are preserved.
 
-**Public interface:** https://daniil-777.github.io/universal-ai-proctor/
+**Public full app:** https://guide.demtsev.com/
+
+**GitHub Pages preview:** https://daniil-777.github.io/universal-ai-proctor/
 
 **Local full app:** http://localhost:8101
 
-The Pages interface supports previews and walkthroughs. Live AI, server video processing, voice synthesis, accounts and saved reports require the full Node server. [Production deployment](docs/DEPLOYMENT.md) provides a Docker image with persistent storage. [Oracle Always Free deployment](docs/ORACLE_FREE_DEPLOYMENT.md) is a free hosting option when eligible server capacity is available; Render is a paid alternative. AI API usage is billed separately. Hosting activation is separate from publishing source.
+The full app runs independently of the owner's computer on an Oracle Always Free VM with HTTPS, FFmpeg and persistent account storage. Its branded address redirects to the full server; uploads and streaming go directly to that server. The Pages interface supports previews and walkthroughs and links to the full app. [Deployment details](docs/ORACLE_FREE_DEPLOYMENT.md) record the actual free micro instance and its capacity limits. AI API usage is billed separately.
 
 ## Run
 

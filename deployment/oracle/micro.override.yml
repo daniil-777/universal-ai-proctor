@@ -1,0 +1,12 @@
+# Always Free E2.1.Micro: one app, serialized FFmpeg work and bounded memory.
+# Use with docker-compose.yml. Swap must exist on the host before startup.
+services:
+  app:
+    mem_limit: 640m
+    memswap_limit: 1408m
+    environment:
+      NODE_OPTIONS: --max-old-space-size=384
+      MALLOC_ARENA_MAX: "2"
+  caddy:
+    mem_limit: 128m
+    memswap_limit: 256m

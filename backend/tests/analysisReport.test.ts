@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
 import { SessionStore } from "../src/domain/session.js";
 import { parseDocument } from "../src/domain/guidance.js";
 import { appendReviewEvent, structuredHandoff, syncReview } from "../src/domain/review.js";
@@ -19,6 +20,20 @@ async function example() {
 }
 
 describe("shareable analysis reports", () => {
+  it("exports the unchanged default surgical reference with arrows and checkmarks", async () => {
+    const session = new SessionStore().get("default-surgical-pdf");
+    session.sourceId = "surgical-video"; session.sourceKind = "video"; session.sourceName = "Default surgical video";
+    session.filename = "Cholecystectomy.txt";
+    session.text = readFileSync(new URL("../../guidance-library/Cholecystectomy.txt", import.meta.url), "utf8");
+    session.workflow = parseDocument(session.filename, session.text).workflow;
+    const data = structuredHandoff(session);
+    data.operator_goals = "Follow → inspect → record. ✔ Keep uncertain steps unconfirmed.";
+    expect(data.progress).toHaveLength(6);
+    const pdf = await renderAnalysisPdf(data);
+    expect(pdf.subarray(0, 5).toString()).toBe("%PDF-");
+    expect(pdf.toString("latin1")).toContain("/FontFile2");
+    expect(renderAnalysisHtml(data)).toContain("✔ Keep uncertain steps unconfirmed.");
+  });
   it("escapes all operator content in a standalone responsive document", async () => {
     const data = await example(), html = renderAnalysisHtml(data);
     expect(html).toContain("&lt;script&gt;alert(&#39;bad&#39;)&lt;/script&gt;");

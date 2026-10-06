@@ -1,16 +1,31 @@
 # Oracle Always Free deployment
 
-This is a prepared deployment for the existing full app, not an activated Oracle service. It uses the repository's Node 24 / FFmpeg Docker image, a single app instance, the current SQLite account store and one persistent application volume. Caddy serves the UI and API together over HTTPS. Camera, microphone, voice, video/TXT uploads, guardian, reports, incident clips, saved training history and all six examples retain their existing routes and behavior. Live analysis sessions remain in memory and end on a server restart; saved account reports persist.
+The [public full app](https://guide.demtsev.com/) was activated on **2026-10-06** in Oracle's Zurich home region. Its branded entry redirects the browser to `https://process-guide.140-238-175-209.sslip.io`; all subsequent uploads, streams and account requests use that full HTTPS origin directly. The redirect does not proxy uploads through Cloudflare. The app runs independently of the owner's computer.
+
+The live server uses **one Always Free `VM.Standard.E2.1.Micro`**, Ubuntu 24.04 AMD64, 1 GB RAM, a 50 GB boot disk and 2 GB host swap. A1 launch and the capacity query both found no available ARM hosts, so the verified AMD image was used without upgrading the account or activating a paid host. This small server is suited to light pilot traffic; CPU-bound extraction and concurrent report/password work can be slower than on the recommended A1 shape. The checked-in [micro override](../deployment/oracle/micro.override.yml) limits app memory to 640 MB, Node heap to 384 MB, Caddy to 128 MB and FFmpeg concurrency to one.
+
+Node 24 / FFmpeg runs as UID 1000 behind Caddy with publicly trusted TLS. Only 80/443 are public; SSH is restricted to the owner's address and 8101 stays private. One persistent app volume retains SQLite accounts, saved reports and temporary uploads; separate Caddy volumes retain certificates. Live guidance sessions remain in memory and end on restart. Provider keys are private runtime settings and are absent from Git and the image. AI calls still incur provider charges.
+
+## Public verification on 2026-10-06
+
+- All six video/guide pairs loaded, including the unchanged original surgical instructions; all video byte ranges returned 206.
+- Trusted HTTPS browser checks passed on desktop Chrome, phone-sized Chrome and tablet-sized WebKit: original video playback and seek, six extracted surgical steps, no horizontal overflow or console errors. These checks do not prove physical camera/microphone permission behavior on every device.
+- Real OpenAI analysis used three frames (7.1 s); question streaming delivered its first token in 2.36 s; real speech synthesis returned valid MP3 in 2.45 s. These are single smoke timings, not latency guarantees or recognition accuracy metrics.
+- Uploads, bookmark evidence, PDF, offline HTML, ZIP and account lifecycle passed. A default surgical PDF initially failed on arrows/checkmarks; locally embedded symbol fonts now preserve those characters, and the live 11-page export passed text and visual checks.
+- A saved surgical report and sign-in survived an actual app restart; secure/HttpOnly/Strict cookies and rejection of wrong-origin account mutations passed. Temporary QA accounts were removed.
+- One initial server-decoded analysis connection reset during parallel checks. A retry using the normal browser-frame path passed, and subsequent server-side surgical decoding passed in 871 ms. No out-of-memory event or unexpected container restart was observed. Load limits should still be measured before wider use.
+
+The public receipt is [oracle-public-verification.json](oracle-public-verification.json). The deployed base is the SHA256-verified [runtime-d943726 snapshot](https://github.com/daniil-777/universal-ai-proctor/releases/tag/runtime-d943726), plus the tested report-font patch. Future normal builds include the patch directly from source.
 
 ## Free resources to select
 
-Oracle's official documentation checked on **2026-10-05** specifies **2 OCPU and 12 GB RAM** across Always Free Ampere A1 instances, with **200 GB total boot/block storage** in the home region and 10 TB monthly outbound transfer. The older 4 OCPU / 24 GB allowance must not be assumed. For this app, select one Always Free-eligible `VM.Standard.A1.Flex` Ubuntu ARM instance with 2 OCPU, 12 GB RAM and a 50 GB boot disk. This leaves storage allowance unused and avoids additional services. Confirm the console labels and quotas before creating anything. [Oracle resource limits](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
+Oracle's official documentation checked on **2026-10-06** includes two Always Free AMD micro instances, **2 OCPU / 12 GB RAM** across Ampere A1 instances and **200 GB total boot/block storage** in the home region. The older 4 OCPU / 24 GB allowance must not be assumed. If ARM capacity becomes available, one eligible Ubuntu A1 instance with 2 OCPU, 12 GB RAM and a 50 GB boot disk provides substantially more headroom. Confirm the console labels and quotas before creating resources. [Oracle resource limits](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
 
 Free shapes can be unavailable in the chosen home region. Idle VMs may be reclaimed under Oracle's seven-day utilization policy. Do not rely on this free tier for guaranteed uptime. [Capacity and idle-instance rules](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
 
 Signup normally requires a mobile number and payment card. Oracle may place temporary card authorization holds; its documentation says there are no actual charges unless the account is upgraded. **Do not upgrade to Pay As You Go automatically**, choose trial-only resources, or enable extra CPUs/disks beyond the Always Free allowance. The 30-day trial credit is separate from Always Free resources. [Signup and trial rules](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier.htm), [card verification](https://www.oracle.com/cloud/free/faq/)
 
-Hosting can be free; model API usage is billed by its provider. A domain registration can also cost money: use a hostname already controlled by the owner or a suitable free DNS subdomain. No Oracle account creation, VM provisioning, key upload or billable action is performed by these checked-in files.
+Hosting can be free; model API usage is billed by its provider. A domain registration can also cost money: use a hostname already controlled by the owner or a suitable free DNS subdomain. These checked-in templates do not create accounts or provision resources automatically.
 
 ## Verify ARM before creating the VM
 
@@ -18,7 +33,7 @@ Hosting can be free; model API usage is billed by its provider. A domain registr
 
 Run the repository's **Verify Oracle ARM container** workflow manually. It calls the same container smoke workflow used on x86, using the native `ubuntu-24.04-arm` runner. It checks the host architecture, Docker image architecture, Node `process.arch`, Node 24, FFmpeg/ffprobe, unprivileged runtime, all six videos/guides, real frame decoding, mocked guidance/Q&A/SSE, PDF/HTML/ZIP, uploads and account lifecycle. A container restart must retain saved accounts and PDFs. It also validates the Oracle Compose/Caddy configs and tests the actual app behind Caddy with a local internal TLS CA: spoofed forwarding headers, immediate SSE delivery, video ranges, secure cookies and account Origin protection. All containers, certificates, networks and volumes in this proxy check are isolated and temporary. Provider credentials are absent and paid AI calls are zero. The separate source checks continue on the normal main workflow. [GitHub native ARM runners](https://docs.github.com/en/actions/reference/runners/github-hosted-runners), [workflow reuse](https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows)
 
-This workflow does not provision Oracle resources or test public TLS. Complete the HTTPS browser checks below after a deployment is explicitly selected.
+This workflow does not provision Oracle resources or test public TLS. The active deployment's separate public checks are recorded above.
 
 ## Configure the selected VM
 
@@ -45,7 +60,7 @@ From `deployment/oracle`, validate without printing settings, build the verified
 ```sh
 sudo docker compose config --quiet
 sudo docker compose build --pull
-sudo docker compose run --rm --no-deps caddy caddy validate --config /etc/caddy/Caddyfile
+sudo docker compose run --interactive=false --rm --no-deps caddy caddy validate --config /etc/caddy/Caddyfile
 sudo docker compose up --detach --wait --wait-timeout 120
 sudo docker compose ps
 ```
@@ -64,4 +79,4 @@ For an update, pull the reviewed source, rebuild, and run `docker compose up --d
 
 Back up the SQLite database **with its WAL consistently**, not by copying just the main database while the app is running. A straightforward maintenance backup stops the app briefly, archives the entire application volume to a private directory outside the repository, then restarts it. Keep an encrypted copy off the VM and test restoration to a separate volume before relying on it. Caddy's certificate volumes should also be retained or privately backed up. Oracle's optional volume backups share the documented Always Free backup quota; confirm eligibility before selecting them.
 
-The current x86/source verification is recorded in [deployment-verification-e3b7236.json](deployment-verification-e3b7236.json), with native ARM and private-proxy verification in [oracle-arm-verification.json](oracle-arm-verification.json). The earlier x86 [deployment-verification.json](deployment-verification.json) remains as historical evidence for commit `0464fa6ef65f57f636cda1fd83b13574b3aac5cf`. Deployed public HTTPS browser checks still need to be recorded after an actual VM deployment.
+Historical x86/source and ARM verification remain in [deployment-verification-e3b7236.json](deployment-verification-e3b7236.json) and [oracle-arm-verification.json](oracle-arm-verification.json). Current public checks are recorded in [oracle-public-verification.json](oracle-public-verification.json).

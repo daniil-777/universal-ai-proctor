@@ -1,0 +1,14 @@
+{
+  "name": "universal-ai-proctor-link",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-06",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "guide.demtsev.com", "custom_domain": true },
+    { "pattern": "proctor.demtsev.com", "custom_domain": true }
+  ],
+  "vars": {
+    "FULL_APP_URL": "https://process-guide.140-238-175-209.sslip.io"
+  }
+}

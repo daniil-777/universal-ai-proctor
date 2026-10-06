@@ -14,7 +14,7 @@ The entrypoint initializes ownership of the disk's account/upload directories, t
 
 ## Oracle Always Free
 
-[Oracle deployment instructions](ORACLE_FREE_DEPLOYMENT.md) provide a Docker Compose configuration with Caddy HTTPS and a private persistent application volume. This preserves the existing single-server architecture on an eligible ARM VM. Free server capacity depends on the account's home region; idle instances can be reclaimed. AI usage still incurs provider charges. The configuration does not create a cloud account or activate resources.
+[Oracle deployment instructions](ORACLE_FREE_DEPLOYMENT.md) describe the activated public app, Docker Compose, Caddy HTTPS and its persistent application volume. The live server uses an Always Free AMD micro VM because ARM capacity was unavailable; native ARM and x86 builds are both verified. Free capacity and uptime are not guaranteed. AI usage incurs provider charges. The checked-in templates do not provision resources automatically.
 
 ## Render configuration and cost
 
