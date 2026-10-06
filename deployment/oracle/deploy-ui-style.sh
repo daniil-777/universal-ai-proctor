@@ -69,6 +69,13 @@ tar --no-same-owner --no-same-permissions -xzf "$archive" -C "$context"
 docker image inspect process-guide:oracle-cueveris-20261006 >/dev/null
 existing_sha=$(docker image inspect "$release_image" --format '{{index .Config.Labels "org.cueveris.payload-sha256"}}' 2>/dev/null || true)
 if [ "$existing_sha" != "$expected_sha" ]; then
+  # Containerd may forget an untagged image even while its container is running.
+  active_before_build=$(docker inspect "$container" --format '{{.Image}}')
+  release_before_build=$(docker image inspect "$release_image" --format '{{.Id}}' 2>/dev/null || true)
+  if [ "$active_before_build" = "$release_before_build" ]; then
+    preserved_image="process-guide:oracle-design-preserved-${active_before_build#sha256:}"
+    docker tag "$active_before_build" "$preserved_image"
+  fi
   docker build --label "org.cueveris.payload-sha256=$expected_sha" --tag "$release_image" "$context"
 fi
 if [ "$action" = build ]; then
@@ -84,7 +91,18 @@ if [ "$active_image_id" != "$expected_active_image_id" ] && [ "$active_image_id"
 fi
 if [ "$active_image_id" != "$new_image_id" ]; then
   # Preserve the exact currently running image before recreating this one service.
-  docker tag "$active_image_id" "$rollback_image"
+  if docker image inspect "$active_image_id" >/dev/null 2>&1; then
+    docker tag "$active_image_id" "$rollback_image"
+  else
+    active_payload=$(docker inspect "$container" --format '{{index .Config.Labels "org.cueveris.payload-sha256"}}' 2>/dev/null || true)
+    rollback_payload=$(docker image inspect "$rollback_image" --format '{{index .Config.Labels "org.cueveris.payload-sha256"}}' 2>/dev/null || true)
+    case "$active_payload" in *[!0-9a-f]*|'') active_payload= ;; esac
+    if [ "${#active_payload}" -ne 64 ] || [ "$active_payload" != "$rollback_payload" ]; then
+      echo 'Active image metadata is unavailable and the rollback image does not match its recorded payload. Restore a checksum-verified image from the original release context before activation.' >&2
+      exit 1
+    fi
+    echo 'Using the recovered rollback image with the same verified release payload.'
+  fi
   rollback_tmp=$(mktemp "$compose_dir/ui-style.rollback.override.XXXXXX")
   printf 'services:\n  app:\n    image: %s\n' "$rollback_image" > "$rollback_tmp"
   mv "$rollback_tmp" "$compose_dir/ui-style.rollback.override.yml"

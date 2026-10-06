@@ -48,6 +48,9 @@ ssh -i "$ssh_key" ubuntu@140.238.175.209 \
 `process-guide:oracle-design-20261006`. It does not replace the running app.
 Repeating it with the same verified archive reuses that image. The payload stays
 under `/opt/process-guide/runtime/design-20261006-SHA256` for review and reuse.
+Before replacing a release tag that still names the running image, the script
+also preserves it under a unique `oracle-design-preserved-IMAGE_DIGEST` tag.
+This keeps its image metadata available in Docker's containerd image store.
 
 ## Activate and verify
 
@@ -73,6 +76,14 @@ ssh -i "$ssh_key" ubuntu@140.238.175.209 \
 Activation requires that exact expected image or the already-built new image.
 A different active image stops activation before changing the running app,
 rollback tag or deployment overrides, preserving concurrent production work.
+
+If an earlier overwritten tag has already lost its image metadata, rebuild the
+original checksum-verified release context under the rollback image tag. The
+script accepts that existing rollback image only when its nonempty
+`org.cueveris.payload-sha256` label exactly matches the running container's
+recorded payload. Verify its application hashes against the original receipt
+and running app before using this recovery. Do not commit a running container:
+that would capture its private runtime configuration.
 
 The script saves the exact running image under
 `process-guide:oracle-ui-before-design-20261006`, writes an image-only rollback
