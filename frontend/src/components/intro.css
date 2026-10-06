@@ -49,11 +49,12 @@
 .intro-tour-play { border-radius: 6px; box-shadow: none; }
 .intro-preferences > div:first-child > div { flex: 1; }
 .intro-preferences > div:first-child > button { flex-shrink: 0; }
-.intro-footer { border-top: 1px solid hsl(var(--border)); padding-top: 22px; margin-top: 32px; text-align: center; color: hsl(var(--muted-foreground)); font-size: .6875rem; }
+.intro-footer { border-top: 1px solid hsl(var(--border)); padding-top: 16px; margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; color: hsl(var(--muted-foreground)); font-size: .6875rem; }
 @media (max-width: 1000px) {
   .intro-hero { gap: 28px; }
 }
 @media (max-width: 767px) {
+  .intro-footer { flex-direction: column; align-items: center; text-align: center; }
   .intro-header { background: hsl(var(--card)); color: hsl(var(--foreground)); padding: 14px 16px; }
   .intro-header-tools > span { display: none; }
   .intro-main { padding: 28px 16px 24px; }

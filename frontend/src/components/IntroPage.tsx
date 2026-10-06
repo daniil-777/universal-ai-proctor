@@ -30,6 +30,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Brand } from "./Brand";
+import { DeveloperCredit } from "./DeveloperCredit";
 export function IntroPage() {
   const a = useApp();
   const video = useRef<HTMLInputElement>(null);
@@ -343,7 +344,8 @@ export function IntroPage() {
           )}
         </div>
         <footer className="intro-footer">
-          Observe carefully. Review the evidence. Stay in control.
+          <p>Observe carefully. Review the evidence. Stay in control.</p>
+          <DeveloperCredit />
         </footer>
       </main>
     </div>

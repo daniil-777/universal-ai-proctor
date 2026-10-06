@@ -6,6 +6,7 @@ import { LeftRail } from "@/components/LeftRail";
 import { VideoStage } from "@/components/VideoStage";
 import { RightRail } from "@/components/RightRail";
 import { ChatDock } from "@/components/ChatDock";
+import { DeveloperCredit } from "@/components/DeveloperCredit";
 import { BackendConnectionNotice } from "@/components/BackendConnectionNotice";
 import { useMediaQuery } from "@/hooks/use-mobile";
 import {
@@ -27,7 +28,7 @@ export default function Workspace() {
     sourcesRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
     const background = Array.from(
       document.querySelectorAll<HTMLElement>(
-        ".workspace-header, .workspace-video, .workspace-guidance, .chat-panel, .chat-launcher",
+        ".workspace-header, .workspace-video, .workspace-guidance, .workspace-footer, .chat-panel, .chat-launcher",
       ),
     );
     background.forEach((element) => { element.inert = true; });
@@ -118,6 +119,7 @@ export default function Workspace() {
           <RightRail />
         </ResizablePanel>
       </ResizablePanelGroup>
+      <footer className="workspace-footer"><DeveloperCredit /></footer>
       <ChatDock />
     </div>
   );

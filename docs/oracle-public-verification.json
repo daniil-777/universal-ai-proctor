@@ -1,6 +1,6 @@
 {
   "checked_at": "2026-10-06T13:06:13.684047+00:00",
-  "entry_url": "https://guide.demtsev.com/",
+  "entry_url": "https://cueveris.demtsev.com/",
   "full_app_origin": "https://process-guide.140-238-175-209.sslip.io",
   "host": {
     "provider": "Oracle",
@@ -21,10 +21,13 @@
     "app_uid": 1000,
     "base_revision": "d9437267c9c0ceeda51d7d2e6f3c9adfceb8dcbb",
     "base_archive_sha256": "645cac39142bbd5309b8d946b2753268a21f660bf92c240373aefcc56e939b40",
-    "patched_image_id": "sha256:baeda4b2a1fe453079b06a31f9866fa0dd06f93cff987ffd2dae5d34198c9a70",
+    "patched_image_id": "sha256:9d7a907975af43b7d12a28a67989e66fe95cf0567a8e6bd2e56ee0a288673554",
     "renderer_source_sha256": "d4d9dbb77981abf6beb3c5c1b0c0a3f0dd2db7391501c7d2c0691b651ef43ad2",
     "renderer_compiled_sha256": "8c110bae9a4945c0e8fb8e1a0fe8742b3d2baf279ff01876e45a5037f1dba38f",
-    "provider_keys_in_source_or_image": false
+    "provider_keys_in_source_or_image": false,
+    "report_patch_image_id": "sha256:baeda4b2a1fe453079b06a31f9866fa0dd06f93cff987ffd2dae5d34198c9a70",
+    "frontend_artifact_sha256": "751aa8415585326bf3e197c621fdb072fd4030e7e7754392ace0333c98e7edba",
+    "frontend_index_sha256": "9f3fcf32658ff8278364d989aee08d6c89d0e42386356c08ad2174c4024aae5a"
   },
   "source_checks": {
     "backend_tests_passed": 326,
@@ -150,5 +153,68 @@
     "Free micro host is intended for light traffic; load capacity is not established.",
     "Live unsaved sessions end on restart.",
     "Physical camera/microphone behavior requires real-device testing."
-  ]
+  ],
+  "developer_credit": {
+    "checked_at": "2026-10-06T13:34:07.052Z",
+    "origin": "https://process-guide.140-238-175-209.sslip.io",
+    "profiles": [
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000,
+        "intro": true,
+        "dark": true,
+        "workspace": true,
+        "icon_loaded": true,
+        "keyboard_focus": true,
+        "credit_not_occluded": true,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "name": "phone",
+        "width": 390,
+        "height": 844,
+        "intro": true,
+        "dark": true,
+        "workspace": true,
+        "icon_loaded": true,
+        "keyboard_focus": true,
+        "credit_not_occluded": true,
+        "overflow": false,
+        "errors": []
+      },
+      {
+        "name": "tablet",
+        "width": 820,
+        "height": 1180,
+        "webkit": true,
+        "intro": true,
+        "dark": true,
+        "workspace": true,
+        "icon_loaded": true,
+        "keyboard_focus": true,
+        "credit_not_occluded": true,
+        "overflow": false,
+        "errors": []
+      }
+    ],
+    "provider_calls": 0,
+    "completed": true,
+    "brand": "Cueveris",
+    "link": "https://demtsev.com/",
+    "original_icon_embedded_locally": true
+  },
+  "entry_verification": {
+    "checked_at": "2026-10-06T13:36:23.368416+00:00",
+    "entry_url": "https://cueveris.demtsev.com/",
+    "redirect_status": 302,
+    "final_status": 200,
+    "final_url": "https://process-guide.140-238-175-209.sslip.io/",
+    "cueveris_title": true,
+    "developer_footer_visible": true,
+    "old_entry_alias_retained": "https://guide.demtsev.com/",
+    "additional_domain_registration_cost": 0,
+    "worker_version_id": "66fb0ee7-1107-49f7-8dab-51d95a3b7e79"
+  }
 }

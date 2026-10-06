@@ -1,8 +1,10 @@
-# Process Guide
+# Cueveris
 
 An independent general process guidance app, adapted from the original AI Proctor interface. This repository contains its own frontend, backend, configuration and tests; the original surgical guidance files and default video are preserved.
 
-**Public full app:** https://guide.demtsev.com/
+Developed by [demtsev.com](https://demtsev.com/). The welcome page and workspace include the developer's original icon and an accessible footer link.
+
+**Public full app:** https://cueveris.demtsev.com/
 
 **GitHub Pages preview:** https://daniil-777.github.io/universal-ai-proctor/
 

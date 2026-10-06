@@ -10,7 +10,7 @@ export function Brand({ compact = false }: { compact?: boolean }) {
       {!compact && (
         <div className="brand-copy min-w-0">
           <div className="font-semibold text-sm tracking-tight truncate">
-            Process Guide
+            Cueveris
           </div>
           <div className="text-[10px] text-muted-foreground tracking-wide">
             Process guidance &amp; review

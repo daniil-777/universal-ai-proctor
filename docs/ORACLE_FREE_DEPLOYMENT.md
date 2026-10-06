@@ -1,6 +1,6 @@
 # Oracle Always Free deployment
 
-The [public full app](https://guide.demtsev.com/) was activated on **2026-10-06** in Oracle's Zurich home region. Its branded entry redirects the browser to `https://process-guide.140-238-175-209.sslip.io`; all subsequent uploads, streams and account requests use that full HTTPS origin directly. The redirect does not proxy uploads through Cloudflare. The app runs independently of the owner's computer.
+The [public full app](https://cueveris.demtsev.com/) was activated on **2026-10-06** in Oracle's Zurich home region. Its branded entry redirects the browser to `https://process-guide.140-238-175-209.sslip.io`; all subsequent uploads, streams and account requests use that full HTTPS origin directly. The redirect does not proxy uploads through Cloudflare. The app runs independently of the owner's computer.
 
 The live server uses **one Always Free `VM.Standard.E2.1.Micro`**, Ubuntu 24.04 AMD64, 1 GB RAM, a 50 GB boot disk and 2 GB host swap. A1 launch and the capacity query both found no available ARM hosts, so the verified AMD image was used without upgrading the account or activating a paid host. This small server is suited to light pilot traffic; CPU-bound extraction and concurrent report/password work can be slower than on the recommended A1 shape. The checked-in [micro override](../deployment/oracle/micro.override.yml) limits app memory to 640 MB, Node heap to 384 MB, Caddy to 128 MB and FFmpeg concurrency to one.
 
@@ -10,12 +10,13 @@ Node 24 / FFmpeg runs as UID 1000 behind Caddy with publicly trusted TLS. Only 8
 
 - All six video/guide pairs loaded, including the unchanged original surgical instructions; all video byte ranges returned 206.
 - Trusted HTTPS browser checks passed on desktop Chrome, phone-sized Chrome and tablet-sized WebKit: original video playback and seek, six extracted surgical steps, no horizontal overflow or console errors. These checks do not prove physical camera/microphone permission behavior on every device.
+- Cueveris branding and the developer footer passed public browser checks on desktop, phone and tablet: the original local icon, external link, keyboard focus, light/dark appearance and unobstructed workspace placement.
 - Real OpenAI analysis used three frames (7.1 s); question streaming delivered its first token in 2.36 s; real speech synthesis returned valid MP3 in 2.45 s. These are single smoke timings, not latency guarantees or recognition accuracy metrics.
 - Uploads, bookmark evidence, PDF, offline HTML, ZIP and account lifecycle passed. A default surgical PDF initially failed on arrows/checkmarks; locally embedded symbol fonts now preserve those characters, and the live 11-page export passed text and visual checks.
 - A saved surgical report and sign-in survived an actual app restart; secure/HttpOnly/Strict cookies and rejection of wrong-origin account mutations passed. Temporary QA accounts were removed.
 - One initial server-decoded analysis connection reset during parallel checks. A retry using the normal browser-frame path passed, and subsequent server-side surgical decoding passed in 871 ms. No out-of-memory event or unexpected container restart was observed. Load limits should still be measured before wider use.
 
-The public receipt is [oracle-public-verification.json](oracle-public-verification.json). The deployed base is the SHA256-verified [runtime-d943726 snapshot](https://github.com/daniil-777/universal-ai-proctor/releases/tag/runtime-d943726), plus the tested report-font patch. Future normal builds include the patch directly from source.
+The public receipt is [oracle-public-verification.json](oracle-public-verification.json). The deployed base is the SHA256-verified [runtime-d943726 snapshot](https://github.com/daniil-777/universal-ai-proctor/releases/tag/runtime-d943726), plus the tested report-font patch and current compiled Cueveris frontend. Future normal builds include these changes directly from source.
 
 ## Free resources to select
 

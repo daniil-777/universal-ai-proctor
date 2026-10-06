@@ -5,6 +5,7 @@
   "workers_dev": false,
   "preview_urls": false,
   "routes": [
+    { "pattern": "cueveris.demtsev.com", "custom_domain": true },
     { "pattern": "guide.demtsev.com", "custom_domain": true },
     { "pattern": "proctor.demtsev.com", "custom_domain": true }
   ],
