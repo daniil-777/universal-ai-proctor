@@ -9,7 +9,7 @@ test("tour downloads only on request, plays and seeks without becoming the analy
   page.on("request", (r) => requests.push(r.url()));
   page.on("pageerror", (e) => errors.push(e.message));
   const posterResponse = page.waitForResponse((r) =>
-    r.url().endsWith("cueveris-manufacturing-demo.jpg"),
+    r.url().endsWith("cueveris-leica-workflow-demo.jpg"),
   );
   await page.goto("/");
   const poster = await posterResponse;
@@ -23,23 +23,30 @@ test("tour downloads only on request, plays and seeks without becoming the analy
   const video = page.getByTestId("intro-tour-video");
   await expect(video).not.toHaveAttribute("src");
   expect(
-    requests.filter((url) => url.includes("cueveris-manufacturing-demo.mp4")),
+    requests.filter((url) => url.includes("cueveris-leica-workflow-demo.mp4")),
   ).toHaveLength(0);
   await page
-    .getByRole("button", { name: "Play the 30-second manufacturing demo" })
+    .getByRole("button", { name: "Play 63-second Leica UI and voice demo" })
     .click();
   await expect
     .poll(() => video.evaluate((v: HTMLVideoElement) => v.currentTime))
     .toBeGreaterThan(0.2);
+  expect(await video.evaluate((v: HTMLVideoElement) => v.duration)).toBeCloseTo(63, 1);
   expect(
     await video.evaluate((v: HTMLVideoElement) => [
-      v.duration,
       v.videoWidth,
       v.videoHeight,
       v.muted,
       v.playsInline,
     ]),
-  ).toEqual([30, 1440, 900, true, true]);
+  ).toEqual([1440, 900, false, true]);
+  const captions = video.locator('track[kind="captions"]');
+  await expect(captions).toHaveAttribute("src", "/media/cueveris-leica-workflow-demo.vtt");
+  await expect(captions).toHaveAttribute("srclang", "en");
+  await expect(captions).not.toHaveAttribute("default");
+  await video.evaluate((v: HTMLVideoElement) => { v.textTracks[0].mode = "showing"; });
+  await expect.poll(() => video.evaluate((v: HTMLVideoElement) => v.textTracks[0]?.mode)).toBe("showing");
+  await expect.poll(() => video.evaluate((v: HTMLVideoElement) => v.textTracks[0]?.cues?.length)).toBe(3);
   await video.evaluate((v: HTMLVideoElement) => {
     v.pause();
     v.currentTime = 12;
@@ -61,7 +68,7 @@ test("tour downloads only on request, plays and seeks without becoming the analy
     ),
   ).toHaveLength(0);
   expect(errors).toEqual([]);
-  const range = await page.request.get("/media/cueveris-manufacturing-demo.mp4", {
+  const range = await page.request.get("/media/cueveris-leica-workflow-demo.mp4", {
     headers: { Range: "bytes=0-1023" },
   });
   expect(range.status()).toBe(206);
@@ -121,12 +128,12 @@ test("tour failure exposes instructions and can be retried", async ({
   page,
 }) => {
   let fail = true;
-  await page.route("**/media/cueveris-manufacturing-demo.mp4", (r) =>
+  await page.route("**/media/cueveris-leica-workflow-demo.mp4", (r) =>
     fail ? r.fulfill({ status: 404, body: "Unavailable" }) : r.continue(),
   );
   await page.goto("/");
   await page
-    .getByRole("button", { name: "Play the 30-second manufacturing demo" })
+    .getByRole("button", { name: "Play 63-second Leica UI and voice demo" })
     .click();
   await expect(
     page.getByText("The demo could not play.", { exact: false }),
@@ -261,7 +268,7 @@ for (const width of [320, 390, 600, 820, 1440]) {
       ).toBe(true);
     }
     await expect(
-      page.getByRole("button", { name: "Play the 30-second manufacturing demo" }),
+      page.getByRole("button", { name: "Play 63-second Leica UI and voice demo" }),
     ).toBeVisible();
     await page
       .getByRole("button", { name: "Upload a video" })

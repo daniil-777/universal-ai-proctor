@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-10-06T14:29:08.754Z",
+  "passed": true,
+  "codec": "h264",
+  "pixel_format": "yuv420p",
+  "width": 1440,
+  "height": 900,
+  "fps": "30/1",
+  "frames": 1890,
+  "duration_seconds": 63.018667,
+  "audio_codec": "aac",
+  "audio_sample_rate": "48000",
+  "audio_peak_dbfs": -6.2,
+  "bytes": 3715347,
+  "sha256": "c20b7f4b7c906093192f98a4dca82ca8a4f27f91f98dd158edd1724466327f12",
+  "full_decode_without_errors": true,
+  "mp4_faststart": true,
+  "mp4_atoms": [
+    {
+      "type": "ftyp",
+      "offset": 0,
+      "bytes": 32
+    },
+    {
+      "type": "moov",
+      "offset": 32,
+      "bytes": 71161
+    },
+    {
+      "type": "free",
+      "offset": 71193,
+      "bytes": 8
+    },
+    {
+      "type": "mdat",
+      "offset": 71201,
+      "bytes": 3644146
+    }
+  ],
+  "sampled_seconds": [
+    2,
+    7.5,
+    14,
+    27.5,
+    41,
+    54.5,
+    61
+  ],
+  "visual_review": {
+    "passed": true,
+    "checked_at": "2026-10-06T14:31:37.594Z",
+    "reviewers": [
+      "Root final rendered-frame and seven-scene contact-sheet review",
+      "Video agent final rendered-frame review"
+    ],
+    "reviewed_mp4_sha256": "c20b7f4b7c906093192f98a4dca82ca8a4f27f91f98dd158edd1724466327f12",
+    "checks": [
+      "Corrected clipped text overlap removed from all question scenes",
+      "All seven scenes reviewed for legibility and composition",
+      "Exact genuine app answers and labelled spoken excerpts retained",
+      "Reference-only document questions clearly labelled; no source film pixels or audio",
+      "Six original checkpoints shown with 0/6 confirmed and zero visual analyses",
+      "Authentic closure chat crop retained; full answer shown separately outside UI",
+      "Authentic six-checkpoint toast retained; six exact stage titles listed separately"
+    ]
+  }
+}

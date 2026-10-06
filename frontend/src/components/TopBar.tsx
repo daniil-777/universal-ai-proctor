@@ -155,6 +155,8 @@ export function TopBar({
         />
         {a.useMock || a.health?.mock
           ? "Demo mode"
+          : a.referenceFilm && !a.liveStream
+            ? "Film study · not shared"
           : a.sourceKind === "camera" || a.sourceKind === "screen"
             ? "Live input"
             : a.sourceKind

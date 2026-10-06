@@ -4,14 +4,15 @@ for (const [device, width] of [["iPhone 13", 390], ["iPad Pro 11", 820]] as cons
   test.describe(device, () => {
     const { defaultBrowserType: _browserType, ...profile } = devices[device];
     test.use(profile);
-  test(`WebKit ${width}px plays the silent tour and pauses it when out of view`, async ({ page }) => {
+  test(`WebKit ${width}px plays the UI and voice demo and pauses it when out of view`, async ({ page }) => {
     await page.setViewportSize({ width, height: width === 390 ? 844 : 1180 });
     const errors: string[] = [];
     page.on("pageerror", (e) => errors.push(e.message));
     await page.goto("/");
     const video = page.getByTestId("intro-tour-video");
-    await page.getByRole("button", { name: "Play the 30-second manufacturing demo" }).tap();
+    await page.getByRole("button", { name: "Play 63-second Leica UI and voice demo" }).tap();
     await expect.poll(() => video.evaluate((v: HTMLVideoElement) => v.currentTime)).toBeGreaterThan(0.2);
+    expect(await video.evaluate((v: HTMLVideoElement) => [v.muted, v.controls, v.playsInline])).toEqual([false, true, true]);
     // In a tall tablet viewport both setup and the tour can remain visible.
     await page.setViewportSize({ width, height: 600 });
     await page.getByRole("button", { name: "Open workspace" }).scrollIntoViewIfNeeded();

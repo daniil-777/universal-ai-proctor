@@ -888,7 +888,7 @@ export async function createApp(
     const answerFrames = blockedCurrentView && !historyQuestion ? [] : frames;
     const visualRule =
       imageQuality === "absent"
-        ? "No visual images are available. Answer reference questions while stating that current visual observation is unavailable."
+        ? "No visual images are available. Explain supplied reference objectives, actions and criteria directly; lack of images does not prevent document guidance. Do not claim current visual verification or completed checks. Briefly state that current visual observation is unavailable."
         : imageQuality === "unusable"
           ? "The current view has no discernible visual detail. Distinguish historical context from current confirmation; answer document questions as reference guidance only."
           : "Visual images are supplied. Describe the visible evidence and identify specific unclear details. Do not call the entire view unavailable merely because one detail is unclear.";
