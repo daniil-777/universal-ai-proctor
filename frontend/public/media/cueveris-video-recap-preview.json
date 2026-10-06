@@ -1,0 +1,52 @@
+{
+  "disclosure": "Illustrative example • simulated data — no video analyzed",
+  "description": "Every process, timestamp, sample identity and metric below is invented for interface review. No media, document or model was used. This is not a real analysis or manufacturing assessment.",
+  "job": {
+    "schema_version": 1,
+    "id": "illustrative-manufacturing-recap",
+    "status": "complete",
+    "created_at": "2026-10-06T20:00:00.000Z",
+    "updated_at": "2026-10-06T20:00:00.000Z",
+    "source": { "id": "illustrative-source", "name": "Illustrative assembly sequence · no actual video", "duration_s": 24, "width": 1440, "height": 900 },
+    "reference": { "key": "illustrative-instructions", "name": "Invented assembly instructions · no document evaluated" },
+    "mode": "detailed",
+    "model": { "provider": "none", "model_id": "No model used · hand-authored fixture" },
+    "domain": { "key": "manufacturing", "label": "Manufacturing", "basis": "operator", "rationale": "Manufacturing is selected for this illustrative example. No video or instructions were evaluated, and no automatic domain inference occurred.", "confidence": 0, "conflict": null },
+    "metric_plan": [
+      { "id": "manufacturing_assembly", "label": "Assembly episodes", "question": "Which assembly activity records would support this metric?", "kind": "count", "unit": "episodes", "method": "Count distinct cited activity records; collapse matching overlapping episodes.", "limitations": "A real sampled recap could miss actions or split an ongoing action. This example is entirely simulated." },
+      { "id": "manufacturing_inspection", "label": "Inspection episodes", "question": "Which inspection activity records would support this metric?", "kind": "count", "unit": "episodes", "method": "Count distinct cited inspection records, without assuming conformance.", "limitations": "An inspection activity does not establish its result. This example is entirely simulated." },
+      { "id": "manufacturing_tool_change", "label": "Tool changes", "question": "Are there cited tool-change records?", "kind": "count", "unit": "episodes", "method": "Requires a cited tool-change activity.", "limitations": "Absence of a supporting record is not evidence that no tool changes happened." },
+      { "id": "critical_domain_metric", "label": "Product conformance", "question": "Can tolerances or hidden defects be established?", "kind": "observable_state", "unit": "", "method": "Requires calibrated measurements and appropriate inspection records.", "limitations": "Images and reference expectations alone do not establish tolerances, hidden defects or overall quality." }
+    ],
+    "metrics": [
+      { "id": "manufacturing_assembly", "label": "Assembly episodes", "value": 2, "unit": "episodes", "status": "estimated", "method": "Two distinct assembly records are tagged in this invented fixture. In a real recap, matching overlapping records would be collapsed.", "evidence_refs": ["W0001-E01", "W0002-E01"], "explanation": "Illustrative lower-bound count, not a physical cycle count or a claim about real work." },
+      { "id": "manufacturing_inspection", "label": "Inspection episodes", "value": 1, "unit": "episode", "status": "estimated", "method": "One invented inspection activity record is tagged. An activity record does not establish an inspection outcome.", "evidence_refs": ["W0003-E01"], "explanation": "Shows how a cited activity estimate would appear. It does not confirm conformance." },
+      { "id": "manufacturing_tool_change", "label": "Tool changes", "value": null, "unit": "episodes", "status": "unavailable", "method": "No supporting tool-change record is present in this fixture.", "evidence_refs": [], "explanation": "Unknown stays unknown. A missing record is not an asserted zero tool changes." },
+      { "id": "critical_domain_metric", "label": "Product conformance", "value": null, "unit": "", "status": "unavailable", "method": "Would require calibrated measurements and inspection results, beyond sampled activity descriptions.", "evidence_refs": [], "explanation": "Tolerances, hidden defects and product quality cannot be established. No quality or safety score is supplied." }
+    ],
+    "progress": { "total_windows": 4, "completed_windows": 4, "failed_windows": 0, "analyzed_through_s": 24, "sampled_frames": 8 },
+    "windows": [
+      { "id": "W0001", "start_s": 0, "end_s": 6, "status": "complete", "sampled_frames": [{ "id": "W0001-F01", "time_s": 2 }, { "id": "W0001-F02", "time_s": 4 }], "transcript": [], "summary": "Illustrative record: a component is positioned in a housing.", "narration": "", "phase": "Positioning", "events": [{ "id": "W0001-E01", "kind": "action", "label": "Position the component", "detail": "Invented example: a component is aligned with the housing. The synthetic sample identities illustrate where source citations would appear; no images exist.", "start_s": 1, "end_s": 5, "frame_refs": ["W0001-F01", "W0001-F02"], "transcript_refs": [], "metric_ids": ["manufacturing_assembly"], "certainty": "estimated", "uncertainty": "Simulated data. A real sampled record would not establish uninterrupted positioning or dimensional accuracy." }], "uncertainties": ["No video analyzed. Every timestamp and activity is invented."], "error": null },
+      { "id": "W0002", "start_s": 6, "end_s": 12, "status": "complete", "sampled_frames": [{ "id": "W0002-F01", "time_s": 8 }, { "id": "W0002-F02", "time_s": 10 }], "transcript": [], "summary": "Illustrative record: a fastening action follows positioning.", "narration": "", "phase": "Fastening", "events": [{ "id": "W0002-E01", "kind": "action", "label": "Secure the component", "detail": "Invented example: a tool is used at the housing. This record demonstrates assembly activity; it cannot establish torque, correct fastening or hidden fit.", "start_s": 7, "end_s": 11, "frame_refs": ["W0002-F01", "W0002-F02"], "transcript_refs": [], "metric_ids": ["manufacturing_assembly"], "certainty": "estimated", "uncertainty": "Simulated data. Fastening result and calibrated torque remain unknown." }], "uncertainties": ["No video analyzed. No calibrated physical measurement is present."], "error": null },
+      { "id": "W0003", "start_s": 12, "end_s": 18, "status": "complete", "sampled_frames": [{ "id": "W0003-F01", "time_s": 14 }, { "id": "W0003-F02", "time_s": 16 }], "transcript": [], "summary": "Illustrative record: the assembly is presented for inspection.", "narration": "", "phase": "Inspection", "events": [{ "id": "W0003-E01", "kind": "action", "label": "Inspect the assembly", "detail": "Invented example: the assembly is turned and examined. The activity label illustrates an inspection episode, while its outcome remains unavailable.", "start_s": 13, "end_s": 17, "frame_refs": ["W0003-F01", "W0003-F02"], "transcript_refs": [], "metric_ids": ["manufacturing_inspection"], "certainty": "estimated", "uncertainty": "Simulated data. Neither acceptance nor defect absence is established." }], "uncertainties": ["No actual inspection was performed or assessed."], "error": null },
+      { "id": "W0004", "start_s": 18, "end_s": 24, "status": "complete", "sampled_frames": [{ "id": "W0004-F01", "time_s": 20 }, { "id": "W0004-F02", "time_s": 22 }], "transcript": [], "summary": "Illustrative record: the assembly moves to a handoff position.", "narration": "", "phase": "Handoff", "events": [{ "id": "W0004-E01", "kind": "transition", "label": "Move to handoff", "detail": "Invented example: the assembly is placed aside. A handoff position would not by itself establish approval, process completion or a successful product.", "start_s": 19, "end_s": 23, "frame_refs": ["W0004-F01", "W0004-F02"], "transcript_refs": [], "metric_ids": [], "certainty": "estimated", "uncertainty": "Simulated data. Workflow confirmations and final acceptance are independent." }], "uncertainties": ["No process completion is claimed."], "error": null }
+    ],
+    "summary": {
+      "headline": "From assembly to inspection.",
+      "overview": "An illustrative recap brings the activity sequence, its supporting records and its limits into one view. Two invented assembly episodes lead to an invented inspection and handoff. Counts are examples; conformance and tool changes remain unknown.",
+      "chapters": [
+        { "id": "C01", "title": "Position and secure", "start_s": 0, "end_s": 12, "summary": "Two invented assembly records illustrate positioning followed by fastening. They do not establish calibrated fit or torque.", "evidence_refs": ["W0001-E01", "W0002-E01"] },
+        { "id": "C02", "title": "Inspect", "start_s": 12, "end_s": 18, "summary": "An invented inspection activity demonstrates how the recap separates an action from an unknown outcome.", "evidence_refs": ["W0003-E01"] },
+        { "id": "C03", "title": "Prepare the handoff", "start_s": 18, "end_s": 24, "summary": "An invented transition closes the example sequence. Approval and completion are not inferred.", "evidence_refs": ["W0004-E01"] }
+      ],
+      "key_findings": [
+        { "text": "The two assembly activity estimates link to distinct illustrative records; they are not exhaustive physical cycles.", "evidence_refs": ["W0001-E01", "W0002-E01"] },
+        { "text": "The inspection example keeps the result unknown rather than turning an activity into a pass or a quality score.", "evidence_refs": ["W0003-E01"] }
+      ],
+      "limitations": ["Every value and record is hand-authored simulated data. No video, document, audio or model was used.", "In a real recap, sampled images may miss actions, scene edits or continuing activity. They do not establish continuous visual coverage.", "Reference instructions describe expectations; they do not prove actions happened or confirm workflow steps.", "Hidden defects, calibrated tolerances, fastening torque and overall quality or safety require other evidence."]
+    },
+    "error": null,
+    "audio": { "requested": false, "status": "disabled", "note": "No source video or audio exists for this example. Narration is not provided." },
+    "provenance": { "visual_analysis": "sampled_frames", "simulated": true, "instruction_snapshot": "illustrative-hand-authored-fixture", "model_calls": 0 }
+  }
+}

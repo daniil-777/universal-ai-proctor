@@ -5,13 +5,13 @@ import { spokenText } from "./speechText";
 // QUEUE, autoplay-proof playback, and sentence-pipelined synthesis for fast starts.
 //
 // Arbitration rules:
-//   • An utterance that has STARTED is never cut off by another utterance.
-//     The one exception: a safety ALERT may preempt a spoken chat ANSWER
-//     (safety first) — but an alert NEVER preempts another alert, and an
-//     answer never preempts anything.
+//   • An alert never interrupts another alert. Alerts may preempt chat answers;
+//     alerts and chat answers may both preempt low-priority playback narration.
+//     Narration never interrupts an alert or an answer.
 //   • While something is playing, new arrivals are QUEUED per channel with
 //     LATEST-WINS replacement (no backlog of stale warnings).
-//   • Queued alerts are served before queued answers, with a short natural gap.
+//   • Queued alerts precede answers, then fresh narration, with a natural gap.
+//     Narration rechecks its playback/source ownership before synthesis/playback.
 //   • A new alert with the SAME text as the one currently speaking is dropped.
 //   • BARGE-IN: the OR wake-word mic stays LIVE during playback (the wake-word
 //     gate filters out the transcribed TTS audio); saying "Hey…" mid-answer calls
@@ -32,18 +32,21 @@ import { toast } from "sonner";
 export interface SpeakOpts {
   voice?: string; // omit to use the server's configured voice
   priority?: boolean; // true = safety-alert channel
+  channel?: "narration"; // optional low-priority, playback-timed recap
+  isCurrent?: () => boolean; // recheck after queuing/synthesis/autoplay waits
   prepared?: PreparedSpeech;
   onStart?: () => void;
   onEnd?: () => void; // fires on natural end AND if preempted/stopped
 }
 
-type Channel = "alert" | "answer";
+type Channel = "alert" | "answer" | "narration";
 
 interface Utterance {
   apiBase: string;
   text: string;
   voice?: string;
   channel: Channel;
+  isCurrent?: () => boolean;
   prepared?: PreparedSpeech;
   started?: boolean;
   onStart?: () => void;
@@ -121,6 +124,7 @@ let activeUrls: string[] = []; // object URLs owned by the current utterance
 // One pending slot per channel — latest wins, no backlog.
 let nextAlert: Utterance | null = null;
 let nextAnswer: Utterance | null = null;
+let nextNarration: Utterance | null = null;
 let gapTimer: number | undefined;
 
 // ── Shared, gesture-unlocked audio element ────────────────────────────────────
@@ -182,11 +186,13 @@ export function speak(
     apiBase,
     text: t,
     voice: opts.voice,
-    channel: opts.priority ? "alert" : "answer",
+    channel: opts.priority ? "alert" : opts.channel || "answer",
+    isCurrent: opts.isCurrent,
     prepared: opts.prepared,
     onStart: opts.onStart,
     onEnd: opts.onEnd,
   };
+  if (!isCurrent(item)) { discard(item); return; }
 
   if (!playing) {
     clearTimeout(gapTimer);
@@ -199,7 +205,10 @@ export function speak(
         void playNow(alert);
         return;
       }
-    } else { discard(nextAlert); nextAlert = null; }
+    } else if (item.channel === "alert") { discard(nextAlert); nextAlert = null; }
+    else if (nextAlert || nextAnswer) {
+      discard(nextNarration); nextNarration = item; scheduleNext(); return;
+    } else { discard(nextNarration); nextNarration = null; }
     void playNow(item);
     return;
   }
@@ -217,8 +226,24 @@ export function speak(
     return;
   }
 
-  // Answers always wait their turn (latest wins).
+  if (item.channel === "narration") {
+    if (currentItem?.text === item.text) { discard(item); return; }
+    discard(nextNarration); nextNarration = item; return;
+  }
+  // A question takes the floor from low-priority narration immediately.
+  if (currentItem?.channel === "narration") {
+    discard(nextNarration); nextNarration = null;
+    preemptCurrent(); void playNow(item); return;
+  }
   discard(nextAnswer); nextAnswer = item;
+}
+
+function isCurrent(item: Utterance): boolean { return !item.isCurrent || item.isCurrent(); }
+
+/** Cancel only recap speech; leave a question or safety warning intact. */
+export function stopNarration(): void {
+  discard(nextNarration); nextNarration = null;
+  if (currentItem?.channel === "narration") { preemptCurrent(); scheduleNext(); }
 }
 
 function discard(item: Utterance | null): void {
@@ -233,6 +258,7 @@ export function stopSpeech(): void {
   gapTimer = undefined;
   discard(nextAlert); nextAlert = null;
   discard(nextAnswer); nextAnswer = null;
+  discard(nextNarration); nextNarration = null;
   for (const handle of preparations.keys()) handle.cancel();
   gestureRetry = null;
   preemptCurrent();
@@ -258,6 +284,7 @@ export function isSpeechEcho(text: string): boolean {
  * is deliberately NOT interrupted; it finishes first.
  */
 export function interruptAnswers(): void {
+  stopNarration();
   discard(nextAnswer); nextAnswer = null;
   for (const [handle, state] of preparations) if (!state.claimed) handle.cancel();
   if (currentItem?.channel === "answer") {
@@ -384,9 +411,13 @@ function playOneUrl(
     el.muted = false;
     el.volume = 1;
     el.src = url;
-    const start = () => el.play().then(() => {
-      if (myGen === gen && currentItem === item) markAudible(item, text);
+    const start = () => {
+      if (myGen !== gen || currentItem !== item || !isCurrent(item)) { settle(); return Promise.resolve(); }
+      return el.play().then(() => {
+      if (myGen === gen && currentItem === item && isCurrent(item)) markAudible(item, text);
+      else { el.pause(); settle(); }
     });
+    };
     start().catch((err: DOMException) => {
       if (myGen !== gen || currentItem !== item) {
         resolve();
@@ -432,6 +463,7 @@ function fallbackSynth(text: string, finish: () => void): void {
 }
 
 async function playNow(item: Utterance): Promise<void> {
+  if (!isCurrent(item)) { discard(item); scheduleNext(); return; }
   const myGen = gen;
   playing = true; // set synchronously so concurrent speak() calls queue correctly
   currentItem = item;
@@ -456,7 +488,11 @@ async function playNow(item: Utterance): Promise<void> {
     item.onEnd?.();
     scheduleNext();
   };
-  const aborted = () => myGen !== gen || currentItem !== item;
+  const aborted = () => {
+    if (myGen !== gen || currentItem !== item) return true;
+    if (!isCurrent(item)) { finish(); return true; }
+    return false;
+  };
 
   // Sentence pipeline: kick off ALL chunk fetches in parallel, play in order.
   const prepared = item.prepared && preparations.get(item.prepared);
@@ -512,16 +548,17 @@ async function playNow(item: Utterance): Promise<void> {
 
 /** Serve the queue: alerts first, with a short natural gap. */
 function scheduleNext(): void {
-  if (!nextAlert && !nextAnswer) return;
+  if (!nextAlert && !nextAnswer && !nextNarration) return;
   clearTimeout(gapTimer);
   const myGen = gen;
   gapTimer = window.setTimeout(() => {
     gapTimer = undefined;
     if (myGen !== gen || playing) return;
-    const item = nextAlert ?? nextAnswer;
+    const item = nextAlert ?? nextAnswer ?? nextNarration;
     if (!item) return;
     if (nextAlert) nextAlert = null;
-    else nextAnswer = null;
+    else if (nextAnswer) nextAnswer = null;
+    else nextNarration = null;
     void playNow(item);
   }, GAP_MS);
 }

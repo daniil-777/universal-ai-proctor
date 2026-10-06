@@ -25,7 +25,15 @@ export function seedReportQa(session: Session, mode = "mixed") {
   session.rows = parseDocument(session.filename, session.text).rows;
   session.workflow = parseDocument(session.filename, session.text).workflow;
   session.sourceName = "Synthetic report review clip";
-  session.lastTime = 30;
+  // The browser reloads this uploaded clip at its beginning. Replace the
+  // reference's runtime history too, as the normal document API does, so a
+  // backward seek cannot restore observations from the pre-seed definition.
+  session.lastTime = 0;
+  session.votes.clear();
+  session.cache.clear();
+  session.inflight.clear();
+  session.snapshots = [];
+  session.observations = [];
   if (!session.sourceId) session.sourceId = "report-qa-source";
   session.sourceKind = "video";
   session.videoInfo = { duration: 60, fps: 12, width: 640, height: 360 };
@@ -93,6 +101,12 @@ export function seedReportQa(session: Session, mode = "mixed") {
     review.job.operator = `QA ${"LongOperator".repeat(20)} OPERATOR_END_6789`;
     review.events[0]!.summary += ` ${"LongNote".repeat(80)} EVIDENCE_NOTE_END_6789`;
   }
+  session.currentId = session.workflow.steps.find(step => !step.complete)?.id
+    || session.workflow.steps.at(-1)?.id || "";
+  // Fixture confirmations are baseline records, available at playback zero.
+  // Keep a detached snapshot so subsequent observation/seek tests retain that
+  // baseline without sharing mutable workflow objects.
+  session.snapshots = [{ time: 0, workflow: structuredClone(session.workflow), votes: new Map() }];
   touchReview(review);
   return structuredHandoff(session);
 }

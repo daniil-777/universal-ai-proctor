@@ -13,6 +13,7 @@ import { useApp } from "@/lib/store";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { StagesTab } from "./right-rail/StagesTab";
 import { RawJsonDrawer } from "./right-rail/RawJsonDrawer";
+import { VideoRecapPanel } from "./VideoRecap";
 const Principles = lazy(() =>
   import("./right-rail/PrinciplesTab").then((m) => ({
     default: m.PrinciplesTab,
@@ -85,6 +86,7 @@ export function RightRail({ sizing }: { sizing?: GuidanceSizingControls }) {
   }, [a.mode, selected]);
   const tabs = [
     { id: "stages", name: "Steps", element: <StagesTab /> },
+    ...(a.recap ? [{ id: "recap", name: "Recap", element: <VideoRecapPanel /> }] : []),
     { id: "principles", name: "Principles", element: <Principles /> },
     { id: "guardian", name: "Guardian", element: <Guardian /> },
     { id: "review", name: "Review", element: <Review /> },

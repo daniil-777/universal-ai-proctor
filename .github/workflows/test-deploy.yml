@@ -152,6 +152,16 @@ jobs:
             assert.equal((await range.arrayBuffer()).byteLength, 100);
           }
           const observation = await json('/api/guidance/analyze', {source_id:source,current_s:12,n_samples:4});
+          const recapPlan = (await json('/api/video-summary/plan?mode=balanced')).plan;
+          assert.equal(recapPlan.source_id, source);
+          assert.ok(recapPlan.total_windows > 0);
+          assert.equal((await json('/api/video-summary/jobs/current')).job, null);
+          const recapStart = await fetch(base + '/api/video-summary/jobs', {
+            method:'POST', headers:{Origin:base,'X-Guidance-Session':session,'Content-Type':'application/json'},
+            body:JSON.stringify({source_id:source,reference_key:recapPlan.reference_key,mode:'balanced'}),
+          });
+          assert.equal(recapStart.status, 503);
+          assert.equal((await recapStart.json()).code, 'video_summary_mock_disabled');
           assert.ok(observation.used_frames > 0);
           const answer = await json('/api/llm/ask', {source_id:source,current_s:12,question:'What is visible?'});
           assert.match(answer.answer, /demo|provider/i);

@@ -24,6 +24,7 @@ import { MODELS } from "./mockData";
 import { useGuidanceState } from "./guidanceState";
 import { useGuidancePreferences, type GuidancePreferences } from "./useGuidancePreferences";
 import type { GuidanceState } from "./guidanceState";
+import { useVideoRecap, type VideoRecapState } from "./useVideoRecap";
 import { useSessionReview, type SessionReview } from "./useSessionReview";
 
 // Live metric cards: order + labels/units/formatting for the sim classification's
@@ -74,6 +75,7 @@ function pickRecMime(): string {
 }
 
 export interface AppState extends GuidanceState, GuidancePreferences, SessionReview {
+  recap: VideoRecapState;
   caseName: string;
   setCaseName: (s: string) => void;
   mode: AppMode;
@@ -741,11 +743,14 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
   const preferences = useGuidancePreferences(apiBase);
   const review = useSessionReview(apiBase, general.sourceId, general.sourceReady, general.revision, general.lastAnalysis);
+  const recapDefinition = JSON.stringify({ name: general.referenceName, title: general.workflow.title, principles: general.workflow.principles, warnings: general.workflow.warnings, steps: general.workflow.steps.map(step => ({ id: step.id, name: step.name, description: step.description, objective: step.objective, actions: step.actions, instruments: step.expectedInstruments, duration: step.typicalDurationMin, criteria: step.criteria.map(criterion => ({ key: criterion.key, label: criterion.label })) })) });
+  const recap = useVideoRecap({ apiBase, sourceId: general.sourceId, sourceKind: general.sourceKind, sourceReady: general.sourceReady, serverVideoReady: general.serverVideoReady, definitionKey: recapDefinition, preferencesRevision: preferences.preferencesRevision, useMock, provider: model.provider, modelId: model.model_id });
   const value = useMemo<AppState>(
     () => ({
       ...general,
       ...preferences,
       ...review,
+      recap,
       caseName,
       setCaseName,
       mode,
@@ -823,6 +828,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     [
       general,
       review,
+      recap,
       preferences,
       caseName,
       mode,

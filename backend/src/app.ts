@@ -67,6 +67,9 @@ import {
 import type { SampleVideoDefinition } from "./media/sampleVideo.js";
 import { REAL_SCENARIO_SAMPLES } from "./media/realScenarioSamples.js";
 import { registerGuardianClipRoutes } from "./media/guardianClips.js";
+import { VideoSummaryJobs } from "./media/videoSummaryJobs.js";
+import { createVideoSummaryAudioReader } from "./media/videoSummaryAudio.js";
+import { registerVideoSummaryRoutes } from "./videoSummaryRoutes.js";
 const uuid = /^[a-zA-Z0-9_-]{16,80}$/;
 declare module "fastify" {
   interface FastifyRequest {
@@ -168,6 +171,7 @@ export async function createApp(
     reviewThumbnail?: typeof makeReviewThumbnail;
     accountStore?: AccountStore;
     trustedProxyCidrs?: string;
+    summaryJobs?: VideoSummaryJobs;
   } = {},
 ) {
   const app = Fastify({
@@ -177,6 +181,12 @@ export async function createApp(
   });
   const engine = options.engine || new GuidanceEngine();
   const sessions = options.store || new SessionStore();
+  const summaryJobs = options.summaryJobs || new VideoSummaryJobs({ complete: engine.complete, readAudio: createVideoSummaryAudioReader() });
+  const stopWatchingSessions = sessions.onDispose(session => summaryJobs.invalidate(session));
+  const replaceReference = (session: Session, filename: string, text: string) => {
+    summaryJobs.invalidate(session);
+    return replaceDocument(session, filename, text);
+  };
   const library =
     options.libraryRoot ||
     fileURLToPath(new URL("../../guidance-library/", import.meta.url));
@@ -249,6 +259,12 @@ export async function createApp(
       code: error.code || "request_failed",
     });
   });
+  app.addHook("onResponse", async (req, reply) => {
+    if (req.guidanceSession && reply.statusCode < 400 && !["GET", "HEAD", "OPTIONS"].includes(req.method) &&
+        /^\/api\/(?:reference|preferences|workflow)(?:\/|\?|$)/.test(req.url))
+      summaryJobs.current(req.guidanceSession);
+  });
+  registerVideoSummaryRoutes(app, summaryJobs);
   registerAccountRoutes(app, {
     getGuidanceSession: (req) => req.guidanceSession,
     store: options.accountStore,
@@ -257,6 +273,8 @@ export async function createApp(
   sweep.unref();
   app.addHook("onClose", async () => {
     clearInterval(sweep);
+    await summaryJobs.close();
+    stopWatchingSessions();
     sessions.clear();
   });
   app.get("/api/health", async () => ({
@@ -367,6 +385,7 @@ export async function createApp(
     const s = req.guidanceSession;
     ensurePreferences(s, b.preferences_revision);
     if (b.operator_goals !== (s.operatorGoals || "")) {
+      summaryJobs.invalidate(s);
       s.operatorGoals = b.operator_goals;
       s.preferencesRevision = (s.preferencesRevision || 0) + 1;
       s.cache.clear();
@@ -402,6 +421,7 @@ export async function createApp(
       })
       .parse(req.body);
     const s = req.guidanceSession;
+    summaryJobs.invalidate(s);
     s.mediaGeneration++;
     if (s.videoPath) fs.rmSync(s.videoPath, { force: true });
     s.videoPath = undefined;
@@ -472,7 +492,7 @@ export async function createApp(
       throw Object.assign(new Error("Guidance document not found"), {
         statusCode: 404,
       });
-    return replaceDocument(
+    return replaceReference(
       req.guidanceSession,
       b.filename,
       fs.readFileSync(file, "utf8"),
@@ -494,7 +514,7 @@ export async function createApp(
       throw Object.assign(new Error("Guidance document is empty"), {
         statusCode: 400,
       });
-    return replaceDocument(
+    return replaceReference(
       req.guidanceSession,
       path.basename(file.filename),
       text,
@@ -505,6 +525,7 @@ export async function createApp(
       .object({ rows: z.array(RefRowSchema).max(100) })
       .parse(req.body);
     const s = req.guidanceSession;
+    summaryJobs.invalidate(s);
     s.rows = b.rows;
     s.workflow = rowsToWorkflow(
       s.rows,
@@ -520,7 +541,7 @@ export async function createApp(
     return reference(s);
   });
   app.delete("/api/reference", async (req) =>
-    replaceDocument(req.guidanceSession, "", ""),
+    replaceReference(req.guidanceSession, "", ""),
   );
   app.get("/api/reference/document", async (req) => ({
     ok: true,
@@ -535,7 +556,7 @@ export async function createApp(
         reparse: z.boolean().optional(),
       })
       .parse(req.body);
-    return replaceDocument(
+    return replaceReference(
       req.guidanceSession,
       req.guidanceSession.filename || "Custom guidance.txt",
       b.text,
@@ -551,7 +572,7 @@ export async function createApp(
       .parse(req.body || {});
     const s = req.guidanceSession;
     if (b.text !== undefined && b.text !== s.text)
-      replaceDocument(s, s.filename || "Custom guidance.txt", b.text);
+      replaceReference(s, s.filename || "Custom guidance.txt", b.text);
     if (!s.text.trim())
       throw Object.assign(new Error("Add a guidance document first"), {
         statusCode: 400,
@@ -646,6 +667,7 @@ export async function createApp(
         ),
         { statusCode: 404 },
       );
+    summaryJobs.invalidate(s);
     const generation = ++s.mediaGeneration;
     const dir = path.join(config.uploadRoot, s.id);
     fs.mkdirSync(dir, { recursive: true });
@@ -672,7 +694,7 @@ export async function createApp(
       s.sourceName = sample.name;
       s.sampleVideoId = sample.id;
       return {
-        ...replaceDocument(s, sample.guidance, text),
+        ...replaceReference(s, sample.guidance, text),
         source_id: s.sourceId,
         video_name: sample.name,
         sample_video_id: sample.id,
@@ -703,6 +725,7 @@ export async function createApp(
       throw Object.assign(new Error("Video source changed before upload."), {
         statusCode: 409,
       });
+    summaryJobs.invalidate(s);
     const generation = ++s.mediaGeneration;
     const dir = path.join(config.uploadRoot, s.id);
     fs.mkdirSync(dir, { recursive: true });
@@ -749,6 +772,7 @@ export async function createApp(
   });
   app.delete("/api/video", async (req) => {
     const s = req.guidanceSession;
+    summaryJobs.invalidate(s);
     s.mediaGeneration++;
     if (s.videoPath) fs.rmSync(s.videoPath, { force: true });
     s.videoPath = undefined;

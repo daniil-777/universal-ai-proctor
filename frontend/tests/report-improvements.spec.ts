@@ -62,6 +62,24 @@ async function setup(page: Page, mode = "mixed") {
   await enterWorkspace(page);
   await expect.poll(() => page.locator(".video-canvas video").evaluate((video: HTMLVideoElement) => video.readyState)).toBeGreaterThanOrEqual(2);
   await pause(page);
+  // Entering the workspace legitimately starts guidance. Establish the final
+  // report records only after that real observer and playback have been paused,
+  // then refresh the mounted UI through its ordinary reference/review reads.
+  const finalSeed = await page.request.post("/__report_qa/seed", { headers: await headers(page), data: { mode } });
+  expect(finalSeed.ok()).toBe(true);
+  const seeded = await finalSeed.json();
+  const referenceRead = page.waitForResponse(async response => {
+    if (new URL(response.url()).pathname !== "/api/reference" || response.request().method() !== "GET" || !response.ok()) return false;
+    return (await response.json()).revision === seeded.session_revision;
+  });
+  const reviewRead = page.waitForResponse(async response => {
+    if (new URL(response.url()).pathname !== "/api/review" || response.request().method() !== "GET" || !response.ok()) return false;
+    return (await response.json()).review_version === seeded.review_version;
+  });
+  await page.evaluate(() => window.dispatchEvent(new CustomEvent("guidance-reference-updated")));
+  await Promise.all([referenceRead, reviewRead]);
+  delete seeded.generated_at;
+  expect(await snapshot(page)).toEqual(seeded);
 }
 async function report(page: Page) {
   const button = page.getByRole("button", { name: "Report", exact: true });

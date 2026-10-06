@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
-import { speak, prepareSpeech, stopSpeech, interruptAnswers, isSpeaking, isSpeechEcho, getSpeechPhase, subscribeSpeech } from "./speech";
+import { speak, prepareSpeech, stopSpeech, stopNarration, interruptAnswers, isSpeaking, isSpeechEcho, getSpeechPhase, subscribeSpeech } from "./speech";
 const mock = vi.hoisted(() => ({ fetch: vi.fn() }));
 vi.mock("./api", () => ({ apiFetch: mock.fetch }));
 vi.mock("sonner", () => ({ toast: { error: vi.fn(), message: vi.fn() } }));
@@ -127,4 +127,28 @@ it("keeps prepared answer fan-out within three requests for long text", async ()
   const prepared = prepareSpeech("", prefix); await flush();
   speak("", prefix + " " + ("Inspect the visible work area before the next documented step. ").repeat(25), { prepared }); await flush();
   expect(mock.fetch).toHaveBeenCalledTimes(3);
+});
+it("lets questions take the floor from narration, while narration never interrupts a question", async () => {
+  mock.fetch.mockImplementation(async () => response()); const end = vi.fn();
+  speak("", "A timed recap sentence.", { channel: "narration", onEnd: end }); await flush();
+  speak("", "The answer to your question."); await flush(); expect(end).toHaveBeenCalledTimes(1);
+  speak("", "The next timed sentence.", { channel: "narration" }); await flush();
+  expect(mock.fetch).toHaveBeenCalledTimes(2); expect(isSpeechEcho("The answer to your question")).toBe(true);
+  stopNarration(); expect(isSpeaking()).toBe(true);
+});
+it("serves queued alerts and answers before a fresh narration, and drops expired queued narration", async () => {
+  mock.fetch.mockImplementation(async () => response()); let fresh = true;
+  speak("", "A safety warning.", { priority: true }); await flush();
+  speak("", "A low-priority recap.", { channel: "narration", isCurrent: () => fresh }); speak("", "A queued answer.");
+  audio().onended?.(); await flush(); await vi.advanceTimersByTimeAsync(400);
+  expect(isSpeechEcho("A queued answer")).toBe(true); fresh = false;
+  audio().onended?.(); await flush(); await vi.advanceTimersByTimeAsync(400);
+  expect(mock.fetch).toHaveBeenCalledTimes(2); expect(isSpeaking()).toBe(false);
+});
+it("never plays narration that becomes stale during synthesis", async () => {
+  let resolve!: (response: Response) => void; let fresh = true;
+  mock.fetch.mockReturnValueOnce(new Promise<Response>(done => { resolve = done; }));
+  const start = vi.fn(); speak("", "Only speak at this playback position.", { channel: "narration", isCurrent: () => fresh, onStart: start });
+  fresh = false; resolve(response()); await flush();
+  expect(start).not.toHaveBeenCalled(); expect(isSpeaking()).toBe(false); expect(synth.speak).not.toHaveBeenCalled();
 });

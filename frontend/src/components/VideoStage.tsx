@@ -43,6 +43,7 @@ import { setVideoAccessor } from "@/lib/frameBus";
 import { useVoiceState, voiceToggle } from "@/lib/voiceBus";
 import { speak, interruptAnswers } from "@/lib/speech";
 import { useGeneralGuidance } from "@/lib/useGeneralGuidance";
+import { VideoRecapDialog } from "./VideoRecap";
 import { useSessionMemory } from "@/lib/useSessionMemory";
 import {
   Popover,
@@ -273,15 +274,23 @@ export function VideoStage({ editorSizing }: { editorSizing?: VideoEditorSizing 
   useEffect(() => {
     const v = vref.current;
     if (!v) return;
-    const onTime = () => setCurrent(v.currentTime);
-    const onMeta = () => setDuration(v.duration || 0);
+    const reportClock = (seeking = false, ended = false) => appRef.current.recap?.notifyPlayback({ sourceId: appRef.current.sourceId, timeS: v.currentTime, playing: !v.paused && !ended, seeking, ended });
+    const onTime = () => { setCurrent(v.currentTime); reportClock(v.seeking, v.ended); };
+    const onMeta = () => { setDuration(v.duration || 0); reportClock(); };
+    const onPlay = () => { setPlaying(true); reportClock(); };
+    const onPause = () => { setPlaying(false); reportClock(); };
+    const onSeek = () => reportClock(true);
+    const onSeeked = () => reportClock();
+    const onEnded = () => { setPlaying(false); reportClock(false, true); };
     v.addEventListener("timeupdate", onTime);
     v.addEventListener("loadedmetadata", onMeta);
+    v.addEventListener("play", onPlay); v.addEventListener("pause", onPause); v.addEventListener("seeking", onSeek); v.addEventListener("seeked", onSeeked); v.addEventListener("ended", onEnded);
     return () => {
       v.removeEventListener("timeupdate", onTime);
       v.removeEventListener("loadedmetadata", onMeta);
+      v.removeEventListener("play", onPlay); v.removeEventListener("pause", onPause); v.removeEventListener("seeking", onSeek); v.removeEventListener("seeked", onSeeked); v.removeEventListener("ended", onEnded);
     };
-  }, [a.videoUrl]);
+  }, [a.videoUrl, a.sourceId]);
 
   // Live simulator stream → the main <video> via srcObject (file playback uses src).
   useEffect(() => {
@@ -343,7 +352,7 @@ export function VideoStage({ editorSizing }: { editorSizing?: VideoEditorSizing 
     const onKey = (e: KeyboardEvent) => {
       if (e.defaultPrevented ||
         (e.target as HTMLElement)?.closest(
-          "input, textarea, select, button, [role=combobox], [role=slider], [role=separator], [contenteditable=true]",
+          "input, textarea, select, button, [role=combobox], [role=slider], [role=separator], [role=dialog], [contenteditable=true]",
         )
       )
         return;
@@ -800,6 +809,7 @@ export function VideoStage({ editorSizing }: { editorSizing?: VideoEditorSizing 
 
   return (
     <div ref={guidanceBoundsRef} className="video-stage h-full min-h-0 flex flex-col bg-background">
+      {a.recap && <VideoRecapDialog />}
       {a.patientInfoOn && (
         <div className="border-b bg-card px-3 py-2 text-xs">
           <b>{a.workflow.title}</b>
@@ -1093,7 +1103,7 @@ export function VideoStage({ editorSizing }: { editorSizing?: VideoEditorSizing 
           variant="outline"
           className="analyze-button absolute top-16 right-3 mr-0 z-40"
           onClick={showAi}
-          disabled={!a.videoUrl && !a.liveStream}
+          disabled={(!a.videoUrl && !a.liveStream) || (a.sourceKind === "video" && a.recap?.ownsUploadedAnalysis)}
           hidden={!!aiOverlay}
         >
           Analyze current view
@@ -1103,6 +1113,7 @@ export function VideoStage({ editorSizing }: { editorSizing?: VideoEditorSizing 
       {/* Transport — live stream has no seeking; file playback keeps full controls */}
       {mobile && guidancePanel}
       <div className="player-controls border-t border-border bg-card px-4 py-2 flex items-center gap-3 shrink-0">
+        {a.recap && <Button data-testid="video-recap-open" aria-label="Open video recap" variant="outline" size="sm" className="recap-player-button" onClick={a.recap.openRecap}>Video recap{a.recap.active ? ` · ${a.recap.job?.progress.completed_windows || 0}/${a.recap.job?.progress.total_windows || 0}` : ""}</Button>}
         {a.referenceFilm && !a.liveStream ? (
           <p className="text-xs text-muted-foreground">Use the official film’s YouTube controls for playback.</p>
         ) : a.liveStream ? (

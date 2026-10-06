@@ -34,6 +34,7 @@ export interface Session {
 }
 export class SessionStore {
   private sessions = new Map<string, Session>();
+  private disposeListeners = new Set<(session: Session) => void>();
   constructor(
     private ttl = 60 * 60 * 1000,
     private max = 100,
@@ -87,6 +88,7 @@ export class SessionStore {
   remove(id: string) {
     const session = this.sessions.get(id);
     if (session) {
+      for (const listener of this.disposeListeners) listener(session);
       session.disposed = true;
       session.mediaGeneration++;
       session.revision++;
@@ -99,6 +101,10 @@ export class SessionStore {
   }
   clear() {
     for (const id of this.sessions.keys()) this.remove(id);
+  }
+  onDispose(listener: (session: Session) => void): () => void {
+    this.disposeListeners.add(listener);
+    return () => this.disposeListeners.delete(listener);
   }
   get size() {
     return this.sessions.size;

@@ -70,7 +70,7 @@ export function useSessionMemory(): void {
     let mounted = true;
     const tick = async () => {
       const app = aRef.current;
-      if (busyRef.current || document.hidden) return;
+      if (busyRef.current || document.hidden || (app.sourceKind === "video" && app.recap?.ownsUploadedAnalysis)) return;
       const requestContext = contextRef.current;
       // Fold only meaningful events: guardian watches/alerts + stage transitions
       // since the last digest ("scene clear" noise is dropped by the prompt rules,

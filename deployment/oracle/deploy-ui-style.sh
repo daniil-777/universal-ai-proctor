@@ -130,6 +130,8 @@ docker exec "$container" node --input-type=module -e '
   import fs from "node:fs";
   const health = await (await fetch("http://127.0.0.1:8101/api/health")).json();
   assert.equal(health.ok, true); assert.equal(health.mock, false); assert.equal(health.providers.openai, true);
+  const recap = await fetch("http://127.0.0.1:8101/api/video-summary/jobs/current");
+  assert.equal(recap.status, 200); assert.equal((await recap.json()).job, null);
   const servers = fs.readdirSync("/proc").filter(id => /^\d+$/.test(id)).filter(id => {
     try {
       const command = fs.readFileSync(`/proc/${id}/cmdline`, "utf8").split("\0");

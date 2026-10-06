@@ -38,12 +38,16 @@ export function useGeneralGuidance() {
     a.serverVideoReady,
     a.running,
     a.monitor.active,
+    a.sourceKind === "video" && !!a.recap?.ownsUploadedAnalysis,
     settingsKey,
   ]);
   const contextRef = useRef(contextKey);
   contextRef.current = contextKey;
   const forceRef = useRef<() => void>();
   useEffect(() => {
+    if (latest.current.sourceKind === "video" && latest.current.recap?.ownsUploadedAnalysis) {
+      clearFrames(); latest.current.setGuardianBusy(false); return;
+    }
     const requestContext = contextRef.current;
     let stopped = false,
       busy = false,

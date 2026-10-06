@@ -367,3 +367,28 @@ it("refreshes an earlier-view alert when a fresh check confirms it without repea
   expect(mock.app.setMonitorAlert).toHaveBeenLastCalledWith(expect.objectContaining({ text: "Inspect the tool" }));
   expect(mock.speak).toHaveBeenCalledTimes(1);
 });
+
+it("does not infer new video instructions while a completed recap owns the uploaded source", async () => {
+  mock.app = { ...mock.app, sourceKind: "video", serverVideoReady: true, liveStream: null, workflow: { steps: [] }, recap: { active: false, ownsUploadedAnalysis: true } } as unknown as AppState;
+  mock.fetch.mockResolvedValue(response());
+  const hook = renderHook(() => useGeneralGuidance());
+  await advance(5000);
+  act(() => window.dispatchEvent(new Event("guidance-analyze-now")));
+  expect(mock.fetch).not.toHaveBeenCalled();
+  expect(mock.grab).not.toHaveBeenCalled();
+  mock.app = { ...mock.app, recap: { ownsUploadedAnalysis: false } } as AppState;
+  hook.rerender(); await advance(0);
+  expect(mock.fetch).toHaveBeenCalledOnce();
+});
+
+it("aborts a pending uploaded observation when recap ownership begins", async () => {
+  mock.app = { ...mock.app, sourceKind: "video", serverVideoReady: true, liveStream: null } as AppState;
+  const delayed = deferred(); mock.fetch.mockReturnValue(delayed.promise);
+  const hook = renderHook(() => useGeneralGuidance());
+  const signal = mock.fetch.mock.calls[0][1].signal;
+  mock.app = { ...mock.app, recap: { ownsUploadedAnalysis: true } } as AppState;
+  hook.rerender(); expect(signal.aborted).toBe(true);
+  await act(async () => { delayed.resolve(response()); await delayed.promise; });
+  await advance(5000);
+  expect(mock.app.applyAnalysis).not.toHaveBeenCalled(); expect(mock.fetch).toHaveBeenCalledOnce();
+});
