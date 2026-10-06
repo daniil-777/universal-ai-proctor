@@ -291,7 +291,7 @@ export async function createApp(
           .code(404)
           .type("text/html")
           .send(
-            '<p>No answer benchmark has been run yet.</p><a href="/">Return to Process Guide</a>',
+            '<p>No answer benchmark has been run yet.</p><a href="/">Return to Cueveris</a>',
           );
   });
   app.get("/evaluation/assets/:name", async (req, reply) => {
@@ -1137,7 +1137,7 @@ export async function createApp(
     zip.addFile(
       "README.txt",
       Buffer.from(
-        "Process Guide session export. AI observations are suggestions, not verified ground truth. Manual confirmations are identified separately. Simulator integration is not active.\n",
+        "Cueveris session export. AI observations are suggestions, not verified ground truth. Manual confirmations are identified separately. Simulator integration is not active.\n",
       ),
     );
     return reply

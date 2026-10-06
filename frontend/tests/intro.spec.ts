@@ -9,13 +9,13 @@ test("tour downloads only on request, plays and seeks without becoming the analy
   page.on("request", (r) => requests.push(r.url()));
   page.on("pageerror", (e) => errors.push(e.message));
   const posterResponse = page.waitForResponse((r) =>
-    r.url().endsWith("process-guide-tour.jpg"),
+    r.url().endsWith("cueveris-manufacturing-demo.jpg"),
   );
   await page.goto("/");
   const poster = await posterResponse;
   expect(poster.status()).toBe(200);
   expect(poster.headers()["content-type"]).toContain("image/jpeg");
-  expect((await poster.body()).length).toBeLessThan(45_000);
+  expect((await poster.body()).length).toBeLessThan(200_000);
   await expect(
     page.getByRole("heading", { name: "Watch the work. Review the details." }),
   ).toBeVisible();
@@ -23,10 +23,10 @@ test("tour downloads only on request, plays and seeks without becoming the analy
   const video = page.getByTestId("intro-tour-video");
   await expect(video).not.toHaveAttribute("src");
   expect(
-    requests.filter((url) => url.includes("process-guide-tour.mp4")),
+    requests.filter((url) => url.includes("cueveris-manufacturing-demo.mp4")),
   ).toHaveLength(0);
   await page
-    .getByRole("button", { name: "Play the 20-second app tour" })
+    .getByRole("button", { name: "Play the 30-second manufacturing demo" })
     .click();
   await expect
     .poll(() => video.evaluate((v: HTMLVideoElement) => v.currentTime))
@@ -39,7 +39,7 @@ test("tour downloads only on request, plays and seeks without becoming the analy
       v.muted,
       v.playsInline,
     ]),
-  ).toEqual([20, 960, 600, true, true]);
+  ).toEqual([30, 1440, 900, true, true]);
   await video.evaluate((v: HTMLVideoElement) => {
     v.pause();
     v.currentTime = 12;
@@ -61,7 +61,7 @@ test("tour downloads only on request, plays and seeks without becoming the analy
     ),
   ).toHaveLength(0);
   expect(errors).toEqual([]);
-  const range = await page.request.get("/media/process-guide-tour.mp4", {
+  const range = await page.request.get("/media/cueveris-manufacturing-demo.mp4", {
     headers: { Range: "bytes=0-1023" },
   });
   expect(range.status()).toBe(206);
@@ -121,15 +121,15 @@ test("tour failure exposes instructions and can be retried", async ({
   page,
 }) => {
   let fail = true;
-  await page.route("**/media/process-guide-tour.mp4", (r) =>
+  await page.route("**/media/cueveris-manufacturing-demo.mp4", (r) =>
     fail ? r.fulfill({ status: 404, body: "Unavailable" }) : r.continue(),
   );
   await page.goto("/");
   await page
-    .getByRole("button", { name: "Play the 20-second app tour" })
+    .getByRole("button", { name: "Play the 30-second manufacturing demo" })
     .click();
   await expect(
-    page.getByText("The tour could not play.", { exact: false }),
+    page.getByText("The demo could not play.", { exact: false }),
   ).toBeVisible();
   await page.getByText("Read the quick-start guide", { exact: true }).click();
   await expect(
@@ -138,7 +138,7 @@ test("tour failure exposes instructions and can be retried", async ({
     ),
   ).toBeVisible();
   fail = false;
-  await page.getByRole("button", { name: "Retry tour" }).click();
+  await page.getByRole("button", { name: "Retry demo" }).click();
   await expect
     .poll(() =>
       page
@@ -204,7 +204,7 @@ for (const width of [320, 390, 600, 820, 1440]) {
       ),
     ).toBe(true);
     const brandTitle = page.locator(".intro-header .brand-copy > div").first();
-    await expect(brandTitle).toHaveText("Process Guide");
+    await expect(brandTitle).toHaveText("Cueveris");
     expect(
       await brandTitle.evaluate(
         (element) =>
@@ -261,7 +261,7 @@ for (const width of [320, 390, 600, 820, 1440]) {
       ).toBe(true);
     }
     await expect(
-      page.getByRole("button", { name: "Play the 20-second app tour" }),
+      page.getByRole("button", { name: "Play the 30-second manufacturing demo" }),
     ).toBeVisible();
     await page
       .getByRole("button", { name: "Upload a video" })
@@ -270,6 +270,10 @@ for (const width of [320, 390, 600, 820, 1440]) {
       .locator('.intro-page [aria-label="Choose a source"] > button')
       .evaluateAll((els) => els.map((e) => e.getBoundingClientRect().height));
     expect(buttons.every((height) => height >= 44)).toBe(true);
+    for (const name of ["See full walkthrough", "Upload guidance"]) {
+      const control = page.getByRole("button", { name, exact: true });
+      expect(await control.evaluate(element => element.scrollWidth <= element.clientWidth + 1), `${name}: enlarged label fits`).toBe(true);
+    }
     const enter = page.getByRole("button", { name: "Open workspace" });
     await enter.scrollIntoViewIfNeeded();
     await expect(enter).toBeVisible();

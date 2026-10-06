@@ -10,7 +10,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { WalkthroughLauncher } from "../WalkthroughLauncher";
 
 const guide = {
-  title: "Process Guide app walkthrough",
+  title: "Cueveris app walkthrough",
   duration_s: 90,
   language: "en",
   captions_burned_in: true,
@@ -80,7 +80,7 @@ afterEach(() => {
 
 async function openGuide() {
   fireEvent.click(screen.getByRole("button", { name: "See full walkthrough" }));
-  await screen.findByRole("heading", { name: "Process Guide walkthrough" });
+  await screen.findByRole("heading", { name: "Cueveris walkthrough" });
   await screen.findByRole("button", { name: "0:12 Review the evidence" });
   return screen.getByTestId("walkthrough-video") as HTMLVideoElement;
 }

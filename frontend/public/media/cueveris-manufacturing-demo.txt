@@ -1,0 +1,18 @@
+CUEVERIS — MANUFACTURING DEMONSTRATION
+
+Manufacturing footage: SCHMELZER FORMENTECHNIK Waldershof Fichtelgebirge Imagefilm, by handysheriff.
+Source: https://commons.wikimedia.org/wiki/File:SCHMELZER_FORMENTECHNIK_Waldershof_Fichtelgebirge_Imagefilm.webm
+License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+License terms: https://creativecommons.org/licenses/by/3.0/
+
+Changes: selected natural-speed excerpts; original audio removed; converted to 30 fps silent H.264; combined with Cueveris typography, layout and actual product captures; a recorded indicator frame is labelled and held after its moving excerpt. Original footage colours are preserved. The source author and Schmelzer Formentechnik do not endorse Cueveris.
+
+Source excerpts: 00:17–00:23 (machine tool), 00:58–01:02 (indicator), and 02:36.7–02:40.7 (mould details). Indicator still: 01:00. An actual controller app capture shows source time 00:27. The poster uses source time 00:18.833.
+
+The footage is a promotional montage involving multiple machines and products. Selected observation checkpoints do not establish one continuous job, a tracked workpiece history, measured acceptance, or inspected quality.
+
+Product captures are from the verified 6 October 2026 production session in brag-output-2026-10-06-145533. The actual UI retains its Process Guide name from capture time. Four AI observations and four operator bookmarks were retained; zero of six steps were confirmed. The real report displays Review required. The indicator guidance is reproduced verbatim. See qa/source-session-evidence-qa.json for the independent evidence audit.
+
+Typeface: Inter, SIL Open Font License 1.1. See the project public/INTER-LICENSE.txt. Film composition: Cueveris project. No music, narration, or source audio. No Leica footage is downloaded or included.
+
+Preserve the author, source link, license link and changes notice with redistribution of this film or its poster.

@@ -140,11 +140,12 @@ describe("saved account report downloads", () => {
   it("shows the PDF font error and downloads the available offline HTML report", async () => {
     const fontError =
       "This PDF contains unsupported characters. Use the offline HTML report to preserve the original text.";
+    const offlineReport = "<!doctype html><title>保存された結果</title>";
     harness.fetch.mockImplementation(async (url: string) => {
       if (url.endsWith("/report.pdf"))
         return reply({ ok: false, error: fontError }, 422);
       if (url.endsWith("/report.html"))
-        return new Response("<!doctype html><title>保存された結果</title>", {
+        return new Response(offlineReport, {
           headers: { "Content-Type": "text/html" },
         });
       return accountReply(url);
@@ -155,16 +156,30 @@ describe("saved account report downloads", () => {
     fireEvent.click(screen.getByRole("button", { name: "PDF" }));
     expect(await screen.findByRole("alert")).toHaveTextContent(fontError);
     expect(HTMLAnchorElement.prototype.click).not.toHaveBeenCalled();
-    vi.useFakeTimers();
+    // Keep jsdom FileReader's nested setImmediate callbacks on the real event
+    // loop while controlling the download URL's setTimeout-based lifetime.
+    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
     await act(async () => {
       fireEvent.click(screen.getByRole("button", { name: "Offline HTML" }));
     });
     expect(HTMLAnchorElement.prototype.click).toHaveBeenCalledOnce();
     const anchor = vi.mocked(HTMLAnchorElement.prototype.click).mock
       .instances[0] as HTMLAnchorElement;
-    expect(anchor.download).toBe("process-guide-report.html");
+    expect(anchor.download).toBe("cueveris-report.html");
     expect(anchor.href).toBe("blob:private-report");
-    expect(URL.createObjectURL).toHaveBeenCalledWith(expect.any(Blob));
+    expect(URL.createObjectURL).toHaveBeenCalledOnce();
+    // Read both native Response blobs and jsdom blobs, which lack Blob.text().
+    const downloaded = vi.mocked(URL.createObjectURL).mock.calls[0][0] as Blob;
+    expect(downloaded.type).toBe("text/html");
+    const downloadedText = typeof downloaded.text === "function"
+      ? downloaded.text()
+      : new Promise<string>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(String(reader.result));
+          reader.onerror = () => reject(reader.error);
+          reader.readAsText(downloaded);
+        });
+    await expect(downloadedText).resolves.toBe(offlineReport);
     expect(screen.queryByRole("alert")).toBeNull();
     await act(async () => {
       await vi.advanceTimersByTimeAsync(10000);

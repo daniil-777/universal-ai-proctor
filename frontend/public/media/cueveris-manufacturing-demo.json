@@ -1,0 +1,99 @@
+{
+  "title": "Cueveris — Manufacturing demonstration",
+  "duration_seconds": 30,
+  "width": 1440,
+  "height": 900,
+  "fps": 30,
+  "silent": true,
+  "asset": "/media/cueveris-manufacturing-demo.mp4",
+  "poster": "/media/cueveris-manufacturing-demo.jpg",
+  "footage": {
+    "title": "SCHMELZER FORMENTECHNIK Waldershof Fichtelgebirge Imagefilm",
+    "author": "handysheriff",
+    "source": "https://commons.wikimedia.org/wiki/File:SCHMELZER_FORMENTECHNIK_Waldershof_Fichtelgebirge_Imagefilm.webm",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source_local_sha256": "37c44edfe3a35713716e42dbf712300cd654f2175fec185041541b9da4f8134d",
+    "changes": [
+      "Selected excerpts",
+      "Original audio removed",
+      "30 fps H.264 conversion",
+      "Layout, typography and app screenshot overlays",
+      "Single recorded indicator frame held after the moving excerpt",
+      "Brief final-frame hold during the opening crossfade",
+      "Natural playback speed and original footage colours preserved"
+    ],
+    "excerpts": [
+      {
+        "film_seconds": [
+          0,
+          6
+        ],
+        "source_seconds": [
+          17,
+          23
+        ],
+        "subject": "Machine-tool activity",
+        "natural_speed": true
+      },
+      {
+        "film_seconds": [
+          12,
+          16
+        ],
+        "source_seconds": [
+          58,
+          62
+        ],
+        "subject": "Digital indicator and probe",
+        "natural_speed": true
+      },
+      {
+        "film_seconds": [
+          16,
+          19.5
+        ],
+        "source_seconds": [
+          60,
+          60
+        ],
+        "subject": "Labelled recorded indicator frame"
+      },
+      {
+        "film_seconds": [
+          26,
+          30
+        ],
+        "source_seconds": [
+          156.7,
+          160.7
+        ],
+        "subject": "Mould details",
+        "natural_speed": true
+      }
+    ],
+    "endorsement": "Neither the author nor Schmelzer Formentechnik endorses Cueveris."
+  },
+  "product_evidence": {
+    "project": "Cueveris / Process Guide",
+    "captured": "2026-10-06",
+    "frozen_session": "brag-output-2026-10-06-145533",
+    "UI_name": "The actual frozen product UI retains the Process Guide name used at capture time.",
+    "protocol": "Real production-model observations, verified by source-session-evidence-qa.json; no new model calls or fabricated completion states.",
+    "ai_observations": 4,
+    "operator_bookmarks": 4,
+    "confirmed_steps": 0,
+    "total_steps": 6,
+    "source_limitation": "The source is a promotional montage of multiple machines and products; selected checkpoints do not establish one continuous workpiece history or quality acceptance.",
+    "guide_quote": "During this indicator check, verify probe contact and the documented measurement reference before interpreting the displayed value.",
+    "guide_source_second": 60,
+    "guide_source_stage": "S3"
+  },
+  "font": {
+    "name": "Inter",
+    "license": "SIL Open Font License 1.1",
+    "license_file": "public/INTER-LICENSE.txt"
+  },
+  "film_composition": "Cueveris project",
+  "leica_footage": "No Leica video footage downloaded or incorporated in this film."
+}

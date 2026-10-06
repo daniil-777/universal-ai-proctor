@@ -59,7 +59,7 @@ export function StagesTab() {
           <h2 className="text-sm font-semibold leading-snug break-words">
             {a.workflow.title}
           </h2>
-          <Badge variant="outline" className="shrink-0 text-[10px]">
+          <Badge variant="outline" className="shrink-0 text-xs">
             {a.workflow.source === "inferred" ? "Provisional" : "Document"}
           </Badge>
         </div>
@@ -69,11 +69,11 @@ export function StagesTab() {
             value={(confirmed / a.stages.length) * 100}
             className="h-1.5 flex-1"
           />
-          <span className="text-[10px] tabular-nums shrink-0">
+          <span className="text-xs tabular-nums shrink-0">
             {confirmed} / {a.stages.length} confirmed
           </span>
         </div>
-        <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">
+        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
           Progress reflects completion evidence. Confidence describes the
           model's self-reported observation, not a calibrated probability.
         </p>
@@ -81,7 +81,7 @@ export function StagesTab() {
       {a.workflow.warnings.map((w) => (
         <p
           key={w}
-          className="rounded-lg border border-warning/20 bg-warning/5 px-3 py-2 text-[11px] text-warning leading-relaxed"
+          className="rounded-lg border border-warning/20 bg-warning/5 px-3 py-2 text-xs text-warning leading-relaxed"
         >
           {w}
         </p>
@@ -110,7 +110,7 @@ export function StagesTab() {
                 className={`w-full flex items-start gap-2.5 p-3 text-left ${active ? "bg-primary/5" : ""}`}
               >
                 <span
-                  className={`h-7 w-7 grid place-items-center shrink-0 rounded-full text-xs font-semibold ${s.complete ? "bg-success text-white" : active ? "bg-primary text-white" : "bg-muted text-muted-foreground"}`}
+                  className={`h-7 w-7 grid place-items-center shrink-0 rounded-full text-xs font-semibold ${s.complete ? "bg-success text-success-foreground" : active ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}
                 >
                   {s.complete ? <Check className="h-4 w-4" /> : s.index}
                 </span>
@@ -119,13 +119,13 @@ export function StagesTab() {
                     {s.name}
                   </div>
                   {s.complete && (
-                    <span className="text-[10px] text-success">
+                    <span className="text-xs text-success">
                       {s.confirmation === "manual"
                         ? "Operator confirmed"
                         : "Evidence confirmed"}
                     </span>
                   )}
-                  <p className="mt-1 text-[11px] text-muted-foreground line-clamp-2 leading-relaxed">
+                  <p className="mt-1 text-xs text-muted-foreground line-clamp-2 leading-relaxed">
                     {s.description}
                   </p>
                   <div className="flex items-center gap-2 mt-2">
@@ -134,7 +134,7 @@ export function StagesTab() {
                       value={s.progress || 0}
                       className="h-1 flex-1"
                     />
-                    <span className="text-[10px] tabular-nums">
+                    <span className="text-xs tabular-nums">
                       {s.progress || 0}%
                     </span>
                   </div>
@@ -147,7 +147,7 @@ export function StagesTab() {
                 <div className="p-3 border-t space-y-3">
                   {s.objective && (
                     <div className="text-xs leading-relaxed">
-                      <span className="text-[10px] uppercase tracking-wide text-muted-foreground block mb-1">
+                      <span className="text-xs uppercase tracking-wide text-muted-foreground block mb-1">
                         Objective
                       </span>
                       {s.objective}
@@ -155,7 +155,7 @@ export function StagesTab() {
                   )}
                   {s.actions.length > 0 && (
                     <div>
-                      <h3 className="text-[10px] uppercase tracking-wide text-muted-foreground mb-1.5">
+                      <h3 className="text-xs uppercase tracking-wide text-muted-foreground mb-1.5">
                         Key actions
                       </h3>
                       <ol className="space-y-1.5 text-xs leading-relaxed">
@@ -171,13 +171,13 @@ export function StagesTab() {
                     </div>
                   )}
                   {s.expectedInstruments.length > 0 && (
-                    <div className="text-[11px] text-muted-foreground">
+                    <div className="text-xs text-muted-foreground">
                       <b>Tools / equipment:</b>{" "}
                       {s.expectedInstruments.join(" · ")}
                     </div>
                   )}
                   <div>
-                    <h3 className="text-[10px] uppercase tracking-wide text-muted-foreground mb-1.5">
+                    <h3 className="text-xs uppercase tracking-wide text-muted-foreground mb-1.5">
                       Completion evidence
                     </h3>
                     <ul className="space-y-2">
@@ -192,7 +192,7 @@ export function StagesTab() {
                           )}
                           <div>
                             <p className="text-xs leading-relaxed">{c.label}</p>
-                            <p className="text-[10px] text-muted-foreground mt-0.5 leading-relaxed">
+                            <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
                               <span
                                 className={
                                   c.status === "not_met" ? "text-warning" : ""
@@ -215,7 +215,7 @@ export function StagesTab() {
                     </ul>
                   </div>
                   <div className="flex justify-between items-center gap-2 pt-2 border-t">
-                    <span className="text-[10px] text-muted-foreground">
+                    <span className="text-xs text-muted-foreground">
                       {s.confirmation === "manual"
                         ? "Confirmed by operator"
                         : s.lastObservedS === undefined
@@ -224,7 +224,7 @@ export function StagesTab() {
                     </span>
                     <button
                       aria-label={`${s.complete ? "Reset" : "Confirm"} ${s.name} manually`}
-                      className="text-[11px] font-medium text-primary hover:underline"
+                      className="text-xs font-medium text-primary hover:underline"
                       onClick={() =>
                         void a
                           .confirmStep(s.id, !s.complete)

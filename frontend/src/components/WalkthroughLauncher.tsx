@@ -45,7 +45,7 @@ export function WalkthroughLauncher({
             <Dialog open onOpenChange={changeOpen}>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Process Guide walkthrough</DialogTitle>
+                  <DialogTitle>Cueveris walkthrough</DialogTitle>
                   <DialogDescription>
                     Opening the narrated app guide.
                   </DialogDescription>

@@ -37,15 +37,15 @@ export function ReportOverview({ stages, review, onNavigate }: {
   ];
   const groups = [
     { label: "Met", count: counts.criteria.met, color: "hsl(var(--primary))" },
-    { label: "Partial", count: counts.criteria.partial, color: "#b68b46" },
-    { label: "Not met", count: counts.criteria.not_met, color: "#b9614b" },
+    { label: "Partial", count: counts.criteria.partial, color: "hsl(var(--warning))" },
+    { label: "Not met", count: counts.criteria.not_met, color: "hsl(var(--destructive))" },
     { label: "Unknown", count: counts.criteria.unknown, color: "hsl(var(--muted-foreground) / .3)" },
   ];
   const origins = [
     { label: "AI observation", count: counts.evidence.ai, color: "hsl(var(--primary))" },
-    { label: "Operator record", count: counts.evidence.operator, color: "#627e96" },
+    { label: "Operator record", count: counts.evidence.operator, color: "hsl(var(--muted-foreground))" },
     { label: "System check", count: counts.evidence.system, color: "hsl(var(--muted-foreground) / .3)" },
-    { label: "Demo / simulated", count: counts.evidence.simulated, color: "#b68b46" },
+    { label: "Demo / simulated", count: counts.evidence.simulated, color: "hsl(var(--warning))" },
   ];
   const distribution = (title: string, items: typeof groups, total: number, note: string, label?: string) => (
     <div>
@@ -69,7 +69,7 @@ export function ReportOverview({ stages, review, onNavigate }: {
           <div className="report-summary-labels"><span>{counts.confirmation.ai} AI</span><span>{counts.confirmation.manual} manual</span>{counts.confirmation.other > 0 && <span>{counts.confirmation.other} other confirmation</span>}<span>{counts.confirmation.unfinished} unfinished</span></div>
         </div>
         <div className="report-ring" role="img" aria-label={stages.length ? `${counts.completed} of ${stages.length} steps confirmed: ${counts.confirmation.ai} AI, ${counts.confirmation.manual} manual, ${counts.confirmation.other} other, ${counts.confirmation.unfinished} unfinished` : "No workflow steps yet"}>
-          <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#ffffff20" strokeWidth="6" /><circle cx="60" cy="60" r="50" fill="none" stroke="#a4d8d1" strokeWidth="6" strokeDasharray={`${confirmed * circumference} ${circumference}`} /></svg>
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle className="report-ring-track" cx="60" cy="60" r="50" fill="none" strokeWidth="6" /><circle className="report-ring-progress" cx="60" cy="60" r="50" fill="none" strokeWidth="6" strokeDasharray={`${confirmed * circumference} ${circumference}`} /></svg>
           <div className="report-ring-copy"><strong>{stages.length ? `${counts.completed}/${stages.length}` : "—"}</strong><span>{stages.length ? "steps confirmed" : "no steps yet"}</span></div>
         </div>
       </div>

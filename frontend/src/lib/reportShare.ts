@@ -26,7 +26,7 @@ export async function isPdfReport(blob: Blob): Promise<boolean> {
 /** Call directly from a click after preparing the file, preserving browser user activation. */
 export async function shareReport(
   file: File,
-  title = "Process Guide session report",
+  title = "Cueveris session report",
 ): Promise<"shared" | "cancelled" | "downloaded"> {
   if (!canShareReport(file)) {
     downloadReport(file);
@@ -61,5 +61,5 @@ export function reportFilename(title: string, format: "pdf" | "html") {
       .trim()
       .replace(/\s+/g, "-")
       .slice(0, 64) || "session";
-  return `Process-Guide-${name}.${format}`;
+  return `Cueveris-${name}.${format}`;
 }

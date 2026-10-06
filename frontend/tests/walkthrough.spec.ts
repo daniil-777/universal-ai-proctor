@@ -90,7 +90,7 @@ test("full walkthrough remains lazy, pauses the silent tour, plays and seeks wit
     requests.filter((url) => url.includes("process-guide-walkthrough")),
   ).toEqual([]);
   await page
-    .getByRole("button", { name: "Play the 20-second app tour" })
+    .getByRole("button", { name: "Play the 30-second manufacturing demo" })
     .click();
   const quick = page.getByTestId("intro-tour-video");
   await expect
@@ -202,7 +202,7 @@ test("320px walkthrough keeps close visible while scrolling and remains accessib
   const close = page.getByRole("button", { name: "Close", exact: true });
   await expect(close).toBeInViewport();
   await expect(
-    page.getByRole("heading", { name: "Process Guide walkthrough" }),
+    page.getByRole("heading", { name: "Cueveris walkthrough" }),
   ).toBeInViewport();
   expect(
     await dialog.evaluate(

@@ -9,10 +9,10 @@ export function Brand({ compact = false }: { compact?: boolean }) {
       </div>
       {!compact && (
         <div className="brand-copy min-w-0">
-          <div className="font-semibold text-sm tracking-tight truncate">
+          <div className="brand-wordmark truncate">
             Cueveris
           </div>
-          <div className="text-[10px] text-muted-foreground tracking-wide">
+          <div className="brand-tagline text-muted-foreground">
             Process guidance &amp; review
           </div>
         </div>

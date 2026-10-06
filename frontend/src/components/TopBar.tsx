@@ -354,7 +354,7 @@ export function TopBar({
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Using Process Guide</DialogTitle>
+            <DialogTitle>Using Cueveris</DialogTitle>
             <DialogDescription>
               Load a video, camera or screen, then add an optional guidance
               document.

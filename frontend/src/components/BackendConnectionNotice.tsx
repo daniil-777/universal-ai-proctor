@@ -60,7 +60,7 @@ export function BackendConnectionNotice() {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Connect your AI workspace</DialogTitle>
-          <DialogDescription>Connect a running Process Guide backend for analysis. Videos and guidance are sent to that backend. Accounts and saved results are available in the full app.</DialogDescription>
+          <DialogDescription>Connect a running Cueveris backend for analysis. Videos and guidance are sent to that backend. Accounts and saved results are available in the full app.</DialogDescription>
         </DialogHeader>
         <form className="space-y-4" onSubmit={event => { event.preventDefault(); void connect(); }}>
           <div className="space-y-2"><Label htmlFor="backend-address">Backend address</Label>

@@ -15,6 +15,7 @@ import { useApp } from "@/lib/store";
 import { useAppearance } from "@/lib/useAppearance";
 import { GuidanceGoals } from "./GuidanceGoals";
 import { IntroTour } from "./IntroTour";
+import { ManufacturingReference } from "./ManufacturingReference";
 import { SampleDocumentSelect } from "./SampleDocumentSelect";
 import { SampleVideoSelect } from "./SampleVideoSelect";
 import { VideoLibraryLink } from "./VideoLibraryLink";
@@ -36,6 +37,7 @@ export function IntroPage() {
   const video = useRef<HTMLInputElement>(null);
   const document = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
+  const [referenceOpen, setReferenceOpen] = useState(false);
   const [dark, setDark] = useAppearance();
   const camera = async (screen = false) => {
     setBusy(true);
@@ -88,11 +90,11 @@ export function IntroPage() {
               Open a recording or connect a live view. Add instructions to track
               the process, review evidence and ask questions alongside the video.
             </p>
-            <div className="mt-6 flex flex-col items-start gap-3">
-              <VideoLibraryLink />
+            <div className="intro-hero-actions">
               <a className="intro-setup-link !mt-0" href="#session-setup">
                 Set up your session <ArrowRight className="h-4 w-4" />
               </a>
+              <VideoLibraryLink />
             </div>
             <div className="intro-feature-list">
               <span>
@@ -106,8 +108,14 @@ export function IntroPage() {
               </span>
             </div>
           </div>
-          <IntroTour />
+          <IntroTour paused={referenceOpen} />
+          <ol className="intro-cue-rail" aria-label="How guidance works">
+            <li><span>01</span><div><b>Observe</b><p>Bring the work into view.</p></div></li>
+            <li><span>02</span><div><b>Guide</b><p>Follow the steps and evidence.</p></div></li>
+            <li><span>03</span><div><b>Review</b><p>Turn observations into a report.</p></div></li>
+          </ol>
         </div>
+        <ManufacturingReference onOpenChange={setReferenceOpen} />
         <div className="intro-setup" id="session-setup">
           <div className="intro-section-title">
             <div>
@@ -188,7 +196,7 @@ export function IntroPage() {
               e.target.value = "";
             }}
           />
-          <div className="mt-4 max-w-xl rounded-xl border bg-card p-4">
+          <div className="intro-sample mt-4 max-w-xl border bg-card p-4">
             <SampleVideoSelect />
           </div>
           <input
@@ -220,7 +228,7 @@ export function IntroPage() {
               Add your instructions <small>Optional</small>
             </h3>
           </div>
-          <section className="intro-document rounded-2xl border bg-card p-5 flex flex-col md:flex-row gap-5 items-start md:items-center">
+          <section className="intro-document border bg-card p-5 flex flex-col md:flex-row gap-5 items-start md:items-center">
             <div className="flex gap-3 flex-1">
               <div className="h-10 w-10 shrink-0 grid place-items-center bg-muted rounded-xl text-primary">
                 <FileText className="h-5 w-5" />
@@ -311,7 +319,7 @@ export function IntroPage() {
               </Select>
             </div>
           </div>
-          <div className="mt-4 rounded-xl border bg-card p-4 flex flex-wrap items-center justify-between gap-3">
+          <div className="intro-goals mt-4 border bg-card p-4 flex flex-wrap items-center justify-between gap-3">
             <div className="min-w-0 flex-1">
               <p className="text-sm font-medium">
                 What do you want from your guide?

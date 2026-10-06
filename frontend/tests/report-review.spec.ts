@@ -1,4 +1,4 @@
-import { chromium, expect, test, type Page, webkit } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
 import fs from "node:fs/promises";
 import { api, setup, tool } from "./review-helpers";
 
@@ -141,21 +141,18 @@ const profiles = [
 // Tests below exercise the compiled app and real fixture API, with no provider
 // requests. Selectors follow the visible report navigation and review controls.
 for (const profile of profiles) {
-  test.describe(`report review on ${profile.name}`, () => {
-    test("priorities, evidence and decisions remain scoped, lazy and keyboard accessible", async ({
-      baseURL,
+  const profileTest = test.extend({
+    browserName: profile.browserName,
+    channel: profile.channel,
+    viewport: profile.viewport,
+    isMobile: profile.isMobile,
+    hasTouch: profile.hasTouch,
+    ...(profile.browserName === "webkit" ? { launchOptions: {} } : {}),
+  });
+  profileTest.describe(`report review on ${profile.name}`, () => {
+    profileTest("priorities, evidence and decisions remain scoped, lazy and keyboard accessible", async ({
+      page,
     }, testInfo) => {
-      const browser =
-        profile.browserName === "webkit"
-          ? await webkit.launch({ channel: "", args: [], headless: true })
-          : await chromium.launch({ channel: "chrome", headless: true });
-      const context = await browser.newContext({
-        baseURL,
-        viewport: profile.viewport,
-        isMobile: profile.isMobile,
-        hasTouch: profile.hasTouch,
-      });
-      const page = await context.newPage();
       try {
         const review = await prepareReview(page);
         const workflowBefore = (await api(page, "/api/session")).workflow;
@@ -343,9 +340,6 @@ for (const profile of profiles) {
           contentType: "image/png",
         });
         throw error;
-      } finally {
-        await context.close();
-        await browser.close();
       }
     });
   });

@@ -10,7 +10,7 @@ for (const [device, width] of [["iPhone 13", 390], ["iPad Pro 11", 820]] as cons
     page.on("pageerror", (e) => errors.push(e.message));
     await page.goto("/");
     const video = page.getByTestId("intro-tour-video");
-    await page.getByRole("button", { name: "Play the 20-second app tour" }).tap();
+    await page.getByRole("button", { name: "Play the 30-second manufacturing demo" }).tap();
     await expect.poll(() => video.evaluate((v: HTMLVideoElement) => v.currentTime)).toBeGreaterThan(0.2);
     // In a tall tablet viewport both setup and the tour can remain visible.
     await page.setViewportSize({ width, height: 600 });

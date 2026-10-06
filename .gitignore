@@ -35,3 +35,5 @@
 **/*.wav
 **/*.mp3
 **/*.m4a
+# Small homepage demonstration is shipped with source.
+!frontend/public/media/cueveris-manufacturing-demo.mp4

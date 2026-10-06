@@ -155,7 +155,7 @@ export function ReportGuardianLibrary({
     try {
       const result = await shareReport(
         clip.file,
-        "Process Guide Guardian clip",
+        "Cueveris Guardian clip",
       );
       if (owner.current === requested)
         setNotice(

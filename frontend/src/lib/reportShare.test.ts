@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { canShareReport, downloadReport, reportFilename, shareReport } from "./reportShare";
 
-const file = () => new File(["%PDF-fixture"], "Process-Guide-inspection.pdf", { type: "application/pdf" });
+const file = () => new File(["%PDF-fixture"], "Cueveris-inspection.pdf", { type: "application/pdf" });
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); vi.useRealTimers(); });
 function downloads() {
   vi.useFakeTimers(); const create = vi.fn(() => "blob:report"), revoke = vi.fn();
@@ -13,7 +13,7 @@ describe("report file sharing", () => {
   it("shares a prepared PDF directly without a network request", async () => {
     const share = vi.fn().mockResolvedValue(undefined), canShare = vi.fn(() => true);
     vi.stubGlobal("navigator", { share, canShare }); const pdf = file();
-    expect(await shareReport(pdf)).toBe("shared"); expect(share).toHaveBeenCalledWith({ files: [pdf], title: "Process Guide session report" });
+    expect(await shareReport(pdf)).toBe("shared"); expect(share).toHaveBeenCalledWith({ files: [pdf], title: "Cueveris session report" });
   });
   it("falls back to a named downloadable file when file sharing is unsupported", async () => {
     vi.stubGlobal("navigator", {}); const { create, revoke, click } = downloads();
@@ -31,8 +31,8 @@ describe("report file sharing", () => {
   });
   it("handles browsers throwing from capability detection and normalizes portable filenames", () => {
     vi.stubGlobal("navigator", { share: vi.fn(), canShare: () => { throw new Error("Unsupported"); } });
-    expect(canShareReport(file())).toBe(false); expect(reportFilename("../Inspection: Größe?", "pdf")).toBe("Process-Guide-Inspection-Größe.pdf");
-    expect(reportFilename("", "html")).toBe("Process-Guide-session.html");
+    expect(canShareReport(file())).toBe(false); expect(reportFilename("../Inspection: Größe?", "pdf")).toBe("Cueveris-Inspection-Größe.pdf");
+    expect(reportFilename("", "html")).toBe("Cueveris-session.html");
     const { click } = downloads(); downloadReport(file()); expect(click).toHaveBeenCalledOnce();
   });
 });

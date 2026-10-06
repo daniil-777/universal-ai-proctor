@@ -43,3 +43,5 @@ docs
 backend/tests
 frontend/e2e
 frontend/tests
+# Small source-controlled homepage demonstration must reach the runtime image.
+!frontend/public/media/cueveris-manufacturing-demo.mp4

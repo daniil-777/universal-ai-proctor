@@ -1,0 +1,15 @@
+# A narrow release layer over the current production runtime. Keep its native
+# dependencies, report fonts, media library, entrypoint and health check.
+FROM process-guide:oracle-cueveris-20261006
+
+COPY --chmod=0644 frontend/dist/index.html /app/frontend/dist/index.html
+COPY --chmod=0644 frontend/dist/favicon.svg /app/frontend/dist/favicon.svg
+COPY --chmod=0644 frontend/dist/assets/ /app/frontend/dist/assets/
+COPY --chmod=0644 frontend/dist/media/cueveris-manufacturing-demo.mp4 frontend/dist/media/cueveris-manufacturing-demo.jpg frontend/dist/media/cueveris-manufacturing-demo.json frontend/dist/media/cueveris-manufacturing-demo.txt /app/frontend/dist/media/
+COPY --chmod=0644 frontend/dist/INTER-LICENSE.txt /app/frontend/dist/INTER-LICENSE.txt
+COPY --chmod=0644 frontend/dist/media/process-guide-real-scenarios/index.html /app/frontend/dist/media/process-guide-real-scenarios/index.html
+COPY --chmod=0644 backend/dist/app.js /app/backend/dist/app.js
+COPY --chmod=0644 backend/dist/media/analysisPdf.js backend/dist/media/analysisReport.js /app/backend/dist/media/
+
+# COPY's file mode must not make an asset subdirectory untraversable.
+RUN find /app/frontend/dist/assets -type d -exec chmod 0755 {} +

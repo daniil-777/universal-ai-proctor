@@ -20,6 +20,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import "./account.css";
 
 interface User {
   id: string;
@@ -223,7 +224,7 @@ export default function AccountDialog() {
       const url = URL.createObjectURL(blob);
       const anchor = document.createElement("a");
       anchor.href = url;
-      anchor.download = `process-guide-report.${kind}`;
+      anchor.download = `cueveris-report.${kind}`;
       anchor.click();
       setTimeout(() => URL.revokeObjectURL(url), 10000);
     } catch (e) {
@@ -246,7 +247,7 @@ export default function AccountDialog() {
     >
       <div className="flex flex-wrap items-start justify-between gap-3 border-b bg-primary/5 p-4 sm:p-5">
         <div className="min-w-0">
-          <p className="mb-1 text-[10px] font-semibold uppercase tracking-[.14em] text-primary">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-[.14em] text-primary">
             Saved result / Inspection
           </p>
           <h3 className="font-semibold text-base break-words tracking-tight">
@@ -269,7 +270,7 @@ export default function AccountDialog() {
       <div className="space-y-4 p-4 sm:p-5">
         {selected.handoff.operator_goals && (
           <div className="rounded-xl border bg-muted/25 p-3">
-            <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               Operator wishes
             </p>
             <p className="mt-2 whitespace-pre-wrap break-words text-xs leading-relaxed">
@@ -289,7 +290,7 @@ export default function AccountDialog() {
               className="flex gap-3 rounded-xl border p-3 sm:p-4"
             >
               <span
-                className={`grid size-7 shrink-0 place-items-center rounded-lg text-[11px] font-semibold tabular-nums ${step.complete ? "bg-primary/10 text-primary" : "bg-muted text-muted-foreground"}`}
+                className={`grid size-7 shrink-0 place-items-center rounded-lg text-xs font-semibold tabular-nums ${step.complete ? "bg-primary/10 text-primary" : "bg-muted text-muted-foreground"}`}
                 aria-hidden="true"
               >
                 {String(index + 1).padStart(2, "0")}
@@ -311,7 +312,7 @@ export default function AccountDialog() {
                         <span className="min-w-0 flex-1 break-words leading-relaxed">
                           {c.label}
                         </span>
-                        <span className="rounded-md bg-muted px-2 py-1 text-[10px] capitalize">
+                        <span className="rounded-md bg-muted px-2 py-1 text-xs capitalize">
                           {c.status.replace(/_/g, " ")}
                         </span>
                       </li>
@@ -335,7 +336,7 @@ export default function AccountDialog() {
           </div>
         )}
         <div className="flex flex-wrap items-center justify-between gap-3 border-t pt-4">
-          <p className="max-w-sm text-[11px] leading-relaxed text-muted-foreground">
+          <p className="max-w-sm text-xs leading-relaxed text-muted-foreground">
             Delete removes this saved result from your account.
           </p>
           <div className="flex flex-wrap gap-2">
@@ -388,8 +389,8 @@ export default function AccountDialog() {
       </DialogTrigger>
       <DialogContent className="workspace-professional-dialog workspace-account-dialog flex max-w-4xl max-h-[90dvh] flex-col overflow-hidden gap-0 p-0 sm:rounded-2xl">
         <DialogHeader className="shrink-0 border-b bg-card px-4 py-5 text-left sm:px-6">
-          <p className="mb-1 text-[10px] font-semibold uppercase tracking-[.18em] text-primary">
-            Process Guide / Personal workspace
+          <p className="mb-1 text-xs font-semibold uppercase tracking-[.18em] text-primary">
+            Cueveris / Personal workspace
           </p>
           <DialogTitle className="pr-10 text-xl font-semibold tracking-tight sm:text-2xl">
             My training workspace
@@ -398,7 +399,7 @@ export default function AccountDialog() {
             Save results, review saved runs and follow your training activity.
           </DialogDescription>
         </DialogHeader>
-        <div className="shrink-0 border-b bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground sm:px-6">
+        <div className="shrink-0 border-b bg-muted/30 px-4 py-3 text-xs leading-relaxed text-muted-foreground sm:px-6">
           <span className="mr-2 font-semibold text-foreground">
             {deployment === "hosted" ? "Server workspace" : "Local workspace"}
           </span>
@@ -424,24 +425,24 @@ export default function AccountDialog() {
             </p>
           )}
           {!user ? (
-            <div className="overflow-hidden rounded-2xl border bg-card shadow-sm sm:grid sm:grid-cols-[.85fr_1.15fr]">
-              <aside className="hidden flex-col justify-between bg-gradient-to-br from-slate-950 via-slate-900 to-teal-950 p-7 text-white sm:flex">
+            <div className="overflow-hidden rounded-2xl border bg-card sm:grid sm:grid-cols-[.85fr_1.15fr]">
+              <aside className="account-ink-panel hidden flex-col justify-between p-7 sm:flex">
                 <div>
-                  <div className="mb-6 grid size-11 place-items-center rounded-xl border border-white/15 bg-white/5">
+                  <div className="account-emblem mb-6 grid size-11 place-items-center rounded-xl border">
                     <UserRound
-                      className="size-5 text-teal-200"
+                      className="size-5"
                       aria-hidden="true"
                     />
                   </div>
                   <h3 className="max-w-xs text-xl font-semibold leading-tight tracking-tight">
                     A record of your work.
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                  <p className="account-panel-copy mt-3 text-sm leading-relaxed">
                     Keep process results together, revisit recorded evidence and
                     export a report when you need it.
                   </p>
                 </div>
-                <div className="mt-8 space-y-3 border-t border-white/15 pt-5 text-xs text-slate-300">
+                <div className="account-panel-rule account-panel-copy mt-8 space-y-3 border-t pt-5 text-xs">
                   <p>Separate AI observations and operator confirmations.</p>
                   <p>Save evidence images only when you choose.</p>
                 </div>
@@ -536,7 +537,7 @@ export default function AccountDialog() {
                     required
                   />
                   {mode === "register" && (
-                    <span className="text-[11px] font-normal text-muted-foreground block mt-2">
+                    <span className="text-xs font-normal text-muted-foreground block mt-2">
                       Use at least 12 characters.
                     </span>
                   )}
@@ -558,22 +559,22 @@ export default function AccountDialog() {
             </div>
           ) : (
             <>
-              <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-teal-950 p-5 text-white">
+              <div className="account-ink-panel flex flex-wrap items-center justify-between gap-4 rounded-2xl p-5">
                 <div className="flex min-w-0 items-center gap-3">
                   <div
-                    className="grid size-11 shrink-0 place-items-center rounded-xl border border-white/15 bg-white/5 text-lg font-semibold text-teal-200"
+                    className="account-emblem grid size-11 shrink-0 place-items-center rounded-xl border text-lg font-semibold"
                     aria-hidden="true"
                   >
                     {(user.name || user.email).trim().charAt(0).toUpperCase()}
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[10px] uppercase tracking-[.15em] text-slate-400">
+                    <p className="account-panel-copy text-xs uppercase tracking-[.1em]">
                       Your workspace
                     </p>
                     <p className="mt-1 break-words text-base font-semibold">
                       {user.name || user.email}
                     </p>
-                    <p className="mt-1 break-all text-xs text-slate-300">
+                    <p className="account-panel-copy mt-1 break-all text-xs">
                       {user.email}
                     </p>
                   </div>
@@ -581,7 +582,7 @@ export default function AccountDialog() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="min-h-11 border-white/20 bg-transparent text-xs text-slate-200 hover:bg-white/10 hover:text-white"
+                  className="account-panel-action min-h-11 text-xs"
                   disabled={busy}
                   onClick={() =>
                     void run(async () => {
@@ -632,7 +633,7 @@ export default function AccountDialog() {
                     key={label}
                     className="min-w-0 rounded-xl border bg-card p-3 sm:p-4"
                   >
-                    <p className="text-[11px] font-medium text-muted-foreground">
+                    <p className="text-xs font-medium text-muted-foreground">
                       {label}
                     </p>
                     <p
@@ -640,13 +641,13 @@ export default function AccountDialog() {
                     >
                       {value}
                     </p>
-                    <p className="mt-1 hidden text-[10px] leading-relaxed text-muted-foreground sm:block">
+                    <p className="mt-1 hidden text-xs leading-relaxed text-muted-foreground sm:block">
                       {detail}
                     </p>
                   </div>
                 ))}
               </div>
-              <p className="text-[11px] leading-relaxed text-muted-foreground">
+              <p className="text-xs leading-relaxed text-muted-foreground">
                 These are workflow records, not skill scores. Confirmations
                 reflect the saved evidence and operator decisions.
               </p>
@@ -692,7 +693,7 @@ export default function AccountDialog() {
                   Also store captured evidence images in my account
                 </label>
                 {(!a.sourceReady || !a.review) && (
-                  <p className="mt-2 text-[11px] text-muted-foreground">
+                  <p className="mt-2 text-xs text-muted-foreground">
                     Load a video or camera source to save a result.
                   </p>
                 )}
@@ -707,7 +708,7 @@ export default function AccountDialog() {
                   </p>
                 </div>
                 {training && (
-                  <p className="text-[11px] text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     {training.history.length} saved{" "}
                     {training.history.length === 1 ? "run" : "runs"}
                   </p>
@@ -767,11 +768,11 @@ export default function AccountDialog() {
                   return (
                     <div key={item.id} className="space-y-3">
                       <article
-                        className={`rounded-2xl border bg-card p-4 shadow-sm sm:p-5 ${selected?.id === item.id ? "border-primary/40 ring-1 ring-primary/10" : ""}`}
+                        className={`rounded-2xl border bg-card p-4 sm:p-5 ${selected?.id === item.id ? "border-primary/40 ring-1 ring-primary/10" : ""}`}
                       >
                         <div className="flex flex-wrap items-start justify-between gap-3">
                           <div className="min-w-0">
-                            <div className="mb-2 flex flex-wrap items-center gap-2 text-[10px]">
+                            <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
                               <span className="rounded-md border bg-muted/40 px-2 py-1 font-medium capitalize text-muted-foreground">
                                 {item.source_kind}
                               </span>
@@ -794,13 +795,13 @@ export default function AccountDialog() {
                             </p>
                           </div>
                           <span
-                            className={`max-w-full rounded-full border px-2.5 py-1 text-[10px] font-medium ${item.open_exceptions > 0 ? "border-warning/25 bg-warning/5 text-warning" : item.steps > 0 && item.confirmed_steps >= item.steps ? "border-primary/20 bg-primary/5 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+                            className={`max-w-full rounded-full border px-2.5 py-1 text-xs font-medium ${item.open_exceptions > 0 ? "border-warning/25 bg-warning/5 text-warning" : item.steps > 0 && item.confirmed_steps >= item.steps ? "border-primary/20 bg-primary/5 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
                           >
                             {status}
                           </span>
                         </div>
                         <div className="mt-4 space-y-2">
-                          <div className="flex flex-wrap justify-between gap-2 text-[11px]">
+                          <div className="flex flex-wrap justify-between gap-2 text-xs">
                             <span className="font-medium">
                               {item.confirmed_steps}/{item.steps} steps
                               confirmed
@@ -833,7 +834,7 @@ export default function AccountDialog() {
                           </div>
                         </div>
                         <div className="mt-4 flex flex-col gap-3 border-t pt-3 sm:flex-row sm:items-center sm:justify-between">
-                          <div className="flex flex-wrap gap-3 text-[11px] text-muted-foreground">
+                          <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
                             <span>{item.visual_checks} checks</span>
                             <span
                               className={

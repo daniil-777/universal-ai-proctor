@@ -56,7 +56,7 @@ const scopeNotice = "This is a snapshot of recorded samples and operator records
 
 /** Editorial PDF with explicit wrapping, verified glyphs and bounded worker execution. */
 export async function renderAnalysisPdfDirect(data: StructuredHandoff): Promise<Buffer> {
-  const doc = new PDFDocument({ size: "A4", margin: 48, bufferPages: true, info: { Title: `Process Guide - ${snapshotLabel(data)}`, Author: "Process Guide", Subject: "Recorded workflow evidence and operator review", CreationDate: new Date(data.generated_at) } });
+  const doc = new PDFDocument({ size: "A4", margin: 48, bufferPages: true, info: { Title: `Cueveris - ${snapshotLabel(data)}`, Author: "Cueveris", Subject: "Recorded workflow evidence and operator review", CreationDate: new Date(data.generated_at) } });
   doc.registerFont("Regular", regular); doc.registerFont("Bold", bold);
   doc.registerFont("SymbolRegular", symbolRegular); doc.registerFont("SymbolBold", symbolBold);
   const output = new Promise<Buffer>((resolve, reject) => { const chunks: Buffer[] = []; doc.on("data", chunk => chunks.push(chunk)); doc.on("end", () => resolve(Buffer.concat(chunks))); doc.on("error", reject); });

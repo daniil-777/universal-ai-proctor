@@ -1,0 +1,42 @@
+/* Saved work uses the same quiet surfaces and ink panels as the session report. */
+.workspace-account-dialog {
+  border-radius: var(--radius-surface, 10px);
+}
+.workspace-account-dialog .rounded-2xl,
+.workspace-account-dialog .rounded-xl {
+  border-radius: var(--radius-surface, 10px);
+}
+.workspace-account-dialog button,
+.workspace-account-dialog input {
+  border-radius: var(--radius-control, 6px);
+}
+.workspace-account-dialog input[type="checkbox"] {
+  border-radius: 3px;
+}
+.workspace-account-dialog .account-ink-panel {
+  background: hsl(var(--ink));
+  color: hsl(var(--ink-foreground));
+}
+.workspace-account-dialog .account-panel-copy {
+  color: hsl(var(--ink-muted));
+}
+.workspace-account-dialog .account-panel-rule {
+  border-color: hsl(var(--ink-foreground) / .16);
+}
+.workspace-account-dialog .account-emblem {
+  border-color: hsl(var(--ink-foreground) / .2);
+  background: hsl(var(--ink-foreground) / .06);
+  color: hsl(var(--ink-muted));
+  border-radius: var(--radius-control, 6px);
+}
+.workspace-account-dialog .account-panel-action {
+  border-color: hsl(var(--ink-foreground) / .25);
+  background: transparent;
+  color: hsl(var(--ink-foreground));
+  --ring: var(--ink-muted);
+  --background: var(--ink);
+}
+.workspace-account-dialog .account-panel-action:hover {
+  background: hsl(var(--ink-foreground) / .1);
+  color: hsl(var(--ink-foreground));
+}

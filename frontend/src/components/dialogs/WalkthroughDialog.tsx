@@ -212,10 +212,10 @@ export default function WalkthroughDialog({
       >
         <DialogHeader className="shrink-0 border-b bg-card px-4 py-5 text-left sm:px-6">
           <p className="mb-1 text-[10px] font-semibold uppercase tracking-[.18em] text-primary">
-            Process Guide / Getting started
+            Cueveris / Getting started
           </p>
           <DialogTitle className="pr-10 text-xl font-semibold tracking-tight">
-            Process Guide walkthrough
+            Cueveris walkthrough
           </DialogTitle>
           <DialogDescription className="text-xs leading-relaxed">
             90 seconds · narrated · English captions. See the actual controls,
@@ -227,7 +227,7 @@ export default function WalkthroughDialog({
             <video
               ref={attachVideo}
               data-testid="walkthrough-video"
-              aria-label="Narrated Process Guide app walkthrough"
+              aria-label="Narrated Cueveris app walkthrough"
               className="aspect-video w-full object-contain"
               poster={`${MEDIA}-poster.jpg`}
               preload="none"

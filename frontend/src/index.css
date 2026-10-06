@@ -2,112 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Inter is bundled so every browser uses the same letterforms, without an external request. */
+@font-face {
+  font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url("./assets/fonts/inter-latin-variable.woff2") format("woff2");
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url("./assets/fonts/inter-latin-ext-variable.woff2") format("woff2");
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url("./assets/fonts/inter-cyrillic-variable.woff2") format("woff2");
+  unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
 @layer base {
   :root {
-    /* ── VirtaMed corporate light theme (matches the Connect portal) ──────────
-       Light gray page, white cards with soft shadows, petrol/teal primary,
-       dark-navy header (scoped via .theme-header below). */
-    --background: 200 25% 96%; /* light blue-gray page */
-    --foreground: 208 30% 14%; /* dark slate text */
-
-    --card: 0 0% 100%; /* white cards */
-    --card-foreground: 208 30% 14%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 208 30% 14%;
-
-    --primary: 189 82% 30%; /* VirtaMed teal (#0e7d8e) */
+    /* Cueveris: warm working surfaces, ink structure, one petrol accent. */
+    --background: 42 30% 96%;
+    --foreground: 205 36% 14%;
+    --card: 40 33% 99%;
+    --card-foreground: 205 36% 14%;
+    --popover: 40 33% 99%;
+    --popover-foreground: 205 36% 14%;
+    --primary: 184 65% 27%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 196 25% 93%;
-    --secondary-foreground: 208 30% 14%;
-
-    --muted: 200 20% 94%;
-    --muted-foreground: 206 12% 43%;
-
-    --accent: 189 70% 93%; /* light teal tint for hovers */
-    --accent-foreground: 189 82% 24%;
-
-    --destructive: 0 70% 46%;
+    --secondary: 40 18% 92%;
+    --secondary-foreground: 205 36% 14%;
+    --muted: 40 18% 93%;
+    --muted-foreground: 202 12% 39%;
+    --accent: 177 24% 91%;
+    --accent-foreground: 184 65% 23%;
+    --destructive: 9 62% 40%;
     --destructive-foreground: 0 0% 100%;
-
-    --success: 152 65% 32%;
+    --success: 154 52% 29%;
     --success-foreground: 0 0% 100%;
-
-    --warning: 33 92% 40%;
+    --warning: 34 83% 32%;
     --warning-foreground: 0 0% 100%;
-
-    --border: 205 20% 87%;
-    --input: 205 20% 84%;
-    --ring: 189 82% 30%;
-
-    --radius: 0.75rem; /* generous corporate rounding */
-
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 208 30% 14%;
-    --sidebar-primary: 189 82% 30%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 200 20% 94%;
-    --sidebar-accent-foreground: 208 30% 14%;
-    --sidebar-border: 205 20% 87%;
-    --sidebar-ring: 189 82% 30%;
+    --border: 40 12% 82%;
+    --input: 40 12% 74%;
+    --ring: 184 65% 27%;
+    --ink: 205 36% 14%;
+    --ink-foreground: 42 30% 96%;
+    --ink-muted: 194 18% 74%;
+    --radius: 0.625rem;
+    --radius-control: 0.375rem;
+    --radius-surface: 0.625rem;
+    --sidebar-background: var(--card);
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--accent);
+    --sidebar-accent-foreground: var(--accent-foreground);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
   }
 
-  /* ── Dark-navy header island (the Connect portal's top bar) ────────────────
-     Scoped variable override: everything inside the TopBar keeps using the
-     normal token classes (bg-card, text-foreground, border-border …) but they
-     resolve to the corporate navy palette. Portaled dropdown panels still use
-     the light :root tokens — same as the company site. */
-  .theme-header {
-    --background: 204 55% 9%; /* #0a1c29 navy */
-    --foreground: 200 20% 96%;
-    --card: 204 55% 9%;
-    --card-foreground: 200 20% 96%;
-    --muted: 204 40% 16%;
-    --muted-foreground: 204 15% 68%;
-    --secondary: 204 40% 16%;
-    --secondary-foreground: 200 20% 96%;
-    --accent: 189 82% 30%;
-    --accent-foreground: 0 0% 100%;
-    --primary: 189 82% 34%; /* teal "active pill" like the Cockpit tab */
-    --primary-foreground: 0 0% 100%;
-    --border: 204 30% 20%;
-    --input: 204 30% 24%;
-    --destructive: 0 75% 58%;
-    --destructive-foreground: 0 0% 100%;
-    --success: 150 55% 50%;
-    --success-foreground: 204 55% 9%;
-    --warning: 40 90% 58%;
-    --warning-foreground: 204 55% 9%;
-    --ring: 189 82% 45%;
-  }
-
-  /* ── Optional dark clinical theme (Settings → Dark theme) ─────────────────
-     The previous Catppuccin palette, kept for OR/low-light use. */
   .dark {
-    --background: 232 19% 15%;
-    --foreground: 226 64% 88%;
-    --card: 234 18% 12%;
-    --card-foreground: 226 64% 88%;
-    --popover: 234 18% 12%;
-    --popover-foreground: 226 64% 88%;
-    --primary: 217 92% 76%;
-    --primary-foreground: 232 19% 12%;
-    --secondary: 232 16% 22%;
-    --secondary-foreground: 226 64% 88%;
-    --muted: 232 16% 20%;
-    --muted-foreground: 230 10% 60%;
-    --accent: 217 92% 76%;
-    --accent-foreground: 232 19% 12%;
-    --destructive: 343 81% 75%;
-    --destructive-foreground: 232 19% 12%;
-    --success: 115 54% 76%;
-    --success-foreground: 232 19% 12%;
-    --warning: 41 86% 83%;
-    --warning-foreground: 232 19% 12%;
-    --border: 234 13% 23%;
-    --input: 234 13% 23%;
-    --ring: 217 92% 76%;
+    --background: 205 30% 10%;
+    --foreground: 42 25% 94%;
+    --card: 205 28% 13%;
+    --card-foreground: 42 25% 94%;
+    --popover: 205 28% 13%;
+    --popover-foreground: 42 25% 94%;
+    --primary: 177 43% 64%;
+    --primary-foreground: 205 36% 10%;
+    --secondary: 205 22% 19%;
+    --secondary-foreground: 42 25% 94%;
+    --muted: 205 22% 18%;
+    --muted-foreground: 194 13% 70%;
+    --accent: 185 28% 22%;
+    --accent-foreground: 177 43% 78%;
+    --destructive: 9 72% 72%;
+    --destructive-foreground: 205 36% 10%;
+    --success: 154 43% 66%;
+    --success-foreground: 205 36% 10%;
+    --warning: 36 70% 65%;
+    --warning-foreground: 205 36% 10%;
+    --border: 205 17% 28%;
+    --input: 205 17% 39%;
+    --ring: 177 43% 64%;
+  }
+
+  /* The video workspace has a stable ink header in either appearance. */
+  .theme-header {
+    --background: var(--ink);
+    --foreground: var(--ink-foreground);
+    --card: var(--ink);
+    --card-foreground: var(--ink-foreground);
+    --muted: 205 26% 20%;
+    --muted-foreground: var(--ink-muted);
+    --secondary: 205 26% 20%;
+    --secondary-foreground: var(--ink-foreground);
+    --accent: 185 28% 25%;
+    --accent-foreground: var(--ink-foreground);
+    --primary: 177 43% 64%;
+    --primary-foreground: 205 36% 10%;
+    --border: 205 22% 32%;
+    --input: 205 22% 40%;
+    --destructive: 9 72% 72%;
+    --destructive-foreground: 205 36% 10%;
+    --success: 154 43% 66%;
+    --success-foreground: 205 36% 10%;
+    --warning: 36 70% 65%;
+    --warning-foreground: 205 36% 10%;
+    --ring: 177 43% 64%;
   }
 }
 
@@ -117,7 +119,7 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: "Inter", system-ui, sans-serif;
+    font-optical-sizing: auto;
   }
 }
 
@@ -134,11 +136,11 @@
     background: transparent;
   }
 
-  /* Soft corporate card shadow (heavier in dark mode). */
+  /* Elevation is reserved for floating guidance and dialogs. */
   .shadow-elevated {
     box-shadow:
-      0 10px 32px -8px hsl(206 35% 25% / 0.18),
-      0 2px 8px hsl(206 35% 25% / 0.08);
+      0 10px 32px -8px hsl(var(--ink) / 0.12),
+      0 2px 8px hsl(var(--ink) / 0.05);
   }
   .dark .shadow-elevated {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
@@ -197,18 +199,10 @@ body,
 #root {
   height: 100%;
 }
-body {
-  font-family:
-    Inter,
-    ui-sans-serif,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-}
+
 .workspace-tabs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(68px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   flex-shrink: 0;
   gap: 2px;
 }
@@ -534,7 +528,7 @@ body {
     bottom: 78px !important;
   }
   .guidance-mobile .observation-time {
-    font-size: 9px;
+    font-size: 12px;
   }
 }
 
@@ -709,4 +703,26 @@ body {
 .app-dialog.workspace-account-dialog { padding: 0; }
 body:has(.workspace-professional-dialog[data-state="open"]) [data-sonner-toaster] {
   z-index: 40 !important;
+}
+
+/* Shared Cueveris workspace details; touch layout and resizing remain independent. */
+.brand-wordmark { font-size: 19px; font-weight: 620; letter-spacing: -.055em; line-height: 1.2; }
+.brand-tagline { font-size: 11px; letter-spacing: .01em; margin-top: 3px; }
+.brand-mark { border-radius: var(--radius-control); }
+.workspace-header { min-height: 72px; }
+.workspace-tabs { background: transparent; border-bottom: 1px solid hsl(var(--border)); border-radius: 0; padding: 0 0 5px; gap: 3px; }
+.workspace-tabs > button { border-radius: var(--radius-control); min-height: 34px; color: hsl(var(--muted-foreground)); font-weight: 500; }
+.workspace-tabs > button[data-state="active"] { background: hsl(var(--accent)); color: hsl(var(--accent-foreground)); box-shadow: inset 0 -2px hsl(var(--primary)); }
+.workspace-tabs > button:hover { color: hsl(var(--foreground)); }
+.workspace-tabs > button:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+.workspace-guidance article[data-testid^="step-"] { border-radius: var(--radius-control); }
+.workspace-guidance article[data-testid^="step-"] > button > span:first-child { border-radius: var(--radius-control); font-variant-numeric: tabular-nums; }
+.guidance-banner { background: hsl(var(--card)); backdrop-filter: none; border-radius: var(--radius-surface); border-left: 3px solid hsl(var(--primary)); }
+.guidance-banner .observation-time { font-size: 12px; font-variant-numeric: tabular-nums; }
+.guidance-resize-handle { border-radius: var(--radius-control); }
+@media (max-width: 767px) {
+  .workspace-header { min-height: 60px; }
+  .workspace-header .brand-wordmark { font-size: 16px; }
+  .guidance-mobile { border-radius: 0; }
+  .workspace-tabs > button { min-height: 40px; }
 }
