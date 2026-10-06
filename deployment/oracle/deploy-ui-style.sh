@@ -107,7 +107,10 @@ docker exec "$container" node --input-type=module -e '
   const health = await (await fetch("http://127.0.0.1:8101/api/health")).json();
   assert.equal(health.ok, true); assert.equal(health.mock, false); assert.equal(health.providers.openai, true);
   const servers = fs.readdirSync("/proc").filter(id => /^\d+$/.test(id)).filter(id => {
-    try { return fs.readFileSync(`/proc/${id}/cmdline`, "utf8").split("\0").includes("dist/server.js"); } catch { return false; }
+    try {
+      const command = fs.readFileSync(`/proc/${id}/cmdline`, "utf8").split("\0");
+      return /(?:^|\/)node$/.test(command[0] || "") && command.includes("dist/server.js");
+    } catch { return false; }
   });
   assert.equal(servers.length, 1);
   assert.equal(/^Uid:\s+(\d+)/m.exec(fs.readFileSync(`/proc/${servers[0]}/status`, "utf8"))?.[1], "1000");
