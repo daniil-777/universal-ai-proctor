@@ -58,6 +58,22 @@ ssh -i "$ssh_key" ubuntu@140.238.175.209 \
   "sudo sh /tmp/deploy-cueveris-ui-style.sh deploy /tmp/cueveris-ui-release.tar.gz '$release_sha256'"
 ```
 
+The optional fourth argument is the explicitly expected active image ID, in
+`sha256:` plus 64 lowercase hexadecimal digits format. It defaults to the frozen
+original Cueveris image. For a follow-up design release, read the current app's
+immutable image ID immediately before deployment and pass it explicitly:
+
+```sh
+expected_active_image_id=$(ssh -i "$ssh_key" ubuntu@140.238.175.209 \
+  'sudo docker inspect process-guide-oracle-app-1 --format "{{.Image}}"')
+ssh -i "$ssh_key" ubuntu@140.238.175.209 \
+  "sudo sh /tmp/deploy-cueveris-ui-style.sh deploy /tmp/cueveris-ui-release.tar.gz '$release_sha256' '$expected_active_image_id'"
+```
+
+Activation requires that exact expected image or the already-built new image.
+A different active image stops activation before changing the running app,
+rollback tag or deployment overrides, preserving concurrent production work.
+
 The script saves the exact running image under
 `process-guide:oracle-ui-before-design-20261006`, writes an image-only rollback
 override, then recreates only `app`. It preserves all volume mounts and leaves

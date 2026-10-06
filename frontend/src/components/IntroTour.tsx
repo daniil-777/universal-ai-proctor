@@ -103,7 +103,7 @@ export function IntroTour({ paused = false }: { paused?: boolean }) {
           Footage & credits
         </a>
         <WalkthroughLauncher
-          className="w-full rounded-lg text-xs"
+          className="w-full rounded-md text-xs"
           onOpen={() => video.current?.pause()}
         />
         <p className="text-center text-[11px] text-muted-foreground">

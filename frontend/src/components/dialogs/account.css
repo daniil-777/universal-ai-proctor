@@ -2,6 +2,21 @@
 .workspace-account-dialog {
   border-radius: var(--radius-surface, 10px);
 }
+
+/* Preserve reading room when users enlarge type on the narrowest screens. */
+@media (max-width: 639px) {
+  .account-content-scroll > .account-dialog-body { padding: 16px; }
+  .account-auth-form { padding: 20px; }
+}
+.account-content-scroll {
+  display: contents;
+}
+.app-dialog.workspace-account-dialog > .account-content-scroll {
+  padding-inline-end: 0;
+}
+.account-dialog-body h3 {
+  overflow-wrap: anywhere;
+}
 .workspace-account-dialog .rounded-2xl,
 .workspace-account-dialog .rounded-xl {
   border-radius: var(--radius-surface, 10px);
@@ -39,4 +54,34 @@
 .workspace-account-dialog .account-panel-action:hover {
   background: hsl(var(--ink-foreground) / .1);
   color: hsl(var(--ink-foreground));
+}
+
+/* Enlarged text must not let fixed introductory copy consume the form viewport. */
+@media (max-width: 767px) {
+  .account-content-scroll {
+    display: block;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scroll-padding-block: 56px 20px;
+  }
+  .account-content-scroll > .account-dialog-body {
+    overflow-y: visible;
+  }
+  .account-auth-modes {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+  }
+  .account-auth-modes button {
+    height: auto;
+    min-height: 44px;
+    padding-inline: 12px;
+    white-space: normal;
+    line-height: 1.5;
+  }
+  .workspace-account-dialog > .dialog-close {
+    z-index: 1;
+    background: hsl(var(--card));
+    opacity: 1;
+  }
 }

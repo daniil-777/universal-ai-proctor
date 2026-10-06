@@ -34,7 +34,7 @@ export function GuidanceGoals({ compact = false }: { compact?: boolean }) {
   };
   return <Dialog open={open} onOpenChange={changeOpen}>
     <DialogTrigger asChild>
-      <Button variant="outline" size={compact ? "icon" : "default"} className={compact ? "h-11 w-11 relative" : "h-11 gap-2 rounded-xl"} aria-label="Guidance goals" title="Guidance goals">
+      <Button variant="outline" size={compact ? "icon" : "default"} className={compact ? "h-11 w-11 relative" : "h-11 gap-2 rounded-md"} aria-label="Guidance goals" title="Guidance goals">
         <Target className="h-4 w-4" />{!compact && "Guidance goals"}
         {a.operatorGoals && (compact ? <span aria-hidden="true" className="absolute top-1.5 right-1.5 h-1.5 w-1.5 rounded-full bg-primary" /> : <Check className="h-3.5 w-3.5" />)}
       </Button>
@@ -42,14 +42,14 @@ export function GuidanceGoals({ compact = false }: { compact?: boolean }) {
     <DialogContent className="sm:max-w-xl">
       <DialogHeader>
         <div className="h-11 w-11 grid place-items-center rounded-xl bg-primary/10 text-primary mb-2"><Target className="h-5 w-5" /></div>
-        <DialogTitle>What would you like AI Proctor to do?</DialogTitle>
+        <DialogTitle>What should your guide focus on?</DialogTitle>
         <DialogDescription>Tell your guide what to focus on, how to explain it, or which language to use.</DialogDescription>
       </DialogHeader>
       <div className="space-y-3">
         <Label htmlFor={id}>Your wishes for this session</Label>
         <Textarea id={id} value={draft} onChange={e => setDraft(e.target.value)} maxLength={2000} disabled={busy || !a.preferencesReady} rows={6} className="resize-y min-h-36 text-base leading-relaxed" placeholder="For example: explain each action in simple English, highlight missed checks, and tell me what evidence you can see." aria-describedby={`${id}-hint ${id}-count`} />
         <div className="flex justify-between gap-3 text-xs text-muted-foreground"><span id={`${id}-hint`}>Optional. Leave empty to use standard guidance.</span><span id={`${id}-count`} className="shrink-0" aria-live="polite">{draft.length} / 2,000</span></div>
-        <div className="flex flex-wrap gap-2" aria-label="Suggested goals">{suggestions.map(s => <button key={s} type="button" disabled={busy || !a.preferencesReady} className="min-h-11 rounded-xl border px-3 py-2 text-left text-xs hover:bg-muted disabled:opacity-50" onClick={() => setDraft(d => `${d.trim()}${d.trim() ? "\n" : ""}${s}`.slice(0, 2000))}>{s}</button>)}</div>
+        <div className="flex flex-wrap gap-2" aria-label="Suggested goals">{suggestions.map(s => <button key={s} type="button" disabled={busy || !a.preferencesReady} className="min-h-11 rounded-md border px-3 py-2 text-left text-xs hover:bg-muted disabled:opacity-50" onClick={() => setDraft(d => `${d.trim()}${d.trim() ? "\n" : ""}${s}`.slice(0, 2000))}>{s}</button>)}</div>
         <p className="rounded-xl bg-muted p-3 text-xs leading-relaxed text-muted-foreground">Your wishes shape Guardian guidance and answers for this session. Steps and principles still follow your document; progress needs visible evidence.</p>
         {(error || a.preferencesError) && <div role="alert" className="text-sm text-destructive">{error || a.preferencesError}<Button variant="outline" className="ml-2 h-11" disabled={busy} onClick={async () => { const saved = await a.refreshPreferences(); if (saved) { setDraftRevision(saved.preferences_revision); setError(null); } }}>Reload saved goals</Button></div>}
         {!a.preferencesReady && !a.preferencesError && <p role="status" className="text-sm text-muted-foreground">Loading your session goals…</p>}

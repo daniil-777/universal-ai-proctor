@@ -40,11 +40,18 @@ if [ "$action" = rollback ]; then
   exit 0
 fi
 if [ "$action" != build ] && [ "$action" != deploy ]; then
-  echo 'Usage: deploy-ui-style.sh build|deploy ARCHIVE SHA256; or deploy-ui-style.sh rollback' >&2
+  echo 'Usage: deploy-ui-style.sh build|deploy ARCHIVE SHA256 [EXPECTED_ACTIVE_IMAGE_ID]; or deploy-ui-style.sh rollback' >&2
   exit 2
 fi
 archive=${2:?Provide the release archive}
 expected_sha=${3:?Provide the expected archive SHA256}
+expected_active_image_id=${4:-sha256:9d7a907975af43b7d12a28a67989e66fe95cf0567a8e6bd2e56ee0a288673554}
+case "$expected_active_image_id" in
+  sha256:*) expected_image_digest=${expected_active_image_id#sha256:} ;;
+  *) echo 'Invalid expected active image ID; use sha256 followed by 64 lowercase hexadecimal digits.' >&2; exit 2 ;;
+esac
+case "$expected_image_digest" in *[!0-9a-f]*|'') echo 'Invalid expected active image ID.' >&2; exit 2 ;; esac
+test "${#expected_image_digest}" -eq 64
 case "$expected_sha" in *[!0-9a-f]*|'') echo 'Invalid SHA256.' >&2; exit 2 ;; esac
 test "${#expected_sha}" -eq 64
 test -f "$archive"
@@ -71,9 +78,8 @@ fi
 
 new_image_id=$(docker image inspect "$release_image" --format '{{.Id}}')
 active_image_id=$(docker inspect "$container" --format '{{.Image}}')
-expected_base_image_id=sha256:9d7a907975af43b7d12a28a67989e66fe95cf0567a8e6bd2e56ee0a288673554
-if [ "$active_image_id" != "$expected_base_image_id" ] && [ "$active_image_id" != "$new_image_id" ]; then
-  echo 'Production changed concurrently. The active app is neither the verified Cueveris base nor this release; activation stopped before changing tags or overrides.' >&2
+if [ "$active_image_id" != "$expected_active_image_id" ] && [ "$active_image_id" != "$new_image_id" ]; then
+  echo 'Production changed concurrently. The active app is neither the explicitly expected image nor this release; activation stopped before changing the app, rollback tag or overrides.' >&2
   exit 1
 fi
 if [ "$active_image_id" != "$new_image_id" ]; then

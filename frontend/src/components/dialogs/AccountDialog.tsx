@@ -388,6 +388,7 @@ export default function AccountDialog() {
         </Button>
       </DialogTrigger>
       <DialogContent className="workspace-professional-dialog workspace-account-dialog flex max-w-4xl max-h-[90dvh] flex-col overflow-hidden gap-0 p-0 sm:rounded-2xl">
+        <div className="account-content-scroll">
         <DialogHeader className="shrink-0 border-b bg-card px-4 py-5 text-left sm:px-6">
           <p className="mb-1 text-xs font-semibold uppercase tracking-[.18em] text-primary">
             Cueveris / Personal workspace
@@ -407,7 +408,7 @@ export default function AccountDialog() {
             ? "Your saved results are held by this app’s server and available when you sign in on another device."
             : "Accounts are saved on this computer’s app server. Online access across devices becomes available when this app is hosted."}
         </div>
-        <div className="min-h-0 space-y-5 overflow-y-auto p-4 scrollbar-thin sm:space-y-6 sm:p-6">
+        <div className="account-dialog-body min-h-0 space-y-5 overflow-y-auto p-4 scrollbar-thin sm:space-y-6 sm:p-6">
           {error && (
             <p
               role="alert"
@@ -448,7 +449,7 @@ export default function AccountDialog() {
                 </div>
               </aside>
               <form
-                className="space-y-5 p-5 sm:p-7"
+                className="account-auth-form space-y-5 p-5 sm:p-7"
                 onSubmit={(e) => {
                   e.preventDefault();
                   void run(async () => {
@@ -474,7 +475,7 @@ export default function AccountDialog() {
                       : "Sign in to review your saved process results."}
                   </p>
                 </div>
-                <div className="grid grid-cols-2 rounded-xl border bg-muted/50 p-1 gap-1">
+                <div className="account-auth-modes grid grid-cols-2 rounded-xl border bg-muted/50 p-1 gap-1">
                   <Button
                     type="button"
                     variant="ghost"
@@ -964,6 +965,7 @@ export default function AccountDialog() {
               </details>
             </>
           )}
+        </div>
         </div>
       </DialogContent>
     </Dialog>
