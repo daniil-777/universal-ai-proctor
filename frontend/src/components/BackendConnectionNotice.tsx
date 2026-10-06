@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CheckCircle2, Loader2, Plug } from "lucide-react";
 import { useApp } from "@/lib/store";
 import { apiJson } from "@/lib/api";
@@ -14,6 +14,15 @@ export function BackendConnectionNotice() {
   const [address, setAddress] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  useEffect(() => {
+    const openConnection = () => {
+      setAddress(a.apiBase === window.location.origin ? "" : a.apiBase);
+      setError("");
+      setOpen(true);
+    };
+    window.addEventListener("guidance-connect-backend", openConnection);
+    return () => window.removeEventListener("guidance-connect-backend", openConnection);
+  }, [a.apiBase]);
   if (!isStaticHosting()) return null;
   const connected = a.health?.ok === true;
   const fullApp = fullAppUrl();

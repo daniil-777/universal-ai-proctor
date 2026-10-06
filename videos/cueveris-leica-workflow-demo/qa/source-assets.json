@@ -1,0 +1,57 @@
+[
+  {
+    "file": "public/demo-data.json",
+    "bytes": 4087,
+    "sha256": "6907cbb875f0b50d87b493a9e0e4fa1cdbc2cddac5c105af7469fecb166deb1e"
+  },
+  {
+    "file": "public/six-checkpoints-panel.png",
+    "bytes": 83732,
+    "sha256": "ceceb09e2470fe880bc15eb0a1f943d449e00a67bfa2ef51431cb938d2a3114f"
+  },
+  {
+    "file": "public/study-header-panel.png",
+    "bytes": 39122,
+    "sha256": "c052c9fdc80d291e2685f10461ae8af9c20b393fa4996c6db9b889e10ac2fe5f"
+  },
+  {
+    "file": "public/inter.ttf",
+    "bytes": 876576,
+    "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+  },
+  {
+    "file": "public/INTER-LICENSE.txt",
+    "bytes": 4380,
+    "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+  },
+  {
+    "file": "public/mechanics-qa-panel.png",
+    "bytes": 35404,
+    "sha256": "bf6f4099a10fff1333b9a9196509c23668b1c0f1a3b0e6ea24c9be4f02ec0dd6"
+  },
+  {
+    "file": "public/voice-mechanics.mp3",
+    "bytes": 183168,
+    "sha256": "537cb9421b58dba8f279c1b4cc8ffa3f88139b6db1976dc5b9b0e59dd9669b85"
+  },
+  {
+    "file": "public/sensor-qa-panel.png",
+    "bytes": 33818,
+    "sha256": "f11e0b261aeb5ce76acfc3954529fed232d7497843a767b7d314b38c37501cf3"
+  },
+  {
+    "file": "public/voice-sensor.mp3",
+    "bytes": 137088,
+    "sha256": "c4414c7ed0cf8d0870e105debc5078af3f1c9ef548fa7a04c48cb1f1d439b85b"
+  },
+  {
+    "file": "public/closure-qa-panel.png",
+    "bytes": 24684,
+    "sha256": "70d4d60569ef16dee01ab41183c85dfe2fc920853a4e53a003383a01210b6670"
+  },
+  {
+    "file": "public/voice-closure.mp3",
+    "bytes": 168960,
+    "sha256": "cdbf0c7d088da8d2931adf0d43ca298f3ad8f705f9b3defcb06ee329a5695feb"
+  }
+]

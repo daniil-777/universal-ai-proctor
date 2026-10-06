@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-06T14:31:37.594Z",
+  "reviewers": [
+    "Root final rendered-frame and seven-scene contact-sheet review",
+    "Video agent final rendered-frame review"
+  ],
+  "reviewed_mp4_sha256": "c20b7f4b7c906093192f98a4dca82ca8a4f27f91f98dd158edd1724466327f12",
+  "checks": [
+    "Corrected clipped text overlap removed from all question scenes",
+    "All seven scenes reviewed for legibility and composition",
+    "Exact genuine app answers and labelled spoken excerpts retained",
+    "Reference-only document questions clearly labelled; no source film pixels or audio",
+    "Six original checkpoints shown with 0/6 confirmed and zero visual analyses",
+    "Authentic closure chat crop retained; full answer shown separately outside UI",
+    "Authentic six-checkpoint toast retained; six exact stage titles listed separately"
+  ]
+}

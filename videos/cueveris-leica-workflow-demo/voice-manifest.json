@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "release": "v1.0.1-leica-study-20261006",
+  "assets": [
+    {
+      "name": "537cb9421b58-voice-mechanics.mp3",
+      "sha256": "537cb9421b58dba8f279c1b4cc8ffa3f88139b6db1976dc5b9b0e59dd9669b85",
+      "size": 183168,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.1-leica-study-20261006/537cb9421b58-voice-mechanics.mp3",
+      "targets": [
+        {
+          "path": "videos/cueveris-leica-workflow-demo/public/voice-mechanics.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "c4414c7ed0cf-voice-sensor.mp3",
+      "sha256": "c4414c7ed0cf8d0870e105debc5078af3f1c9ef548fa7a04c48cb1f1d439b85b",
+      "size": 137088,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.1-leica-study-20261006/c4414c7ed0cf-voice-sensor.mp3",
+      "targets": [
+        {
+          "path": "videos/cueveris-leica-workflow-demo/public/voice-sensor.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cdbf0c7d088d-voice-closure.mp3",
+      "sha256": "cdbf0c7d088da8d2931adf0d43ca298f3ad8f705f9b3defcb06ee329a5695feb",
+      "size": 168960,
+      "url": "https://github.com/daniil-777/universal-ai-proctor/releases/download/v1.0.1-leica-study-20261006/cdbf0c7d088d-voice-closure.mp3",
+      "targets": [
+        {
+          "path": "videos/cueveris-leica-workflow-demo/public/voice-closure.mp3",
+          "groups": [
+            "sources"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -83,6 +83,23 @@ describe("answer and benchmark contracts", () => {
     expect(inputs.at(-1)?.prompt).toContain("Keep necessary cautions, uncertainty, numbers");
     expect(inputs.at(-1)?.prompt).toContain("without greetings, headings, Markdown or lists");
   });
+  it("explains the reference without images while preserving unconfirmed progress", async () => {
+    const before = (await request("GET", "/api/workflow")).json();
+    inputs.length = 0;
+    const response = await request("POST", "/api/llm/ask", {
+      ...body,
+      frames_b64: [],
+      frame_times_s: [],
+      question: "Which documented cues should I look for?",
+    });
+    expect(response.statusCode).toBe(200);
+    expect(response.json().used_frames).toBe(0);
+    expect(inputs[0].frames).toHaveLength(0);
+    expect(inputs[0].systemPrompt).toContain("explaining what to look for does not require seeing the current work");
+    expect(inputs[0].prompt).toContain("lack of images does not prevent document guidance");
+    expect(inputs[0].prompt).toContain("Tool visibly on table");
+    expect((await request("GET", "/api/workflow")).json()).toEqual(before);
+  });
   it("rejects obsolete source and workflow requests for questions and comparisons", async () => {
     for (const url of ["/api/llm/ask", "/api/llm/ask/stream", "/api/compare"]) {
       const extra =

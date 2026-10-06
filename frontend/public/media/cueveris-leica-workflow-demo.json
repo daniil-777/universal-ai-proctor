@@ -1,0 +1,120 @@
+{
+  "title": "Cueveris — Leica M10 guided film study",
+  "duration_seconds": 63,
+  "width": 1440,
+  "height": 900,
+  "fps": 30,
+  "asset": "/media/cueveris-leica-workflow-demo.mp4",
+  "poster": "/media/cueveris-leica-workflow-demo.jpg",
+  "captions": "/media/cueveris-leica-workflow-demo.vtt",
+  "mode": "Document-based reference questions + original guide; text-only app answers and app-generated voice",
+  "visual_analysis_calls": 0,
+  "image_frames_submitted": 0,
+  "manual_confirmations": 0,
+  "confirmed_steps": 0,
+  "guide_steps": 6,
+  "selected_questions": 3,
+  "source_film": {
+    "title": "A masterpiece in the making – your Leica M10.",
+    "publisher": "Leica Camera",
+    "url": "https://www.youtube.com/watch?v=p4t-OVIvuy8",
+    "usage": "Official source film remains separately embedded on the webpage. No source pixels, extracted frames, thumbnails, film audio or downloaded stream are included in this movie.",
+    "affiliation": "Independent guided study. Leica Camera does not endorse Cueveris."
+  },
+  "UI_and_document": "Original Cueveris product interface and observation guide",
+  "guide_filename": "leica-m10-guidance.txt",
+  "guide_digest": "f071c347817460e092e0cbde750e56629b99226e324b56f6f06146af17f1a83a",
+  "capture_date": "2026-10-06T14:19:14.366Z",
+  "voice": "AI-generated app speech, using the exact labelled response excerpts. Same production endpoint and identical text were retried where browser instrumentation did not expose the original response body.",
+  "font": {
+    "name": "Inter",
+    "license": "SIL Open Font License 1.1",
+    "license_file": "public/INTER-LICENSE.txt"
+  },
+  "source_assets": [
+    {
+      "file": "public/demo-data.json",
+      "bytes": 4087,
+      "sha256": "6907cbb875f0b50d87b493a9e0e4fa1cdbc2cddac5c105af7469fecb166deb1e"
+    },
+    {
+      "file": "public/six-checkpoints-panel.png",
+      "bytes": 83732,
+      "sha256": "ceceb09e2470fe880bc15eb0a1f943d449e00a67bfa2ef51431cb938d2a3114f"
+    },
+    {
+      "file": "public/study-header-panel.png",
+      "bytes": 39122,
+      "sha256": "c052c9fdc80d291e2685f10461ae8af9c20b393fa4996c6db9b889e10ac2fe5f"
+    },
+    {
+      "file": "public/inter.ttf",
+      "bytes": 876576,
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+    },
+    {
+      "file": "public/INTER-LICENSE.txt",
+      "bytes": 4380,
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+    },
+    {
+      "file": "public/mechanics-qa-panel.png",
+      "bytes": 35404,
+      "sha256": "bf6f4099a10fff1333b9a9196509c23668b1c0f1a3b0e6ea24c9be4f02ec0dd6"
+    },
+    {
+      "file": "public/voice-mechanics.mp3",
+      "bytes": 183168,
+      "sha256": "537cb9421b58dba8f279c1b4cc8ffa3f88139b6db1976dc5b9b0e59dd9669b85"
+    },
+    {
+      "file": "public/sensor-qa-panel.png",
+      "bytes": 33818,
+      "sha256": "f11e0b261aeb5ce76acfc3954529fed232d7497843a767b7d314b38c37501cf3"
+    },
+    {
+      "file": "public/voice-sensor.mp3",
+      "bytes": 137088,
+      "sha256": "c4414c7ed0cf8d0870e105debc5078af3f1c9ef548fa7a04c48cb1f1d439b85b"
+    },
+    {
+      "file": "public/closure-qa-panel.png",
+      "bytes": 24684,
+      "sha256": "70d4d60569ef16dee01ab41183c85dfe2fc920853a4e53a003383a01210b6670"
+    },
+    {
+      "file": "public/voice-closure.mp3",
+      "bytes": 168960,
+      "sha256": "cdbf0c7d088da8d2931adf0d43ca298f3ad8f705f9b3defcb06ee329a5695feb"
+    }
+  ],
+  "questions": [
+    {
+      "key": "mechanics",
+      "question": "Reference-only question for the Leica M10 film study: which two visible cues distinguish camera-body mechanical assembly? Give a short answer from the guide.",
+      "answer": "The cues to distinguish camera-body mechanical assembly are the visibility of an open camera body or a mechanical subassembly and observation of hands or a tool acting on that assembly. Since no visual observation is available, confirmation of these cues is not possible.",
+      "spoken_text": "The cues to distinguish camera-body mechanical assembly are the visibility of an open camera body or a mechanical subassembly and observation of hands or a tool acting on that assembly.",
+      "spoken_excerpt": true,
+      "voice_seconds": 11.448,
+      "guide_reference": "S1 · mechanical assembly"
+    },
+    {
+      "key": "sensor",
+      "question": "Reference-only question for the Leica M10 film study: what does the sensor-handling stage ask me to observe, and what remains unverified? Give a short answer from the guide.",
+      "answer": "The sensor-handling stage asks you to observe the close handling or examination of an exposed sensor-like rectangular optical surface. Currently, it remains unverified whether the surface, hands, or implements are visibly present during the action.",
+      "spoken_text": "The sensor-handling stage asks you to observe the close handling or examination of an exposed sensor-like rectangular optical surface.",
+      "spoken_excerpt": true,
+      "voice_seconds": 8.568,
+      "guide_reference": "S3 · sensor-surface handling"
+    },
+    {
+      "key": "closure",
+      "question": "Reference-only question for the Leica M10 film study: what enclosure-closure evidence should I look for, and does fitting the cover prove the camera works? Give a short answer from the guide.",
+      "answer": "For the enclosure closure, look for the visible alignment and fitting of a shell or plate onto the partly assembled camera body, and ensure it covers previously exposed internals. Fitting the cover alone does not prove the camera functions correctly.",
+      "spoken_text": "For the enclosure closure, look for the visible alignment and fitting of a shell or plate onto the partly assembled camera body, and ensure it covers previously exposed internals.",
+      "spoken_excerpt": true,
+      "voice_seconds": 10.56,
+      "guide_reference": "S5 · enclosure closure"
+    }
+  ]
+}

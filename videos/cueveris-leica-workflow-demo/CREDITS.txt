@@ -1,0 +1,13 @@
+CUEVERIS — LEICA M10 GUIDED FILM STUDY
+
+This movie contains the original Cueveris interface, an original six-step observation guide, genuine production-app text answers and app-generated spoken answer excerpts. The examples are document-based reference questions, not claims that an operator actually observed film scenes. No Leica film images are submitted for visual analysis; no Leica pixels, frames, thumbnails, film audio or downloaded video are incorporated. The film does not demonstrate automated recognition of Leica footage, factory inspection, hidden tolerance checks or a passed camera. Six steps remain unconfirmed.
+
+Official viewing reference: A masterpiece in the making – your Leica M10., published by Leica Camera.
+https://www.youtube.com/watch?v=p4t-OVIvuy8
+The untouched official player remains separately available on the webpage. Independent study; no Leica affiliation or endorsement.
+
+Voice: AI-generated product speech from the actual app's production speech endpoint. Complete-sentence answer excerpts are labelled. Where browser instrumentation returned no response bytes, the same production endpoint generated an identical-text retry; this provenance is preserved in the project's capture audit. No music or Leica film audio.
+
+Typeface: Inter, SIL Open Font License 1.1; see public/INTER-LICENSE.txt in the editable project. Product UI, guide and film composition: Cueveris project.
+
+Editable source: guidance-app/videos/cueveris-leica-workflow-demo. Rendering makes no model calls. Companion JSON includes exact questions, answers, speech text, source-asset hashes and guide provenance.

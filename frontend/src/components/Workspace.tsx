@@ -4,6 +4,7 @@ import { X } from "lucide-react";
 import { TopBar } from "@/components/TopBar";
 import { LeftRail } from "@/components/LeftRail";
 import { VideoStage } from "@/components/VideoStage";
+import { LeicaWorkspaceReference } from "@/components/LeicaWorkspaceReference";
 import { RightRail } from "@/components/RightRail";
 import { ChatDock } from "@/components/ChatDock";
 import { DeveloperCredit } from "@/components/DeveloperCredit";
@@ -106,7 +107,10 @@ export default function Workspace() {
           defaultSize={55}
           minSize={30}
         >
-          <VideoStage />
+          <div className="flex h-full min-h-0 flex-col">
+            <LeicaWorkspaceReference />
+            <div className="flex-1 min-h-0"><VideoStage /></div>
+          </div>
         </ResizablePanel>
         <ResizableHandle withHandle className="workspace-divider" />
         <ResizablePanel

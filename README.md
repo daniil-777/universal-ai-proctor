@@ -35,6 +35,8 @@ Provider keys remain in the ignored `backend/.env`; they are never sent to the b
 
 ## Use
 
+Choose **Use Leica guidance** to load the original six-checkpoint M10 observation guide. Watch the official film and ask text or voice questions against the guide. **Voice answers** speaks typed replies; **Listen** supports questions beginning with “Hey” or “Hi” in supported browsers. The guide describes broad activities, not verified film timestamps or Leica work instructions. Automatic visual checks require a source you have permission to process. Text questions alone do not confirm stages.
+
 1. Choose **Uncomplicated cholecystectomy — Original default** in the sample-video menu, upload a video, connect a camera, or share a screen. The original surgical sample automatically loads its unchanged `Cholecystectomy.txt`; it does not activate simulator telemetry.
 2. Optionally add a TXT, Markdown, CSV, or TSV process document. Its actions, tools, completion criteria, and principles become editable steps on the right immediately. The original seven TXT files are preserved byte-for-byte in `guidance-library/`; a coffee example demonstrates a non-surgical process.
 3. Open the workspace and start guidance. Without a document, the app proposes a **provisional**, editable visual workflow. A video overview helps discover its sequence; those overview images do not count as current progress evidence.
@@ -83,9 +85,9 @@ Drag desktop panel dividers to resize the layout. Drag the guidance area’s gri
 
 The simulator tile is intentionally a placeholder. `backend/src/integrations/simulator.ts` defines the adapter boundary for later telemetry development; current guidance does not depend on simulator data.
 
-The intro offers a silent 20-second quick tour (178 KB, downloaded only on Play), a written quick-start guide, and a theme toggle. Choose a source, optionally add instructions, then open the workspace. The public sample library is cached between setup and the source drawer; a visible retry handles load failures. Tutorial source and reproduction instructions live in [videos/process-guide-tour](videos/process-guide-tour/README.md).
+The homepage features a Leica M10 workflow walkthrough using actual Cueveris interface captures, three real document-based questions and generated app speech. It plays only on request, with captions and sound controls. [Reproducible film source](videos/cueveris-leica-workflow-demo/README.md) records the genuine responses and spoken excerpts. The separate Leica reference opens its unchanged official YouTube player; Leica footage and audio are not copied into our walkthrough. [Media rights and attribution](docs/MANUFACTURING_VIDEO_RIGHTS.md) describe the sources.
 
-**See full walkthrough** opens a 90-second narrated guide on the intro, in desktop Help, and in phone/tablet Settings. It uses actual app captures, animated control outlines, English narration captions, eight chapters and a timestamped transcript. Opening the dialog does not start narration or download the MP4; press **Play narrated walkthrough**. Closing it, hiding the page or scrolling the video out of view releases playback. Retry and the written guide remain available if playback fails. The existing silent quick tour is preserved. The [walkthrough source](videos/process-guide-walkthrough/README.md) documents capture, voice generation and local rendering.
+**See full walkthrough** opens a 90-second narrated guide on the intro, in desktop Help, and in phone/tablet Settings. It uses actual app captures, animated control outlines, English narration captions, eight chapters and a timestamped transcript. Opening the dialog does not start narration or download the MP4; press **Play narrated walkthrough**. Closing it, hiding the page or scrolling the video out of view releases playback. Retry and the written guide remain available if playback fails. The original silent tour remains in its source project. The [walkthrough source](videos/process-guide-walkthrough/README.md) documents capture, voice generation and local rendering.
 
 ## Performance and architecture
 

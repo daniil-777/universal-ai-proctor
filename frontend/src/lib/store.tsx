@@ -116,6 +116,8 @@ export interface AppState extends GuidanceState, GuidancePreferences, SessionRev
   updateChat: (id: string, patch: Partial<ChatMessage>) => void;
   videoUrl: string | null;
   setVideoUrl: (s: string | null) => void;
+  referenceFilm: "leica-m10" | null;
+  setReferenceFilm: (film: "leica-m10" | null) => void;
   patientInfoOn: boolean;
   setPatientInfoOn: (b: boolean) => void;
   showGuidance: boolean;
@@ -308,6 +310,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     },
   ]);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [referenceFilm, setReferenceFilm] = useState<"leica-m10" | null>(null);
   const [patientInfoOn, setPatientInfoOn] = useState(false);
   const [showGuidance, setShowGuidance] = useState(true);
   // Split deployments accept a backend URL at build time. The local appliance
@@ -731,6 +734,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setMonitor,
   });
 
+  useEffect(() => {
+    if (referenceFilm && (videoUrl || (liveStream && general.sourceKind === "camera")))
+      setReferenceFilm(null);
+  }, [referenceFilm, videoUrl, liveStream, general.sourceKind]);
+
   const preferences = useGuidancePreferences(apiBase);
   const review = useSessionReview(apiBase, general.sourceId, general.sourceReady, general.revision, general.lastAnalysis);
   const value = useMemo<AppState>(
@@ -773,6 +781,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       updateChat,
       videoUrl,
       setVideoUrl,
+      referenceFilm,
+      setReferenceFilm,
       patientInfoOn,
       setPatientInfoOn,
       showGuidance,
@@ -832,6 +842,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       toggleRecording,
       chat,
       videoUrl,
+      referenceFilm,
       patientInfoOn,
       showGuidance,
       apiBase,

@@ -25,6 +25,7 @@ import {
   ZoomIn,
   ZoomOut,
   Maximize,
+  Monitor,
   MoreHorizontal,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -781,6 +782,16 @@ export function VideoStage() {
             muted={!!a.liveStream}
             playsInline
           />
+        ) : a.referenceFilm ? (
+          <div className="max-w-md px-6 text-center text-slate-300">
+            <Monitor className="mx-auto mb-4 h-8 w-8 text-slate-400" aria-hidden="true" />
+            <p className="text-sm font-medium">The guide is ready for your questions</p>
+            <p className="mt-2 text-xs leading-relaxed text-slate-400">
+              Watch the official film above or on YouTube, then describe what you
+              see in chat. Share footage you have permission to process when you
+              want automatic visual checks.
+            </p>
+          </div>
         ) : (
           <FauxVideo playing={playing || a.running} />
         )}
@@ -1030,7 +1041,9 @@ export function VideoStage() {
       {/* Transport — live stream has no seeking; file playback keeps full controls */}
       {mobile && guidancePanel}
       <div className="player-controls border-t border-border bg-card px-4 py-2 flex items-center gap-3 shrink-0">
-        {a.liveStream ? (
+        {a.referenceFilm && !a.liveStream ? (
+          <p className="text-xs text-muted-foreground">Use the official film’s YouTube controls for playback.</p>
+        ) : a.liveStream ? (
           <>
             <span className="flex items-center gap-1.5 text-xs font-semibold text-success">
               <span className="h-2 w-2 rounded-full bg-success animate-pulse-dot" />{" "}

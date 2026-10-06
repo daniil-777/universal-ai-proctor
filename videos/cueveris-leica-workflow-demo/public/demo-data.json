@@ -1,0 +1,71 @@
+{
+  "title": "Leica M10 assembly study",
+  "recorded_at": "2026-10-06T14:19:14.366Z",
+  "guide_filename": "leica-m10-guidance.txt",
+  "guide_digest": "f071c347817460e092e0cbde750e56629b99226e324b56f6f06146af17f1a83a",
+  "guide_panel_file": "six-checkpoints-panel.png",
+  "setup_panel_file": "study-header-panel.png",
+  "review_panel_file": "six-checkpoints-panel.png",
+  "guide_titles": [
+    "Observe camera-body and mechanical assembly",
+    "Observe electronics and connection inspection",
+    "Observe sensor-surface handling",
+    "Observe sensor and electronics integration",
+    "Observe enclosure closure",
+    "Observe exterior handling and final presentation"
+  ],
+  "protocol": {
+    "mode": "document_based_text_questions",
+    "frames_submitted": 0,
+    "simulated": false,
+    "source_film_downloaded": false
+  },
+  "questions": [
+    {
+      "key": "mechanics",
+      "title": "Camera-body mechanics.",
+      "reference_topic": "Camera-body and mechanical assembly",
+      "question": "Reference-only question for the Leica M10 film study: which two visible cues distinguish camera-body mechanical assembly? Give a short answer from the guide.",
+      "answer": "The cues to distinguish camera-body mechanical assembly are the visibility of an open camera body or a mechanical subassembly and observation of hands or a tool acting on that assembly. Since no visual observation is available, confirmation of these cues is not possible.",
+      "spoken_text": "The cues to distinguish camera-body mechanical assembly are the visibility of an open camera body or a mechanical subassembly and observation of hands or a tool acting on that assembly.",
+      "spoken_excerpt": true,
+      "voice_file": "voice-mechanics.mp3",
+      "voice_duration_seconds": 11.448,
+      "app_panel_file": "mechanics-qa-panel.png",
+      "guide_stage_label": "S1 · mechanical assembly"
+    },
+    {
+      "key": "sensor",
+      "title": "Sensor-surface handling.",
+      "reference_topic": "Sensor-like rectangular optical surface",
+      "question": "Reference-only question for the Leica M10 film study: what does the sensor-handling stage ask me to observe, and what remains unverified? Give a short answer from the guide.",
+      "answer": "The sensor-handling stage asks you to observe the close handling or examination of an exposed sensor-like rectangular optical surface. Currently, it remains unverified whether the surface, hands, or implements are visibly present during the action.",
+      "spoken_text": "The sensor-handling stage asks you to observe the close handling or examination of an exposed sensor-like rectangular optical surface.",
+      "spoken_excerpt": true,
+      "voice_file": "voice-sensor.mp3",
+      "voice_duration_seconds": 8.568,
+      "app_panel_file": "sensor-qa-panel.png",
+      "guide_stage_label": "S3 · sensor-surface handling"
+    },
+    {
+      "key": "closure",
+      "title": "Enclosure closure.",
+      "reference_topic": "Alignment and fitting of the outer cover",
+      "question": "Reference-only question for the Leica M10 film study: what enclosure-closure evidence should I look for, and does fitting the cover prove the camera works? Give a short answer from the guide.",
+      "answer": "For the enclosure closure, look for the visible alignment and fitting of a shell or plate onto the partly assembled camera body, and ensure it covers previously exposed internals. Fitting the cover alone does not prove the camera functions correctly.",
+      "spoken_text": "For the enclosure closure, look for the visible alignment and fitting of a shell or plate onto the partly assembled camera body, and ensure it covers previously exposed internals.",
+      "spoken_excerpt": true,
+      "voice_file": "voice-closure.mp3",
+      "voice_duration_seconds": 10.56,
+      "app_panel_file": "closure-qa-panel.png",
+      "guide_stage_label": "S5 · enclosure closure"
+    }
+  ],
+  "report": {
+    "text_questions": 3,
+    "visual_analyses": 0,
+    "confirmed_steps": 0,
+    "total_steps": 6,
+    "title": "Guide checkpoints remain unconfirmed"
+  }
+}

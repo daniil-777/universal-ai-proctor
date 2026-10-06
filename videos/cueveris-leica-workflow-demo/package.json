@@ -1,0 +1,25 @@
+{
+  "name": "cueveris-leica-workflow-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.tsx",
+    "typecheck": "tsc --noEmit",
+    "render": "remotion render src/index.tsx CueverisLeicaStudy out/master.mp4 --codec h264 --crf 17 --pixel-format yuv420p --concurrency 4",
+    "poster": "remotion still src/index.tsx CueverisLeicaStudy out/poster.png --frame 55",
+    "deliver": "node deliver.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.533",
+    "@remotion/fonts": "4.0.533",
+    "@remotion/media": "4.0.533",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.533"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}

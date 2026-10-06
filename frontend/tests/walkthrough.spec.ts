@@ -74,7 +74,7 @@ async function mediaFixture(
   });
 }
 
-test("full walkthrough remains lazy, pauses the silent tour, plays and seeks without changing the analysis source", async ({
+test("full walkthrough remains lazy, pauses the homepage demo, plays and seeks without changing the analysis source", async ({
   page,
 }) => {
   const requests: string[] = [],
@@ -90,7 +90,7 @@ test("full walkthrough remains lazy, pauses the silent tour, plays and seeks wit
     requests.filter((url) => url.includes("process-guide-walkthrough")),
   ).toEqual([]);
   await page
-    .getByRole("button", { name: "Play the 30-second manufacturing demo" })
+    .getByRole("button", { name: "Play 63-second Leica UI and voice demo" })
     .click();
   const quick = page.getByTestId("intro-tour-video");
   await expect

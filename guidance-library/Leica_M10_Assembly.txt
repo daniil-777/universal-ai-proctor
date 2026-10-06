@@ -1,0 +1,85 @@
+LEICA M10 ASSEMBLY - independent visual observation guide
+
+Reference film: A masterpiece in the making - your Leica M10.
+Publisher: Leica Camera, verified @LeicaCameraGlobal channel.
+Film: https://www.youtube.com/watch?v=p4t-OVIvuy8
+Manufacturer reference: https://leica-camera.com/en-SG/photography/cameras/m/m10-black/designed-and-made-germany
+
+Principles:
+- These are broad observation checkpoints informed by Leica's illustrated assembly description. They are not Leica work instructions or a claim that the film shows every manufacturing operation.
+- Checkpoints describe visible activities. Their numbering is a reference workflow, not a verified shot-by-shot timeline; no timestamp or film-stage boundary is asserted here.
+- Identify a checkpoint from the part, exposed work area, operator action and visible tool together. If the image does not show enough detail, keep the checkpoint unconfirmed.
+- An edited film can cut between different cameras and operators. Do not assume continuity of one physical camera across shots.
+- Record visible evidence separately from acceptance. Appearance does not establish torque, calibrated alignment, sensor cleanliness, electrical function, image quality or a passing test result.
+- Keep obscured details uncertain. A connection view does not prove electrical continuity, and sensor integration does not establish calibration compatibility.
+- Surface views do not certify the absence of scratches or microscopic contamination. Enclosure views do not establish sealing performance or hidden connector seating.
+- A finished-looking camera or test-station view does not establish a functional pass or release decision.
+- This guide is original Cueveris material. Leica Camera and the filmmakers are independent third parties; no affiliation, endorsement or customer relationship is implied. The film remains in the official YouTube player.
+
+Step 1: Observe camera-body and mechanical assembly
+Objective: Recognize hands-on work on the open camera body or its mechanical subassemblies.
+Tools: Visible camera chassis or mechanism; operator's hands; small assembly tool when shown.
+Actions:
+- Locate the exposed body or separate mechanism in the shot.
+- Observe a component being positioned, fastened or adjusted at that work area.
+Criteria:
+- Visual observation: An open camera body or a separate mechanical camera assembly is clearly visible.
+- Visual observation: Hands or a tool visibly act on that assembly.
+- Visual observation: The action occurs at an identifiable component or fastening location.
+
+Step 2: Observe electronics and connection inspection
+Objective: Recognize work directed at exposed electronics, connectors or internal fastenings.
+Tools: Visible circuit board, connection region or internal fastenings; inspection or assembly tool when shown.
+Actions:
+- Distinguish exposed electronics from the enclosing camera shell.
+- Observe the operator examining or working at the connection or fastening region.
+Criteria:
+- Visual observation: A circuit board, connector region or exposed internal fastening is visible.
+- Visual observation: The operator's gaze, hands or tool are directed at that region.
+- Visual observation: The relevant area remains exposed while the action is visible.
+
+Step 3: Observe sensor-surface handling
+Objective: Recognize close handling or examination of an exposed sensor-like rectangular optical surface.
+Tools: Visible rectangular sensor assembly; operator's hands; optical inspection or surface-care implement when shown.
+Actions:
+- Locate the exposed rectangular surface and its surrounding support.
+- Describe only the visible examination, handling or implement movement.
+- Keep exact component identity uncertain when the angle or image detail is insufficient.
+Criteria:
+- Visual observation: An exposed rectangular optical surface and its surrounding assembly are visible together.
+- Visual observation: Hands, gaze or an implement are directed toward that surface.
+- Visual observation: The surface is visible during at least part of the action.
+
+Step 4: Observe sensor and electronics integration
+Objective: Recognize placement or connection of a sensor/electronics assembly within the camera body.
+Tools: Open camera body; separate sensor or electronics assembly; visible positioning or fastening tool.
+Actions:
+- Observe the separate assembly and the receiving body before placement where the shot allows.
+- Observe placement, connection or fastening at the exposed internal work area.
+Criteria:
+- Visual observation: The receiving body and the component being integrated appear in the same view.
+- Visual observation: Hands or a tool position, connect or fasten that component in the body.
+- Visual observation: The component is visibly located in the body after the action where shown.
+
+Step 5: Observe enclosure closure
+Objective: Recognize the transition from exposed internals to a fitted outer shell or top plate.
+Tools: Partly assembled camera body; rear shell or top plate when identifiable; operator's hands and fastening tool.
+Actions:
+- Observe the open body and the separate closing component where visible.
+- Observe the shell or plate being aligned and fitted onto the body.
+- Describe any subsequent fastening that the shot actually shows.
+Criteria:
+- Visual observation: A shell or plate is brought to the partly assembled camera body.
+- Visual observation: The component covers a previously exposed part of the body.
+- Visual observation: The fitted component remains visibly in place when the shot shows the result.
+
+Step 6: Observe exterior handling and final presentation
+Objective: Distinguish an externally assembled camera from the earlier open-body assembly views.
+Tools: Externally assembled camera; visible operator or presentation support; lens or inspection equipment only when shown.
+Actions:
+- Observe the camera's exterior and accessible controls or lens area.
+- Describe handling, a control action, an inspection setup or the finished-camera presentation only when visible.
+Criteria:
+- Visual observation: An externally assembled camera is clearly visible.
+- Visual observation: The shot shows exterior handling, an observable control action, an inspection setup or a deliberate product presentation.
+- Visual observation: Evidence identifies the visible activity.

@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Camera, Play } from "lucide-react";
+import { ArrowUpRight, Camera, Download, Loader2, Play, Plug } from "lucide-react";
+import { useApp } from "@/lib/store";
+import { appAsset, isStaticHosting } from "@/lib/deployment";
+import { LEICA_EMBED_URL, LEICA_FILM_URL, LEICA_GUIDE_FILENAME, useLeicaPlayerRoom } from "@/lib/leicaStudy";
 import { Button } from "./ui/button";
 import {
   Dialog,
@@ -10,17 +13,52 @@ import {
   DialogTrigger,
 } from "./ui/dialog";
 
-const YOUTUBE_URL = "https://www.youtube.com/watch?v=p4t-OVIvuy8";
-const EMBED_URL = "https://www.youtube-nocookie.com/embed/p4t-OVIvuy8?autoplay=1&playsinline=1&rel=0";
-
 export function ManufacturingReference({
   onOpenChange,
 }: {
   onOpenChange?: (open: boolean) => void;
 }) {
+  const a = useApp();
   const [open, setOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
+  const [loadingGuide, setLoadingGuide] = useState(false);
+  const [guideError, setGuideError] = useState("");
   const player = useRef<HTMLDivElement>(null);
+  const previewNeedsBackend = isStaticHosting() && a.health?.ok !== true;
+  const { narrow, canPlay } = useLeicaPlayerRoom(player, open);
+
+  useEffect(() => {
+    if (narrow) setPlaying(false);
+  }, [narrow]);
+
+  const openStudy = async () => {
+    setLoadingGuide(true);
+    setGuideError("");
+    try {
+      const response = await fetch(appAsset(`media/${LEICA_GUIDE_FILENAME}`));
+      if (!response.ok) throw new Error("The Leica guide could not load. Please retry.");
+      const text = await response.text();
+      if (!text.trim()) throw new Error("The Leica guide is unavailable. Please retry.");
+      a.setRunning(false);
+      a.setMonitor({ active: false });
+      a.stopLiveVideo();
+      a.setVideoUrl(null);
+      a.setAnalysis({ cropRect: undefined });
+      // Reset server-owned media too: a guide-only question must never fall
+      // back to sampling an earlier uploaded recording.
+      await a.resetSource("screen", "Leica M10 guide — no shared input");
+      const loaded = await a.loadGuidance(new File([text], LEICA_GUIDE_FILENAME, { type: "text/plain" }));
+      if (!loaded) throw new Error("The guide could not be applied. Check the AI backend connection and retry.");
+      a.setReferenceFilm("leica-m10");
+      a.setCaseName("Leica M10 assembly study");
+      setPlaying(false);
+      a.setIntroDone(true);
+    } catch (error) {
+      setGuideError(error instanceof Error ? error.message : "The guide could not load. Please retry.");
+    } finally {
+      setLoadingGuide(false);
+    }
+  };
 
   useEffect(() => {
     if (!open || !playing) return;
@@ -49,10 +87,26 @@ export function ManufacturingReference({
         <p className="intro-reference-eyebrow">A closer look at precision assembly</p>
         <h2 id="manufacturing-reference-title">Inside the Leica M10.</h2>
         <p>
-          Watch Leica Camera’s official film for a real-world view of careful
-          assembly and inspection.
+          Apply a dedicated observation guide, then explore the film with the
+          workspace’s steps, visual evidence and voice questions.
         </p>
+        {guideError && <p className="intro-reference-error" role="alert">{guideError}</p>}
       </div>
+      <div className="intro-reference-buttons">
+        {previewNeedsBackend ? (
+          <>
+            <Button className="intro-reference-watch" onClick={() => window.dispatchEvent(new Event("guidance-connect-backend"))}>
+              <Plug className="size-4" aria-hidden="true" /> Connect backend to use guide
+            </Button>
+            <p className="intro-reference-preview-note">Download the guide for the full app, or connect a backend to use it here.</p>
+          </>
+        ) : <Button className="intro-reference-watch" disabled={loadingGuide} onClick={() => void openStudy()}>
+          {loadingGuide && <Loader2 className="size-4 animate-spin" aria-hidden="true" />}
+          {loadingGuide ? "Loading guidance…" : guideError ? "Retry Leica guidance" : "Use Leica guidance"}
+        </Button>}
+        <a className="intro-reference-download" href={appAsset(`media/${LEICA_GUIDE_FILENAME}`)} download={LEICA_GUIDE_FILENAME}>
+          <Download className="size-3.5" aria-hidden="true" /> Download Leica guide (.txt)
+        </a>
       <Dialog
         open={open}
         onOpenChange={(value) => {
@@ -77,7 +131,7 @@ export function ManufacturingReference({
           <div ref={player} className="intro-reference-player">
             {open && playing ? (
               <iframe
-                src={EMBED_URL}
+                src={LEICA_EMBED_URL}
                 title="Official Leica Camera film: Leica M10 assembly"
                 allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
                 allowFullScreen
@@ -90,28 +144,31 @@ export function ManufacturingReference({
                 <p>Leica M10 · Official manufacturing film</p>
                 <Button
                   className="min-h-11 gap-2"
-                  onClick={() => setPlaying(true)}
+                  disabled={narrow}
+                  onClick={() => { if (canPlay()) setPlaying(true); }}
                 >
                   <Play className="size-4" aria-hidden="true" /> Play official Leica film
                 </Button>
-                <span>YouTube loads when you press play.</span>
+                <span>{narrow ? "This view is too narrow for the player. Open the original on YouTube below." : "YouTube loads when you press play."}</span>
               </div>
             )}
           </div>
           <div className="intro-reference-source">
-            <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer">
+            <a href={LEICA_FILM_URL} target="_blank" rel="noopener noreferrer">
               Open original on YouTube <ArrowUpRight className="size-3.5" aria-hidden="true" />
               <span className="sr-only"> (opens in a new tab)</span>
             </a>
             <p>If playback is unavailable, use the original film link.</p>
           </div>
           <p className="intro-reference-note">
-            Watch-only reference · For a guidance session, choose a library video
-            or upload footage you have permission to use. Cueveris is independent
+            Official reference · Use Leica guidance to open a study workspace,
+            review the checkpoints and ask questions from your own observations.
+            For visual analysis, use footage you have permission to process. Cueveris is independent
             of Leica Camera; no endorsement is implied.
           </p>
         </DialogContent>
       </Dialog>
+      </div>
     </section>
   );
 }
