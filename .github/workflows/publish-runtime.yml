@@ -1,0 +1,94 @@
+name: Publish verified runtime snapshot
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-runtime-d943726
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      SOURCE_REVISION: d9437267c9c0ceeda51d7d2e6f3c9adfceb8dcbb
+      RELEASE_TAG: runtime-d943726
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: d9437267c9c0ceeda51d7d2e6f3c9adfceb8dcbb
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          package-manager-cache: false
+      - name: Build the already tested production revision
+        run: |
+          test "$(git rev-parse HEAD)" = "$SOURCE_REVISION"
+          test "$(uname -m)" = x86_64
+          docker build --pull --tag process-guide:oracle .
+          test "$(docker image inspect process-guide:oracle --format '{{.Architecture}}')" = amd64
+      - name: Check the image before publishing
+        run: |
+          docker run --detach --name runtime-check --publish 127.0.0.1:8101:8101 \
+            --env MOCK=1 --env ACCOUNT_PUBLIC_ORIGIN=http://localhost:8101 \
+            --env ACCOUNT_COOKIE_SECURE=false process-guide:oracle
+          for attempt in $(seq 1 45); do
+            if curl --fail --silent http://localhost:8101/api/health > /dev/null; then break; fi
+            sleep 2
+          done
+          docker exec runtime-check ffmpeg -version > /dev/null
+          docker exec runtime-check ffprobe -version > /dev/null
+          node --input-type=module - <<'JS'
+          import assert from 'node:assert/strict';
+          const health = await (await fetch('http://localhost:8101/api/health')).json();
+          assert.equal(health.ok, true);
+          assert.equal(health.mock, true);
+          assert.ok(Object.values(health.providers).every(value => value === false));
+          const samples = await (await fetch('http://localhost:8101/api/samples')).json();
+          assert.equal(samples.videos.length, 6);
+          assert.ok(samples.documents.some(doc => doc.filename === 'Cholecystectomy.txt'));
+          assert.ok((await (await fetch('http://localhost:8101/')).text()).includes('<html'));
+          JS
+          docker exec --interactive runtime-check node --input-type=module - <<'JS'
+          import assert from 'node:assert/strict';
+          import fs from 'node:fs';
+          assert.equal(process.arch, 'x64');
+          assert.equal(Number(process.versions.node.split('.')[0]), 24);
+          const servers = fs.readdirSync('/proc').filter(id => /^\d+$/.test(id)).filter(id => {
+            try { const command = fs.readFileSync(`/proc/${id}/cmdline`, 'utf8').split('\0'); return /(?:^|\/)node$/.test(command[0]) && command.includes('dist/server.js'); }
+            catch { return false; }
+          });
+          assert.equal(servers.length, 1);
+          assert.equal(/^Uid:\s+(\d+)/m.exec(fs.readFileSync(`/proc/${servers[0]}/status`, 'utf8'))?.[1], '1000');
+          console.log('Verified Linux AMD64, Node 24, FFmpeg, six samples and unprivileged runtime; no AI credits used.');
+          JS
+      - name: Create a reproducible installation receipt
+        run: |
+          mkdir -p runtime-release
+          docker save process-guide:oracle | gzip -1 > runtime-release/process-guide-linux-amd64-d943726.tar.gz
+          cd runtime-release
+          sha256sum process-guide-linux-amd64-d943726.tar.gz > SHA256SUMS
+          node --input-type=module - <<'JS'
+          import fs from 'node:fs';
+          import { execFileSync } from 'node:child_process';
+          const image = JSON.parse(execFileSync('docker', ['image','inspect','process-guide:oracle'], {encoding:'utf8'}))[0];
+          fs.writeFileSync('runtime-receipt.json', JSON.stringify({source_revision:process.env.SOURCE_REVISION,image_id:image.Id,architecture:image.Architecture,created:image.Created,run_url:`https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`,provider_keys_included:false}, null, 2)+'\n');
+          fs.writeFileSync('release-notes.txt', 'Production container snapshot for the Universal AI Proctor public app.\n\nSource revision: '+process.env.SOURCE_REVISION+'\nLinux AMD64, Node 24, FFmpeg, all six example videos and their guidance documents. No credentials or account data are included. Verify SHA256SUMS before docker load; configure private runtime settings on the selected host. The source and full container tests passed for this revision.\n');
+          JS
+      - name: Publish the immutable public snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$RELEASE_TAG" \
+            runtime-release/process-guide-linux-amd64-d943726.tar.gz \
+            runtime-release/SHA256SUMS runtime-release/runtime-receipt.json \
+            --target "$SOURCE_REVISION" --title "Verified runtime d943726 (Linux AMD64)" \
+            --notes-file runtime-release/release-notes.txt
+      - name: Remove the isolated test container
+        if: always()
+        run: docker rm --force --volumes runtime-check || true
